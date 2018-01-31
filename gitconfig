@@ -1,6 +1,6 @@
 [user]
-	email = work@phoom.in.th
-	name = Phoomparin Mano
+  email = work@phoom.in.th
+  name = Phoomparin Mano
 [credential]
   helper = osxkeychain
 [merge]
@@ -14,11 +14,12 @@
 [diff]
   tool = vimdiff
 [core]
-	editor = nvim
+  editor = nvim
 [filter "lfs"]
-	required = true
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
+  required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
 [commit]
-	gpgsign = false
+  gpgsign = false
+
