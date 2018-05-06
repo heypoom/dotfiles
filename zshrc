@@ -10,7 +10,7 @@ export MANPATH="/usr/local/man:$MANPATH"
 # Compilation flags
 export ARCHFLAGS="-arch x86_64"
 
-# Path to your SSH Private Key 
+# Path to your SSH Private Key
 export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 # $HOST on macOS changes with dhcp. Use ComputerName if possible.
@@ -41,19 +41,19 @@ function install_docker_completion() {
   mv $COMPLETION/docker-machine.zsh-completion $COMPLETION/_docker-machine
 }
 
-# Fuzzy Finder, History Menu and Emoji Menu (CTRL+S) 
+# Fuzzy Finder, History Menu and Emoji Menu (CTRL+S)
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # ZPlug's plugin to let it manage itself.
-zplug 'zplug/zplug', hook-build:'zplug --self-manage'  
+zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 
 # Libraries from oh-my-zsh
 
 # zplug 'lib/bzr', from:oh-my-zsh
 # zplug 'lib/clipboard', from:oh-my-zsh
 # zplug 'lib/compfix', from:oh-my-zsh
-# zplug 'lib/nvm', from:oh-my-zsh
 
+zplug 'lib/nvm', from:oh-my-zsh
 zplug 'lib/completion', from:oh-my-zsh
 zplug 'lib/correction', from:oh-my-zsh
 zplug 'lib/diagnostics', from:oh-my-zsh
@@ -95,7 +95,7 @@ zplug "djui/alias-tips"
 
 # Awesome Plugins for Syntax Highlighting, Autosuggestions, and Shell Completions
 zplug "zsh-users/zsh-syntax-highlighting", defer:1
-zplug "zsh-users/zsh-autosuggestions" 
+zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-history-substring-search", defer:2
 
@@ -111,7 +111,7 @@ POWERLEVEL9K_RIGHT_SUBSEGMENT_SEPARATOR=''
 # Prompt Elements.
 # battery_joined ram_joined load
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(root_indicator context dir dir_writable_joined vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(vi_mode status command_execution_time time_joined background_jobs_joined) 
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(vi_mode status command_execution_time time_joined background_jobs_joined)
 
 # Vi-mode Stylings
 
@@ -223,7 +223,7 @@ POWERLEVEL9K_BATTERY_LOW_VISUAL_IDENTIFIER_COLOR="red"
 # Load the powerlevel9k theme
 zplug "bhilburn/powerlevel9k", as:theme
 
-# Install Missing Plugins 
+# Install Missing Plugins
 if ! zplug check --verbose; then
   printf "Install? [y/N]: "
   if read -q; then
@@ -232,7 +232,7 @@ if ! zplug check --verbose; then
 fi
 
 # Activate ZSH Plugin Manager. (Enable --verbose for logging)
-zplug load 
+zplug load
 
 # Vi Mode: Allow Yank-Paste with the system clipboard                                                            11:49:17
 
@@ -276,11 +276,11 @@ zplug load
   done
 }
 
-
 # History Substring Search
+#
+HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=true
 # HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND=(none)
 # HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND=(none)
-HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=true
 
 bindkey '^[OA' history-substring-search-up
 bindkey '^[OB' history-substring-search-down
@@ -314,8 +314,12 @@ alias c="clear && tmux clear-history"
 alias n="node"
 alias p="python3"
 
-# Lazy alias for make.
-alias m="make"
+# Alias for mmake.
+alias m="mmake"
+alias make="mmake"
+
+# Lazy alias for tmux
+alias t="tmux"
 
 # Lazy alias for `docker-compose up`
 alias u="docker-compose up"
@@ -333,6 +337,9 @@ alias ls="exa"
 alias la="exa -baghHliS --git"
 alias tree="exa --tree"
 
+# Lazy Alias for Atom Beta
+alias a="atom-beta ."
+
 # Alias v, vi and vim to neovim.
 alias v="nvim"
 alias vi="nvim"
@@ -341,7 +348,7 @@ alias nano="nvim"
 alias svi="nvim"
 alias vis="sudo nvim"
 
-# Aliases for JS Dev
+# Aliases for JavaScript Developemnt
 alias deps="cat package.json | jq .dependencies"
 alias devdeps="cat package.json | jq .devDependencies"
 alias scripts="cat package.json | jq .scripts"
@@ -376,27 +383,21 @@ wd() {
 }
 
 # Start JetBrains Licensing Server (Sorry...)
-alias ils="docker run -d -p 1017:1017 phoomparin/ils:latest"
+alias ils="docker run --name ils -d -p 1027:1027 phoomparin/ils:latest"
 
 # Simple utility to get the unicode codepoint of a character.
-codepoint() { 
+codepoint() {
   echo -n $1 | iconv -f UTF-8 -t UTF-32BE | xxd -p | sed -E 's/^0+/0x/' | xargs printf '\\U%04X\n'
 }
 
 # Defines Rust's Source Path for Racer Autocompletion
 export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 
-# Defines Node's NVM Directories.
-export NVM_DIR="$HOME/.nvm"
-
-# Configure Node's Version Manager (NVM)
-source "/usr/local/opt/nvm/nvm.sh"
- 
 # Configure Go's Version Manager (GVM)
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
 
 # Define Java's SDK Path
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home"
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home"
 
 # Define Android's SDK Path
 export ANDROID_HOME="$HOME/Library/Android/sdk"
@@ -405,43 +406,65 @@ export ANDROID_HOME="$HOME/Library/Android/sdk"
 export GRADLE_OPTS="-Dorg.gradle.daemon=true"
 
 # Define Go's $GOPATH
-export GOPATH="$HOME/Dev/Go"
- 
+export GOPATH="$HOME/Go"
+
 # PATH Environment Variables for Local Binaries, Go Binaries and Android Platform Tools.
 export PATH="/opt/local/bin:/opt/local/sbin:$HOME/bin:/usr/local/bin:$PATH:$GOPATH/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$HOME/.fastlane/bin"
- 
+
 # More PATHs for the Ruby Version Manager, Google Cloud SDK, Yarn's Global Node Modules and Rust's Cargo.
-export PATH="$PATH:$HOME/.rvm/bin:$HOME/gcloud/bin:$HOME/.config/yarn/global/node_modules/.bin:$HOME/.cargo/bin:$HOME/Dev/Experiments/flutter/bin"
+export PATH="$PATH:$HOME/lib/gcloud/bin:$HOME/.config/yarn/global/node_modules/.bin:$HOME/.cargo/bin:$HOME/Labs/flutter/bin"
 
 # More PATHs for Luna Studio and Mix
 export PATH="$PATH:$HOME/.mix/:$HOME/.local/bin:/Users/phoomparin/.local/bin/luna-studio"
 
 # More PATHs for Local System Binaries and Library Executables
-export PATH="$PATH:/usr/local/sbin:/usr/libexec"
+export PATH="/usr/bin:$PATH:/usr/local/sbin:/usr/libexec:$HOME/.rvm/bin:$HOME/lib/flutter/bin"
 
-# Configure Ruby's Version Manager (RVM)
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" 
- 
+# Workspace Management Commands
+source "$HOME/Scripts/workspace.sh"
+
+# prtcfg: Copies Prettier Config to Current Directory
+alias prtcfg="cp ~/Labs/Common/React/.eslintrc.json ."
+
+# duckscfg: Copies Ducks Helper to Current Directory
+alias duckscfg="cp ~/Labs/Common/React/helper.js ."
+
 # Kubernetes CLI's Shell Autocompletion.
 if [ $commands[kubectl] ]; then source <(kubectl completion zsh); fi
- 
+
 # Google Cloud SDK's Shell Autocompletions.
-if [ -f "$HOME/gcloud/path.zsh.inc" ]; then source "$HOME/gcloud/path.zsh.inc"; fi
-if [ -f "$HOME/gcloud/completion.zsh.inc" ]; then source "$HOME/gcloud/completion.zsh.inc"; fi
- 
+if [ -f "$HOME/lib/gcloud/path.zsh.inc" ]; then source "$HOME/lib/gcloud/path.zsh.inc"; fi
+if [ -f "$HOME/lib/gcloud/completion.zsh.inc" ]; then source "$HOME/lib/gcloud/completion.zsh.inc"; fi
+
 # Microsoft Azure CLI's Shell Autocompletions.
 autoload bashcompinit && bashcompinit && source "$HOME/lib/azure-cli/az.completion"
 
 # Shell Integration for iTerm Terminal Emulator on macOS.
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
- 
+
+# Define the NVM Directory
+export NVM_DIR="$HOME/.nvm"
+
+# Enable Node's Version Manager (NVM)
+[ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && source "$NVM_DIR/bash_completion"
+
+# Alias for Kubernetes
 source ~/.kubectl_aliases
 
-export PATH=/Users/phoomparin/.local/bin/luna-studio:$PATH
+# Configure Sdkman
+# export SDKMAN_DIR="/Users/phoomparin/.sdkman"
+# [[ -s "/Users/phoomparin/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/phoomparin/.sdkman/bin/sdkman-init.sh"
 
-export SDKMAN_DIR="/Users/phoomparin/.sdkman"
-[[ -s "/Users/phoomparin/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/phoomparin/.sdkman/bin/sdkman-init.sh"
-
-export REACT_EDITOR=vim
+export REACT_EDITOR=nvim
 export REACT_EDITOR_CMD=/usr/local/bin/nvim
 
+export PKG_CONFIG_PATH=/usr/local/opt/openssl/lib/pkgconfig
+
+# source "$HOME/lib/emsdk/emsdk_env.sh" > /dev/null
+
+# Vault
+complete -o nospace -C /Users/phoomparin/bin/vault vault
+
+# Configure Ruby's Version Manager (RVM)
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"

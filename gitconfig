@@ -1,6 +1,6 @@
 [user]
-  email = work@phoom.in.th
-  name = Phoomparin Mano
+	email = phoomparin@gmail.com
+	name = Pmc Dev
 [credential]
   helper = osxkeychain
 [merge]
@@ -23,3 +23,6 @@
 [commit]
   gpgsign = false
 
+[rerere]
+	enabled = true
+	autoupdate = true

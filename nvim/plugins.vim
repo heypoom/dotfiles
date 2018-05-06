@@ -23,19 +23,20 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-obsession'
+Plug 'tpope/vim-scriptease'
 
+Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'mattn/emmet-vim'
 Plug 'lilydjwg/colorizer'
 Plug 'Galooshi/vim-import-js'
 Plug 'ElmCast/elm-vim'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'chr4/nginx.vim'
 Plug 'godlygeek/tabular'
 Plug 'jlanzarotta/bufexplorer'
 Plug 'joshdick/onedark.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'majutsushi/tagbar'
-Plug 'mileszs/ack.vim'
 Plug 'neovim/node-host'
 Plug 'rust-lang/rust.vim'
 Plug 'scrooloose/snipmate-snippets'
@@ -44,13 +45,14 @@ Plug 'tomtom/tlib_vim'
 Plug 'vim-scripts/mru.vim'
 Plug 'w0rp/ale'
 
-Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'airblade/vim-gitgutter'
 Plug 'amix/vim-zenroom2'
+Plug 'christoomey/vim-tmux-navigator'
 Plug 'digitaltoad/vim-pug'
-Plug 'fatih/vim-go'
+Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'editorconfig/editorconfig-vim'
+Plug 'fidian/hexmode'
 Plug 'garbas/vim-snipmate'
 Plug 'git://git.wincent.com/command-t.git'
 Plug 'groenewege/vim-less'
@@ -61,30 +63,38 @@ Plug 'kchmck/vim-coffee-script'
 Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'michaeljsmith/vim-indent-object'
+Plug 'mxw/vim-jsx'
 Plug 'nvie/vim-flake8'
+Plug 'pangloss/vim-javascript'
 Plug 'plasticboy/vim-markdown'
 Plug 'rakr/vim-one'
 Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
-Plug 'ryanoasis/vim-devicons'
 Plug 'sheerun/vim-polyglot'
 Plug 'shemerey/vim-peepopen'
-Plug 'sophacles/vim-bundle-mako'
-Plug 'terryma/vim-expand-region'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'styled-components/vim-styled-components'
-Plug 'editorconfig/editorconfig-vim'
 Plug 'shinokada/dragvisuals.vim'
+Plug 'sophacles/vim-bundle-mako'
+Plug 'styled-components/vim-styled-components'
+Plug 'terryma/vim-expand-region'
+
+Plug 'fatih/vim-go'
 
 Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
 Plug 'sebastianmarkow/deoplete-rust'
-Plug 'zchee/deoplete-go'
+Plug 'zchee/deoplete-go', { 'do': 'make'}
 Plug 'carlitux/deoplete-ternjs'
 Plug 'zchee/deoplete-clang'
 
 Plug 'SirVer/ultisnips'
 Plug 'mhartington/nvim-typescript'
-Plug 'mattn/emmet-vim'
+Plug 'benmills/vimux'
+
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'mileszs/ack.vim'
+
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
+
+Plug 'Yggdroot/indentLine'
 
 " WakaTime Time Tracker
 Plug 'wakatime/vim-wakatime'
@@ -93,12 +103,41 @@ Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql'] }
 
+Plug 'ryanoasis/vim-devicons'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'alvan/vim-closetag'
+Plug 'matze/vim-move'
+
 call plug#end()
 
+let g:move_key_modifier = 'C'
+
+" NERDCommenter
+
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+
+" Use compact syntax for prettified multi-line comments
+let g:NERDCompactSexyComs = 1
+
+" Align line-wise comment delimiters flush left instead of following code indentation
+let g:NERDDefaultAlign = 'left'
+
+" Enable trimming of trailing whitespace when uncommenting
+let g:NERDTrimTrailingWhitespace = 1
+
 " Prettier
+let g:prettier#config#print_width = 80
+let g:prettier#config#tab_width = 2
+let g:prettier#config#use_tabs = 'false'
 let g:prettier#config#semi = 'false'
+let g:prettier#config#jsx_bracket_same_line = 'false'
 let g:prettier#config#single_quote = 'true'
 let g:prettier#config#bracket_spacing = 'false'
+let g:prettier#config#arrow_parens = 'avoid'
+let g:prettier#config#trailing_comma = 'all'
+let g:prettier#config#parser = 'babylon'
+let g:prettier#config#config_precedence = 'prefer-file'
 
 let g:prettier#autoformat = 0
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md PrettierAsync
@@ -107,6 +146,8 @@ autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.gra
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#enable_smart_case = 1
 let g:deoplete#auto_complete_start_length = 1
+
+let g:deoplete#sources#go#use_cache = 1
 
 let g:deoplete#sources#ternjs#depths = 1
 let g:deoplete#sources#ternjs#docs = 1
@@ -118,11 +159,15 @@ let g:deoplete#sources#rust#rust_source_path='/Users/phoomparin/.rustup/toolchai
 
 filetype plugin indent on
 
+" Close Tag
+let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.erb,*.jsx,*.js"
+let g:closetag_xhtml_filenames = '*.xhtml,*.jsx,*.erb,*.js'
+let g:closetag_emptyTags_caseSensitive = 1
+let g:closetag_shortcut = '>'
+let g:closetag_close_shortcut = '<leader>>'
+
 " Vim JSX
 let g:jsx_ext_required = 0
-
-" YCM
-let g:ycm_server_python_interpreter = '/usr/local/bin/python3'
 
 " Airline (themes: onedark powerlineish base16_spacemacs minimalist angr base16 luna)
 let g:airline_powerline_fonts=1
@@ -161,7 +206,7 @@ map <leader>j :CtrlP<cr>
 map <c-b> :CtrlPBuffer<cr>
 
 let g:ctrlp_max_height = 20
-let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|^\.git\|^\.coffee'
+let g:ctrlp_user_command = ['.git', 'cd %s && rg --files-with-matches ".*"', 'find %s -type f']
 
 
 """"""""""""""""""""""""""""""
@@ -182,9 +227,7 @@ snor <c-j> <esc>i<right><c-r>=snipMate#TriggerSnippet()<cr>
 let Grep_Skip_Dirs = 'RCS CVS SCCS .svn generated'
 set grepprg=/bin/grep\ -nH
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Nerd Tree
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Nerd Tree
 let g:NERDTreeWinPos = "left"
 let NERDTreeShowHidden=0
 let NERDTreeIgnore = ['\.pyc$', '__pycache__']
@@ -194,10 +237,12 @@ map <leader>nn :NERDTreeToggle<cr>
 map <leader>nb :NERDTreeFromBookmark<Space>
 map <leader>nf :NERDTreeFind<cr>
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => vim-multiple-cursors
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:multi_cursor_next_key="\<C-s>"
+" Multiple Cursors
+let g:multi_cursor_use_default_mapping=0
+let g:multi_cursor_next_key='<C-n>'
+let g:multi_cursor_prev_key='<C-p>'
+let g:multi_cursor_skip_key='<C-x>'
+let g:multi_cursor_quit_key='<Esc>'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => surround.vim config
