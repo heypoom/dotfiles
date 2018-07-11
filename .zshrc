@@ -1,3 +1,50 @@
+RED="\033[1;31m"
+GREEN="\033[1;32m"
+YELLOW="\033[1;33m"
+
+# Use GNU Date instead of the macOS binary
+alias date=gdate
+
+# Millisec Utility
+sec() {
+  gdate +%s%3N
+}
+
+# Globals for the Shell Loading Indicator
+START_TIME=`sec`
+PREV_TIME=`sec`
+PREV_MSG="Booting up shell"
+
+# Do you want to show performance information on shell startup?
+SHOW_PERF_INFO=true
+
+li_start() {
+  revolver -s 'bouncingBall' start $GREEN"Booting up shell. Please Wait..."
+}
+
+li_mark() {
+  TIME=$[`sec` - $PREV_TIME]
+
+  revolver update $GREEN"$1... ($YELLOW$TIME$GREEN ms)"
+
+  if ($SHOW_PERF_INFO) {
+    echo $GREEN"[+] $PREV_MSG done in $YELLOW$TIME$GREEN ms."
+  }
+
+  PREV_TIME=`sec`
+  PREV_MSG=$1
+}
+
+li_stop() {
+  TIME=$[`sec` - $START_TIME]
+
+  revolver stop
+
+  echo $GREEN"[+] Shell Initialization Took $YELLOW$TIME$GREEN ms."
+}
+
+li_start
+
 # Default User for hiding the username segment.
 export DEFAULT_USER=phoomparin
 
@@ -13,10 +60,12 @@ export ARCHFLAGS="-arch x86_64"
 # Path to your SSH Private Key
 export SSH_KEY_PATH="~/.ssh/rsa_id"
 
+li_mark "Retrieving Hostname"
+
 # $HOST on macOS changes with dhcp. Use ComputerName if possible.
 export SHORT_HOST=$(scutil --get ComputerName 2>/dev/null) || export SHORT_HOST=${HOST/.*/}
 
-export DISABLE_UPDATE_PROMPT=true
+li_mark "Enabling ZSH Plugin Manager"
 
 # Enable ZSH's Plugin Manager.
 export ZPLUG_HOME=/usr/local/opt/zplug
@@ -41,17 +90,35 @@ function install_docker_completion() {
   mv $COMPLETION/docker-machine.zsh-completion $COMPLETION/_docker-machine
 }
 
+# Always use en_US and UTF-8 for everything.
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
+
+# Prefer Neovim as the default editor.
+export EDITOR='nvim'
+export VISUAL='nvim'
+
+# Also Use Neovim as the React editor
+export REACT_EDITOR=nvim
+export REACT_EDITOR_CMD=/usr/local/bin/nvim
+
+# Path for pkgconfig
+export PKG_CONFIG_PATH=/usr/local/opt/openssl/lib/pkgconfig
+
+li_mark "Loading Fuzzy Finder"
+
 # Fuzzy Finder, History Menu and Emoji Menu (CTRL+S)
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+li_mark "Loading ZPlug Core Plugin"
 
 # ZPlug's plugin to let it manage itself.
 zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 
-# Libraries from oh-my-zsh
+li_mark "Loading oh-my-zsh libraries"
 
-# zplug 'lib/bzr', from:oh-my-zsh
-# zplug 'lib/clipboard', from:oh-my-zsh
-# zplug 'lib/compfix', from:oh-my-zsh
+# Libraries from oh-my-zsh
 
 zplug 'lib/nvm', from:oh-my-zsh
 zplug 'lib/completion', from:oh-my-zsh
@@ -68,6 +135,8 @@ zplug 'lib/prompt_info_function', from:oh-my-zsh
 zplug 'lib/spectrum', from:oh-my-zsh
 zplug 'lib/termsupport', from:oh-my-zsh
 
+li_mark "Loading oh-my-zsh plugins"
+
 # Plugins from oh-my-zsh
 zplug "plugins/vi-mode", from:oh-my-zsh
 zplug "plugins/autojump", from:oh-my-zsh
@@ -75,7 +144,6 @@ zplug "plugins/git", from:oh-my-zsh
 zplug "plugins/git-extras", from:oh-my-zsh
 zplug "plugins/python", from:oh-my-zsh
 zplug "plugins/pip", from:oh-my-zsh
-zplug "plugins/nyan", from:oh-my-zsh
 zplug "plugins/redis-cli", from:oh-my-zsh
 zplug "plugins/sudo", from:oh-my-zsh
 zplug "plugins/systemd", from:oh-my-zsh
@@ -85,6 +153,8 @@ zplug "plugins/urltools", from:oh-my-zsh
 zplug "plugins/web-search", from:oh-my-zsh
 zplug "plugins/yarn", from:oh-my-zsh
 
+li_mark "Loading custom shell plugins"
+
 # Custom Plugins
 zplug "b4b4r07/emoji-cli"
 zplug 'mfaerevaag/wd'
@@ -93,11 +163,15 @@ zplug "arzzen/calc.plugin.zsh"
 zplug "peterhurford/up.zsh"
 zplug "djui/alias-tips"
 
+li_mark "Loading Suggestions and Highlighting"
+
 # Awesome Plugins for Syntax Highlighting, Autosuggestions, and Shell Completions
 zplug "zsh-users/zsh-syntax-highlighting", defer:1
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-history-substring-search", defer:2
+
+li_mark "Loading Powerlevel9K Theme"
 
 # Powerlevel9k theme configuration
 POWERLEVEL9K_MODE="nerdfont-complete"
@@ -223,6 +297,8 @@ POWERLEVEL9K_BATTERY_LOW_VISUAL_IDENTIFIER_COLOR="red"
 # Load the powerlevel9k theme
 zplug "bhilburn/powerlevel9k", as:theme
 
+li_mark "Performing ZPlug Update Checks"
+
 # Install Missing Plugins
 if ! zplug check --verbose; then
   printf "Install? [y/N]: "
@@ -231,10 +307,14 @@ if ! zplug check --verbose; then
   fi
 fi
 
-# Activate ZSH Plugin Manager. (Enable --verbose for logging)
+li_mark "Activating ZPlug Plugin Manager"
+
+# Activate ZPlug Plugin Manager. (Enable --verbose for logging)
 zplug load
 
-# Vi Mode: Allow Yank-Paste with the system clipboard                                                            11:49:17
+li_mark "Enabling Clipboard in vi-mode"
+
+# Vi Mode: Allow Yank-Paste with the system clipboard                                                            11:
 
 [[ -n $DISPLAY ]] && {
   function cutbuffer() {
@@ -276,6 +356,8 @@ zplug load
   done
 }
 
+li_mark "Configuring History Substring Search"
+
 # History Substring Search
 #
 HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=true
@@ -288,11 +370,17 @@ bindkey '^[OB' history-substring-search-down
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 
+li_mark "Activating thefuck aliases"
+
 # Activate thefuck's aliases.
 eval $(thefuck --alias)
 
+li_mark "Activating hub aliases for git"
+
 # Activate hub's aliases.
 eval $(hub alias -s)
+
+li_mark "Configuring Lazy Aliases"
 
 # Julia Aliases
 alias julia='exec /Applications/Julia-0.6.app/Contents/Resources/julia/bin/julia'
@@ -368,27 +456,29 @@ alias hope="nvim ~/TODO.md"
 alias ideas="nvim ~/Notes/IDEAS.md"
 alias projects="nvim ~/Notes/IDEAS.md"
 
-# Always use en_US and UTF-8 for everything.
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
-export LANGUAGE=en_US.UTF-8
+# Start JetBrains Licensing Server (Sorry...)
+alias ils="docker run --name ils -d -p 1027:1027 phoomparin/ils:latest"
 
-# Prefer Neovim as the default editor.
-export EDITOR='nvim'
-export VISUAL='nvim'
+# --- Small Utilities ---
 
 # Initialize the Warp Drive (wd)
 wd() {
   . $ZPLUG_HOME/repos/mfaerevaag/wd/wd.sh
 }
 
-# Start JetBrains Licensing Server (Sorry...)
-alias ils="docker run --name ils -d -p 1027:1027 phoomparin/ils:latest"
+# Generate .gitignore file
+gi() {
+  curl -L -s https://www.gitignore.io/api/$@ ;
+}
 
 # Simple utility to get the unicode codepoint of a character.
 codepoint() {
   echo -n $1 | iconv -f UTF-8 -t UTF-32BE | xxd -p | sed -E 's/^0+/0x/' | xargs printf '\\U%04X\n'
 }
+
+# -----
+
+li_mark "Configuring Environment Variables"
 
 # Defines Rust's Source Path for Racer Autocompletion
 export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
@@ -420,27 +510,40 @@ export PATH="$PATH:$HOME/.mix/:$HOME/.local/bin:/Users/phoomparin/.local/bin/lun
 # More PATHs for Local System Binaries and Library Executables
 export PATH="/usr/bin:$PATH:/usr/local/sbin:/usr/libexec:$HOME/.rvm/bin:$HOME/lib/flutter/bin"
 
-# Workspace Management Commands
-source "$HOME/Scripts/workspace.sh"
-
 # prtcfg: Copies Prettier Config to Current Directory
 alias prtcfg="cp ~/Labs/Common/React/.eslintrc.json ."
 
 # duckscfg: Copies Ducks Helper to Current Directory
 alias duckscfg="cp ~/Labs/Common/React/helper.js ."
 
+li_mark "Enabling Workspace Management Commands"
+
+# Workspace Management Commands
+source "$HOME/Scripts/workspace.sh"
+
+li_mark "Loading Kubernetes Completion"
+
 # Kubernetes CLI's Shell Autocompletion.
 if [ $commands[kubectl] ]; then source <(kubectl completion zsh); fi
 
+li_mark "Loading Google Cloud Completion"
+
 # Google Cloud SDK's Shell Autocompletions.
 if [ -f "$HOME/lib/gcloud/path.zsh.inc" ]; then source "$HOME/lib/gcloud/path.zsh.inc"; fi
+
 if [ -f "$HOME/lib/gcloud/completion.zsh.inc" ]; then source "$HOME/lib/gcloud/completion.zsh.inc"; fi
 
+# li_mark "Loading Azure Completion"
+
 # Microsoft Azure CLI's Shell Autocompletions.
-autoload bashcompinit && bashcompinit && source "$HOME/lib/azure-cli/az.completion"
+# autoload bashcompinit && bashcompinit && source "$HOME/lib/azure-cli/az.completion"
+
+li_mark "Activating iTerm Integration"
 
 # Shell Integration for iTerm Terminal Emulator on macOS.
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+li_mark "Enabling Node version Manager"
 
 # Define the NVM Directory
 export NVM_DIR="$HOME/.nvm"
@@ -449,6 +552,8 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && source "$NVM_DIR/bash_completion"
 
+li_mark "Loading Kubectl Aliases"
+
 # Alias for Kubernetes
 source ~/.kubectl_aliases
 
@@ -456,15 +561,21 @@ source ~/.kubectl_aliases
 # export SDKMAN_DIR="/Users/phoomparin/.sdkman"
 # [[ -s "/Users/phoomparin/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/phoomparin/.sdkman/bin/sdkman-init.sh"
 
-export REACT_EDITOR=nvim
-export REACT_EDITOR_CMD=/usr/local/bin/nvim
-
-export PKG_CONFIG_PATH=/usr/local/opt/openssl/lib/pkgconfig
-
+# Emscripten
 # source "$HOME/lib/emsdk/emsdk_env.sh" > /dev/null
 
-# Vault
+li_mark "Loading Vault Completion"
+
+# Vault Autocompletion
 complete -o nospace -C /Users/phoomparin/bin/vault vault
+
+li_mark "Enabling Ruby Version Manager"
 
 # Configure Ruby's Version Manager (RVM)
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+li_mark "Loading DigitalOcean Completion"
+
+source <(doctl completion zsh)
+
+li_stop
