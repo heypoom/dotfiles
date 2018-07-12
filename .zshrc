@@ -64,7 +64,7 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 li_mark "Retrieving Hostname"
 
 # $HOST on macOS changes with dhcp. Use ComputerName if possible.
-export SHORT_HOST=$(scutil --get ComputerName 2>/dev/null) || export SHORT_HOST=${HOST/.*/}
+# export SHORT_HOST=$(scutil --get ComputerName 2>/dev/null) || export SHORT_HOST=${HOST/.*/}
 
 # Remove lag on vi-mode
 export KEYTIMEOUT=1
@@ -122,38 +122,38 @@ li_mark "Loading oh-my-zsh libraries"
 
 # Libraries from oh-my-zsh
 
-# zplug 'lib/completion', from:oh-my-zsh
-# zplug 'lib/correction', from:oh-my-zsh
-# zplug 'lib/diagnostics', from:oh-my-zsh
-# zplug 'lib/directories', from:oh-my-zsh
-# zplug 'lib/functions', from:oh-my-zsh
-# zplug 'lib/git', from:oh-my-zsh
-# zplug 'lib/grep', from:oh-my-zsh
-# zplug 'lib/history', from:oh-my-zsh
-# zplug 'lib/key-bindings', from:oh-my-zsh
-# zplug 'lib/misc', from:oh-my-zsh
-# zplug 'lib/prompt_info_function', from:oh-my-zsh
-# zplug 'lib/spectrum', from:oh-my-zsh
-# zplug 'lib/termsupport', from:oh-my-zsh
-# # zplug 'lib/nvm', from:oh-my-zsh
+zplug 'lib/completion', from:oh-my-zsh
+zplug 'lib/correction', from:oh-my-zsh
+zplug 'lib/diagnostics', from:oh-my-zsh
+zplug 'lib/directories', from:oh-my-zsh
+zplug 'lib/functions', from:oh-my-zsh
+zplug 'lib/git', from:oh-my-zsh
+zplug 'lib/grep', from:oh-my-zsh
+zplug 'lib/history', from:oh-my-zsh
+zplug 'lib/key-bindings', from:oh-my-zsh
+zplug 'lib/misc', from:oh-my-zsh
+zplug 'lib/prompt_info_function', from:oh-my-zsh
+zplug 'lib/spectrum', from:oh-my-zsh
+zplug 'lib/termsupport', from:oh-my-zsh
+# zplug 'lib/nvm', from:oh-my-zsh
 
 li_mark "Loading oh-my-zsh plugins"
 
 # Plugins from oh-my-zsh
-# zplug "plugins/vi-mode", from:oh-my-zsh
-# zplug "plugins/autojump", from:oh-my-zsh
+zplug "plugins/vi-mode", from:oh-my-zsh
+zplug "plugins/autojump", from:oh-my-zsh
 zplug "plugins/git", from:oh-my-zsh
 zplug "plugins/git-extras", from:oh-my-zsh
-# zplug "plugins/python", from:oh-my-zsh
-# zplug "plugins/pip", from:oh-my-zsh
-# zplug "plugins/redis-cli", from:oh-my-zsh
-# zplug "plugins/sudo", from:oh-my-zsh
-# zplug "plugins/systemd", from:oh-my-zsh
-# zplug "plugins/tmux", from:oh-my-zsh
-# zplug "plugins/tmuxinator", from:oh-my-zsh
-# zplug "plugins/urltools", from:oh-my-zsh
-# zplug "plugins/web-search", from:oh-my-zsh
-# zplug "plugins/yarn", from:oh-my-zsh
+zplug "plugins/python", from:oh-my-zsh
+zplug "plugins/pip", from:oh-my-zsh
+zplug "plugins/redis-cli", from:oh-my-zsh
+zplug "plugins/sudo", from:oh-my-zsh
+zplug "plugins/systemd", from:oh-my-zsh
+zplug "plugins/tmux", from:oh-my-zsh
+zplug "plugins/tmuxinator", from:oh-my-zsh
+zplug "plugins/urltools", from:oh-my-zsh
+zplug "plugins/web-search", from:oh-my-zsh
+zplug "plugins/yarn", from:oh-my-zsh
 
 li_mark "Loading custom shell plugins"
 
@@ -188,10 +188,6 @@ li_mark "Loading Powerlevel9K Theme"
 # Powerlevel9k theme configuration
 POWERLEVEL9K_MODE="nerdfont-complete"
 
-# Transparent Color
-CLEAR='none'
-BACKGROUND='none'
-
 # Terminal Segment
 POWERLEVEL9K_LEFT_SEGMENT_SEPARATOR=''
 POWERLEVEL9K_RIGHT_SEGMENT_SEPARATOR=''
@@ -208,27 +204,27 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(vi_mode status command_execution_time time_j
 POWERLEVEL9K_VI_INSERT_MODE_STRING="\uf040"
 POWERLEVEL9K_VI_COMMAND_MODE_STRING="\ue7c5"
 
-POWERLEVEL9K_VI_MODE_INSERT_FOREGROUND=$CLEAR
-POWERLEVEL9K_VI_MODE_INSERT_BACKGROUND=$CLEAR
-POWERLEVEL9K_VI_MODE_NORMAL_BACKGROUND=$CLEAR
+POWERLEVEL9K_VI_MODE_INSERT_FOREGROUND='none'
+POWERLEVEL9K_VI_MODE_INSERT_BACKGROUND='none'
+POWERLEVEL9K_VI_MODE_NORMAL_BACKGROUND='none'
 
 # Version Control Styling
 POWERLEVEL9K_VCS_GIT_HOOKS=(vcs-detect-changes git-untracked git-aheadbehind git-remotebranch git-stash git-tagname)
-POWERLEVEL9K_VCS_CLEAN_BACKGROUND=$CLEAR
+POWERLEVEL9K_VCS_CLEAN_BACKGROUND='none'
 POWERLEVEL9K_VCS_CLEAN_FOREGROUND="green"
-POWERLEVEL9K_VCS_MODIFIED_BACKGROUND=$CLEAR
+POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='none'
 POWERLEVEL9K_VCS_MODIFIED_FOREGROUND="red"
-POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND=$CLEAR
+POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND='none'
 POWERLEVEL9K_VCS_UNTRACKED_FOREGROUND="yellow"
 
 # Directory Styling
-POWERLEVEL9K_DIR_DEFAULT_BACKGROUND=$CLEAR
+POWERLEVEL9K_DIR_DEFAULT_BACKGROUND='none'
 POWERLEVEL9K_DIR_DEFAULT_FOREGROUND="blue"
-POWERLEVEL9K_DIR_HOME_BACKGROUND=$CLEAR
+POWERLEVEL9K_DIR_HOME_BACKGROUND='none'
 POWERLEVEL9K_DIR_HOME_FOREGROUND="white"
-POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND=$CLEAR
+POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND='none'
 POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND="white"
-POWERLEVEL9K_DIR_WRITABLE_FORBIDDEN_BACKGROUND=$CLEAR
+POWERLEVEL9K_DIR_WRITABLE_FORBIDDEN_BACKGROUND='none'
 POWERLEVEL9K_DIR_WRITABLE_FORBIDDEN_FOREGROUND="red"
 
 # Root Indicator Styling
@@ -237,24 +233,24 @@ POWERLEVEL9K_ROOT_INDICATOR_FOREGROUND="white"
 
 # Return Status Styling
 POWERLEVEL9K_OK_ICON='\uf42e'
-POWERLEVEL9K_STATUS_ERROR_BACKGROUND=$CLEAR
+POWERLEVEL9K_STATUS_ERROR_BACKGROUND='none'
 POWERLEVEL9K_STATUS_ERROR_FOREGROUND="red"
-POWERLEVEL9K_STATUS_OK_BACKGROUND=$CLEAR
+POWERLEVEL9K_STATUS_OK_BACKGROUND='none'
 POWERLEVEL9K_STATUS_OK_FOREGROUND="green"
 POWERLEVEL9K_STATUS_VERBOSE=true
 
 # Time Styling
-POWERLEVEL9K_TIME_BACKGROUND=$CLEAR
+POWERLEVEL9K_TIME_BACKGROUND='none'
 POWERLEVEL9K_TIME_FOREGROUND="white"
 POWERLEVEL9K_TIME_FORMAT="%D{%H:%M:%S}"
 
 # Execution Time Styling
-POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND=$CLEAR
+POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND='none'
 POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND='magenta'
 POWERLEVEL9K_COMMAND_EXECUTION_TIME_THRESHOLD=1
 
 # Background Jobs Styling
-POWERLEVEL9K_BACKGROUND_JOBS_BACKGROUND=$CLEAR
+POWERLEVEL9K_BACKGROUND_JOBS_BACKGROUND='none'
 POWERLEVEL9K_BACKGROUND_JOBS_FOREGROUND='blue'
 POWERLEVEL9K_BACKGROUND_JOBS_VERBOSE=true
 
@@ -269,7 +265,7 @@ POWERLEVEL9K_CHANGESET_HASH_LENGTH=6
 POWERLEVEL9K_SHOW_CHANGESET=true
 
 # OS Icon
-POWERLEVEL9K_OS_ICON_BACKGROUND=$CLEAR
+POWERLEVEL9K_OS_ICON_BACKGROUND='none'
 POWERLEVEL9K_OS_ICON_FOREGROUND="249"
 
 # Version Control Icons
@@ -280,33 +276,33 @@ POWERLEVEL9K_VCS_UNSTAGED_ICON='\u00b1'
 POWERLEVEL9K_VCS_UNTRACKED_ICON='\u25CF'
 
 # Ram Styling
-POWERLEVEL9K_RAM_BACKGROUND=$CLEAR
+POWERLEVEL9K_RAM_BACKGROUND='none'
 POWERLEVEL9K_RAM_ELEMENTS=(ram_free)
 POWERLEVEL9K_RAM_FOREGROUND="white"
 
 # CPU Load Styling
-POWERLEVEL9K_LOAD_CRITICAL_BACKGROUND=$CLEAR
+POWERLEVEL9K_LOAD_CRITICAL_BACKGROUND='none'
 POWERLEVEL9K_LOAD_CRITICAL_FOREGROUND="white"
 POWERLEVEL9K_LOAD_CRITICAL_VISUAL_IDENTIFIER_COLOR="red"
-POWERLEVEL9K_LOAD_NORMAL_BACKGROUND=$CLEAR
+POWERLEVEL9K_LOAD_NORMAL_BACKGROUND='none'
 POWERLEVEL9K_LOAD_NORMAL_FOREGROUND="white"
 POWERLEVEL9K_LOAD_NORMAL_VISUAL_IDENTIFIER_COLOR="green"
-POWERLEVEL9K_LOAD_WARNING_BACKGROUND=$CLEAR
+POWERLEVEL9K_LOAD_WARNING_BACKGROUND='none'
 POWERLEVEL9K_LOAD_WARNING_FOREGROUND="white"
 POWERLEVEL9K_LOAD_WARNING_VISUAL_IDENTIFIER_COLOR="yellow"
 
 # Battery Indicator Styling
 POWERLEVEL9K_BATTERY_VERBOSE=false
-POWERLEVEL9K_BATTERY_CHARGED_BACKGROUND=$CLEAR
+POWERLEVEL9K_BATTERY_CHARGED_BACKGROUND='none'
 POWERLEVEL9K_BATTERY_CHARGED_FOREGROUND="white"
 POWERLEVEL9K_BATTERY_CHARGED_VISUAL_IDENTIFIER_COLOR="green"
-POWERLEVEL9K_BATTERY_CHARGING_BACKGROUND=$CLEAR
+POWERLEVEL9K_BATTERY_CHARGING_BACKGROUND='none'
 POWERLEVEL9K_BATTERY_CHARGING_FOREGROUND="white"
 POWERLEVEL9K_BATTERY_CHARGING_VISUAL_IDENTIFIER_COLOR="blue"
-POWERLEVEL9K_BATTERY_DISCONNECTED_BACKGROUND=$CLEAR
+POWERLEVEL9K_BATTERY_DISCONNECTED_BACKGROUND='none'
 POWERLEVEL9K_BATTERY_DISCONNECTED_FOREGROUND="white"
 POWERLEVEL9K_BATTERY_DISCONNECTED_VISUAL_IDENTIFIER_COLOR="white"
-POWERLEVEL9K_BATTERY_LOW_BACKGROUND=$CLEAR
+POWERLEVEL9K_BATTERY_LOW_BACKGROUND='none'
 POWERLEVEL9K_BATTERY_LOW_FOREGROUND="red"
 POWERLEVEL9K_BATTERY_LOW_VISUAL_IDENTIFIER_COLOR="red"
 
