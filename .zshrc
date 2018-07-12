@@ -16,7 +16,7 @@ PREV_TIME=`sec`
 PREV_MSG="Booting up shell"
 
 # Do you want to show performance information on shell startup?
-SHOW_PERF_INFO=true
+# SHOW_PERF_INFO=false
 
 li_start() {
   revolver -s 'bouncingBall' start $GREEN"Booting up shell. Please Wait..."
@@ -25,9 +25,9 @@ li_start() {
 li_mark() {
   TIME=$[`sec` - $PREV_TIME]
 
-  revolver update $GREEN"$1... ($YELLOW$TIME$GREEN ms)"
+  revolver update $GREEN"$1... (prev: $YELLOW$TIME$GREEN ms)"
 
-  if ($SHOW_PERF_INFO) {
+  if ([ $SHOW_PERF_INFO ]) {
     echo $GREEN"[+] $PREV_MSG done in $YELLOW$TIME$GREEN ms."
   }
 
@@ -373,6 +373,7 @@ bindkey -M vicmd 'j' history-substring-search-down
 li_mark "Activating thefuck aliases"
 
 # Activate thefuck's aliases.
+# --enable-experimental-instant-mode
 eval $(thefuck --alias)
 
 li_mark "Activating hub aliases for git"
@@ -397,6 +398,9 @@ alias gitc="echo git add -A && git commit -m '$1'"
 
 # Lazy alias for clear.
 alias c="clear && tmux clear-history"
+
+# Lazy alias for thefuck
+alias f="fuck"
 
 # Lazy alias for REPLs.
 alias n="node"
@@ -545,12 +549,26 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 li_mark "Enabling Node version Manager"
 
-# Define the NVM Directory
-export NVM_DIR="$HOME/.nvm"
-
 # Enable Node's Version Manager (NVM)
-[ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && source "$NVM_DIR/bash_completion"
+# [ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"
+# [ -s "$NVM_DIR/bash_completion" ] && source "$NVM_DIR/bash_completion"
+
+# Defer initialization of nvm until nvm, node or a node-dependent command is
+# run. Ensure this block is only run once if .bashrc gets sourced multiple times
+# by checking whether __init_nvm is a function.
+if [ -s "$HOME/.nvm/nvm.sh" ] && [ ! "$(whence -w __init_nvm)" = function ]; then
+  export NVM_DIR="$HOME/.nvm"
+
+  [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
+  declare -a __node_commands=('nvm' 'node' 'npm' 'yarn' 'gulp' 'grunt' 'webpack')
+  function __init_nvm() {
+    for i in "${__node_commands[@]}"; do unalias $i; done
+    . "$NVM_DIR"/nvm.sh
+    unset __node_commands
+    unset -f __init_nvm
+  }
+  for i in "${__node_commands[@]}"; do alias $i='__init_nvm && '$i; done
+fi
 
 li_mark "Loading Kubectl Aliases"
 
