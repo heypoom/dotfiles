@@ -36,9 +36,13 @@ li_mark() {
 }
 
 li_stop() {
-  TIME=$[`sec` - $START_TIME]
+  if ([ $SHOW_PERF_INFO ]) {
+    echo $GREEN"[+] $PREV_MSG done in $YELLOW$TIME$GREEN ms."
+  }
 
   revolver stop
+
+  TIME=$[`sec` - $START_TIME]
 
   echo $GREEN"[+] Shell Initialization Took $YELLOW$TIME$GREEN ms."
 }
@@ -64,12 +68,6 @@ li_mark "Retrieving Hostname"
 
 # $HOST on macOS changes with dhcp. Use ComputerName if possible.
 export SHORT_HOST=$(scutil --get ComputerName 2>/dev/null) || export SHORT_HOST=${HOST/.*/}
-
-li_mark "Enabling ZSH Plugin Manager"
-
-# Enable ZSH's Plugin Manager.
-export ZPLUG_HOME=/usr/local/opt/zplug
-source $ZPLUG_HOME/init.zsh
 
 # Remove lag on vi-mode
 export KEYTIMEOUT=1
@@ -106,6 +104,13 @@ export REACT_EDITOR_CMD=/usr/local/bin/nvim
 # Path for pkgconfig
 export PKG_CONFIG_PATH=/usr/local/opt/openssl/lib/pkgconfig
 
+li_mark "Enabling ZSH Plugin Manager"
+
+# Enable ZSH's Plugin Manager.
+export ZPLUG_HOME=/usr/local/opt/zplug
+# 
+source $ZPLUG_HOME/init.zsh
+
 li_mark "Loading Fuzzy Finder"
 
 # Fuzzy Finder, History Menu and Emoji Menu (CTRL+S)
@@ -120,47 +125,57 @@ li_mark "Loading oh-my-zsh libraries"
 
 # Libraries from oh-my-zsh
 
-zplug 'lib/completion', from:oh-my-zsh
-zplug 'lib/correction', from:oh-my-zsh
-zplug 'lib/diagnostics', from:oh-my-zsh
-zplug 'lib/directories', from:oh-my-zsh
-zplug 'lib/functions', from:oh-my-zsh
-zplug 'lib/git', from:oh-my-zsh
-zplug 'lib/grep', from:oh-my-zsh
-zplug 'lib/history', from:oh-my-zsh
-zplug 'lib/key-bindings', from:oh-my-zsh
-zplug 'lib/misc', from:oh-my-zsh
-zplug 'lib/prompt_info_function', from:oh-my-zsh
-zplug 'lib/spectrum', from:oh-my-zsh
-zplug 'lib/termsupport', from:oh-my-zsh
+# zplug 'lib/completion', from:oh-my-zsh
+# zplug 'lib/correction', from:oh-my-zsh
+# zplug 'lib/diagnostics', from:oh-my-zsh
+# zplug 'lib/directories', from:oh-my-zsh
+# zplug 'lib/functions', from:oh-my-zsh
+# zplug 'lib/git', from:oh-my-zsh
+# zplug 'lib/grep', from:oh-my-zsh
+# zplug 'lib/history', from:oh-my-zsh
+# zplug 'lib/key-bindings', from:oh-my-zsh
+# zplug 'lib/misc', from:oh-my-zsh
+# zplug 'lib/prompt_info_function', from:oh-my-zsh
+# zplug 'lib/spectrum', from:oh-my-zsh
+# zplug 'lib/termsupport', from:oh-my-zsh
 # zplug 'lib/nvm', from:oh-my-zsh
 
 li_mark "Loading oh-my-zsh plugins"
 
 # Plugins from oh-my-zsh
-zplug "plugins/vi-mode", from:oh-my-zsh
-zplug "plugins/autojump", from:oh-my-zsh
-zplug "plugins/git", from:oh-my-zsh
-zplug "plugins/git-extras", from:oh-my-zsh
-zplug "plugins/python", from:oh-my-zsh
-zplug "plugins/pip", from:oh-my-zsh
-zplug "plugins/redis-cli", from:oh-my-zsh
-zplug "plugins/sudo", from:oh-my-zsh
-zplug "plugins/systemd", from:oh-my-zsh
-zplug "plugins/tmux", from:oh-my-zsh
-zplug "plugins/tmuxinator", from:oh-my-zsh
-zplug "plugins/urltools", from:oh-my-zsh
-zplug "plugins/web-search", from:oh-my-zsh
-zplug "plugins/yarn", from:oh-my-zsh
+# zplug "plugins/vi-mode", from:oh-my-zsh
+# zplug "plugins/autojump", from:oh-my-zsh
+# zplug "plugins/git", from:oh-my-zsh
+# zplug "plugins/git-extras", from:oh-my-zsh
+# zplug "plugins/python", from:oh-my-zsh
+# zplug "plugins/pip", from:oh-my-zsh
+# zplug "plugins/redis-cli", from:oh-my-zsh
+# zplug "plugins/sudo", from:oh-my-zsh
+# zplug "plugins/systemd", from:oh-my-zsh
+# zplug "plugins/tmux", from:oh-my-zsh
+# zplug "plugins/tmuxinator", from:oh-my-zsh
+# zplug "plugins/urltools", from:oh-my-zsh
+# zplug "plugins/web-search", from:oh-my-zsh
+# zplug "plugins/yarn", from:oh-my-zsh
 
 li_mark "Loading custom shell plugins"
 
-# Custom Plugins
+# Emoji Selection
 zplug "b4b4r07/emoji-cli"
-zplug 'mfaerevaag/wd'
+
+# Warp Drive (wd)
+zplug 'mfaerevaag/wd', as:command, use:"wd.sh", hook-load:"wd() { . $ZPLUG_HOME/mfaerevaag/wd/wd.sh }"
+
+# macOS Specific Command
 zplug "unixorn/tumult.plugin.zsh"
+
+# Simple Calculator
 zplug "arzzen/calc.plugin.zsh"
+
+# Go `up` the directory tree
 zplug "peterhurford/up.zsh"
+
+# Alias Tips
 zplug "djui/alias-tips"
 
 li_mark "Loading Suggestions and Highlighting"
@@ -375,12 +390,12 @@ li_mark "Activating thefuck aliases"
 
 # Activate thefuck's aliases.
 # --enable-experimental-instant-mode
-eval $(thefuck --alias)
+# eval $(thefuck --alias)
 
 li_mark "Activating hub aliases for git"
 
 # Activate hub's aliases.
-eval $(hub alias -s)
+# eval $(hub alias -s)
 
 li_mark "Configuring Lazy Aliases"
 
@@ -465,11 +480,6 @@ alias projects="nvim ~/Notes/IDEAS.md"
 alias ils="docker run --name ils -d -p 1027:1027 phoomparin/ils:latest"
 
 # --- Small Utilities ---
-
-# Initialize the Warp Drive (wd)
-wd() {
-  . $ZPLUG_HOME/repos/mfaerevaag/wd/wd.sh
-}
 
 # Generate .gitignore file
 gi() {
@@ -607,6 +617,6 @@ li_mark "Enabling Ruby Version Manager"
 
 li_mark "Loading DigitalOcean Completion"
 
-source <(doctl completion zsh)
+# source <(doctl completion zsh)
 
 li_stop
