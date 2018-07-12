@@ -120,7 +120,6 @@ li_mark "Loading oh-my-zsh libraries"
 
 # Libraries from oh-my-zsh
 
-zplug 'lib/nvm', from:oh-my-zsh
 zplug 'lib/completion', from:oh-my-zsh
 zplug 'lib/correction', from:oh-my-zsh
 zplug 'lib/diagnostics', from:oh-my-zsh
@@ -134,6 +133,7 @@ zplug 'lib/misc', from:oh-my-zsh
 zplug 'lib/prompt_info_function', from:oh-my-zsh
 zplug 'lib/spectrum', from:oh-my-zsh
 zplug 'lib/termsupport', from:oh-my-zsh
+# zplug 'lib/nvm', from:oh-my-zsh
 
 li_mark "Loading oh-my-zsh plugins"
 
@@ -297,15 +297,16 @@ POWERLEVEL9K_BATTERY_LOW_VISUAL_IDENTIFIER_COLOR="red"
 # Load the powerlevel9k theme
 zplug "bhilburn/powerlevel9k", as:theme
 
-li_mark "Performing ZPlug Update Checks"
+# Update and Install the Missing Plugins
+update_plugins() {
+  if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
 
-# Install Missing Plugins
-if ! zplug check --verbose; then
-  printf "Install? [y/N]: "
-  if read -q; then
-    echo; zplug install
+    if read -q; then
+      echo; zplug install
+    fi
   fi
-fi
+}
 
 li_mark "Activating ZPlug Plugin Manager"
 
@@ -527,15 +528,15 @@ source "$HOME/Scripts/workspace.sh"
 
 li_mark "Loading Kubernetes Completion"
 
-# Kubernetes CLI's Shell Autocompletion.
-if [ $commands[kubectl] ]; then source <(kubectl completion zsh); fi
+# Kubernetes Shell Autocompletion.
+# if [ $commands[kubectl] ]; then source <(kubectl completion zsh); fi
 
 li_mark "Loading Google Cloud Completion"
 
 # Google Cloud SDK's Shell Autocompletions.
-if [ -f "$HOME/lib/gcloud/path.zsh.inc" ]; then source "$HOME/lib/gcloud/path.zsh.inc"; fi
+# if [ -f "$HOME/lib/gcloud/path.zsh.inc" ]; then source "$HOME/lib/gcloud/path.zsh.inc"; fi
 
-if [ -f "$HOME/lib/gcloud/completion.zsh.inc" ]; then source "$HOME/lib/gcloud/completion.zsh.inc"; fi
+# if [ -f "$HOME/lib/gcloud/completion.zsh.inc" ]; then source "$HOME/lib/gcloud/completion.zsh.inc"; fi
 
 # li_mark "Loading Azure Completion"
 
@@ -549,24 +550,34 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 li_mark "Enabling Node version Manager"
 
-# Enable Node's Version Manager (NVM)
-# [ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"
-# [ -s "$NVM_DIR/bash_completion" ] && source "$NVM_DIR/bash_completion"
+# --- Enable Node's Version Manager (NVM) ---
 
-# Defer initialization of nvm until nvm, node or a node-dependent command is
-# run. Ensure this block is only run once if .bashrc gets sourced multiple times
+# Defer initialization of nvm until nvm, node or a node-dependent command is run.
+# Ensure this block is only run once if .bashrc gets sourced multiple times
 # by checking whether __init_nvm is a function.
+
 if [ -s "$HOME/.nvm/nvm.sh" ] && [ ! "$(whence -w __init_nvm)" = function ]; then
   export NVM_DIR="$HOME/.nvm"
 
   [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
+
   declare -a __node_commands=('nvm' 'node' 'npm' 'yarn' 'gulp' 'grunt' 'webpack')
+
   function __init_nvm() {
+    NVM_START_TIME=`sec`
+    revolver -s 'bouncingBall' start $GREEN"[!] Loading "$YELLOW"Node"$GREEN" Version Manager..."
+
     for i in "${__node_commands[@]}"; do unalias $i; done
     . "$NVM_DIR"/nvm.sh
     unset __node_commands
     unset -f __init_nvm
+
+    revolver stop
+
+    TIME=$[`sec` - $NVM_START_TIME]
+    echo $GREEN"[+] Loaded Node Version Manager. Took $YELLOW$TIME$GREEN ms." `tput sgr0`
   }
+
   for i in "${__node_commands[@]}"; do alias $i='__init_nvm && '$i; done
 fi
 
@@ -575,17 +586,19 @@ li_mark "Loading Kubectl Aliases"
 # Alias for Kubernetes
 source ~/.kubectl_aliases
 
-# Configure Sdkman
+# Enable SDKMan
+
 # export SDKMAN_DIR="/Users/phoomparin/.sdkman"
+
 # [[ -s "/Users/phoomparin/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/phoomparin/.sdkman/bin/sdkman-init.sh"
 
-# Emscripten
+# Enable Emscripten CLI
 # source "$HOME/lib/emsdk/emsdk_env.sh" > /dev/null
 
 li_mark "Loading Vault Completion"
 
 # Vault Autocompletion
-complete -o nospace -C /Users/phoomparin/bin/vault vault
+# complete -o nospace -C /Users/phoomparin/bin/vault vault
 
 li_mark "Enabling Ruby Version Manager"
 
