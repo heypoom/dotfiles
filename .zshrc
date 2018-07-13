@@ -206,7 +206,7 @@ li_mark "Loading oh-my-zsh plugins"
 
 # Plugins from oh-my-zsh
 zplug "plugins/git", from:oh-my-zsh
-# zplug "plugins/vi-mode", from:oh-my-zsh
+zplug "plugins/vi-mode", from:oh-my-zsh
 # zplug "plugins/autojump", from:oh-my-zsh
 # zplug "plugins/git-extras", from:oh-my-zsh
 # zplug "plugins/python", from:oh-my-zsh
