@@ -1,3 +1,5 @@
+# --- Loading Indicators and Performance Logging --
+
 RED="\033[1;31m"
 GREEN="\033[1;32m"
 YELLOW="\033[1;33m"
@@ -5,6 +7,27 @@ YELLOW="\033[1;33m"
 # Millisec Utility
 sec() {
   gdate +%s%3N
+}
+
+# Globals for Lazy Loading
+LAZY_NAME=""
+LAZY_START_TIME=""
+
+# Start Lazy Loading
+lazy_start() {
+  LAZY_NAME=$1
+  LAZY_START_TIME=`sec`
+
+  revolver -s 'bouncingBall' start $GREEN"Lazy Loading $YELLOW$1$GREEN..."
+}
+
+# Stop Lazy Loading
+lazy_stop() {
+  TIME=$[`sec` - $LAZY_START_TIME]
+
+  revolver stop
+
+  echo $GREEN"[+] Lazy Loaded $YELLOW$LAZY_NAME$GREEN in $YELLOW$TIME$GREEN ms." `tput sgr0`
 }
 
 # Globals for the Shell Loading Indicator
@@ -45,6 +68,48 @@ li_stop() {
 }
 
 li_start
+
+# --- Lazy Loading Utilities ---
+
+# Act as a stub to another shell function/command. When first run, it will load the actual function/command then execute it.
+# E.g. This made my zsh load 0.8 seconds faster by loading `nvm` when "nvm", "npm" or "node" is used for the first time
+# $1: space separated list of alias to release after the first load
+# $2: file to source
+# $3: name of the command to run after it's loaded
+# $4+: argv to be passed to $3
+
+function lazy_load() {
+  local lazy_name=$1
+  local load_func=${2}
+  local lazy_func="lazy_${load_func}"
+
+  shift
+  shift
+
+  for i in ${@}; do
+      alias ${i}="${lazy_func} ${i}"
+  done
+
+  eval "
+  function ${lazy_func}() {
+    lazy_start '$lazy_name'
+    unset -f ${lazy_func}
+    lazy_load_clean $@
+    eval ${load_func}
+    unset -f ${load_func}
+    lazy_stop
+    eval \$@
+  }
+  "
+}
+
+function lazy_load_clean() {
+  for i in ${@}; do
+    unalias ${i}
+  done
+}
+
+# --- Configuration ---
 
 # Default User for hiding the username segment.
 export DEFAULT_USER=phoomparin
@@ -105,7 +170,7 @@ li_mark "Enabling ZSH Plugin Manager"
 
 # Enable ZSH's Plugin Manager.
 export ZPLUG_HOME=/usr/local/opt/zplug
-# 
+
 source $ZPLUG_HOME/init.zsh
 
 li_mark "Loading Fuzzy Finder"
@@ -256,7 +321,7 @@ POWERLEVEL9K_BACKGROUND_JOBS_VERBOSE=true
 
 # Directory Truncation
 POWERLEVEL9K_DIR_OMIT_FIRST_CHARACTER=true
-POWERLEVEL9K_HOME_FOLDER_ABBREVIATION=""
+POWERLEVEL9K_HOME_FOLDER_ABBREVIATION=''
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=9
 POWERLEVEL9K_SHORTEN_STRATEGY="truncate_middle"
 
@@ -412,6 +477,15 @@ alias gitl="git log --oneline --graph --color --all --decorate | emojify"
 # Quick git commit!
 alias gitc="echo git add -A && git commit -m '$1'"
 
+# Remove unreferenced blobs from git repo
+alias git-gc-all='git -c gc.reflogExpire=0 -c gc.reflogExpireUnreachable=0 -c gc.rerereresolved=0 -c gc.rerereunresolved=0 -c gc.pruneExpire=now gc "$@"'
+
+# Delete local branch that get squash-merged to master
+alias git-delete-squashed='git checkout -q master && git remote prune origin && git for-each-ref refs/heads/ "--format=%(refname:short)" | while read branch; do mergeBase=$(git merge-base master $branch) && [[ $(git cherry master $(git commit-tree $(git rev-parse $branch^{tree}) -p $mergeBase -m _)) == "-"* ]] && git branch -D $branch; done; git prune'
+
+# Clean Up Docker Volume
+alias cleanup-docker-volume='docker volume ls -qf dangling=true | xargs docker volume rm'
+
 # Lazy alias for clear.
 alias c="clear && tmux clear-history"
 
@@ -536,22 +610,33 @@ li_mark "Enabling Workspace Management Commands"
 # Workspace Management Commands
 source "$HOME/Scripts/workspace.sh"
 
+# Kubernetes Shell Autocompletion.
 li_mark "Loading Kubernetes Completion"
 
-# Kubernetes Shell Autocompletion.
-# if [ $commands[kubectl] ]; then source <(kubectl completion zsh); fi
+init_kube() {
+  if [ $commands[kubectl] ]; then source <(kubectl completion zsh); fi
+}
 
-li_mark "Loading Google Cloud Completion"
+lazy_load "Kubernetes Completion" init_kube kubectl
 
 # Google Cloud SDK's Shell Autocompletions.
-# if [ -f "$HOME/lib/gcloud/path.zsh.inc" ]; then source "$HOME/lib/gcloud/path.zsh.inc"; fi
+li_mark "Loading Google Cloud Completion"
 
-# if [ -f "$HOME/lib/gcloud/completion.zsh.inc" ]; then source "$HOME/lib/gcloud/completion.zsh.inc"; fi
+init_gcloud() {
+  if [ -f "$HOME/lib/gcloud/path.zsh.inc" ]; then source "$HOME/lib/gcloud/path.zsh.inc"; fi
+  if [ -f "$HOME/lib/gcloud/completion.zsh.inc" ]; then source "$HOME/lib/gcloud/completion.zsh.inc"; fi
+}
 
-# li_mark "Loading Azure Completion"
+lazy_load "Google Cloud Completion" init_gcloud gcloud
 
 # Microsoft Azure CLI's Shell Autocompletions.
-# autoload bashcompinit && bashcompinit && source "$HOME/lib/azure-cli/az.completion"
+li_mark "Loading Azure Completion"
+
+init_azure() {
+  autoload bashcompinit && bashcompinit && source "$HOME/lib/azure-cli/az.completion"
+}
+
+lazy_load "Azure Completion" init_azure azure
 
 li_mark "Activating iTerm Integration"
 
@@ -560,35 +645,17 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 li_mark "Enabling Node version Manager"
 
-# --- Enable Node's Version Manager (NVM) ---
-
-# Defer initialization of nvm until nvm, node or a node-dependent command is run.
-# Ensure this block is only run once if .bashrc gets sourced multiple times
-# by checking whether __init_nvm is a function.
+# --- Lazy Load Node's Version Manager (NVM) ---
 
 if [ -s "$HOME/.nvm/nvm.sh" ] && [ ! "$(whence -w __init_nvm)" = function ]; then
   export NVM_DIR="$HOME/.nvm"
 
-  [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
-
-  declare -a __node_commands=('nvm' 'node' 'npm' 'yarn' 'gulp' 'grunt' 'webpack')
-
-  function __init_nvm() {
-    NVM_START_TIME=`sec`
-    revolver -s 'bouncingBall' start $GREEN"[!] Loading "$YELLOW"Node"$GREEN" Version Manager..."
-
-    for i in "${__node_commands[@]}"; do unalias $i; done
+  init_nvm() {
+    [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
     . "$NVM_DIR"/nvm.sh
-    unset __node_commands
-    unset -f __init_nvm
-
-    revolver stop
-
-    TIME=$[`sec` - $NVM_START_TIME]
-    echo $GREEN"[+] Loaded Node Version Manager. Took $YELLOW$TIME$GREEN ms." `tput sgr0`
   }
 
-  for i in "${__node_commands[@]}"; do alias $i='__init_nvm && '$i; done
+  lazy_load "Node Version Manager" init_nvm nvm node npm yarn gulp grunt webpack truffle npx
 fi
 
 li_mark "Loading Kubectl Aliases"
@@ -596,27 +663,47 @@ li_mark "Loading Kubectl Aliases"
 # Alias for Kubernetes
 source ~/.kubectl_aliases
 
-# Enable SDKMan
+# Lazy Load SDK Manager
+if ([[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]]) {
+  export SDKMAN_DIR="$HOME/.sdkman"
 
-# export SDKMAN_DIR="/Users/phoomparin/.sdkman"
+  init_sdkman() {
+    source "$SDKMAN_DIR/bin/sdkman-init.sh"
+  }
 
-# [[ -s "/Users/phoomparin/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/phoomparin/.sdkman/bin/sdkman-init.sh"
+  lazy_load "SDK Manager" init_sdkman sdk
+}
 
-# Enable Emscripten CLI
-# source "$HOME/lib/emsdk/emsdk_env.sh" > /dev/null
+# Lazy Load Emscripten SDK
+init_emsdk() {
+  source "$HOME/lib/emsdk/emsdk_env.sh" > /dev/null
+}
 
+lazy_load "Emscripten SDK" init_emsdk emsdk emcc
+
+# Lazy Load Vault Autocompletion
 li_mark "Loading Vault Completion"
 
-# Vault Autocompletion
-# complete -o nospace -C /Users/phoomparin/bin/vault vault
+init_vault() {
+  complete -o nospace -C /Users/phoomparin/bin/vault vault
+}
 
+lazy_load "Vault Completion" init_vault vault
+
+# Lazy Load Ruby's Version Manager (RVM)
 li_mark "Enabling Ruby Version Manager"
 
-# Configure Ruby's Version Manager (RVM)
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+init_rvm() {
+  source "$HOME/.rvm/scripts/rvm"
+}
+
+lazy_load "Ruby Version Manager" init_rvm irb rake rails
 
 li_mark "Loading DigitalOcean Completion"
 
 # source <(doctl completion zsh)
+
+export EDITOR='nvim'
+export VISUAL='nvim'
 
 li_stop
