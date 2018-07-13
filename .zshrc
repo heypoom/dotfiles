@@ -437,7 +437,7 @@ li_mark "Enabling Clipboard in vi-mode"
 li_mark "Configuring History Substring Search"
 
 # History Substring Search
-#
+
 HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=true
 # HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND=(none)
 # HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND=(none)
@@ -448,16 +448,24 @@ bindkey '^[OB' history-substring-search-down
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 
-li_mark "Activating thefuck aliases"
-
-# Activate thefuck's aliases.
-# --enable-experimental-instant-mode
-# eval $(thefuck --alias)
-
+# Activate hub's aliases.
 li_mark "Activating hub aliases for git"
 
-# Activate hub's aliases.
-# eval $(hub alias -s)
+init_hub() {
+  eval $(hub alias -s)
+}
+
+lazy_load "Hub for GitHub" init_hub hub
+
+# Activate thefuck aliases
+
+init_thefuck() {
+  eval $(thefuck --alias)
+}
+
+lazy_load "The Fuck" init_thefuck fuck
+
+# --- Lazy Aliases ---
 
 li_mark "Configuring Lazy Aliases"
 
@@ -699,11 +707,17 @@ init_rvm() {
 
 lazy_load "Ruby Version Manager" init_rvm irb rake rails
 
+# Lazy Load DigitalOcean Completion
 li_mark "Loading DigitalOcean Completion"
 
-# source <(doctl completion zsh)
+init_doctl() {
+  source <(doctl completion zsh)
+}
+
+lazy_load "DigitalOcean CLI" init_doctl doctl
 
 export EDITOR='nvim'
 export VISUAL='nvim'
 
 li_stop
+
