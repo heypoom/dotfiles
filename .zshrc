@@ -187,38 +187,38 @@ li_mark "Loading oh-my-zsh libraries"
 
 # Libraries from oh-my-zsh
 
-zplug 'lib/completion', from:oh-my-zsh
-zplug 'lib/correction', from:oh-my-zsh
-zplug 'lib/diagnostics', from:oh-my-zsh
-zplug 'lib/directories', from:oh-my-zsh
-zplug 'lib/functions', from:oh-my-zsh
-zplug 'lib/git', from:oh-my-zsh
-zplug 'lib/grep', from:oh-my-zsh
-zplug 'lib/history', from:oh-my-zsh
-zplug 'lib/key-bindings', from:oh-my-zsh
-zplug 'lib/misc', from:oh-my-zsh
-zplug 'lib/prompt_info_function', from:oh-my-zsh
-zplug 'lib/spectrum', from:oh-my-zsh
-zplug 'lib/termsupport', from:oh-my-zsh
+# zplug 'lib/completion', from:oh-my-zsh
+# zplug 'lib/correction', from:oh-my-zsh
+# zplug 'lib/diagnostics', from:oh-my-zsh
+# zplug 'lib/directories', from:oh-my-zsh
+# zplug 'lib/functions', from:oh-my-zsh
+# zplug 'lib/git', from:oh-my-zsh
+# zplug 'lib/grep', from:oh-my-zsh
+# zplug 'lib/history', from:oh-my-zsh
+# zplug 'lib/key-bindings', from:oh-my-zsh
+# zplug 'lib/misc', from:oh-my-zsh
+# zplug 'lib/prompt_info_function', from:oh-my-zsh
+# zplug 'lib/spectrum', from:oh-my-zsh
+# zplug 'lib/termsupport', from:oh-my-zsh
 # zplug 'lib/nvm', from:oh-my-zsh
 
 li_mark "Loading oh-my-zsh plugins"
 
 # Plugins from oh-my-zsh
-zplug "plugins/vi-mode", from:oh-my-zsh
-zplug "plugins/autojump", from:oh-my-zsh
 zplug "plugins/git", from:oh-my-zsh
-zplug "plugins/git-extras", from:oh-my-zsh
-zplug "plugins/python", from:oh-my-zsh
-zplug "plugins/pip", from:oh-my-zsh
-zplug "plugins/redis-cli", from:oh-my-zsh
-zplug "plugins/sudo", from:oh-my-zsh
-zplug "plugins/systemd", from:oh-my-zsh
-zplug "plugins/tmux", from:oh-my-zsh
-zplug "plugins/tmuxinator", from:oh-my-zsh
-zplug "plugins/urltools", from:oh-my-zsh
-zplug "plugins/web-search", from:oh-my-zsh
-zplug "plugins/yarn", from:oh-my-zsh
+# zplug "plugins/vi-mode", from:oh-my-zsh
+# zplug "plugins/autojump", from:oh-my-zsh
+# zplug "plugins/git-extras", from:oh-my-zsh
+# zplug "plugins/python", from:oh-my-zsh
+# zplug "plugins/pip", from:oh-my-zsh
+# zplug "plugins/redis-cli", from:oh-my-zsh
+# zplug "plugins/sudo", from:oh-my-zsh
+# zplug "plugins/systemd", from:oh-my-zsh
+# zplug "plugins/tmux", from:oh-my-zsh
+# zplug "plugins/tmuxinator", from:oh-my-zsh
+# zplug "plugins/urltools", from:oh-my-zsh
+# zplug "plugins/web-search", from:oh-my-zsh
+# zplug "plugins/yarn", from:oh-my-zsh
 
 li_mark "Loading custom shell plugins"
 
