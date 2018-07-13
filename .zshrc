@@ -137,9 +137,6 @@ export KEYTIMEOUT=1
 # Important: Allow changing dir without typing cd
 setopt autocd
 
-# Path to Shell Completions for Docker, Compose, Machine and wd.
-fpath=(~/.zsh/completion $ZPLUG_HOME/repos/mfaerevaag/wd/wd.sh $fpath)
-
 # Install Docker Completion
 function install_docker_completion() {
   COMPLETION=~/.zsh/completion
@@ -166,89 +163,11 @@ export REACT_EDITOR_CMD=/usr/local/bin/nvim
 # Path for pkgconfig
 export PKG_CONFIG_PATH=/usr/local/opt/openssl/lib/pkgconfig
 
-li_mark "Enabling ZSH Plugin Manager"
+# Configure Shell Completion Path
+fpath=(~/.zsh/completion $ZGEN_HOME/mfaerevaag/wd-master/wd.sh $fpath)
 
-# Enable ZSH's Plugin Manager.
-export ZPLUG_HOME=/usr/local/opt/zplug
-
-source $ZPLUG_HOME/init.zsh
-
-li_mark "Loading Fuzzy Finder"
-
-# Fuzzy Finder, History Menu and Emoji Menu (CTRL+S)
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-li_mark "Loading ZPlug Core Plugin"
-
-# ZPlug's plugin to let it manage itself.
-zplug 'zplug/zplug', hook-build:'zplug --self-manage'
-
-li_mark "Loading oh-my-zsh libraries"
-
-# Libraries from oh-my-zsh
-
-# zplug 'lib/completion', from:oh-my-zsh
-# zplug 'lib/correction', from:oh-my-zsh
-# zplug 'lib/diagnostics', from:oh-my-zsh
-# zplug 'lib/directories', from:oh-my-zsh
-# zplug 'lib/functions', from:oh-my-zsh
-# zplug 'lib/git', from:oh-my-zsh
-# zplug 'lib/grep', from:oh-my-zsh
-# zplug 'lib/history', from:oh-my-zsh
-# zplug 'lib/key-bindings', from:oh-my-zsh
-# zplug 'lib/misc', from:oh-my-zsh
-# zplug 'lib/prompt_info_function', from:oh-my-zsh
-# zplug 'lib/spectrum', from:oh-my-zsh
-# zplug 'lib/termsupport', from:oh-my-zsh
-# zplug 'lib/nvm', from:oh-my-zsh
-
-li_mark "Loading oh-my-zsh plugins"
-
-# Plugins from oh-my-zsh
-zplug "plugins/git", from:oh-my-zsh
-zplug "plugins/vi-mode", from:oh-my-zsh
-# zplug "plugins/autojump", from:oh-my-zsh
-# zplug "plugins/git-extras", from:oh-my-zsh
-# zplug "plugins/python", from:oh-my-zsh
-# zplug "plugins/pip", from:oh-my-zsh
-# zplug "plugins/redis-cli", from:oh-my-zsh
-# zplug "plugins/sudo", from:oh-my-zsh
-# zplug "plugins/systemd", from:oh-my-zsh
-# zplug "plugins/tmux", from:oh-my-zsh
-# zplug "plugins/tmuxinator", from:oh-my-zsh
-# zplug "plugins/urltools", from:oh-my-zsh
-# zplug "plugins/web-search", from:oh-my-zsh
-# zplug "plugins/yarn", from:oh-my-zsh
-
-li_mark "Loading custom shell plugins"
-
-# Emoji Selection
-zplug "b4b4r07/emoji-cli"
-
-# Warp Drive (wd)
-zplug 'mfaerevaag/wd', as:command, use:"wd.sh", hook-load:"wd() { . $ZPLUG_REPOS/mfaerevaag/wd/wd.sh }"
-
-# macOS Specific Command
-zplug "unixorn/tumult.plugin.zsh"
-
-# Simple Calculator
-zplug "arzzen/calc.plugin.zsh"
-
-# Go `up` the directory tree
-zplug "peterhurford/up.zsh"
-
-# Alias Tips
-zplug "djui/alias-tips"
-
-li_mark "Loading Suggestions and Highlighting"
-
-# Awesome Plugins for Syntax Highlighting, Autosuggestions, and Shell Completions
-zplug "zsh-users/zsh-syntax-highlighting", defer:1
-zplug "zsh-users/zsh-autosuggestions"
-zplug "zsh-users/zsh-completions"
-zplug "zsh-users/zsh-history-substring-search", defer:2
-
-li_mark "Loading Powerlevel9K Theme"
+# --- Powerlevel9K Theming ---
+li_mark "Customizing Powerlevel9K Theme"
 
 # Powerlevel9k theme configuration
 POWERLEVEL9K_MODE="nerdfont-complete"
@@ -371,28 +290,71 @@ POWERLEVEL9K_BATTERY_LOW_BACKGROUND='none'
 POWERLEVEL9K_BATTERY_LOW_FOREGROUND="red"
 POWERLEVEL9K_BATTERY_LOW_VISUAL_IDENTIFIER_COLOR="red"
 
-# Load the powerlevel9k theme
-zplug "bhilburn/powerlevel9k", as:theme
+# --- Plugin Management ---
+li_mark "Enabling ZGen Plugin Manager"
 
-# Update and Install the Missing Plugins
-update_plugins() {
-  if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
+# Enable ZGen Plugin Manager.
+export ZGEN_HOME="$HOME/.zgen"
 
-    if read -q; then
-      echo; zplug install
-    fi
-  fi
+source "$ZGEN_HOME/zgen.zsh"
+
+# Configure Plugins to be saved to ZGen
+configure_plugins() {
+  # oh-my-zsh plugins
+  # zgen oh-my-zsh
+  # zgen oh-my-zsh plugins/git
+  # zgen oh-my-zsh plugins/vi-mode
+
+  # Emoji Selection
+  zgen load "b4b4r07/emoji-cli"
+
+  # Warp Drive (wd)
+  # , as:command, use:"wd.sh", hook-load:"wd() { . $zgen load_REPOS/mfaerevaag/wd/wd.sh }"
+  # zgen load 'mfaerevaag/wd'
+
+  # macOS Specific Command
+  zgen load "unixorn/tumult.plugin.zsh"
+
+  # Simple Calculator
+  # zgen load "arzzen/calc.plugin.zsh"
+
+  # Go `up` the directory tree
+  zgen load "peterhurford/up.zsh"
+
+  # Alias Tips
+  zgen load "djui/alias-tips"
+
+  # Awesome Plugins for Syntax Highlighting, Autosuggestions, and Shell Completions
+  zgen load "zsh-users/zsh-syntax-highlighting"
+  zgen load "zsh-users/zsh-autosuggestions"
+  zgen load "zsh-users/zsh-completions"
+  zgen load "zsh-users/zsh-history-substring-search"
+    
+  # Load the powerlevel9k theme
+  zgen load bhilburn/powerlevel9k powerlevel9k
+
+  # generate the init script from plugins above
+  zgen save
 }
 
-li_mark "Activating ZPlug Plugin Manager"
+# Manually Rebuild ZGen Init Script
+zgen_rebuild() {
+  configure_plugins
+  zgen update
+}
 
-# Activate ZPlug Plugin Manager. (Enable --verbose for logging)
-zplug load
+# if the init scipt doesn't exist
+if ! zgen saved; then
+  configure_plugins
+fi
 
-li_mark "Enabling Clipboard in vi-mode"
+# Fuzzy Finder, History Menu and Emoji Menu (CTRL+S)
+li_mark "Loading FZF Fuzzy Finder"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Vi Mode: Allow Yank-Paste with the system clipboard                                                            11:
+li_mark "Enabling Clipboard in vi-mode"
 
 [[ -n $DISPLAY ]] && {
   function cutbuffer() {
@@ -720,4 +682,3 @@ export EDITOR='nvim'
 export VISUAL='nvim'
 
 li_stop
-
