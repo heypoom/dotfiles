@@ -9,27 +9,6 @@ sec() {
   gdate +%s%3N
 }
 
-# Globals for Lazy Loading
-LAZY_NAME=""
-LAZY_START_TIME=""
-
-# Start Lazy Loading
-lazy_start() {
-  LAZY_NAME=$1
-  LAZY_START_TIME=`sec`
-
-  revolver -s 'bouncingBall' start $GREEN"Lazy Loading $YELLOW$1$GREEN..."
-}
-
-# Stop Lazy Loading
-lazy_stop() {
-  TIME=$[`sec` - $LAZY_START_TIME]
-
-  revolver stop
-
-  echo $GREEN"[+] Lazy Loaded $YELLOW$LAZY_NAME$GREEN in $YELLOW$TIME$GREEN ms." `tput sgr0`
-}
-
 # Globals for the Shell Loading Indicator
 START_TIME=`sec`
 PREV_TIME=`sec`
@@ -69,7 +48,28 @@ li_stop() {
 
 li_start
 
-# --- Lazy Loading Utilities ---
+# --- Lazy Loading Module ---
+
+# Globals for Lazy Loading
+LAZY_NAME=""
+LAZY_START_TIME=""
+
+# Start Lazy Loading
+lazy_start() {
+  LAZY_NAME=$1
+  LAZY_START_TIME=`sec`
+
+  revolver -s 'bouncingBall' start $GREEN"Lazy Loading $YELLOW$1$GREEN..."
+}
+
+# Stop Lazy Loading
+lazy_stop() {
+  TIME=$[`sec` - $LAZY_START_TIME]
+
+  revolver stop
+
+  echo $GREEN"[+] Lazy Loaded $YELLOW$LAZY_NAME$GREEN in $YELLOW$TIME$GREEN ms." `tput sgr0`
+}
 
 # Act as a stub to another shell function/command. When first run, it will load the actual function/command then execute it.
 # E.g. This made my zsh load 0.8 seconds faster by loading `nvm` when "nvm", "npm" or "node" is used for the first time
@@ -109,7 +109,7 @@ function lazy_load_clean() {
   done
 }
 
-# --- Configuration ---
+# --- Environment Configuration ---
 
 # Default User for hiding the username segment.
 export DEFAULT_USER=phoomparin
