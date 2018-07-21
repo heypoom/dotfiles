@@ -163,8 +163,11 @@ export REACT_EDITOR_CMD=/usr/local/bin/nvim
 # Path for pkgconfig
 export PKG_CONFIG_PATH=/usr/local/opt/openssl/lib/pkgconfig
 
+# Enable ZGen Plugin Manager.
+export ZGEN_HOME="$HOME/.zgen"
+
 # Configure Shell Completion Path
-fpath=(~/.zsh/completion $ZGEN_HOME/mfaerevaag/wd-master/wd.sh $fpath)
+fpath=(~/.zsh/completion $ZGEN_HOME/mfaerevaag/wd-master $fpath)
 
 # --- Powerlevel9K Theming ---
 li_mark "Customizing Powerlevel9K Theme"
@@ -293,24 +296,20 @@ POWERLEVEL9K_BATTERY_LOW_VISUAL_IDENTIFIER_COLOR="red"
 # --- Plugin Management ---
 li_mark "Enabling ZGen Plugin Manager"
 
-# Enable ZGen Plugin Manager.
-export ZGEN_HOME="$HOME/.zgen"
-
 source "$ZGEN_HOME/zgen.zsh"
 
 # Configure Plugins to be saved to ZGen
 configure_plugins() {
   # oh-my-zsh plugins
-  # zgen oh-my-zsh
-  # zgen oh-my-zsh plugins/git
-  # zgen oh-my-zsh plugins/vi-mode
+  zgen oh-my-zsh
+  zgen oh-my-zsh plugins/git
+  zgen oh-my-zsh plugins/vi-mode
 
   # Emoji Selection
   zgen load "b4b4r07/emoji-cli"
 
   # Warp Drive (wd)
-  # , as:command, use:"wd.sh", hook-load:"wd() { . $zgen load_REPOS/mfaerevaag/wd/wd.sh }"
-  # zgen load 'mfaerevaag/wd'
+  # zgen load "mfaerevaag/wd"
 
   # macOS Specific Command
   zgen load "unixorn/tumult.plugin.zsh"
@@ -325,9 +324,9 @@ configure_plugins() {
   zgen load "djui/alias-tips"
 
   # Awesome Plugins for Syntax Highlighting, Autosuggestions, and Shell Completions
-  zgen load "zsh-users/zsh-syntax-highlighting"
   zgen load "zsh-users/zsh-autosuggestions"
   zgen load "zsh-users/zsh-completions"
+  zgen load "zsh-users/zsh-syntax-highlighting"
   zgen load "zsh-users/zsh-history-substring-search"
     
   # Load the powerlevel9k theme
@@ -337,10 +336,8 @@ configure_plugins() {
   zgen save
 }
 
-# Manually Rebuild ZGen Init Script
-zgen_rebuild() {
-  configure_plugins
-  zgen update
+wd() {
+  . /Users/phoomparin/bin/wd/wd.sh
 }
 
 # if the init scipt doesn't exist
@@ -557,6 +554,9 @@ export GRADLE_OPTS="-Dorg.gradle.daemon=true"
 # Define Go's $GOPATH
 export GOPATH="$HOME/Go"
 
+# Define PyEnv's Root
+export PYENV_ROOT="$HOME/.pyenv"
+
 # PATH Environment Variables for Local Binaries, Go Binaries and Android Platform Tools.
 export PATH="/opt/local/bin:/opt/local/sbin:$HOME/bin:/usr/local/bin:$PATH:$GOPATH/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$HOME/.fastlane/bin"
 
@@ -567,7 +567,7 @@ export PATH="$PATH:$HOME/lib/gcloud/bin:$HOME/.config/yarn/global/node_modules/.
 export PATH="$PATH:$HOME/.mix/:$HOME/.local/bin:/Users/phoomparin/.local/bin/luna-studio"
 
 # More PATHs for Local System Binaries and Library Executables
-export PATH="/usr/bin:$PATH:/usr/local/sbin:/usr/libexec:$HOME/.rvm/bin:$HOME/lib/flutter/bin"
+export PATH="/usr/bin:$PATH:/usr/local/sbin:/usr/libexec:$HOME/.rvm/bin:$PYENV_ROOT/bin:$HOME/lib/flutter/bin"
 
 # prtcfg: Copies Prettier Config to Current Directory
 alias prtcfg="cp ~/Labs/Common/React/.eslintrc.json ."
@@ -633,10 +633,10 @@ li_mark "Loading Kubectl Aliases"
 # Alias for Kubernetes
 source ~/.kubectl_aliases
 
+export SDKMAN_DIR="$HOME/.sdkman"
+
 # Lazy Load SDK Manager
 if ([[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]]) {
-  export SDKMAN_DIR="$HOME/.sdkman"
-
   init_sdkman() {
     source "$SDKMAN_DIR/bin/sdkman-init.sh"
   }
@@ -667,7 +667,16 @@ init_rvm() {
   source "$HOME/.rvm/scripts/rvm"
 }
 
-lazy_load "Ruby Version Manager" init_rvm irb rake rails
+lazy_load "Ruby Version Manager" init_rvm irb rake rails pry
+
+# Lazy Load PyEnv'a Completion
+li_mark "Enabling PyEnv Completion"
+
+init_pyenv() {
+  eval "$(pyenv init -)"
+}
+
+lazy_load "PyEnv" init_pyenv pyenv
 
 # Lazy Load DigitalOcean Completion
 li_mark "Loading DigitalOcean Completion"
@@ -682,3 +691,4 @@ export EDITOR='nvim'
 export VISUAL='nvim'
 
 li_stop
+
