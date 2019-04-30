@@ -7,9 +7,6 @@ tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "homebrew/services"
 
-# ASDF - Version Manager
-brew "asdf"
-
 # ------------------
 #
 #    Applications
@@ -68,14 +65,19 @@ cask "genymotion"
 # Drive File Stream
 cask "google-drive-file-stream"
 
+# IINA (Media Player)
+cask "iina"
+
+# Little Snitch (firewall)
+cask "little-snitch"
+cask "micro-snitch"
+
 # Grammarly
 cask "grammarly"
 
 # GTKWave
 cask "gtkwave"
 
-# IINA (Media Player)
-cask "iina"
 
 # Karabiner Elements
 cask "karabiner-elements"
@@ -94,7 +96,7 @@ cask "smcfancontrol"
 
 # Tor Browser
 brew "tor", restart_service: true
-cask "torbrowser"
+cask "tor-browser"
 
 # Vagrant & Vagrant Manager
 cask "vagrant"
