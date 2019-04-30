@@ -5,16 +5,130 @@ tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
-tap "homebrew/php"
-tap "homebrew/science"
 tap "homebrew/services"
+
+# ASDF - Version Manager
+brew "asdf"
+
+# ------------------
+#
+#    Applications
+#
+# ------------------
+
+# Terminal
+cask "kitty"
+cask "alacritty"
+cask "iterm2"
+
+# OSXFuse and XQuartz
+cask "osxfuse"
+cask "xquartz"
+brew "ext4fuse"
+
+# Setapp
+cask "setapp"
+
+# Google Chrome
+cask "google-chrome"
+
+# 1Password
+cask "1password"
+# cask "1password-cli"
+
+# Dropbox
+cask "dropbox"
+
+# Alfred
+cask "alfred"
+
+# Atom Beta
+cask "atom-beta"
+
+# Charles
+cask "charles"
+
+# Docker
+cask "docker"
+
+# Fastlane
+cask "fastlane"
+
+# FIJI
+cask "fiji"
+
+# FuraCode, FuraMono & Hack
+cask "font-firacode-nerd-font"
+cask "font-firamono-nerd-font"
+cask "font-hack-nerd-font"
+
+# Genymotion
+cask "genymotion"
+
+# Drive File Stream
+cask "google-drive-file-stream"
+
+# Grammarly
+cask "grammarly"
+
+# GTKWave
+cask "gtkwave"
+
+# IINA (Media Player)
+cask "iina"
+
+# Karabiner Elements
+cask "karabiner-elements"
+
+# Keybase
+cask "keybase"
+
+# Netron (ML Model Explorer)
+cask "netron"
+
+# Sketch!
+cask "sketch"
+
+# SMC Fan Control
+cask "smcfancontrol"
+
+# Tor Browser
+brew "tor", restart_service: true
+cask "torbrowser"
+
+# Vagrant & Vagrant Manager
+cask "vagrant"
+cask "vagrant-manager"
+
+# VirtualBox
+cask "virtualbox"
+
+# Visual Studio Code
+cask "visual-studio-code"
+
+# Wireshark
+cask "wireshark"
+
+# Zenmap (Nmap GUI)
+cask "zenmap"
+
+# Alfred x Numi Integration
+tap "danielbayley/alfred"
+cask "danielbayley/alfred/alfred-numi"
 
 # Shells
 brew "bash"
 brew "bash-completion@2"
 brew "fish"
-brew "zsh", args: ["without-etcdir"]
+brew "zsh"
 brew "xonsh"
+
+# Java and Java 8
+cask "java"
+
+# Java 8
+tap "homebrew/cask-versions"
+cask "homebrew/cask-versions/java8"
 
 # Revolver (Shell Loader)
 tap "molovo/revolver"
@@ -138,11 +252,11 @@ brew "telnet"
 # GNU Utils
 brew "gnupg"
 brew "gnutls"
-brew "gnu-indent", args: ["with-default-names"]
+brew "gnu-indent"
 brew "gnu-sed"
 brew "gnu-tar"
-brew "gnu-which", args: ["with-default-names"]
-brew "findutils", args: ["with-default-names"]
+brew "gnu-which"
+brew "findutils"
 brew "diffutils"
 brew "gawk"
 
@@ -216,10 +330,6 @@ brew "pgcli"
 # PlatformIO
 brew "platformio"
 
-# Java and Java 8
-cask "java"
-cask "java8"
-
 # Clojure Things
 brew "clojure"
 brew "leiningen"
@@ -227,11 +337,6 @@ brew "planck"
 
 # Kotlin
 brew "kotlin"
-
-# OSXFuse and XQuartz
-cask "osxfuse"
-cask "xquartz"
-brew "ext4fuse"
 
 # Emojify
 brew "emojify"
@@ -314,92 +419,3 @@ brew "elixir"
 
 # AVR Tools
 # brew "avrdude"
-
-# ------------------
-#
-#    Applications
-#
-# ------------------
-
-# 1Password
-cask "1password-cli"
-
-# Alfred
-cask "alfred"
-
-# Atom Beta
-cask "atom-beta"
-
-# Charles
-cask "charles"
-
-# Docker
-cask "docker"
-
-# Fastlane
-cask "fastlane"
-
-# FIJI
-cask "fiji"
-
-# FuraCode, FuraMono & Hack
-cask "font-firacode-nerd-font"
-cask "font-firamono-nerd-font"
-cask "font-hack-nerd-font"
-
-# Genymotion
-cask "genymotion"
-
-# Drive File Stream
-cask "google-drive-file-stream"
-
-# Grammarly
-cask "grammarly"
-
-# GTKWave
-cask "gtkwave"
-
-# IINA (Media Player)
-cask "iina"
-
-# Karabiner Elements
-cask "karabiner-elements"
-
-# Keybase
-cask "keybase"
-
-# Kitty (Terminal)
-cask "kitty"
-
-# Netron (ML Model Explorer)
-cask "netron"
-
-# Sketch!
-cask "sketch"
-
-# SMC Fan Control
-cask "smcfancontrol"
-
-# Tor Browser
-brew "tor", restart_service: true
-cask "torbrowser"
-
-# Vagrant & Vagrant Manager
-cask "vagrant"
-cask "vagrant-manager"
-
-# VirtualBox
-# cask "virtualbox"
-
-# Visual Studio Code
-cask "visual-studio-code"
-
-# Wireshark
-cask "wireshark"
-
-# Zenmap (Nmap GUI)
-cask "zenmap"
-
-# Alfred x Numi Integration
-tap "danielbayley/alfred"
-cask "danielbayley/alfred/alfred-numi"

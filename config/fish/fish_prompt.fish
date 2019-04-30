@@ -1,0 +1,1 @@
+/Users/phoomparin/.omf/themes/bobthefish/fish_prompt.fish

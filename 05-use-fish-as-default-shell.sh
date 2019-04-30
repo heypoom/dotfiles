@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 FISH_PATH="/usr/local/bin/fish"
 
 function append_fish_to_shell_list() {
