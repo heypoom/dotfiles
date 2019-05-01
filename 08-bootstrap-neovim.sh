@@ -9,3 +9,7 @@ nvim --headless +PlugInstall +qa
 
 # Build CoC
 nvim --headless "+call coc#util#build()" +qa
+
+# Install neovim dependencies
+pip3 install neovim
+yarn global add vim-node-rpc

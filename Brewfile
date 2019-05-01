@@ -400,6 +400,8 @@ brew "haskell-stack"
 brew "ios-deploy"
 brew "ideviceinstaller"
 brew "libimobiledevice", args: ["HEAD"]
+brew "cocoapods"
+brew "usbmuxd", args: ["HEAD"], link: true
 
 # GraphViz
 brew "graphviz"
