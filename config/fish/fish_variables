@@ -11,7 +11,7 @@ SETUVAR --export GO111MODULE:auto
 SETUVAR --export GOPATH:/Users/phoomparin/Go
 SETUVAR --export GRADLE_OPTS:\x2dDorg\x2egradle\x2edaemon\x3dtrue
 SETUVAR --export GVM_ROOT:/Users/phoomparin/\x2egvm
-SETUVAR --export JAVA_HOME:/Library/Java/JavaVirtualMachines/jdk1\x2e8\x2e0_202\x2ejdk/Contents/Home/
+SETUVAR --export JAVA_HOME:/Users/phoomparin/\x2easdf/installs/java/oracle\x2d8\x2e141
 SETUVAR --export LANG:en_US\x2eUTF\x2d8
 SETUVAR --export LANGUAGE:en_US\x2eUTF\x2d8
 SETUVAR --export LC_ALL:en_US\x2eUTF\x2d8

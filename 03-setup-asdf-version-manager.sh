@@ -23,9 +23,6 @@ function setup_asdf {
     echo "Adding Plugin: $plugin"
     asdf plugin-add $plugin
   done
-
-  # Import Node.js team's OpenPGP keys to main keyring
-  bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
 }
 
 setup_asdf

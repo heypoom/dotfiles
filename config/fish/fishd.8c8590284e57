@@ -11,7 +11,6 @@ SET_EXPORT GO111MODULE:auto
 SET_EXPORT GOPATH:/Users/phoomparin/Go
 SET_EXPORT GRADLE_OPTS:\x2dDorg\x2egradle\x2edaemon\x3dtrue
 SET_EXPORT GVM_ROOT:/Users/phoomparin/\x2egvm
-SET_EXPORT JAVA_HOME:/Library/Java/JavaVirtualMachines/jdk1\x2e8\x2e0_162\x2ejdk/Contents/Home
 SET_EXPORT LANG:en_US\x2eUTF\x2d8
 SET_EXPORT LANGUAGE:en_US\x2eUTF\x2d8
 SET_EXPORT LC_ALL:en_US\x2eUTF\x2d8

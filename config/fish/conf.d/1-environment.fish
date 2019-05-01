@@ -20,9 +20,6 @@ if not set -q envs_initialized
     set -Ux REACT_EDITOR nvim
     set -Ux REACT_EDITOR_CMD '/usr/local/bin/nvim'
 
-    # Define Java's SDK Path
-    set -Ux JAVA_HOME "/Library/Java/JavaVirtualMachines/jdk1.8.0_202.jdk/Contents/Home/"
-
     # Define Android's SDK Path
     set -Ux ANDROID_HOME "$HOME/Library/Android/sdk"
 

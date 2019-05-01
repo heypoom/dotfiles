@@ -134,13 +134,6 @@ brew "fish"
 brew "zsh"
 brew "xonsh"
 
-# Java and Java 8
-cask "java"
-
-# Java 8
-tap "homebrew/cask-versions"
-cask "homebrew/cask-versions/java8"
-
 # Revolver (Shell Loader)
 tap "molovo/revolver"
 brew "molovo/revolver/revolver"
