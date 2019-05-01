@@ -1,4 +1,4 @@
-Host bitbucket-omnivirt
+Host git.omnivirt.com
   HostName bitbucket.org
   User git
   IdentityFile ~/.ssh/omnivirt

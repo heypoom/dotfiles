@@ -4,3 +4,6 @@
 mkdir -p ~/Labs
 mkdir -p ~/Projects
 mkdir -p ~/Workspaces/OmniVirt
+
+# Setup symlinks
+ln -s ~/Workspaces/OmniVirt ~
