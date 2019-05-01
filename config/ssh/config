@@ -1,0 +1,14 @@
+Host bitbucket-omnivirt
+  HostName bitbucket.org
+  User git
+  IdentityFile ~/.ssh/omnivirt
+  AddKeysToAgent yes
+  IdentitiesOnly yes
+
+Host *
+  IdentityFile ~/.ssh/id_rsa
+  AddKeysToAgent yes
+
+Host phoom
+  HostName node.phoom.in.th
+  User phoomparin

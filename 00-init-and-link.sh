@@ -14,3 +14,7 @@ link_file "git/gitconfig" ~/.gitconfig
 # Link .tmux.conf
 link_file "tmux/tmux.conf" ~/.tmux.conf
 link_file "tmux/tmuxline.tmux.conf" ~/.tmuxline.tmux.conf
+
+# Link SSH config
+mkdir -p ~/.ssh
+link_file "ssh/config" ~/.ssh/config

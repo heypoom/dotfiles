@@ -9,5 +9,5 @@ function link_config {
 function link_file {
    echo "Linking config/$1 -> $2"
 
-   ln -s $(pwd)/config/$1/ $2
+   ln -s $(pwd)/config/$1 $2
 }
