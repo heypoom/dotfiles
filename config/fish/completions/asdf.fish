@@ -1,3 +1,7 @@
+set -x asdf_data_dir (
+  if test -n "$ASDF_DATA_DIR"; echo $ASDF_DATA_DIR;
+  else; echo $HOME/.asdf; end)
+
 function __fish_asdf_needs_command
     set -l cmd (commandline -opc)
     if test (count $cmd) -eq 1
@@ -42,6 +46,14 @@ function __fish_asdf_plugin_list_all
     asdf plugin-list-all 2> /dev/null
 end
 
+function __fish_asdf_list_shims
+    ls $asdf_data_dir/shims
+end
+
+# update
+complete -f -c asdf -n '__fish_asdf_needs_command' -a update -d "Update asdf"
+complete -f -c asdf -n '__fish_asdf_using_command update; and __fish_asdf_arg_number 2' -l "head" -d "Updates to master HEAD"
+
 # plugin-add completion
 complete -f -c asdf -n '__fish_asdf_needs_command' -a plugin-add -d "Add git repo as plugin"
 complete -f -c asdf -n '__fish_asdf_using_command plugin-add; and __fish_asdf_arg_number 2' -a '(__fish_asdf_plugin_list_all | grep -v \'*\' | awk \'{ print $1 }\')'
@@ -82,6 +94,10 @@ complete -f -c asdf -n '__fish_asdf_needs_command' -a where -d "Display install 
 complete -f -c asdf -n '__fish_asdf_using_command where; and __fish_asdf_arg_number 2' -a '(__fish_asdf_plugin_list)'
 complete -f -c asdf -n '__fish_asdf_using_command where; and __fish_asdf_arg_number 3' -a '(__fish_asdf_list_versions (__fish_asdf_arg_at 3))'
 
+# which completion
+complete -f -c asdf -n '__fish_asdf_needs_command' -a which -d "Display executable path for a command"
+complete -f -c asdf -n '__fish_asdf_using_command which; and __fish_asdf_arg_number 2' -a '(__fish_asdf_list_shims)'
+
 # list completion
 complete -f -c asdf -n '__fish_asdf_needs_command' -a list -d "List installed versions of a package"
 complete -f -c asdf -n '__fish_asdf_using_command list; and __fish_asdf_arg_number 2' -a '(__fish_asdf_plugin_list)'
@@ -104,6 +120,11 @@ complete -f -c asdf -n '__fish_asdf_using_command local; and test (count (comman
 complete -f -c asdf -n '__fish_asdf_needs_command' -a global -d "Set global version for a plugin"
 complete -f -c asdf -n '__fish_asdf_using_command global; and __fish_asdf_arg_number 2' -a '(__fish_asdf_plugin_list)'
 complete -f -c asdf -n '__fish_asdf_using_command global; and test (count (commandline -opc)) -gt 2' -a '(__fish_asdf_list_versions (__fish_asdf_arg_at 3)) system'
+
+# shell completion
+complete -f -c asdf -n '__fish_asdf_needs_command' -a shell -d "Set version for a plugin in current shell session"
+complete -f -c asdf -n '__fish_asdf_using_command shell; and __fish_asdf_arg_number 2' -a '(__fish_asdf_plugin_list)'
+complete -f -c asdf -n '__fish_asdf_using_command shell; and test (count (commandline -opc)) -gt 2' -a '(__fish_asdf_list_versions (__fish_asdf_arg_at 3)) system'
 
 # misc
 complete -f -c asdf -n '__fish_asdf_needs_command' -l "help" -d "Displays help"

@@ -1,12 +1,6 @@
 # Enable vi key bindings
 fish_vi_key_bindings
 
-# Python Environment Manager
-# pyenv init - | source
-
-# Golang Environment Manager
-# goenv init - | source
-
 # Google Cloud
 # if test ~/lib/gcloud/path.fish.inc
 #     source ~/lib/gcloud/path.fish.inc
@@ -18,6 +12,10 @@ end
 
 if type -q kitty
   kitty + complete setup fish | source
+end
+
+if test -e ~/.asdf/asdf.fish
+  source ~/.asdf/asdf.fish
 end
 
 # Path for pkgconfig

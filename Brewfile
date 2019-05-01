@@ -48,6 +48,12 @@ cask "charles"
 # Docker
 cask "docker"
 
+# Yarn
+brew "yarn", ignore_dependencies: true
+
+# JetBrains Toolbox
+cask "jetbrains-toolbox"
+
 # Fastlane
 cask "fastlane"
 
