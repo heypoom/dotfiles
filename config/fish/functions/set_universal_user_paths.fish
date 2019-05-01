@@ -36,5 +36,7 @@ function set_universal_user_paths
 
     add_path $HOME/.platformio/penv/bin
 
-    add_path $HOME/lib/emsdk/emscripten/1.37.34
+    add_path $HOME/lib/emsdk/emscripten/1.37.34/bin
+
+    add_path /usr/local/opt/m4/bin
 end

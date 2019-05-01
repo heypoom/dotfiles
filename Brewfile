@@ -60,6 +60,9 @@ cask "fastlane"
 # FIJI
 cask "fiji"
 
+# Google Cloud SDK
+cask "google-cloud-sdk"
+
 # FuraCode, FuraMono & Hack
 cask "font-firacode-nerd-font"
 cask "font-firamono-nerd-font"
@@ -245,7 +248,6 @@ brew "wget"
 brew "curl"
 
 # Ruby Tools
-brew "rbenv"
 brew "rbspy"
 
 # Python Tools

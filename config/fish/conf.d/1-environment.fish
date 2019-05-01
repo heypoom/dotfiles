@@ -57,4 +57,6 @@ if not set -q envs_initialized
     set -Ux NODE_PATH "$HOME/.config/yarn/global/node_modules:/usr/local/lib/node_modules"
 
     set -Ux cabal_helper_libexecdir "$HOME/bin"
+
+    set -Ux BAT_THEME "Sublime Snazzy"
 end
