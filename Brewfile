@@ -392,6 +392,10 @@ brew "libtool"
 brew "libevent"
 brew "libyaml"
 
+# Flutter
+tap "MiderWong/homebrew-flutter"
+brew "MiderWong/homebrew-flutter/flutter"
+
 # OpenCV
 brew "opencv@2"
 
