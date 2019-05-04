@@ -399,7 +399,7 @@ tap "MiderWong/homebrew-flutter"
 brew "MiderWong/homebrew-flutter/flutter"
 
 # OpenCV
-brew "opencv@2"
+brew "opencv"
 
 # Haskell
 brew "haskell-stack"
