@@ -42,6 +42,15 @@ cask "alfred"
 # Atom Beta
 cask "atom-beta"
 
+# Dash
+cask "dash"
+
+# Airtable
+cask "airtable"
+
+# Notion
+cask "notion"
+
 # Charles
 cask "charles"
 

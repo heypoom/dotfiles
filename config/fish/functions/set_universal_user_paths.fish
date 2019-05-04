@@ -39,4 +39,6 @@ function set_universal_user_paths
     add_path $HOME/lib/emsdk/emscripten/1.37.34/bin
 
     add_path /usr/local/opt/m4/bin
+
+		add_path $HOME/.stack/programs/x86_64-osx/ghc-8.6.4/bin
 end

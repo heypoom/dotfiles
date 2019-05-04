@@ -1,0 +1,13 @@
+let mapleader = ' '
+
+set surround
+set multiple-cursors
+
+set number
+set incsearch hlsearch
+set ignorecase smartcase
+set clipboard=unnamed
+set scrolloff=5
+set showmode
+
+
