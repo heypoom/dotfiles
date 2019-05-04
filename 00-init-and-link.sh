@@ -15,6 +15,9 @@ link_file "git/gitconfig" ~/.gitconfig
 link_file "tmux/tmux.conf" ~/.tmux.conf
 link_file "tmux/tmuxline.tmux.conf" ~/.tmuxline.tmux.conf
 
+# Link .ideavimrc
+link_file "ideavim/ideavimrc" ~/.ideavimrc
+
 # Link SSH config
 mkdir -p ~/.ssh
 link_file "ssh/config" ~/.ssh/config
