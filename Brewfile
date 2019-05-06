@@ -63,6 +63,19 @@ brew "yarn", ignore_dependencies: true
 # JetBrains Toolbox
 cask "jetbrains-toolbox"
 
+cask "telegram"
+cask "discord""
+
+cask "macs-fan-control"
+cask "supercollider"
+cask "handbrake"
+cask "duet"
+cask "insomnia"
+cask "veracrypt"
+cask "daisydisk"
+cask "transmission"
+cask "logitech-presentation"
+
 # Fastlane
 cask "fastlane"
 
