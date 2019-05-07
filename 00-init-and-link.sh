@@ -8,6 +8,9 @@ do
   link_config $config
 done
 
+# Link ASDF .tool-versions
+link_file "asdf/tool-versions" ~/.tool-versions
+
 # Link .gitconfig
 link_file "git/gitconfig" ~/.gitconfig
 
