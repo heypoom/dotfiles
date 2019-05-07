@@ -1,0 +1,9 @@
+e scr.utf8 = true
+e asm.pseudo = true
+e scr.color = 3
+e bin.demangle = true
+e asm.demangle = true
+e asm.relsub = true
+
+eco dracula
+

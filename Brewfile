@@ -75,6 +75,7 @@ cask "veracrypt"
 cask "daisydisk"
 cask "transmission"
 cask "logitech-presentation"
+cask "vox"
 
 # Fastlane
 cask "fastlane"

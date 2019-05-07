@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ClojureProjectResolveSettings">
+    <currentScheme>IDE</currentScheme>
+  </component>
+  <component name="JavaScriptSettings">
+    <option name="languageLevel" value="ES6" />
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_12" default="false" project-jdk-name="Lua 5.3.5_1" project-jdk-type="Lua SDK" />
+  <component name="jetbrains.communicator.idea.IdProvider" IDEtalkID="83D26143ABD178F618C82EA8D12B596A" />
+</project>

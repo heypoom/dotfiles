@@ -201,3 +201,6 @@ typings/
 .dynamodb/
 
 # End of https://www.gitignore.io/api/macos,node,intellij
+
+config/pgcli/log
+config/pgcli/history

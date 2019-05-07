@@ -3,7 +3,7 @@
 source "utilities.sh"
 
 # Link configurations
-for config in kitty fish nvim omf
+for config in kitty fish nvim omf alacritty thefuck
 do
   link_config $config
 done
