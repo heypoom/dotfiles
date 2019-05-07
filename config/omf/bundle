@@ -17,7 +17,6 @@ package license
 package proxy
 package python
 package sudope
-package thefuck
 package tiny
 package wd
 theme bobthefish
