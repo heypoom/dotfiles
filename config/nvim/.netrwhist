@@ -1,7 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
-let g:netrw_dirhist_1='/Users/phoomparin/dotfiles/config/nvim'
-let g:netrw_dirhist_2='/Users/phoomparin/dotfiles/config/fish'
-let g:netrw_dirhist_3='/Users/phoomparin/.wakatime'
-let g:netrw_dirhist_4='/Users/phoomparin/Labs/auto-lab/pyatom'
-let g:netrw_dirhist_5='/Users/phoomparin/dotfiles/config/hammerspoon/Spoons/ReloadConfiguration.spoon'

@@ -204,3 +204,4 @@ typings/
 
 config/pgcli/log
 config/pgcli/history
+config/nvim/.netrwhist
