@@ -10,7 +10,6 @@ package gi
 package git-flow
 package grc
 package https://github.com/jethrokuan/fzf
-package https://github.com/jethrokuan/z
 package https://github.com/jhillyerd/plugin-git
 package hub
 package license
@@ -19,6 +18,7 @@ package python
 package sudope
 package tiny
 package wd
+package z
 theme bobthefish
 theme clearance
 theme default
