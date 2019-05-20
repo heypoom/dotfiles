@@ -205,3 +205,4 @@ typings/
 config/pgcli/log
 config/pgcli/history
 config/nvim/.netrwhist
+config/ipython/profile_default/db/dhist
