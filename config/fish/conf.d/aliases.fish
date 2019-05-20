@@ -50,9 +50,6 @@ alias hope 'nvim ~/TODO.md'
 alias ideas "nvim ~/Notes/IDEAS.md"
 alias projects "nvim ~/Notes/IDEAS.md"
 
-# Julia Aliases
-alias julia 'exec /Applications/Julia-0.6.app/Contents/Resources/julia/bin/julia'
-
 # Beautiful git commit tree.
 alias gitl "git log --oneline --graph --color --all --decorate | emojify"
 
