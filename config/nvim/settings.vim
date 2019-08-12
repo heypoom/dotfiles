@@ -1,20 +1,3 @@
-"" Airline Status Line Configuration
-
-" Enable Powerline Fonts
-let g:airline_powerline_fonts=1
-
-" Use wombat theme
-let g:airline_theme='wombat'
-
-" Enable tabline extension
-let g:airline#extensions#tabline#enabled=1
-
-" Hide tabline when only one buffer is open
-let g:airline#extensions#tabline#buffer_min_count=2
-
-" Enable ALE linter extension
-let g:airline#extensions#ale#enabled=1
-
 "" Polyglot Configuration
 
 " Disable these languages.

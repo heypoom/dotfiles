@@ -5,11 +5,11 @@
 " Load the plugins.
 source ~/.config/nvim/plugins.vim
 
-" Enable Dracula Override
-source ~/.config/nvim/dracula.vim
-
 " Load the neovim preferences.
 source ~/.config/nvim/preferences.vim
+
+" Load lightline.vim settings.
+source ~/.config/nvim/lightline.vim
 
 " Load the plugin settings.
 source ~/.config/nvim/settings.vim
@@ -17,5 +17,9 @@ source ~/.config/nvim/settings.vim
 " Load the keymaps.
 source ~/.config/nvim/keymap.vim
 
-" Load the color scheme for the integrated terminal.
+" Load the color scheme for the integrated nvim terminal.
 source ~/.config/nvim/colors.vim
+
+" Custom commands and useful functions
+source ~/.config/nvim/functions.vim
+

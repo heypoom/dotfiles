@@ -74,11 +74,8 @@ Plug 'yuratomo/w3m.vim'
 " Auto-save the file! no need to :w (like vscode)
 " Plug '907th/vim-auto-save'
 
-" Super fancy status line with airline!
-Plug 'vim-airline/vim-airline'
-
-" Themes for the airline status lien.
-Plug 'vim-airline/vim-airline-themes'
+" Use lightline to make startup time faster
+Plug 'itchyny/lightline.vim'
 
 " Tab Expansions for HTML files.
 Plug 'mattn/emmet-vim'
@@ -181,7 +178,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'rizzatti/dash.vim'
 
 " Track your coding time with WakaTime
-Plug 'wakatime/vim-wakatime'
+" Plug 'wakatime/vim-wakatime'
 
 " Ranger Integration (:Ranger)
 Plug 'francoiscabrol/ranger.vim'
@@ -208,7 +205,7 @@ Plug 'mxw/vim-jsx'
 " Plug 'mhartington/nvim-typescript'
 
 " Conquer of Completion: Intellisense Engine
-Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
+" Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
 
 " Markdown Language Support
 Plug 'plasticboy/vim-markdown'
