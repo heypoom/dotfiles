@@ -1,6 +1,9 @@
-"" Polyglot Configuration
+"" Vim Move Configuration
 
-let g:move_key_modifier = 'A'
+" Use C-k and C-j to move text up and down
+let g:move_key_modifier = 'C'
+
+"" Polyglot Configuration
 
 " Disable these languages.
 " We use vim-go, vim-javascript and vim-markdown instead.
