@@ -30,7 +30,6 @@ if not set -q abbrs_initialized
 
     abbr -a u docker-compose up
 
-    abbr -a v nvim
     abbr -a vi nvim
     abbr -a vim nvim
     abbr -a vis 'sudo nvim'

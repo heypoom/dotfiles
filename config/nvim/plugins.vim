@@ -239,13 +239,16 @@ Plug 'sheerun/vim-polyglot'
 " Plug 'zchee/deoplete-clang'
 
 " Deoplete Completion for Rust using Racer
-Plug 'racer-rust/vim-racer'
+" Plug 'racer-rust/vim-racer'
 
 " Add file icons to other plugins (e.g. NERDTree, Airline)
 " Always load this as the very last one.
 Plug 'ryanoasis/vim-devicons'
 
-"  TidalCycles for Live Coding Music!
-Plug 'tidalcycles/vim-tidal'
+" TidalCycles for Live Coding Music!
+" Plug 'tidalcycles/vim-tidal'
+
+" Racket Support
+" Plug 'wlangstroth/vim-racket'
 
 call plug#end()

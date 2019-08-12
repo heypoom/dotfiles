@@ -5,7 +5,6 @@ package battery
 package cd
 package expand
 package foreign-env
-package gh
 package gi
 package git-flow
 package grc
@@ -18,8 +17,13 @@ package python
 package sudope
 package tiny
 package wd
-package z
 theme bobthefish
 theme clearance
+theme cyan
 theme default
+theme fishbone
+theme lambda
+theme mokou
 theme pure
+theme sushi
+theme tomita

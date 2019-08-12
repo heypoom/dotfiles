@@ -72,6 +72,7 @@ SETUVAR _fish_abbr_gfft:git\x20flow\x20feature\x20track
 SETUVAR _fish_abbr_gfh:git\x20flow\x20hotfix
 SETUVAR _fish_abbr_gfhs:git\x20flow\x20hotfix\x20start
 SETUVAR _fish_abbr_gfht:git\x20flow\x20hotfix\x20track
+SETUVAR _fish_abbr_gfm:git\x20fetch\x20origin\x20master\x20\x2d\x2dprune\x3b\x20and\x20git\x20merge\x20FETCH_HEAD
 SETUVAR _fish_abbr_gfo:git\x20fetch\x20origin
 SETUVAR _fish_abbr_gfp:git\x20flow\x20publish
 SETUVAR _fish_abbr_gfr:git\x20flow\x20release
@@ -92,6 +93,8 @@ SETUVAR _fish_abbr_gm:git\x20merge
 SETUVAR _fish_abbr_gmt:git\x20mergetool\x20\x2d\x2dno\x2dprompt
 SETUVAR _fish_abbr_gp:git\x20push
 SETUVAR _fish_abbr_gp_21_:git\x20push\x20\x2d\x2dforce\x2dwith\x2dlease
+SETUVAR _fish_abbr_gpv:git\x20push\x20\x2d\x2dno\x2dverify
+SETUVAR _fish_abbr_gpv_21_:git\x20push\x20\x2d\x2dno\x2dverify\x20\x2d\x2dforce\x2dwith\x2dlease
 SETUVAR _fish_abbr_gr:git\x20remote\x20\x2dvv
 SETUVAR _fish_abbr_grb:git\x20rebase
 SETUVAR _fish_abbr_grba:git\x20rebase\x20\x2d\x2dabort
@@ -138,7 +141,6 @@ SETUVAR _fish_abbr_t:tmux
 SETUVAR _fish_abbr_ta:tmux\x20a\x20\x2dt
 SETUVAR _fish_abbr_tns:tmux\x20new\x20\x2ds
 SETUVAR _fish_abbr_u:docker\x2dcompose\x20up
-SETUVAR _fish_abbr_v:nvim
 SETUVAR _fish_abbr_vi:nvim
 SETUVAR _fish_abbr_vim:nvim
 SETUVAR _fish_abbr_vimcfg:nvim\x20/Users/phoomparin/\x2econfig/nvim/

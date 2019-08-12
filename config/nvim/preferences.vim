@@ -4,6 +4,9 @@ let g:enable_bold_font = 1
 " Use the dracula color scheme.
 color dracula
 
+" Make the editor background transparent.
+hi! Normal ctermbg=NONE guibg=NONE
+
 " Set the shell to use in !command and nvim integrated terminal.
 set shell=/bin/sh
 

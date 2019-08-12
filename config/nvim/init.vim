@@ -5,6 +5,9 @@
 " Load the plugins.
 source ~/.config/nvim/plugins.vim
 
+" Enable Dracula Override
+source ~/.config/nvim/dracula.vim
+
 " Load the neovim preferences.
 source ~/.config/nvim/preferences.vim
 
