@@ -1,5 +1,9 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
+"""
+""" Essential Plugins.
+"""
+
 " Dracula Theme.
 Plug 'dracula/vim', { 'as': 'dracula' }
 
@@ -35,8 +39,24 @@ Plug 'scrooloose/nerdtree-git-plugin', {'on': 'NERDTreeToggle'}
 " Always load this as the very last one!
 Plug 'ryanoasis/vim-devicons'
 
+"""
+""" Nice-to-have Plugins
+"""
+
 " Press <tab> to expand snippets, integrates with deoplete.
 Plug 'SirVer/ultisnips'
+
+" Ranger Integration (:Ranger)
+Plug 'francoiscabrol/ranger.vim'
+
+" Required by Ranger
+Plug 'rbgrouleff/bclose.vim'
+
+" Tig Integration (:Tig)
+Plug 'codeindulgence/vim-tig'
+
+" Distraction-free writing with :Goyo
+Plug 'junegunn/goyo.vim'
 
 " " Auto-close HTML <tags>.
 " Plug 'alvan/vim-closetag'
@@ -140,9 +160,6 @@ Plug 'SirVer/ultisnips'
 " " Align text with :Tabular
 " Plug 'godlygeek/tabular'
 " 
-" " Distraction-free writing with :Goyo
-" Plug 'junegunn/goyo.vim'
-" 
 " " Class outline viewer with :TagbarToggle
 " " Depend on universal-ctags to be installed.
 " Plug 'majutsushi/tagbar'
@@ -187,14 +204,6 @@ Plug 'SirVer/ultisnips'
 " " Track your coding time with WakaTime
 " " Plug 'wakatime/vim-wakatime'
 " 
-" " Ranger Integration (:Ranger)
-" Plug 'francoiscabrol/ranger.vim'
-" 
-" " Required by Ranger
-" Plug 'rbgrouleff/bclose.vim'
-" 
-" " Tig Integration (:Tig)
-" Plug 'codeindulgence/vim-tig'
 " 
 " "" Language Support
 " 

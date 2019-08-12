@@ -72,7 +72,7 @@ function! s:goyo_enter()
   set scrolloff=999
 
   " Disable auto-completion.
-  call deoplete#disable()
+	" call deoplete#disable()
 endfunction
 
 " What to do when we leave the distraction-free mode?
@@ -90,7 +90,7 @@ function! s:goyo_leave()
   set scrolloff=5
 
   " Re-enable auto-completion.
-  call deoplete#enable()
+  " call deoplete#enable()
 endfunction
 
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
