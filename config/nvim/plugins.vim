@@ -10,7 +10,7 @@ Plug 'matze/vim-move'
 Plug 'alvan/vim-closetag'
 
 " Easymotion
-Plug 'easymotion/vim-easymotion'
+" Plug 'easymotion/vim-easymotion'
 
 " Fuzzy Finder
 " :Rg for ripgrep, :Ag for silver searcher
