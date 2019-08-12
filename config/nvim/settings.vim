@@ -1,5 +1,7 @@
 "" Polyglot Configuration
 
+let g:move_key_modifier = 'A'
+
 " Disable these languages.
 " We use vim-go, vim-javascript and vim-markdown instead.
 let g:polyglot_disabled = ['go', 'javascript', 'jsx', 'markdown']

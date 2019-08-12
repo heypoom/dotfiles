@@ -31,21 +31,21 @@ function! LightlineFugitive()
   return ''
 endfunction
 
-let s:black    = g:dracula#palette.bg
-
-" let s:gray     = g:dracula#palette.selection
-let s:gray     = g:dracula#palette.bg
-
-let s:white    = g:dracula#palette.fg
-let s:darkblue = g:dracula#palette.comment
-let s:cyan     = g:dracula#palette.cyan
-let s:green    = g:dracula#palette.green
-let s:orange   = g:dracula#palette.orange
-let s:purple   = g:dracula#palette.purple
-let s:red      = g:dracula#palette.red
-let s:yellow   = g:dracula#palette.yellow
-
 if exists('g:lightline')
+  let s:black    = g:dracula#palette.bg
+
+  " let s:gray     = g:dracula#palette.selection
+  let s:gray     = g:dracula#palette.bg
+
+  let s:white    = g:dracula#palette.fg
+  let s:darkblue = g:dracula#palette.comment
+  let s:cyan     = g:dracula#palette.cyan
+  let s:green    = g:dracula#palette.green
+  let s:orange   = g:dracula#palette.orange
+  let s:purple   = g:dracula#palette.purple
+  let s:red      = g:dracula#palette.red
+  let s:yellow   = g:dracula#palette.yellow
+
   let s:p = {'normal': {}, 'inactive': {}, 'insert': {}, 'replace': {}, 'visual': {}, 'tabline': {}}
   let s:p.normal.left = [ [ s:black, s:purple ], [ s:cyan, s:gray ] ]
   let s:p.normal.right = [ [ s:black, s:purple ], [ s:white, s:darkblue ] ]
