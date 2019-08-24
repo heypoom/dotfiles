@@ -21,6 +21,9 @@ Plug 'junegunn/fzf.vim'
 " Surround (cs'" to change surrounding '' to "")
 Plug 'tpope/vim-surround'
 
+" Colorize all the color codes! (e.g. #2d2d30, rgb(5, 5, 5))
+Plug 'lilydjwg/colorizer'
+
 " Tab Expansions for HTML files.
 Plug 'mattn/emmet-vim'
 
@@ -38,6 +41,11 @@ Plug 'scrooloose/nerdtree-git-plugin', {'on': 'NERDTreeToggle'}
 " Add file icons to other plugins (e.g. NERDTree, Airline)
 " Always load this as the very last one!
 Plug 'ryanoasis/vim-devicons'
+
+" " Seamless switching between nvim splits and tmux panes!
+" " Use ctrl + {hjkl} to move between them as usual.
+" " Note: conflicts with vim-move.
+" Plug 'christoomey/vim-tmux-navigator'
 
 """
 """ Nice-to-have Plugins
@@ -62,7 +70,7 @@ Plug 'junegunn/goyo.vim'
 " Plug 'alvan/vim-closetag'
 " 
 " " Easymotion
-" " Plug 'easymotion/vim-easymotion'
+Plug 'easymotion/vim-easymotion'
 " 
 " " Git Gutter (Show git diffs in left gutter)
 " Plug 'airblade/vim-gitgutter'
@@ -125,11 +133,6 @@ Plug 'junegunn/goyo.vim'
 " " Interact with Tmux using :VimuxRunCommand and :VimuxRunLastCommand
 " Plug 'benmills/vimux'
 " 
-" " Seamless switching between nvim splits and tmux panes!
-" " Use ctrl + {hjkl} to move between them as usual.
-" " Note: might conflict with vim-move...
-" Plug 'christoomey/vim-tmux-navigator'
-" 
 " " Restore FocusGained and FocusLost events in tmux
 " Plug 'tmux-plugins/vim-tmux-focus-events'
 " 
@@ -150,9 +153,6 @@ Plug 'junegunn/goyo.vim'
 " " Use relative line numbers in active pane, absolute in others.
 " " Read more: https://jeffkreeftmeijer.com/vim-number/#automatic-toggling-between-line-number-modes
 " Plug 'jeffkreeftmeijer/vim-numbertoggle'
-" 
-" " Colorize all the color codes! (e.g. #2d2d30, rgb(5, 5, 5))
-" Plug 'lilydjwg/colorizer'
 " 
 " " Syntax highlighting and more for nginx.conf files
 " Plug 'chr4/nginx.vim'
@@ -223,7 +223,7 @@ Plug 'junegunn/goyo.vim'
 " " Conquer of Completion: Intellisense Engine
 " " Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
 " 
-" " Markdown Language Support
+" Markdown Language Support
 " Plug 'plasticboy/vim-markdown'
 " 
 " " Rust Language Support

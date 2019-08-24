@@ -1,8 +1,3 @@
-"" Vim Move Configuration
-
-" Use C-k and C-j to move text up and down
-let g:move_key_modifier = 'C'
-
 "" Polyglot Configuration
 
 " Disable these languages.
@@ -73,6 +68,15 @@ function! s:goyo_enter()
 
   " Disable auto-completion.
 	" call deoplete#disable()
+
+	" Configure Theming.
+	color dracula
+	hi! Normal ctermbg=NONE guibg=NONE
+	hi! NonText cterm=NONE ctermbg=NONE gui=NONE guibg=NONE
+	hi! StatusLine cterm=NONE ctermbg=NONE ctermfg=NONE gui=NONE guibg=NONE guifg=NONE
+	hi! StatusLineNC ctermbg=NONE guibg=NONE
+	hi! VertSplit ctermbg=NONE guibg=NONE
+	hi! CursorLine cterm=NONE guibg=NONE
 endfunction
 
 " What to do when we leave the distraction-free mode?
@@ -88,6 +92,9 @@ function! s:goyo_leave()
 
   " Set the scrolling offset to 5
   set scrolloff=5
+
+	" Set the background to transparent.
+	hi! Normal ctermbg=NONE guibg=NONE
 
   " Re-enable auto-completion.
   " call deoplete#enable()
@@ -119,7 +126,7 @@ let g:prettier#config#config_precedence = 'prefer-file'
 let g:prettier#autoformat = 0
 
 " Enable async auto-format for these type of files.
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql PrettierAsync
+" autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql PrettierAsync
 
 "" Deoplete auto-completion configuration
 
@@ -224,6 +231,9 @@ let g:vim_markdown_autowrite = 1
 
 " Follow the named #anchor
 let g:vim_markdown_follow_anchor = 1
+
+" Enable Fenced Code Blocks
+let g:markdown_fenced_languages = ['css', 'javascript', 'typescript']
 
 "" Asynchronous Lint Engine (ALE) Settings
 

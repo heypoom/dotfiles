@@ -8,9 +8,10 @@ end
 
 set ASDF_DIR $HOME/.asdf
 
-add_path $ASDF_DIR
-add_path $ASDF_DIR/bin
-add_path $ASDF_DIR/shims
+# Activate asdf
+# if test -e $ASDF_DIR/asdf.fish
+#   source $ASDF_DIR/asdf.fish
+# end
 
 add_path $HOME/Scripts
 
@@ -46,6 +47,10 @@ add_path $HOME/lib/emsdk/emscripten/1.37.34/bin
 add_path /usr/local/opt/m4/bin
 
 add_path $HOME/.stack/programs/x86_64-osx/ghc-8.6.4/bin
+
+add_path $ASDF_DIR
+add_path $ASDF_DIR/bin
+add_path $ASDF_DIR/shims
 
 # Use gnu manuals too
 set -gx MANPATH /usr/local/opt/coreutils/libexec/gnuman/ /usr/share/man $MANPATH

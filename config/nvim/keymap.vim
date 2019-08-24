@@ -11,8 +11,7 @@ nnoremap <esc><esc> :nohlsearch<cr>
 " Y = yank line
 nnoremap Y y$
 
-" Enable going up and down on wrapped lines.
-" This makes navigating long lines (e.g. minified code) much easier.
+" Enable going up and down on wrapped lines.  This makes navigating long lines (e.g. minified code) much easier.
 " Read more: http://tilvim.com/2013/05/16/visual-lines.html
 nnoremap <expr> j v:count ? 'j' : 'gj'
 nnoremap <expr> k v:count ? 'k' : 'gk'
@@ -45,9 +44,9 @@ nnoremap <leader>b :Buffers<cr>
 
 "" Move
 
-" Use alt as the move key modifier.
+" Use C-k and C-j to move text up and down
 " The control key conflicts with tmux seamless pane switch.
-" let g:move_key_modifier = 'A'
+let g:move_key_modifier = 'C'
 
 "" Multiple Cursors
 
@@ -99,8 +98,8 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 "" Goyo distraction-free writing
 
-" space + z = toggle distraction-free writing mode
-nnoremap <silent> <leader>z :Goyo<cr>
+" space + g = toggle distraction-free writing mode
+nnoremap <silent> <leader>g :Goyo<cr>
 
 map <leader>m :call VimuxInterruptRunner() <bar> :call VimuxRunCommand("make")<CR>
 
