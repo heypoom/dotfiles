@@ -71,7 +71,10 @@ Plug 'junegunn/goyo.vim'
 " 
 " " Easymotion
 Plug 'easymotion/vim-easymotion'
-" 
+
+" Tabnine (ML-based autocompletion)
+Plug 'zxqfl/tabnine-vim'
+
 " " Git Gutter (Show git diffs in left gutter)
 " Plug 'airblade/vim-gitgutter'
 " 
