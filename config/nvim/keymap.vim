@@ -2,6 +2,9 @@
 " It is much easier to push now~
 let g:mapleader = "\<space>"
 
+" Allow autocomplete to work much better
+inoremap <expr> <CR> pumvisible() ? "\<C-Y>" : "\<CR>"
+
 " control + s = reload configuration
 nnoremap <leader>s :so $MYVIMRC<cr>
 
