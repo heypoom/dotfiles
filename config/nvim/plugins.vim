@@ -234,7 +234,7 @@ Plug 'easymotion/vim-easymotion'
 " Plug 'rust-lang/rust.vim'
 " 
 " " Language Packs! (syntax highlighting, indentation, etc.)
-" Plug 'sheerun/vim-polyglot'
+Plug 'sheerun/vim-polyglot'
 " 
 " "" Deoplete auto-completion support
 " "" Read more: https://github.com/Shougo/deoplete.nvim/wiki/Completion-Sources
