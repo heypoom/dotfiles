@@ -15,6 +15,7 @@ if not set -q envs_initialized
     # Prefer Neovim as the default editor.
     set -Ux EDITOR nvim
     set -Ux VISUAL nvim
+    set -Ux FILTER fzf
 
     # Also Use Neovim as the React editor
     set -Ux REACT_EDITOR nvim

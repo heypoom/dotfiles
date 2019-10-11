@@ -4,6 +4,7 @@ package bass
 package battery
 package cd
 package expand
+package fasd
 package foreign-env
 package gi
 package git-flow
