@@ -11,7 +11,7 @@ alias klipse 'clojure -A:klipse'
 
 # Alias for kitty
 alias imgcat "kitty +kitten icat"
-alias d "kitty +kitten diff"
+alias kdiff "kitty +kitten diff"
 alias clipboard "kitty +kitten clipboard"
 
 # Alias for Things 3
