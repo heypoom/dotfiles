@@ -31,6 +31,7 @@ SETUVAR Z_EXCLUDE:/Users/phoomparin
 SETUVAR __fish_init_2_39_8:\x0ad
 SETUVAR __fish_init_2_3_0:\x0ad
 SETUVAR __fish_init_3_x:\x0ad
+SETUVAR _fish_abbr_fu:fuck
 SETUVAR _fish_abbr_g:git
 SETUVAR _fish_abbr_ga:git\x20add
 SETUVAR _fish_abbr_gaa:git\x20add\x20\x2d\x2dall
