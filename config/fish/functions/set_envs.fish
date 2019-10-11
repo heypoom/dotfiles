@@ -53,4 +53,4 @@ set -Ux NODE_PATH "$HOME/.config/yarn/global/node_modules:/usr/local/lib/node_mo
 
 set -Ux cabal_helper_libexecdir "$HOME/bin"
 
-set -Ux BAT_THEME "Sublime Snazzy"
+set -Ux BAT_THEME "Dracula"

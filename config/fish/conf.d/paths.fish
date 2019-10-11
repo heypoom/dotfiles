@@ -1,7 +1,3 @@
-function add_universal_path
-    set -U fish_user_paths $fish_user_paths $argv
-end
-
 function add_path
     set -gx PATH $argv $PATH
 end
