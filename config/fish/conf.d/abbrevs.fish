@@ -5,6 +5,7 @@ if not set -q abbrs_initialized
 
     abbr -a gdh 'git diff HEAD'
     abbr -a n node
+    abbr -a fu fuck
 
     abbr -a h 'howdoi -c'
     abbr -a k kubectl
