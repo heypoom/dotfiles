@@ -17,7 +17,7 @@ set -l white  ffffff
 set -g fish_color_normal         $white
 
 # the color for commands
-set -g fish_color_command        $white
+set -g fish_color_command        --bold $white
 
 # fish_color_autosuggestion, the color used for autosuggestions
 set -g fish_color_autosuggestion $selection
@@ -26,37 +26,41 @@ set -g fish_color_autosuggestion $selection
 set -g fish_color_comment        $comment
 
 # fish_color_end, the color for process separators like ';' and '&'
-set -g fish_color_end            $white
+set -g fish_color_end            $pink
 
 # fish_color_error, the color used to highlight potential errors
-set -g fish_color_error          $white
+set -g fish_color_error          dddddd
 
 # fish_color_escape, the color used to highlight character escapes like '\n' and '\x70'
-set -g fish_color_escape         $white
+set -g fish_color_escape         $green
 
 # fish_color_operator, the color for parameter expansion operators like '*' and '~'
-set -g fish_color_operator       $white
+set -g fish_color_operator       $yellow
 
 # fish_color_param, the color for regular command parameters
-set -g fish_color_param          $white
+set -g fish_color_param          $cyan
 
 # fish_color_quote, the color for quoted blocks of text
-set -g fish_color_quote          $white
+set -g fish_color_quote          $yellow
 
 # fish_color_redirection, the color for IO redirections
-set -g fish_color_redirection    $white
+set -g fish_color_redirection    $cyan
 
 # fish_color_search_match, used to highlight history search matches and the selected pager item (must be a background)
 set -g fish_color_search_match   --background=$selection
 
-# fish_color_selection, the color used when selecting text (in vi visual mode)
+# fish_color_selection, the color uwsed when selecting text (in vi visual mode)
 set -g fish_color_selection      --background=$selection
 
 # fish_color_match, the color used to highlight matching parenthesis
+set -g fish_color_match          $cyan
+
 # fish_color_cwd, the color used for the current working directory in the default prompt
 # fish_color_user, the color used to print the current username in some of fish default prompts
 # fish_color_host, the color used to print the current host system in some of fish default prompts
+
 # fish_color_cancel, the color for the '^C' indicator on a canceled command
+set -g fish_color_cancel         $orange
 
 # fish_pager_color_prefix, the color of the prefix string, i.e. the string that is to be completed
 # fish_pager_color_completion, the color of the completion itself
