@@ -40,7 +40,7 @@ add_path $HOME/Library/Python/3.6/bin
 add_path $GOPATH/bin
 add_path $HOME/bin $HOME/.local/bin
 
-add_path $HOME/.platformio/penv/bin
+# add_path $HOME/.platformio/penv/bin
 
 add_path $HOME/lib/emsdk/emscripten/1.37.34/bin
 

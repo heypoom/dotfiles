@@ -11,4 +11,13 @@ Host *
 
 Host phoom
   HostName node.phoom.in.th
-  User phoomparin
+  User ec2-user
+
+Host node
+  HostName node.phoom.in.th
+  User ec2-user
+
+Host lightsail
+	HostName 100.20.136.186
+	User ec2-user
+

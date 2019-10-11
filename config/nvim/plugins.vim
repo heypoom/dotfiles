@@ -74,7 +74,7 @@ Plug 'easymotion/vim-easymotion'
 
 " Tabnine (ML-based autocompletion)
 " Disable TabNine to save power.
-" Plug 'zxqfl/tabnine-vim'
+Plug 'zxqfl/tabnine-vim'
 
 " " Git Gutter (Show git diffs in left gutter)
 " Plug 'airblade/vim-gitgutter'
