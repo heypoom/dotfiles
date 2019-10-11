@@ -125,8 +125,8 @@ SETUVAR _fish_abbr_gwch:git\x20whatchanged\x20\x2dp\x20\x2d\x2dabbrev\x2dcommit\
 SETUVAR _fish_abbr_h:howdoi\x20\x2dc
 SETUVAR _fish_abbr_k:kubectl
 SETUVAR _fish_abbr_l:exa
-SETUVAR _fish_abbr_la:exa\x20\x2dbaghHliS\x20\x2d\x2dgit
-SETUVAR _fish_abbr_ls:exa\x20\x2dlagh\x20\x2d\x2dgit
+SETUVAR _fish_abbr_la:exa\x20\x2dlagh\x20\x2d\x2dgit
+SETUVAR _fish_abbr_ls:exa
 SETUVAR _fish_abbr_m:make
 SETUVAR _fish_abbr_mux:tmuxinator
 SETUVAR _fish_abbr_n:node

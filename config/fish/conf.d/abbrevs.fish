@@ -37,8 +37,8 @@ if not set -q abbrs_initialized
     abbr -a y yarn
 
     abbr -a l exa
-    abbr -a ls 'exa -lagh --git'
-    abbr -a la "exa -baghHliS --git"
+    abbr -a ls exa
+    abbr -a la "exa -lagh --git"
 
     echo 'Abbreviations Set!'
 end
