@@ -4,9 +4,6 @@ if not set -q abbrs_initialized
     echo Setting abbreviations...
 
     abbr -a gdh 'git diff HEAD'
-
-    abbr -a f fuck
-    abbr -a s sudo
     abbr -a n node
 
     abbr -a h 'howdoi -c'
