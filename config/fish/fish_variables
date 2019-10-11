@@ -63,6 +63,8 @@ SETUVAR _fish_abbr_gcp:git\x20cherry\x2dpick
 SETUVAR _fish_abbr_gd:git\x20diff
 SETUVAR _fish_abbr_gdca:git\x20diff\x20\x2d\x2dcached
 SETUVAR _fish_abbr_gdh:git\x20diff\x20HEAD
+SETUVAR _fish_abbr_gds:git\x20diff\x20\x2d\x2dstat
+SETUVAR _fish_abbr_gdsc:git\x20diff\x20\x2d\x2dstat\x20\x2d\x2dcached
 SETUVAR _fish_abbr_gf:git\x20fetch
 SETUVAR _fish_abbr_gfa:git\x20fetch\x20\x2d\x2dall\x20\x2d\x2dprune
 SETUVAR _fish_abbr_gfb:git\x20flow\x20bugfix
