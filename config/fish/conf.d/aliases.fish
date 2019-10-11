@@ -10,9 +10,9 @@ alias rebel 'clojure -A:rebel'
 alias klipse 'clojure -A:klipse'
 
 # Alias for kitty
-alias imgcat "kitty +kitten icat"
-alias kdiff "kitty +kitten diff"
-alias clipboard "kitty +kitten clipboard"
+# alias imgcat "kitty +kitten icat"
+# alias kdiff "kitty +kitten diff"
+# alias clipboard "kitty +kitten clipboard"
 
 # Alias for Things 3
 alias things things.sh

@@ -5,9 +5,9 @@ function virtualfish
   eval (python3 -m virtualfish)
 end
 
-if type -q kitty
-  kitty + complete setup fish | source
-end
+# if type -q kitty
+#   kitty + complete setup fish | source
+# end
 
 # Path for pkgconfig
 set -gx PKG_CONFIG_PATH "/usr/local/opt/openssl/lib/pkgconfig:/usr/local/opt/libffi/lib/pkgconfig"
