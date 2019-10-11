@@ -44,7 +44,7 @@ set -g fish_color_param          $cyan
 set -g fish_color_quote          $yellow
 
 # fish_color_redirection, the color for IO redirections
-set -g fish_color_redirection    $cyan
+set -g fish_color_redirection    $pink
 
 # fish_color_search_match, used to highlight history search matches and the selected pager item (must be a background)
 set -g fish_color_search_match   --background=$selection
