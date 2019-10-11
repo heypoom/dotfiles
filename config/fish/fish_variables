@@ -5,6 +5,7 @@ SETUVAR --export ARCHFLAGS:\x2darch\x20x86_64
 SETUVAR --export BAT_THEME:Dracula
 SETUVAR --export CPPFLAGS:\x2dI\x20/usr/local/opt/binutils/include
 SETUVAR --export EDITOR:nvim
+SETUVAR --export FILTER:fzf
 SETUVAR FZF_LEGACY_KEYBINDINGS:0
 SETUVAR --export GEM_PATH:/Users/phoomparin/\x2egem
 SETUVAR --export GO111MODULE:auto
@@ -148,32 +149,32 @@ SETUVAR _fish_abbr_y:yarn
 SETUVAR abbrs_initialized:\x0ad
 SETUVAR --export cabal_helper_libexecdir:/Users/phoomparin/bin
 SETUVAR envs_initialized:\x0ad
-SETUVAR fish_color_autosuggestion:555
-SETUVAR fish_color_cancel:\x2dr
-SETUVAR fish_color_command:\x2d\x2dbold
-SETUVAR fish_color_comment:red
-SETUVAR fish_color_cwd:green
-SETUVAR fish_color_cwd_root:red
-SETUVAR fish_color_end:brmagenta
-SETUVAR fish_color_error:brred
-SETUVAR fish_color_escape:bryellow\x0ae\x2d\x2dbold
-SETUVAR fish_color_history_current:\x2d\x2dbold
+SETUVAR fish_color_autosuggestion:5f5f5f
+SETUVAR fish_color_cancel:normal
+SETUVAR fish_color_command:005fd7
+SETUVAR fish_color_comment:6272A4
+SETUVAR fish_color_cwd:008000
+SETUVAR fish_color_cwd_root:800000
+SETUVAR fish_color_end:50FA7B
+SETUVAR fish_color_error:ffffff
+SETUVAR fish_color_escape:00a6b2
+SETUVAR fish_color_history_current:normal
 SETUVAR fish_color_host:normal
-SETUVAR fish_color_match:\x2d\x2dbackground\x3dbrblue
+SETUVAR fish_color_match:normal
 SETUVAR fish_color_normal:normal
-SETUVAR fish_color_operator:bryellow
-SETUVAR fish_color_param:cyan
-SETUVAR fish_color_quote:yellow
-SETUVAR fish_color_redirection:brblue
-SETUVAR fish_color_search_match:bryellow\x0ae\x2d\x2dbackground\x3dbrblack
-SETUVAR fish_color_selection:white\x0ae\x2d\x2dbold\x0ae\x2d\x2dbackground\x3dbrblack
-SETUVAR fish_color_user:brgreen
-SETUVAR fish_color_valid_path:\x2d\x2dunderline
+SETUVAR fish_color_operator:00a6b2
+SETUVAR fish_color_param:00afff
+SETUVAR fish_color_quote:F1FA8C
+SETUVAR fish_color_redirection:8BE9FD
+SETUVAR fish_color_search_match:ffff00
+SETUVAR fish_color_selection:c0c0c0
+SETUVAR fish_color_user:00ff00
+SETUVAR fish_color_valid_path:normal
 SETUVAR fish_greeting:\x0ad
 SETUVAR fish_key_bindings:fish_vi_key_bindings
-SETUVAR fish_pager_color_completion:\x0ad
-SETUVAR fish_pager_color_description:B3A06D\x0aeyellow
-SETUVAR fish_pager_color_prefix:white\x0ae\x2d\x2dbold\x0ae\x2d\x2dunderline
-SETUVAR fish_pager_color_progress:brwhite\x0ae\x2d\x2dbackground\x3dcyan
+SETUVAR fish_pager_color_completion:normal
+SETUVAR fish_pager_color_description:B3A06D\x1eyellow
+SETUVAR fish_pager_color_prefix:white\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
+SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
 SETUVAR fish_user_abbreviations:gdh\x20git\x20diff\x20HEAD\x0aeh\x20howdoi\x20\x2dc\x0aek\x20kubectl\x0aep\x20python3\x0aepy\x20python3\x0aepy2\x20python2\x0aepy3\x20python3\x0aerb\x20ruby\x0aet\x20tmux\x0aeta\x20tmux\x20a\x20\x2dt\x0aetns\x20tmux\x20new\x20\x2ds\x0aemux\x20tmuxinator\x0aeu\x20docker\x2dcompose\x20up\x0aev\x20nvim\x0aevi\x20nvim\x0aevim\x20nvim\x0aevis\x20sudo\x20nvim\x0aey\x20yarn\x0aela\x20exa\x20\x2dbaghHliS\x20\x2d\x2dgit\x0aeg\x20git\x0aega\x20git\x20add\x0aegaa\x20git\x20add\x20\x2d\x2dall\x0aegapa\x20git\x20add\x20\x2d\x2dpatch\x0aegba\x20git\x20branch\x20\x2da\x20\x2dv\x0aegb\x20git\x20branch\x20\x2dvv\x0aegc\x20git\x20commit\x20\x2dv\x0aegc\x21\x20git\x20commit\x20\x2dv\x20\x2d\x2damend\x0aegcn\x21\x20git\x20commit\x20\x2dv\x20\x2d\x2dno\x2dedit\x20\x2d\x2damend\x0aegca\x20git\x20commit\x20\x2dv\x20\x2da\x0aegca\x21\x20git\x20commit\x20\x2dv\x20\x2da\x20\x2d\x2damend\x0aegcan\x21\x20git\x20commit\x20\x2dv\x20\x2da\x20\x2d\x2dno\x2dedit\x20\x2d\x2damend\x0aegcm\x20git\x20commit\x20\x2dm\x0aegcl\x20git\x20clone\x0aegcount\x20git\x20shortlog\x20\x2dsn\x0aegcp\x20git\x20cherry\x2dpick\x0aegd\x20git\x20diff\x0aegdca\x20git\x20diff\x20\x2d\x2dcached\x0aegff\x20git\x20flow\x20feature\x0aegfr\x20git\x20flow\x20release\x0aegfh\x20git\x20flow\x20hotfix\x0aegfs\x20git\x20flow\x20support\x0aegignore\x20git\x20update\x2dindex\x20\x2d\x2dassume\x2dunchanged\x0aegf\x20git\x20fetch\x0aegfa\x20git\x20fetch\x20\x2d\x2dall\x20\x2d\x2dprune\x0aegfo\x20git\x20fetch\x20origin\x0aegl\x20git\x20pull\x0aeglg\x20git\x20log\x20\x2d\x2dstat\x20\x2d\x2dmax\x2dcount\x3d10\x0aeglgg\x20git\x20log\x20\x2d\x2dgraph\x20\x2d\x2dmax\x2dcount\x3d10\x0aeglgga\x20git\x20log\x20\x2d\x2dgraph\x20\x2d\x2ddecorate\x20\x2d\x2dall\x0aeglo\x20git\x20log\x20\x2d\x2doneline\x20\x2d\x2ddecorate\x20\x2d\x2dcolor\x0aeglog\x20git\x20log\x20\x2d\x2doneline\x20\x2d\x2ddecorate\x20\x2d\x2dcolor\x20\x2d\x2dgraph\x0aegloo\x20git\x20log\x20\x2d\x2dpretty\x3dformat\x3a\x27\x25C\x28yellow\x29\x25h\x20\x25Cred\x25ad\x20\x25Cblue\x25an\x25Cgreen\x25d\x20\x25Creset\x25s\x27\x20\x2d\x2ddate\x3dshort\x0aegm\x20git\x20merge\x0aegmt\x20git\x20mergetool\x20\x2d\x2dno\x2dprompt\x0aegp\x20git\x20push\x0aegr\x20git\x20remote\x20\x2dvv\x0aegrba\x20git\x20rebase\x20\x2d\x2dabort\x0aegrbc\x20git\x20rebase\x20\x2d\x2dcontinue\x0aegrbi\x20git\x20rebase\x20\x2d\x2dinteractive\x0aegrbm\x20git\x20rebase\x20master\x0aegrbs\x20git\x20rebase\x20\x2d\x2dskip\x0aegrh\x20git\x20reset\x20HEAD\x0aegrhh\x20git\x20reset\x20HEAD\x20\x2d\x2dhard\x0aegrmv\x20git\x20remote\x20rename\x0aegrrm\x20git\x20remote\x20remove\x0aegrset\x20git\x20remote\x20set\x2durl\x0aegrup\x20git\x20remote\x20update\x0aegrv\x20git\x20remote\x20\x2dv\x0aegsh\x20git\x20show\x0aegsd\x20git\x20svn\x20dcommit\x0aegsr\x20git\x20svn\x20rebase\x0aegss\x20git\x20status\x20\x2ds\x0aegst\x20git\x20status\x0aegsta\x20git\x20stash\x0aegstd\x20git\x20stash\x20drop\x0aegstp\x20git\x20stash\x20pop\x0aegsts\x20git\x20stash\x20show\x20\x2d\x2dtext\x0aegunignore\x20git\x20update\x2dindex\x20\x2d\x2dno\x2dassume\x2dunchanged\x0aegup\x20git\x20pull\x20\x2d\x2drebase\x0aegwch\x20git\x20whatchanged\x20\x2dp\x20\x2d\x2dabbrev\x2dcommit\x20\x2d\x2dpretty\x3dmedium\x0aegco\x20git\x20checkout\x0aegcb\x20git\x20checkout\x20\x2db\x0aegcod\x20git\x20checkout\x20develop\x0aegcom\x20git\x20checkout\x20master\x0aer\x20ranger\x0aef\x20fuck\x0aes\x20sudo\x0ael\x20exa\x0aels\x20exa\x20\x2dlagh\x20\x2d\x2dgit\x0aevimcfg\x20nvim\x20/Users/phoomparin/\x2econfig/nvim/\x0aem\x20make
 SETUVAR grc_plugin_execs:cat\x1ecvs\x1edf\x1ediff\x1edig\x1egcc\x1eg\x2b\x2b\x1eifconfig\x1emake\x1emount\x1emtr\x1enetstat\x1eping\x1eps\x1etail\x1etraceroute\x1ewdiff\x1eblkid\x1edu\x1ednf\x1edocker\x1edocker\x2dmachine\x1eid\x1eip\x1eiostat\x1elast\x1elsattr\x1elsblk\x1elspci\x1elsmod\x1elsof\x1egetfacl\x1egetsebool\x1eulimit\x1euptime\x1enmap\x1efdisk\x1efindmnt\x1efree\x1esemanage\x1esar\x1ess\x1esysctl\x1esystemctl\x1estat\x1eshowmount\x1etcpdump\x1etune2fs\x1evmstat\x1ew\x1ewho
