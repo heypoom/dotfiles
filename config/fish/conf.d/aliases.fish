@@ -1,3 +1,6 @@
+# Alias for googler
+alias google googler
+
 # Alias for exa
 alias sl 'exa -lagh'
 alias tree 'exa --tree'
