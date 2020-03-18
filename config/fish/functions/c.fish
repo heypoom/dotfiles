@@ -3,7 +3,7 @@ function c --description 'Clears the screen'
 	clear
 
   # Do not clear history if tmux is down
-  if tmux info > /dev/null ^&1
+  if tmux info > /dev/null 2>&1
     tmux clear-history
   end
 end

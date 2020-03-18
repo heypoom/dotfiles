@@ -1,0 +1,63 @@
+e scr.utf8 = true
+e asm.pseudo = true
+e scr.color = 3
+e bin.demangle = true
+e asm.demangle = true
+e asm.relsub = true
+
+ec ai.exec rgb:50fa7b
+ec ai.read rgb:bd93f9
+ec ai.write rgb:f1fa8c
+ec args rgb:8be9fd
+ec b0x00 rgb:6272a4
+ec b0x7f rgb:6272a4
+ec b0xff rgb:6272a4
+ec btext rgb:8be9fd
+ec comment rgb:8be9fd
+ec creg ffb86c
+ec flag rgb:8be9fd
+ec fline rgb:8be9fd
+ec flow rgb:50fa7b
+ec flow2 rgb:ff
+ec fname rgb:f1fa8c
+ec graph.traced rgb:8be9f
+ec graph.box rgb:bd93f9
+ec graph.box2 rgb:f1fa8c
+ec graph.box3 rgb:bd93f9
+ec graph.box4 rgb:bd93f9
+ec graph.current rgb:fff
+ec graph.false rgb:ff79c6
+ec graph.true rgb:50fa7b
+ec graph.trufae rgb:8be9fd
+ec help rgb:50fa7b
+ec input rgb:6272a4
+ec jmp rgb:50fa7b
+ec label rgb:bd93f9
+ec linehl rgb:6272a4
+ec mov rgb:fff
+ec nop rgb:bd93f9
+ec num rgb:ff79c6
+ec offset rgb:ff79c6
+ec other rgb:6272a4
+ec prompt rgb:8be9fd
+ec call rgb:ffb86c
+ec reg rgb:fff
+ec ret rgb:ffb86c
+ec swi rgb:ff5555
+ec trap rgb:ff5555                 
+ec cmp rgb:8be9fd
+ec push rgb:8be9fd
+ec math rgb:8be9fd
+ec bin rgb:8be9fd
+ec pop rgb:8be9fd
+ec cjmp rgb:50fa7b
+ec ucall rgb:8be9fd
+ec ujmp rgb:50fa7b
+ec usrcmt rgb:ff5555
+
+ec func_var rgb:8be9fd
+ec func_var_type rgb:f1fa8c
+ec func_var_addr rgb:ff79c6
+
+ec widget_bg rgb:6272a4 rgb:000
+ec widget_sel rgb:8be9fd rgb:6272a4
