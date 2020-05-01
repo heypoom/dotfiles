@@ -26,3 +26,6 @@ source ~/.config/nvim/colors.vim
 " Custom commands and useful functions
 source ~/.config/nvim/functions.vim
 
+highlight Normal guibg=none ctermbg=none
+" highlight NonText guibg=none ctermbg=none
+
