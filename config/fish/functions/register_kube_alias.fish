@@ -797,7 +797,3 @@ function register_kube_alias
     alias kgpowslowiden 'kubectl get pods --watch --show-labels -o=wide --namespace'
     alias kgdepwslowiden 'kubectl get deployment --watch --show-labels -o=wide --namespace'
 end
-
-if set -q kubectl_aliases
-    register_kube_alias
-end
