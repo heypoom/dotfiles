@@ -258,10 +258,10 @@ let g:closetag_close_shortcut = '<leader>>'
 let g:NERDTreeWinPos = "left"
 
 " Show hidden files.
-let g:NERDTreeShowHidden=1
+let g:NERDTreeShowHidden = 1
 
 " Ignore the python cache files.
 let g:NERDTreeIgnore = ['\.pyc$', '__pycache__']
 
 " Set the window width to 25 characters.
-let g:NERDTreeWinSize=25
+let g:NERDTreeWinSize = 25
