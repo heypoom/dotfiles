@@ -1,19 +1,3 @@
-# Notes
-
-""""""""""""""""""""""""""""""
-" => YankStack
-""""""""""""""""""""""""""""""
-nmap <c-p> <Plug>yankstack_substitute_older_paste
-nmap <c-P> <Plug>yankstack_substitute_newer_paste
-
----
-
-# Pure Vim
-
-Tip: use `:help defaults` to see how neovim does defaults.
-
-If you are not using neovim, you will need these too:
-
 " Enable syntax-highlighting.
 syntax on
 
