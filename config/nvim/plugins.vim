@@ -22,7 +22,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-surround'
 
 " Colorize all the color codes! (e.g. #2d2d30, rgb(5, 5, 5))
-Plug 'lilydjwg/colorizer'
+Plug 'lilydjwg/colorizer', {'for': ['html', 'css', 'scss', 'sass', 'pug', 'vue', 'stylus']}
 
 " Tab Expansions for HTML files.
 Plug 'mattn/emmet-vim', {'for': ['html', 'pug']}
