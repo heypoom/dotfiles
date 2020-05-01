@@ -1,8 +1,11 @@
 " Enable the use of bold fonts in dracula.
 let g:enable_bold_font = 1
 
-" Use the dracula color scheme.
-color dracula
+" Disable python hoast checks
+let g:python_host_skip_check = 1
+let g:python_host_prog = '/usr/local/bin/python'
+let g:python3_host_skip_check = 1
+let g:python3_host_prog = '/usr/local/bin/python3'
 
 " Make the editor background transparent.
 hi! Normal ctermbg=NONE guibg=NONE
@@ -29,8 +32,7 @@ set noshowmode
 "" Show the result of your substitution as you type!
 " :%s/a/b/g will highlight and preview the replaced text.
 " Use tab or esc to ignore, use enter to accept substitution.
-
-" Change this to `split` to show extra preview pane.
+" (Change this to `split` to show extra preview pane.)
 set inccommand=nosplit
 
 " Persist undo history across sessions.

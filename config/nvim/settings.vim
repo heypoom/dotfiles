@@ -16,8 +16,8 @@ let g:AutoPairsMapCR = 0
 
 "" Better Whitespace
 
-" Set the trailing whitespace color to red.
-let g:better_whitespace_guicolor='#fc625d'
+" Set the trailing whitespace color. Red = #fc625d
+let g:better_whitespace_guicolor='#424450'
 
 "" Indentation Lines
 

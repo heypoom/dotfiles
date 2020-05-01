@@ -106,7 +106,15 @@ nnoremap <silent> <leader>g :Goyo<cr>
 
 map <leader>m :call VimuxInterruptRunner() <bar> :call VimuxRunCommand("make")<CR>
 
-"" Emmet
+" Logic to handle when tabs get pressed.
+function OnTab()
+  " Is emmet active?
+  try
+    return emmet#expandAbbrIntelligent("\<tab>")
+  catch
+    return "\<tab>"
+  endtry
+endfunction
 
 " tab = expand emmet abbreviation
-imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
+imap <expr><tab> OnTab()

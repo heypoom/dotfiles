@@ -10,7 +10,7 @@ Plug 'dracula/vim', { 'as': 'dracula' }
 " Use lightline to make startup time faster
 Plug 'itchyny/lightline.vim'
 
-" Move lines and selections with alt + {hjkl}
+" Move lines and selections.
 Plug 'matze/vim-move'
 
 " Fuzzy Finder
@@ -25,7 +25,7 @@ Plug 'tpope/vim-surround'
 Plug 'lilydjwg/colorizer'
 
 " Tab Expansions for HTML files.
-Plug 'mattn/emmet-vim'
+Plug 'mattn/emmet-vim', {'for': ['html', 'pug']}
 
 " Repeat the surround command using the dot (.) command.
 Plug 'tpope/vim-repeat'
@@ -38,9 +38,8 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 Plug 'scrooloose/nerdtree-git-plugin', {'on': 'NERDTreeToggle'}
 
-" Add file icons to other plugins (e.g. NERDTree, Airline)
-" Always load this as the very last one!
-Plug 'ryanoasis/vim-devicons'
+" " Auto-close HTML <tags>.
+Plug 'alvan/vim-closetag', {'for': 'html'}
 
 " " Seamless switching between nvim splits and tmux panes!
 " " Use ctrl + {hjkl} to move between them as usual.
@@ -52,7 +51,7 @@ Plug 'ryanoasis/vim-devicons'
 """
 
 " Press <tab> to expand snippets, integrates with deoplete.
-Plug 'SirVer/ultisnips'
+" Plug 'SirVer/ultisnips'
 
 " Ranger Integration (:Ranger)
 Plug 'francoiscabrol/ranger.vim'
@@ -64,17 +63,10 @@ Plug 'rbgrouleff/bclose.vim'
 Plug 'codeindulgence/vim-tig'
 
 " Distraction-free writing with :Goyo
-Plug 'junegunn/goyo.vim'
-
-" " Auto-close HTML <tags>.
-" Plug 'alvan/vim-closetag'
+Plug 'junegunn/goyo.vim', {'for': ['markdown', 'txt']}
 " 
 " " Easymotion
 Plug 'easymotion/vim-easymotion'
-
-" Tabnine (ML-based autocompletion)
-" Disable TabNine to save power.
-Plug 'zxqfl/tabnine-vim'
 
 " " Git Gutter (Show git diffs in left gutter)
 " Plug 'airblade/vim-gitgutter'
@@ -95,7 +87,7 @@ Plug 'zxqfl/tabnine-vim'
 " Plug 'maxbrunsfeld/vim-yankstack'
 " 
 " " Highlight all trailing whitespaces. Prevent messy git diffs.
-" Plug 'ntpeters/vim-better-whitespace'
+Plug 'ntpeters/vim-better-whitespace'
 " 
 " " Create non-existent directories before writing file.
 " Plug 'pbrisbin/vim-mkdir'
@@ -127,21 +119,16 @@ Plug 'zxqfl/tabnine-vim'
 " " Auto-save the file! no need to :w (like vscode)
 " " Plug '907th/vim-auto-save'
 "
-" 
-" 
 " " Syntax highlighter for styled-components and emotion.
 " Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 " 
 " "" Tmux Integration
 " 
-" " Interact with Tmux using :VimuxRunCommand and :VimuxRunLastCommand
-" Plug 'benmills/vimux'
+" Interact with Tmux using :VimuxRunCommand and :VimuxRunLastCommand
+Plug 'benmills/vimux'
 " 
-" " Restore FocusGained and FocusLost events in tmux
-" Plug 'tmux-plugins/vim-tmux-focus-events'
-" 
-" " Generate tmux status lines using the current airline theme.
-" Plug 'edkolev/tmuxline.vim'
+" Restore FocusGained and FocusLost events in tmux
+Plug 'tmux-plugins/vim-tmux-focus-events'
 " 
 " " Git wrapper (:Gcommit, :Gstatus, :Gblame)
 " Plug 'tpope/vim-fugitive'
@@ -159,7 +146,7 @@ Plug 'zxqfl/tabnine-vim'
 " Plug 'jeffkreeftmeijer/vim-numbertoggle'
 " 
 " " Syntax highlighting and more for nginx.conf files
-" Plug 'chr4/nginx.vim'
+Plug 'chr4/nginx.vim', {'for': ['nginx', 'conf']}
 " 
 " " Align text with :Tabular
 " Plug 'godlygeek/tabular'
@@ -172,20 +159,19 @@ Plug 'zxqfl/tabnine-vim'
 " Plug 'honza/vim-snippets'
 " 
 " " Prettier! Prettifies your JavaScript code.
-" Plug 'prettier/vim-prettier', {
-"   \ 'do': 'yarn install',
-"   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql'] }
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql'] }
 " 
 " " Parinfer infers the ending parenthesis automatically!
 " " Read more: https://shaunlebron.github.io/parinfer/
-" Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release'}
+Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release', 'for': 'clojure'}
 " 
 " " Show indentation bars
 " Plug 'Yggdroot/indentLine'
 " 
 " " Edit files in hex mode with :Hexmode or `vi -b`
-" Plug 'fidian/hexmode'
-" 
+" Plug 'fidian/hexmode', {'for': 'bin'}
 " 
 " " Defines a text object for indentation levels.
 " " ai = an indent with line above
@@ -206,63 +192,34 @@ Plug 'zxqfl/tabnine-vim'
 " Plug 'rizzatti/dash.vim'
 " 
 " " Track your coding time with WakaTime
-" " Plug 'wakatime/vim-wakatime'
-" 
+Plug 'wakatime/vim-wakatime'
 " 
 " "" Language Support
 " 
 " " Go Language Support
 " " Auto Gofmt, :GoDoc, :GoRun, :GoLint, :GoTest, :GoDebugStart
-" Plug 'fatih/vim-go'
-" 
-" " JavaScript Language Support
-" Plug 'pangloss/vim-javascript'
-" 
-" " React JSX Syntax Support
-" Plug 'mxw/vim-jsx'
+Plug 'fatih/vim-go', {'for': 'go'}
 " 
 " " TypeScript Language Support
 " " Plug 'mhartington/nvim-typescript'
 " 
 " " Conquer of Completion: Intellisense Engine
-" " Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
+Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}, 'for': ['javascript', 'typescript', 'rust', 'clojure', 'markdown']}
 " 
-" Markdown Language Support
-" Plug 'plasticboy/vim-markdown'
-" 
-" " Rust Language Support
-" Plug 'rust-lang/rust.vim'
+" Rust Language Support
+Plug 'rust-lang/rust.vim', {'for': 'rust'}
 " 
 " " Language Packs! (syntax highlighting, indentation, etc.)
 Plug 'sheerun/vim-polyglot'
-" 
-" "" Deoplete auto-completion support
-" "" Read more: https://github.com/Shougo/deoplete.nvim/wiki/Completion-Sources
-" 
-" " Provides auto-completion for your code.
-" " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-" 
-" " Provides #include completion.
-" " Plug 'Shougo/neoinclude.vim'
-" 
-" " Deoplete Completion for Go
-" " Plug 'zchee/deoplete-go', { 'do': 'make' }
-" 
-" " Deoplete Completion for JavaScript using TernJS
-" " Plug 'carlitux/deoplete-ternjs', { 'do': 'yarn global add tern' }
-" 
-" " Deoplete Completion for C/C++/Obj-C using clang-python3
-" " Read more: https://github.com/zchee/deoplete-clang
-" " Plug 'zchee/deoplete-clang'
-" 
-" " Deoplete Completion for Rust using Racer
-" " Plug 'racer-rust/vim-racer'
-"
 " 
 " " TidalCycles for Live Coding Music!
 " " Plug 'tidalcycles/vim-tidal'
 " 
 " " Racket Support
 " " Plug 'wlangstroth/vim-racket'
+
+" Add file icons to other plugins (e.g. NERDTree, Airline)
+" Always load this as the very last one!
+Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
