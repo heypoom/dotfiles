@@ -35,8 +35,8 @@ Plug 'tpope/vim-repeat'
 Plug 'editorconfig/editorconfig-vim'
 
 " NERDTree: file tree explorer.
-Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
-Plug 'scrooloose/nerdtree-git-plugin', {'on': 'NERDTreeToggle'}
+Plug 'preservim/nerdtree', {'on': 'NERDTreeToggle'}
+Plug 'Xuyuanp/nerdtree-git-plugin', {'on': 'NERDTreeToggle'}
 
 " " Auto-close HTML <tags>.
 Plug 'alvan/vim-closetag', {'for': 'html'}
@@ -204,7 +204,8 @@ Plug 'fatih/vim-go', {'for': 'go'}
 " " Plug 'mhartington/nvim-typescript'
 " 
 " " Conquer of Completion: Intellisense Engine
-Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}, 'for': ['javascript', 'typescript', 'rust', 'clojure', 'markdown']}
+Plug 'neoclide/coc.nvim', {'branch': 'release', 'for': ['javascript', 'typescript', 'rust', 'clojure', 'markdown']}
+
 " 
 " Rust Language Support
 Plug 'rust-lang/rust.vim', {'for': 'rust'}
