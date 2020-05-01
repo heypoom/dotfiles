@@ -23,6 +23,9 @@ SETUVAR _fish_abbr_gstp:git\x20stash\x20pop
 SETUVAR _fish_abbr_hc:hub\x20create
 SETUVAR _fish_abbr_l:exa
 SETUVAR _fish_abbr_ls:exa
+SETUVAR _fish_abbr_ta:tmux\x20attach
+SETUVAR _fish_abbr_tn:tmux\x20new
+SETUVAR _fish_abbr_tns:tmux\x20new\x20\x2ds
 SETUVAR _fish_abbr_v:nvim
 SETUVAR _fish_abbr_vi:nvim
 SETUVAR _fish_abbr_vim:nvim

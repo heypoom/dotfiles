@@ -1,9 +1,3 @@
-# Path for pkgconfig
-set -gx PKG_CONFIG_PATH "/usr/local/opt/openssl/lib/pkgconfig:/usr/local/opt/libffi/lib/pkgconfig"
-
-# Define Java's SDK Path
-set -gx JAVA_HOME (asdf where java)
-
 # iTerm Integration
 if test "$TERM_PROGRAM" = iTerm.app
 	set -gx iterm2_hostname "phoomparin.local"
@@ -12,4 +6,3 @@ if test "$TERM_PROGRAM" = iTerm.app
   test -e {$HOME}/.iterm2_shell_integration.fish && source {$HOME}/.iterm2_shell_integration.fish
 end
 
-# revolver stop
