@@ -30,8 +30,8 @@ nnoremap <leader>f :Files<cr>
 " space + r = search through file with ripgrep
 nnoremap <leader>r :Rg<cr>
 
-" space + m = view all keymappings
-nnoremap <leader>m :Maps<cr>
+" space + kb = view all keybindings.
+nnoremap <leader>kb :Maps<cr>
 
 " space + l = jump to other lines in the file
 nnoremap <leader>l :Lines<cr>
@@ -102,9 +102,14 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 "" Goyo distraction-free writing
 
 " space + g = toggle distraction-free writing mode
-nnoremap <silent> <leader>g :Goyo<cr>
+function ActivateGoyo()
+  if exists(":Goyo")
+    execute 'Goyo'
+  endif
+endfunction
 
-map <leader>m :call VimuxInterruptRunner() <bar> :call VimuxRunCommand("make")<CR>
+nnoremap <leader>g :call ActivateGoyo() <cr>
+nnoremap <leader>m :call VimuxInterruptRunner() <bar> :call VimuxRunCommand("make") <cr>
 
 " Logic to handle when tabs get pressed.
 function OnTab()

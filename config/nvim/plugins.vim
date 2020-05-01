@@ -15,7 +15,7 @@ Plug 'matze/vim-move'
 
 " Fuzzy Finder
 " :Rg for ripgrep, :Ag for silver searcher
-Plug 'junegunn/fzf', { 'do': './install --bin' }
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
 " Surround (cs'" to change surrounding '' to "")
@@ -63,7 +63,7 @@ Plug 'rbgrouleff/bclose.vim'
 Plug 'codeindulgence/vim-tig'
 
 " Distraction-free writing with :Goyo
-Plug 'junegunn/goyo.vim', {'for': ['markdown', 'txt']}
+Plug 'junegunn/goyo.vim', {'for': ['markdown', 'text']}
 " 
 " " Easymotion
 Plug 'easymotion/vim-easymotion'
