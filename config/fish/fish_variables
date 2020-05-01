@@ -9,7 +9,9 @@ SETUVAR __fish_initialized:3100
 SETUVAR _fish_abbr_g:git
 SETUVAR _fish_abbr_ga:git\x20add
 SETUVAR _fish_abbr_gaa:git\x20add\x20\x2d\x2dall
-SETUVAR _fish_abbr_gc:git\x20commit\x20\x2dv\x20\x2dm
+SETUVAR _fish_abbr_gc:git\x20commit\x20\x2dv
+SETUVAR _fish_abbr_gca:git\x20commit\x20\x2dv\x20\x2d\x2damend
+SETUVAR _fish_abbr_gcm:git\x20commit\x20\x2dv\x20\x2dm
 SETUVAR _fish_abbr_gd:git\x20diff
 SETUVAR _fish_abbr_gdh:git\x20diff\x20HEAD
 SETUVAR _fish_abbr_gp:git\x20push
