@@ -81,6 +81,7 @@ inoremap <expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 
 " space + nn = toggle nerdtree
 map <leader>nn :NERDTreeToggle<cr>
+" map <leader>t :NERDTreeToggle<cr>
 
 " space + nn = open nerdtree from bookmark
 map <leader>nb :NERDTreeFromBookmark<Space>
