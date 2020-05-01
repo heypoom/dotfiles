@@ -1,5 +1,4 @@
 package fasd
-package foreign-env
 package fzf
 package gi
 package hub
