@@ -265,3 +265,7 @@ let g:NERDTreeIgnore = ['\.pyc$', '__pycache__']
 
 " Set the window width to 25 characters.
 let g:NERDTreeWinSize = 25
+
+" Set maximum lines for the colorizer plugin.
+let g:colorizer_maxlines = 1000
+
