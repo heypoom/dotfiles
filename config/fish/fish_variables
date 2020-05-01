@@ -14,6 +14,7 @@ SETUVAR _fish_abbr_gca:git\x20commit\x20\x2dv\x20\x2d\x2damend
 SETUVAR _fish_abbr_gcm:git\x20commit\x20\x2dv\x20\x2dm
 SETUVAR _fish_abbr_gd:git\x20diff
 SETUVAR _fish_abbr_gdh:git\x20diff\x20HEAD
+SETUVAR _fish_abbr_gl:git\x20pull
 SETUVAR _fish_abbr_gp:git\x20push
 SETUVAR _fish_abbr_gpom:git\x20push\x20\x2du\x20origin\x20master
 SETUVAR _fish_abbr_gst:git\x20stash
