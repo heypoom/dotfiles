@@ -6,7 +6,7 @@ SETUVAR FZF_PREVIEW_DIR_CMD:ls
 SETUVAR FZF_PREVIEW_FILE_CMD:head\x20\x2dn\x2010
 SETUVAR FZF_TMUX_HEIGHT:40\x25
 SETUVAR __fish_initialized:3100
-SETUVAR _fish_abbr_brewi:brew\x20install
+SETUVAR _fish_abbr_brewi:env\x20HOMEBREW_NO_AUTO_UPDATE\x3d1\x20brew\x20install
 SETUVAR _fish_abbr_brewl:brew\x20list
 SETUVAR _fish_abbr_brewr:brew\x20remove
 SETUVAR _fish_abbr_brews:brew\x20search
