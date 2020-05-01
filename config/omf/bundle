@@ -2,7 +2,6 @@ package fasd
 package foreign-env
 package fzf
 package gi
-package grc
 package hub
 package wd
 theme bobthefish

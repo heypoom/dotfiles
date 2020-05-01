@@ -39,9 +39,9 @@ set -gx GEM_HOME "$HOME/.gem"
 set -gx GEM_PATH "$HOME/.gem"
 
 # Path for LDFLAGS
-set -gx CPPFLAGS "-I /usr/local/opt/binutils/include"
-set -gx LDFLAGS "-L /usr/local/opt/libffi/lib"
-set -gx LDFLAGS "-L /usr/local/opt/libffi/lib -L /usr/local/opt/binutils/lib"
+# set -gx CPPFLAGS "-I /usr/local/opt/binutils/include"
+# set -gx LDFLAGS "-L /usr/local/opt/libffi/lib"
+# set -gx LDFLAGS "-L /usr/local/opt/libffi/lib -L /usr/local/opt/binutils/lib"
 
 # Enable Go Modules
 set -gx GO111MODULE auto
