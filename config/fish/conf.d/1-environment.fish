@@ -52,7 +52,7 @@ set -gx NODE_PATH "$HOME/.config/yarn/global/node_modules:/usr/local/lib/node_mo
 set -gx cabal_helper_libexecdir "$HOME/bin"
 
 # Path for pkgconfig
-set -gx PKG_CONFIG_PATH "/usr/local/opt/openssl/lib/pkgconfig:/usr/local/opt/libffi/lib/pkgconfig"
+set -gx PKG_CONFIG_PATH "/usr/local/opt/openssl/lib/pkgconfig:/usr/local/opt/libffi/lib/pkgconfig:/usr/local/opt/libusb/lib/pkgconfig"
 
 # Define Java's SDK Path
 set -gx JAVA_HOME '/Users/phoomparin/.asdf/installs/java/oracle-8.141'
