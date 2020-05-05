@@ -91,4 +91,12 @@ set -gx PATH \
   /usr/local/bin \
   /usr/bin \
   /usr/local/sbin \
-  $PATH
+	/bin \
+	/usr/sbin \
+	/sbin \
+	/opt/X11/bin \
+	/usr/local/share/dotnet \
+	$HOME/.dotnet/tools \
+	/usr/local/MacGPG2/bin \
+	/Applications/Wireshark.app/Contents/MacOS
+
