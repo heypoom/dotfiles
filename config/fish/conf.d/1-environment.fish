@@ -13,8 +13,7 @@ set -gx VISUAL nvim
 set -gx FILTER fzf
 
 # Also Use Neovim as the React editor
-set -gx REACT_EDITOR nvim
-set -gx REACT_EDITOR_CMD '/usr/local/bin/nvim'
+set -gx REACT_EDITOR nvim set -gx REACT_EDITOR_CMD '/usr/local/bin/nvim'
 
 # Define Android's SDK Path
 set -gx ANDROID_HOME "$HOME/Library/Android/sdk"
@@ -55,18 +54,21 @@ set -gx cabal_helper_libexecdir "$HOME/bin"
 set -gx PKG_CONFIG_PATH "/usr/local/opt/openssl/lib/pkgconfig:/usr/local/opt/libffi/lib/pkgconfig:/usr/local/opt/libusb/lib/pkgconfig"
 
 # Define Java's SDK Path
-set -gx JAVA_HOME '/Users/phoomparin/.asdf/installs/java/oracle-8.141'
+set -gx JAVA_HOME "$HOME/.asdf/installs/java/oracle-8.141"
+
+# Set XCode build configuration (mainly for pyenv)
+set -gx SDKROOT "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk"
+set -gx MACOSX_DEPLOYMENT_TARGET 10.15
 
 # Add GNU manuals to the MANPATH
 set -gx MANPATH /usr/local/opt/coreutils/libexec/gnuman/ /usr/share/man $MANPATH
 
 # Configure the environment variables.
 set -gx PATH \
-  /usr/local/bin \
-  /usr/bin \
-  /usr/local/sbin \
+  $HOME/.asdf/shims \
+	$HOME/.asdf/bin \
+	$GEM_HOME/bin \
   /usr/libexec \
-  $GEM_HOME/.gem/bin \
   $HOME/Scripts \
   /usr/local/opt/llvm/bin \
   /usr/local/opt/coreutils/libexec/gnubin \
@@ -76,7 +78,6 @@ set -gx PATH \
   $HOME/.cargo/bin \
   $HOME/lib/gcloud/bin \
   $HOME/.config/yarn/global/node_modules/.bin \
-  $HOME/.pyenv/bin \
   $HOME/.poetry/bin \
   $HOME/lib/flutter/bin \
   /usr/local/opt/dart@2/bin \
@@ -87,6 +88,7 @@ set -gx PATH \
   $HOME/.platformio/penv/bin \
   $HOME/lib/emsdk/emscripten/1.37.34/bin \
   $HOME/.stack/programs/x86_64-osx/ghc-8.6.4/bin \
-  $HOME/.asdf/bin \
-  $HOME/.asdf/shims \
+  /usr/local/bin \
+  /usr/bin \
+  /usr/local/sbin \
   $PATH
