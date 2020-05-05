@@ -64,7 +64,7 @@ set -gx MACOSX_DEPLOYMENT_TARGET 10.15
 set -gx MANPATH /usr/local/opt/coreutils/libexec/gnuman/ /usr/share/man $MANPATH
 
 # Configure the environment variables.
-set -gx PATH \
+set -gx fish_user_paths \
   $HOME/.asdf/shims \
 	$HOME/.asdf/bin \
 	$GEM_HOME/bin \
@@ -88,15 +88,5 @@ set -gx PATH \
   $HOME/.platformio/penv/bin \
   $HOME/lib/emsdk/emscripten/1.37.34/bin \
   $HOME/.stack/programs/x86_64-osx/ghc-8.6.4/bin \
-  /usr/local/bin \
-  /usr/bin \
-  /usr/local/sbin \
-	/bin \
-	/usr/sbin \
-	/sbin \
-	/opt/X11/bin \
-	/usr/local/share/dotnet \
-	$HOME/.dotnet/tools \
-	/usr/local/MacGPG2/bin \
-	/Applications/Wireshark.app/Contents/MacOS
+	$fish_user_paths
 
