@@ -209,3 +209,7 @@ config/ipython/profile_default/db/dhist
 config/ssh
 config/ipython/profile_default/history.sqlite
 
+bat
+dotbot
+hammerspoon
+
