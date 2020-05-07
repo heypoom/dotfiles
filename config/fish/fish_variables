@@ -27,6 +27,7 @@ SETUVAR _fish_abbr_gaa:git\x20add\x20\x2d\x2dall
 SETUVAR _fish_abbr_gc:git\x20commit\x20\x2dv
 SETUVAR _fish_abbr_gca:git\x20commit\x20\x2dv\x20\x2d\x2damend
 SETUVAR _fish_abbr_gcm:git\x20commit\x20\x2dv\x20\x2dm
+SETUVAR _fish_abbr_gco:git\x20checkout
 SETUVAR _fish_abbr_gd:git\x20diff
 SETUVAR _fish_abbr_gdh:git\x20diff\x20HEAD
 SETUVAR _fish_abbr_git_2D_gc_2D_all:git\x20\x2dc\x20gc\x2ereflogExpire\x3d0\x20\x2dc\x20gc\x2ereflogExpireUnreachable\x3d0\x20\x2dc\x20gc\x2ererereresolved\x3d0\x20\x2dc\x20gc\x2ererereunresolved\x3d0\x20\x2dc\x20gc\x2epruneExpire\x3dnow\x20gc\x20\x22\x24argv\x22
