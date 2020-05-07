@@ -65,23 +65,26 @@ Plug 'codeindulgence/vim-tig'
 
 " Distraction-free writing with :Goyo
 Plug 'junegunn/goyo.vim', {'for': ['markdown', 'text']}
-" 
-" " Easymotion
+
+" Easymotion
 Plug 'easymotion/vim-easymotion'
+
+" Vue
+Plug 'posva/vim-vue'
 
 " " Git Gutter (Show git diffs in left gutter)
 " Plug 'airblade/vim-gitgutter'
-" 
+
 " " Auto-format your source code.
 " Plug 'Chiel92/vim-autoformat'
-" 
+
 " " Re-open a file at the last cursor position.
 " Plug 'farmergreg/vim-lastplace'
-" 
+
 " " Adds the ending pair for (parens), {braces} and 'quotes'
 " " Features: https://github.com/jiangmiao/auto-pairs
 " Plug 'jiangmiao/auto-pairs'
-" 
+
 " " Emacs kill-ring but it's in vim.
 " " meta + p = cycle backward through your history of yanks
 " " meta + shift + p = cycle forwards through your history of yanks
