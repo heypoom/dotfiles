@@ -24,6 +24,7 @@ SETUVAR _fish_abbr_docker_2D_clean:docker\x20volume\x20ls\x20\x2dqf\x20dangling\
 SETUVAR _fish_abbr_g:git
 SETUVAR _fish_abbr_ga:git\x20add
 SETUVAR _fish_abbr_gaa:git\x20add\x20\x2d\x2dall
+SETUVAR _fish_abbr_gb:git\x20branch
 SETUVAR _fish_abbr_gc:git\x20commit\x20\x2dv
 SETUVAR _fish_abbr_gca:git\x20commit\x20\x2dv\x20\x2d\x2damend
 SETUVAR _fish_abbr_gcm:git\x20commit\x20\x2dv\x20\x2dm
@@ -33,6 +34,7 @@ SETUVAR _fish_abbr_gdh:git\x20diff\x20HEAD
 SETUVAR _fish_abbr_git_2D_gc_2D_all:git\x20\x2dc\x20gc\x2ereflogExpire\x3d0\x20\x2dc\x20gc\x2ereflogExpireUnreachable\x3d0\x20\x2dc\x20gc\x2ererereresolved\x3d0\x20\x2dc\x20gc\x2ererereunresolved\x3d0\x20\x2dc\x20gc\x2epruneExpire\x3dnow\x20gc\x20\x22\x24argv\x22
 SETUVAR _fish_abbr_gitl:git\x20log\x20\x2d\x2doneline\x20\x2d\x2dgraph\x20\x2d\x2dcolor\x20\x2d\x2dall\x20\x2d\x2ddecorate\x20\x7c\x20emojify
 SETUVAR _fish_abbr_gl:git\x20pull
+SETUVAR _fish_abbr_gm:git\x20merge
 SETUVAR _fish_abbr_google:googler
 SETUVAR _fish_abbr_gp:git\x20push
 SETUVAR _fish_abbr_gpom:git\x20push\x20\x2du\x20origin\x20master
