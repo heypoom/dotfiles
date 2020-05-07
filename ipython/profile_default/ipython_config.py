@@ -209,7 +209,7 @@ c.BaseIPythonApplication.copy_config_files = True
 #  configuration (through profiles), history storage, etc. The default is usually
 #  $HOME/.ipython. This option can also be specified through the environment
 #  variable IPYTHONDIR.
-c.BaseIPythonApplication.ipython_dir = '$HOME/.ipython'
+# c.BaseIPythonApplication.ipython_dir = ''
 
 ## Whether to overwrite existing config files when copying
 c.BaseIPythonApplication.overwrite = False
