@@ -13,6 +13,7 @@
     ~/.default-gems: .default-gems
     ~/.tool-versions: .tool-versions
     ~/.ideavimrc: .ideavimrc
+    ~/.hammerspoon: hammerspoon
     ~/.config/:
         glob: true
         path: config/*
