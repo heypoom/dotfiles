@@ -13,7 +13,9 @@
     ~/.default-gems: .default-gems
     ~/.tool-versions: .tool-versions
     ~/.ideavimrc: .ideavimrc
-    ~/.hammerspoon: hammerspoon
+    ~/.hammerspoon:
+      if: '[ `uname` = Darwin ]'
+      path: hammerspoon
     ~/.config/:
         glob: true
         path: config/*
