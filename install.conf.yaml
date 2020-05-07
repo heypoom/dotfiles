@@ -15,9 +15,7 @@
     ~/.ideavimrc: .ideavimrc
     ~/.gitconfig: .gitconfig
     ~/.ipython: ipython
-    ~/.hammerspoon:
-      if: "[ `uname` = Darwin ]"
-      path: hammerspoon
+    ~/.hammerspoon: hammerspoon
     ~/.config/:
       glob: true
       path: config/*
