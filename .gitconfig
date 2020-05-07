@@ -36,5 +36,3 @@
 	enabled = true
 	autoupdate = true
 
-[includeIf "gitdir:~/Workspaces/OmniVirt/"]
-  path = ~/Workspaces/OmniVirt/.gitconfig

@@ -13,6 +13,7 @@
     ~/.default-gems: .default-gems
     ~/.tool-versions: .tool-versions
     ~/.ideavimrc: .ideavimrc
+    ~/.gitconfig: .gitconfig
     ~/.ipython: ipython
     ~/.hammerspoon:
       if: '[ `uname` = Darwin ]'
