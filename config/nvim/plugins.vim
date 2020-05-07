@@ -70,7 +70,7 @@ Plug 'junegunn/goyo.vim', {'for': ['markdown', 'text']}
 Plug 'easymotion/vim-easymotion'
 
 " Vue
-Plug 'posva/vim-vue'
+Plug 'posva/vim-vue', {'for': ['vue']}
 
 " " Git Gutter (Show git diffs in left gutter)
 " Plug 'airblade/vim-gitgutter'
