@@ -149,7 +149,7 @@ class DraculaColorScheme(Style):
 ## If True, IPython will not add the current working directory to sys.path. When
 #  False, the current working directory is added to sys.path, allowing imports of
 #  modules defined in the current directory.
-#c.InteractiveShellApp.ignore_cwd = False
+c.InteractiveShellApp.ignore_cwd = False
 
 ## Configure matplotlib for interactive use with the default matplotlib backend.
 #c.InteractiveShellApp.matplotlib = None
@@ -165,7 +165,7 @@ class DraculaColorScheme(Style):
 #  an ``import *`` is done from numpy and pylab, when using pylab mode.
 #  
 #  When False, pylab mode should not import any names into the user namespace.
-#c.InteractiveShellApp.pylab_import_all = True
+c.InteractiveShellApp.pylab_import_all = False
 
 ## Reraise exceptions encountered loading IPython extensions?
 #c.InteractiveShellApp.reraise_ipython_extension_failures = False
@@ -192,13 +192,13 @@ class DraculaColorScheme(Style):
 ## IPython: an enhanced interactive Python shell.
 
 ## Whether to create profile dir if it doesn't exist
-#c.BaseIPythonApplication.auto_create = False
+# c.BaseIPythonApplication.auto_create = True
 
 ## Whether to install the default config files into the profile dir. If a new
 #  profile is being created, and IPython contains config files for that profile,
 #  then they will be staged into the new directory.  Otherwise, default config
 #  files will be automatically generated.
-#c.BaseIPythonApplication.copy_config_files = False
+c.BaseIPythonApplication.copy_config_files = True
 
 ## Path to an extra config file to load.
 #  
@@ -209,35 +209,35 @@ class DraculaColorScheme(Style):
 #  configuration (through profiles), history storage, etc. The default is usually
 #  $HOME/.ipython. This option can also be specified through the environment
 #  variable IPYTHONDIR.
-#c.BaseIPythonApplication.ipython_dir = ''
+c.BaseIPythonApplication.ipython_dir = '$HOME/.ipython'
 
 ## Whether to overwrite existing config files when copying
-#c.BaseIPythonApplication.overwrite = False
+c.BaseIPythonApplication.overwrite = False
 
 ## The IPython profile to use.
-#c.BaseIPythonApplication.profile = 'default'
+c.BaseIPythonApplication.profile = 'default'
 
 ## Create a massive crash report when IPython encounters what may be an internal
 #  error.  The default is to append a short message to the usual traceback
-#c.BaseIPythonApplication.verbose_crash = False
+c.BaseIPythonApplication.verbose_crash = False
 
 #------------------------------------------------------------------------------
 # TerminalIPythonApp(BaseIPythonApplication,InteractiveShellApp) configuration
 #------------------------------------------------------------------------------
 
 ## Whether to display a banner upon starting IPython.
-#c.TerminalIPythonApp.display_banner = True
+c.TerminalIPythonApp.display_banner = False
 
 ## If a command or file is given via the command-line, e.g. 'ipython foo.py',
 #  start an interactive shell after executing the file or command.
-#c.TerminalIPythonApp.force_interact = False
+c.TerminalIPythonApp.force_interact = True
 
 ## Class to use to instantiate the TerminalInteractiveShell object. Useful for
 #  custom Frontends
-#c.TerminalIPythonApp.interactive_shell_class = 'IPython.terminal.interactiveshell.TerminalInteractiveShell'
+c.TerminalIPythonApp.interactive_shell_class = 'IPython.terminal.interactiveshell.TerminalInteractiveShell'
 
 ## Start IPython quickly by skipping the loading of config files.
-c.TerminalIPythonApp.quick = False
+c.TerminalIPythonApp.quick = True
 
 #------------------------------------------------------------------------------
 # InteractiveShell(SingletonConfigurable) configuration
@@ -336,22 +336,6 @@ c.InteractiveShell.colors = 'Neutral'
 ## Automatically call the pdb debugger after every exception.
 #c.InteractiveShell.pdb = False
 
-## Deprecated since IPython 4.0 and ignored since 5.0, set
-#  TerminalInteractiveShell.prompts object directly.
-#c.InteractiveShell.prompt_in1 = 'In [\\#]: '
-
-## Deprecated since IPython 4.0 and ignored since 5.0, set
-#  TerminalInteractiveShell.prompts object directly.
-#c.InteractiveShell.prompt_in2 = '   .\\D.: '
-
-## Deprecated since IPython 4.0 and ignored since 5.0, set
-#  TerminalInteractiveShell.prompts object directly.
-#c.InteractiveShell.prompt_out = 'Out[\\#]: '
-
-## Deprecated since IPython 4.0 and ignored since 5.0, set
-#  TerminalInteractiveShell.prompts object directly.
-#c.InteractiveShell.prompts_pad_left = True
-
 ## 
 #c.InteractiveShell.quiet = False
 
@@ -401,7 +385,7 @@ c.TerminalInteractiveShell.editing_mode = 'vi'
 c.TerminalInteractiveShell.editor = 'nvim'
 
 ## Allows to enable/disable the prompt toolkit history search
-#c.TerminalInteractiveShell.enable_history_search = True
+c.TerminalInteractiveShell.enable_history_search = True
 
 ## Enable vi (v) or Emacs (C-X C-E) shortcuts to open an external editor. This is
 #  in addition to the F2 binding, which is always enabled.
@@ -433,13 +417,13 @@ c.TerminalInteractiveShell.highlighting_style_overrides = {
 
 ## Enable mouse support in the prompt (Note: prevents selecting text with the
 #  mouse)
-#c.TerminalInteractiveShell.mouse_support = False
+c.TerminalInteractiveShell.mouse_support = False
 
 ## Display the current vi mode (when using vi editing mode).
-#c.TerminalInteractiveShell.prompt_includes_vi_mode = True
+c.TerminalInteractiveShell.prompt_includes_vi_mode = True
 
 ## Class used to generate Prompt token for prompt_toolkit
-#c.TerminalInteractiveShell.prompts_class = 'IPython.terminal.prompts.Prompts'
+c.TerminalInteractiveShell.prompts_class = 'IPython.terminal.prompts.Prompts'
 
 ## Use `raw_input` for the REPL, without completion and prompt colors.
 #  
@@ -449,22 +433,22 @@ c.TerminalInteractiveShell.highlighting_style_overrides = {
 #  
 #  This mode default to `True` if the `IPY_TEST_SIMPLE_PROMPT` environment
 #  variable is set, or the current terminal is not a tty.
-#c.TerminalInteractiveShell.simple_prompt = False
+c.TerminalInteractiveShell.simple_prompt = False
 
 ## Number of line at the bottom of the screen to reserve for the completion menu
-#c.TerminalInteractiveShell.space_for_menu = 6
+c.TerminalInteractiveShell.space_for_menu = 6
 
 ## Automatically set the terminal title
-#c.TerminalInteractiveShell.term_title = True
+c.TerminalInteractiveShell.term_title = True
 
 ## Customize the terminal title format.  This is a python format string.
 #  Available substitutions are: {cwd}.
-#c.TerminalInteractiveShell.term_title_format = 'IPython: {cwd}'
+c.TerminalInteractiveShell.term_title_format = 'IPython: {cwd}'
 
 ## Use 24bit colors instead of 256 colors in prompt highlighting. If your
 #  terminal supports true color, the following command should print 'TRUECOLOR'
 #  in orange: printf "\x1b[38;2;255;100;0mTRUECOLOR\x1b[0m\n"
-#c.TerminalInteractiveShell.true_color = False
+c.TerminalInteractiveShell.true_color = True
 
 #------------------------------------------------------------------------------
 # HistoryAccessor(HistoryAccessorBase) configuration
@@ -486,7 +470,7 @@ c.TerminalInteractiveShell.highlighting_style_overrides = {
 #  set enabled=False to disable the SQLite history, in which case there will be
 #  no stored history, no SQLite connection, and no background saving thread.
 #  This may be necessary in some threaded environments where IPython is embedded.
-#c.HistoryAccessor.enabled = True
+c.HistoryAccessor.enabled = True
 
 ## Path to file to use for SQLite history database.
 #  
