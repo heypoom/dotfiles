@@ -6,7 +6,7 @@
 
 - link:
     ~/.dotfiles: ""
-    ~/.tmux.conf: tmux.conf
+    ~/.tmux.conf: .tmux.conf
     ~/.myclirc: .myclirc
     ~/.pryrc: .pryrc
     ~/.radare2rc: .radare2rc
