@@ -9,9 +9,10 @@
     ~/.tmux.conf: tmux.conf
     ~/.myclirc: .myclirc
     ~/.pryrc: .pryrc
-    ~/.radare2rc : .radare2rc
-    ~/.default-gems : .default-gems
-    ~/.tool-versions : .tool-versions
+    ~/.radare2rc: .radare2rc
+    ~/.default-gems: .default-gems
+    ~/.tool-versions: .tool-versions
+    ~/.ideavimrc: .ideavimrc
     ~/.config/:
         glob: true
         path: config/*
