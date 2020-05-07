@@ -210,6 +210,5 @@ config/ssh
 config/ipython/profile_default/history.sqlite
 
 bat
-dotbot
 hammerspoon
 
