@@ -1,453 +1,332 @@
-# Homebrew Taps
-
+tap "alexanderwillner/tap"
+tap "bazelbuild/tap", pin: true
+tap "caskroom/cask"
+tap "danielbayley/alfred"
+tap "dart-lang/dart"
+tap "heroku/brew"
 tap "homebrew/bundle"
 tap "homebrew/cask"
+tap "homebrew/cask-drivers"
 tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "homebrew/services"
-
-# ------------------
-#
-#    Applications
-#
-# ------------------
-
-# Terminal
-cask "kitty"
-cask "alacritty"
-cask "iterm2"
-
-# OSXFuse and XQuartz
+tap "linode/cli"
+tap "linux-noah/noah"
+tap "loadimpact/k6"
+tap "miderwong/flutter"
+tap "mikhailai/misc"
+tap "molovo/revolver"
+tap "mongodb/brew"
+tap "osx-cross/arm"
+tap "osx-cross/avr"
 cask "osxfuse"
 cask "xquartz"
-brew "ext4fuse"
-
-# Setapp
-cask "setapp"
-
-# Google Chrome
-cask "google-chrome"
-
-# 1Password
-cask "1password"
-# cask "1password-cli"
-
-# Dropbox
-cask "dropbox"
-
-# Alfred
-cask "alfred"
-
-# Atom Beta
-cask "atom-beta"
-
-# Dash
-cask "dash"
-
-# Airtable
-cask "airtable"
-
-# Notion
-cask "notion"
-
-# Charles
-cask "charles"
-
-# Docker
-cask "docker"
-
-# Yarn
-brew "yarn", ignore_dependencies: true
-
-# JetBrains Toolbox
-cask "jetbrains-toolbox"
-
-cask "telegram"
-cask "discord""
-
-cask "macs-fan-control"
-cask "supercollider"
-cask "handbrake"
-cask "duet"
-cask "insomnia"
-cask "veracrypt"
-cask "daisydisk"
-cask "transmission"
-cask "logitech-presentation"
-cask "vox"
-
-# Fastlane
-cask "fastlane"
-
-# FIJI
-cask "fiji"
-
-# Google Cloud SDK
-cask "google-cloud-sdk"
-
-# FuraCode, FuraMono & Hack
-cask "font-firacode-nerd-font"
-cask "font-firamono-nerd-font"
-cask "font-hack-nerd-font"
-
-# Genymotion
-cask "genymotion"
-
-# Drive File Stream
-cask "google-drive-file-stream"
-
-# IINA (Media Player)
-cask "iina"
-
-# Little Snitch (firewall)
-cask "little-snitch"
-cask "micro-snitch"
-
-# Grammarly
-cask "grammarly"
-
-# GTKWave
-cask "gtkwave"
-
-
-# Karabiner Elements
-cask "karabiner-elements"
-
-# Keybase
-cask "keybase"
-
-# Netron (ML Model Explorer)
-cask "netron"
-
-# Sketch!
-cask "sketch"
-
-# SMC Fan Control
-cask "smcfancontrol"
-
-# Tor Browser
-brew "tor", restart_service: true
-cask "tor-browser"
-
-# Vagrant & Vagrant Manager
-cask "vagrant"
-cask "vagrant-manager"
-
-# VirtualBox
-cask "virtualbox"
-
-# Visual Studio Code
-cask "visual-studio-code"
-
-# Wireshark
-cask "wireshark"
-
-# Zenmap (Nmap GUI)
-cask "zenmap"
-
-# Alfred x Numi Integration
-tap "danielbayley/alfred"
-cask "danielbayley/alfred/alfred-numi"
-
-# Shells
+brew "ack"
+brew "openssl@1.1"
+brew "readline"
+brew "sqlite"
+brew "aircrack-ng"
+brew "angle-grinder"
+brew "ansifilter"
+brew "apktool"
+brew "arduino-cli"
+brew "aria2"
+brew "xz"
+brew "asciinema"
+brew "glib", link: false
+brew "autojump"
+brew "libusb"
+brew "avrdude"
+brew "awscli"
 brew "bash"
 brew "bash-completion@2"
-brew "fish"
-brew "zsh"
-brew "xonsh"
-
-# Revolver (Shell Loader)
-tap "molovo/revolver"
-brew "molovo/revolver/revolver"
-
-# Mosh (Mobile)
-brew "mosh"
-
-# Vim and Neovim!
-brew "ed"
-brew "vim"
-brew "neovim"
-
-# TLDR - Shell Explainer
-brew "tldr"
-
-# Tokei (Word Token Counter)
-brew "tokei"
-
-# Terminal-based Browsers
-brew "w3m"
-brew "elinks"
-brew "lynx"
-
-# LNav (Log Navigator)
-brew "lnav"
-
-# NCDU (Kinda like DaisyDisk)
-brew "ncdu"
-
-# Tmux (Terminal Multiplexer)
-brew "tmux"
-brew "screen"
-
-# NodeJS and Ruby
-# brew "node", link: false
-# brew "ruby"
-
-# Bat (Colorized Cat)
 brew "bat"
-
-# Ag (Faster Grep)
-brew "the_silver_searcher"
-
-# Rg (Fastest Grep)
-brew "ripgrep"
-
-# Angle Grinder (Custom Parser)
-brew "angle-grinder"
-
-# FZF
+brew "bfg"
+brew "blueutil"
+brew "boost"
+brew "boot-clj"
+brew "capstone"
+brew "cmake"
+brew "gcc"
+brew "rlwrap"
+brew "clojure"
+brew "colordiff"
+brew "coreutils"
+brew "cowsay"
+brew "curl"
+brew "deno"
+brew "dex2jar"
+brew "dfu-util"
+brew "diffutils"
+brew "doctl"
+brew "ed"
+brew "editorconfig"
+brew "elinks"
+brew "elixir"
+brew "emojify"
+brew "entr"
+brew "exa"
+brew "ext4fuse"
+brew "fasd"
+brew "fd"
+brew "fdupes"
+brew "gnutls", link: false
+brew "ffmpeg"
+brew "findutils"
+brew "fish"
+brew "fortune"
+brew "fpp"
+brew "fsevents-tools"
+brew "fswatch"
 brew "fzf"
-
-# Git
+brew "gawk"
+brew "gcsfuse"
+brew "gdb"
+brew "gdrive"
+brew "gist"
 brew "git"
 brew "git-extras"
 brew "git-flow"
 brew "git-lfs"
-brew "bfg"
-brew "gist"
-
-# Hub (Git Replacement for GitHub)
-brew "hub"
-
-# Tig (Git CLI)
-brew "tig"
-
-# Shellcheck - linter for shell files
-brew "shellcheck"
-
-# Spotify CLI
-brew "shpotify"
-
-# Audio Utilities
-brew "sox"
-brew "portaudio"
-
-# Things CLI
-tap "alexanderwillner/tap"
-brew "alexanderwillner/tap/things.sh"
-
-# DigitalOcean CLI
-brew "doctl"
-
-# Heroku CLI
-tap "heroku/brew"
-brew "heroku/brew/heroku"
-
-# Htop (Alternative to `top`)
-brew "htop"
-
-# Fdupes: Find duplicate files
-brew "fdupes"
-
-# Utilities
-brew "less"
-brew "nasm"
-brew "grc"
-brew "gzip"
-brew "unrar"
-brew "unzip"
-brew "grep"
-brew "rename"
-brew "rsync"
-brew "wget"
-brew "curl"
-
-# Ruby Tools
-brew "rbspy"
-
-# Python Tools
-brew "pyenv"
-
-# ImageMagick
-brew "imagemagick"
-
-# Telnet
-brew "telnet"
-
-# GNU Utils
-brew "gnupg"
-brew "gnutls"
+brew "glew"
+brew "glfw"
+brew "glm"
+brew "glslang"
 brew "gnu-indent"
 brew "gnu-sed"
 brew "gnu-tar"
 brew "gnu-which"
-brew "findutils"
-brew "diffutils"
-brew "gawk"
-
-# Databases
-brew "postgresql", restart_service: true
-brew "mysql"
-brew "redis", restart_service: true
-
-# Proxy Tools
-brew "polipo"
-brew "privoxy", restart_service: true
-brew "proxychains-ng"
-brew "mitmproxy"
-
-# Ranger (File Explorer)
-brew "ranger"
-
-# The Fuck
-brew "thefuck"
-
-# PV: Progress Bar
-brew "pv"
-
-# JADX: Java Decompiler
-brew "jadx"
-
-# JQ: JSON Toolkit
-brew "jq"
-
-# Aircrack & Nmap (Pentest Tools)
-brew "aircrack-ng"
-brew "nmap"
-brew "tcpdump"
-brew "sqlmap"
-brew "tcpkali"
-
-# Reverse Engineering Tools
-brew "capstone"
-brew "gdb"
-
-# FD - User-friendly `find`
-brew "fd"
-
-# Exa - Better `ls`
-brew "exa"
-
-# EditorConfig
-brew "editorconfig"
-
-# K6 (Load Tester)
-tap "loadimpact/k6"
-brew "loadimpact/k6/k6"
-
-# Bazel (Build Tool)
-tap "bazelbuild/tap", pin: true
-brew "bazelbuild/tap/bazel"
-
-# Dart
-tap "dart-lang/dart"
-brew "dart-lang/dart/dart@2"
-
-# Scala and SBT
+brew "gnupg", link: false
+brew "go"
+brew "googler"
 brew "gradle"
-brew "scala"
-brew "sbt"
-
-# Database CLI
-brew "mycli"
-brew "pgcli"
-
-# PlatformIO
-brew "platformio"
-
-# Clojure Things
-brew "clojure"
-brew "leiningen"
-brew "planck"
-
-# Kotlin
-brew "kotlin"
-
-# Emojify
-brew "emojify"
-
-# Z3 (SAT Solver)
-brew "z3"
-
-# Benchmarking Tools
-brew "wrk"
-
-# Build Essentials
-brew "make"
-brew "llvm"
-brew "cmake"
-brew "coreutils"
-brew "ack"
-brew "glib"
-brew "openssl"
-brew "openssh"
+brew "graphviz"
+brew "grc"
+brew "grep"
+brew "gstreamer"
+brew "gst-plugins-base"
+brew "gst-plugins-bad"
 brew "pkg-config"
-brew "pcre"
-brew "gcc"
-brew "boost"
-brew "readline"
-brew "ansifilter"
-brew "rlwrap"
-brew "m4"
-
-# Autotools
-brew "autoconf"
-brew "autojump"
-brew "automake"
-
-# Build Dependencies (Libraries)
+brew "gst-plugins-good"
+brew "gst-rtsp-server"
+brew "gzip"
+brew "htop"
+brew "hub"
+brew "icarus-verilog"
+brew "libxml2"
+brew "libimobiledevice", args: ["HEAD"]
+brew "ideviceinstaller"
+brew "imagemagick"
+brew "ios-deploy"
+brew "jadx"
+brew "jq"
+brew "kotlin"
+brew "leiningen"
+brew "less"
 brew "libconfig"
 brew "libdnet"
-brew "libuv"
-brew "zlib"
-brew "libzip"
-brew "libxml2"
+brew "libftdi"
 brew "libmagic"
-brew "libtool"
-brew "libevent"
-brew "libyaml"
-
-# Flutter
-tap "MiderWong/homebrew-flutter"
-brew "MiderWong/homebrew-flutter/flutter"
-
-# OpenCV
+brew "libusbmuxd", args: ["HEAD"]
+brew "llvm"
+brew "lnav"
+brew "lynx"
+brew "m4"
+brew "mackup"
+brew "make"
+brew "mbedtls"
+brew "megatools"
+brew "minicom"
+brew "mitmproxy"
+brew "mosh"
+brew "mycli"
+brew "mysql"
+brew "nasm"
+brew "ncdu"
+brew "neofetch"
+brew "neovim"
+brew "ninja"
+brew "nmap"
+brew "open-ocd"
 brew "opencv"
-
-# Haskell
-brew "haskell-stack"
-# brew "haskell-platform" -- no longer needed
-
-# Needed for Flutter
-brew "ios-deploy"
-brew "ideviceinstaller"
-brew "libimobiledevice", args: ["HEAD"]
-brew "cocoapods"
-brew "usbmuxd", args: ["HEAD"], link: true
-
-# GraphViz
-brew "graphviz"
-
-# Python 3 and 2
-brew "python"
-brew "python@2"
-
-# APKTool (APK Reverse Engineering)
-brew "apktool"
-
-# Asciinema
-brew "asciinema"
-
-# FFMPEG
-brew "ffmpeg"
-
-# Elixir
-brew "elixir"
-
-# ZeroMQ Stuff
-# brew "zeromq"
-# brew "czmq", args: ["HEAD"]
-
-# AVR Tools
-# brew "avrdude"
+brew "openssh"
+brew "p7zip"
+brew "qt"
+brew "pdf2svg"
+brew "peco"
+brew "pgcli"
+brew "planck"
+brew "plowshare"
+brew "pngquant"
+brew "polipo"
+brew "portaudio"
+brew "postgresql"
+brew "privoxy"
+brew "progress"
+brew "proxychains-ng"
+brew "pv"
+brew "pyenv"
+brew "qemu"
+brew "qrencode"
+brew "radare2"
+brew "ranger"
+brew "rbspy"
+brew "rclone"
+brew "reattach-to-user-namespace"
+brew "redis", restart_service: true
+brew "rename"
+brew "ripgrep"
+brew "rsync"
+brew "ruby-build"
+brew "sbt"
+brew "scala"
+brew "screen"
+brew "selecta"
+brew "shellcheck"
+brew "shpotify"
+brew "simple-mtpfs"
+brew "socat"
+brew "sox"
+brew "sqlmap"
+brew "stlink"
+brew "swig"
+brew "tcpdump"
+brew "tcpkali"
+brew "tealdeer"
+brew "telnet"
+brew "the_silver_searcher"
+brew "thefuck"
+brew "tig"
+brew "tldr", link: false
+brew "tmux"
+brew "tokei"
+brew "tor", restart_service: true
+brew "transmission-cli"
+brew "unrar"
+brew "unzip"
+brew "vault"
+brew "verilator"
+brew "w3m"
+brew "wget"
+brew "wrk"
+brew "xonsh", link: false
+brew "yajl"
+brew "z"
+brew "z3"
+brew "zlib"
+brew "zsh"
+brew "alexanderwillner/tap/things.sh"
+brew "bazelbuild/tap/bazel"
+brew "dart-lang/dart/dart"
+brew "heroku/brew/heroku"
+brew "linode/cli/linode-cli"
+brew "linux-noah/noah/noah"
+brew "loadimpact/k6/k6"
+brew "miderwong/flutter/flutter"
+brew "mikhailai/misc/usbutils"
+brew "molovo/revolver/revolver"
+brew "mongodb/brew/mongodb-community"
+brew "osx-cross/arm/arm-gcc-bin"
+brew "osx-cross/avr/simavr", args: ["HEAD"]
+cask "1password"
+cask "1password-cli"
+cask "adobe-creative-cloud"
+cask "airdroid"
+cask "airtable"
+cask "alfred"
+cask "atom-beta"
+cask "blender"
+cask "calibre"
+cask "caprine"
+cask "charles"
+cask "chromium"
+cask "cutter"
+cask "daisydisk"
+cask "dash"
+cask "discord"
+cask "docker"
+cask "dotnet-sdk"
+cask "dropbox"
+cask "duet"
+cask "epic-games"
+cask "evernote"
+cask "fantastical"
+cask "fastlane"
+cask "figma"
+cask "fiji"
+cask "fing"
+cask "firefox"
+cask "firefox-developer-edition"
+cask "fl-studio"
+cask "font-firacode-nerd-font"
+cask "font-firamono-nerd-font"
+cask "font-hack-nerd-font"
+cask "fritzing"
+cask "gcc-arm-embedded"
+cask "genymotion"
+cask "ghdl"
+cask "ghidra"
+cask "godot-mono"
+cask "google-chrome"
+cask "google-cloud-sdk"
+cask "google-drive-file-stream"
+cask "gpg-suite"
+cask "grammarly"
+cask "gtkwave"
+cask "hammerspoon"
+cask "handbrake"
+cask "hyper"
+cask "iina"
+cask "insomnia"
+cask "iterm2"
+cask "jetbrains-toolbox"
+cask "julia"
+cask "karabiner-elements"
+cask "keybase"
+cask "keycastr"
+cask "kitty"
+cask "little-snitch"
+cask "logitech-presentation"
+cask "macs-fan-control"
+cask "magicavoxel"
+cask "megacmd"
+cask "meshlab"
+cask "micro-snitch"
+cask "microsoft-edge"
+cask "microsoft-teams"
+cask "minecraft"
+cask "netron"
+cask "ngrok"
+cask "notion"
+cask "numi"
+cask "obs"
+cask "origin"
+cask "parallels"
+cask "pdf-expert"
+cask "postman"
+cask "protonvpn"
+cask "rocket"
+cask "setapp"
+cask "silicon-labs-vcp-driver"
+cask "sketch"
+cask "skim"
+cask "skyfonts"
+cask "slack"
+cask "smcfancontrol"
+cask "spotify"
+cask "steam"
+cask "teamviewer"
+cask "telegram"
+cask "transmission"
+cask "unity-hub"
+cask "vagrant"
+cask "vagrant-manager"
+cask "vcv-rack"
+cask "veracrypt"
+cask "virtualbox"
+cask "visual-studio-code"
+cask "visual-studio-code-insiders"
+cask "vlc"
+cask "wireshark"
+cask "zenmap"

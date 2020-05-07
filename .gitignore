@@ -208,7 +208,6 @@ config/nvim/.netrwhist
 config/ipython/profile_default/db/dhist
 config/ssh
 config/ipython/profile_default/history.sqlite
-
-bat
-hammerspoon
-
+config/thefuck/__pycache__
+config/thefuck/settings.pyc
+config/thefuck/__pycache__

@@ -7,12 +7,18 @@
 - link:
     ~/.dotfiles: ''
     ~/.tmux.conf: tmux.conf
-    ~/.vim: vim
-    ~/.vimrc: vimrc
+    ~/.myclirc: .myclirc
+    ~/.pryrc: .pryrc
+    ~/.radare2rc : .radare2rc
+    ~/.default-gems : .default-gems
+    ~/.config/:
+        glob: true
+        path: config/*
+        relink: true
+        create: true
 
 - create:
-    - ~/downloads
-    - ~/.vim/undo-history
+    - ~/.config
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
