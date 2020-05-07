@@ -2,10 +2,10 @@
     link:
       relink: true
 
-- clean: ['~']
+- clean: ["~"]
 
 - link:
-    ~/.dotfiles: ''
+    ~/.dotfiles: ""
     ~/.tmux.conf: tmux.conf
     ~/.myclirc: .myclirc
     ~/.pryrc: .pryrc
@@ -16,16 +16,21 @@
     ~/.gitconfig: .gitconfig
     ~/.ipython: ipython
     ~/.hammerspoon:
-      if: '[ `uname` = Darwin ]'
+      if: "[ `uname` = Darwin ]"
       path: hammerspoon
     ~/.config/:
-        glob: true
-        path: config/*
-        relink: true
-        create: true
+      glob: true
+      path: config/*
+      relink: true
+      create: true
 
 - create:
     - ~/.config
 
 - shell:
-  - [git submodule update --init --recursive, Installing submodules]
+    - description: Install submodules
+      command: git submodule update --init --recursive
+    - description: Install Homebrew
+      command: ! which -s brew && /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    - description: Use Fish as default shell
+      command: chsh -s $(which fish)
