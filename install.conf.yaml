@@ -29,6 +29,12 @@
     - description: Install submodules
       command: git submodule update --init --recursive
     - description: Install Homebrew
-      command: ! which -s brew && /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+      command: ! which -s brew && /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
     - description: Use Fish as default shell
-      command: chsh -s $(which fish)
+      command: which -s fish && chsh -s $(which fish)
+    - description: Install XCode Command Line Tools
+      command: which -s xcode-select && xcode-select --install
+    - description: Switch to correct XCode path
+      command: which -s xcode-select && sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
+    - description: Agree to XCode build license
+      command: which -s xcodebuild && sudo xcodebuild -license
