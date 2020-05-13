@@ -13,6 +13,7 @@
     ~/.default-gems: .default-gems
     ~/.tool-versions: .tool-versions
     ~/.ideavimrc: .ideavimrc
+    ~/.vscode-css: .vscode-css
     ~/.gitconfig: .gitconfig
     ~/.ghci : .ghci
     ~/.ipython: ipython
