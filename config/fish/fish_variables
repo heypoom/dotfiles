@@ -51,6 +51,7 @@ SETUVAR _fish_abbr_m:make
 SETUVAR _fish_abbr_mux:tmuxinator
 SETUVAR _fish_abbr_r:ranger
 SETUVAR _fish_abbr_rb:ruby
+SETUVAR _fish_abbr_s:sudo
 SETUVAR _fish_abbr_scripts:cat\x20package\x2ejson\x20\x7c\x20jq\x20\x2escripts
 SETUVAR _fish_abbr_sl:exa
 SETUVAR _fish_abbr_t:tmux
