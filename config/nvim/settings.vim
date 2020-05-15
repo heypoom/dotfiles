@@ -1,8 +1,7 @@
 "" Polyglot Configuration
 
 " Disable these languages.
-" We use vim-go, vim-javascript and vim-markdown instead.
-let g:polyglot_disabled = ['go', 'javascript', 'jsx', 'markdown']
+let g:polyglot_disabled = ['go']
 
 "" Disable Default Keymaps
 

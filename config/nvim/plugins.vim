@@ -216,7 +216,7 @@ Plug 'rust-lang/rust.vim', {'for': 'rust'}
 " 
 " " Language Packs! (syntax highlighting, indentation, etc.)
 Plug 'sheerun/vim-polyglot'
-" 
+
 " " TidalCycles for Live Coding Music!
 " " Plug 'tidalcycles/vim-tidal'
 " 
