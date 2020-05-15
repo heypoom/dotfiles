@@ -63,6 +63,9 @@ set -gx MACOSX_DEPLOYMENT_TARGET 10.15
 # Add GNU manuals to the MANPATH
 set -gx MANPATH /usr/local/opt/coreutils/libexec/gnuman/ /usr/share/man $MANPATH
 
+# Use Neovim as man's pager.
+set -gx MANPAGER "nvim -c 'set ft=man' -"
+
 # Configure the environment variables.
 set -gx PATH \
   $HOME/.asdf/shims \
