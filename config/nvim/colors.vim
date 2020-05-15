@@ -32,3 +32,12 @@ let g:terminal_color_14 = '#68b6f3'
 " White
 let g:terminal_color_7 = '#ffffff'
 let g:terminal_color_15 = '#ffffff'
+
+" --- Syntax Highlight for Dracula ---
+
+hi! link jsxTagName DraculaPink
+hi! link jsxEqual DraculaPink
+hi! link jsxAttrib DraculaGreen
+hi! link jsxDot white
+hi! link jsxComponentName DraculaCyan
+hi! link jsxPunct white
