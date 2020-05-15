@@ -448,7 +448,9 @@ mouse:
 #    like `PageUp` (`"\x1b[5~"`), you can run the command `showkey -a` outside
 #    of tmux. Note that applications use terminfo to map escape sequences back
 #    to keys. It is therefore required to update the terminfo when changing an
-#    escape sequence.  - `action`: Execute a predefined action
+#    escape sequence.
+#
+# - `action`: Execute a predefined action
 #
 #   - ToggleViMode
 #   - Copy
@@ -549,8 +551,6 @@ mouse:
 key_bindings:
   - { key: Paste,                                action: Paste          }
   - { key: Copy,                                 action: Copy           }
-  #- { key: L,          mods: Control,             action: ClearLogNotice }  
-  #- { key: L,         mods: Control, mode: ~Vi,  chars: "\x0c"          }
   - { key: PageUp,    mods: Shift,   mode: ~Alt, action: ScrollPageUp,  }
   - { key: PageDown,  mods: Shift,   mode: ~Alt, action: ScrollPageDown }
   - { key: Home,      mods: Shift,   mode: ~Alt, action: ScrollToTop,   }
@@ -606,8 +606,6 @@ key_bindings:
   - { key: Equals, mods: Command,            action: IncreaseFontSize }
   - { key: Add,    mods: Command,            action: IncreaseFontSize }
   - { key: Minus,  mods: Command,            action: DecreaseFontSize }
-  - { key: K,      mods: Command,            chars: "\x0b"            }
-  - { key: K,      mods: Command,            action: ClearHistory     }
   - { key: V,      mods: Command,            action: Paste            }
   - { key: C,      mods: Command,            action: Copy             }
   # - { key: C,      mods: Command, mode: Vi,  action: ClearSelection   }
@@ -616,7 +614,10 @@ key_bindings:
   - { key: Q,      mods: Command,            action: Quit             }
   - { key: N,      mods: Command,            action: SpawnNewInstance }
   - { key: F,      mods: Command|Control,    action: ToggleFullscreen }
-  - { key: Return,      mods: Command,    action: ToggleFullscreen }
+  - { key: Return, mods: Command,            action: ToggleFullscreen }
+
+  - { key: K,      mods: Command,            action: ClearHistory }
+  - { key: K,      mods: Command,            chars: "\x0c" }
 
 debug:
   # Display the time it takes to redraw each frame.
