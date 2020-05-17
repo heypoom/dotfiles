@@ -15,7 +15,7 @@ SETUVAR _fish_abbr_brewi:env\x20HOMEBREW_NO_AUTO_UPDATE\x3d1\x20brew\x20install
 SETUVAR _fish_abbr_brewl:brew\x20list
 SETUVAR _fish_abbr_brewr:brew\x20remove
 SETUVAR _fish_abbr_brews:brew\x20search
-SETUVAR _fish_abbr_cask:brew\x20cask
+SETUVAR _fish_abbr_cask:env\x20HOMEBREW_NO_AUTO_UPDATE\x3d1\x20brew\x20cask\x20install
 SETUVAR _fish_abbr_caski:brew\x20cask\x20install
 SETUVAR _fish_abbr_caskl:brew\x20cask\x20list
 SETUVAR _fish_abbr_deps:cat\x20package\x2ejson\x20\x7c\x20jq\x20\x2edependencies
@@ -65,7 +65,7 @@ SETUVAR _fish_abbr_v:nvim
 SETUVAR _fish_abbr_vi:nvim
 SETUVAR _fish_abbr_vim:nvim
 SETUVAR _fish_abbr_where:which\x20\x2da
-SETUVAR _fish_abbr_wm:yabai
+SETUVAR _fish_abbr_wm:yabai\x20\x2dm
 SETUVAR fish_color_autosuggestion:555\x1ebrblack
 SETUVAR fish_color_cancel:\x2dr
 SETUVAR fish_color_command:005fd7
