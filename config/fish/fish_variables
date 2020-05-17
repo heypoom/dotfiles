@@ -65,6 +65,7 @@ SETUVAR _fish_abbr_v:nvim
 SETUVAR _fish_abbr_vi:nvim
 SETUVAR _fish_abbr_vim:nvim
 SETUVAR _fish_abbr_where:which\x20\x2da
+SETUVAR _fish_abbr_wm:yabai
 SETUVAR fish_color_autosuggestion:555\x1ebrblack
 SETUVAR fish_color_cancel:\x2dr
 SETUVAR fish_color_command:005fd7
