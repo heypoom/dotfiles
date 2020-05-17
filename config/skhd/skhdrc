@@ -136,7 +136,7 @@ alt - d : yabai -m window --toggle zoom-parent
 alt - f : yabai -m window --toggle zoom-fullscreen
 
 # toggle window split type
-# alt - e : yabai -m window --toggle split
+alt - s : yabai -m window --toggle split
 
 # float / unfloat window and center on screen
 # alt - t : yabai -m window --toggle float;\
