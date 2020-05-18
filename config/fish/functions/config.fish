@@ -1,4 +1,4 @@
-# Defined in /var/folders/jm/l3mwrkrx7yq8nhxyg1btdzkm0000gn/T//fish.Zx55aD/config.fish @ line 2
+# Defined in /var/folders/jm/l3mwrkrx7yq8nhxyg1btdzkm0000gn/T//fish.J2ZEqT/config.fish @ line 2
 function config
 	switch $argv[1]
 		case yabai
@@ -34,6 +34,7 @@ function config
 			popd
 		case commit
 			pushd "$HOME/.dotfiles"
+			git add --all
 			git commit -m $argv[2]
 			popd
 		case push
@@ -47,6 +48,8 @@ function config
 			pushd "$HOME/.dotfiles"
 			$HOME/.dotfiles/install
 			popd
+		case edit
+			$EDITOR "$HOME/.config/fish/functions/config.fish"
 		case "*"
 			echo "Config" $argv[1] "not found."
 	end
