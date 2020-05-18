@@ -1,10 +1,12 @@
-# Defined in /var/folders/jm/l3mwrkrx7yq8nhxyg1btdzkm0000gn/T//fish.5e1vmT/config.fish @ line 2
+# Defined in /var/folders/jm/l3mwrkrx7yq8nhxyg1btdzkm0000gn/T//fish.RbRu40/config.fish @ line 2
 function config
 	switch $argv[1]
 		case yabai
 			$EDITOR "$HOME/.config/yabai/yabairc"
+			$HOME/.config/yabai/yabairc
 		case skhd
 			$EDITOR "$HOME/.config/skhd/skhdrc"
+			skhd -r
 		case kitty
 			$EDITOR "$HOME/.config/kitty/kitty.conf"
 		case alacritty
