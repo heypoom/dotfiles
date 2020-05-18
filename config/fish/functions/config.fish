@@ -1,4 +1,4 @@
-# Defined in /var/folders/jm/l3mwrkrx7yq8nhxyg1btdzkm0000gn/T//fish.RbRu40/config.fish @ line 2
+# Defined in /var/folders/jm/l3mwrkrx7yq8nhxyg1btdzkm0000gn/T//fish.wiW6TU/config.fish @ line 2
 function config
 	switch $argv[1]
 		case yabai
@@ -66,6 +66,7 @@ function config
 			popd
 		case diff
 			pushd "$HOME/.dotfiles"
+			git add --all
 			git diff HEAD
 			popd
 		case reset
