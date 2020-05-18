@@ -1,48 +1,34 @@
-# Defined in /var/folders/jm/l3mwrkrx7yq8nhxyg1btdzkm0000gn/T//fish.tWOZtd/config.fish @ line 2
+# Defined in /var/folders/jm/l3mwrkrx7yq8nhxyg1btdzkm0000gn/T//fish.gI48m5/config.fish @ line 2
 function config
 	switch $argv[1]
 		case yabai
-			$EDITOR "$HOME/.config/yabai/yabairc"
+			config_edit yabai/yabairc
 			$HOME/.config/yabai/yabairc
 		case skhd
-			$EDITOR "$HOME/.config/skhd/skhdrc"
+			config_edit skhd/skhdrc
 			skhd -r
 		case kitty
-			$EDITOR "$HOME/.config/kitty/kitty.conf"
+			config_edit kitty/kitty.conf
 		case alacritty
-			$EDITOR "$HOME/.config/alacritty/alacritty.yml"
-		case git
-			$EDITOR "$HOME/.gitconfig"
-		case ipython
-			$EDITOR "$HOME/.ipython/profile_default/ipython_config.py"
-		case tmux
-			$EDITOR "$HOME/.tmux.conf"
+			config_edit alacritty/alacritty.yml
 		case nvim
-			pushd "$HOME/.config/nvim"
-			$EDITOR "$HOME/.config/nvim/settings.vim"
-			popd
+			config_edit_cd config/nvim settings.nvim
 		case ranger
-			pushd "$HOME/.config/ranger"
-			$EDITOR "$HOME/.config/ranger/rc.conf"
-			popd
+			config_edit_cd .config/ranger rc.conf
 		case widgets
-			pushd "$HOME/.widgets"
-			$EDITOR "$HOME/.widgets"
-			popd
+			config_edit_cd .widgets Hello.jsx
 		case fish
-			pushd "$HOME/.config/fish"
-			$EDITOR "$HOME/.config/fish"
-			popd
+			config_edit_cd .config/fish conf.d/1-environment.fish
 		case path
-			pushd "$HOME/.config/fish/conf.d"
-			$EDITOR "$HOME/.config/fish/conf.d/1-environment.fish"
-			popd
-		case alacritty
-			$EDITOR "$HOME/.config/alacritty/alacritty.yml"
+			config_edit_cd .config/fish/conf.d 1-environment.fish
 		case dot
-			pushd "$HOME/.dotfiles"
-			$EDITOR "$HOME/.dotfiles/install.conf.yaml"
-			popd
+			config_edit_cd .dotfiles install.conf.yaml
+		case git
+			config_edit_file .gitconfig
+		case ipython
+			config_edit_file .ipython/profile_default/ipython_config.py
+		case tmux
+			config_edit_file .tmux.conf
 		case commit
 			pushd "$HOME/.dotfiles"
 			git add --all
