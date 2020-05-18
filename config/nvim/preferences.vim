@@ -56,7 +56,10 @@ set cursorline
 
 " Use abbreviations and disable intro messages
 " Read more at :help shortmess
-set shortmess=aI
+set shortmess=aIsA
+
+" Set command line height to 2 to avoid annoying enter to continue messages
+set cmdheight=2
 
 " Make the new window appear below.
 set splitbelow

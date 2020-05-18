@@ -147,3 +147,4 @@ alt - s : yabai -m window --toggle split
 #           yabai -m window --toggle topmost;\
 #           yabai -m window --toggle pip
 
+
