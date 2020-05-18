@@ -1,4 +1,4 @@
-# Defined in /var/folders/jm/l3mwrkrx7yq8nhxyg1btdzkm0000gn/T//fish.wiW6TU/config.fish @ line 2
+# Defined in /var/folders/jm/l3mwrkrx7yq8nhxyg1btdzkm0000gn/T//fish.geeiDK/config.fish @ line 2
 function config
 	switch $argv[1]
 		case yabai
@@ -20,6 +20,10 @@ function config
 		case nvim
 			pushd "$HOME/.config/nvim"
 			$EDITOR "$HOME/.config/nvim/settings.vim"
+			popd
+		case ranger
+			pushd "$HOME/.config/ranger"
+			$EDITOR "$HOME/.config/ranger/rc.conf"
 			popd
 		case widgets
 			pushd "$HOME/.widgets"
