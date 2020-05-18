@@ -61,7 +61,7 @@ set -gx SDKROOT "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.pla
 set -gx MACOSX_DEPLOYMENT_TARGET 10.15
 
 # Add GNU manuals to the MANPATH
-set -gx MANPATH /usr/local/opt/coreutils/libexec/gnuman/ /usr/share/man $MANPATH
+set -gx MANPATH /usr/local/opt/coreutils/libexec/gnuman/ /usr/share/man /usr/local/share/man $MANPATH
 
 # Use Neovim as man's pager.
 set -gx MANPAGER "nvim -c 'set ft=man' -"
