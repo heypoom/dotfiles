@@ -26,5 +26,5 @@ yabai -m config right_padding                20
 yabai -m config window_gap                   20
 
 # Rules to allow dialogs to float.
-yabai -m rule --add app='^Dash$' title='^General$' manage=off
+yabai -m rule --add title='Preferences$' manage=off
 

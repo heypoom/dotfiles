@@ -193,7 +193,7 @@ Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release', 'for': 'clojure'}
 " 
 " " Search for documentation in Dash.app using :Dash
 " " Read more with :help dash
-" Plug 'rizzatti/dash.vim'
+Plug 'rizzatti/dash.vim'
 " 
 " " Track your coding time with WakaTime
 Plug 'wakatime/vim-wakatime'
