@@ -146,5 +146,3 @@ alt - s : yabai -m window --toggle split
 # alt - p : yabai -m window --toggle sticky;\
 #           yabai -m window --toggle topmost;\
 #           yabai -m window --toggle pip
-
-
