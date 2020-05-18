@@ -23,6 +23,7 @@ SETUVAR _fish_abbr_deps:cat\x20package\x2ejson\x20\x7c\x20jq\x20\x2edependencies
 SETUVAR _fish_abbr_devdeps:cat\x20package\x2ejson\x20\x7c\x20jq\x20\x2edevDependencies
 SETUVAR _fish_abbr_docker_2D_clean:docker\x20volume\x20ls\x20\x2dqf\x20dangling\x3dtrue\x20\x7c\x20xargs\x20docker\x20volume\x20rm
 SETUVAR _fish_abbr_dot:config
+SETUVAR _fish_abbr_find:gfind
 SETUVAR _fish_abbr_g:git
 SETUVAR _fish_abbr_ga:git\x20add
 SETUVAR _fish_abbr_gaa:git\x20add\x20\x2d\x2dall
