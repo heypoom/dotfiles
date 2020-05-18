@@ -1,4 +1,4 @@
-# Defined in /var/folders/jm/l3mwrkrx7yq8nhxyg1btdzkm0000gn/T//fish.AFRTKp/config.fish @ line 2
+# Defined in /var/folders/jm/l3mwrkrx7yq8nhxyg1btdzkm0000gn/T//fish.8VE3Ba/config.fish @ line 2
 function config
 	switch $argv[1]
 		case yabai
