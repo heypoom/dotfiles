@@ -1,8 +1,11 @@
 # Balance size of windows
 alt - 0: yabai -m space --balance
 
-# Cycle the window
-alt - x: yabai -m window --swap next || yabai -m window --swap first
+# Cycle focus the window
+alt - x: yabai -m window --focus next || yabai -m window --focus first
+
+# Cycle swap the window
+alt - c: yabai -m window --swap next || yabai -m window --swap first
 
 # Toggle window zoom
 alt - d: yabai -m window --toggle zoom-parent
