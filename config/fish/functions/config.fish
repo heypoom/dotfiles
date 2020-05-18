@@ -1,4 +1,4 @@
-# Defined in /var/folders/jm/l3mwrkrx7yq8nhxyg1btdzkm0000gn/T//fish.gCQW3o/config.fish @ line 2
+# Defined in /var/folders/jm/l3mwrkrx7yq8nhxyg1btdzkm0000gn/T//fish.5fyG6X/config.fish @ line 2
 function config
 	function config_edit_file
 		$EDITOR "$HOME/"$argv[1]
@@ -10,7 +10,7 @@ function config
 
 	function config_edit_cd
 		set confDir $argv[1]
-		set confFile $argv[1]
+		set confFile $argv[2]
 
 		pushd "$confDir"
 		config_edit_file "$confDir"/"$confFile"
