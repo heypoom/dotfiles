@@ -1,4 +1,4 @@
-# Defined in /var/folders/jm/l3mwrkrx7yq8nhxyg1btdzkm0000gn/T//fish.9PsMYE/config.fish @ line 2
+# Defined in /var/folders/jm/l3mwrkrx7yq8nhxyg1btdzkm0000gn/T//fish.Zx55aD/config.fish @ line 2
 function config
 	switch $argv[1]
 		case yabai
@@ -32,10 +32,17 @@ function config
 			pushd "$HOME/.dotfiles"
 			$EDITOR "$HOME/.dotfiles/install.conf.yaml"
 			popd
+		case commit
+			pushd "$HOME/.dotfiles"
+			git commit -m $argv[2]
+			popd
 		case push
 			pushd "$HOME/.dotfiles"
 			git push -u origin master
 			popd
+		case save
+			config commit $argv[2]
+			config push
 		case install
 			pushd "$HOME/.dotfiles"
 			$HOME/.dotfiles/install
