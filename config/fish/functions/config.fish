@@ -1,4 +1,4 @@
-# Defined in /var/folders/jm/l3mwrkrx7yq8nhxyg1btdzkm0000gn/T//fish.hdeVpd/config.fish @ line 2
+# Defined in /var/folders/jm/l3mwrkrx7yq8nhxyg1btdzkm0000gn/T//fish.mpvYOE/config.fish @ line 2
 function config
 	switch $argv[1]
 		case yabai
@@ -24,13 +24,12 @@ function config
 			$EDITOR "$HOME/.widgets"
 			popd
 		case fish
-			pushd "$HOME/.config/nvim"
+			pushd "$HOME/.config/fish"
 			$EDITOR "$HOME/.config/fish"
 			popd
 		case alacritty
 			$EDITOR "$HOME/.config/alacritty/alacritty.yml"
 		case dot
-		case dotfiles
 			pushd "$HOME/.dotfiles"
 			$EDITOR "$HOME/.dotfiles/install.conf.yaml"
 			popd
