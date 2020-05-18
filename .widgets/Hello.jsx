@@ -10,7 +10,7 @@ export const className = css`
   height: 35px;
   padding: 10px;
   font-family: Futura;
-  font-size: 25px;
+  font-size: 30px;
   user-select: none;
 
   display: flex;
