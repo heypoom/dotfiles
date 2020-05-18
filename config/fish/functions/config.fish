@@ -1,4 +1,4 @@
-# Defined in /var/folders/jm/l3mwrkrx7yq8nhxyg1btdzkm0000gn/T//fish.J2ZEqT/config.fish @ line 2
+# Defined in /var/folders/jm/l3mwrkrx7yq8nhxyg1btdzkm0000gn/T//fish.8K6Qbr/config.fish @ line 2
 function config
 	switch $argv[1]
 		case yabai
@@ -48,8 +48,11 @@ function config
 			pushd "$HOME/.dotfiles"
 			$HOME/.dotfiles/install
 			popd
+		case skhd-hotreload
+			tmux new -d -s "skhd-reload" "echo $HOME/.config/skhd/skhdrc | entr skhd -r"
 		case edit
-			$EDITOR "$HOME/.config/fish/functions/config.fish"
+			funced config
+			funcsave config
 		case "*"
 			echo "Config" $argv[1] "not found."
 	end
