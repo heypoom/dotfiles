@@ -1,5 +1,22 @@
-# Defined in /var/folders/jm/l3mwrkrx7yq8nhxyg1btdzkm0000gn/T//fish.gI48m5/config.fish @ line 2
+# Defined in /var/folders/jm/l3mwrkrx7yq8nhxyg1btdzkm0000gn/T//fish.gCQW3o/config.fish @ line 2
 function config
+	function config_edit_file
+		$EDITOR "$HOME/"$argv[1]
+	end
+
+	function config_edit
+		config_edit_file ".config/"$argv[1]
+	end
+
+	function config_edit_cd
+		set confDir $argv[1]
+		set confFile $argv[1]
+
+		pushd "$confDir"
+		config_edit_file "$confDir"/"$confFile"
+		popd
+	end
+
 	switch $argv[1]
 		case yabai
 			config_edit yabai/yabairc
