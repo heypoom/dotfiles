@@ -46,6 +46,7 @@ SETUVAR _fish_abbr_gstd:git\x20stash\x20drop
 SETUVAR _fish_abbr_gstp:git\x20stash\x20pop
 SETUVAR _fish_abbr_h:howdoi\x20\x2dc
 SETUVAR _fish_abbr_hc:hub\x20create
+SETUVAR _fish_abbr_icat:kitty\x20\x2bicat
 SETUVAR _fish_abbr_k:kubectl
 SETUVAR _fish_abbr_l:exa
 SETUVAR _fish_abbr_la:exa\x20\x2dlagh\x20\x2d\x2dgit
