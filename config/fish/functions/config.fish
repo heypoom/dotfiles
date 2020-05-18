@@ -1,4 +1,4 @@
-# Defined in /var/folders/jm/l3mwrkrx7yq8nhxyg1btdzkm0000gn/T//fish.4qM6tp/config.fish @ line 2
+# Defined in /var/folders/jm/l3mwrkrx7yq8nhxyg1btdzkm0000gn/T//fish.hdeVpd/config.fish @ line 2
 function config
 	switch $argv[1]
 		case yabai
@@ -11,6 +11,8 @@ function config
 			$EDITOR "$HOME/.config/alacritty/alacritty.yml"
 		case git
 			$EDITOR "$HOME/.gitconfig"
+		case ipython
+			$EDITOR "$HOME/.ipython/profile_default/ipython_config.py"
 		case tmux
 			$EDITOR "$HOME/.tmux.conf"
 		case nvim

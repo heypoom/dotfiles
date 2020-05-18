@@ -14,7 +14,7 @@ alt - s: yabai -m window --toggle split
 # Send window to other monitor.
 alt - 1: yabai -m window --display 1; yabai -m display --focus 1
 alt - 2: yabai -m window --display 2; yabai -m display --focus 2
-alt - 3: yabai -m window --display 2; yabai -m display --focus 3
+alt - 3: yabai -m window --display 3; yabai -m display --focus 3
 
 # ################################################################ #
 # THE FOLLOWING IS AN EXPLANATION OF THE GRAMMAR THAT SKHD PARSES. #
