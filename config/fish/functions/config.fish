@@ -1,4 +1,4 @@
-# Defined in /var/folders/jm/l3mwrkrx7yq8nhxyg1btdzkm0000gn/T//fish.mpvYOE/config.fish @ line 2
+# Defined in /var/folders/jm/l3mwrkrx7yq8nhxyg1btdzkm0000gn/T//fish.5e1vmT/config.fish @ line 2
 function config
 	switch $argv[1]
 		case yabai
@@ -26,6 +26,10 @@ function config
 		case fish
 			pushd "$HOME/.config/fish"
 			$EDITOR "$HOME/.config/fish"
+			popd
+		case path
+			pushd "$HOME/.config/fish/conf.d"
+			$EDITOR "$HOME/.config/fish/conf.d/1-environment.fish"
 			popd
 		case alacritty
 			$EDITOR "$HOME/.config/alacritty/alacritty.yml"
