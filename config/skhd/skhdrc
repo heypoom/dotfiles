@@ -4,12 +4,6 @@ alt - 0: yabai -m space --balance
 # Close the window
 alt + shift - x: yabai -m window --close
 
-# Cycle focus the window
-# alt - x: yabai -m window --focus next || yabai -m window --focus first
-
-# Cycle swap the window
-# alt - c: yabai -m window --swap next || yabai -m window --swap first
-
 # Toggle window zoom
 alt - d: yabai -m window --toggle zoom-parent
 alt - f: yabai -m window --toggle zoom-fullscreen
@@ -39,8 +33,11 @@ alt + shift - t: yabai -m window --toggle topmost
 
 # Resize window: alt + shift + [arrow]
 alt + shift - left: yabai -m window --resize right:-100:0 || yabai -m window --resize left:-100:0
+
 alt + shift - right: yabai -m window --resize right:100:0 || yabai -m window --resize left:100:0
+
 alt + shift - up: yabai -m window --resize top:0:-100 || yabai -m window --resize bottom:0:-100
+
 alt + shift - down: yabai -m window --resize bottom:0:100 || yabai -m window --resize top:0:100
 
 # Swap windows: ctrl + alt + [arrow]
@@ -48,6 +45,12 @@ ctrl + alt - left: yabai -m window --warp west
 ctrl + alt - right: yabai -m window --warp east
 ctrl + alt - up: yabai -m window --warp north
 ctrl + alt - down: yabai -m window --warp south
+
+# Cycle focus the window
+# alt - x: yabai -m window --focus next || yabai -m window --focus first
+
+# Cycle swap the window
+# alt - c: yabai -m window --swap next || yabai -m window --swap first
 
 # ################################################################ #
 # THE FOLLOWING IS AN EXPLANATION OF THE GRAMMAR THAT SKHD PARSES. #
