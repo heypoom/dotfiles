@@ -4,6 +4,9 @@ alt - 0: yabai -m space --balance
 # Cycle focus the window
 alt - x: yabai -m window --focus next || yabai -m window --focus first
 
+# Close the window
+alt + shift - x: yabai -m window --close
+
 # Cycle swap the window
 alt - c: yabai -m window --swap next || yabai -m window --swap first
 
