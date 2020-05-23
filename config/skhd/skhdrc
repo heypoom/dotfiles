@@ -12,7 +12,7 @@ alt - f: yabai -m window --toggle zoom-fullscreen
 alt - s: yabai -m window --toggle split
 
 # Spawn a new Kitty terminal.
-alt - t: $HOME/bin/kitty-spawn
+alt - t: $HOME/scripts/kitty-spawn
 
 # Send window to other monitor: alt + shift + {display}
 alt + shift - 1: yabai -m window --display 1; yabai -m display --focus 1
