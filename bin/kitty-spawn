@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+
+if pgrep -f kitty >/dev/null 2>&1
+then
+	echo Kitty is running.
+
+	dst=$(printf '%s%s' unix: /tmp/kitty*)
+
+	# Spawn a new Kitty window.
+	/Applications/kitty.app/Contents/MacOS/kitty @ --to $dst new-window --window-type os
+
+	exit 0
+fi
+
+echo Kitty is *NOT* running.
+
+# Start Kitty.
+
+open "/Applications/kitty.app"
+

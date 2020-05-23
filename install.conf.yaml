@@ -18,6 +18,11 @@
     ~/.ipython: ipython
     ~/.hammerspoon: hammerspoon
     # ~/.dotfiles: ""
+    ~/bin/:
+      glob: true
+      path: bin/*
+      relink: true
+      create: true
     ~/.config/:
       glob: true
       path: config/*
