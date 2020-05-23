@@ -14,15 +14,11 @@
     ~/.ideavimrc: .ideavimrc
     ~/.vscode-css: .vscode-css
     ~/.gitconfig: .gitconfig
-    ~/.ghci : .ghci
+    ~/.ghci: .ghci
     ~/.ipython: ipython
     ~/.hammerspoon: hammerspoon
     # ~/.dotfiles: ""
-    ~/bin/:
-      glob: true
-      path: bin/*
-      relink: true
-      create: true
+    ~/scripts: scripts
     ~/.config/:
       glob: true
       path: config/*

@@ -72,7 +72,7 @@ set -gx PATH \
 	$HOME/.asdf/bin \
 	$GEM_HOME/bin \
   /usr/libexec \
-  $HOME/Scripts \
+  $HOME/scripts \
   /usr/local/opt/llvm/bin \
   /usr/local/opt/coreutils/libexec/gnubin \
   $ANDROID_HOME/tools \
