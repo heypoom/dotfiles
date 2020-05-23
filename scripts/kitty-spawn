@@ -16,6 +16,5 @@ fi
 echo Kitty is *NOT* running.
 
 # Start Kitty.
-
 open "/Applications/kitty.app"
 
