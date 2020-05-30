@@ -208,7 +208,7 @@ Plug 'fatih/vim-go', {'for': 'go'}
 " " Plug 'mhartington/nvim-typescript'
 " 
 " " Conquer of Completion: Intellisense Engine
-Plug 'neoclide/coc.nvim', {'branch': 'release', 'for': ['javascript', 'typescript', 'rust', 'clojure', 'markdown']}
+Plug 'neoclide/coc.nvim', {'branch': 'release', 'for': ['javascript', 'typescript', 'rust', 'clojure', 'markdown', 'python']}
 
 " 
 " Rust Language Support
