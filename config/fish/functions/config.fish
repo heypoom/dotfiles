@@ -1,4 +1,4 @@
-# Defined in /var/folders/jm/l3mwrkrx7yq8nhxyg1btdzkm0000gn/T//fish.Kgv0fq/config.fish @ line 2
+# Defined in /var/folders/jm/l3mwrkrx7yq8nhxyg1btdzkm0000gn/T//fish.rSWFwG/config.fish @ line 2
 function config
 	function config_edit_file
 		$EDITOR "$HOME/"$argv[1]
@@ -29,7 +29,7 @@ function config
 		case alacritty
 			config_edit alacritty/alacritty.yml
 		case nvim
-			config_edit_cd .config/nvim settings.vim
+			config_edit_cd .config/nvim plugins.vim
 		case ranger
 			config_edit_cd .config/ranger rc.conf
 		case widgets

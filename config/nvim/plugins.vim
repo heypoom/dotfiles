@@ -26,7 +26,7 @@ Plug 'tpope/vim-surround'
 Plug 'chrisbra/Colorizer', {'for': ['html', 'css', 'scss', 'sass', 'pug', 'vue', 'stylus', 'python']}
 
 " Tab Expansions for HTML files.
-Plug 'mattn/emmet-vim', {'for': ['html', 'pug']}
+Plug 'mattn/emmet-vim', {'for': ['html', 'pug', 'jsx']}
 
 " Repeat the surround command using the dot (.) command.
 Plug 'tpope/vim-repeat'
@@ -208,7 +208,8 @@ Plug 'fatih/vim-go', {'for': 'go'}
 " " Plug 'mhartington/nvim-typescript'
 " 
 " " Conquer of Completion: Intellisense Engine
-Plug 'neoclide/coc.nvim', {'branch': 'release', 'for': ['javascript', 'typescript', 'rust', 'clojure', 'markdown', 'python']}
+" 'for': ['javascript', 'typescript', 'rust', 'clojure', 'markdown', 'python']
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " 
 " Rust Language Support
