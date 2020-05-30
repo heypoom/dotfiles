@@ -3,9 +3,10 @@ let g:enable_bold_font = 1
 
 " Disable python host checks
 let g:python_host_skip_check = 1
-let g:python_host_prog = '/usr/local/bin/python'
+let g:python_host_prog = '$HOME/.asdf/installs/python/2.7.18/bin/python'
+
 let g:python3_host_skip_check = 1
-let g:python3_host_prog = '/usr/local/bin/python3'
+let g:python3_host_prog = '$HOME/.asdf/installs/python/3.8.2/bin/python3'
 
 " Disable Netrw
 let g:loaded_netrwPlugin = 1
