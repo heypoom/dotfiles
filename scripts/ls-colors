@@ -2,7 +2,7 @@
 
 for i in (seq 1 15)
 	printf (tput setaf $i)
-	for y in (seq 1 80)
+	for y in (seq 1 $COLUMNS)
 			printf "▇"
 	end
 	echo

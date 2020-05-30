@@ -54,7 +54,8 @@ set -gx cabal_helper_libexecdir "$HOME/bin"
 set -gx PKG_CONFIG_PATH "/usr/local/opt/openssl/lib/pkgconfig:/usr/local/opt/libffi/lib/pkgconfig:/usr/local/opt/libusb/lib/pkgconfig"
 
 # Define Java's SDK Path
-set -gx JAVA_HOME "$HOME/.asdf/installs/java/oracle-8.141"
+set -gx JAVA_HOME "$HOME/.asdf/installs/java/openjdk-11.0.1"
+set -gx JAVA8_HOME "$HOME/.asdf/installs/java/oracle-8.141"
 
 # Set XCode build configuration (mainly for pyenv)
 set -gx SDKROOT "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk"
