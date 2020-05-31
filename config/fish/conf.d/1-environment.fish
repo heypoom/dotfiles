@@ -80,6 +80,7 @@ set -gx PATH \
   $ANDROID_HOME/tools \
   $ANDROID_HOME/platform-tools \
   $HOME/.fastlane/bin \
+  $HOME/.pub-cache/bin \
   $HOME/.cargo/bin \
   $HOME/lib/gcloud/bin \
   $HOME/.config/yarn/global/node_modules/.bin \

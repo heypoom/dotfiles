@@ -6,6 +6,7 @@
 
 - link:
     ~/.tmux.conf: .tmux.conf
+    ~/.dhexrc: .dhexrc
     ~/.myclirc: .myclirc
     ~/.pryrc: .pryrc
     ~/.radare2rc: .radare2rc
