@@ -1,8 +1,8 @@
-# Defined in /var/folders/jm/l3mwrkrx7yq8nhxyg1btdzkm0000gn/T//fish.2nHuFH/proxy-config.fish @ line 2
+# Defined in /var/folders/jm/l3mwrkrx7yq8nhxyg1btdzkm0000gn/T//fish.R0cuPU/proxy-config.fish @ line 2
 function proxy-config
 	set adapter "Wi-Fi"
-	set host argv[1]
-	set port argv[2]
+	set host $argv[1]
+	set port $argv[2]
 
 	printf "Proxying to %s:%s" $host $port
 
