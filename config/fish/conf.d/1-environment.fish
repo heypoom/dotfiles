@@ -82,6 +82,7 @@ set -gx PATH \
   $HOME/.fastlane/bin \
   $HOME/.pub-cache/bin \
   $HOME/.cargo/bin \
+  $HOME/.deno/bin \
   $HOME/lib/gcloud/bin \
   $HOME/.config/yarn/global/node_modules/.bin \
   $HOME/.poetry/bin \
