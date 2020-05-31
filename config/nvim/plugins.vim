@@ -202,7 +202,7 @@ Plug 'wakatime/vim-wakatime'
 " 
 " " Go Language Support
 " " Auto Gofmt, :GoDoc, :GoRun, :GoLint, :GoTest, :GoDebugStart
-Plug 'fatih/vim-go', {'for': 'go'}
+" Plug 'fatih/vim-go', {'for': 'go'}
 " 
 " " TypeScript Language Support
 " " Plug 'mhartington/nvim-typescript'
