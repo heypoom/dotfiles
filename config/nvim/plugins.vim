@@ -175,7 +175,7 @@ Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release', 'for': 'clojure'}
 " Plug 'Yggdroot/indentLine'
 " 
 " " Edit files in hex mode with :Hexmode or `vi -b`
-" Plug 'fidian/hexmode', {'for': 'bin'}
+Plug 'fidian/hexmode'
 " 
 " " Defines a text object for indentation levels.
 " " ai = an indent with line above
