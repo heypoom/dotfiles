@@ -51,7 +51,7 @@ set -gx NODE_PATH "$HOME/.config/yarn/global/node_modules:/usr/local/lib/node_mo
 set -gx cabal_helper_libexecdir "$HOME/bin"
 
 # Path for pkgconfig
-set -gx PKG_CONFIG_PATH "/usr/local/opt/openssl/lib/pkgconfig:/usr/local/opt/libffi/lib/pkgconfig:/usr/local/opt/libusb/lib/pkgconfig"
+set -gx PKG_CONFIG_PATH "/usr/local/opt/openssl/lib/pkgconfig:/usr/local/opt/libffi/lib/pkgconfig:/usr/local/opt/libusb/lib/pkgconfig:/usr/local/opt/openssl@1.1/lib/pkgconfig"
 
 # Define Java's SDK Path
 set -gx JAVA_HOME "$HOME/.asdf/installs/java/openjdk-11.0.1"
@@ -62,7 +62,12 @@ set -gx SDKROOT "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.pla
 set -gx MACOSX_DEPLOYMENT_TARGET 10.15
 
 # Add GNU manuals to the MANPATH
-set -gx MANPATH /usr/local/opt/coreutils/libexec/gnuman/ /usr/share/man /usr/local/share/man $MANPATH
+set -gx MANPATH \
+	/usr/local/opt/coreutils/libexec/gnuman/ \
+	/usr/share/man \
+	/usr/local/share/man \
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/share/man \
+	$MANPATH
 
 # Use Neovim as man's pager.
 set -gx MANPAGER "nvim -c 'set ft=man' -"
