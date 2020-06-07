@@ -14,8 +14,8 @@
   "terminal.integrated.shellArgs.osx": ["--login"],
   "terminal.integrated.shell.linux": "/usr/local/bin/fish",
   "terminal.integrated.shellArgs.linux": ["--login"],
-  "terminal.integrated.fontFamily": "FiraCode Nerd Font",
-  "terminal.integrated.fontSize": 18,
+  "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
+  "terminal.integrated.fontSize": 20,
   "vim.enableNeovim": false,
   "vim.neovimPath": "/usr/local/bin/nvim",
   "vim.easymotion": true,
@@ -60,7 +60,7 @@
   "debug.enableAllHovers": true,
   "debug.inlineValues": true,
   "debug.allowBreakpointsEverywhere": true,
-  "debug.console.fontFamily": "FiraCode Nerd Font",
+  "debug.console.fontFamily": "JetBrains Mono",
   "debug.console.fontSize": 24,
   "debug.console.closeOnEnd": true,
   "debug.console.lineHeight": 36,
@@ -150,7 +150,7 @@
   },
   "tabnine.experimentalAutoImports": 0,
   "terminal.integrated.allowChords": false,
-  "terminal.integrated.lineHeight": 1.2,
+  "terminal.integrated.lineHeight": 1.3,
   "terminal.integrated.rendererType": "canvas",
   "editor.lineHeight": 30
 }
