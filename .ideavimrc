@@ -11,3 +11,4 @@ set ignorecase smartcase
 set clipboard=unnamed
 set scrolloff=5
 set showmode
+set ideajoin

@@ -1,0 +1,156 @@
+{
+  "window.zoomLevel": -1,
+  "explorer.confirmDelete": false,
+  "workbench.colorTheme": "Dracula",
+  "files.autoSave": "afterDelay",
+  "editor.fontFamily": "'FiraCode Nerd Font', 'Sukhumvit Set Text', monospace",
+  "editor.fontSize": 16,
+  "editor.tabSize": 2,
+  "editor.useTabStops": true,
+  "editor.fontLigatures": true,
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.lineNumbers": "relative",
+  "terminal.integrated.shell.osx": "/usr/local/bin/fish",
+  "terminal.integrated.shellArgs.osx": ["--login"],
+  "terminal.integrated.shell.linux": "/usr/local/bin/fish",
+  "terminal.integrated.shellArgs.linux": ["--login"],
+  "terminal.integrated.fontFamily": "FiraCode Nerd Font",
+  "terminal.integrated.fontSize": 18,
+  "vim.enableNeovim": false,
+  "vim.neovimPath": "/usr/local/bin/nvim",
+  "vim.easymotion": true,
+  "vim.sneak": true,
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": true,
+  "vim.hlsearch": true,
+  "vim.debug.silent": true,
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "j"],
+      "after": ["<Esc>"]
+    }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<leader>", "d"],
+      "after": ["d", "d"]
+    },
+    {
+      "before": ["<C-n>"],
+      "commands": [":nohl"]
+    }
+  ],
+  "vim.leader": "<space>",
+  "vim.handleKeys": {
+    "<C-d>": true,
+    "<C-a>": false,
+    "<C-f>": false
+  },
+  "vim.autoindent": true,
+  "vim.foldfix": true,
+  "workbench.iconTheme": "material-icon-theme",
+  "material-icon-theme.showUpdateMessage": false,
+  "dart.flutterCreateAndroidLanguage": "kotlin",
+  "dart.flutterCreateIOSLanguage": "swift",
+  "vim.easymotionMarkerFontFamily": "FiraCode Nerd Font",
+  "terminal.external.osxExec": "Kitty.app",
+  "terminal.external.linuxExec": "kitty",
+  "workbench.activityBar.visible": true,
+  "debug.enableAllHovers": true,
+  "debug.inlineValues": true,
+  "debug.allowBreakpointsEverywhere": true,
+  "debug.console.fontFamily": "FiraCode Nerd Font",
+  "debug.console.fontSize": 24,
+  "debug.console.closeOnEnd": true,
+  "debug.console.lineHeight": 36,
+  "debug.console.wordWrap": true,
+  "workbench.sideBar.location": "left",
+  "npm.enableScriptExplorer": true,
+  "javascript.implicitProjectConfig.experimentalDecorators": true,
+  "javascript.referencesCodeLens.enabled": false,
+  "emmet.triggerExpansionOnTab": true,
+  "emmet.showExpandedAbbreviation": "always",
+  "emmet.showSuggestionsAsSnippets": true,
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "vue-html": "html",
+    "plaintext": "jade"
+  },
+  "emmet.syntaxProfiles": {
+    "javascript": "jsx",
+    "xml": {
+      "attr-quotes": "single"
+    }
+  },
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/**": true,
+    "**/web/node_modules": true,
+    "**/web/build": true,
+    "**/admin/node_modules": true
+  },
+  "php.suggest.basic": false,
+  "editor.minimap.enabled": true,
+  "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, UseTab: Never, IndentWidth: 2, TabWidth: 2, ColumnLimit: 0 }",
+  "python.formatting.provider": "black",
+  "python.jediEnabled": false,
+  "prettier.semi": false,
+  "prettier.tabWidth": 2,
+  "prettier.bracketSpacing": false,
+  "prettier.singleQuote": true,
+  "files.associations": {
+    "*.js": "javascriptreact",
+    "torrc": "properties",
+    "**/defaults/**/*": "ansible",
+    "**/tasks/**/*.yml": "ansible",
+    "**/handler/*.yml": "ansible",
+    "**/*_vars/**/*.yml": "ansible",
+    "**/roles/**/*.yml": "ansible",
+    "**/playbooks/**/*.yml": "ansible",
+    "**/*ansible*/**/*.yml": "ansible",
+    "**/vars/**/*.yml": "ansible",
+    "**/inventory/*/*": "ansible",
+    "*.ksy": "yaml"
+  },
+  "yaml.schemas": {
+    "https://raw.githubusercontent.com/kaitai-io/ksy_schema/master/ksy_schema.json": "*.ksy"
+  },
+  "explorer.confirmDragAndDrop": false,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "vim.normalModeKeyBindings": [],
+  "git.ignoreMissingGitWarning": true,
+  "git.path": "/usr/local/bin/git",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "editor.tabCompletion": "on",
+  "editor.suggest.localityBonus": true,
+  "python.diagnostics.sourceMapsEnabled": false,
+  "atomKeymap.promptV3Features": true,
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "workbench.startupEditor": "newUntitledFile",
+  "C_Cpp.updateChannel": "Insiders",
+  "prettier.disableLanguages": ["Python", "python"],
+  "editor.formatOnSave": true,
+  "[python]": {},
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "workbench.colorCustomizations": {},
+  "python.pythonPath": "/Users/phoomparin/.asdf/installs/python/3.8.2/bin/python3.8",
+  "python.poetryPath": "poetry",
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "tabnine.experimentalAutoImports": 0,
+  "terminal.integrated.allowChords": false,
+  "terminal.integrated.lineHeight": 1.2,
+  "terminal.integrated.rendererType": "canvas"
+}

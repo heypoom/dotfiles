@@ -210,3 +210,7 @@ ipython/profile_default/db/dhist
 ipython/profile_default/history.sqlite
 config/thefuck/__pycache__
 config/thefuck/settings.pyc
+
+.code/globalStorage
+.code/workspaceStorage
+

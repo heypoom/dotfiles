@@ -18,7 +18,7 @@
     ~/.ghci: .ghci
     ~/.ipython: ipython
     ~/.hammerspoon: hammerspoon
-    # ~/.dotfiles: ""
+    ~/Library/Application Support/Code/User: .code
     ~/scripts: scripts
     ~/.config/:
       glob: true
