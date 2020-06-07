@@ -121,8 +121,11 @@ let g:prettier#config#trailing_comma = 'all'
 let g:prettier#config#parser = 'babylon'
 let g:prettier#config#config_precedence = 'prefer-file'
 
-" Disable default auto-format configuration (we wanna have more control)
-let g:prettier#autoformat = 0
+" Enable auto-format if configuration is present.
+let g:prettier#autoformat = 1
+let g:prettier#autoformat_require_pragma = 0
+let g:prettier#autoformat_config_present = 1
+let g:prettier#exec_cmd_async = 1
 
 " Enable async auto-format for these type of files.
 " autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql PrettierAsync
