@@ -62,6 +62,7 @@ SETUVAR _fish_abbr_rb:ruby
 SETUVAR _fish_abbr_s:sudo
 SETUVAR _fish_abbr_scripts:cat\x20package\x2ejson\x20\x7c\x20jq\x20\x2escripts
 SETUVAR _fish_abbr_sl:exa
+SETUVAR _fish_abbr_sp:spotify
 SETUVAR _fish_abbr_t:tmux
 SETUVAR _fish_abbr_ta:tmux\x20a\x20\x2dt
 SETUVAR _fish_abbr_things:things\x2esh
