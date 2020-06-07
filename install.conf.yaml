@@ -19,6 +19,7 @@
     ~/.ipython: ipython
     ~/.hammerspoon: hammerspoon
     ~/Library/Application Support/Code/User: .code
+    ~/Library/Application Support/JetBrains/IntelliJIdea2020.1: .idea
     ~/scripts: scripts
     ~/.config/:
       glob: true
