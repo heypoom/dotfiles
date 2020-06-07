@@ -229,4 +229,8 @@ config/thefuck/settings.pyc
 .idea/options/recentProjects.xml
 .idea/options/scratches.xml
 .idea/options/vim_settings.xml
+.idea/jba_config/local.changes
+.idea/jba_config/new.updates
+.idea/jba_config/version
+.idea/options/window.state.xml
 
