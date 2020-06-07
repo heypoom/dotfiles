@@ -1,0 +1,179 @@
+<application>
+  <component name="RunnerLayoutSettings">
+    <runner id="JavaRunner">
+      <ViewImpl>
+        <option name="ID" value="ConsoleContent" />
+        <option name="placeInGrid" value="bottom" />
+      </ViewImpl>
+      <ViewImpl>
+        <option name="ID" value="JavaScriptTraceProxyServer" />
+        <option name="placeInGrid" value="bottom" />
+        <option name="tabIndex" value="1" />
+      </ViewImpl>
+      <TabImpl>
+        <option name="bottomProportion" value="0.0" />
+      </TabImpl>
+      <TabImpl>
+        <option name="bottomProportion" value="0.0" />
+        <option name="defaultIndex" value="2" />
+        <option name="index" value="1" />
+      </TabImpl>
+    </runner>
+    <runner id="Debug">
+      <ViewImpl>
+        <option name="ID" value="FrameContent" />
+        <option name="placeInGrid" value="left" />
+      </ViewImpl>
+      <ViewImpl>
+        <option name="ID" value="VariablesContent" />
+        <option name="placeInGrid" value="center" />
+      </ViewImpl>
+      <ViewImpl>
+        <option name="ID" value="ConsoleContent" />
+        <option name="placeInGrid" value="bottom" />
+        <option name="tabIndex" value="1" />
+      </ViewImpl>
+      <ViewImpl>
+        <option name="ID" value="SCRIPTS_CONTENT" />
+        <option name="placeInGrid" value="bottom" />
+        <option name="tabIndex" value="2" />
+      </ViewImpl>
+      <ViewImpl>
+        <option name="ID" value="ThreadsContent" />
+        <option name="minimizedInGrid" value="true" />
+        <option name="placeInGrid" value="left" />
+      </ViewImpl>
+      <ViewImpl>
+        <option name="ID" value="MemoryView" />
+        <option name="minimizedInGrid" value="true" />
+        <option name="placeInGrid" value="right" />
+      </ViewImpl>
+      <ViewImpl>
+        <option name="ID" value="OverheadMonitor" />
+        <option name="minimizedInGrid" value="true" />
+        <option name="placeInGrid" value="right" />
+      </ViewImpl>
+      <TabImpl>
+        <option name="displayName" value="Debugger" />
+        <option name="leftProportion" value="0.1987225" />
+        <option name="rightProportion" value="0.19943222" />
+      </TabImpl>
+      <TabImpl>
+        <option name="bottomProportion" value="0.0" />
+        <option name="defaultIndex" value="1" />
+        <option name="index" value="1" />
+      </TabImpl>
+      <TabImpl>
+        <option name="bottomProportion" value="0.0" />
+        <option name="defaultIndex" value="2" />
+        <option name="displayName" value="Elements" />
+        <option name="index" value="2" />
+      </TabImpl>
+    </runner>
+    <runner id="Database Console">
+      <ViewImpl>
+        <option name="ID" value="Input" />
+        <option name="placeInGrid" value="center" />
+      </ViewImpl>
+      <ViewImpl>
+        <option name="ID" value="ResultTab#1.1" />
+        <option name="placeInGrid" value="center" />
+      </ViewImpl>
+      <ViewImpl>
+        <option name="ID" value="ResultTab#12.1" />
+        <option name="placeInGrid" value="center" />
+      </ViewImpl>
+      <ViewImpl>
+        <option name="ID" value="ResultTab#24.1" />
+        <option name="placeInGrid" value="center" />
+      </ViewImpl>
+      <ViewImpl>
+        <option name="ID" value="ResultTab#29.1" />
+        <option name="placeInGrid" value="center" />
+      </ViewImpl>
+      <ViewImpl>
+        <option name="ID" value="ResultTab#30.1" />
+        <option name="placeInGrid" value="center" />
+      </ViewImpl>
+      <ViewImpl>
+        <option name="ID" value="ResultTab#4.1" />
+        <option name="placeInGrid" value="center" />
+      </ViewImpl>
+      <ViewImpl>
+        <option name="ID" value="ResultTab#13.1" />
+        <option name="placeInGrid" value="center" />
+      </ViewImpl>
+      <ViewImpl>
+        <option name="ID" value="ResultTab#3.1" />
+        <option name="placeInGrid" value="center" />
+      </ViewImpl>
+      <TabImpl>
+        <option name="displayName" value="Database Console" />
+      </TabImpl>
+    </runner>
+    <runner id="RubyConsoleRunner">
+      <ViewImpl>
+        <option name="ID" value="RubyConsoleRunner" />
+        <option name="placeInGrid" value="bottom" />
+      </ViewImpl>
+      <TabImpl>
+        <option name="bottomProportion" value="0.0" />
+      </TabImpl>
+    </runner>
+    <runner id="JavaRunner.WallabyTestRunConsole">
+      <ViewImpl>
+        <option name="ID" value="WallabyTestRunContent" />
+        <option name="placeInGrid" value="bottom" />
+      </ViewImpl>
+      <ViewImpl>
+        <option name="ID" value="WallabyValueExplorerContent" />
+        <option name="placeInGrid" value="bottom" />
+        <option name="tabIndex" value="1" />
+      </ViewImpl>
+      <ViewImpl>
+        <option name="ID" value="WallabyServerContent" />
+        <option name="placeInGrid" value="bottom" />
+        <option name="tabIndex" value="2" />
+      </ViewImpl>
+      <TabImpl>
+        <option name="bottomProportion" value="0.0" />
+        <option name="defaultIndex" value="1" />
+      </TabImpl>
+      <TabImpl>
+        <option name="bottomProportion" value="0.0" />
+        <option name="defaultIndex" value="2" />
+        <option name="index" value="1" />
+      </TabImpl>
+      <TabImpl>
+        <option name="bottomProportion" value="0.0" />
+        <option name="defaultIndex" value="3" />
+        <option name="index" value="2" />
+      </TabImpl>
+    </runner>
+    <runner id="">
+      <ViewImpl>
+        <option name="ID" value="Blaze Console" />
+        <option name="placeInGrid" value="right" />
+      </ViewImpl>
+      <TabImpl>
+        <option name="rightProportion" value="0.8304348" />
+      </TabImpl>
+    </runner>
+    <runner id="JupyterServerRunner">
+      <ViewImpl>
+        <option name="ID" value="JupyterServerRunner" />
+        <option name="placeInGrid" value="bottom" />
+      </ViewImpl>
+      <TabImpl>
+        <option name="bottomProportion" value="0.0" />
+      </TabImpl>
+    </runner>
+    <runner id="Android">
+      <ViewImpl>
+        <option name="ID" value="Android Logcat" />
+        <option name="placeInGrid" value="center" />
+      </ViewImpl>
+      <TabImpl />
+    </runner>
+  </component>
+</application>

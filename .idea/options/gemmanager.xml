@@ -1,0 +1,18 @@
+<application>
+  <component name="RubySdkGemsetsSettings">
+    <sdkGemsets>
+      <map>
+        <entry key="$USER_HOME$/.asdf/installs/ruby/2.3.7/bin/ruby">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/.asdf/installs/ruby/2.6.3/bin/ruby">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </sdkGemsets>
+  </component>
+</application>

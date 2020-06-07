@@ -1,0 +1,37 @@
+Dart
+JSTestDriver Plugin
+Lombook Plugin
+R4Intellij
+Railways for IDEA
+amailp.intellij.robot
+aws.toolkit
+com.alayouni.ansiHighlight
+com.apptorium.TeaCode-IJP-Helper
+com.cursiveclojure.cursive
+com.genymotion.idea
+com.google.gct.core
+com.intellij.lang.puppet
+com.intellij.react.css.modules
+com.jetbrains.hackathon2015.S
+com.jetbrains.lang.ejs
+com.jetbrains.plugins.yeoman
+com.perl5
+com.squareup.sqldelight
+intellij-micropython
+intellij.haskell
+io.flutter
+io.gulp.intellij
+io.protostuff.protostuff-jetbrains-plugin
+io.snyk.snyk-intellij-plugin
+jetbrains.mps.baseLanguage.extensions
+jetbrains.mps.build
+jetbrains.mps.core
+jetbrains.mps.ide.migration.idea
+jetbrains.mps.idea.java
+jetbrains.mps.idea.vcs
+jetbrains.mps.testing
+nl.rubensten.texifyidea
+org.elixir_lang
+org.elm.klazuka
+org.ice1000.julia
+org.jetbrains.plugins.vagrant

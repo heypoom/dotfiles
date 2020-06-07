@@ -1,0 +1,38 @@
+<application>
+  <component name="GeneralSettings">
+    <option name="autoSaveIfInactive" value="true" />
+    <option name="confirmExit" value="false" />
+    <option name="confirmOpenNewProject2" value="0" />
+    <option name="inactiveTimeout" value="10" />
+    <option name="processCloseConfirmation" value="TERMINATE" />
+    <option name="searchInBackground" value="true" />
+    <option name="showTipsOnStartup" value="false" />
+  </component>
+  <component name="Registry">
+    <entry key="SBT.system.in.process" value="true" />
+    <entry key="bigger.font.in.project.view" value="true" />
+    <entry key="ide.mac.allowDarkWindowDecorations" value="true" />
+    <entry key="ide.balloon.shadow.size" value="0" />
+    <entry key="mac.editor.thumb.default.alpha.base" value="0" />
+    <entry key="mac.editor.thumb.default.alpha.delta" value="102" />
+    <entry key="mac.editor.thumb.darcula.alpha.base" value="0" />
+    <entry key="mac.editor.thumb.darcula.alpha.delta" value="102" />
+    <entry key="mac.editor.thumb.default.fill.min" value="102" />
+    <entry key="mac.editor.thumb.default.fill.max" value="150" />
+    <entry key="mac.editor.thumb.darcula.fill.min" value="102" />
+    <entry key="mac.editor.thumb.darcula.fill.max" value="163" />
+    <entry key="BSP.experimental.feature.enabled" value="false" />
+    <entry key="BSP.system.in.process" value="true" />
+    <entry key="ide.tooltip.initialDelay" value="1199" />
+    <entry key="ide.tree.ui.experimental" value="false" />
+  </component>
+  <component name="StatusBar">
+    <option name="widgets">
+      <map>
+        <entry key="IdeaVim-Icon" value="false" />
+        <entry key="Memory" value="true" />
+        <entry key="ReadOnlyAttribute" value="false" />
+      </map>
+    </option>
+  </component>
+</application>

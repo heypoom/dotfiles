@@ -51,6 +51,9 @@ Plug 'alvan/vim-closetag', {'for': 'html'}
 " Use the :Cheat command to get the cheat sheet.
 Plug 'dbeniamine/cheat.sh-vim'
 
+" Enable +AnsiEsc
+Plug 'powerman/vim-plugin-AnsiEsc'
+
 """
 """ Nice-to-have Plugins
 """

@@ -1,0 +1,11 @@
+<application>
+  <component name="PathMacrosImpl">
+    <macro name="MAVEN_REPOSITORY" value="/Users/phoomparin/.m2/repository" />
+    <macro name="KOTLIN_BUNDLED" value="/Users/phoomparin/Library/Application Support/JetBrains/Toolbox/apps/IDEA-U/ch-0/201.7846.76/IntelliJ IDEA.app.plugins/Kotlin/kotlinc" />
+    <macro name="PLUGINS_PATH" value="/Users/phoomparin/Library/Application Support/JetBrains/Toolbox/apps/IDEA-U/ch-0/201.7846.76/IntelliJ IDEA.app.plugins" />
+    <ignoredMacro name="MESSAGE" />
+    <ignoredMacro name="FILE_PATH" />
+    <ignoredMacro name="LINE" />
+    <ignoredMacro name="COLUMN" />
+  </component>
+</application>

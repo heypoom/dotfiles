@@ -214,3 +214,13 @@ config/thefuck/settings.pyc
 .code/globalStorage
 .code/workspaceStorage
 
+.idea/scratches
+.idea/light-edit
+.idea/javascript
+.idea/workspace
+.idea/rubystubs
+.idea/mdn
+.idea/jba_config/caches
+.idea/terminal
+.idea/extensions
+

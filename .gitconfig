@@ -5,23 +5,10 @@
 [credential]
 	helper = osxkeychain
 
-[merge]
-  tool = vimdiff
-
-[mergetool]
-  prompt = true
-
-[mergetool "vimdiff"]
-  cmd = nvim -d $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
-
-[difftool]
-  prompt = false
-
-[diff]
-  tool = vimdiff
-
 [core]
   editor = nvim
+	pager = diff-so-fancy | less --tabs=4 -RFX
+	# pager = nvim -R
 
 [filter "lfs"]
 	required = true
@@ -36,3 +23,22 @@
 	enabled = true
 	autoupdate = true
 
+[color]
+	ui = true
+	diff = true
+
+[merge]
+	tool = vimdiff
+
+[mergetool]
+  prompt = true
+	path = nvim
+
+[mergetool "vimdiff"]
+  cmd = nvim -d $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+
+[diff]
+	tool = vimdiff
+
+[difftool]
+  prompt = false

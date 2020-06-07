@@ -1,0 +1,207 @@
+<application>
+  <component name="ActionsLocalSummary">
+    <data>
+      <entry key="$SelectAll">
+        <ActionSummary times="31" last="1591533744061" />
+      </entry>
+      <entry key="ActivateCacherToolWindow">
+        <ActionSummary times="1" last="1591518665309" />
+      </entry>
+      <entry key="Cacher.action.FindSnippetAction">
+        <ActionSummary times="2" last="1591533692660" />
+      </entry>
+      <entry key="Cacher.action.OpenAppAction">
+        <ActionSummary times="1" last="1591518661149" />
+      </entry>
+      <entry key="ChangeColorScheme">
+        <ActionSummary times="1" last="1591520580935" />
+      </entry>
+      <entry key="ChangeView">
+        <ActionSummary times="2" last="1591519574779" />
+      </entry>
+      <entry key="ChooseRunConfiguration">
+        <ActionSummary times="1" last="1591523263414" />
+      </entry>
+      <entry key="CollapseAllRegions">
+        <ActionSummary times="4" last="1591519938380" />
+      </entry>
+      <entry key="EditorBackSpace">
+        <ActionSummary times="64" last="1591533761383" />
+      </entry>
+      <entry key="EditorBreadcrumbsShowAbove">
+        <ActionSummary times="1" last="1591517129900" />
+      </entry>
+      <entry key="EditorBreadcrumbsShowBelow">
+        <ActionSummary times="1" last="1591517137968" />
+      </entry>
+      <entry key="EditorChooseLookupItem">
+        <ActionSummary times="1" last="1591519838931" />
+      </entry>
+      <entry key="EditorCut">
+        <ActionSummary times="3" last="1591520241867" />
+      </entry>
+      <entry key="EditorDecreaseFontSize">
+        <ActionSummary times="16" last="1591522993853" />
+      </entry>
+      <entry key="EditorDeleteLine">
+        <ActionSummary times="1" last="1591518269712" />
+      </entry>
+      <entry key="EditorDown">
+        <ActionSummary times="25" last="1591531421066" />
+      </entry>
+      <entry key="EditorEnter">
+        <ActionSummary times="1" last="1591531427651" />
+      </entry>
+      <entry key="EditorIncreaseFontSize">
+        <ActionSummary times="15" last="1591533836265" />
+      </entry>
+      <entry key="EditorPaste">
+        <ActionSummary times="3" last="1591518534880" />
+      </entry>
+      <entry key="EditorSplitLine">
+        <ActionSummary times="1" last="1591519516154" />
+      </entry>
+      <entry key="EditorStartNewLine">
+        <ActionSummary times="2" last="1591520505770" />
+      </entry>
+      <entry key="FindSnippet">
+        <ActionSummary times="1" last="1591533696299" />
+      </entry>
+      <entry key="GotoAction">
+        <ActionSummary times="24" last="1591533694880" />
+      </entry>
+      <entry key="GotoDeclaration">
+        <ActionSummary times="2" last="1591523246669" />
+      </entry>
+      <entry key="GotoFile">
+        <ActionSummary times="1" last="1591520094447" />
+      </entry>
+      <entry key="HideActiveWindow">
+        <ActionSummary times="7" last="1591533809580" />
+      </entry>
+      <entry key="MinimizeCurrentWindow">
+        <ActionSummary times="1" last="1591516466030" />
+      </entry>
+      <entry key="NewElement">
+        <ActionSummary times="1" last="1591519795900" />
+      </entry>
+      <entry key="NewScratchFile">
+        <ActionSummary times="2" last="1591533580890" />
+      </entry>
+      <entry key="ParameterInfo">
+        <ActionSummary times="2" last="1591520100216" />
+      </entry>
+      <entry key="QuickChangeScheme">
+        <ActionSummary times="1" last="1591520563632" />
+      </entry>
+      <entry key="QuickTypeDefinition">
+        <ActionSummary times="1" last="1591520103977" />
+      </entry>
+      <entry key="Run">
+        <ActionSummary times="1" last="1591520668163" />
+      </entry>
+      <entry key="SaveAll">
+        <ActionSummary times="20" last="1591531435837" />
+      </entry>
+      <entry key="Scala.ShowImplicits">
+        <ActionSummary times="1" last="1591515778753" />
+      </entry>
+      <entry key="SearchEverywhere">
+        <ActionSummary times="1" last="1591520098133" />
+      </entry>
+      <entry key="ShowIntentionActions">
+        <ActionSummary times="3" last="1591519920959" />
+      </entry>
+      <entry key="ToggleFullScreen">
+        <ActionSummary times="4" last="1591533579066" />
+      </entry>
+      <entry key="ToggleLineBreakpoint">
+        <ActionSummary times="14" last="1591515755540" />
+      </entry>
+      <entry key="ToggleZenMode">
+        <ActionSummary times="4" last="1591519578080" />
+      </entry>
+      <entry key="Tree-selectNext">
+        <ActionSummary times="1" last="1591516516052" />
+      </entry>
+      <entry key="Tree-selectPrevious">
+        <ActionSummary times="1" last="1591516516882" />
+      </entry>
+      <entry key="ViewMembersInNavigationBar">
+        <ActionSummary times="1" last="1591516422570" />
+      </entry>
+      <entry key="ViewNavigationBar">
+        <ActionSummary times="4" last="1591516449182" />
+      </entry>
+      <entry key="WelcomeScreen.CreateNewProject">
+        <ActionSummary times="1" last="1591522784378" />
+      </entry>
+      <entry key="WelcomeScreen.Plugins">
+        <ActionSummary times="8" last="1591531355861" />
+      </entry>
+      <entry key="WelcomeScreen.Settings">
+        <ActionSummary times="1" last="1591512958702" />
+      </entry>
+      <entry key="com.intellij.codeInsight.daemon.NavigateAction">
+        <ActionSummary times="2" last="1591523241071" />
+      </entry>
+      <entry key="com.intellij.execution.impl.ConsoleViewImpl$BackSpaceHandler">
+        <ActionSummary times="1" last="1591521289262" />
+      </entry>
+      <entry key="com.intellij.execution.impl.ConsoleViewImpl$EnterHandler">
+        <ActionSummary times="2" last="1591521291737" />
+      </entry>
+      <entry key="com.intellij.execution.impl.ConsoleViewImpl$HyperlinkNavigationAction">
+        <ActionSummary times="1" last="1591523398877" />
+      </entry>
+      <entry key="com.intellij.ide.ReopenProjectAction">
+        <ActionSummary times="1" last="1591515379262" />
+      </entry>
+      <entry key="com.intellij.ide.plugins.PluginManagerConfigurable$InstalledSearchOptionAction">
+        <ActionSummary times="8" last="1591516615907" />
+      </entry>
+      <entry key="com.intellij.ide.plugins.newui.ListPluginComponent$3">
+        <ActionSummary times="2" last="1591513572855" />
+      </entry>
+      <entry key="com.intellij.ide.plugins.newui.ListPluginComponent$4">
+        <ActionSummary times="11" last="1591518580384" />
+      </entry>
+      <entry key="com.intellij.ide.plugins.newui.ListPluginComponent$ButtonAnAction">
+        <ActionSummary times="1" last="1591518333437" />
+      </entry>
+      <entry key="com.intellij.notification.EventLogConsole$ClearLogAction">
+        <ActionSummary times="4" last="1591533809137" />
+      </entry>
+      <entry key="com.intellij.notification.NotificationAction$1">
+        <ActionSummary times="1" last="1591533801601" />
+      </entry>
+      <entry key="com.intellij.openapi.actionSystem.EmptyAction$MyDelegatingAction">
+        <ActionSummary times="107" last="1591533839494" />
+      </entry>
+      <entry key="com.intellij.openapi.project.DumbAwareAction$SimpleDumbAwareAction">
+        <ActionSummary times="27" last="1591533696269" />
+      </entry>
+      <entry key="com.intellij.openapi.ui.impl.DialogWrapperPeerImpl$AnCancelAction">
+        <ActionSummary times="2" last="1591533616222" />
+      </entry>
+      <entry key="com.intellij.openapi.wm.impl.status.widget.StatusBarWidgetsActionGroup$ToggleWidgetAction">
+        <ActionSummary times="4" last="1591533827196" />
+      </entry>
+      <entry key="com.intellij.openapi.wm.impl.welcomeScreen.FlatWelcomeFrame$FlatWelcomeScreen$4">
+        <ActionSummary times="6" last="1591514725138" />
+      </entry>
+      <entry key="com.intellij.openapi.wm.impl.welcomeScreen.FlatWelcomeFrame$FlatWelcomeScreen$5">
+        <ActionSummary times="9" last="1591531354762" />
+      </entry>
+      <entry key="com.intellij.ui.ScrollingUtil$6">
+        <ActionSummary times="24" last="1591533692163" />
+      </entry>
+      <entry key="com.intellij.ui.ScrollingUtil$7">
+        <ActionSummary times="7" last="1591533696054" />
+      </entry>
+      <entry key="com.intellij.xdebugger.impl.breakpoints.RemoveBreakpointGutterIconAction">
+        <ActionSummary times="5" last="1591515754082" />
+      </entry>
+    </data>
+  </component>
+</application>

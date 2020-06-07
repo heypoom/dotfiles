@@ -1,0 +1,26 @@
+<application>
+  <component name="Code Navigator">
+    <setting name="classColor" value="fff0e9c2" />
+    <setting name="abstractClassColor" value="fff0e5a8" />
+    <setting name="interfaceColor" value="fff0e18d" />
+    <setting name="enumColor" value="fff0e9c2" />
+    <setting name="normalCloudColor" value="fff0e9c2" />
+    <setting name="usedCloudColor" value="ff98a4b8" />
+    <setting name="extendedCloudColor" value="fff2a228" />
+    <setting name="minFontSize" value="5" />
+    <setting name="maxFontSize" value="32" />
+    <setting name="animateNavigation" value="true" />
+    <setting name="animationDuration" value="500" />
+    <setting name="includeNonProjectClasses" value="false" />
+    <setting name="includeTestClasses" value="false" />
+    <setting name="classCloudScopeName" value="" />
+    <setting name="highlightCyclicEdges" value="false" />
+    <setting name="thumbnailHeight" value="40" />
+    <setting name="saveThumbnails" value="false" />
+    <collectionClasses>
+      <collection name="java.lang.Iterable" value="" />
+      <collection name="java.util.Map" value="" />
+    </collectionClasses>
+    <setting name="gridSize" value="25" />
+  </component>
+</application>

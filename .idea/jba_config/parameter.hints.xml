@@ -1,0 +1,5 @@
+<application>
+  <component name="ParameterNameHintsSettings">
+    <option id="SHOW_SUSPENDING_CALL" value="true" />
+  </component>
+</application>
