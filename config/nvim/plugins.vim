@@ -47,6 +47,10 @@ Plug 'alvan/vim-closetag', {'for': 'html'}
 " " Note: conflicts with vim-move.
 " Plug 'christoomey/vim-tmux-navigator'
 
+" Retrieve the cheat sheet from cht.sh
+" Use the :Cheat command to get the cheat sheet.
+Plug 'dbeniamine/cheat.sh-vim'
+
 """
 """ Nice-to-have Plugins
 """
