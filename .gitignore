@@ -225,3 +225,8 @@ config/thefuck/settings.pyc
 .idea/extensions
 .idea/tasks
 
+.idea/options/actionSummary.xml
+.idea/options/recentProjects.xml
+.idea/options/scratches.xml
+.idea/options/vim_settings.xml
+

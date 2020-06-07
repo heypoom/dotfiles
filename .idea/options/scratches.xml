@@ -1,7 +1,0 @@
-<application>
-  <component name="ScratchFileService">
-    <file url="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.md" value="Markdown" />
-    <file url="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.rs" value="Rust" />
-    <file url="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.txt" value="TEXT" />
-  </component>
-</application>
