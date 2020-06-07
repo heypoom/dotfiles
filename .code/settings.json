@@ -1,10 +1,10 @@
 {
-  "window.zoomLevel": -1,
+  "window.zoomLevel": 0,
   "explorer.confirmDelete": false,
   "workbench.colorTheme": "Dracula",
   "files.autoSave": "afterDelay",
-  "editor.fontFamily": "'FiraCode Nerd Font', 'Sukhumvit Set Text', monospace",
-  "editor.fontSize": 16,
+  "editor.fontFamily": "'JetBrains Mono', 'FiraCode Nerd Font', 'Sukhumvit Set Text', monospace",
+  "editor.fontSize": 20,
   "editor.tabSize": 2,
   "editor.useTabStops": true,
   "editor.fontLigatures": true,
@@ -144,7 +144,6 @@
   "editor.suggestSelection": "first",
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "workbench.colorCustomizations": {},
-  "python.pythonPath": "/Users/phoomparin/.asdf/installs/python/3.8.2/bin/python3.8",
   "python.poetryPath": "poetry",
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -152,5 +151,6 @@
   "tabnine.experimentalAutoImports": 0,
   "terminal.integrated.allowChords": false,
   "terminal.integrated.lineHeight": 1.2,
-  "terminal.integrated.rendererType": "canvas"
+  "terminal.integrated.rendererType": "canvas",
+  "editor.lineHeight": 30
 }
