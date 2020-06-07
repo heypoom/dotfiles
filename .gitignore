@@ -223,4 +223,5 @@ config/thefuck/settings.pyc
 .idea/jba_config/caches
 .idea/terminal
 .idea/extensions
+.idea/tasks
 
