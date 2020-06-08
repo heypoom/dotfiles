@@ -1,3 +1,27 @@
 {
-	"python.formatting.provider": "black"
+  "python.formatting.provider": "black",
+  "coc.preferences.formatOnSaveFiletypes": [
+    "javascript",
+    "typescript",
+    "typescriptreact",
+    "json",
+    "javascriptreact",
+    "typescript.tsx",
+    "graphql",
+    "css",
+    "markdown"
+  ],
+  "prettier.printWidth": 80,
+  "prettier.tabWidth": 2,
+  "prettier.singleQuote": false,
+  "prettier.trailingComma": "none",
+  "prettier.bracketSpacing": false,
+  "prettier.jsxBracketSameLine": false,
+  "prettier.semi": false,
+  "prettier.useTabs": false,
+  "prettier.proseWrap": "preserve",
+  "prettier.eslintIntegration": true,
+  "prettier.formatterPriority": 1,
+  "prettier.requireConfig": false,
+  "prettier.disableLanguages": ["vue"]
 }

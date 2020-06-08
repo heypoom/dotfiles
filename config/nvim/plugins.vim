@@ -170,10 +170,10 @@ Plug 'chr4/nginx.vim', {'for': ['nginx', 'conf']}
 " Plug 'honza/vim-snippets'
 " 
 " " Prettier! Prettifies your JavaScript code.
-Plug 'prettier/vim-prettier', {
-  \ 'do': 'yarn install',
-  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql'] }
-" 
+" Plug 'prettier/vim-prettier', {
+"   \ 'do': 'yarn install',
+"   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql'] }
+"
 " " Parinfer infers the ending parenthesis automatically!
 " " Read more: https://shaunlebron.github.io/parinfer/
 Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release', 'for': 'clojure'}

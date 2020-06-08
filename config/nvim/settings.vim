@@ -109,26 +109,28 @@ let g:UltiSnipsEditSplit="vertical"
 
 "" Prettier Configuration
 
-let g:prettier#config#print_width = 80
-let g:prettier#config#tab_width = 2
-let g:prettier#config#use_tabs = 'false'
-let g:prettier#config#semi = 'false'
-let g:prettier#config#jsx_bracket_same_line = 'false'
-let g:prettier#config#single_quote = 'true'
-let g:prettier#config#bracket_spacing = 'false'
-let g:prettier#config#arrow_parens = 'avoid'
-let g:prettier#config#trailing_comma = 'all'
-let g:prettier#config#parser = 'babylon'
-let g:prettier#config#config_precedence = 'prefer-file'
-
-" Enable auto-format if configuration is present.
-let g:prettier#autoformat = 1
-let g:prettier#autoformat_require_pragma = 0
-let g:prettier#autoformat_config_present = 1
-let g:prettier#exec_cmd_async = 1
+" let g:prettier#config#print_width = 80
+" let g:prettier#config#tab_width = 2
+" let g:prettier#config#use_tabs = 'false'
+" let g:prettier#config#semi = 'false'
+" let g:prettier#config#jsx_bracket_same_line = 'false'
+" let g:prettier#config#single_quote = 'true'
+" let g:prettier#config#bracket_spacing = 'false'
+" let g:prettier#config#arrow_parens = 'avoid'
+" let g:prettier#config#trailing_comma = 'all'
+" let g:prettier#config#parser = 'babylon'
+" let g:prettier#config#config_precedence = 'prefer-file'
+" 
+" " Enable auto-format if configuration is present.
+" let g:prettier#autoformat = 1
+" let g:prettier#autoformat_require_pragma = 0
+" let g:prettier#autoformat_config_present = 1
+" let g:prettier#exec_cmd_async = 1
 
 " Enable async auto-format for these type of files.
 " autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql PrettierAsync
+
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 "" Deoplete auto-completion configuration
 
