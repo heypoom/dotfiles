@@ -13,7 +13,8 @@ set -gx VISUAL nvim
 set -gx FILTER fzf
 
 # Also Use Neovim as the React editor
-set -gx REACT_EDITOR nvim set -gx REACT_EDITOR_CMD '/usr/local/bin/nvim'
+set -gx REACT_EDITOR nvim
+set -gx REACT_EDITOR_CMD '/usr/local/bin/nvim'
 
 # Define Android's SDK Path
 set -gx ANDROID_HOME "$HOME/Library/Android/sdk"
