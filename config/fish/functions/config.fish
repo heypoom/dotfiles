@@ -1,4 +1,4 @@
-# Defined in /var/folders/jm/l3mwrkrx7yq8nhxyg1btdzkm0000gn/T//fish.UGA3MK/config.fish @ line 2
+# Defined in /var/folders/jm/l3mwrkrx7yq8nhxyg1btdzkm0000gn/T//fish.KuiYmP/config.fish @ line 2
 function config
 	function config_edit_file
 		$EDITOR "$HOME/"$argv[1]
@@ -30,6 +30,16 @@ function config
 			config_edit alacritty/alacritty.yml
 		case nvim
 			config_edit_cd .config/nvim plugins.vim
+		case nvim-keymap
+			config_edit_cd .config/nvim keymap.vim
+		case nvim-settings
+			config_edit_cd .config/nvim settings.vim
+		case nvim-prefs
+			config_edit_cd .config/nvim preferences.vim
+		case nvim-plugins
+			config_edit_cd .config/nvim plugins.vim
+		case nvim-coc
+			config_edit_cd .config/nvim coc-settings.json
 		case ranger
 			config_edit_cd .config/ranger rc.conf
 		case widgets
@@ -59,6 +69,10 @@ function config
 			config commit $argv[2]
 			config push
 		case install
+			pushd "$HOME/.dotfiles"
+			$HOME/.dotfiles/install
+			popd
+		case link
 			pushd "$HOME/.dotfiles"
 			$HOME/.dotfiles/install
 			popd
