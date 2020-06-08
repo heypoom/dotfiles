@@ -21,12 +21,8 @@ Plug 'junegunn/fzf.vim'
 " Surround (cs'" to change surrounding '' to "")
 Plug 'tpope/vim-surround'
 
-" Colorize all the color codes! (e.g. #2d2d30, rgb(5, 5, 5))
-" Plug 'lilydjwg/colorizer', {'for': ['html', 'css', 'scss', 'sass', 'pug', 'vue', 'stylus']}
-" Plug 'chrisbra/Colorizer', {'for': ['html', 'css', 'scss', 'sass', 'pug', 'vue', 'stylus', 'python']}
-
 " Tab Expansions for HTML files.
-Plug 'mattn/emmet-vim', {'for': ['html', 'pug', 'jsx', 'typescriptreact']}
+Plug 'mattn/emmet-vim', {'for': ['html', 'pug', 'jsx', 'typescriptreact', 'javascriptreact', 'javascript', 'typescript.tsx']}
 
 " Repeat the surround command using the dot (.) command.
 Plug 'tpope/vim-repeat'
@@ -82,33 +78,16 @@ Plug 'posva/vim-vue', {'for': ['vue']}
 " " Git Gutter (Show git diffs in left gutter)
 " Plug 'airblade/vim-gitgutter'
 
-" " Auto-format your source code.
-" Plug 'Chiel92/vim-autoformat'
-
-" " Re-open a file at the last cursor position.
-" Plug 'farmergreg/vim-lastplace'
-
 " " Adds the ending pair for (parens), {braces} and 'quotes'
 " " Features: https://github.com/jiangmiao/auto-pairs
 " Plug 'jiangmiao/auto-pairs'
 
-" " Emacs kill-ring but it's in vim.
-" " meta + p = cycle backward through your history of yanks
-" " meta + shift + p = cycle forwards through your history of yanks
-" Plug 'maxbrunsfeld/vim-yankstack'
-" 
 " " Highlight all trailing whitespaces. Prevent messy git diffs.
 Plug 'ntpeters/vim-better-whitespace'
-" 
-" " Create non-existent directories before writing file.
-" Plug 'pbrisbin/vim-mkdir'
-" 
-" " Quickly execute vim plugins
-" Plug 'thinca/vim-quickrun'
-" 
+
 " " Comment stuff out! (gc in visual, gcc in normal)
 " Plug 'tpope/vim-commentary'
-" 
+
 " " Automatically add "end" in ruby block.
 " Plug 'tpope/vim-endwise'
 " 
