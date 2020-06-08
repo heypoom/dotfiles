@@ -74,7 +74,7 @@ set -gx MANPATH \
 set -gx MANPAGER "nvim -c 'set ft=man' -"
 
 # Configure fzf to use fd as default command.
-set -gx FZF_DEFAULT_COMMAND 'fd --type f --follow --exclude .git'
+set -gx FZF_DEFAULT_COMMAND 'fd --type f --follow --hidden --exclude .git'
 set -gx FZF_CTRL_T_COMMAND $FZF_DEFAULT_COMMAND
 
 # Configure the environment variables.
