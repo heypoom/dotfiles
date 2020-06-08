@@ -1,9 +1,6 @@
 " Space becomes your <Leader> key!
-" It is much easier to push now~
+" It is much easier to push now, yay!
 let g:mapleader = "\<space>"
-
-" Allow autocomplete to work much better
-inoremap <expr> <CR> pumvisible() ? "\<C-Y>" : "\<CR>"
 
 " control + s = reload configuration
 nnoremap <leader>s :so $MYVIMRC<cr>
@@ -57,7 +54,7 @@ let g:multi_cursor_use_default_mapping=0
 let g:multi_cursor_next_key='<C-n>'
 let g:multi_cursor_prev_key='<C-p>'
 let g:multi_cursor_skip_key='<C-x>'
-let g:multi_cursor_quit_key='<Esc>'
+let g:multi_cursor_quit_key='<Esc>'    
 
 "" Ranger
 
@@ -68,14 +65,6 @@ nnoremap <leader><C-r> :Ranger<cr>
 
 " control + g = open tig (text-mode interface for git)
 nnoremap <C-g> :Tig<Cr>
-
-"" Deoplete auto-completion
-
-" When auto-completing: tab = control + n
-inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
-
-" When auto-completing: shift + tab = control + p
-inoremap <expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 
 "" NERDTree
 

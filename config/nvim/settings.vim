@@ -1,7 +1,7 @@
 "" Polyglot Configuration
 
 " Disable these languages.
-let g:polyglot_disabled = ['go']
+let g:polyglot_disabled = []
 
 "" Disable Default Keymaps
 
@@ -65,17 +65,14 @@ function! s:goyo_enter()
   " Set the scrolling offset to 999
   set scrolloff=999
 
-  " Disable auto-completion.
-	" call deoplete#disable()
-
-	" Configure Theming.
-	color dracula
-	hi! Normal ctermbg=NONE guibg=NONE
-	hi! NonText cterm=NONE ctermbg=NONE gui=NONE guibg=NONE
-	hi! StatusLine cterm=NONE ctermbg=NONE ctermfg=NONE gui=NONE guibg=NONE guifg=NONE
-	hi! StatusLineNC ctermbg=NONE guibg=NONE
-	hi! VertSplit ctermbg=NONE guibg=NONE
-	hi! CursorLine cterm=NONE guibg=NONE
+  " Configure Theming.
+  color dracula
+  hi! Normal ctermbg=NONE guibg=NONE
+  hi! NonText cterm=NONE ctermbg=NONE gui=NONE guibg=NONE
+  hi! StatusLine cterm=NONE ctermbg=NONE ctermfg=NONE gui=NONE guibg=NONE guifg=NONE
+  hi! StatusLineNC ctermbg=NONE guibg=NONE
+  hi! VertSplit ctermbg=NONE guibg=NONE
+  hi! CursorLine cterm=NONE guibg=NONE
 endfunction
 
 " What to do when we leave the distraction-free mode?
@@ -92,11 +89,8 @@ function! s:goyo_leave()
   " Set the scrolling offset to 5
   set scrolloff=5
 
-	" Set the background to transparent.
-	hi! Normal ctermbg=NONE guibg=NONE
-
-  " Re-enable auto-completion.
-  " call deoplete#enable()
+  " Set the background to transparent.
+  hi! Normal ctermbg=NONE guibg=NONE
 endfunction
 
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
@@ -132,40 +126,9 @@ let g:UltiSnipsEditSplit="vertical"
 
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
-"" Deoplete auto-completion configuration
-
-" Enable deoplete with use smart-cases
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#enable_smart_case = 1
-let g:deoplete#auto_complete_start_length = 1
-
 " Configure Racer for Rust
 let g:racer_cmd = "/Users/phoomparin/.cargo/bin/racer"
 let g:racer_experimental_completer = 1
-
-" Configure Clang for C/C++/Obj-C
-let g:deoplete#sources#clang#libclang_path = "/usr/local/Cellar/llvm/7.0.0_1/lib/libclang.dylib"
-let g:deoplete#sources#clang#clang_header = "/usr/local/Cellar/llvm/7.0.0_/lib/clang/"
-
-"" TernJS completion configuration for JavaScript
-"" Read more: https://github.com/carlitux/deoplete-ternjs
-
-let g:deoplete#sources#ternjs#depths = 1
-let g:deoplete#sources#ternjs#docs = 1
-let g:deoplete#sources#ternjs#case_insensitive = 1
-let g:deoplete#sources#ternjs#filetypes = ['jsx', 'javascript.jsx', 'vue']
-
-"" Go Completion Configuration (deoplete-go)
-"" Read more: https://github.com/zchee/deoplete-go
-
-" Use cache for Go
-let g:deoplete#sources#go#use_cache = 1
-
-" Specify path to gocode to improve performance.
-let g:deoplete#sources#go#gocode_binary = $GOPATH . '/bin/gocode'
-
-" Display all words while sorting.
-let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
 
 "" Go language configuration
 

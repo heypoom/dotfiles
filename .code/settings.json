@@ -152,5 +152,15 @@
   "terminal.integrated.allowChords": false,
   "terminal.integrated.lineHeight": 1.3,
   "terminal.integrated.rendererType": "canvas",
-  "editor.lineHeight": 30
+  "editor.lineHeight": 33,
+  "solargraph.diagnostics": true,
+  "solargraph.completion": true,
+  "solargraph.hover": true,
+  "solargraph.autoformat": true,
+  "solargraph.formatting": true,
+  "solargraph.symbols": true,
+  "solargraph.definitions": true,
+  "solargraph.rename": true,
+  "solargraph.references": true,
+  "solargraph.folding": true
 }

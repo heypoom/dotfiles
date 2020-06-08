@@ -76,7 +76,7 @@ Plug 'posva/vim-vue', {'for': ['vue']}
 
 " Adds the ending pair for (parens), {braces} and 'quotes'
 " Features: https://github.com/jiangmiao/auto-pairs
-" Plug 'jiangmiao/auto-pairs'
+Plug 'jiangmiao/auto-pairs'
 
 " Highlight all trailing whitespaces. Prevent messy git diffs.
 Plug 'ntpeters/vim-better-whitespace'
@@ -88,7 +88,7 @@ Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-sleuth'
 
 " Syntax highlighter for styled-components and emotion.
-" Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+" Plug 'styled-components/vim-styled-components', { 'branch': 'main', 'for': ['jsx', 'typescript', 'typescriptreact', 'javascriptreact', 'javascript', 'typescript.tsx'] }
 
 " Interact with Tmux using :VimuxRunCommand and :VimuxRunLastCommand
 Plug 'benmills/vimux'
@@ -132,6 +132,9 @@ Plug 'rizzatti/dash.vim'
 
 " Track your coding time with WakaTime
 Plug 'wakatime/vim-wakatime'
+
+" End Ruby blocks with end
+Plug 'tpope/vim-endwise'
 
 " Go Language Support
 " Auto Gofmt, :GoDoc, :GoRun, :GoLint, :GoTest, :GoDebugStart
