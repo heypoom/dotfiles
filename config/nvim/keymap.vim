@@ -21,11 +21,24 @@ nnoremap gk k
 "" Fzf key bindings
 "" Read more: https://github.com/junegunn/fzf.vim
 
+function! RipgrepFzf(query, fullscreen)
+  let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case -g "!yarn.lock" -- %s || true'
+  let initial_command = printf(command_fmt, shellescape(a:query))
+  let reload_command = printf(command_fmt, '{q}')
+  let spec = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
+  call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
+endfunction
+
+command! -nargs=* -bang Ripgrep call RipgrepFzf(<q-args>, <bang>0)
+
 " space + f = search files in current directory (like :FZF)
 nnoremap <leader>f :Files<cr>
 
 " space + r = search through file with ripgrep
-nnoremap <leader>r :Rg<cr>
+nnoremap <leader>r :Ripgrep<cr>
+
+" space + s = search through file with ripgrep
+nnoremap <leader>s :Ripgrep<cr>
 
 " space + kb = view all keybindings.
 nnoremap <leader>kb :Maps<cr>
