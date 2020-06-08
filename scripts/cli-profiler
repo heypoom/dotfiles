@@ -26,6 +26,18 @@ printf "Neovim startup time: "
 timeof nvim --headless +exit
 echo
 
+printf "Neovim (TypeScript) startup time: "
+timeof nvim --headless +exit "_test.ts"
+echo
+
+printf "Neovim (Ruby) startup time: "
+timeof nvim --headless +exit "_test.rb"
+echo
+
+printf "Neovim (Python) startup time: "
+timeof nvim --headless +exit "_test.py"
+echo
+
 printf "Vi startup time: "
 timeof vi +exit
 echo

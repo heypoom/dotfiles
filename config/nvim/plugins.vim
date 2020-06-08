@@ -1,9 +1,5 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
-"""
-""" Essential Plugins.
-"""
-
 " Dracula Theme.
 Plug 'dracula/vim', { 'as': 'dracula' }
 
@@ -12,6 +8,12 @@ Plug 'itchyny/lightline.vim'
 
 " Move lines and selections.
 Plug 'matze/vim-move'
+
+" Conquer of Completion: Intellisense Engine
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+" Language Packs! (syntax highlighting, indentation, etc.)
+Plug 'sheerun/vim-polyglot'
 
 " Fuzzy Finder
 " :Rg for ripgrep, :Ag for silver searcher
@@ -35,27 +37,21 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'preservim/nerdtree', {'on': 'NERDTreeToggle'}
 Plug 'Xuyuanp/nerdtree-git-plugin', {'on': 'NERDTreeToggle'}
 
-" " Auto-close HTML <tags>.
+" Auto-close HTML <tags>.
 Plug 'alvan/vim-closetag', {'for': 'html'}
 
-" " Seamless switching between nvim splits and tmux panes!
-" " Use ctrl + {hjkl} to move between them as usual.
-" " Note: conflicts with vim-move.
+" Seamless switching between nvim splits and tmux panes!
+" Use ctrl + {hjkl} to move between them as usual.
+" ERROR: conflicts with vim-move.
 " Plug 'christoomey/vim-tmux-navigator'
 
 " Retrieve the cheat sheet from cht.sh
 " Use the :Cheat command to get the cheat sheet.
-Plug 'dbeniamine/cheat.sh-vim'
+" ERROR: Causes significant issues with Python.
+" Plug 'dbeniamine/cheat.sh-vim'
 
 " Enable +AnsiEsc
 Plug 'powerman/vim-plugin-AnsiEsc'
-
-"""
-""" Nice-to-have Plugins
-"""
-
-" Press <tab> to expand snippets, integrates with deoplete.
-" Plug 'SirVer/ultisnips'
 
 " Ranger Integration (:Ranger)
 Plug 'francoiscabrol/ranger.vim'
@@ -75,140 +71,71 @@ Plug 'easymotion/vim-easymotion'
 " Vue
 Plug 'posva/vim-vue', {'for': ['vue']}
 
-" " Git Gutter (Show git diffs in left gutter)
+" Git Gutter (Show git diffs in left gutter)
 " Plug 'airblade/vim-gitgutter'
 
-" " Adds the ending pair for (parens), {braces} and 'quotes'
-" " Features: https://github.com/jiangmiao/auto-pairs
+" Adds the ending pair for (parens), {braces} and 'quotes'
+" Features: https://github.com/jiangmiao/auto-pairs
 " Plug 'jiangmiao/auto-pairs'
 
-" " Highlight all trailing whitespaces. Prevent messy git diffs.
+" Highlight all trailing whitespaces. Prevent messy git diffs.
 Plug 'ntpeters/vim-better-whitespace'
 
-" " Comment stuff out! (gc in visual, gcc in normal)
-" Plug 'tpope/vim-commentary'
+" Comment stuff out! (gc in visual, gcc in normal)
+Plug 'tomtom/tcomment_vim'
 
-" " Automatically add "end" in ruby block.
-" Plug 'tpope/vim-endwise'
-" 
-" " Adjust shiftwidth and expandtab based on current file.
-" Plug 'tpope/vim-sleuth'
-" 
-" "" Linter Settings
-" 
-" " Asynchronous Lint Engine, lints your code.
-" Plug 'w0rp/ale'
-" 
-" " Flake8 Linter for Python. Combines PyFlakes, PEP8 and MacCabe.
-" " Read more: https://github.com/nvie/vim-flake8
-" Plug 'nvie/vim-flake8'
-" 
-" " W3m Plugin for vim
-" Plug 'yuratomo/w3m.vim'
-" 
-" " Auto-save the file! no need to :w (like vscode)
-" " Plug '907th/vim-auto-save'
-"
-" " Syntax highlighter for styled-components and emotion.
+" Adjust shiftwidth and expandtab based on current file.
+Plug 'tpope/vim-sleuth'
+
+" Syntax highlighter for styled-components and emotion.
 " Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
-" 
-" "" Tmux Integration
-" 
+
 " Interact with Tmux using :VimuxRunCommand and :VimuxRunLastCommand
 Plug 'benmills/vimux'
-" 
+
 " Restore FocusGained and FocusLost events in tmux
 Plug 'tmux-plugins/vim-tmux-focus-events'
-" 
-" " Git wrapper (:Gcommit, :Gstatus, :Gblame)
-" Plug 'tpope/vim-fugitive'
-" 
-" " Vim session manager!
-" " :SaveSession <name> = save, :OpenSession <name> = load.
-" " Read more: https://jvns.ca/blog/2017/09/10/vim-sessions
-" Plug 'xolox/vim-session'
-" 
-" " Required by xolox/vim-session.
-" Plug 'xolox/vim-misc'
-" 
-" " Use relative line numbers in active pane, absolute in others.
-" " Read more: https://jeffkreeftmeijer.com/vim-number/#automatic-toggling-between-line-number-modes
-" Plug 'jeffkreeftmeijer/vim-numbertoggle'
-" 
-" " Syntax highlighting and more for nginx.conf files
-Plug 'chr4/nginx.vim', {'for': ['nginx', 'conf']}
-" 
-" " Align text with :Tabular
-" Plug 'godlygeek/tabular'
-" 
-" " Class outline viewer with :TagbarToggle
-" " Depend on universal-ctags to be installed.
-" Plug 'majutsushi/tagbar'
-" 
-" " Snippet Packs for multiple languages!
-" Plug 'honza/vim-snippets'
-" 
-" " Prettier! Prettifies your JavaScript code.
-" Plug 'prettier/vim-prettier', {
-"   \ 'do': 'yarn install',
-"   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql'] }
-"
-" " Parinfer infers the ending parenthesis automatically!
-" " Read more: https://shaunlebron.github.io/parinfer/
-Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release', 'for': 'clojure'}
-" 
-" " Show indentation bars
-" Plug 'Yggdroot/indentLine'
-" 
-" " Edit files in hex mode with :Hexmode or `vi -b`
-Plug 'fidian/hexmode'
-" 
-" " Defines a text object for indentation levels.
-" " ai = an indent with line above
-" " ii = inner indent, no line above
-" " aI = an indent with lines above and below
-" Plug 'michaeljsmith/vim-indent-object'
-" 
-" " Visually select larger, enclosing regions of text.
-" " + = expand, _ = shrink.
-" Plug 'terryma/vim-expand-region'
-" 
-" " Multiple Cursors with <C-n>
-" " Read more: https://github.com/terryma/vim-multiple-cursors
-" Plug 'terryma/vim-multiple-cursors'
-" 
-" " Search for documentation in Dash.app using :Dash
-" " Read more with :help dash
-Plug 'rizzatti/dash.vim'
-" 
-" " Track your coding time with WakaTime
-Plug 'wakatime/vim-wakatime'
-" 
-" "" Language Support
-" 
-" " Go Language Support
-" " Auto Gofmt, :GoDoc, :GoRun, :GoLint, :GoTest, :GoDebugStart
-" Plug 'fatih/vim-go', {'for': 'go'}
-" 
-" " TypeScript Language Support
-" " Plug 'mhartington/nvim-typescript'
-" 
-" " Conquer of Completion: Intellisense Engine
-" 'for': ['javascript', 'typescript', 'rust', 'clojure', 'markdown', 'python']
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-" 
+" Git wrapper (:Gcommit, :Gstatus, :Gblame)
+Plug 'tpope/vim-fugitive'
+
+" Syntax highlighting and more for nginx.conf files
+Plug 'chr4/nginx.vim', {'for': ['nginx', 'conf']}
+
+" Parinfer infers the ending parenthesis automatically!
+" Read more: https://shaunlebron.github.io/parinfer/
+Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release', 'for': 'clojure'}
+
+" Edit files in hex mode with :Hexmode or `vi -b`
+Plug 'fidian/hexmode'
+
 " Rust Language Support
 Plug 'rust-lang/rust.vim', {'for': 'rust'}
-" 
-" " Language Packs! (syntax highlighting, indentation, etc.)
-Plug 'sheerun/vim-polyglot'
 
-" " TidalCycles for Live Coding Music!
-" " Plug 'tidalcycles/vim-tidal'
-" 
-" " Racket Support
-" " Plug 'wlangstroth/vim-racket'
+" Defines a text object for indentation levels.
+" ai = an indent with line above
+" ii = inner indent, no line above
+" aI = an indent with lines above and below
+Plug 'michaeljsmith/vim-indent-object'
+
+" Visually select larger, enclosing regions of text.
+" + = expand, _ = shrink.
+Plug 'terryma/vim-expand-region'
+
+" Multiple Cursors with <C-n>
+" Read more: https://github.com/terryma/vim-multiple-cursors
+Plug 'terryma/vim-multiple-cursors'
+
+" Search for documentation in Dash.app using :Dash
+" Read more with :help dash
+Plug 'rizzatti/dash.vim'
+
+" Track your coding time with WakaTime
+Plug 'wakatime/vim-wakatime'
+
+" Go Language Support
+" Auto Gofmt, :GoDoc, :GoRun, :GoLint, :GoTest, :GoDebugStart
+" Plug 'fatih/vim-go', {'for': 'go'}
 
 " Add file icons to other plugins (e.g. NERDTree, Airline)
 " Always load this as the very last one!
