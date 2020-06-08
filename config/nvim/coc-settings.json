@@ -11,6 +11,8 @@
     "css",
     "markdown"
   ],
+  "tsserver.formatOnType": false,
+  "coc.preferences.formatOnType": false,
   "prettier.printWidth": 80,
   "prettier.tabWidth": 2,
   "prettier.singleQuote": false,
@@ -24,5 +26,16 @@
   "prettier.formatterPriority": 1,
   "prettier.requireConfig": false,
   "prettier.disableLanguages": ["vue"],
-  "prettier.disableSuccessMessage": true
+  "prettier.disableSuccessMessage": true,
+  "codeLens.enable": true,
+  "suggest.floatEnable": true,
+  "suggest.enablePreview": true,
+  "suggest.enablePreselect": true,
+  "eslint.autoFixOnSave": true,
+  "eslint.filetypes": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ]
 }
