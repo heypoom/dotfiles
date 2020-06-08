@@ -26,7 +26,7 @@ Plug 'tpope/vim-surround'
 " Plug 'chrisbra/Colorizer', {'for': ['html', 'css', 'scss', 'sass', 'pug', 'vue', 'stylus', 'python']}
 
 " Tab Expansions for HTML files.
-Plug 'mattn/emmet-vim', {'for': ['html', 'pug', 'jsx']}
+Plug 'mattn/emmet-vim', {'for': ['html', 'pug', 'jsx', 'typescriptreact']}
 
 " Repeat the surround command using the dot (.) command.
 Plug 'tpope/vim-repeat'
