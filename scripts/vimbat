@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-nvim "+term tail -f -n +1 $@"
+nvim "+term tail -f -n +1 $@" -c 'set ft=log' -c "file $@"
 
