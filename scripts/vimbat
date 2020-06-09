@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+nvim "+term tail -f -n +1 $@"
+

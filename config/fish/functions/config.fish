@@ -1,4 +1,4 @@
-# Defined in /var/folders/jm/l3mwrkrx7yq8nhxyg1btdzkm0000gn/T//fish.KuiYmP/config.fish @ line 2
+# Defined in /var/folders/jm/l3mwrkrx7yq8nhxyg1btdzkm0000gn/T//fish.zXWiQu/config.fish @ line 2
 function config
 	function config_edit_file
 		$EDITOR "$HOME/"$argv[1]
@@ -40,6 +40,8 @@ function config
 			config_edit_cd .config/nvim plugins.vim
 		case nvim-coc
 			config_edit_cd .config/nvim coc-settings.json
+		case nvim-colors
+			config_edit_cd .config/nvim colors.vim
 		case ranger
 			config_edit_cd .config/ranger rc.conf
 		case widgets
