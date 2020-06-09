@@ -162,5 +162,6 @@
   "solargraph.definitions": true,
   "solargraph.rename": true,
   "solargraph.references": true,
-  "solargraph.folding": true
+  "solargraph.folding": true,
+  "wallaby.startAutomatically": false
 }
