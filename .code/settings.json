@@ -8,7 +8,7 @@
   "editor.tabSize": 2,
   "editor.useTabStops": true,
   "editor.fontLigatures": true,
-  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.multiCursorModifier": "alt",
   "editor.lineNumbers": "relative",
   "terminal.integrated.shell.osx": "/usr/local/bin/fish",
   "terminal.integrated.shellArgs.osx": ["--login"],
@@ -17,7 +17,6 @@
   "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
   "terminal.integrated.fontSize": 20,
   "vim.enableNeovim": false,
-  "vim.neovimPath": "/usr/local/bin/nvim",
   "vim.easymotion": true,
   "vim.sneak": true,
   "vim.incsearch": true,
@@ -25,22 +24,6 @@
   "vim.useCtrlKeys": true,
   "vim.hlsearch": true,
   "vim.debug.silent": true,
-  "vim.insertModeKeyBindings": [
-    {
-      "before": ["j", "j"],
-      "after": ["<Esc>"]
-    }
-  ],
-  "vim.normalModeKeyBindingsNonRecursive": [
-    {
-      "before": ["<leader>", "d"],
-      "after": ["d", "d"]
-    },
-    {
-      "before": ["<C-n>"],
-      "commands": [":nohl"]
-    }
-  ],
   "vim.leader": "<space>",
   "vim.handleKeys": {
     "<C-d>": true,
@@ -68,7 +51,7 @@
   "workbench.sideBar.location": "left",
   "npm.enableScriptExplorer": true,
   "javascript.implicitProjectConfig.experimentalDecorators": true,
-  "javascript.referencesCodeLens.enabled": false,
+  "javascript.referencesCodeLens.enabled": true,
   "emmet.triggerExpansionOnTab": true,
   "emmet.showExpandedAbbreviation": "always",
   "emmet.showSuggestionsAsSnippets": true,
@@ -163,5 +146,6 @@
   "solargraph.rename": true,
   "solargraph.references": true,
   "solargraph.folding": true,
-  "wallaby.startAutomatically": false
+  "wallaby.startAutomatically": false,
+  "material-icon-theme.activeIconPack": "react"
 }
