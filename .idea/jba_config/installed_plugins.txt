@@ -34,7 +34,6 @@ com.perl5
 Lombook Plugin
 com.intellij.ideolog
 com.dmarcotte.handlebars
-ru.adelf.idea.dotenv
 intellij-micropython
 com.leinardi.pycharm.pylint
 com.jetbrains.hackathon2015.S
@@ -86,3 +85,5 @@ R4Intellij
 com.mallowigi
 io.cacher.intellij
 pl.szymonprz.idea-cheatsh-plugin
+ru.adelf.idea.dotenv
+com.deadlock.scsyntax
