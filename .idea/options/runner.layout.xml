@@ -135,6 +135,11 @@
         <option name="placeInGrid" value="bottom" />
         <option name="tabIndex" value="2" />
       </ViewImpl>
+      <ViewImpl>
+        <option name="ID" value="WallabyDebuggerContent" />
+        <option name="placeInGrid" value="bottom" />
+        <option name="tabIndex" value="3" />
+      </ViewImpl>
       <TabImpl>
         <option name="bottomProportion" value="0.0" />
         <option name="defaultIndex" value="1" />
@@ -148,6 +153,10 @@
         <option name="bottomProportion" value="0.0" />
         <option name="defaultIndex" value="3" />
         <option name="index" value="2" />
+      </TabImpl>
+      <TabImpl>
+        <option name="defaultIndex" value="3" />
+        <option name="index" value="3" />
       </TabImpl>
     </runner>
     <runner id="">
