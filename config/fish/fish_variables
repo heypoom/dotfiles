@@ -57,6 +57,7 @@ SETUVAR _fish_abbr_la:exa\x20\x2dlagh\x20\x2d\x2dgit
 SETUVAR _fish_abbr_ls:exa
 SETUVAR _fish_abbr_m:make
 SETUVAR _fish_abbr_mux:tmuxinator
+SETUVAR _fish_abbr_nvimbat:vimbat
 SETUVAR _fish_abbr_r:ranger
 SETUVAR _fish_abbr_rb:ruby
 SETUVAR _fish_abbr_s:sudo
