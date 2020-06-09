@@ -65,8 +65,11 @@ Plug 'codeindulgence/vim-tig'
 " Distraction-free writing with :Goyo
 Plug 'junegunn/goyo.vim', {'for': ['markdown', 'text']}
 
-" Easymotion
+" Easymotion: <leader><leader>s
 Plug 'easymotion/vim-easymotion'
+
+" Sneak: s{char}{char}
+Plug 'justinmk/vim-sneak'
 
 " Vue
 Plug 'posva/vim-vue', {'for': ['vue']}

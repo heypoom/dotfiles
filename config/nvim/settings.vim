@@ -234,8 +234,10 @@ let g:NERDTreeIgnore = ['\.pyc$', '__pycache__']
 let g:NERDTreeWinSize = 25
 
 " Set maximum lines for the colorizer plugin.
-let g:colorizer_maxlines = 1000
+" let g:colorizer_maxlines = 1000
 
 " Colorize the buffer of those filetypes.
-autocmd BufEnter,BufLeave *.html,*.css,*.scss,*.sass,*.pug,*.vue,*.stylus :ColorHighlight!
+" autocmd BufEnter,BufLeave *.html,*.css,*.scss,*.sass,*.pug,*.vue,*.stylus :ColorHighlight!
 
+" Vim Sneak
+let g:sneak#label = 1
