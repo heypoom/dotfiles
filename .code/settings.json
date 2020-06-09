@@ -156,5 +156,14 @@
   "solargraph.references": true,
   "solargraph.folding": true,
   "wallaby.startAutomatically": false,
-  "material-icon-theme.activeIconPack": "react"
+  "material-icon-theme.activeIconPack": "react",
+  "quokka.colorizeOutput": true,
+  "quokka.colors": {
+    "covered": "#62b455",
+    "errorPath": "#ffa0a0",
+    "errorSource": "#fe536a",
+    "notCovered": "#cccccc",
+    "partiallyCovered": "#d2a032"
+  },
+  "quokka.showOutputOnStart": true
 }
