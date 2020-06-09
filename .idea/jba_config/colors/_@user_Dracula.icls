@@ -4,10 +4,10 @@
     <property name="created">2019-04-09T07:18:44</property>
     <property name="ide">idea</property>
     <property name="ideVersion">2019.1.0.0</property>
-    <property name="modified">2020-06-07T13:43:21</property>
+    <property name="modified">2020-06-10T00:29:15</property>
     <property name="originalScheme">Dracula</property>
   </metaInfo>
-  <option name="CONSOLE_FONT_NAME" value="FiraCode Nerd Font" />
+  <option name="CONSOLE_FONT_NAME" value="JetBrainsMono Nerd Font" />
   <option name="CONSOLE_LIGATURES" value="true" />
   <option name="CONSOLE_LINE_SPACING" value="1.8" />
   <colors>
@@ -568,33 +568,9 @@
     <option name="DUPLICATE_FROM_SERVER">
       <value />
     </option>
-    <option name="ELIXIR_ALIAS" baseAttributes="DEFAULT_CLASS_NAME" />
     <option name="ELIXIR_BIT">
       <value />
     </option>
-    <option name="ELIXIR_BRACES" baseAttributes="DEFAULT_BRACES" />
-    <option name="ELIXIR_BRACKET" baseAttributes="DEFAULT_BRACKETS" />
-    <option name="ELIXIR_CALLBACK" baseAttributes="ELIXIR_SPECIFICATION" />
-    <option name="ELIXIR_CHAR_LIST" baseAttributes="DEFAULT_STRING" />
-    <option name="ELIXIR_CHAR_TOKEN" baseAttributes="DEFAULT_ENTITY" />
-    <option name="ELIXIR_DOT" baseAttributes="DEFAULT_DOT" />
-    <option name="ELIXIR_EXPRESSION_SUBSTITUTION_MARK" baseAttributes="DEFAULT_BRACES" />
-    <option name="ELIXIR_FUNCTION_CALL" baseAttributes="DEFAULT_FUNCTION_CALL" />
-    <option name="ELIXIR_IGNORED_VARIABLE" baseAttributes="ELIXIR_VARIABLE" />
-    <option name="ELIXIR_MACRO_CALL" baseAttributes="ELIXIR_FUNCTION_CALL" />
-    <option name="ELIXIR_MAP" baseAttributes="DEFAULT_BRACES" />
-    <option name="ELIXIR_OPERATION_SIGN" baseAttributes="DEFAULT_OPERATION_SIGN" />
-    <option name="ELIXIR_PARAMETER" baseAttributes="DEFAULT_PARAMETER" />
-    <option name="ELIXIR_PARENTHESES" baseAttributes="DEFAULT_PARENTHS" />
-    <option name="ELIXIR_PREDEFINED" baseAttributes="DEFAULT_PREDEFINED_SYMBOL" />
-    <option name="ELIXIR_SIGIL" baseAttributes="DEFAULT_TEMPLATE_LANGUAGE_COLOR" />
-    <option name="ELIXIR_SPECIFICATION" baseAttributes="DEFAULT_FUNCTION_DECLARATION" />
-    <option name="ELIXIR_STRING" baseAttributes="DEFAULT_STRING" />
-    <option name="ELIXIR_STRUCT" baseAttributes="ELIXIR_MAP" />
-    <option name="ELIXIR_TYPE" baseAttributes="DEFAULT_METADATA" />
-    <option name="ELIXIR_TYPE_PARAMETER" baseAttributes="DEFAULT_PARAMETER" />
-    <option name="ELIXIR_VALID_ESCAPE_SEQUENCE" baseAttributes="DEFAULT_VALID_STRING_ESCAPE" />
-    <option name="ELIXIR_VARIABLE" baseAttributes="DEFAULT_LOCAL_VARIABLE" />
     <option name="ENUM_NAME_ATTRIBUTES">
       <value>
         <option name="FOREGROUND" value="8be9fd" />
@@ -821,6 +797,8 @@
         <option name="FONT_TYPE" value="2" />
       </value>
     </option>
+    <option name="JS.GLOBAL_FUNCTION" baseAttributes="DEFAULT_FUNCTION_DECLARATION" />
+    <option name="JS.GLOBAL_VARIABLE" baseAttributes="DEFAULT_GLOBAL_VARIABLE" />
     <option name="JS.INSTANCE_MEMBER_FUNCTION">
       <value>
         <option name="FOREGROUND" value="50fa7b" />
@@ -843,17 +821,13 @@
         <option name="FOREGROUND" value="ff79c6" />
       </value>
     </option>
+    <option name="JS.LOCAL_VARIABLE" baseAttributes="DEFAULT_LOCAL_VARIABLE" />
     <option name="JS.NULL_UNDEFINED">
       <value>
         <option name="FOREGROUND" value="bd93f9" />
       </value>
     </option>
-    <option name="JS.PARAMETER">
-      <value>
-        <option name="FOREGROUND" value="ffb86c" />
-        <option name="FONT_TYPE" value="2" />
-      </value>
-    </option>
+    <option name="JS.REGEXP" baseAttributes="DEFAULT_STRING" />
     <option name="JS.THIS_SUPER">
       <value>
         <option name="FOREGROUND" value="bd93f9" />
@@ -1876,20 +1850,6 @@
         <option name="FONT_TYPE" value="2" />
       </value>
     </option>
-    <option name="PERL_ARRAY" baseAttributes="DEFAULT_IDENTIFIER" />
-    <option name="PERL_ARRAY_BUILTIN" baseAttributes="PERL_ARRAY" />
-    <option name="PERL_EMBED_MARKER" baseAttributes="DEFAULT_TEMPLATE_LANGUAGE_COLOR" />
-    <option name="PERL_GLOB_BUILTIN" baseAttributes="PERL_GLOB" />
-    <option name="PERL_HASH" baseAttributes="DEFAULT_IDENTIFIER" />
-    <option name="PERL_HASH_BUILTIN" baseAttributes="PERL_HASH" />
-    <option name="PERL_LABEL" baseAttributes="DEFAULT_IDENTIFIER" />
-    <option name="PERL_PACKAGE_CORE" baseAttributes="PERL_PACKAGE" />
-    <option name="PERL_PACKAGE_PRAGMA" baseAttributes="PERL_PACKAGE" />
-    <option name="PERL_SCALAR" baseAttributes="DEFAULT_IDENTIFIER" />
-    <option name="PERL_SCALAR_BUILTIN" baseAttributes="PERL_SCALAR" />
-    <option name="PERL_SUB" baseAttributes="DEFAULT_FUNCTION_CALL" />
-    <option name="PERL_SUB_BUILTIN" baseAttributes="PERL_SUB" />
-    <option name="PERL_XSUB" baseAttributes="PERL_SUB" />
     <option name="PHP_ALIAS_REFERENCE" baseAttributes="PHP_CLASS" />
     <option name="PHP_CONSTANT" baseAttributes="DEFAULT_CONSTANT" />
     <option name="PHP_EXEC_COMMAND_ID" baseAttributes="DEFAULT_STRING" />
