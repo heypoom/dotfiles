@@ -165,5 +165,7 @@
     "notCovered": "#cccccc",
     "partiallyCovered": "#d2a032"
   },
-  "quokka.showOutputOnStart": true
+  "quokka.showOutputOnStart": true,
+  "go.formatTool": "goimports",
+  "go.useLanguageServer": true
 }
