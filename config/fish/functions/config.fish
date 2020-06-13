@@ -1,7 +1,11 @@
-# Defined in /var/folders/jm/l3mwrkrx7yq8nhxyg1btdzkm0000gn/T//fish.zXWiQu/config.fish @ line 2
+# Defined in /var/folders/jm/l3mwrkrx7yq8nhxyg1btdzkm0000gn/T//fish.iHvcXl/config.fish @ line 2
 function config
 	function config_edit_file
 		$EDITOR "$HOME/"$argv[1]
+	end
+
+	function config_edit_as_json
+		nvim -c 'ft=json' "$HOME/"$argv[1]
 	end
 
 	function config_edit
@@ -58,6 +62,10 @@ function config
 			config_edit_file .ipython/profile_default/ipython_config.py
 		case tmux
 			config_edit_file .tmux.conf
+		case obsidian
+			config_edit_as_json Notes/.obsidian/config
+		case obsidian-css
+			config_edit_file Notes/obsidian.css
 		case commit
 			pushd "$HOME/.dotfiles"
 			git add --all

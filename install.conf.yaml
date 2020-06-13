@@ -21,6 +21,7 @@
     ~/.hammerspoon: hammerspoon
     ~/Library/Application Support/Code/User: .code
     ~/Library/Application Support/JetBrains/IntelliJIdea2020.1: .idea
+    ~/Notes/obsidian.css: obsidian.css
     ~/scripts: scripts
     ~/.config/:
       glob: true

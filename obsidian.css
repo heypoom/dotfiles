@@ -1,0 +1,507 @@
+.theme-dark {
+  --background-primary: #282a36;
+  --background-primary-alt: #282a36;
+  --background-secondary: #282a36;
+  --background-secondary-alt: #282a36;
+  --text-normal: #f8f8f2;
+  --text-faint: #bd93f9;
+  --text-title-h1: #ff79c6;
+  --text-title-h2: #bd93f9;
+  --text-title-h3: #ff5555;
+  --text-title-h4: #ffb86c;
+  --text-title-h5: #50fa7b;
+  --text-title-h6: #8be9fd;
+  --text-link: #8be9fd;
+  --text-a: #50fa7b;
+  --text-a-hover: #bd93f9;
+  --text-mark: #6272a4;
+  --pre-code: #282a36;
+  --text-highlight-bg: #6272a4;
+  --interactive-accent: #bd93f9;
+  --interactive-before: #bd93f9;
+  --background-modifier-border: #4d5166;
+  --blockquote-border: #bd93f9;
+  --text-accent: #8be9fd;
+  --interactive-accent-rgb: #bd93f9;
+  --text-muted: #bbb;
+
+  --color-green: #50fa7b;
+  --color-cyan: #8be9fd;
+
+  --app-font-family: "JetBrains Mono", iAWriterQuattroV-Text, monospace;
+  --app-font-weight: 500;
+
+  --heading-font: "JetBrains Mono", Avenir, iAWriterQuattroV-Text, monospace;
+  --heading-font-weight: 600;
+
+  --editor-font-family: "JetBrains Mono", iAWriterQuattroV-Text, monospace;
+  --editor-font-size: 24px;
+
+  --nav-file-font-weight: 300;
+}
+
+#graph-view-canvas .links {
+  stroke: var(--interactive-accent-rgb) !important;
+}
+
+.checkbox-container {
+  background-color: #4d5166;
+  height: 16px !important;
+  width: 34px !important;
+}
+
+.checkbox-container:after {
+  background-color: var(--background-secondary-alt);
+  height: 11px !important;
+  width: 14px !important;
+  left: -4px !important;
+}
+
+html,
+body {
+  font-size: 18px;
+}
+
+strong {
+  font-weight: bolder;
+}
+
+a,
+.internal-link,
+.cm-hmd-internal-link,
+.cm-link,
+.cm-formatting-link {
+  color: var(--text-a) !important;
+  text-decoration: none !important;
+}
+
+.cm-formatting-link {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif !important;
+}
+
+a:hover,
+.internal-link:hover {
+  color: var(--text-a-hover) !important;
+  text-decoration: none !important;
+}
+
+mark {
+  background-color: var(--text-mark) !important;
+}
+
+.file-view-actions a {
+  color: var(--text-normal) !important;
+}
+
+.file-view-actions a:hover {
+  color: var(--text-a) !important;
+}
+
+.cl-underlined-text {
+  text-decoration: none !important;
+  color: var(--text-link) !important;
+}
+
+.cm-tag {
+  color: var(--text-faint);
+}
+
+pre code {
+  padding: 8px !important;
+  line-height: normal;
+  display: block;
+  background-color: var(--pre-code) !important;
+}
+
+.markdown-preview-view pre {
+  padding: 0px !important;
+}
+
+code,
+.cm-inline-code {
+  background-color: var(--pre-code) !important;
+  color: var(--text-muted) !important;
+  bottom: 0px !important;
+}
+
+.markdown-preview-view code {
+  font-size: 13.5px;
+}
+
+th {
+  font-weight: 600 !important;
+}
+
+thead {
+  border-bottom: 2px solid var(--background-modifier-border);
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+blockquote {
+  border-color: var(--blockquote-border) !important;
+}
+
+.markdown-preview-view hr {
+  background-color: var(--text-normal);
+}
+
+.main-container-header {
+  padding-top: 0 !important;
+}
+
+.title {
+  font-weight: 600 !important;
+}
+
+.side-dock-panels-container {
+  border-right: 1px solid var(--background-secondary-alt) !important;
+}
+
+.side-dock-panels-container * {
+  font-size: 14px !important;
+}
+
+.side-dock-title {
+  padding-top: 14px !important;
+  font-size: 18px !important;
+  font-weight: 800 !important;
+}
+
+.side-dock-ribbon-tab:hover,
+.side-dock-ribbon-action:hover,
+.side-dock-ribbon-action.is-active:hover,
+.nav-action-button:hover,
+.side-dock-collapse-btn:hover {
+  color: var(--text-a);
+}
+
+.nav-file {
+  line-height: normal;
+}
+
+.nav-file-title-content {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.plugin {
+  padding: 5px 10px !important;
+  margin: 0 !important;
+}
+
+.is-read-mode .markdown-preview-view p {
+  font-family: var(--heading-font);
+}
+
+.CodeMirror-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.markdown-preview-view {
+  font-family: var(--heading-font);
+  font-size: 18px;
+  padding-left: 10% !important;
+  padding-right: 10% !important;
+}
+
+.markdown-preview-view {
+  font-weight: 400;
+}
+
+.markdown-embed-title {
+  font-weight: 600;
+}
+
+.markdown-embed {
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+  margin-left: 10px !important;
+  margin-right: 10px !important;
+}
+
+.cm-header-1,
+.markdown-preview-view h1 {
+  font-family: var(--heading-font);
+  font-weight: var(--heading-font-weight) !important;
+  font-size: 30px;
+  color: var(--text-title-h1);
+}
+
+.cm-header-2,
+.markdown-preview-view h2 {
+  font-family: var(--heading-font);
+  font-weight: var(--heading-font-weight) !important;
+  font-size: 26px;
+  color: var(--text-title-h2);
+}
+
+.cm-header-3,
+.markdown-preview-view h3 {
+  font-family: var(--heading-font);
+  font-weight: var(--heading-font-weight) !important;
+  font-size: 26px;
+  color: var(--text-title-h3);
+}
+
+.cm-header-4,
+.markdown-preview-view h4 {
+  font-family: var(--heading-font);
+  font-weight: var(--heading-font-weight) !important;
+  font-size: 22px;
+  color: var(--text-title-h4);
+}
+
+.cm-header-5,
+.markdown-preview-view h5 {
+  font-family: var(--heading-font);
+  font-weight: var(--heading-font-weight) !important;
+  font-size: 20px;
+  color: var(--text-title-h5);
+}
+
+.cm-header-6,
+.markdown-preview-view h6 {
+  font-family: var(--heading-font);
+  font-weight: var(--heading-font-weight) !important;
+  font-size: 20px;
+  color: var(--text-title-h6);
+}
+
+.table {
+  background-color: var(--background-secondary-alt);
+  border: 1px solid var(--background-modifier-border);
+  padding: 4px;
+  line-height: normal;
+  display: block;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+.suggestion-item.is-selected {
+  background-color: #4d5166;
+}
+
+.empty-state-container:hover {
+  background-color: var(--background-secondary-alt);
+  border: 5px solid var(--interactive-accent) !important;
+}
+.theme-light strong {
+  color: var(--text-a) !important;
+  font-weight: bolder;
+}
+
+.theme-light em {
+  color: #000000;
+}
+
+.theme-dark strong {
+  color: var(--text-a) !important;
+  font-weight: bolder;
+}
+
+.theme-dark em {
+  color: #b5c7c7;
+}
+
+.cm-s-obsidian .cm-strong {
+  font-weight: bolder;
+  color: var(--text-a) !important;
+}
+
+.search-result-file-title {
+  color: var(--text-a) !important;
+  font-weight: bolder;
+}
+
+/* condense line spacing on file explorer title list. also avoids character-level word breaks*/
+.nav-file-title-content,
+.search-result-file-title,
+.search-result-file-match,
+.search-result-file-title {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  line-height: normal !important;
+  word-break: keep-all;
+}
+
+/*clean up side bar empty state (e.g. unlinked mentions not having odd spacing when side bar is narrow)*/
+.search-empty-state {
+  width: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  line-height: normal;
+}
+
+/* Changing backlink pane font-size and color*/
+.search-result-file-matches {
+  color: var(--text-normal) !important;
+}
+
+/*Editor and line-height adjustment*/
+.cm-s-obsidian,
+.app-container {
+  font-family: var(--app-font-family);
+  font-weight: var(--app-font-weight);
+  line-height: 150%;
+}
+
+body,
+p {
+  font-family: var(--app-font-family);
+  font-size: 20px; /*preview font-size*/
+}
+
+.editor {
+  font-family: var(--editor-font-family);
+  font-size: 18px;
+}
+
+.preview {
+  font-family: var(--app-font-family);
+  font-size: 8px;
+}
+
+/* Andy Matuschak mode! V2! */
+.workspace-split.mod-vertical {
+  overflow-x: auto;
+}
+.workspace-leaf,
+.workspace-split > .workspace-split {
+  min-width: 650px;
+  min-height: 500px;
+}
+.workspace-split.mod-horizontal {
+  overflow-y: auto;
+}
+
+.workspace-split.mod-vertical > * {
+  flex-direction: row;
+  display: flex;
+  box-shadow: 0px 0px 8px 8px rgba(0, 0, 0, 0.05);
+}
+
+.workspace-leaf {
+  position: sticky;
+  --stick-left: 40px;
+  left: 0;
+}
+
+.workspace-leaf:nth-child(10n-8) {
+  left: calc(var(--stick-left) * 0);
+}
+.workspace-leaf:nth-child(10n-7) {
+  left: calc(var(--stick-left) * 1);
+}
+.workspace-leaf:nth-child(10n-6) {
+  left: calc(var(--stick-left) * 2);
+}
+.workspace-leaf:nth-child(10n-5) {
+  left: calc(var(--stick-left) * 3);
+}
+.workspace-leaf:nth-child(10n-4) {
+  left: calc(var(--stick-left) * 4);
+}
+.workspace-leaf:nth-child(10n-3) {
+  left: calc(var(--stick-left) * 5);
+}
+.workspace-leaf:nth-child(10n-2) {
+  left: calc(var(--stick-left) * 6);
+}
+.workspace-leaf:nth-child(10n-1) {
+  left: calc(var(--stick-left) * 7);
+}
+.workspace-leaf:nth-child(10n + 0) {
+  left: calc(var(--stick-left) * 8);
+}
+.workspace-leaf:nth-child(10n + 1) {
+  left: calc(var(--stick-left) * 9);
+}
+
+.workspace-leaf-content {
+  display: flex;
+  padding-right: 0;
+}
+
+.view-header {
+  writing-mode: vertical-lr;
+  border-right: 1px solid var(--background-secondary-alt);
+  border-left: 2px solid var(--background-secondary-alt);
+  border-top: none;
+  border-bottom: none;
+  height: auto;
+}
+
+.view-header-title-container {
+  width: 40px;
+  height: unset;
+  padding-left: unset;
+  padding-top: 20px;
+}
+
+.workspace-leaf.mod-active .view-header {
+  border-right: 2px solid var(--interactive-accent);
+  border-bottom: none;
+}
+
+.view-actions {
+  padding: 10px 5px;
+}
+
+.view-header-title-container:after {
+  width: 100%;
+  height: 30px;
+  top: unset;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--background-secondary)
+  );
+}
+
+.workspace-leaf.mod-active .view-header-title-container:after {
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--background-primary-alt)
+  );
+}
+
+.view-action {
+  margin: 8px 0;
+  top: 0;
+}
+
+.view-content {
+  height: 100%;
+}
+
+/*header background fix*/
+.workspace-leaf.mod-active .view-header-title-container:after {
+  background: none;
+}
+/*Editor padding and font-size*/
+.cm-s-obsidian {
+  padding-left: 10% !important;
+  padding-right: 10% !important;
+  font-family: var(--editor-font-family);
+  font-size: var(--editor-font-size) !important;
+}
+
+.cm-s-obsidian span.cm-hashtag {
+  color: var(--color-green);
+  text-decoration: none;
+}
+
+.nav-files-container {
+  font-weight: var(--nav-file-font-weight);
+}
+

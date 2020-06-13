@@ -140,7 +140,7 @@
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "tabnine.experimentalAutoImports": 0,
+  "tabnine.experimentalAutoImports": true,
   "terminal.integrated.allowChords": false,
   "terminal.integrated.lineHeight": 1.3,
   "terminal.integrated.rendererType": "canvas",
@@ -167,5 +167,6 @@
   },
   "quokka.showOutputOnStart": true,
   "go.formatTool": "goimports",
-  "go.useLanguageServer": true
+  "go.useLanguageServer": true,
+  "liveServer.settings.donotShowInfoMsg": true
 }
