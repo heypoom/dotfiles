@@ -31,11 +31,18 @@
   --app-font-family: "JetBrains Mono", iAWriterQuattroV-Text, monospace;
   --app-font-weight: 500;
 
-  --heading-font: "JetBrains Mono", Avenir, iAWriterQuattroV-Text, monospace;
-  --heading-font-weight: 600;
+  --heading-font: iAWriterDuoV-Bold, "JetBrains Mono", Avenir,
+    iAWriterQuattroV-Text, monospace;
+  --heading-font-weight: normal;
 
-  --editor-font-family: "JetBrains Mono", iAWriterQuattroV-Text, monospace;
-  --editor-font-size: 24px;
+  --editor-font-family: iAWriterDuoV-Text, "JetBrains Mono",
+    iAWriterQuattroV-Text, monospace;
+  --editor-font-size: 28px;
+  --editor-font-weight: normal;
+
+  --preview-font-family: iAWriterDuoV-Text, "JetBrains Mono",
+    iAWriterQuattroV-Text, monospace;
+  --preview-font-weight: normal;
 
   --nav-file-font-weight: 300;
 }
@@ -206,8 +213,8 @@ blockquote {
   margin: 0 !important;
 }
 
-.is-read-mode .markdown-preview-view p {
-  font-family: var(--heading-font);
+.markdown-preview-view p {
+  font-family: var(--preview-font-family);
 }
 
 .CodeMirror-scroll::-webkit-scrollbar {
@@ -215,7 +222,7 @@ blockquote {
 }
 
 .markdown-preview-view {
-  font-family: var(--heading-font);
+  font-family: var(--preview-font-family);
   font-size: 18px;
   padding-left: 10% !important;
   padding-right: 10% !important;
@@ -236,50 +243,54 @@ blockquote {
   margin-right: 10px !important;
 }
 
+.markdown-preview-view h1,
+.markdown-preview-view h2,
+.markdown-preview-view h3,
+.markdown-preview-view h4,
+.markdown-preview-view h5,
+.markdown-preview-view h6 {
+  font-family: var(--preview-font-family);
+}
+
 .cm-header-1,
-.markdown-preview-view h1 {
+.cm-header-2,
+.cm-header-3,
+.cm-header-4,
+.cm-header-5,
+.cm-header-6 {
   font-family: var(--heading-font);
   font-weight: var(--heading-font-weight) !important;
+}
+
+.cm-header-1 {
   font-size: 30px;
   color: var(--text-title-h1);
 }
 
-.cm-header-2,
-.markdown-preview-view h2 {
-  font-family: var(--heading-font);
-  font-weight: var(--heading-font-weight) !important;
+.cm-header-2 {
   font-size: 26px;
   color: var(--text-title-h2);
 }
 
-.cm-header-3,
-.markdown-preview-view h3 {
-  font-family: var(--heading-font);
-  font-weight: var(--heading-font-weight) !important;
+.cm-header-3 {
   font-size: 26px;
   color: var(--text-title-h3);
 }
 
 .cm-header-4,
 .markdown-preview-view h4 {
-  font-family: var(--heading-font);
-  font-weight: var(--heading-font-weight) !important;
   font-size: 22px;
   color: var(--text-title-h4);
 }
 
 .cm-header-5,
 .markdown-preview-view h5 {
-  font-family: var(--heading-font);
-  font-weight: var(--heading-font-weight) !important;
   font-size: 20px;
   color: var(--text-title-h5);
 }
 
 .cm-header-6,
 .markdown-preview-view h6 {
-  font-family: var(--heading-font);
-  font-weight: var(--heading-font-weight) !important;
   font-size: 20px;
   color: var(--text-title-h6);
 }
@@ -368,6 +379,7 @@ p {
 
 .editor {
   font-family: var(--editor-font-family);
+  font-weight: var(--editor-font-weight);
   font-size: 18px;
 }
 
@@ -501,6 +513,7 @@ p {
   padding-right: 10% !important;
   font-family: var(--editor-font-family);
   font-size: var(--editor-font-size) !important;
+  font-weight: var(--editor-font-weight) !important;
 }
 
 .view-header-title {
