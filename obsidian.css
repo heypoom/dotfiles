@@ -169,8 +169,19 @@ blockquote {
 
 .side-dock-title {
   padding-top: 14px !important;
-  font-size: 18px !important;
-  font-weight: 800 !important;
+  font-size: 15px !important;
+  font-weight: 500;
+}
+
+.side-dock-ribbon-tab,
+.side-dock-ribbon-action {
+  stroke-width: 1px;
+  color: #4d5166;
+  color: #6272a4;
+}
+
+.side-dock-ribbon-tab.is-active .side-dock-ribbon-tab-inner {
+  color: #be93f9;
 }
 
 .side-dock-ribbon-tab:hover,
@@ -289,10 +300,6 @@ blockquote {
   background-color: #4d5166;
 }
 
-.empty-state-container:hover {
-  background-color: var(--background-secondary-alt);
-  border: 5px solid var(--interactive-accent) !important;
-}
 .theme-light strong {
   color: var(--text-a) !important;
   font-weight: bolder;
@@ -496,12 +503,36 @@ p {
   font-size: var(--editor-font-size) !important;
 }
 
+.view-header-title {
+  font-weight: 600;
+}
+
 .cm-s-obsidian span.cm-hashtag {
   color: var(--color-green);
   text-decoration: none;
+}
+
+.cm-fat-cursor .CodeMirror-cursor,
+.cm-animate-fat-cursor {
+  background: #4b4e5b;
+}
+
+.CodeMirror-selected {
+  background: #4b4e5b !important;
 }
 
 .nav-files-container {
   font-weight: var(--nav-file-font-weight);
 }
 
+.empty-state-title {
+  font-weight: 400;
+}
+
+.empty-state-action {
+  font-weight: 300;
+}
+
+.empty-state-action:hover {
+  color: white;
+}
