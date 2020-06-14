@@ -40,9 +40,11 @@
   --editor-font-size: 28px;
   --editor-font-weight: normal;
 
-  --preview-font-family: iAWriterDuoV-Text, "JetBrains Mono",
+  --preview-font-family: "iA Writer Duospace", "JetBrains Mono",
     iAWriterQuattroV-Text, monospace;
   --preview-font-weight: normal;
+
+  --code-font-family: "JetBrains Mono", monospace;
 
   --nav-file-font-weight: 300;
 }
@@ -250,6 +252,7 @@ blockquote {
 .markdown-preview-view h5,
 .markdown-preview-view h6 {
   font-family: var(--preview-font-family);
+  font-weight: bold;
 }
 
 .cm-header-1,
@@ -548,4 +551,10 @@ p {
 
 .empty-state-action:hover {
   color: white;
+}
+
+.cm-s-obsidian pre.HyperMD-codeblock {
+  color: white;
+  font-family: var(--code-font-family);
+  font-weight: normal;
 }
