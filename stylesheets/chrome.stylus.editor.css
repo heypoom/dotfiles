@@ -43,3 +43,9 @@ svg.svg-icon {
 .applies-to-help svg.svg-icon.info {
   margin-left: 8px;
 }
+
+.resize-grip,
+.resize-grip:after {
+  border: none;
+  cursor: pointer;
+}
