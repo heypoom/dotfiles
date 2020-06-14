@@ -4,7 +4,7 @@
 }
 
 #stylus-edit {
-  color: #eee;
+  color: #ddd;
   background: #282a36;
   font-family: 'JetBrains Mono', monospace;
 }
@@ -13,6 +13,7 @@
   font-size: 24px;
   line-height: 1.5;
   font-family: 'JetBrains Mono', monospace;
+  outline: none;
 }
 
 input#name {
