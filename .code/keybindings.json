@@ -39,5 +39,9 @@
   {
     "key": "ctrl+k",
     "command": "editor.action.moveLinesUpAction"
+  },
+  {
+    "key": "ctrl+r",
+    "command": "editor.action.rename"
   }
 ]
