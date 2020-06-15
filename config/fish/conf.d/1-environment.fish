@@ -62,6 +62,10 @@ set -gx JAVA8_HOME "$HOME/.asdf/installs/java/oracle-8.141"
 set -gx SDKROOT "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk"
 set -gx MACOSX_DEPLOYMENT_TARGET 10.15
 
+# Set wasmer directory
+set -gx WASMER_DIR "$HOME/.wasmer"
+set -gx WASMER_CACHE_DIR "$WASMER_DIR/cache"
+
 # Add GNU manuals to the MANPATH
 set -gx MANPATH \
 	/usr/local/opt/coreutils/libexec/gnuman/ \
@@ -79,9 +83,11 @@ set -gx FZF_CTRL_T_COMMAND $FZF_DEFAULT_COMMAND
 
 # Configure the environment variables.
 set -gx PATH \
+  $WASMER_DIR/bin \
+  $HOME/.config/yarn/global/node_modules/.bin \
   $HOME/.asdf/shims \
-	$HOME/.asdf/bin \
-	$GEM_HOME/bin \
+  $HOME/.asdf/bin \
+  $GEM_HOME/bin \
   /usr/libexec \
   $HOME/scripts \
   /usr/local/opt/llvm/bin \
@@ -94,7 +100,6 @@ set -gx PATH \
   $HOME/.cargo/bin \
   $HOME/.deno/bin \
   $HOME/lib/gcloud/bin \
-  $HOME/.config/yarn/global/node_modules/.bin \
   $HOME/.poetry/bin \
   $HOME/lib/flutter/bin \
   /usr/local/opt/dart@2/bin \
@@ -108,12 +113,12 @@ set -gx PATH \
   /usr/local/bin \
   /usr/bin \
   /usr/local/sbin \
-	/bin \
-	/usr/sbin \
-	/sbin \
-	/opt/X11/bin \
-	/usr/local/share/dotnet \
-	$HOME/.dotnet/tools \
-	/usr/local/MacGPG2/bin \
-	/Applications/Wireshark.app/Contents/MacOS
+  /bin \
+  /usr/sbin \
+  /sbin \
+  /opt/X11/bin \
+  /usr/local/share/dotnet \
+  $HOME/.dotnet/tools \
+  /usr/local/MacGPG2/bin \
+  /Applications/Wireshark.app/Contents/MacOS
 

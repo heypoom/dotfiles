@@ -31,12 +31,12 @@
   --app-font-family: "JetBrains Mono", iAWriterQuattroV-Text, monospace;
   --app-font-weight: 500;
 
-  --heading-font: iAWriterDuoV-Bold, "JetBrains Mono", Avenir,
-    iAWriterQuattroV-Text, monospace;
+  --heading-font: JetBrainsMonoNerdFontCompleteM-Bold, iAWriterDuoV-Bold,
+    "JetBrains Mono", Avenir, iAWriterQuattroV-Text, monospace;
   --heading-font-weight: normal;
 
-  --editor-font-family: iAWriterDuoV-Text, "JetBrains Mono",
-    iAWriterQuattroV-Text, monospace;
+  --editor-font-family: JetBrainsMonoNerdFontCompleteM-Regular,
+    iAWriterDuoV-Text, "JetBrains Mono", iAWriterQuattroV-Text, monospace;
   --editor-font-size: 28px;
   --editor-font-weight: normal;
 
