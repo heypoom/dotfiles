@@ -84,7 +84,6 @@ set -gx FZF_CTRL_T_COMMAND $FZF_DEFAULT_COMMAND
 # Configure the environment variables.
 set -gx PATH \
   $WASMER_DIR/bin \
-  $WASMER_DIR/wapm_packages/.bin \
   $HOME/.config/yarn/global/node_modules/.bin \
   $HOME/.asdf/shims \
   $HOME/.asdf/bin \
@@ -118,6 +117,7 @@ set -gx PATH \
   /usr/sbin \
   /sbin \
   /opt/X11/bin \
+  $WASMER_DIR/wapm_packages/.bin \
   /usr/local/share/dotnet \
   $HOME/.dotnet/tools \
   /usr/local/MacGPG2/bin \
