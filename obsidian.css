@@ -558,3 +558,8 @@ p {
   font-family: var(--code-font-family);
   font-weight: normal;
 }
+
+.horizontal-tab-nav-item:hover,
+.vertical-tab-nav-item:hover {
+  background: #333540;
+}
