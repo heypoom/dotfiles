@@ -17,7 +17,7 @@
 	process = git-lfs filter-process
 
 [commit]
-  gpgsign = false
+	gpgsign = true
 
 [rerere]
 	enabled = true
