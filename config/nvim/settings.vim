@@ -241,3 +241,8 @@ let g:NERDTreeWinSize = 25
 
 " Vim Sneak
 let g:sneak#label = 1
+
+" Vim Wiki
+let g:vimwiki_list = [{'path': '~/Notes/Wiki/',
+                      \ 'syntax': 'markdown', 'ext': '.md'}]
+
