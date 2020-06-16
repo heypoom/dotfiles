@@ -563,3 +563,7 @@ p {
 .markdown-source-view.is-readable-line-width .CodeMirror {
   max-width: 1200px;
 }
+
+.nav-header {
+  padding-top: 25px;
+}
