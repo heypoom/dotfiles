@@ -183,13 +183,14 @@ blockquote {
 }
 
 .side-dock-ribbon-tab,
-.side-dock-ribbon-action {
+.side-dock-ribbon-action,
+.workspace-tab-header {
   stroke-width: 1px;
-  color: #4d5166;
   color: #6272a4;
 }
 
-.side-dock-ribbon-tab.is-active .side-dock-ribbon-tab-inner {
+.side-dock-ribbon-tab.is-active .side-dock-ribbon-tab-inner,
+.workspace-tab-header.is-active .workspace-tab-header-inner {
   color: #be93f9;
 }
 
@@ -566,4 +567,12 @@ p {
 
 .nav-header {
   padding-top: 25px;
+}
+
+.workspace-leaf-content[data-type="search"] {
+  padding-top: 15px;
+}
+
+.workspace-leaf-content .search-input {
+  font-family: "JetBrains Mono";
 }
