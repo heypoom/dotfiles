@@ -13,13 +13,17 @@ z_pattern = re.compile(r"^\d{12}")
 for file in os.listdir():
     if file.endswith(".md"):
         created_at = creation_time(file)
-        date = datetime.utcfromtimestamp(int(created_at)).strftime("%Y%m%d%H%M")
+        modified_at = os.path.getmtime(file)
+
+        date_created = datetime.utcfromtimestamp(int(created_at)).strftime("%Y%m%d%H%M")
+        date_modified = datetime.utcfromtimestamp(int(created_at)).strftime("%Y%m%d%H%M")
+
+        new_file_name = "{} {}".format(date_created, file)
+        print("File %s - Created %s, Modified %s" % (file, date_created, date_modified))
 
         if z_pattern.match(file):
             print("File %s is already prefixed correctly, pass." % file)
             continue
-
-        new_file_name = "{} {}".format(date, file)
 
         os.rename(file, new_file_name)
         print("Renaming to %s" % new_file_name)

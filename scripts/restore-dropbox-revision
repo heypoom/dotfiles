@@ -1,0 +1,23 @@
+#!/usr/bin/env python
+
+from subprocess import check_output
+
+def ls_dir(path):
+    out = check_output(['dbxcli', 'ls', '-h', path])
+    print(out.decode('utf-8'))
+
+def get_latest_rev(path):
+    out = check_output(['dbxcli', 'revs', path])
+    lines = out.decode('utf-8').splitlines()
+    return lines[-1].strip()
+
+def restore_rev(path, rev):
+    print("Restoring revision %s for %s" % (rev, path))
+    out = check_output(['dbxcli', 'restore', path, rev])
+    print("=> Status: %s" % out.decode('utf-8'))
+
+with open('./out.log', 'r') as file:
+    for path in file.read().splitlines():
+        latest = get_latest_rev(path)
+        restore_rev(path, latest)
+
