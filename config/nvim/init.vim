@@ -32,4 +32,5 @@ highlight Normal guibg=none ctermbg=none
 
 " Register custom syntaxes
 au! Syntax todo source ~/.config/nvim/syntax/todo.vim
+au BufNewFile,BufRead *.todo set filetype=todo
 
