@@ -1,0 +1,15 @@
+#!/usr/bin/env python3
+
+import os
+from datetime import datetime
+
+for file in os.listdir():
+    if file.endswith(".md"):
+        creation_date = os.path.getmtime(file)
+        date = datetime.utcfromtimestamp(int(creation_date)).strftime("%Y%m%d%H%M")
+
+        new_file_name = "{} {}".format(date, file)
+
+        os.rename(file, new_file_name)
+        print("Renaming to %s" % new_file_name)
+
