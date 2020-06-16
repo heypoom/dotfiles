@@ -8,7 +8,7 @@ def creation_time(path):
      s = os.stat(path)
      return s.st_birthtime
 
-z_pattern = re.compile(r"$\d{12}")
+z_pattern = re.compile(r"^\d{12}")
 
 for file in os.listdir():
     if file.endswith(".md"):
