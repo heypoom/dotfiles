@@ -395,11 +395,7 @@ p {
 .workspace-split.mod-vertical {
   overflow-x: auto;
 }
-.workspace-leaf,
-.workspace-split > .workspace-split {
-  min-width: 650px;
-  min-height: 500px;
-}
+
 .workspace-split.mod-horizontal {
   overflow-y: auto;
 }
