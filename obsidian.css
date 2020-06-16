@@ -563,3 +563,7 @@ p {
 .vertical-tab-nav-item:hover {
   background: #333540;
 }
+
+.markdown-source-view.is-readable-line-width .CodeMirror {
+  max-width: 1200px;
+}
