@@ -1,12 +1,23 @@
 #!/usr/bin/env python3
 
 import os
+import re
 from datetime import datetime
+
+def creation_time(path):
+     s = os.stat(path)
+     return s.st_birthtime
+
+z_pattern = re.compile(r"$\d{12}")
 
 for file in os.listdir():
     if file.endswith(".md"):
-        creation_date = os.path.getmtime(file)
-        date = datetime.utcfromtimestamp(int(creation_date)).strftime("%Y%m%d%H%M")
+        created_at = creation_time(file)
+        date = datetime.utcfromtimestamp(int(created_at)).strftime("%Y%m%d%H%M")
+
+        if z_pattern.match(file):
+            print("File %s is already prefixed correctly, pass." % file)
+            continue
 
         new_file_name = "{} {}".format(date, file)
 
