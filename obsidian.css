@@ -496,3 +496,10 @@ p {
 *::selection {
   background: #dddddd33;
 }
+
+.markdown-preview-section .prism {
+  font-size: 22px;
+  font-family: "JetBrains Mono" !important;
+  font-weight: bold;
+}
+
