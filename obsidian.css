@@ -483,6 +483,7 @@ p {
 .cm-s-obsidian pre.HyperMD-codeblock {
   color: white;
   font-family: var(--code-font-family);
+  line-height: 1.7;
   font-weight: normal;
 }
 
