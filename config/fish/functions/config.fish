@@ -1,4 +1,4 @@
-# Defined in /var/folders/jm/l3mwrkrx7yq8nhxyg1btdzkm0000gn/T//fish.X93Jbh/config.fish @ line 2
+# Defined in /var/folders/jm/l3mwrkrx7yq8nhxyg1btdzkm0000gn/T//fish.sprACi/config.fish @ line 2
 function config
 	function config_edit_file
 		$EDITOR "$HOME/"$argv[1]

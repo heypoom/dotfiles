@@ -2,7 +2,7 @@
 
 # Global Settings
 yabai -m config mouse_follows_focus          on
-yabai -m config focus_follows_mouse          autoraise
+yabai -m config focus_follows_mouse          off
 yabai -m config window_placement             second_child
 yabai -m config window_topmost               on
 yabai -m config window_opacity               on
