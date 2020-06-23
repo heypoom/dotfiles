@@ -44,9 +44,23 @@
     iAWriterQuattroV-Text, monospace;
   --preview-font-weight: normal;
 
-  --code-font-family: "JetBrains Mono", monospace;
+  --code-font-family: JetBrainsMonoNerdFontCompleteM-Medium, "JetBrains Mono",
+    monospace;
 
   --nav-file-font-weight: 300;
+
+  --background: #282a36;
+  --comment: #6272a4;
+  --foreground: #f8f8f2;
+  --selection: #44475a;
+
+  --cyan: #8be9fd;
+  --green: #50fa7b;
+  --orange: #ffb86c;
+  --pink: #ff79c6;
+  --purple: #bd93f9;
+  --red: #ff5555;
+  --yellow: #f1fa8c;
 }
 
 #graph-view-canvas .links {
@@ -497,9 +511,144 @@ p {
   background: #dddddd33;
 }
 
+/**
+ * Prism
+ */
+
 .markdown-preview-section .prism {
+  color: #eee !important;
   font-size: 22px;
-  font-family: "JetBrains Mono" !important;
-  font-weight: bold;
+  font-family: var(--code-font-family) !important;
 }
 
+.markdown-preview-section .prism .token {
+  color: var(--pink);
+}
+
+.markdown-preview-section .prism .token.script {
+  color: var(--foreground);
+}
+
+.markdown-preview-section .prism .token.atrule,
+.markdown-preview-section .prism .token.attr-name,
+.markdown-preview-section .prism .token.attr-value {
+  color: var(--green);
+}
+
+.markdown-preview-section .prism.language-html .token.attr-value,
+.markdown-preview-section .prism.language-markup .token.attr-value {
+  color: var(--yellow);
+}
+
+.markdown-preview-section .prism .token.boolean {
+  color: var(--purple);
+}
+
+.markdown-preview-section .prism .token.builtin,
+.markdown-preview-section .prism .token.class-name {
+  color: var(--cyan);
+}
+
+.markdown-preview-section .prism .token.comment {
+  color: var(--comment);
+}
+
+.markdown-preview-section .prism .token.constant {
+  color: var(--purple);
+}
+
+.markdown-preview-section .prism.language-js .token.constant {
+  color: var(--orange);
+  font-style: italic;
+}
+
+.markdown-preview-section .prism .token.entity {
+  color: var(--pink);
+}
+
+.markdown-preview-section .prism.language-css .token.entity {
+  color: var(--green);
+}
+
+.markdown-preview-section .prism.language-html .token.entity {
+  color: var(--pink);
+}
+
+.markdown-preview-section .prism .token.function {
+  color: var(--green);
+}
+
+.markdown-preview-section .prism .token.important,
+.markdown-preview-section .prism .token.keyword {
+  color: var(--pink);
+}
+
+.markdown-preview-section .prism .token.prolog {
+  color: var(--foreground);
+}
+
+.markdown-preview-section .prism .token.property {
+  color: var(--orange);
+}
+
+.markdown-preview-section .prism .token.punctuation {
+  color: var(--pink);
+}
+
+.markdown-preview-section .prism.language-html .token.punctuation,
+.markdown-preview-section .prism.language-markup .token.punctuation {
+  color: var(--foreground);
+}
+
+.markdown-preview-section .prism .token.selector {
+  color: var(--pink);
+}
+
+.markdown-preview-section .prism.language-css .token.selector {
+  color: var(--pink);
+}
+
+.markdown-preview-section .prism .token.regex {
+  color: var(--red);
+}
+
+.markdown-preview-section .prism .token.string {
+  color: var(--yellow);
+}
+
+.markdown-preview-section .prism .token.tag {
+  color: var(--pink);
+}
+
+.markdown-preview-section .prism .token.url {
+  color: var(--cyan);
+}
+
+.markdown-preview-section .prism .token.variable {
+  color: var(--comment);
+}
+
+.markdown-preview-section .prism .token.number {
+  color: rgba(189, 147, 249, 1);
+}
+
+.markdown-preview-section .prism .token.operator {
+  color: var(--pink);
+  /* color: rgba(139, 233, 253, 1); */
+}
+
+.markdown-preview-section .prism .token.char {
+  color: rgba(255, 135, 157, 1);
+}
+
+.markdown-preview-section .prism .token.symbol {
+  color: rgba(255, 184, 108, 1);
+}
+
+.markdown-preview-section .prism .token.deleted {
+  color: #e2777a;
+}
+
+.markdown-preview-section .prism .token.namespace {
+  color: #e2777a;
+}
