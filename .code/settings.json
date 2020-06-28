@@ -168,5 +168,6 @@
   "quokka.showOutputOnStart": true,
   "go.formatTool": "goimports",
   "go.useLanguageServer": true,
-  "liveServer.settings.donotShowInfoMsg": true
+  "liveServer.settings.donotShowInfoMsg": true,
+  "diffEditor.ignoreTrimWhitespace": false
 }
