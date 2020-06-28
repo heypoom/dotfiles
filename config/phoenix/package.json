@@ -1,0 +1,26 @@
+{
+	"name": "phoenix-wm-config",
+	"version": "1.0.0",
+	"main": "src/phoenix.ts",
+	"dependencies": {
+		"@types/phoenix": "github:mafredri/phoenix-typings#master",
+		"rxjs": "^6.5.5",
+		"typescript": "^3.9.3"
+	},
+	"devDependencies": {
+		"prettier": "^2.0.5",
+		"ts-loader": "^7.0.5",
+		"tslint": "^6.1.2",
+		"webpack": "^4.43.0",
+		"webpack-cli": "^3.3.11"
+	},
+	"license": "MIT",
+	"scripts": {
+		"start": "yarn run watch",
+		"watch": "webpack --watch",
+		"build": "webpack",
+		"lint": "tslint src/**/*.ts",
+		"format": "prettier --write \"src/**/*.ts\"",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	}
+}

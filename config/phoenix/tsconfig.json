@@ -1,0 +1,16 @@
+{
+	"compilerOptions": {
+		"module": "esnext",
+		"moduleResolution": "node",
+		"baseUrl": "src",
+		"outDir": "out/src",
+		"target": "es2018",
+		"strict": true,
+		"noFallthroughCasesInSwitch": true,
+		"pretty": true,
+		"stripInternal": true,
+		"typeRoots": ["node_modules/@types"],
+		"lib": ["es2018"]
+	},
+	"exclude": ["node_modules"]
+}
