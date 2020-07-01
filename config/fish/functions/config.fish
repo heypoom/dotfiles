@@ -1,4 +1,4 @@
-# Defined in /var/folders/jm/l3mwrkrx7yq8nhxyg1btdzkm0000gn/T//fish.DAVGGU/config.fish @ line 2
+# Defined in /var/folders/jm/l3mwrkrx7yq8nhxyg1btdzkm0000gn/T//fish.syhdwC/config.fish @ line 2
 function config
 	function config_edit_file
 		$EDITOR "$HOME/"$argv[1]
@@ -41,9 +41,12 @@ function config
 		case alacritty
 			config_edit alacritty/alacritty.yml
 		case phoenix
-			config_edit_cd_without_pop .config/phoenix src/phoenix.js
-			yarn build
-			pwd
+			config_edit_cd_without_pop .config/phoenix src/phoenix.ts
+			yarn build &
+			popd
+		case phoenix-reload
+			pushd ~/.config/phoenix
+			yarn build &
 			popd
 		case nvim
 			config_edit_cd .config/nvim plugins.vim

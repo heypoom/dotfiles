@@ -31,6 +31,7 @@
   "suggest.floatEnable": true,
   "suggest.enablePreview": true,
   "suggest.enablePreselect": true,
+  "eslint.enable": false,
   "eslint.autoFixOnSave": true,
   "eslint.filetypes": [
     "javascript",
