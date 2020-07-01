@@ -1,4 +1,4 @@
-# Defined in /var/folders/jm/l3mwrkrx7yq8nhxyg1btdzkm0000gn/T//fish.BhLv5V/config.fish @ line 2
+# Defined in /var/folders/jm/l3mwrkrx7yq8nhxyg1btdzkm0000gn/T//fish.DAVGGU/config.fish @ line 2
 function config
 	function config_edit_file
 		$EDITOR "$HOME/"$argv[1]
@@ -21,6 +21,14 @@ function config
 		popd
 	end
 
+	function config_edit_cd_without_pop
+		set confDir $argv[1]
+		set confFile $argv[2]
+
+		pushd "$HOME/$confDir"
+		config_edit_file "$confDir"/"$confFile"
+	end
+
 	switch $argv[1]
 		case yabai
 			config_edit yabai/yabairc
@@ -33,7 +41,10 @@ function config
 		case alacritty
 			config_edit alacritty/alacritty.yml
 		case phoenix
-			config_edit_cd .config/phoenix src/phoenix.js
+			config_edit_cd_without_pop .config/phoenix src/phoenix.js
+			yarn build
+			pwd
+			popd
 		case nvim
 			config_edit_cd .config/nvim plugins.vim
 		case nvim-keymap
