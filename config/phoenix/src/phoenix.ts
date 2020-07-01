@@ -6,9 +6,7 @@ Phoenix.set({
   openAtLogin: true,
 })
 
-Key.on('g', ['option', 'shift'], async () => {
-  await shell('say Hi World!')
-})
+Key.on('t', ['alt'], () => shell('~/Scripts/kitty-spawn'))
 
 Key.on('r', ['option', 'shift'], async () => {
   show('🏖')
