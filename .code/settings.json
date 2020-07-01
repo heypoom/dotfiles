@@ -169,5 +169,8 @@
   "go.formatTool": "goimports",
   "go.useLanguageServer": true,
   "liveServer.settings.donotShowInfoMsg": true,
-  "diffEditor.ignoreTrimWhitespace": false
+  "diffEditor.ignoreTrimWhitespace": false,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
