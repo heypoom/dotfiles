@@ -1,10 +1,12 @@
 import {show} from './utils/modal'
 import {shell} from './utils/task'
 
-import {focusWindow} from './focus'
+import {focusWindow} from './window/focus'
 
 import {resizeWindowFull} from './resize/full'
 import {resizeWindowHalf} from './resize/half'
+import {resizeWindowThird} from './resize/third'
+import {resizeWindowTwoThird} from './resize/two-third'
 
 Phoenix.set({
   daemon: true,
@@ -29,6 +31,15 @@ Key.on('left', ['option'], focusWest)
 const focusEast = () => focusWindow('east')
 Key.on('l', ['option'], focusEast)
 Key.on('right', ['option'], focusEast)
+
+// Third
+Key.on('1', ['control', 'shift'], () => resizeWindowThird('left'))
+Key.on('2', ['control', 'shift'], () => resizeWindowThird('center'))
+Key.on('3', ['control', 'shift'], () => resizeWindowThird('right'))
+
+// Two thirds
+Key.on('4', ['control', 'shift'], () => resizeWindowTwoThird('left'))
+Key.on('5', ['control', 'shift'], () => resizeWindowTwoThird('right'))
 
 Key.on('r', ['option', 'shift'], async () => {
   show('🏖')

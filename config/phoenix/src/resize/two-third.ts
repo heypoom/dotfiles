@@ -4,11 +4,11 @@ import {show} from '../utils/modal'
 import {getMenubarOffset} from '../utils/offset'
 
 const Config = {
-  left: () => GAP,
-  right: (width: number) => width / 2 + GAP / 2,
+  left: () => 0 + GAP,
+  right: (width: number) => width / 3 + GAP / 2,
 }
 
-export function resizeWindowHalf(position: 'left' | 'right') {
+export function resizeWindowTwoThird(position: 'left' | 'right') {
   const screen = Screen.main()
   const screenFrame = screen.flippedVisibleFrame()
   const window = Window.focused()
@@ -22,9 +22,9 @@ export function resizeWindowHalf(position: 'left' | 'right') {
   window.setFrame({
     x,
     y: topOffset + 0 + GAP,
-    width: screenFrame.width / 2 - GAP * 1.5,
+    width: (screenFrame.width * 2) / 3 - GAP * 1.5,
     height: screenFrame.height - GAP_DOUBLED,
   })
 
-  show('½')
+  show('⅔')
 }

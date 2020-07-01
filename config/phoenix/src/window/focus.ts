@@ -1,4 +1,4 @@
-import {show} from './utils/modal'
+import {show} from '../utils/modal'
 
 export function focusWindow(direction: Phoenix.Direction) {
   const currentWindow = Window.focused()
