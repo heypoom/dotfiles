@@ -20,7 +20,7 @@ const Config = {
   }),
 }
 
-export function resizeWindowThird(position: 'left' | 'center' | 'right') {
+export function resizeThird(position: 'left' | 'center' | 'right') {
   const screen = Screen.main()
   const screenFrame = screen.flippedVisibleFrame()
   const window = Window.focused()

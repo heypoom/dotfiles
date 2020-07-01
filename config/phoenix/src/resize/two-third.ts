@@ -8,7 +8,7 @@ const Config = {
   right: (width: number) => width / 3 + GAP / 2,
 }
 
-export function resizeWindowTwoThird(position: 'left' | 'right') {
+export function resizeTwoThird(position: 'left' | 'right') {
   const screen = Screen.main()
   const screenFrame = screen.flippedVisibleFrame()
   const window = Window.focused()

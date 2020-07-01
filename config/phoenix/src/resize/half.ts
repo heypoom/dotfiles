@@ -8,7 +8,7 @@ const Config = {
   right: (width: number) => width / 2 + GAP / 2,
 }
 
-export function resizeWindowHalf(position: 'left' | 'right') {
+export function resizeHalf(position: 'left' | 'right') {
   const screen = Screen.main()
   const screenFrame = screen.flippedVisibleFrame()
   const window = Window.focused()

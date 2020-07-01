@@ -3,7 +3,7 @@ import {GAP, GAP_DOUBLED} from '../config'
 import {show} from '../utils/modal'
 import {getMenubarOffset} from '../utils/offset'
 
-export function resizeWindowFull() {
+export function resizeFull() {
   const screen = Screen.main()
   const window = Window.focused()
   if (!window) return
