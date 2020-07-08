@@ -6,6 +6,12 @@ then
   exit 0
 fi
 
+if command -v node &> /dev/null
+then
+  echo "👍 node is already installed."
+  exit 0
+fi
+
 export SDKROOT="$(xcrun --sdk macosx --show-sdk-path)"
 
 asdf install

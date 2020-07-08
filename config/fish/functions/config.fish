@@ -1,4 +1,4 @@
-# Defined in /var/folders/jm/l3mwrkrx7yq8nhxyg1btdzkm0000gn/T//fish.EkyOfV/config.fish @ line 2
+# Defined in /var/folders/53/f2kch9hd5rxbkzjr4p9cg90w0000gn/T//fish.vv624o/config.fish @ line 2
 function config
 	function config_edit_file
 		$EDITOR "$HOME/"$argv[1]
@@ -71,7 +71,7 @@ function config
 		case path
 			config_edit_cd .config/fish/conf.d 1-environment.fish
 		case dot
-			config_edit_cd .dotfiles install.conf.yaml
+			config_edit_cd dotfiles install.conf.yaml
 		case git
 			config_edit_file .gitconfig
 		case ipython
@@ -83,24 +83,24 @@ function config
 		case obsidian-css
 			config_edit_file Notes/obsidian.css
 		case commit
-			pushd "$HOME/.dotfiles"
+			pushd "$HOME/dotfiles"
 			git add --all
 			git commit -m $argv[2]
 			popd
 		case push
-			pushd "$HOME/.dotfiles"
+			pushd "$HOME/dotfiles"
 			git push -u origin master
 			popd
 		case save
 			config commit $argv[2]
 			config push
 		case install
-			pushd "$HOME/.dotfiles"
-			$HOME/.dotfiles/install
+			pushd "$HOME/dotfiles"
+			$HOME/dotfiles/install
 			popd
 		case link
-			pushd "$HOME/.dotfiles"
-			$HOME/.dotfiles/install
+			pushd "$HOME/dotfiles"
+			$HOME/dotfiles/install
 			popd
 		case skhd-hotreload
 			tmux new -d -s "skhd-reload" "echo $HOME/.config/skhd/skhdrc | entr skhd -r"
@@ -108,16 +108,16 @@ function config
 			funced config
 			funcsave config
 		case status
-			pushd "$HOME/.dotfiles"
+			pushd "$HOME/dotfiles"
 			git status
 			popd
 		case diff
-			pushd "$HOME/.dotfiles"
+			pushd "$HOME/dotfiles"
 			git add --all
 			git diff HEAD
 			popd
 		case reset
-			pushd "$HOME/.dotfiles"
+			pushd "$HOME/dotfiles"
 			git reset --hard HEAD
 			popd
 		case "*"

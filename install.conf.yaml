@@ -28,6 +28,7 @@
     #       path: .idea
     #       if: '[ `uname` = Darwin ]'
     ~/scripts: scripts
+    ~/.dotfiles: .
     ~/.config/:
       glob: true
       path: config/*
@@ -36,6 +37,10 @@
 
 - create:
     - ~/.config
+    - ~/Labs
+    - ~/Projects
+    - ~/Workspaces
+    - ~/Workspaces/BrikL
 
 - shell:
     - description: Automatically setup macOS
