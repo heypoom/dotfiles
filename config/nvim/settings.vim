@@ -126,10 +126,6 @@ let g:UltiSnipsEditSplit="vertical"
 
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
-" Configure Racer for Rust
-let g:racer_cmd = "/Users/phoomparin/.cargo/bin/racer"
-let g:racer_experimental_completer = 1
-
 "" Go language configuration
 
 " Use goimports for auto-formatting
