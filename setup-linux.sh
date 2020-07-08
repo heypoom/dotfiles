@@ -9,16 +9,16 @@ fi
 
 echo "🍰 configuring linux installation..."
 
-common_scripts="$(\ls common/*.sh)"
+linux_scripts="$(\ls linux/*.sh)"
 
-for script in $common_scripts
+for script in $linux_scripts
 do
   $script
 done
 
-linux_scripts="$(\ls linux/*.sh)"
+common_scripts="$(\ls common/*.sh)"
 
-for script in $linux_scripts
+for script in $common_scripts
 do
   $script
 done

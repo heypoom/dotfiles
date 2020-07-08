@@ -1,0 +1,67 @@
+# fd
+# the_silver_searcher
+# bat
+# tokei
+# fpp
+# diff-so-fancy
+# cheat
+
+# Bare Necessities
+git
+python3
+sudo
+
+# Dependencies
+sqlite
+rlwrap
+expect
+
+# Processor
+jq
+
+# Search
+grep
+ripgrep
+
+# Editor
+neovim
+
+# Terminal Multiplexer
+tmux
+screen
+
+# Shells
+zsh
+bash
+fish
+
+# Essential Utilities
+
+exa
+fzf
+
+# Log Navigator
+lnav
+less
+
+# Download Manager
+aria2
+wget
+curl
+
+# Diff
+colordiff
+
+# Git Tools
+tig
+hub
+gist
+
+# File Watcher
+entr
+
+# Useful utilities
+htop
+tldr
+neofetch
+editorconfig

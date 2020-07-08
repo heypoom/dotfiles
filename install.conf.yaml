@@ -2,7 +2,7 @@
     link:
       relink: true
 
-- clean: ["~"]
+- clean: ['~']
 
 - link:
     ~/.tmux.conf: .tmux.conf
@@ -21,12 +21,6 @@
     ~/.hammerspoon:
       path: hammerspoon
       if: '[ `uname` = Darwin ]'
-    ~/Library/Application Support/Code/User:
-      path: .code
-      if: '[ `uname` = Darwin ]'
-    #     ~/Library/Application Support/JetBrains/IntelliJIdea2020.1:
-    #       path: .idea
-    #       if: '[ `uname` = Darwin ]'
     ~/scripts: scripts
     ~/.dotfiles: .
     ~/.config/:
@@ -34,6 +28,12 @@
       path: config/*
       relink: true
       create: true
+    ~/Library/Application Support/Code/User:
+      path: .code
+      if: '[ `uname` = Darwin ]'
+    #     ~/Library/Application Support/JetBrains/IntelliJIdea2020.1:
+    #       path: .idea
+    #       if: '[ `uname` = Darwin ]'
 
 - create:
     - ~/.config
@@ -43,8 +43,11 @@
     - ~/Workspaces/BrikL
 
 - shell:
-    - description: Automatically setup macOS
+    - description: automatically setup macOS environment
       command: ./setup-macos.sh
       stdout: true
       stderr: true
-
+    - description: automatically setup linux environment
+      command: ./setup-linux.sh
+      stdout: true
+      stderr: true
