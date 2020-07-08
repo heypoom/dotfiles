@@ -1,22 +1,31 @@
 #!/usr/bin/env bash
 
-FISH_PATH="/usr/local/bin/fish"
+FISH_PATH="$(which fish)"
 
-function append_fish_to_shell_list() {
-  if grep -qi $FISH_PATH /etc/shells
+get-login-shell() {
+  if [ `uname` == Darwin ]
   then
-    echo "Fish is already in /etc/shells."
+    dscl . -read ~/ UserShell | sed 's/UserShell: //'
   else
-    echo $FISH_PATH | sudo tee -a /etc/shells
+    grep "^$USER" /etc/passwd
   fi
 }
 
-function use_fish_as_default_shell() {
-  append_fish_to_shell_list
-  
-  echo "Setting $FISH_PATH as default shell."
-  
-  chsh -s $FISH_PATH
-}
+LOGIN_SHELL="$(get-login-shell)"
 
-use_fish_as_default_shell
+if grep -qi $FISH_PATH /etc/shells
+then
+  echo "👍 fish is already in /etc/shells."
+else
+  echo $FISH_PATH | sudo tee -a /etc/shells
+  echo "✅ added fish to /etc/shells!"
+fi
+
+if [[ ! $LOGIN_SHELL =~ "fish" ]]
+then
+  chsh -s $FISH_PATH
+  echo "✅ used $FISH_PATH as the login shell!"
+else
+  echo "👍 $FISH_PATH is already used as the login shell."
+fi
+
