@@ -1,6 +1,7 @@
 [user]
 	email = phoomparin@gmail.com
 	name = Phoomparin Mano
+	signingkey = 40A6176B3534A1E2487E0802AF477883B952295C
 
 [credential]
 	helper = osxkeychain
@@ -44,3 +45,5 @@
   prompt = false
 [pull]
 	rebase = false
+[gpg]
+	program = gpg

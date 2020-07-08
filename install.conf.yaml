@@ -18,10 +18,15 @@
     ~/.ghci: .ghci
     ~/.ipython: ipython
     ~/.weechat: .weechat
-    ~/.hammerspoon: hammerspoon
-    ~/Library/Application Support/Code/User: .code
-    ~/Library/Application Support/JetBrains/IntelliJIdea2020.1: .idea
-    ~/Notes/obsidian.css: obsidian.css
+    ~/.hammerspoon:
+      path: hammerspoon
+      if: '[ `uname` = Darwin ]'
+    ~/Library/Application Support/Code/User:
+      path: .code
+      if: '[ `uname` = Darwin ]'
+    #     ~/Library/Application Support/JetBrains/IntelliJIdea2020.1:
+    #       path: .idea
+    #       if: '[ `uname` = Darwin ]'
     ~/scripts: scripts
     ~/.config/:
       glob: true
@@ -32,17 +37,9 @@
 - create:
     - ~/.config
 
-# - shell:
-#     - description: Install submodules
-#       command: git submodule update --init --recursive
-#     - description: Install Homebrew
-#       command: ! which -s brew && /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-#     - description: Use Fish as default shell
-#       command: which -s fish && chsh -s $(which fish)
-#     - description: Install XCode Command Line Tools
-#       command: which -s xcode-select && xcode-select --install
-#     - description: Switch to correct XCode path
-#       command: which -s xcode-select && sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
-#     - description: Agree to XCode build license
-#       command: which -s xcodebuild && sudo xcodebuild -license
+- shell:
+    - description: Automatically setup macOS
+      command: ./setup-macos.sh
+      stdout: true
+      stderr: true
 

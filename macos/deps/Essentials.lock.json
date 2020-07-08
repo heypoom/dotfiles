@@ -1,0 +1,132 @@
+{
+  "entries": {
+    "cask": {
+      "1password": {
+        "version": "7.5",
+        "options": {
+          "full_name": "1password"
+        }
+      },
+      "1password-cli": {
+        "version": "1.2.0",
+        "options": {
+          "full_name": "1password-cli"
+        }
+      },
+      "adobe-creative-cloud": {
+        "version": "5.2.0.436",
+        "options": {
+          "full_name": "adobe-creative-cloud"
+        }
+      },
+      "dropbox": {
+        "version": "latest",
+        "options": {
+          "full_name": "dropbox"
+        }
+      },
+      "discord": {
+        "version": "0.0.257",
+        "options": {
+          "full_name": "discord"
+        }
+      },
+      "daisydisk": {
+        "version": "4.10",
+        "options": {
+          "full_name": "daisydisk"
+        }
+      },
+      "spotify": {
+        "version": "latest",
+        "options": {
+          "full_name": "spotify"
+        }
+      },
+      "slack": {
+        "version": "4.7.0",
+        "options": {
+          "full_name": "slack"
+        }
+      },
+      "smcfancontrol": {
+        "version": "2.6",
+        "options": {
+          "full_name": "smcfancontrol"
+        }
+      },
+      "sketch": {
+        "version": "67.1-100412",
+        "options": {
+          "full_name": "sketch"
+        }
+      },
+      "setapp": {
+        "version": "2.5.7,1586177549",
+        "options": {
+          "full_name": "setapp"
+        }
+      },
+      "rocket": {
+        "version": "1.7.4,69",
+        "options": {
+          "full_name": "rocket"
+        }
+      },
+      "handbrake": {
+        "version": "1.3.3",
+        "options": {
+          "full_name": "handbrake"
+        }
+      },
+      "parallels": {
+        "version": "15.1.4-47270",
+        "options": {
+          "full_name": "parallels"
+        }
+      },
+      "obsidian": {
+        "version": "0.7.4",
+        "options": {
+          "full_name": "obsidian"
+        }
+      },
+      "pdf-expert": {
+        "version": "2.5.9,702",
+        "options": {
+          "full_name": "pdf-expert"
+        }
+      },
+      "logitech-presentation": {
+        "version": "1.54.84",
+        "options": {
+          "full_name": "logitech-presentation"
+        }
+      },
+      "keybase": {
+        "version": "5.5.0-20200526170801,139bb348af",
+        "options": {
+          "full_name": "keybase"
+        }
+      },
+      "vanilla": {
+        "version": "1.2.2,40",
+        "options": {
+          "full_name": "vanilla"
+        }
+      }
+    }
+  },
+  "system": {
+    "macos": {
+      "catalina": {
+        "HOMEBREW_VERSION": "2.4.4",
+        "HOMEBREW_PREFIX": "/usr/local",
+        "Homebrew/homebrew-core": "d8ed91b79b2a6ac0560c0ad32ecfafb9f0414f1f",
+        "CLT": "11.5.0.0.1.1588476445",
+        "Xcode": "11.5",
+        "macOS": "10.15.5"
+      }
+    }
+  }
+}

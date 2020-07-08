@@ -1,0 +1,4 @@
+cask "kitty"
+cask "alacritty"
+cask "iterm2"
+
