@@ -172,5 +172,6 @@
   "diffEditor.ignoreTrimWhitespace": false,
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+},
+"python.languageServer": "Microsoft"
 }
