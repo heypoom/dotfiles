@@ -4,11 +4,12 @@ if [ ! -d "$HOME/.local/share/omf/" ]
 then
 	echo "📦 Installing oh-my-fish..."
 
+  mkdir -p "$HOME/.local/share"
+
   # Install oh-my-fish
-  curl -L https://get.oh-my.fish | fish
-  
-  # Install the missing dependencies
-  omf install
+  curl -s -L https://get.oh-my.fish > omf.install.fish
+  chmod +x omf.install.fish
+  fish omf.install.fish --noninteractive --yes
   
 	echo "✅ oh-my-fish is installed!"
 else

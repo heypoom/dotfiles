@@ -1,4 +1,4 @@
-FROM debian:bullseye-slim
+FROM debian:buster-slim
 
 # Install dependencies for dotbot.
 RUN apt-get update && apt-get install sudo git python3 -y
@@ -13,8 +13,10 @@ RUN useradd -ms /bin/bash phoomparin && \
   echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
 USER phoomparin
-WORKDIR /home/phoomparin
+RUN mkdir -p $HOME/dotfiles
+WORKDIR /home/phoomparin/dotfiles
 
-COPY . /home/phoomparin
+COPY . .
+RUN sudo chown -R phoomparin .
 
-RUN sudo ./install
+RUN ./install

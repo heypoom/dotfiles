@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-function setup_asdf {
+setup_asdf() {
   if ! test -e ~/.asdf
   then
     git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.7.1
