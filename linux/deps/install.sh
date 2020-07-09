@@ -15,8 +15,14 @@ cd "$(dirname "$0")"
 curl -sL https://deb.nodesource.com/setup_12.x | bash -
 
 # Configure Yarn
-curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
-echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+curl -o- -L https://yarnpkg.com/install.sh | bash
 
-
+# Install packages with apt-get
 install-from-package-list "essentials"
+
+# Install sharkdp/bat
+wget https://github.com/sharkdp/bat/releases/download/v0.15.4/bat_0.15.4_amd64.deb &> /dev/null
+sudo dpkg -i bat_0.15.4_amd64.deb
+
+# Install diff-so-fancy via yarn (needed for git diff views)
+yarn global add diff-so-fancy

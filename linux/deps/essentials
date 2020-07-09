@@ -1,9 +1,6 @@
-# fd
-# the_silver_searcher
 # bat
 # tokei
 # fpp
-# diff-so-fancy
 # cheat
 
 # Bare Necessities
@@ -13,7 +10,6 @@ python3-pip
 ruby
 sudo
 nodejs
-yarn
 locales
 
 # Dependencies
@@ -27,6 +23,8 @@ jq
 # Search
 grep
 ripgrep
+fd-find
+silversearcher-ag
 
 # Editor
 neovim
