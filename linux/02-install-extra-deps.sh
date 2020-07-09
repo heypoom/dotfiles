@@ -4,11 +4,11 @@ echo "🍰 installing additional dependencies..."
 
 # Install Node.js
 echo "ℹ️ installing node.js"
-curl -sL https://deb.nodesource.com/setup_12.x | bash -
+curl -sL https://deb.nodesource.com/setup_12.x | sudo bash -
 
 # Install Yarn
 echo "ℹ️ installing yarn"
-curl -o- -L https://yarnpkg.com/install.sh | bash
+curl -o- -L https://yarnpkg.com/install.sh | sudo bash
 
 # Install sharkdp/bat
 echo "ℹ️ installing sharkdp/bat"
