@@ -17,4 +17,4 @@ do
 done
 
 # automatically setup common CLI environment with scripts.
-# ./setup-common.sh
+./setup-common.sh
