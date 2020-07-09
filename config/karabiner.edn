@@ -1,0 +1,3 @@
+{:main [{:des "caps lock to escape"
+         :rules [[:caps_lock :escape]]}]}
+
