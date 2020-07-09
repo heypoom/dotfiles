@@ -6,5 +6,9 @@ then
   exit 0
 fi
 
-bat cache --build
+if command -v bat &> /dev/null
+then
+  bat cache --build
 
+  echo "✅ bat theme cache is built!"
+fi

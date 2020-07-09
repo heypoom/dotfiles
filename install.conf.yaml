@@ -43,11 +43,8 @@
     - ~/Workspaces/BrikL
 
 - shell:
-    - description: automatically setup macOS environment
-      command: ./setup-macos.sh
+    - description: automatically setup the system environment.
+      command: ./setup.sh
       stdout: true
       stderr: true
-    - description: automatically setup linux environment
-      command: ./setup-linux.sh
-      stdout: true
-      stderr: true
+      quiet: false

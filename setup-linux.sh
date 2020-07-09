@@ -16,9 +16,5 @@ do
   $script
 done
 
-common_scripts="$(\ls common/*.sh)"
-
-for script in $common_scripts
-do
-  $script
-done
+# automatically setup common CLI environment with scripts.
+# ./setup-common.sh

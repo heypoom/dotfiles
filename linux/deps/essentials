@@ -9,7 +9,12 @@
 # Bare Necessities
 git
 python3
+python3-pip
+ruby
 sudo
+nodejs
+yarn
+locales
 
 # Dependencies
 sqlite

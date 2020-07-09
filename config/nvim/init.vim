@@ -12,7 +12,9 @@ source ~/.config/nvim/settings.vim
 source ~/.config/nvim/plugins.vim
 
 " Use the dracula color scheme.
-color dracula
+if !empty(glob("~/.local/share/nvim/plugged/dracula/colors/dracula.vim"))
+  color dracula
+endif
 
 " Load lightline.vim settings.
 source ~/.config/nvim/lightline.vim

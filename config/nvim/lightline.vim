@@ -31,7 +31,7 @@ function! LightlineFugitive()
   return ''
 endfunction
 
-if exists('g:lightline')
+if exists('g:lightline') && exists('g:dracula')
   let s:black    = g:dracula#palette.bg
 
   " let s:gray     = g:dracula#palette.selection

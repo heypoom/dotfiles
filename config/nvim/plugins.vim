@@ -107,7 +107,7 @@ Plug 'chr4/nginx.vim', {'for': ['nginx', 'conf']}
 
 " Parinfer infers the ending parenthesis automatically!
 " Read more: https://shaunlebron.github.io/parinfer/
-Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release', 'for': 'clojure'}
+" Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release', 'for': 'clojure'}
 
 " Edit files in hex mode with :Hexmode or `vi -b`
 Plug 'fidian/hexmode'
@@ -134,7 +134,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'rizzatti/dash.vim'
 
 " Track your coding time with WakaTime
-Plug 'wakatime/vim-wakatime'
+" Plug 'wakatime/vim-wakatime'
 
 " End Ruby blocks with end
 Plug 'tpope/vim-endwise'

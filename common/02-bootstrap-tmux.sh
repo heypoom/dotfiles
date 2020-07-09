@@ -6,9 +6,11 @@ then
   exit 0
 fi
 
-# Install TPM (Tmux Plugin Manager)
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+echo "🌟 installing tmux plugin manager..."
 
-echo "✅ installed tmux plugin manager."
+# Install TPM (Tmux Plugin Manager)
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm --quiet
+
+echo "✅ installed tmux plugin manager!"
 
 
