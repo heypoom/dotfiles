@@ -8,7 +8,7 @@ curl -sL https://deb.nodesource.com/setup_12.x | sudo bash -
 
 # Install Yarn
 echo "ℹ️ installing yarn"
-curl -o- -L https://yarnpkg.com/install.sh | sudo bash
+curl -o- -L https://yarnpkg.com/install.sh | bash
 
 # Install sharkdp/bat
 echo "ℹ️ installing sharkdp/bat"
