@@ -1,4 +1,4 @@
-# Defined in /var/folders/53/f2kch9hd5rxbkzjr4p9cg90w0000gn/T//fish.7mgPW8/config.fish @ line 2
+# Defined in /var/folders/53/f2kch9hd5rxbkzjr4p9cg90w0000gn/T//fish.pOod2A/config.fish @ line 2
 function config
 	function config_edit_file
 		$EDITOR "$HOME/"$argv[1]
@@ -85,6 +85,8 @@ function config
 		case karabiner
 			config_edit_file .config/karabiner.edn
 			goku
+			launchctl stop org.pqrs.karabiner.karabiner_console_user_server
+			launchctl start org.pqrs.karabiner.karabiner_console_user_server
 		case commit
 			pushd "$HOME/dotfiles"
 			git add --all
