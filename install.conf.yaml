@@ -5,6 +5,7 @@
 - clean: ['~']
 
 - link:
+    ~/.Brewfile: Brewfile
     ~/.tmux.conf: .tmux.conf
     ~/.dhexrc: .dhexrc
     ~/.myclirc: .myclirc
