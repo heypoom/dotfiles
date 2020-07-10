@@ -49,7 +49,6 @@ brew "colordiff"
 brew "diff-so-fancy"
 
 # GNU Utilities
-brew "binutils"
 brew "coreutils"
 brew "diffutils"
 brew "findutils"
