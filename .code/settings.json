@@ -85,6 +85,7 @@
   },
   "php.suggest.basic": false,
   "editor.minimap.enabled": true,
+  "editor.minimap.renderCharacters": false,
   "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, UseTab: Never, IndentWidth: 2, TabWidth: 2, ColumnLimit: 0 }",
   "python.formatting.provider": "black",
   "python.jediEnabled": false,
@@ -172,6 +173,6 @@
   "diffEditor.ignoreTrimWhitespace": false,
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-},
-"python.languageServer": "Microsoft"
+  },
+  "python.languageServer": "Microsoft"
 }
