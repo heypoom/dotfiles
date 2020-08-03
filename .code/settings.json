@@ -105,7 +105,8 @@
     "**/*ansible*/**/*.yml": "ansible",
     "**/vars/**/*.yml": "ansible",
     "**/inventory/*/*": "ansible",
-    "*.ksy": "yaml"
+    "*.ksy": "yaml",
+    ".sassrc": "jsonc"
   },
   "yaml.schemas": {
     "https://raw.githubusercontent.com/kaitai-io/ksy_schema/master/ksy_schema.json": "*.ksy"
@@ -174,5 +175,14 @@
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "python.languageServer": "Microsoft"
+  "python.languageServer": "Microsoft",
+  "workbench.statusBar.visible": true,
+  "tailwindCSS.emmetCompletions": true,
+  "tailwindCSS.includeLanguages": {
+    "scss": "css",
+    "typescript": "javascript",
+    "typescriptreact": "javascript"
+  },
+  "typescript.validate.enable": true,
+  "javascript.validate.enable": true
 }
