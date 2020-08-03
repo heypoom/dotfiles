@@ -36,13 +36,13 @@
   --heading-font-weight: normal;
 
   --editor-font-family: JetBrainsMonoNerdFontCompleteM-Medium, iAWriterDuoV-Text,
-    "JetBrains Mono", iAWriterQuattroV-Text, "SukhumvitSet-Bold", monospace;
+    "JetBrains Mono", iAWriterQuattroV-Text, "SukhumvitSet-Text", monospace;
   --editor-font-size: 24px;
   --editor-font-weight: normal;
 
-  --preview-font-family: "iA Writer Duospace", "JetBrains Mono",
+  --preview-font-family: "iA Writer Duospace", "Helvetica Neue", "JetBrains Mono",
     iAWriterQuattroV-Text, monospace;
-  --preview-font-weight: normal;
+  --preview-font-weight: 300;
 
   --code-font-family: JetBrainsMonoNerdFontCompleteM-Medium, "JetBrains Mono",
     monospace;
