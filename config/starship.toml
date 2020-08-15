@@ -1,0 +1,42 @@
+add_newline = false
+scan_timeout = 10
+
+prompt_order = [
+	"character",
+	"directory",
+	"git_branch",
+	"git_status",
+]
+
+[line_break]
+disabled = true
+
+[character]
+symbol = ""
+
+[package]
+disabled = true
+
+[nodejs]
+disabled = true
+
+[directory]
+truncation_length = 3
+truncate_to_repo = true
+prefix = ""
+suffix = " "
+style = "bold"
+
+[git_branch]
+symbol = " "
+# style = "bg:red fg:black"
+truncation_length = 10
+truncation_symbol = ""
+
+# 
+[git_status]
+modified = " "
+staged = "  "
+prefix = ""
+suffix = ""
+style = "fg:purple bg:black"
