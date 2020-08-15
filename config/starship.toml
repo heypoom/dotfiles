@@ -6,6 +6,7 @@ prompt_order = [
 	"directory",
 	"git_branch",
 	"git_status",
+	"character",
 ]
 
 [line_break]
@@ -39,4 +40,4 @@ modified = " "
 staged = "  "
 prefix = ""
 suffix = ""
-style = "fg:purple bg:black"
+style = "fg:white"
