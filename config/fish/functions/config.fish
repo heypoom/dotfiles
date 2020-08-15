@@ -1,4 +1,4 @@
-# Defined in /var/folders/53/f2kch9hd5rxbkzjr4p9cg90w0000gn/T//fish.lxYTxI/config.fish @ line 2
+# Defined in /var/folders/53/f2kch9hd5rxbkzjr4p9cg90w0000gn/T//fish.TbQCOd/config.fish @ line 2
 function config
 	function config_edit_file
 		$EDITOR "$HOME/"$argv[1]
@@ -79,9 +79,9 @@ function config
 		case tmux
 			config_edit_file .tmux.conf
 		case obsidian
-			config_edit_as_json Notes/.obsidian/config
+			config_edit_as_json Dropbox/Notes/.obsidian/config
 		case obsidian-css
-			config_edit_file Notes/obsidian.css
+			config_edit_file Dropbox/Notes/obsidian.css
 		case karabiner
 			config_edit_file .config/karabiner.edn
 			goku
