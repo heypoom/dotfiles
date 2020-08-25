@@ -16,7 +16,7 @@
   "terminal.integrated.shell.linux": "/usr/local/bin/fish",
   "terminal.integrated.shellArgs.linux": ["--login"],
   "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
-  "terminal.integrated.fontSize": 20,
+  "terminal.integrated.fontSize": 15,
   "vim.enableNeovim": false,
   "vim.easymotion": true,
   "vim.sneak": true,
@@ -187,5 +187,7 @@
   "javascript.validate.enable": true,
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "crystal-ide.backend": "custom",
+  "crystal-ide.customCommand": "/usr/local/bin/scry"
 }

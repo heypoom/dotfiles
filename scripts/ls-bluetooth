@@ -14,7 +14,7 @@ const printDevices = () =>
 	log(getDevices().map(device => device.name).join(' | '))
 
 const printDevicesWithRSSI = () =>
-	log(getDevices().map(device => `${device.name} (${device.rawRSSI})`).join('\n'))
+	log(getDevices().map(device => `${device.name} (${device.rawRSSI || 0})`).join('\n'))
 
 printDevicesWithRSSI()
 
