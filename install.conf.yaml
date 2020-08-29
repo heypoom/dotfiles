@@ -29,6 +29,10 @@
       path: config/*
       relink: true
       create: true
+    ~/.config/musikcube/hotkeys.json:
+      path: ./hotkeys.musikcube.json
+      relink: true
+      create: true
     ~/Library/Application Support/Code/User:
       path: .code
       if: '[ `uname` = Darwin ]'
