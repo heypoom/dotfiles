@@ -23,11 +23,11 @@
       "palette": 64
     },
     "text_disabled": {
-      "hex": "#21222d",
+      "hex": "#5e73a8",
       "palette": 245
     },
     "text_hidden": {
-      "hex": "#21222d",
+      "hex": "#5e73a8",
       "palette": 235
     },
     "text_warning": {
