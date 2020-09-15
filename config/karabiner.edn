@@ -1,3 +1,25 @@
-{:main [{:des "caps lock to escape"
-         :rules [[:caps_lock :escape]]}]}
+{:devices {:k6 [{:vendor_id 1452 :product_id 591}]
+           :mac [{:vendor_id 1452 :product_id 630}]}
+
+ :main [{:des "caps lock to escape"
+         :rules [[:caps_lock :escape]]}
+        {:des "escape to grave accent ` and shift escape to tilde ~ (for K6)"
+         :rules [[:#Sescape :grave_accent_and_tilde :k6]]}]
+
+  ;; code won't read cheatsheet section
+ ;; ! stand for mandatory
+ ;; # stand for optional
+ ;; C T O S for left command control optional shift
+ ;; F for fn
+ ;; need to prefix C T O S F with ! or #
+ :cheatsheet {:!Ca "command a" ;; mandatory left_command
+              :!Ta "control a" ;; mandatory left_control
+              :!Oa "option a"
+              :!Sa "shift a"
+              :#Sa "shift a" ;; keycode a, optional left_shift
+              :!CTOa "command control option a"
+              :!Cspacebar "command space"
+              :!Fa "fn a"
+              :##a "keycode a optional any"
+              :!!a "mandatory hyper (control command option shift) a "}}
 
