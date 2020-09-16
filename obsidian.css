@@ -63,6 +63,10 @@
   --yellow: #f1fa8c;
 }
 
+.titlebar-text {
+  background: var(--background-primary) !important;
+}
+
 #graph-view-canvas .links {
   stroke: var(--interactive-accent-rgb) !important;
 }
