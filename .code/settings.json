@@ -1,7 +1,6 @@
 {
   "window.zoomLevel": 0,
   "explorer.confirmDelete": false,
-  "workbench.colorTheme": "Dracula",
   "files.autoSave": "afterDelay",
   "files.autoSaveDelay": 2000,
   "editor.fontFamily": "'JetBrains Mono', 'FiraCode Nerd Font', 'Sukhumvit Set Text', monospace",
@@ -33,14 +32,21 @@
   },
   "vim.autoindent": true,
   "vim.foldfix": false,
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["j"],
+      "commands": ["cursorDown"]
+    },
+    {
+      "before": ["k"],
+      "commands": ["cursorUp"]
+    }
+  ],
   "vim.easymotionMarkerBackgroundColor": "#ff00ff",
   "vim.easymotionMarkerForegroundColorOneChar": "#fff",
-  "vim.easymotionMarkerForegroundColorTwoChar": "#fff",
   "vim.easymotionMarkerFontWeight": "600",
-  "vim.easymotionMarkerYOffset": 5,
-  "vim.easymotionMarkerWidthPerChar": 18,
-  "vim.easymotionMarkerHeight": 35,
   "workbench.iconTheme": "material-icon-theme",
+  "vim.statusBarColorControl": false,
   "material-icon-theme.showUpdateMessage": false,
   "dart.flutterCreateAndroidLanguage": "kotlin",
   "dart.flutterCreateIOSLanguage": "swift",
@@ -186,5 +192,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "crystal-ide.backend": "custom",
-  "crystal-ide.customCommand": "/usr/local/bin/scry"
+  "crystal-ide.customCommand": "/usr/local/bin/scry",
+  "git.autofetch": true,
+  "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/opt/neovim/bin/nvim"
 }

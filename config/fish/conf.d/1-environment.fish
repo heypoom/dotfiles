@@ -88,6 +88,7 @@ set -gx PATH \
   $HOME/.asdf/shims \
   $HOME/.asdf/bin \
   $GEM_HOME/bin \
+  $HOME/.emacs.d/bin/ \
   /usr/libexec \
   $HOME/scripts \
   /usr/local/opt/llvm/bin \
