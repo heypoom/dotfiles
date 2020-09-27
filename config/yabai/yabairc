@@ -27,8 +27,14 @@ yabai -m config window_gap                   17
 
 # Rules to allow dialogs to float.
 yabai -m rule --add title='Preferences$' manage=off
+
+# Float emacs by default
 yabai -m rule --add app="Emacs" manage=off
+
+# Tile only the main editor window (title = "Doom Emacs")
 yabai -m rule --add app='Emacs' title='Doom' manage=on
+
+# Company child frame's title looks like "  —  (50 x 50)"
 yabai -m rule --add app='Emacs' title=' — ' manage=off 
 
 # yabai -m signal --add event=window_created app="Emacs" action='~/Scripts/yabai-float-children'
