@@ -1,5 +1,7 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
+if !exists('g:vscode')
+
 " Dracula Theme.
 Plug 'dracula/vim', { 'as': 'dracula' }
 
@@ -146,5 +148,7 @@ Plug 'tpope/vim-endwise'
 " Add file icons to other plugins (e.g. NERDTree, Airline)
 " Always load this as the very last one!
 Plug 'ryanoasis/vim-devicons'
+
+endif
 
 call plug#end()
