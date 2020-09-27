@@ -16,6 +16,7 @@
     ~/.ideavimrc: .ideavimrc
     ~/.vscode-css: .vscode-css
     ~/.gitconfig: .gitconfig
+    ~/.doom.d: .doom.d
     ~/.ghci: .ghci
     ~/.ipython: ipython
     ~/.weechat: .weechat
