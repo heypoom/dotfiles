@@ -27,4 +27,7 @@ yabai -m config window_gap                   17
 
 # Rules to allow dialogs to float.
 yabai -m rule --add title='Preferences$' manage=off
+yabai -m rule --add app="Emacs" manage=off
+
+yabai -m signal --add event=window_created app="Emacs" action='~/Scripts/yabai-float-children'
 
