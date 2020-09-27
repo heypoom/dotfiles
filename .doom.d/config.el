@@ -68,3 +68,6 @@
 
 ; More generous line spacing
 (setq line-spacing 4)
+
+; Use UTF-8 bullets (https://github.com/sabof/org-bullets) in org-mode
+(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
