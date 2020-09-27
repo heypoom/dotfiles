@@ -50,3 +50,4 @@
 ;(unpin! t)
 
 (package! org-bullets)
+(package! org-roam)
