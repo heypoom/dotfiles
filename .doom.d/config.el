@@ -64,4 +64,7 @@
 (add-hook 'clojure-mode-hook #'paredit-mode)
 
 (add-hook 'clojure-mode-hook
-          (lambda () (local-set-key (kbd "M-RET") (print "Hello!"))))
+          (lambda () (local-set-key (kbd "M-RET") #'cider-eval-region)))
+
+; More generous line spacing
+(setq line-spacing 4)
