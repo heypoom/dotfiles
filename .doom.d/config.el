@@ -58,5 +58,5 @@
 (add-hook 'window-setup-hook #'toggle-frame-maximized)
 
 (custom-set-faces
-  '(mode-line ((t (:family "JetBrainsMono Nerd Font" :height 0.9))))
-  '(mode-line-inactive ((t (:family "JetBrainsMono Nerd Font" :height 0.9)))))
+  '(mode-line ((t (:family "JetBrainsMono Nerd Font" :height 150))))
+  '(mode-line-inactive ((t (:family "JetBrainsMono Nerd Font" :height 150)))))
