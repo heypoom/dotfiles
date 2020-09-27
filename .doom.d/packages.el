@@ -53,5 +53,4 @@
 (package! org-roam)
 (package! lsp-treemacs)
 (package! company-box)
-(package! prettier-js)
-
+(package! prettier)
