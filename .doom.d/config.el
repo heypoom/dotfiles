@@ -60,3 +60,8 @@
 (custom-set-faces
   '(mode-line ((t (:family "JetBrainsMono Nerd Font" :height 150))))
   '(mode-line-inactive ((t (:family "JetBrainsMono Nerd Font" :height 150)))))
+
+(add-hook 'clojure-mode-hook #'paredit-mode)
+
+(add-hook 'clojure-mode-hook
+          (lambda () (local-set-key (kbd "M-RET") (print "Hello!"))))
