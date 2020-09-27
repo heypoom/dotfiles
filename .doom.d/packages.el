@@ -52,3 +52,4 @@
 (package! org-bullets)
 (package! org-roam)
 (package! lsp-treemacs)
+(package! company-box)

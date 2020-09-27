@@ -67,7 +67,19 @@
           (lambda () (local-set-key (kbd "M-RET") #'cider-eval-region)))
 
 ; More generous line spacing
-(setq line-spacing 4)
+(setq line-spacing 5)
 
 ; Use UTF-8 bullets (https://github.com/sabof/org-bullets) in org-mode
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+
+; Remove company's completion delay
+(setq company-minimum-prefix-length 1
+      company-idle-delay 0.0)
+
+; Show project errors on modeline.
+(with-eval-after-load 'lsp-mode
+  ;; :project/:workspace/:file
+  (setq lsp-modeline-diagnostics-scope :project))
+
+; Add icons to company-mode autocompletion (https://github.com/sebastiencs/company-box)
+(add-hook 'company-mode-hook 'company-box-mode)
