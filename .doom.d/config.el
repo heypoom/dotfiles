@@ -3,7 +3,6 @@
 ;; Place your private configuration here! Remember, you do not need to run 'doom
 ;; sync' after modifying this file!
 
-
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets.
 (setq user-full-name "Phoomparin Mano"
@@ -22,7 +21,8 @@
 ; (setq doom-font (font-spec :family "JetBrains Mono Nerd Font" :size 16 :weight 'semi-light)
 ;       doom-variable-pitch-font (font-spec :family "sans" :size 16))
 
-(setq doom-font (font-spec :family "JetBrainsMono Nerd Font" :size 15))
+(setq doom-font (font-spec :family "JetBrainsMono Nerd Font" :size 18)
+      doom-variable-pitch-font (font-spec :family "JetBrainsMono Nerd Font"))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
@@ -53,3 +53,10 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
+
+; Maximize window upon start
+(add-hook 'window-setup-hook #'toggle-frame-maximized)
+
+(custom-set-faces
+  '(mode-line ((t (:family "JetBrainsMono Nerd Font" :height 0.9))))
+  '(mode-line-inactive ((t (:family "JetBrainsMono Nerd Font" :height 0.9)))))
