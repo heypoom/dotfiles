@@ -213,6 +213,7 @@ config/thefuck/settings.pyc
 
 .code/globalStorage
 .code/workspaceStorage
+.code/sync
 
 .idea/scratches
 .idea/light-edit
