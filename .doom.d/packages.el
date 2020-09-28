@@ -51,6 +51,8 @@
 
 (package! org-bullets)
 (package! org-roam)
+(package! org-noter)
 (package! lsp-treemacs)
 (package! company-box)
 (package! prettier)
+(package! auctex)
