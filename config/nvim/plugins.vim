@@ -145,6 +145,9 @@ Plug 'tpope/vim-endwise'
 " Auto Gofmt, :GoDoc, :GoRun, :GoLint, :GoTest, :GoDebugStart
 " Plug 'fatih/vim-go', {'for': 'go'}
 
+" Org Mode support for vim
+Plug 'jceb/vim-orgmode'
+
 " Add file icons to other plugins (e.g. NERDTree, Airline)
 " Always load this as the very last one!
 Plug 'ryanoasis/vim-devicons'
