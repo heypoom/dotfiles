@@ -94,6 +94,9 @@ set -gx PATH \
   /usr/local/opt/llvm/bin \
   /usr/local/opt/coreutils/libexec/gnubin \
   /usr/local/opt/binutils/bin \
+  /Library/TeX/texbin \
+  /Library/TeX/Distributions/.DefaultTeX \
+  /Library/Apple/usr/bin \
   $ANDROID_HOME/tools \
   $ANDROID_HOME/platform-tools \
   $HOME/.fastlane/bin \
