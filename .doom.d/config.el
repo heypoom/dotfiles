@@ -86,3 +86,8 @@
 
 ; Set max-width of company auto-completion tooltip to 50px
 (setq company-tooltip-maximum-width 50)
+
+; Use retina resolutions for LaTeX previews in org-mode
+; (setq org-latex-create-formula-image-program 'dvisvgm)
+(setq org-preview-latex-default-process 'dvisvgm)
+(setq org-format-latex-options '(:scale 3.0 :foreground default :background default))
