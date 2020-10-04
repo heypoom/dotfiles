@@ -32,16 +32,6 @@
   },
   "vim.autoindent": true,
   "vim.foldfix": false,
-  "vim.normalModeKeyBindingsNonRecursive": [
-    {
-      "before": ["j"],
-      "commands": ["cursorDown"]
-    },
-    {
-      "before": ["k"],
-      "commands": ["cursorUp"]
-    }
-  ],
   "vim.easymotionMarkerBackgroundColor": "#ff00ff",
   "vim.easymotionMarkerForegroundColorOneChar": "#fff",
   "vim.easymotionMarkerFontWeight": "600",

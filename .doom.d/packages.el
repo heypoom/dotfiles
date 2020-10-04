@@ -56,3 +56,4 @@
 (package! company-box)
 (package! prettier)
 (package! auctex)
+(package! tldr)

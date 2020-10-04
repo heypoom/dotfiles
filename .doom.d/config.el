@@ -90,4 +90,5 @@
 ; Use retina resolutions for LaTeX previews in org-mode
 ; (setq org-latex-create-formula-image-program 'dvisvgm)
 (setq org-preview-latex-default-process 'dvisvgm)
+(setq org-preview-latex-image-directory "./tex.preview/")
 (setq org-format-latex-options '(:scale 3.0 :foreground default :background default))
