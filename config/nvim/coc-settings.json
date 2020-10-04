@@ -25,7 +25,9 @@
   "prettier.eslintIntegration": false,
   "prettier.formatterPriority": 1,
   "prettier.requireConfig": false,
-  "prettier.disableLanguages": ["vue"],
+  "prettier.disableLanguages": [
+    "vue"
+  ],
   "prettier.disableSuccessMessage": true,
   "codeLens.enable": true,
   "suggest.floatEnable": true,

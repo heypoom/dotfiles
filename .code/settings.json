@@ -185,5 +185,7 @@
   "crystal-ide.customCommand": "/usr/local/bin/scry",
   "git.autofetch": true,
   "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/opt/neovim/bin/nvim",
-  "workbench.colorTheme": "Dracula"
+  "workbench.colorTheme": "Dracula",
+  "python.showStartPage": false,
+  "kite.showWelcomeNotificationOnStartup": false
 }
