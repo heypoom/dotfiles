@@ -145,6 +145,9 @@ Plug 'tpope/vim-endwise'
 " Auto Gofmt, :GoDoc, :GoRun, :GoLint, :GoTest, :GoDebugStart
 " Plug 'fatih/vim-go', {'for': 'go'}
 
+" Required by Org Mode
+Plug 'tpope/vim-speeddating'
+
 " Org Mode support for vim
 Plug 'jceb/vim-orgmode'
 
