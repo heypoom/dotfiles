@@ -18,11 +18,11 @@
 ;;
 ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 ;; font string. You generally only need these two:
-; (setq doom-font (font-spec :family "JetBrains Mono Nerd Font" :size 16 :weight 'semi-light)
-;       doom-variable-pitch-font (font-spec :family "sans" :size 16))
 
-(setq doom-font (font-spec :family "JetBrainsMono Nerd Font" :size 18)
-      doom-variable-pitch-font (font-spec :family "JetBrainsMono Nerd Font"))
+;; (setq doom-font (font-spec :family "JetBrains Mono Nerd Font" :size 16 :weight 'semi-light)
+;;       doom-variable-pitch-font (font-spec :family "sans" :size 16))
+
+(setq doom-font (font-spec :family "JetBrainsMono Nerd Font" :size 16))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
@@ -32,7 +32,7 @@
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
 (setq org-directory "~/Notes")
-(setq org-roam-directory "~/Notes")
+(setq org-roam-directory "~/Notes/Wiki")
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
@@ -95,11 +95,12 @@
 (setq org-format-latex-options '(:scale 3.0 :foreground default :background default))
 
 ; Enable markdown extension for org-roam
-(use-package! md-roam
-  :config (setq md-roam-file-extension-single "md"))
+; (use-package! md-roam
+;   :config (setq md-roam-file-extension-single "md"))
 
-(setq md-roam-use-markdown-file-links t) ; default is nil
-(setq org-roam-file-extensions '("org" "md"))
-(setq org-roam-tag-sources '(prop md-frontmatter))
-(setq org-roam-title-sources '((mdtitle title mdheadline headline) (mdalias alias)))
+; (setq md-roam-use-markdown-file-links nil) ; default is nil
 
+; "md"
+; (setq org-roam-file-extensions '("org"))
+; (setq org-roam-tag-sources '(prop md-frontmatter))
+; (setq org-roam-title-sources '((mdtitle title mdheadline headline) (mdalias alias)))

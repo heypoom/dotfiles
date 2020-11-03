@@ -13,7 +13,6 @@ if not note_name:
 zid = datetime.now().strftime("%Y%m%d%H%M")
 filename = "%s %s.md" % (zid, note_name)
 
-with open(filename, 'w') as file:
+with open(filename, "w") as file:
     file.write("")
     print(filename)
-
