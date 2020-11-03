@@ -2,7 +2,7 @@
 
 echo "ℹ️ current user home is at $HOME."
 
-if [ $DOCKERIZED = true ]
+if [[ $DOCKERIZED = true ]]
 then
   echo "ℹ️ dockerized environment detected."
 
