@@ -15,15 +15,27 @@
 	// 	],
 	// 	"description": "Log output to console"
 	// }
-	"React Functional Component": {
+	"React Functional Component: New File": {
 		"scope": "javascriptreact,typescriptreact",
-		"prefix": "rfc",
+		"prefix": "rfcf",
 		"body": [
 			"import React from 'react'",
 			"",
 			"interface IProps {}",
 			"",
 			"export const ${1:${TM_FILENAME/(\\w+)\\.tsx/$1/g}}: React.FC<IProps> = () => {",
+			"  return (",
+			"    ${2:<div />}",
+			"  )",
+			"}",
+			""
+		]
+	},
+	"React Functional Component: Insert": {
+		"scope": "javascriptreact,typescriptreact",
+		"prefix": "rfc",
+		"body": [
+			"export const ${1:${TM_FILENAME/(\\w+)\\.tsx/$1/g}}: React.FC = () => {",
 			"  return (",
 			"    ${2:<div />}",
 			"  )",
