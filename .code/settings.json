@@ -168,7 +168,7 @@
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "python.languageServer": "Microsoft",
+  "python.languageServer": "Pylance",
   "workbench.statusBar.visible": true,
   "tailwindCSS.emmetCompletions": true,
   "tailwindCSS.includeLanguages": {
@@ -187,5 +187,6 @@
   "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/opt/neovim/bin/nvim",
   "workbench.colorTheme": "Dracula",
   "python.showStartPage": false,
-  "kite.showWelcomeNotificationOnStartup": false
+  "kite.showWelcomeNotificationOnStartup": false,
+  "git.enableSmartCommit": true
 }
