@@ -18,7 +18,7 @@ SETUVAR _fish_abbr_brewl:brew\x20list
 SETUVAR _fish_abbr_brewr:brew\x20remove
 SETUVAR _fish_abbr_brews:brew\x20search
 SETUVAR _fish_abbr_caski:env\x20HOMEBREW_NO_AUTO_UPDATE\x3d1\x20brew\x20install\x20\x2d\x2dcask
-SETUVAR _fish_abbr_caskl:brew\x20cask\x20list
+SETUVAR _fish_abbr_caskl:brew\x20list\x20\x2d\x2dcask
 SETUVAR _fish_abbr_cht:cht\x2esh
 SETUVAR _fish_abbr_conf:config
 SETUVAR _fish_abbr_deps:cat\x20package\x2ejson\x20\x7c\x20jq\x20\x2edependencies
