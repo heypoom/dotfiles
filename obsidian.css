@@ -664,11 +664,10 @@ p {
 }
 
 .graph-view.color-line {
-  /* color: white; */
 }
 
 .graph-view.color-text {
-  /* color: #cccccc; */
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .graph-view.color-fill-highlight {
@@ -676,7 +675,7 @@ p {
 }
 
 .graph-view.color-line-highlight {
-  color: #8be9fd;
+  color: #bd93f9;
 }
 
 .theme-dark .graph-view.color-fill-tag {
@@ -684,12 +683,12 @@ p {
 }
 
 .graph-view.color-fill-attachment {
-  color: #d669bc;
+  color: #50fa7b !important;
 }
 
 .graph-view.color-fill-unresolved {
-  color: #bd93f9;
-  opacity: 1;
+  color: rgba(255, 135, 157, 1);
+  opacity: 0.8;
 }
 
 .graph-view.color-arrow {
