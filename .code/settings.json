@@ -54,14 +54,8 @@
   "workbench.sideBar.location": "left",
   "javascript.implicitProjectConfig.experimentalDecorators": true,
   "javascript.referencesCodeLens.enabled": true,
-  "emmet.triggerExpansionOnTab": true,
   "emmet.showExpandedAbbreviation": "always",
   "emmet.showSuggestionsAsSnippets": true,
-  "emmet.includeLanguages": {
-    "javascript": "javascriptreact",
-    "vue-html": "html",
-    "plaintext": "jade"
-  },
   "emmet.syntaxProfiles": {
     "javascript": "jsx",
     "xml": {
@@ -127,7 +121,6 @@
   "workbench.startupEditor": "newUntitledFile",
   "C_Cpp.updateChannel": "Insiders",
   "prettier.disableLanguages": ["Python", "python"],
-  "editor.formatOnSave": true,
   "[python]": {},
   "editor.suggestSelection": "first",
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
@@ -190,5 +183,17 @@
   "python.showStartPage": false,
   "kite.showWelcomeNotificationOnStartup": false,
   "git.enableSmartCommit": true,
-  "git.confirmSync": false
+  "git.confirmSync": false,
+  "editor.formatOnSave": true,
+  "emmet.triggerExpansionOnTab": true,
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "typescript": "javascriptreact",
+    "typescriptreact": "javascriptreact",
+    "vue-html": "html",
+    "plaintext": "jade"
+  },
+  "html.autoClosingTags": true,
+  "typescript.autoClosingTags": true,
+  "javascript.autoClosingTags": true
 }
