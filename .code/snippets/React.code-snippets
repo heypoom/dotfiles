@@ -17,7 +17,7 @@
   // }
   "React Functional Component: New File": {
     "scope": "javascriptreact,typescriptreact",
-    "prefix": "rfcf",
+    "prefix": "rfc",
     "body": [
       "import React from 'react'",
       "",
@@ -33,7 +33,7 @@
   },
   "React Functional Component: Insert": {
     "scope": "javascriptreact,typescriptreact",
-    "prefix": "rfc",
+    "prefix": "rfci",
     "body": [
       "export const ${1:${TM_FILENAME/(\\w+)\\.tsx/$1/g}}: React.FC = () => {",
       "  return (",
