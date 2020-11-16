@@ -50,14 +50,8 @@
 ;(unpin! t)
 
 (package! org-bullets)
-
-(package! md-roam
-  :recipe (:host github
-           :repo "nobiot/md-roam"))
-
 (package! org-roam)
 (package! org-roam-server)
-(package! org-noter)
 (package! lsp-treemacs)
 (package! company-box)
 (package! prettier)
