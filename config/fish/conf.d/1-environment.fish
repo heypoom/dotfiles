@@ -1,6 +1,5 @@
 # Compilation flags
 set -gx ARCHFLAGS '-arch x86_64'
-
 # Always use en_US and UTF-8 for everything.
 set -gx LC_ALL en_US.UTF-8
 set -gx LC_CTYPE en_US.UTF-8
@@ -59,7 +58,7 @@ set -gx JAVA_HOME "$HOME/.asdf/installs/java/openjdk-11.0.1"
 set -gx JAVA8_HOME "$HOME/.asdf/installs/java/oracle-8.141"
 
 # Set XCode build configuration (mainly for pyenv)
-set -gx SDKROOT "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk"
+set -gx SDKROOT "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk"
 set -gx MACOSX_DEPLOYMENT_TARGET 10.15
 
 # Set wasmer directory

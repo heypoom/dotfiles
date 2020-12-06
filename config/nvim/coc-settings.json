@@ -1,4 +1,7 @@
 {
+  "suggest.echodocSupport": true,
+  "suggest.maxCompleteItemCount": 20,
+  "suggest.autoTrigger": "always",
   "python.formatting.provider": "black",
   "coc.preferences.formatOnSaveFiletypes": [
     "javascript",
@@ -25,9 +28,7 @@
   "prettier.eslintIntegration": false,
   "prettier.formatterPriority": 1,
   "prettier.requireConfig": false,
-  "prettier.disableLanguages": [
-    "vue"
-  ],
+  "prettier.disableLanguages": ["vue"],
   "prettier.disableSuccessMessage": true,
   "codeLens.enable": true,
   "suggest.floatEnable": true,

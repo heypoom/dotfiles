@@ -43,5 +43,15 @@
   {
     "key": "ctrl+t",
     "command": "editor.action.rename"
+  },
+  {
+    "key": "cmd+[Slash]",
+    "command": "editor.action.commentLine",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "shift+cmd+7",
+    "command": "-editor.action.commentLine",
+    "when": "editorTextFocus"
   }
 ]
