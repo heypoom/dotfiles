@@ -195,5 +195,11 @@
   },
   "html.autoClosingTags": true,
   "typescript.autoClosingTags": true,
-  "javascript.autoClosingTags": true
+  "javascript.autoClosingTags": true,
+  "[glsl]": {
+    "editor.defaultFormatter": "xaver.clang-format"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
