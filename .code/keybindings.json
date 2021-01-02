@@ -53,5 +53,15 @@
     "key": "shift+cmd+7",
     "command": "-editor.action.commentLine",
     "when": "editorTextFocus"
+  },
+  {
+    "key": "alt+c",
+    "command": "calva.clearInlineResults",
+    "when": "calva:keybindingsEnabled && editorTextFocus && !editorHasMultipleSelections && !editorHasSelection && !editorReadOnly && !hasOtherSuggestions && !parameterHintsVisible && !selectionAnchorSet && !suggestWidgetVisible && editorLangId == 'clojure'"
+  },
+  {
+    "key": "escape",
+    "command": "-calva.clearInlineResults",
+    "when": "calva:keybindingsEnabled && editorTextFocus && !editorHasMultipleSelections && !editorHasSelection && !editorReadOnly && !hasOtherSuggestions && !parameterHintsVisible && !selectionAnchorSet && !suggestWidgetVisible && editorLangId == 'clojure'"
   }
 ]
