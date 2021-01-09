@@ -58,7 +58,8 @@ set -gx JAVA_HOME "$HOME/.asdf/installs/java/openjdk-11.0.1"
 set -gx JAVA8_HOME "$HOME/.asdf/installs/java/oracle-8.141"
 
 # Set XCode build configuration (Rust, PyEnv and many build tools depend on this!)
-set -gx SDKROOT "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk"
+# set -gx SDKROOT "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk"
+set -gx SDKROOT "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk"
 
 set -gx MACOSX_DEPLOYMENT_TARGET 10.15
 
