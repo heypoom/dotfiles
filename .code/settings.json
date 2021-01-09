@@ -97,7 +97,7 @@
   },
   "yaml.schemas": {
     "https://raw.githubusercontent.com/kaitai-io/ksy_schema/master/ksy_schema.json": "*.ksy",
-    "file:///Users/phoomparin/.vscode/extensions/atlassian.atlascode-2.8.5/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+    "file:///home/ubuntu/.vscode-server/extensions/atlassian.atlascode-2.8.5/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
   },
   "explorer.confirmDragAndDrop": false,
   "javascript.updateImportsOnFileMove.enabled": "never",
