@@ -18,6 +18,9 @@ SETUVAR _fish_abbr_brewl:brew\x20list
 SETUVAR _fish_abbr_brewr:brew\x20remove
 SETUVAR _fish_abbr_brews:brew\x20search
 SETUVAR _fish_abbr_brikl:env\x20TERM\x3dxterm\x2d256color\x20ssh\x20brikl\x2dphoom
+SETUVAR _fish_abbr_briklgo:env\x20TERM\x3dxterm\x2d256color\x20ssh\x20\x2dt\x20brikl\x2dphoom\x20tmux\x20a\x20\x2dt\x20sh\x20\x2dd
+SETUVAR _fish_abbr_briklnew:env\x20TERM\x3dxterm\x2d256color\x20ssh\x20\x2dt\x20brikl\x2dphoom\x20\x27cd\x20\x7e/Workspace/BRIKL/shop\x2dclient\x20\x26\x20tmux\x20new\x20\x2ds\x20sh\x27
+SETUVAR _fish_abbr_briklsh:env\x20TERM\x3dxterm\x2d256color\x20ssh\x20\x2dt\x20brikl\x2dphoom\x20tmux\x20a\x20\x2dt\x20sh\x20\x2dd
 SETUVAR _fish_abbr_caski:env\x20HOMEBREW_NO_AUTO_UPDATE\x3d1\x20brew\x20install\x20\x2d\x2dcask
 SETUVAR _fish_abbr_caskl:brew\x20list\x20\x2d\x2dcask
 SETUVAR _fish_abbr_cht:cht\x2esh
@@ -81,6 +84,8 @@ SETUVAR _fish_abbr_vim:nvim
 SETUVAR _fish_abbr_vimdiff:nvim\x20\x2dd
 SETUVAR _fish_abbr_where:which\x20\x2da
 SETUVAR _fish_abbr_wm:yabai\x20\x2dm
+SETUVAR _fish_abbr_ya:yarn\x20add
+SETUVAR _fish_abbr_ygm:yarn\x20global\x20remove
 SETUVAR fish_color_autosuggestion:555\x1ebrblack
 SETUVAR fish_color_cancel:\x2dr
 SETUVAR fish_color_command:005fd7
