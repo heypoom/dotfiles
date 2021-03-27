@@ -1,8 +1,8 @@
 {
-  "window.zoomLevel": 0,
   "explorer.confirmDelete": false,
   "files.autoSave": "afterDelay",
   "files.autoSaveDelay": 2000,
+  // 'PICO-8 Mono Upper',
   "editor.fontFamily": "'JetBrains Mono', 'FiraCode Nerd Font', 'Sukhumvit Set Text', monospace",
   "editor.fontSize": 20,
   "editor.tabSize": 2,
@@ -97,7 +97,7 @@
   },
   "yaml.schemas": {
     "https://raw.githubusercontent.com/kaitai-io/ksy_schema/master/ksy_schema.json": "*.ksy",
-    "file:///home/ubuntu/.vscode-server/extensions/atlassian.atlascode-2.8.5/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+    "file:///Users/phoomparin/.vscode/extensions/atlassian.atlascode-2.8.6/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
   },
   "explorer.confirmDragAndDrop": false,
   "javascript.updateImportsOnFileMove.enabled": "never",
@@ -202,5 +202,35 @@
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "calva.keybindingsEnabled": true
+  "calva.keybindingsEnabled": true,
+  "workbench.editor.revealIfOpen": true,
+  "workbench.editorAssociations": [
+    {
+      "viewType": "jupyter.notebook.ipynb",
+      "filenamePattern": "*.ipynb"
+    }
+  ],
+  "atlascode.jira.lastCreateSiteAndProject": {
+    "siteId": "",
+    "projectKey": ""
+  },
+  "python.defaultInterpreterPath": "/Users/phoomparin/.asdf/shims/python",
+  "elixirLS.enableTestLenses": true,
+
+  "[elixir]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.wordBasedSuggestions": false,
+    "editor.formatOnType": true,
+    "editor.trimAutoWhitespace": false,
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": true,
+      "strings": true
+    },
+    "editor.codeLens": true
+  }
 }
