@@ -1,0 +1,18 @@
+set colored-stats On
+set completion-ignore-case On
+set completion-prefix-display-length 3
+set mark-symlinked-directories On
+set show-all-if-ambiguous On
+set show-all-if-unmodified On
+set visible-stats On
+set editing-mode vi
+
+$if mode=vi
+set keymap vi-command
+"gg": beginning-of-history
+"G": end-of-history
+set keymap vi-insert
+"jj": vi-movement-mode
+"\C-p": history-search-backward C-L: clear-screen
+
+
