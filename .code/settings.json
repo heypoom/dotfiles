@@ -235,5 +235,6 @@
     "editor.formatOnSave": false
   },
   "elixirLS.dialyzerEnabled": true,
-  "elixirLS.signatureAfterComplete": true
+  "elixirLS.signatureAfterComplete": true,
+  "wallaby.codeLensFeature.runTest": true
 }
