@@ -1,6 +1,6 @@
 FROM debian:bullseye-slim
 
-# Install dependencies for dotbo
+# Install dependencies for dotbot
 RUN apt-get update && apt-get install sudo git python3 -y
 
 # Install dependencies

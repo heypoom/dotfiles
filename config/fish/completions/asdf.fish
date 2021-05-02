@@ -31,7 +31,7 @@ function __fish_asdf_arg_at -a number
 end
 
 function __fish_asdf_list_versions -a plugin
-    asdf list $plugin 2> /dev/null | sed -e 's/^\s*//'
+    asdf list $plugin 2> /dev/null | sed -e 's/^[[:space:]]*//'
 end
 
 function __fish_asdf_list_all -a plugin
@@ -97,6 +97,10 @@ complete -f -c asdf -n '__fish_asdf_using_command where; and __fish_asdf_arg_num
 # which completion
 complete -f -c asdf -n '__fish_asdf_needs_command' -a which -d "Display executable path for a command"
 complete -f -c asdf -n '__fish_asdf_using_command which; and __fish_asdf_arg_number 2' -a '(__fish_asdf_list_shims)'
+
+# latest completion
+complete -f -c asdf -n '__fish_asdf_needs_command' -a latest -d "Show latest stable version of a package"
+complete -f -c asdf -n '__fish_asdf_using_command latest; and __fish_asdf_arg_number 2' -a '(__fish_asdf_plugin_list)'
 
 # list completion
 complete -f -c asdf -n '__fish_asdf_needs_command' -a list -d "List installed versions of a package"

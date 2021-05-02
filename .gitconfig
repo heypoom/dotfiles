@@ -1,7 +1,7 @@
 [user]
-	email = phoomparin@gmail.com
+	email = phoomparin@brikl.com
 	name = Phoomparin Mano
-	signingkey = 40A6176B3534A1E2487E0802AF477883B952295C
+	signingkey = 4ADF64F08EDA7F4DE01FCA15BC01E3926F924EB7
 
 [credential]
 	helper = osxkeychain

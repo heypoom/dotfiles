@@ -40,7 +40,7 @@ fish
 
 # Essential Utilities
 
-exa
+# exa
 fzf
 
 # Log Navigator
