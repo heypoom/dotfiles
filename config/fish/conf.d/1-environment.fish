@@ -1,6 +1,5 @@
 # Compilation flags
 set -gx ARCHFLAGS '-arch x86_64'
-
 # Always use en_US and UTF-8 for everything.
 set -gx LC_ALL en_US.UTF-8
 set -gx LC_CTYPE en_US.UTF-8
@@ -58,8 +57,10 @@ set -gx PKG_CONFIG_PATH "/usr/local/opt/openssl/lib/pkgconfig:/usr/local/opt/lib
 set -gx JAVA_HOME "$HOME/.asdf/installs/java/openjdk-11.0.1"
 set -gx JAVA8_HOME "$HOME/.asdf/installs/java/oracle-8.141"
 
-# Set XCode build configuration (mainly for pyenv)
-set -gx SDKROOT "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk"
+# Set XCode build configuration (Rust, PyEnv and many build tools depend on this!)
+# set -gx SDKROOT "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk"
+set -gx SDKROOT "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk"
+
 set -gx MACOSX_DEPLOYMENT_TARGET 10.15
 
 # Set wasmer directory

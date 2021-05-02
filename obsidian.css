@@ -40,8 +40,8 @@
   --editor-font-size: 24px;
   --editor-font-weight: normal;
 
-  --preview-font-family: "iA Writer Duospace", "Helvetica Neue", "JetBrains Mono",
-    iAWriterQuattroV-Text, monospace;
+  --preview-font-family: "iA Writer Duospace", "Helvetica Neue",
+    "JetBrains Mono", iAWriterQuattroV-Text, monospace;
   --preview-font-weight: 300;
 
   --code-font-family: JetBrainsMonoNerdFontCompleteM-Medium, "JetBrains Mono",
@@ -656,4 +656,41 @@ p {
 
 .markdown-preview-section .prism .token.namespace {
   color: #e2777a;
+}
+
+/* Obsidian graph view colors */
+.graph-view.color-fill {
+  color: #8be9fd;
+}
+
+.graph-view.color-line {
+}
+
+.graph-view.color-text {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.graph-view.color-fill-highlight {
+  color: #8be9fd;
+}
+
+.graph-view.color-line-highlight {
+  color: #bd93f9;
+}
+
+.theme-dark .graph-view.color-fill-tag {
+  color: #bd93f9;
+}
+
+.graph-view.color-fill-attachment {
+  color: #50fa7b !important;
+}
+
+.graph-view.color-fill-unresolved {
+  color: rgba(255, 135, 157, 1);
+  opacity: 0.8;
+}
+
+.graph-view.color-arrow {
+  color: #d669bc;
 }

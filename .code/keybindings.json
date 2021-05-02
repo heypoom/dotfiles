@@ -43,5 +43,31 @@
   {
     "key": "ctrl+t",
     "command": "editor.action.rename"
+  },
+  {
+    "key": "cmd+[Slash]",
+    "command": "editor.action.commentLine",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "shift+cmd+7",
+    "command": "-editor.action.commentLine",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "alt+c",
+    "command": "calva.clearInlineResults",
+    "when": "calva:keybindingsEnabled && editorTextFocus && !editorHasMultipleSelections && !editorHasSelection && !editorReadOnly && !hasOtherSuggestions && !parameterHintsVisible && !selectionAnchorSet && !suggestWidgetVisible && editorLangId == 'clojure'"
+  },
+  {
+    "key": "escape",
+    "command": "-calva.clearInlineResults",
+    "when": "calva:keybindingsEnabled && editorTextFocus && !editorHasMultipleSelections && !editorHasSelection && !editorReadOnly && !hasOtherSuggestions && !parameterHintsVisible && !selectionAnchorSet && !suggestWidgetVisible && editorLangId == 'clojure'"
+  },
+  {
+    "key": "alt+m",
+    "command": "workbench.action.terminal.sendSequence",
+    "args": {"text": "clear && ruby path_to_enlightenment.rb\n"},
+    "when": "editorLangId == 'ruby'"
   }
 ]

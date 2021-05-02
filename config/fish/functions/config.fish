@@ -1,4 +1,4 @@
-# Defined in /var/folders/53/f2kch9hd5rxbkzjr4p9cg90w0000gn/T//fish.q8xpRO/config.fish @ line 2
+# Defined in /var/folders/53/f2kch9hd5rxbkzjr4p9cg90w0000gn/T//fish.huVESv/config.fish @ line 2
 function config
 	function config_edit_file
 		$EDITOR "$HOME/"$argv[1]
@@ -98,6 +98,12 @@ function config
 			pushd "$HOME/dotfiles"
 			git push -u origin master
 			popd
+		case sync
+			pushd "$HOME/dotfiles"
+			git add --all
+			git commit -m "chore: synchronizing dotfiles"
+			git push
+			popd
 		case save
 			config commit $argv[2]
 			config push
@@ -112,6 +118,12 @@ function config
 		case skhd-hotreload
 			tmux new -d -s "skhd-reload" "echo $HOME/.config/skhd/skhdrc | entr skhd -r"
 		case edit
+			funced config
+			funcsave config
+		case config
+			funced config
+			funcsave config
+		case self
 			funced config
 			funcsave config
 		case status

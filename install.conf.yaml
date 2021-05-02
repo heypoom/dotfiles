@@ -6,6 +6,8 @@
 
 - link:
     ~/.Brewfile: Brewfile
+    ~/.inputrc: .inputrc
+    ~/.iex.exs: .iex.exs
     ~/.tmux.conf: .tmux.conf
     ~/.dhexrc: .dhexrc
     ~/.myclirc: .myclirc

@@ -1,8 +1,8 @@
 {
-  "window.zoomLevel": 0,
   "explorer.confirmDelete": false,
   "files.autoSave": "afterDelay",
   "files.autoSaveDelay": 2000,
+  // 'PICO-8 Mono Upper',
   "editor.fontFamily": "'JetBrains Mono', 'FiraCode Nerd Font', 'Sukhumvit Set Text', monospace",
   "editor.fontSize": 20,
   "editor.tabSize": 2,
@@ -54,14 +54,8 @@
   "workbench.sideBar.location": "left",
   "javascript.implicitProjectConfig.experimentalDecorators": true,
   "javascript.referencesCodeLens.enabled": true,
-  "emmet.triggerExpansionOnTab": true,
   "emmet.showExpandedAbbreviation": "always",
   "emmet.showSuggestionsAsSnippets": true,
-  "emmet.includeLanguages": {
-    "javascript": "javascriptreact",
-    "vue-html": "html",
-    "plaintext": "jade"
-  },
   "emmet.syntaxProfiles": {
     "javascript": "jsx",
     "xml": {
@@ -102,7 +96,8 @@
     ".sassrc": "jsonc"
   },
   "yaml.schemas": {
-    "https://raw.githubusercontent.com/kaitai-io/ksy_schema/master/ksy_schema.json": "*.ksy"
+    "https://raw.githubusercontent.com/kaitai-io/ksy_schema/master/ksy_schema.json": "*.ksy",
+    "file:///home/ubuntu/.vscode-server/extensions/atlassian.atlascode-2.8.6/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
   },
   "explorer.confirmDragAndDrop": false,
   "javascript.updateImportsOnFileMove.enabled": "never",
@@ -126,7 +121,6 @@
   "workbench.startupEditor": "newUntitledFile",
   "C_Cpp.updateChannel": "Insiders",
   "prettier.disableLanguages": ["Python", "python"],
-  "editor.formatOnSave": true,
   "[python]": {},
   "editor.suggestSelection": "first",
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
@@ -168,7 +162,7 @@
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "python.languageServer": "Microsoft",
+  "python.languageServer": "Pylance",
   "workbench.statusBar.visible": true,
   "tailwindCSS.emmetCompletions": true,
   "tailwindCSS.includeLanguages": {
@@ -187,5 +181,60 @@
   "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/opt/neovim/bin/nvim",
   "workbench.colorTheme": "Dracula",
   "python.showStartPage": false,
-  "kite.showWelcomeNotificationOnStartup": false
+  "kite.showWelcomeNotificationOnStartup": false,
+  "git.enableSmartCommit": true,
+  "git.confirmSync": false,
+  "editor.formatOnSave": true,
+  "emmet.triggerExpansionOnTab": true,
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "typescript": "javascriptreact",
+    "typescriptreact": "javascriptreact",
+    "vue-html": "html",
+    "plaintext": "jade"
+  },
+  "html.autoClosingTags": true,
+  "typescript.autoClosingTags": true,
+  "javascript.autoClosingTags": true,
+  "[glsl]": {
+    "editor.defaultFormatter": "xaver.clang-format"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "calva.keybindingsEnabled": true,
+  "workbench.editor.revealIfOpen": true,
+  "workbench.editorAssociations": [
+    {
+      "viewType": "jupyter.notebook.ipynb",
+      "filenamePattern": "*.ipynb"
+    }
+  ],
+  "atlascode.jira.lastCreateSiteAndProject": {
+    "siteId": "",
+    "projectKey": ""
+  },
+  "python.defaultInterpreterPath": "/Users/phoomparin/.asdf/shims/python",
+  "elixirLS.enableTestLenses": true,
+
+  "[elixir]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.wordBasedSuggestions": false,
+    "editor.formatOnType": true,
+    "editor.trimAutoWhitespace": false,
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": true,
+      "strings": true
+    },
+    "editor.codeLens": true,
+    "editor.formatOnSave": false
+  },
+  "elixirLS.dialyzerEnabled": true,
+  "elixirLS.signatureAfterComplete": true,
+  "wallaby.codeLensFeature.runTest": true
 }
