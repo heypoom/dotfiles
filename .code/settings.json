@@ -53,7 +53,6 @@
   "debug.console.wordWrap": true,
   "workbench.sideBar.location": "left",
   "javascript.implicitProjectConfig.experimentalDecorators": true,
-  "javascript.referencesCodeLens.enabled": true,
   "emmet.showExpandedAbbreviation": "always",
   "emmet.showSuggestionsAsSnippets": true,
   "emmet.syntaxProfiles": {
