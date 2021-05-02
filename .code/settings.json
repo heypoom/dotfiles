@@ -177,7 +177,7 @@
   "crystal-ide.backend": "custom",
   "crystal-ide.customCommand": "/usr/local/bin/scry",
   "git.autofetch": true,
-  "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/opt/neovim/bin/nvim",
+  "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/bin/nvim",
   "workbench.colorTheme": "Dracula",
   "python.showStartPage": false,
   "kite.showWelcomeNotificationOnStartup": false,
@@ -235,5 +235,10 @@
   },
   "elixirLS.dialyzerEnabled": true,
   "elixirLS.signatureAfterComplete": true,
-  "wallaby.codeLensFeature.runTest": true
+  "wallaby.codeLensFeature.runTest": true,
+  "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
+  "vscode-neovim.neovimExecutablePaths.win32": "/usr/bin/nvim",
+  "vscode-neovim.neovimInitVimPaths.darwin": "$HOME/.config/nvim/init.vim",
+  "vscode-neovim.neovimInitVimPaths.linux": "$HOME/.config/nvim/init.vim",
+  "vscode-neovim.neovimInitVimPaths.win32": "$HOME/.config/nvim/init.vim"
 }
