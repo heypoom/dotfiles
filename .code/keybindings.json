@@ -89,5 +89,20 @@
     "key": "cmd+k cmd+i",
     "command": "-editor.debug.action.showDebugHover",
     "when": "editorTextFocus && inDebugMode"
+  },
+  {
+    "key": ",",
+    "command": "whichkey.triggerKey",
+    "when": "whichkeyVisible"
+  },
+  {
+    "key": "tab",
+    "command": "-whichkey.triggerKey",
+    "when": "whichkeyVisible"
+  },
+  {
+    "key": ",",
+    "command": "whichkey.show",
+    "when": "!whichKeyVisible"
   }
 ]
