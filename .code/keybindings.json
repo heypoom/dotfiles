@@ -93,16 +93,11 @@
   {
     "key": ",",
     "command": "whichkey.triggerKey",
-    "when": "whichkeyVisible"
+    "when": "whichkeyVisible && !editorTextFocus"
   },
   {
     "key": "tab",
     "command": "-whichkey.triggerKey",
     "when": "whichkeyVisible"
-  },
-  {
-    "key": ",",
-    "command": "whichkey.show",
-    "when": "!whichKeyVisible"
   }
 ]
