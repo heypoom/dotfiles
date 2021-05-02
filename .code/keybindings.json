@@ -69,5 +69,25 @@
     "command": "workbench.action.terminal.sendSequence",
     "args": {"text": "clear && ruby path_to_enlightenment.rb\n"},
     "when": "editorLangId == 'ruby'"
+  },
+  {
+    "key": "cmd+k",
+    "command": "editor.action.showHover",
+    "when": "editorTextFocus && !terminalFocus"
+  },
+  {
+    "key": "cmd+k cmd+i",
+    "command": "-editor.action.showHover",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "cmd+k",
+    "command": "editor.debug.action.showDebugHover",
+    "when": "editorTextFocus && inDebugMode && !terminalFocus"
+  },
+  {
+    "key": "cmd+k cmd+i",
+    "command": "-editor.debug.action.showDebugHover",
+    "when": "editorTextFocus && inDebugMode"
   }
 ]
