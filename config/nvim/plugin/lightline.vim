@@ -6,8 +6,7 @@ let g:lightline = {
 \     'left': [ [ 'mode', 'paste' ],
 \               [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
 \     'right': [ [ 'lineinfo' ],
-\                [ 'filetype' ] ],
-\   },
+\                [ 'filetype' ] ], \   },
 \   'component': {
 \     'lineinfo': ' %3l:%-2v',
 \   },

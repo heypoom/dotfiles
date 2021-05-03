@@ -13,6 +13,7 @@ source ~/.config/nvim/editor/editor-preferences.vim
 source ~/.config/nvim/plugin/plugin-settings.vim
 source ~/.config/nvim/plugin/lightline.vim
 source ~/.config/nvim/plugin/rnvimr.vim
+source ~/.config/nvim/plugin/fzf.vim
 
 " Load the plugins.
 source ~/.config/nvim/plugin/plugins.vim
@@ -25,6 +26,7 @@ endif
 " Load custom commands.
 source ~/.config/nvim/commands/lightline.vim
 source ~/.config/nvim/commands/coc.vim
+source ~/.config/nvim/commands/fzf.vim
 
 " Load the keymaps.
 source ~/.config/nvim/keymap/keymap.vim
