@@ -41,13 +41,18 @@ nnoremap <C-Q> :wq!<cr>
 " Escape with CTRL + C
 nnoremap <C-c> <esc>
 
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
 " Better tab auto-completion
 function OnTab()
   " Is emmet active?
   try
     return emmet#expandAbbrIntelligent("\<tab>")
   catch
-    return pumvisible() ? "\<C-n>" : "\<TAB>"
+    return pumvisible() ? "\<C-n>" : <SID>check_back_space() ? "\<TAB>" : coc#refresh()
   endtry
 endfunction
 
@@ -100,16 +105,14 @@ nnoremap <leader>l :Lines<cr>
 " space + h = open the files you have recently viewed
 nnoremap <leader>h :History<cr>
 
-" space + c = search through previously executed vim commands~!
-nnoremap <leader>c :History:<cr>
+" space + . + c = search through previously executed vim commands~!
+nnoremap <leader>.c :History:<cr>
 
 " space + b = switch between open buffers~
 nnoremap <leader>b :Buffers<cr>
 
 " space + r = open ranger file manager
 nnoremap <leader>r :Ranger<cr>
-
-"" Move
 
 " Use C-k and C-j to move text up and down
 " The control key conflicts with tmux seamless pane switch.

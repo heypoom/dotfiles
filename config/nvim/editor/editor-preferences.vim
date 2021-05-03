@@ -145,6 +145,9 @@ set magic
 " Use multiple of shiftwidth when indenting with < and >
 set shiftround
 
+" Merge signcolumn and number column
+set signcolumn=number
+
 " Automatically reload configuration when writing to init.vim.
 au! BufWritePost $MYVIMRC source %
 

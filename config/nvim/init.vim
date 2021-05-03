@@ -20,23 +20,21 @@ if !empty(glob("~/.local/share/nvim/plugged/dracula/colors/dracula.vim"))
   color dracula
 endif
 
-" Load lightline.vim settings.
+" Load plugin settings.
 source ~/.config/nvim/plugin/lightline.vim
+
+" Load custom commands.
+source ~/.config/nvim/commands/lightline.vim
+source ~/.config/nvim/commands/coc.vim
 
 " Load the keymaps.
 source ~/.config/nvim/keymap/keymap.vim
+source ~/.config/nvim/keymap/coc.vim
 
 " Load the color scheme for the integrated nvim terminal.
 source ~/.config/nvim/theme/colors.vim
 
-" Custom commands and useful functions
-source ~/.config/nvim/editor/functions.vim
-
 " Clear default background color
 highlight Normal guibg=none ctermbg=none
 " highlight NonText guibg=none ctermbg=none
-
-" Register custom syntaxes
-" au! Syntax todo source ~/.config/nvim/syntax/todo.vim
-" au BufNewFile,BufRead *.todo set filetype=todo
 
