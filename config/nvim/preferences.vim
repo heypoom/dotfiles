@@ -100,3 +100,6 @@ set shiftround
 
 " Reacts to the syntax of the code you are editing (e.g. C)
 set smartindent
+
+" Shorten the timeout duration to 500ms
+set timeoutlen=500

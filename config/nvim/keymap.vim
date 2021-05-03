@@ -1,8 +1,12 @@
 " Space becomes your <Leader> key!
 " It is much easier to push now, yay!
 let g:mapleader = "\<space>"
+let g:maplocalleader = ","
 
-" control + s = reload configuration
+" space = trigger vim-which-key
+nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
+
+" space + s = reload configuration
 nnoremap <leader>s :so $MYVIMRC<cr>
 
 " escape + escape = un-highlight search highlights.

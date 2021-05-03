@@ -145,11 +145,8 @@ Plug 'tpope/vim-endwise'
 " Auto Gofmt, :GoDoc, :GoRun, :GoLint, :GoTest, :GoDebugStart
 " Plug 'fatih/vim-go', {'for': 'go'}
 
-" Required by Org Mode
-Plug 'tpope/vim-speeddating'
-
-" Org Mode support for vim
-Plug 'jceb/vim-orgmode'
+" Whichkey Bindings
+Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 
 " Add file icons to other plugins (e.g. NERDTree, Airline)
 " Always load this as the very last one!
