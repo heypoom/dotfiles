@@ -40,5 +40,12 @@
   "suggest.enablePreview": true,
   "suggest.enablePreselect": true,
   "eslint.autoFixOnSave": true,
-  "snippets.ultisnips.directories": ["UltiSnips", "~/.config/nvim/snippets"]
+  "snippets.ultisnips.directories": ["UltiSnips", "~/.config/nvim/snippets"],
+  "explorer.width": 30,
+  "explorer.icon.enableNerdfont": true,
+  "explorer.previewAction.onHover": false,
+  "explorer.keyMappings.global": {
+    "<cr>": ["expandable?", "expand", "open"],
+    "v": "open:vsplit"
+  }
 }
