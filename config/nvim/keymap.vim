@@ -6,8 +6,8 @@ let g:maplocalleader = ","
 " space = trigger vim-which-key
 nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
 
-" space + s = reload configuration
-nnoremap <leader>s :so $MYVIMRC<cr>
+" space + . + r = reload configuration
+nnoremap <leader>.r :so $MYVIMRC<cr>
 
 " escape + escape = un-highlight search highlights.
 nnoremap <esc><esc> :nohlsearch<cr>
@@ -35,14 +35,11 @@ endfunction
 
 command! -nargs=* -bang Ripgrep call RipgrepFzf(<q-args>, <bang>0)
 
-" space + f = search files in current directory (like :FZF)
-nnoremap <leader>f :Files<cr>
+" space + t = search files in current directory (like :FZF)
+nnoremap <leader>t :Files<cr>
 
-" space + r = search through file with ripgrep
-nnoremap <leader>r :Ripgrep<cr>
-
-" space + s = search through file with ripgrep
-nnoremap <leader>s :Ripgrep<cr>
+" space + f = search through every file with ripgrep
+nnoremap <leader>f :Ripgrep<cr>
 
 " space + kb = view all keybindings.
 nnoremap <leader>kb :Maps<cr>
@@ -59,6 +56,9 @@ nnoremap <leader>c :History:<cr>
 " space + b = switch between open buffers~
 nnoremap <leader>b :Buffers<cr>
 
+" space + r = open ranger file manager
+nnoremap <leader>r :Ranger<cr>
+
 "" Move
 
 " Use C-k and C-j to move text up and down
@@ -72,11 +72,6 @@ let g:multi_cursor_next_key='<C-n>'
 let g:multi_cursor_prev_key='<C-p>'
 let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'    
-
-"" Ranger
-
-" space + control + r = open ranger file manager
-nnoremap <leader><C-r> :Ranger<cr>
 
 "" Tig
 
