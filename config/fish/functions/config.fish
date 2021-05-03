@@ -1,4 +1,4 @@
-# Defined in /var/folders/53/f2kch9hd5rxbkzjr4p9cg90w0000gn/T//fish.G1eiPU/config.fish @ line 2
+# Defined in /var/folders/53/f2kch9hd5rxbkzjr4p9cg90w0000gn/T//fish.xgyUQh/config.fish @ line 2
 function config
 	function config_edit_file
 		$EDITOR "$HOME/"$argv[1]
@@ -13,7 +13,8 @@ function config
 	end
 
 	function config_edit_cd
-		set confDir $argv[1] set confFile $argv[2]
+		set confDir $argv[1]
+		set confFile $argv[2]
 
 		pushd "$HOME/$confDir"
 		config_edit_file "$confDir"/"$confFile"
@@ -48,7 +49,7 @@ function config
 			yarn build &
 			popd
 		case nvim
-			config_edit_cd .config/nvim/plugin plugins.vim
+			config_edit_cd .config/nvim init.vim
 		case nvim-keymap
 			config_edit_cd .config/nvim/editor keymap.vim
 		case nvim-settings
