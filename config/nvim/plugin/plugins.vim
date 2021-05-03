@@ -68,10 +68,13 @@ Plug 'codeindulgence/vim-tig'
 Plug 'junegunn/goyo.vim', {'for': ['markdown', 'text']}
 
 " Easymotion: <leader><leader>s
-Plug 'easymotion/vim-easymotion'
+" Plug 'easymotion/vim-easymotion'
 
 " Sneak: s{char}{char}
 Plug 'justinmk/vim-sneak'
+
+" Quickscope: Highlight target character on f/F/t/T
+Plug 'unblevable/quick-scope'
 
 " Vue
 Plug 'posva/vim-vue', {'for': ['vue']}
