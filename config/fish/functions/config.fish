@@ -1,4 +1,4 @@
-# Defined in /var/folders/53/f2kch9hd5rxbkzjr4p9cg90w0000gn/T//fish.huVESv/config.fish @ line 2
+# Defined in /var/folders/53/f2kch9hd5rxbkzjr4p9cg90w0000gn/T//fish.G1eiPU/config.fish @ line 2
 function config
 	function config_edit_file
 		$EDITOR "$HOME/"$argv[1]
@@ -13,8 +13,7 @@ function config
 	end
 
 	function config_edit_cd
-		set confDir $argv[1]
-		set confFile $argv[2]
+		set confDir $argv[1] set confFile $argv[2]
 
 		pushd "$HOME/$confDir"
 		config_edit_file "$confDir"/"$confFile"
@@ -49,19 +48,19 @@ function config
 			yarn build &
 			popd
 		case nvim
-			config_edit_cd .config/nvim plugins.vim
+			config_edit_cd .config/nvim/plugin plugins.vim
 		case nvim-keymap
-			config_edit_cd .config/nvim keymap.vim
+			config_edit_cd .config/nvim/editor keymap.vim
 		case nvim-settings
-			config_edit_cd .config/nvim settings.vim
+			config_edit_cd .config/nvim/plugin plugin-settings.vim
 		case nvim-prefs
-			config_edit_cd .config/nvim preferences.vim
+			config_edit_cd .config/nvim/editor editor-preferences.vim
 		case nvim-plugins
-			config_edit_cd .config/nvim plugins.vim
+			config_edit_cd .config/nvim/plugin plugins.vim
 		case nvim-coc
 			config_edit_cd .config/nvim coc-settings.json
 		case nvim-colors
-			config_edit_cd .config/nvim colors.vim
+			config_edit_cd .config/nvim/theme colors.vim
 		case ranger
 			config_edit_cd .config/ranger rc.conf
 		case widgets
