@@ -4,7 +4,6 @@ if !exists('g:vscode')
 
 " Dracula Theme.
 Plug 'dracula/vim', { 'as': 'dracula' }
-
 " Use lightline to make startup time faster
 Plug 'itchyny/lightline.vim'
 
@@ -151,6 +150,9 @@ Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 " Add file icons to other plugins (e.g. NERDTree, Airline)
 " Always load this as the very last one!
 Plug 'ryanoasis/vim-devicons'
+
+" Interactive Scratchpad! Like Quokka.js, but for every language.
+Plug 'metakirby5/codi.vim'
 
 endif
 
