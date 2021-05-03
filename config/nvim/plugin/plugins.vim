@@ -155,6 +155,9 @@ Plug 'ryanoasis/vim-devicons'
 " Interactive Scratchpad! Like Quokka.js, but for every language.
 Plug 'metakirby5/codi.vim'
 
+" Colorizer
+Plug 'norcalli/nvim-colorizer.lua'
+
 endif
 
 call plug#end()

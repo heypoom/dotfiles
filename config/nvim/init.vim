@@ -36,6 +36,9 @@ source ~/.config/nvim/keymap/fzf.vim
 " Load the color scheme for the integrated nvim terminal.
 source ~/.config/nvim/theme/colors.vim
 
+" Load lua configurations
+luafile ~/.config/nvim/lua/plug-colorizer.lua
+
 " Clear default background color
 highlight Normal guibg=none ctermbg=none
 " highlight NonText guibg=none ctermbg=none
