@@ -22,8 +22,20 @@ hi! Normal ctermbg=NONE guibg=NONE
 " Set the shell to use in !command and nvim integrated terminal.
 set shell=/bin/sh
 
+" Enables syntax highlighting
+syntax enable
+
 " Enable GUI colors in terminal
 set termguicolors
+
+" Display long lines as one line.
+set nowrap
+
+" Use UTF-8 encoding in display.
+set encoding=utf-8
+
+" Use UTF-8 encoding in saved files.
+set fileencoding=utf-8
 
 " Line numbers are relative to your cursor.
 " Indicates the distance to use in hjkl{number}
@@ -78,7 +90,7 @@ set wildmode=full
 " Do not redraw while executing macros to improve performance.
 set lazyredraw
 
-" Hide the buffers instead of closing them.
+" If there are multiple buffers, hide the buffers instead of closing them.
 set hidden
 
 " Enable extended regular expressions.
@@ -103,3 +115,14 @@ set smartindent
 
 " Shorten the timeout duration to 500ms
 set timeoutlen=500
+
+" Makes popup smaller.
+set pumheight=10
+
+" Always show cursor position.
+set ruler
+
+" More space for displaying messages.
+set cmdheight=2
+
+" is

@@ -10,7 +10,7 @@ SETUVAR ZO_CMD:zo
 SETUVAR Z_CMD:z
 SETUVAR Z_DATA:/Users/phoomparin/\x2elocal/share/z/data
 SETUVAR Z_DATA_DIR:/Users/phoomparin/\x2elocal/share/z
-SETUVAR Z_EXCLUDE:/Users/phoomparin
+SETUVAR Z_EXCLUDE:\x5e/Users/phoomparin\x24
 SETUVAR __fish_initialized:3100
 SETUVAR _fish_abbr_binja:\x22/Applications/Binary\x20Ninja\x2eapp/Contents/MacOS/binaryninja\x22
 SETUVAR _fish_abbr_brewi:env\x20HOMEBREW_NO_AUTO_UPDATE\x3d1\x20brew\x20install
