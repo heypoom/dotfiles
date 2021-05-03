@@ -1,7 +1,5 @@
 " Keymappings for all Neovim actions!
-" Thanks to https://www.chrisatmachine.com/Neovim/02-vim-general-settings!
-
-" Space becomes your <Leader> key!
+" Thanks to https://www.chrisatmachine.com/Neovim/02-vim-general-settings!  Space becomes your <Leader> key!
 " It is much easier to push now, yay!
 let g:mapleader = "\<space>"
 let g:maplocalleader = ","
@@ -134,9 +132,9 @@ nnoremap <C-g> :Tig<Cr>
 "" NERDTree
 
 " space + nn = toggle nerdtree map <leader>nn :NERDTreeToggle<cr>
-" map <leader>t :NERDTreeToggle<cr>
+map <leader>nn :NERDTreeToggle<cr>
 
-" space + nn = open nerdtree from bookmark
+" space + nb = open nerdtree from bookmark
 map <leader>nb :NERDTreeFromBookmark<Space>
 
 " space + nf = find via nerdtree
