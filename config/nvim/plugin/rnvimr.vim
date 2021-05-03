@@ -13,15 +13,15 @@ let g:rnvimr_enable_picker = 1
 " Hide the files included in gitignore
 let g:rnvimr_hide_gitignore = 1
 
-" Fullscreen for initial layout
-" let g:rnvimr_layout = {
-"            \ 'relative': 'editor',
-"            \ 'width': &columns,
-"            \ 'height': &lines - 2,
-"            \ 'col': 0,
-"            \ 'row': 0,
-"            \ 'style': 'minimal'
-"            \ }
+" Initial Layout
+let g:rnvimr_layout = {
+            \ 'relative': 'editor',
+            \ 'width': float2nr(round(0.9 * &columns)),
+            \ 'height': float2nr(round(0.9 * &lines)),
+            \ 'col': float2nr(round(0.05 * &columns)),
+            \ 'row': float2nr(round(0.05 * &lines)),
+            \ 'style': 'minimal'
+            \ }
 
 " Make Neovim wipe the buffers corresponding to the files deleted by Ranger
 let g:rnvimr_enable_bw = 1
@@ -56,16 +56,16 @@ let g:rnvimr_action = {
 "             \ {'minwidth': 50, 'maxwidth': 89, 'ratio': [1,1]},
 "             \ {'maxwidth': 49, 'ratio': [1]}
 "             \ ]
-" 
+
 " " Customize the initial layout
 " let g:rnvimr_layout = {
-"             \ 'relative': 'editor',
-"             \ 'width': float2nr(round(0.7 * &columns)),
-"             \ 'height': float2nr(round(0.7 * &lines)),
-"             \ 'col': float2nr(round(0.15 * &columns)),
-"             \ 'row': float2nr(round(0.15 * &lines)),
-"             \ 'style': 'minimal'
-"             \ }
+"   \ 'relative': 'editor',
+"   \ 'width': float2nr(round(0.7 * &columns)),
+"   \ 'height': float2nr(round(0.7 * &lines)),
+"   \ 'col': float2nr(round(0.15 * &columns)),
+"   \ 'row': float2nr(round(0.15 * &lines)),
+"   \ 'style': 'minimal'
+"   \ }
 
 " " Customize multiple preset layouts
 " " '{}' represents the initial layout
