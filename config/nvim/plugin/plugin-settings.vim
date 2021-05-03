@@ -198,15 +198,6 @@ let g:vim_markdown_follow_anchor = 1
 " Enable Fenced Code Blocks
 let g:markdown_fenced_languages = ['css', 'javascript', 'typescript']
 
-"" Asynchronous Lint Engine (ALE) Settings
-
-" Extend default linters.
-let b:ale_linters = ['flake8', 'pylint']
-
-" Automatically apply fixers on save.
-let b:ale_fixers = ['eslint']
-let b:ale_fix_on_save = 1
-
 "" Close Tag
 
 let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.erb,*.jsx,*.js"
@@ -229,16 +220,15 @@ let g:NERDTreeIgnore = ['\.pyc$', '__pycache__']
 " Set the window width to 25 characters.
 let g:NERDTreeWinSize = 25
 
-" Set maximum lines for the colorizer plugin.
-" let g:colorizer_maxlines = 1000
-
-" Colorize the buffer of those filetypes.
-" autocmd BufEnter,BufLeave *.html,*.css,*.scss,*.sass,*.pug,*.vue,*.stylus :ColorHighlight!
-
-" Vim Sneak
+"" Vim Sneak
 let g:sneak#label = 1
 
 " Vim Wiki
 let g:vimwiki_list = [{'path': '~/Notes/Wiki/',
                       \ 'syntax': 'markdown', 'ext': '.md'}]
+" Rainbow Parenthesis
+let g:rainbow#max_level = 16
+let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
+
+autocmd FileType * RainbowParentheses
 

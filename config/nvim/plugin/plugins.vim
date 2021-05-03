@@ -90,7 +90,7 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'tomtom/tcomment_vim'
 
 " Adjust shiftwidth and expandtab based on current file.
-Plug 'tpope/vim-sleuth'
+" Plug 'tpope/vim-sleuth'
 
 " Syntax highlighter for styled-components and emotion.
 " Plug 'styled-components/vim-styled-components', { 'branch': 'main', 'for': ['jsx', 'typescript', 'typescriptreact', 'javascriptreact', 'javascript', 'typescript.tsx'] }
@@ -155,8 +155,12 @@ Plug 'ryanoasis/vim-devicons'
 " Interactive Scratchpad! Like Quokka.js, but for every language.
 Plug 'metakirby5/codi.vim'
 
-" Colorizer
+" Colorize color codes.
+" Call :ColorizerAttachToBuffer for files without extensions.
 Plug 'norcalli/nvim-colorizer.lua'
+
+" Rainbow Parenthesis!
+Plug 'junegunn/rainbow_parentheses.vim'
 
 endif
 
