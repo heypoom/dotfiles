@@ -12,6 +12,7 @@ source ~/.config/nvim/editor/editor-preferences.vim
 " Load the plugin settings.
 source ~/.config/nvim/plugin/plugin-settings.vim
 source ~/.config/nvim/plugin/lightline.vim
+source ~/.config/nvim/plugin/rnvimr.vim
 
 " Load the plugins.
 source ~/.config/nvim/plugin/plugins.vim
