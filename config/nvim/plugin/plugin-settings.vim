@@ -275,3 +275,38 @@ let g:signify_sign_show_text = 1
 " highlight SignifySignAdd                  ctermbg=green                guibg=#00ff00
 " highlight SignifySignDelete ctermfg=black ctermbg=red    guifg=#ffffff guibg=#ff0000
 " highlight SignifySignChange ctermfg=black ctermbg=yellow guifg=#000000 guibg=#ffff00
+
+""" Floaterm Configuration
+let g:floaterm_keymap_toggle = '<F1>'
+let g:floaterm_keymap_next = '<F2>'
+let g:floaterm_keymap_prev = '<F3>'
+let g:floaterm_keymap_new = '<F4>'
+
+let g:floaterm_gitcommit='floaterm'
+let g:floaterm_autoinsert=1
+let g:floaterm_width=0.8
+let g:floaterm_height=0.8
+let g:floaterm_wintitle=0
+let g:floaterm_autoclose=1
+
+""" Whichkey Configuration
+"" References: https://github.com/liuchengxu/vim-which-key
+
+" Define a separator
+let g:which_key_sep = '→'
+
+" Not a fan of floating windows for this
+let g:which_key_use_floating_win = 0
+
+" Change the colors if you want
+highlight default link WhichKey          Operator
+highlight default link WhichKeySeperator DiffAdded
+highlight default link WhichKeyGroup     Identifier
+highlight default link WhichKeyDesc      Function
+
+" Hide status line
+autocmd! FileType which_key
+
+autocmd  FileType which_key set laststatus=0 noshowmode noruler
+  \| autocmd BufLeave <buffer> set laststatus=2 noshowmode ruler
+

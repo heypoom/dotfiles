@@ -15,7 +15,6 @@ source ~/.config/nvim/plugin/lightline.vim
 source ~/.config/nvim/plugin/rnvimr.vim
 source ~/.config/nvim/plugin/fzf.vim
 source ~/.config/nvim/plugin/start-screen.vim
-source ~/.config/nvim/plugin/which-key.vim
 
 " Load the plugins.
 source ~/.config/nvim/plugin/plugins.vim
@@ -34,6 +33,7 @@ source ~/.config/nvim/commands/fzf.vim
 source ~/.config/nvim/keymap/keymap.vim
 source ~/.config/nvim/keymap/coc.vim
 source ~/.config/nvim/keymap/fzf.vim
+source ~/.config/nvim/keymap/which-key.vim
 
 " Load the color scheme for the integrated nvim terminal.
 source ~/.config/nvim/theme/colors.vim

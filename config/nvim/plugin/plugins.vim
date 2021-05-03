@@ -171,6 +171,9 @@ Plug 'junegunn/rainbow_parentheses.vim'
 " Start Screen
 Plug 'mhinz/vim-startify'
 
+" Floaterm
+Plug 'voldikss/vim-floaterm'
+
 endif
 
 call plug#end()
