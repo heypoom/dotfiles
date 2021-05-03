@@ -14,6 +14,7 @@ source ~/.config/nvim/plugin/plugin-settings.vim
 source ~/.config/nvim/plugin/lightline.vim
 source ~/.config/nvim/plugin/rnvimr.vim
 source ~/.config/nvim/plugin/fzf.vim
+source ~/.config/nvim/plugin/start-screen.vim
 
 " Load the plugins.
 source ~/.config/nvim/plugin/plugins.vim

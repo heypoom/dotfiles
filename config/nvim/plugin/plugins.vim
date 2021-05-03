@@ -162,6 +162,9 @@ Plug 'norcalli/nvim-colorizer.lua'
 " Rainbow Parenthesis!
 Plug 'junegunn/rainbow_parentheses.vim'
 
+" Start Screen
+Plug 'mhinz/vim-startify'
+
 endif
 
 call plug#end()
