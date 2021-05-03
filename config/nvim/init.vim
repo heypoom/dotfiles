@@ -29,6 +29,7 @@ source ~/.config/nvim/commands/coc.vim
 " Load the keymaps.
 source ~/.config/nvim/keymap/keymap.vim
 source ~/.config/nvim/keymap/coc.vim
+source ~/.config/nvim/keymap/fzf.vim
 
 " Load the color scheme for the integrated nvim terminal.
 source ~/.config/nvim/theme/colors.vim
