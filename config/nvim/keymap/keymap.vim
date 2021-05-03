@@ -24,6 +24,46 @@ nnoremap <leader>wj :resize -2<cr>
 nnoremap <leader>wk :resize +2<cr>
 nnoremap <leader>wl :vertical resize +2<cr>
 
+" Capitalize words with CTRL + U
+inoremap <C-u> <esc>viwUI
+nnoremap <C-u> viwU<esc>
+
+" Tab to move to next buffer, SHIFT + Tab to go back.
+nnoremap <TAB> :bnext<cr>
+nnoremap <S-TAB> :bprevious<cr>
+
+" Save with CTRL + S
+nnoremap <C-s> :w<cr>
+
+" Quit with CTRL + Q
+nnoremap <C-Q> :wq!<cr>
+
+" Escape with CTRL + C
+nnoremap <C-c> <esc>
+
+" Better tab auto-completion
+function OnTab()
+  " Is emmet active?
+  try
+    return emmet#expandAbbrIntelligent("\<tab>")
+  catch
+    return pumvisible() ? "\<C-n>" : "\<TAB>"
+  endtry
+endfunction
+
+" Tab to expand emmet and auto-complete.
+imap <expr><TAB> OnTab()
+
+" Better tab!
+vnoremap < <gv
+vnoremap > >ge
+
+" Better window navigation.
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
 " Enable going up and down on wrapped lines.
 " This makes navigating long lines (e.g. minified code) much easier.
 " Read more: http://tilvim.com/2013/05/16/visual-lines.html
@@ -112,25 +152,15 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 "" Goyo distraction-free writing
 
-" space + g = toggle distraction-free writing mode
 function ActivateGoyo()
   if exists(":Goyo")
     execute 'Goyo'
   endif
 endfunction
 
-nnoremap <leader>g :call ActivateGoyo() <cr>
-nnoremap <leader>m :call VimuxInterruptRunner() <bar> :call VimuxRunCommand("make") <cr>
+" Space + g to toggle distraction-free writing mode
+" nnoremap <leader>g :call ActivateGoyo() <cr>
 
-" Logic to handle when tabs get pressed.
-function OnTab()
-  " Is emmet active?
-  try
-    return emmet#expandAbbrIntelligent("\<tab>")
-  catch
-    return "\<tab>"
-  endtry
-endfunction
+" Space + m to call make in tmux.
+" nnoremap <leader>m :call VimuxInterruptRunner() <bar> :call VimuxRunCommand("make") <cr>
 
-" tab = expand emmet abbreviation
-imap <expr><tab> OnTab()

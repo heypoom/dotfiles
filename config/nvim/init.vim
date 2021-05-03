@@ -3,6 +3,9 @@
 
 " Don't forget to `pip3 install neovim` and `gem install neovim`
 
+" Load the paths.
+source ~/.config/nvim/editor/paths.vim
+
 " Load the neovim preferences.
 source ~/.config/nvim/editor/editor-preferences.vim
 

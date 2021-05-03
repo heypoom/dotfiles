@@ -3,17 +3,6 @@
 " Enable the use of bold fonts in dracula.
 let g:enable_bold_font = 1
 
-" Disable python host checks
-let g:python_host_skip_check = 1
-let g:python_host_prog = '$HOME/.asdf/installs/python/2.7.18/bin/python'
-
-let g:python3_host_skip_check = 1
-let g:python3_host_prog = '$HOME/.asdf/installs/python/3.8.2/bin/python3'
-
-let g:ruby_host_skip_check = 1
-let g:ruby_path = '$HOME/.asdf/installs/ruby/2.7.1/bin'
-let g:ruby_host_prog = '$HOME/.gem/bin/neovim-ruby-host'
-
 " Disable Netrw
 let g:loaded_netrwPlugin = 1
 let g:netrw_banner = 0
