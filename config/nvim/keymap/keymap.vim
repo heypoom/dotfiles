@@ -5,7 +5,8 @@ let g:mapleader = "\<space>"
 let g:maplocalleader = ","
 
 " space = trigger vim-which-key
-nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
+nnoremap <silent> <leader> :silent WhichKey '<Space>'<CR>
+vnoremap <silent> <leader> :silent <c-u> :silent WhichKeyVisual '<Space>'<CR>
 
 " space + . + r = reload configuration
 nnoremap <leader>.r :so $MYVIMRC<cr>
@@ -77,7 +78,7 @@ nnoremap gk k
 
 " space + r = open ranger file manager
 nnoremap <leader>r :RnvimrToggle<cr>
-nnoremap <leader>rr :RnvimrResize<cr>
+nnoremap <leader>.rr :RnvimrResize<cr>
 
 " Use C-k and C-j to move text up and down
 " The control key conflicts with tmux seamless pane switch.
