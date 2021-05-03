@@ -1,3 +1,6 @@
+" Reference: https://github.com/mhinz/vim-startify
+" Thanks to https://www.chrisatmachine.com/Neovim/11-startify!
+
 let g:startify_session_dir = '~/.config/nvim/sessions'
 
 let g:startify_session_autoload = 1
