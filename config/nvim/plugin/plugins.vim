@@ -76,9 +76,6 @@ Plug 'justinmk/vim-sneak'
 " Vue
 Plug 'posva/vim-vue', {'for': ['vue']}
 
-" Git Gutter (Show git diffs in left gutter)
-" Plug 'airblade/vim-gitgutter'
-
 " Adds the ending pair for (parens), {braces} and 'quotes'
 " Features: https://github.com/jiangmiao/auto-pairs
 Plug 'jiangmiao/auto-pairs'
@@ -99,10 +96,16 @@ Plug 'tomtom/tcomment_vim'
 Plug 'benmills/vimux'
 
 " Restore FocusGained and FocusLost events in tmux
-Plug 'tmux-plugins/vim-tmux-focus-events'
+" Plug 'tmux-plugins/vim-tmux-focus-events'
 
 " Git wrapper (:Gcommit, :Gstatus, :Gblame)
 Plug 'tpope/vim-fugitive'
+
+" Git integrations.
+" Reference: https://www.chrisatmachine.com/Neovim/12-git-integration
+Plug 'mhinz/vim-signify'
+Plug 'tpope/vim-rhubarb'
+Plug 'junegunn/gv.vim'
 
 " Syntax highlighting and more for nginx.conf files
 Plug 'chr4/nginx.vim', {'for': ['nginx', 'conf']}
@@ -168,3 +171,4 @@ Plug 'mhinz/vim-startify'
 endif
 
 call plug#end()
+

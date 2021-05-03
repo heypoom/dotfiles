@@ -118,6 +118,12 @@ let g:UltiSnipsJumpForwardTrigger="<c-b>"
 " control + z = jump backward
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
+"" Signify: Jump though hunks
+nmap <leader>gj <plug>(signify-next-hunk)
+nmap <leader>gk <plug>(signify-prev-hunk)
+nmap <leader>gJ 9999<leader>gJ
+nmap <leader>gK 9999<leader>gk
+
 "" Goyo distraction-free writing
 
 function ActivateGoyo()
