@@ -21,7 +21,7 @@ endif
 source ~/.config/nvim/plugin/lightline.vim
 
 " Load the keymaps.
-source ~/.config/nvim/editor/keymap.vim
+source ~/.config/nvim/keymap/keymap.vim
 
 " Load the color scheme for the integrated nvim terminal.
 source ~/.config/nvim/theme/colors.vim

@@ -1,3 +1,6 @@
+" Keymappings for all Neovim actions!
+" Thanks to https://www.chrisatmachine.com/Neovim/02-vim-general-settings!
+
 " Space becomes your <Leader> key!
 " It is much easier to push now, yay!
 let g:mapleader = "\<space>"
@@ -15,7 +18,14 @@ nnoremap <esc><esc> :nohlsearch<cr>
 " Y = yank line
 nnoremap Y y$
 
-" Enable going up and down on wrapped lines.  This makes navigating long lines (e.g. minified code) much easier.
+" Resize windows.
+nnoremap <leader>wh :vertical resize -2<cr>
+nnoremap <leader>wj :resize -2<cr>
+nnoremap <leader>wk :resize +2<cr>
+nnoremap <leader>wl :vertical resize +2<cr>
+
+" Enable going up and down on wrapped lines.
+" This makes navigating long lines (e.g. minified code) much easier.
 " Read more: http://tilvim.com/2013/05/16/visual-lines.html
 nnoremap <expr> j v:count ? 'j' : 'gj'
 nnoremap <expr> k v:count ? 'k' : 'gk'
@@ -80,8 +90,7 @@ nnoremap <C-g> :Tig<Cr>
 
 "" NERDTree
 
-" space + nn = toggle nerdtree
-map <leader>nn :NERDTreeToggle<cr>
+" space + nn = toggle nerdtree map <leader>nn :NERDTreeToggle<cr>
 " map <leader>t :NERDTreeToggle<cr>
 
 " space + nn = open nerdtree from bookmark
