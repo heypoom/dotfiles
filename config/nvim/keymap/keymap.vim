@@ -110,7 +110,8 @@ nnoremap <leader>.c :History:<cr>
 nnoremap <leader>b :Buffers<cr>
 
 " space + r = open ranger file manager
-nnoremap <leader>r :Ranger<cr>
+nnoremap <leader>r :RnvimrToggle<cr>
+nnoremap <leader>rr :RnvimrResize<cr>
 
 " Use C-k and C-j to move text up and down
 " The control key conflicts with tmux seamless pane switch.

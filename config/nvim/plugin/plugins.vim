@@ -54,11 +54,9 @@ Plug 'alvan/vim-closetag', {'for': 'html'}
 " Enable +AnsiEsc
 Plug 'powerman/vim-plugin-AnsiEsc'
 
-" Ranger Integration (:Ranger)
-Plug 'francoiscabrol/ranger.vim'
-
-" Required by Ranger
-Plug 'rbgrouleff/bclose.vim'
+" Ranger Integration
+" Must install ranger-fm with pip3 instead of homebrew. Needs pynvim too.
+Plug 'kevinhwang91/rnvimr'
 
 " Tig Integration (:Tig)
 Plug 'codeindulgence/vim-tig'
