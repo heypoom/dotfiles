@@ -120,7 +120,6 @@ brew "postgresql", restart_service: true
 brew "procs"
 brew "pulumi"
 brew "radare2"
-brew "ranger"
 brew "redis"
 brew "ripgrep"
 brew "rlwrap"

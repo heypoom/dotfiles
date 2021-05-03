@@ -2,9 +2,11 @@
   "suggest.echodocSupport": true,
   "suggest.maxCompleteItemCount": 20,
   "suggest.autoTrigger": "always",
+  "pyright.enable": true,
   "python.formatting.provider": "black",
   "python.linting.enabled": true,
   "python.linting.pylintEnabled": true,
+  "python.analysis.autoImportCompletions": true,
   "coc.preferences.formatOnSaveFiletypes": [
     "css",
     "graphql",
