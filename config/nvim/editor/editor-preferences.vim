@@ -4,8 +4,8 @@
 let g:enable_bold_font = 1
 
 " Disable Netrw
-let g:loaded_netrwPlugin = 1
-let g:netrw_banner = 0
+" let g:loaded_netrwPlugin = 0
+" let g:netrw_banner = 0
 
 " Make the editor background transparent.
 hi! Normal ctermbg=NONE guibg=NONE
