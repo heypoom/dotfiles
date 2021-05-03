@@ -114,7 +114,7 @@ set formatoptions-=cro
 set clipboard=unnamedplus
 
 " Automatically change working directory. 
-set autochdir
+" set autochdir
 
 " Line numbers are relative to your cursor.
 " Indicates the distance to use in hjkl{number}

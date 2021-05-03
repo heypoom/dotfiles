@@ -21,6 +21,9 @@ Plug 'sheerun/vim-polyglot'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
+" Change working directory to project root.
+Plug 'airblade/vim-rooter'
+
 " Surround (cs'" to change surrounding '' to "")
 Plug 'tpope/vim-surround'
 
