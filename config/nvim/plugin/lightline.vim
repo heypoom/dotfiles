@@ -6,7 +6,8 @@ let g:lightline = {
 \     'left': [ [ 'mode', 'paste' ],
 \               [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
 \     'right': [ [ 'lineinfo' ],
-\                [ 'filetype' ] ], \   },
+\                [ 'filetype' ] ],
+\   },
 \   'component': {
 \     'lineinfo': ' %3l:%-2v',
 \   },
@@ -64,4 +65,3 @@ if exists('g:lightline') && exists('g:dracula')
 
   let g:lightline#colorscheme#dracula#palette = lightline#colorscheme#flatten(s:p)
 endif
-
