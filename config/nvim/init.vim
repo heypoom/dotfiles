@@ -11,6 +11,7 @@ source ~/.config/nvim/editor/editor-preferences.vim
 
 " Load the plugin settings.
 source ~/.config/nvim/plugin/plugin-settings.vim
+source ~/.config/nvim/plugin/lightline.vim
 
 " Load the plugins.
 source ~/.config/nvim/plugin/plugins.vim
@@ -19,9 +20,6 @@ source ~/.config/nvim/plugin/plugins.vim
 if !empty(glob("~/.local/share/nvim/plugged/dracula/colors/dracula.vim"))
   color dracula
 endif
-
-" Load plugin settings.
-source ~/.config/nvim/plugin/lightline.vim
 
 " Load custom commands.
 source ~/.config/nvim/commands/lightline.vim

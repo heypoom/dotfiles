@@ -10,11 +10,16 @@ let g:netrw_banner = 0
 " Make the editor background transparent.
 hi! Normal ctermbg=NONE guibg=NONE
 
-" Set the shell to use in !command and nvim integrated terminal.
-set shell=/bin/sh
+" Enable 256 colors in non-gui mode.
+if !has('gui_running')
+  set t_Co=256
+endif
 
 " Enables syntax highlighting
 syntax enable
+
+" Set the shell to use in !command and nvim integrated terminal.
+set shell=/bin/sh
 
 " Enable GUI colors in terminal
 set termguicolors
@@ -74,7 +79,7 @@ set smartindent
 set autoindent
 
 " Always display the last status line.
-set laststatus=0
+set laststatus=2
 
 " Enable line numbers.
 set number

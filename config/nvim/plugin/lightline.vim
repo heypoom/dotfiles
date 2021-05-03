@@ -65,3 +65,4 @@ if exists('g:lightline') && exists('g:dracula')
 
   let g:lightline#colorscheme#dracula#palette = lightline#colorscheme#flatten(s:p)
 endif
+
