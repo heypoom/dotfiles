@@ -40,22 +40,22 @@ nnoremap <C-Q> :wq!<cr>
 " Escape with CTRL + C
 nnoremap <C-c> <esc>
 
-" function! s:check_back_space() abort
-"   let col = col('.') - 1
-"   return !col || getline('.')[col - 1]  =~# '\s'
-" endfunction
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
 
 " Better tab auto-completion
-" function OnTab()
-"   " Is emmet active?  try return emmet#expandAbbrIntelligent("\<tab>")
-"   catch
-"     " <SID>check_back_space() ? "\<TAB>" : coc#refresh()
-"     return pumvisible() ? "\<C-n>" : "\<TAB>"
-"   endtry
-" endfunction
-" 
-" " Tab to expand emmet and auto-complete.
-" imap <expr><TAB> OnTab()
+function OnTab()
+  try
+    return emmet#expandAbbrIntelligent("\<tab>")
+  catch
+    return pumvisible() ? "\<C-n>" : <SID>check_back_space() ? "\<TAB>" : coc#refresh()
+  endtry
+endfunction
+
+" Tab to expand emmet and auto-complete.
+imap <expr><TAB> OnTab()
 
 " Better tab!
 vnoremap < <gv
