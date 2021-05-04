@@ -1,7 +1,7 @@
-" Thanks to https://github.com/raviqqe/begin-with-init.vim :)
-" Also, thanks to https://www.chrisatmachine.com/Neovim! <3
+" Huge thanks to https://www.chrisatmachine.com/Neovim and https://github.com/raviqqe/begin-with-init.vim <3
+" YouTube Playlist Reference: https://www.youtube.com/playlist?list=PLhoH5vyxr6QqPtKMp03pcJd_Vg8FZ0rtg
 
-" Don't forget to `pip3 install neovim` and `gem install neovim`
+" Dependencies: Don't forget to `pip3 install neovim` and `gem install neovim` and `yarn global add neovim`
 
 " Load the paths.
 source ~/.config/nvim/editor/paths.vim
