@@ -219,10 +219,6 @@ let g:sneak#s_next = 1
 map gS <Plug>Sneak_,
 map gs <Plug>Sneak_;
 
-" Change the colors
-highlight Sneak guifg=black guibg=#00C7DF ctermfg=black ctermbg=cyan
-highlight SneakScope guifg=red guibg=yellow ctermfg=red ctermbg=yellow
-
 " Cool prompts
 let g:sneak#prompt = '🔎'
 
@@ -230,9 +226,6 @@ let g:sneak#prompt = '🔎'
 
 " Trigger a highlight in the appropriate direction when pressing these keys:
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
-
-highlight QuickScopePrimary guifg='#00C7DF' gui=underline ctermfg=155 cterm=underline
-highlight QuickScopeSecondary guifg='#afff5f' gui=underline ctermfg=81 cterm=underline
 
 let g:qs_max_chars=150
 
@@ -271,11 +264,6 @@ let g:signify_sign_change            = '~'
 let g:signify_sign_show_count = 0
 let g:signify_sign_show_text = 1
 
-" If you like colors instead
-" highlight SignifySignAdd                  ctermbg=green                guibg=#00ff00
-" highlight SignifySignDelete ctermfg=black ctermbg=red    guifg=#ffffff guibg=#ff0000
-" highlight SignifySignChange ctermfg=black ctermbg=yellow guifg=#000000 guibg=#ffff00
-
 """ Floaterm Configuration
 let g:floaterm_keymap_toggle = '<F1>'
 let g:floaterm_keymap_next = '<F2>'
@@ -298,15 +286,16 @@ let g:which_key_sep = '→'
 " Not a fan of floating windows for this
 let g:which_key_use_floating_win = 0
 
-" Change the colors if you want
-highlight default link WhichKey          Operator
-highlight default link WhichKeySeperator DiffAdded
-highlight default link WhichKeyGroup     Identifier
-highlight default link WhichKeyDesc      Function
-
 " Hide status line
 autocmd! FileType which_key
 
 autocmd  FileType which_key set laststatus=0 noshowmode noruler
   \| autocmd BufLeave <buffer> set laststatus=2 noshowmode ruler
+
+"" Codi configuration
+let g:codi#virtual_text_prefix = "❯ "
+
+let g:codi#aliases = {
+  \ 'javascript.jsx': 'javascriptreact',
+  \ }
 
