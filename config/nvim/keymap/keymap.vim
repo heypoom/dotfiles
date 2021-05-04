@@ -1,4 +1,4 @@
-" Keymappings for all Neovim actions!
+" Keymappings for all Neovi> actions!
 " Thanks to https://www.chrisatmachine.com/Neovim/02-vim-general-settings!  Space becomes your <Leader> key!
 " It is much easier to push now, yay!
 let g:mapleader = "\<space>"
@@ -40,23 +40,22 @@ nnoremap <C-Q> :wq!<cr>
 " Escape with CTRL + C
 nnoremap <C-c> <esc>
 
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
+" function! s:check_back_space() abort
+"   let col = col('.') - 1
+"   return !col || getline('.')[col - 1]  =~# '\s'
+" endfunction
 
 " Better tab auto-completion
-function OnTab()
-  " Is emmet active?
-  try
-    return emmet#expandAbbrIntelligent("\<tab>")
-  catch
-    return pumvisible() ? "\<C-n>" : <SID>check_back_space() ? "\<TAB>" : coc#refresh()
-  endtry
-endfunction
-
-" Tab to expand emmet and auto-complete.
-imap <expr><TAB> OnTab()
+" function OnTab()
+"   " Is emmet active?  try return emmet#expandAbbrIntelligent("\<tab>")
+"   catch
+"     " <SID>check_back_space() ? "\<TAB>" : coc#refresh()
+"     return pumvisible() ? "\<C-n>" : "\<TAB>"
+"   endtry
+" endfunction
+" 
+" " Tab to expand emmet and auto-complete.
+" imap <expr><TAB> OnTab()
 
 " Better tab!
 vnoremap < <gv
@@ -127,11 +126,11 @@ nmap <leader>gK 9999<leader>gk
 
 "" Goyo distraction-free writing
 
-function ActivateGoyo()
-  if exists(":Goyo")
-    execute 'Goyo'
-  endif
-endfunction
+" function ActivateGoyo()
+"   if exists(":Goyo")
+"     execute 'Goyo'
+"   endif
+" endfunction
 
 " Space + g to toggle distraction-free writing mode
 " nnoremap <leader>g :call ActivateGoyo() <cr>
