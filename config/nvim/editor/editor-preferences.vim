@@ -151,7 +151,7 @@ set magic
 set shiftround
 
 " Merge signcolumn and number column
-set signcolumn=number
+" set signcolumn=number
 
 " Automatically reload configuration when writing to init.vim.
 au! BufWritePost $MYVIMRC source %

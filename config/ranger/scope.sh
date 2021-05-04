@@ -295,23 +295,13 @@ handle_mime() {
             if [[ "$( stat --printf='%s' -- "${FILE_PATH}" )" -gt "${HIGHLIGHT_SIZE_MAX}" ]]; then
                 exit 2
             fi
-            if [[ "$( tput colors )" -ge 256 ]]; then
-                local pygmentize_format='terminal256'
-                local highlight_format='xterm256'
-            else
-                local pygmentize_format='terminal'
-                local highlight_format='ansi'
-            fi
 
-            # env HIGHLIGHT_OPTIONS="${HIGHLIGHT_OPTIONS}" highlight \
-            #     --out-format="${highlight_format}" \
-            #     --force -- "${FILE_PATH}" && exit 5
+            ## In rnvimr (Ranger in Neovim), the term is xterm-256color.
+            ## It can't display Dracula correctly, so use ansi instead.
+            THEME=$([ "$TERM" == "xterm-256color" ] && echo "ansi" || echo "Dracula")
+            # echo "$TERM -> $THEME"
 
-            env COLORTERM=8bit bat --color=always --style="plain" \
-                -- "${FILE_PATH}" && exit 5
-
-            # pygmentize -f "${pygmentize_format}" -O "style=${PYGMENTIZE_STYLE}"\
-            #     -- "${FILE_PATH}" && exit 5
+            env COLORTERM=TRUECOLOR bat --color=always --theme="$THEME" --style="plain" -- "${FILE_PATH}" && exit 5
 
             exit 2;;
 
