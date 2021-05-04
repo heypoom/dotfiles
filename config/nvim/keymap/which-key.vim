@@ -7,13 +7,13 @@ let g:which_key_map['r'] = [':RnvimrToggle', 'Ranger']
 " c is for coc
 let g:which_key_map.c = {
       \ 'name' : '+coc' ,
-      \ 'c' : ['CocList commands', 'Commands'],
-      \ 'd' : ['CocList diagnostics', 'Diagnostics'],
-      \ 'e' : ['CocList extensions', 'Extensions'],
-      \ 'f' : ['CocList format-selected', 'Format Selected'],
-      \ 'o' : ['CocList outline', 'Outline'],
-      \ 'p' : ['CocListResume', 'Open List'],
-      \ 's' : ['CocList -I symbols', 'Symbols'],
+      \ 'c' : [':CocList commands', 'Commands'],
+      \ 'd' : [':CocList diagnostics', 'Diagnostics'],
+      \ 'e' : [':CocList extensions', 'Extensions'],
+      \ 'f' : [':CocList format-selected', 'Format Selected'],
+      \ 'o' : [':CocList outline', 'Outline'],
+      \ 'p' : [':CocListResume', 'Open List'],
+      \ 's' : [':CocList -I symbols', 'Symbols'],
       \ }
 
 let g:which_key_map.m = {
