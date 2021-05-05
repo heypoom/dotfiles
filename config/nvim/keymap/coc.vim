@@ -43,6 +43,9 @@ nmap <leader>as <Plug>(coc-codeaction-selected)
 nmap <leader>ac <Plug>(coc-codeaction)
 nmap <leader>qf <Plug>(coc-fix-current)
 
+" CoC Explorer
+nnoremap <leader>e :CocCommand explorer<cr>
+
 " Enter to auto-select the first completion item.
 " inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
