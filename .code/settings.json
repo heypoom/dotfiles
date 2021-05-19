@@ -53,7 +53,6 @@
   "debug.console.wordWrap": true,
   "workbench.sideBar.location": "left",
   "javascript.implicitProjectConfig.experimentalDecorators": true,
-  "javascript.referencesCodeLens.enabled": true,
   "emmet.showExpandedAbbreviation": "always",
   "emmet.showSuggestionsAsSnippets": true,
   "emmet.syntaxProfiles": {
@@ -97,7 +96,7 @@
   },
   "yaml.schemas": {
     "https://raw.githubusercontent.com/kaitai-io/ksy_schema/master/ksy_schema.json": "*.ksy",
-    "file:///home/ubuntu/.vscode-server/extensions/atlassian.atlascode-2.8.6/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+    "file:///Users/phoomparin/.vscode/extensions/atlassian.atlascode-2.8.6/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
   },
   "explorer.confirmDragAndDrop": false,
   "javascript.updateImportsOnFileMove.enabled": "never",
@@ -178,7 +177,7 @@
   "crystal-ide.backend": "custom",
   "crystal-ide.customCommand": "/usr/local/bin/scry",
   "git.autofetch": true,
-  "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/opt/neovim/bin/nvim",
+  "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/bin/nvim",
   "workbench.colorTheme": "Dracula",
   "python.showStartPage": false,
   "kite.showWelcomeNotificationOnStartup": false,
@@ -236,5 +235,11 @@
   },
   "elixirLS.dialyzerEnabled": true,
   "elixirLS.signatureAfterComplete": true,
-  "wallaby.codeLensFeature.runTest": true
+  "wallaby.codeLensFeature.runTest": true,
+  "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
+  "vscode-neovim.neovimExecutablePaths.win32": "/usr/bin/nvim",
+  "vscode-neovim.neovimInitVimPaths.darwin": "$HOME/.config/nvim/init.vim",
+  "vscode-neovim.neovimInitVimPaths.linux": "$HOME/.config/nvim/init.vim",
+  "vscode-neovim.neovimInitVimPaths.win32": "$HOME/.config/nvim/init.vim",
+  "editor.linkedEditing": true
 }

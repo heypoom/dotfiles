@@ -198,15 +198,6 @@ let g:vim_markdown_follow_anchor = 1
 " Enable Fenced Code Blocks
 let g:markdown_fenced_languages = ['css', 'javascript', 'typescript']
 
-"" Asynchronous Lint Engine (ALE) Settings
-
-" Extend default linters.
-let b:ale_linters = ['flake8', 'pylint']
-
-" Automatically apply fixers on save.
-let b:ale_fixers = ['eslint']
-let b:ale_fix_on_save = 1
-
 "" Close Tag
 
 let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.erb,*.jsx,*.js"
@@ -214,6 +205,29 @@ let g:closetag_xhtml_filenames = '*.xhtml,*.jsx,*.erb,*.js'
 let g:closetag_emptyTags_caseSensitive = 1
 let g:closetag_shortcut = '>'
 let g:closetag_close_shortcut = '<leader>>'
+
+"" Vim Sneak
+let g:sneak#label = 1
+
+" case insensitive sneak
+let g:sneak#use_ic_scs = 1
+
+" immediately move to the next instance of search, if you move the cursor sneak is back to default behavior
+let g:sneak#s_next = 1
+
+" remap so I can use , and ; with f and t
+map gS <Plug>Sneak_,
+map gs <Plug>Sneak_;
+
+" Cool prompts
+let g:sneak#prompt = '🔎'
+
+"" Quickscope
+
+" Trigger a highlight in the appropriate direction when pressing these keys:
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+
+let g:qs_max_chars=150
 
 "" NERDTree
 
@@ -229,16 +243,59 @@ let g:NERDTreeIgnore = ['\.pyc$', '__pycache__']
 " Set the window width to 25 characters.
 let g:NERDTreeWinSize = 25
 
-" Set maximum lines for the colorizer plugin.
-" let g:colorizer_maxlines = 1000
-
-" Colorize the buffer of those filetypes.
-" autocmd BufEnter,BufLeave *.html,*.css,*.scss,*.sass,*.pug,*.vue,*.stylus :ColorHighlight!
-
-" Vim Sneak
-let g:sneak#label = 1
-
 " Vim Wiki
 let g:vimwiki_list = [{'path': '~/Notes/Wiki/',
                       \ 'syntax': 'markdown', 'ext': '.md'}]
+" Rainbow Parenthesis
+let g:rainbow#max_level = 16
+let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
+
+autocmd FileType * RainbowParentheses
+
+""" Signify
+
+"" Change these if you want
+let g:signify_sign_add               = '+'
+let g:signify_sign_delete            = '_'
+let g:signify_sign_delete_first_line = '‾'
+let g:signify_sign_change            = '~'
+
+" I find the numbers disctracting
+let g:signify_sign_show_count = 0
+let g:signify_sign_show_text = 1
+
+""" Floaterm Configuration
+let g:floaterm_keymap_toggle = '<F1>'
+let g:floaterm_keymap_next = '<F2>'
+let g:floaterm_keymap_prev = '<F3>'
+let g:floaterm_keymap_new = '<F4>'
+
+let g:floaterm_gitcommit='floaterm'
+let g:floaterm_autoinsert=1
+let g:floaterm_width=0.8
+let g:floaterm_height=0.8
+let g:floaterm_wintitle=0
+let g:floaterm_autoclose=1
+
+""" Whichkey Configuration
+"" References: https://github.com/liuchengxu/vim-which-key
+
+" Define a separator
+let g:which_key_sep = '→'
+
+" Not a fan of floating windows for this
+let g:which_key_use_floating_win = 0
+
+" Hide status line
+autocmd! FileType which_key
+
+autocmd  FileType which_key set laststatus=0 noshowmode noruler
+  \| autocmd BufLeave <buffer> set laststatus=2 noshowmode ruler
+
+"" Codi configuration
+let g:codi#virtual_text_prefix = "❯ "
+
+let g:codi#aliases = {
+  \ 'javascript.jsx': 'javascriptreact',
+  \ }
 

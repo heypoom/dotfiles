@@ -1,5 +1,6 @@
 # Compilation flags
 set -gx ARCHFLAGS '-arch x86_64'
+
 # Always use en_US and UTF-8 for everything.
 set -gx LC_ALL en_US.UTF-8
 set -gx LC_CTYPE en_US.UTF-8
@@ -61,11 +62,15 @@ set -gx JAVA8_HOME "$HOME/.asdf/installs/java/oracle-8.141"
 # set -gx SDKROOT "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk"
 set -gx SDKROOT "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk"
 
+# Set macOS deployment target to 10.15
 set -gx MACOSX_DEPLOYMENT_TARGET 10.15
 
 # Set wasmer directory
 set -gx WASMER_DIR "$HOME/.wasmer"
 set -gx WASMER_CACHE_DIR "$WASMER_DIR/cache"
+
+# Prevent ranger from loading default configuration.
+set -gx RANGER_LOAD_DEFAULT_RC FALSE
 
 # Add GNU manuals to the MANPATH
 set -gx MANPATH \
