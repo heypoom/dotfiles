@@ -1,14 +1,17 @@
 #!/usr/bin/env bash
 
-echo "🍰 installing additional dependencies..."
+echo "🍰 Installing additional dependencies..."
 
-# Install Node.js LTS (Node 14)
-echo "ℹ️ installing node.js"
-curl -sL https://deb.nodesource.com/setup_14.x | sudo bash -
+# Install Node.js for the LTS version.
+echo "🍰 Installing Node.js"
+curl -sL https://deb.nodesource.com/setup_lts.x | sudo bash -
 
 # Install Yarn
-echo "ℹ️ installing yarn"
+echo "🍰 Installing Yarn"
 curl -o- -L https://yarnpkg.com/install.sh | bash
+
+# Install Global Node Packages
+echo "🍰 Installing Global Node.js Packages"
 
 # Install diff-so-fancy via yarn (needed for git diff views)
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
