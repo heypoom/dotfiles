@@ -1,6 +1,4 @@
 #!/usr/bin/env sh
 
-./install
-
-true
+./install && exit 0
 
