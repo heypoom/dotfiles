@@ -10,9 +10,14 @@ function install-from-package-list() {
 
 cd "$(dirname "$0")"
 
-# Update and Upgrade Packages
-sudo apt update -y
-sudo apt upgrade -y
+if [[ ! $DOCKERIZED ]]
+then
+  echo "📦 In non-dockerized mode, upgrading system packages."
+
+  # Update and Upgrade Packages
+  sudo apt update -y
+  sudo apt upgrade -y
+fi
 
 # Install packages with apt-get
 install-from-package-list "essentials"
