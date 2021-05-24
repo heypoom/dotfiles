@@ -14,6 +14,14 @@ curl -o- -L https://yarnpkg.com/install.sh | bash
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 yarn global add diff-so-fancy
 
+# Install essential linux dependencies when CODESPACES_MODE is true
+if [[ $CODESPACES_MODE ]]
+then
+  echo "🍰 Codespaces mode detected. Installing essential linux dependencies."
+
+  ./deps/install.sh
+fi
+
 # if ! command -v brew &> /dev/null
 # then
 #   echo "🌟 Installing Linuxbrew (Homebrew for Linux)..."
