@@ -14,8 +14,9 @@ curl -o- -L https://yarnpkg.com/install.sh | bash
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 yarn global add diff-so-fancy
 
-# Install essential linux dependencies when CODESPACES_MODE is true
-if [[ $CODESPACES_MODE ]]
+# Install essential linux dependencies when CODESPACES_MODE is true.
+# Do not run when in dockerized container, since that repeats the cached dependency setup.
+if [[ $CODESPACES_MODE && ! $DOCKERIZED ]]
 then
   echo "🍰 Codespaces mode detected. Installing essential linux dependencies."
 
