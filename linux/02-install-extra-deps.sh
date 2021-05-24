@@ -2,17 +2,13 @@
 
 echo "🍰 installing additional dependencies..."
 
-# Install Node.js
+# Install Node.js LTS (Node 14)
 echo "ℹ️ installing node.js"
-curl -sL https://deb.nodesource.com/setup_12.x | sudo bash -
+curl -sL https://deb.nodesource.com/setup_14.x | sudo bash -
 
 # Install Yarn
 echo "ℹ️ installing yarn"
 curl -o- -L https://yarnpkg.com/install.sh | bash
-
-# Install sharkdp/bat
-echo "ℹ️ installing sharkdp/bat" wget https://github.com/sharkdp/bat/releases/download/v0.15.4/bat_0.15.4_amd64.deb &> /dev/null
-sudo dpkg -i bat_0.15.4_amd64.deb
 
 # Install diff-so-fancy via yarn (needed for git diff views)
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"

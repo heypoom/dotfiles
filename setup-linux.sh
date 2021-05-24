@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 # Run linux setup scripts
 
+export DEBIAN_FRONTEND="noninteractive"
+
 if [ `uname` = Darwin ]
 then
   echo "⚠️ Detecting macOS. Skipping linux configuration."
