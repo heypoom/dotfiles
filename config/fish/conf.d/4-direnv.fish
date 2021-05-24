@@ -1,3 +1,8 @@
-function __direnv_export_eval --on-event fish_postexec;
-	"/usr/local/bin/direnv" export fish | source;
+set -x DIRENV_BIN (which -a direnv)
+
+if test -e $DIRENV_BIN
+	function __direnv_export_eval --on-event fish_postexec;
+		"$DIRENV_BIN" export fish | source;
+	end
 end
+

@@ -41,6 +41,9 @@ bat
 exa
 fzf
 
+# Fish Shell Dependencies
+direnv
+
 # Log Navigator
 lnav
 less
