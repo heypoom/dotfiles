@@ -5,11 +5,12 @@ FROM ubuntu:groovy
 ENV DOCKERIZED true
 ARG DEBIAN_FRONTEND=noninteractive
 
-# Configure timezones
-RUN ln -snf /usr/share/zoneinfo/Asia/Bangkok /etc/localtime && echo "Asia/Bangkok" > /etc/timezone
-
-# Install dependencies for dotbot
-RUN apt-get update -y && apt-get upgrade -yq && apt-get install sudo git python3 -y
+# Configure timezones & Install dependencies for dotbot
+RUN ln -snf /usr/share/zoneinfo/Asia/Bangkok /etc/localtime \
+  && echo "Asia/Bangkok" > /etc/timezone \
+  && apt-get update -yq \
+  && apt-get upgrade -yq \
+  && apt-get install sudo git python3 -yq
 
 # Install dependencies
 COPY ./linux/deps /tmp/deps
