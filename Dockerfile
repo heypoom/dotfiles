@@ -15,7 +15,7 @@ RUN ln -snf /usr/share/zoneinfo/Asia/Bangkok /etc/localtime \
 # Install dependencies
 COPY ./linux/deps /tmp/deps
 
-# Run dotbot installation scripts, which triggers setup.sh
+# Install essential linux dependencies.
 RUN /tmp/deps/install.sh
 
 # Adds a new user to the sudo group
@@ -31,6 +31,9 @@ WORKDIR /home/phoomparin/dotfiles
 # Copy dotfiles config to ~/dotfiles
 COPY . .
 RUN sudo chown -R phoomparin .
+
+# Run dotbot installation script
+RUN ./install
 
 # Start fish shell
 WORKDIR /home/phoomparin

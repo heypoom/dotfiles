@@ -1,4 +1,3 @@
-# bat
 # tokei
 # fpp
 # cheat
@@ -38,7 +37,7 @@ bash
 fish
 
 # Essential Utilities
-
+bat
 exa
 fzf
 
