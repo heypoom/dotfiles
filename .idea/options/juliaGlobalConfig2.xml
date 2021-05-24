@@ -1,7 +1,0 @@
-<application>
-  <component name="JuliaGlobalSettings2">
-    <option name="allJuliaExePath" value="/Applications/Julia-1.1.app/Contents/Resources/julia/bin/julia" />
-    <option name="intellijThemeCssText" value="code{&#10;    color: #B03776&#10;}" />
-    <option name="markdownCssText" value="code{&#10;    color: #FF79C6&#10;}" />
-  </component>
-</application>

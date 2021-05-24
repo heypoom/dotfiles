@@ -1,5 +1,0 @@
-<templateSet group="erlang">
-  <template name="B" value="begin&#10;    $SELECTION$&#10;end" description="surround with begin...end" toReformat="false" toShortenFQNames="true">
-    <context />
-  </template>
-</templateSet>
