@@ -2,11 +2,10 @@
     link:
       relink: true
 
-- clean: ['~']
+- clean: ["~"]
 
 - link:
     ~/.Brewfile: Brewfile
-    ~/.inputrc: .inputrc
     ~/.iex.exs: .iex.exs
     ~/.tmux.conf: .tmux.conf
     ~/.dhexrc: .dhexrc
@@ -24,7 +23,7 @@
     ~/.weechat: .weechat
     ~/.hammerspoon:
       path: hammerspoon
-      if: '[ `uname` = Darwin ]'
+      if: "[ `uname` = Darwin ]"
     ~/scripts: scripts
     ~/.dotfiles: .
     ~/.config/:
@@ -38,7 +37,7 @@
       create: true
     ~/Library/Application Support/Code/User:
       path: .code
-      if: '[ `uname` = Darwin ]'
+      if: "[ `uname` = Darwin ]"
     #     ~/Library/Application Support/JetBrains/IntelliJIdea2020.1:
     #       path: .idea
     #       if: '[ `uname` = Darwin ]'
