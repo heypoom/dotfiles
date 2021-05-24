@@ -11,8 +11,7 @@ echo "ℹ️ installing yarn"
 curl -o- -L https://yarnpkg.com/install.sh | bash
 
 # Install sharkdp/bat
-echo "ℹ️ installing sharkdp/bat"
-wget https://github.com/sharkdp/bat/releases/download/v0.15.4/bat_0.15.4_amd64.deb &> /dev/null
+echo "ℹ️ installing sharkdp/bat" wget https://github.com/sharkdp/bat/releases/download/v0.15.4/bat_0.15.4_amd64.deb &> /dev/null
 sudo dpkg -i bat_0.15.4_amd64.deb
 
 # Install diff-so-fancy via yarn (needed for git diff views)
