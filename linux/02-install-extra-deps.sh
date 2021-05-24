@@ -1,17 +1,17 @@
 #!/usr/bin/env bash
 
-echo "🍰 Installing additional dependencies..."
+echo "🍰 installing additional dependencies..."
 
 # Install Node.js for the LTS version.
-echo "🍰 Installing Node.js"
+echo "🍰 installing node"
 curl -sL https://deb.nodesource.com/setup_lts.x | sudo bash -
 
 # Install Yarn
-echo "🍰 Installing Yarn"
+echo "🍰 installing yarn"
 curl -o- -L https://yarnpkg.com/install.sh | bash
 
 # Install Global Node Packages
-echo "🍰 Installing Global Node.js Packages"
+echo "🍰 installing global node packages"
 
 # Install diff-so-fancy via yarn (needed for git diff views)
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
@@ -21,7 +21,7 @@ yarn global add diff-so-fancy
 # Do not run when in dockerized container, since that repeats the cached dependency setup.
 if [[ $CODESPACES_MODE && ! $DOCKERIZED ]]
 then
-  echo "🍰 Codespaces mode detected. Installing essential linux dependencies."
+  echo "🍰 codespaces mode detected in non-dockerized environment. installing linux dependencies in userland."
 
   ./deps/install.sh
 fi
@@ -34,3 +34,4 @@ fi
 # else
 #   echo "👍 Linuxbrew is already installed."
 # fi
+
