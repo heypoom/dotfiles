@@ -9,7 +9,7 @@ then
   exit 0
 fi
 
-echo "🍰 configuring linux installation..."
+echo "🍰 Configuring linux installation..."
 
 linux_scripts="$(\ls linux/*.sh)"
 
@@ -20,3 +20,4 @@ done
 
 # automatically setup common CLI environment with scripts.
 ./setup-common.sh
+
