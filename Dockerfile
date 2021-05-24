@@ -1,7 +1,8 @@
-FROM debian:bullseye-slim
+# Use Ubuntu LTS
+FROM ubuntu:groovy
 
-# Install dependencies for dotbo
-RUN apt-get update && apt-get install sudo git python3 -y
+# Install dependencies for dotbot
+RUN apt-get update -y && apt-get upgrade -y && apt-get install sudo git python3 -y
 
 # Install dependencies
 COPY ./linux/deps /tmp/deps
