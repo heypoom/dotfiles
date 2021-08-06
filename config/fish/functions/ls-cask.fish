@@ -1,4 +1,4 @@
-# Defined in /var/folders/jm/l3mwrkrx7yq8nhxyg1btdzkm0000gn/T//fish.H6V6Gd/ls-cask.fish @ line 2
+# Defined in /var/folders/53/f2kch9hd5rxbkzjr4p9cg90w0000gn/T//fish.MmZNqy/ls-cask.fish @ line 2
 function ls-cask
-	brew cask list --versions | fzf
+	brew list --cask --versions | fzf
 end

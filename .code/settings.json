@@ -6,14 +6,32 @@
   "editor.fontFamily": "'JetBrains Mono', 'FiraCode Nerd Font', 'Sukhumvit Set Text', monospace",
   "editor.fontSize": 20,
   "editor.tabSize": 2,
+  "editor.detectIndentation": false,
+  "editor.comments.insertSpace": true,
   "editor.useTabStops": true,
   "editor.fontLigatures": true,
   "editor.multiCursorModifier": "alt",
-  "editor.lineNumbers": "relative",
-  "terminal.integrated.shell.osx": "/usr/local/bin/fish",
-  "terminal.integrated.shellArgs.osx": ["--login"],
-  "terminal.integrated.shell.linux": "/usr/local/bin/fish",
-  "terminal.integrated.shellArgs.linux": ["--login"],
+  "editor.lineNumbers": "on",
+  "terminal.integrated.profiles.osx": {
+    "fish": {
+      "path": "/usr/local/bin/fish",
+      "args": ["-l"]
+    },
+    "tmux": {
+      "path": "tmux",
+      "icon": "terminal-tmux"
+    }
+  },
+  "terminal.integrated.profiles.linux": {
+    "fish": {
+      "path": "/usr/bin/fish",
+      "args": ["-l"]
+    },
+    "tmux": {
+      "path": "tmux",
+      "icon": "terminal-tmux"
+    }
+  },
   "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
   "terminal.integrated.fontSize": 15,
   "vim.enableNeovim": false,
@@ -95,9 +113,9 @@
     ".sassrc": "jsonc"
   },
   "yaml.schemas": {
-    "https://raw.githubusercontent.com/kaitai-io/ksy_schema/master/ksy_schema.json": "*.ksy",
-    "file:///home/ubuntu/.vscode-server/extensions/atlassian.atlascode-2.8.6/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
-  },
+		"https://raw.githubusercontent.com/kaitai-io/ksy_schema/master/ksy_schema.json": "*.ksy",
+		"file:///Users/phoomparin/.vscode/extensions/atlassian.atlascode-2.9.1/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+	},
   "explorer.confirmDragAndDrop": false,
   "javascript.updateImportsOnFileMove.enabled": "never",
   "vim.normalModeKeyBindings": [],
@@ -163,12 +181,6 @@
   },
   "python.languageServer": "Pylance",
   "workbench.statusBar.visible": true,
-  "tailwindCSS.emmetCompletions": true,
-  "tailwindCSS.includeLanguages": {
-    "scss": "css",
-    "typescript": "javascript",
-    "typescriptreact": "javascript"
-  },
   "typescript.validate.enable": true,
   "javascript.validate.enable": true,
   "[json]": {
@@ -203,12 +215,9 @@
   },
   "calva.keybindingsEnabled": true,
   "workbench.editor.revealIfOpen": true,
-  "workbench.editorAssociations": [
-    {
-      "viewType": "jupyter.notebook.ipynb",
-      "filenamePattern": "*.ipynb"
-    }
-  ],
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter.notebook.ipynb"
+  },
   "atlascode.jira.lastCreateSiteAndProject": {
     "siteId": "",
     "projectKey": ""
@@ -243,5 +252,30 @@
   "vscode-neovim.neovimInitVimPaths.win32": "$HOME/.config/nvim/init.vim",
   "editor.linkedEditing": true,
   "workbench.editor.untitled.hint": "hidden",
-  "redhat.telemetry.enabled": false
+  "redhat.telemetry.enabled": false,
+  "editor.cursorStyle": "line",
+  "editor.insertSpaces": false,
+  "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
+  "editor.wordWrap": "off",
+  "editor.inlineSuggest.enabled": true,
+  "scss.validate": false,
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "editor.autoClosingQuotes": "always",
+  "tailwindCSS.experimental.classRegex": [
+    "tw`([^`]*)", // tw`...`
+    "tw=\"([^\"]*)", // <div tw="..." />
+    "tw={\"([^\"}]*)", // <div tw={"..."} />
+    "tw\\.\\w+`([^`]*)", // tw.xxx`...`
+    "tw\\(.*?\\)`([^`]*)" // tw(Component)`...`
+  ],
+  "tailwindCSS.includeLanguages": {
+    "scss": "css",
+    "typescript": "javascript",
+    "typescriptreact": "javascript"
+  },
+  "tailwindCSS.emmetCompletions": false,
+  "tailwindCSS.validate": true,
+  "tailwindCSS.colorDecorators": true
 }
