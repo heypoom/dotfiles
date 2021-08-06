@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 echo "🍰 installing additional dependencies..."
-
 # Install Node.js for the LTS version.
 echo "🍰 installing node"
 curl -sL https://deb.nodesource.com/setup_lts.x | sudo bash -
