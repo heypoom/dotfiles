@@ -113,9 +113,9 @@
     ".sassrc": "jsonc"
   },
   "yaml.schemas": {
-		"https://raw.githubusercontent.com/kaitai-io/ksy_schema/master/ksy_schema.json": "*.ksy",
-		"file:///Users/phoomparin/.vscode/extensions/atlassian.atlascode-2.9.1/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
-	},
+    "https://raw.githubusercontent.com/kaitai-io/ksy_schema/master/ksy_schema.json": "*.ksy",
+    "file:///Users/phoomparin/.vscode/extensions/atlassian.atlascode-2.9.1/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+  },
   "explorer.confirmDragAndDrop": false,
   "javascript.updateImportsOnFileMove.enabled": "never",
   "vim.normalModeKeyBindings": [],
@@ -277,5 +277,12 @@
   },
   "tailwindCSS.emmetCompletions": false,
   "tailwindCSS.validate": true,
-  "tailwindCSS.colorDecorators": true
+  "tailwindCSS.colorDecorators": true,
+  "github.copilot.enable": {
+    "*": true,
+    "yaml": true,
+    "plaintext": true,
+    "markdown": true
+  },
+  "window.zoomLevel": 1
 }
