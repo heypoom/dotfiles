@@ -284,5 +284,6 @@
     "plaintext": true,
     "markdown": true
 	},
-	"security.workspace.trust.untrustedFiles": "open"
+	"security.workspace.trust.untrustedFiles": "open",
+	"window.zoomLevel": 1
 }
