@@ -66,6 +66,9 @@ brew "gist"
 # File Watcher
 brew "entr"
 
+# Coder CLI (for workspace)
+brew install cdr/coder/coder-cli
+
 # Cheatsheet
 brew "cheat"
 brew "tealdeer"
