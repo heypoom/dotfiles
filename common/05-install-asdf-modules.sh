@@ -22,7 +22,7 @@ fi
 
 echo "🍰 installing asdf modules..."
 
-asdf install
+# asdf install
 
 echo "✅ asdf modules are installed!"
 

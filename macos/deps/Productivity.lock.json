@@ -2,34 +2,40 @@
   "entries": {
     "tap": {
       "koekeishiya/formulae": {
-        "revision": "6e7c17ca3c5f03cfb92c808f9b80bffb4904334b"
+        "revision": "14013bd892497b9aa9f67ddab993d1fc61691fb9"
       }
     },
     "brew": {
-      "koekeishiya/formulae/skhd": null,
-      "koekeishiya/formulae/yabai": null
+      "koekeishiya/formulae/skhd": {
+        "version": "0.3.5",
+        "bottle": false
+      },
+      "koekeishiya/formulae/yabai": {
+        "version": "3.3.10",
+        "bottle": false
+      }
     },
     "cask": {
       "alfred": {
-        "version": "4.0.9_1144",
+        "version": "4.5.1,1256",
         "options": {
           "full_name": "alfred"
         }
       },
       "keyboard-maestro": {
-        "version": "9.0.5",
+        "version": "9.2",
         "options": {
           "full_name": "keyboard-maestro"
         }
       },
       "karabiner-elements": {
-        "version": "12.10.0",
+        "version": "13.5.0",
         "options": {
           "full_name": "karabiner-elements"
         }
       },
       "contexts": {
-        "version": "3.7.1",
+        "version": "3.8.1,381",
         "options": {
           "full_name": "contexts"
         }
@@ -69,6 +75,14 @@
         "CLT": "11.5.0.0.1.1588476445",
         "Xcode": "11.5",
         "macOS": "10.15.5"
+      },
+      "big_sur": {
+        "HOMEBREW_VERSION": "3.2.9",
+        "HOMEBREW_PREFIX": "/usr/local",
+        "Homebrew/homebrew-core": "72cf7a9410c0d1aea0168c6eb3d5e45454fce1db",
+        "CLT": "12.5.1.0.1.1623191612",
+        "Xcode": "12.5",
+        "macOS": "11.5.2"
       }
     }
   }

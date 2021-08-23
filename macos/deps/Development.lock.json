@@ -1,0 +1,60 @@
+{
+  "entries": {
+    "cask": {
+      "charles": {
+        "version": "4.6.2",
+        "options": {
+          "full_name": "charles"
+        }
+      },
+      "dash": {
+        "version": "6.0.7,980",
+        "options": {
+          "full_name": "dash"
+        }
+      },
+      "docker": {
+        "version": "3.6.0,67351",
+        "options": {
+          "full_name": "docker"
+        }
+      },
+      "wireshark": {
+        "version": "3.4.7",
+        "options": {
+          "full_name": "wireshark"
+        }
+      },
+      "jetbrains-toolbox": {
+        "version": "1.21,1.21.9712",
+        "options": {
+          "full_name": "jetbrains-toolbox"
+        }
+      },
+      "visual-studio-code": {
+        "version": "1.59.1",
+        "options": {
+          "full_name": "visual-studio-code"
+        }
+      },
+      "insomnia": {
+        "version": "2021.4.1",
+        "options": {
+          "full_name": "insomnia"
+        }
+      }
+    }
+  },
+  "system": {
+    "macos": {
+      "big_sur": {
+        "HOMEBREW_VERSION": "3.2.9",
+        "HOMEBREW_PREFIX": "/usr/local",
+        "Homebrew/homebrew-core": "3bb7c38e63ee61291df17a672e6b7abd713a829a",
+        "CLT": "12.5.1.0.1.1623191612",
+        "Xcode": "12.5",
+        "macOS": "11.5.2"
+      }
+    }
+  }
+}

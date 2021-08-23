@@ -2,9 +2,5 @@ tap "homebrew/cask-fonts"
 
 # JetBrains Mono
 cask "font-jetbrains-mono"
-cask "font-jetbrainsmono-nerd-font"
-
-# Fira Code
-cask "font-fira-code-nerd-font"
-cask "font-fira-mono-nerd-font"
+cask "font-jetbrains-mono-nerd-font"
 

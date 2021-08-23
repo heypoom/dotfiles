@@ -1,4 +1,4 @@
 package fzf
-package https://github.com/jethrokuan/z
 package wd
+package z
 theme bobthefish

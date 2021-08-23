@@ -19,7 +19,6 @@ brew "neovim"
 
 # Terminal Multiplexer
 brew "tmux"
-brew "screen"
 
 # Shells
 brew "zsh"
@@ -59,7 +58,6 @@ brew "git-extras"
 brew "git-flow"
 brew "git-lfs"
 brew "tig"
-brew "hub"
 brew "gist"
 
 # File Watcher
@@ -80,4 +78,5 @@ brew "editorconfig"
 brew "emojify"
 brew "neofetch"
 brew "openssh"
+brew "gnupg"
 

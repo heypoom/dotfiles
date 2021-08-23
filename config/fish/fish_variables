@@ -8,9 +8,9 @@ SETUVAR FZF_PREVIEW_FILE_CMD:head\x20\x2dn\x2010
 SETUVAR FZF_TMUX_HEIGHT:40\x25
 SETUVAR ZO_CMD:zo
 SETUVAR Z_CMD:z
-SETUVAR Z_DATA:/Users/phoomparin/\x2elocal/share/z/data
-SETUVAR Z_DATA_DIR:/Users/phoomparin/\x2elocal/share/z
-SETUVAR Z_EXCLUDE:\x5e/Users/phoomparin\x24
+SETUVAR Z_DATA:/Users/poom/\x2elocal/share/z/data
+SETUVAR Z_DATA_DIR:/Users/poom/\x2elocal/share/z
+SETUVAR Z_EXCLUDE:\x5e/Users/poom\x24
 SETUVAR __fish_initialized:3100
 SETUVAR _fish_abbr_binja:\x22/Applications/Binary\x20Ninja\x2eapp/Contents/MacOS/binaryninja\x22
 SETUVAR _fish_abbr_brewi:env\x20HOMEBREW_NO_AUTO_UPDATE\x3d1\x20brew\x20install
@@ -77,7 +77,7 @@ SETUVAR _fish_abbr_ta:tmux\x20a\x20\x2dt
 SETUVAR _fish_abbr_things:things\x2esh
 SETUVAR _fish_abbr_tn:tmux\x20new
 SETUVAR _fish_abbr_tns:tmux\x20new\x20\x2ds
-SETUVAR _fish_abbr_tool_2D_versions:cat\x20/Users/phoomparin/\x2etool\x2dversions
+SETUVAR _fish_abbr_tool_2D_versions:cat\x20/Users/poom/\x2etool\x2dversions
 SETUVAR _fish_abbr_tree:exa\x20\x2d\x2dtree
 SETUVAR _fish_abbr_v:nvim
 SETUVAR _fish_abbr_vb:vimbat

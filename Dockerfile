@@ -19,22 +19,22 @@ COPY ./linux/deps /tmp/deps
 RUN /tmp/deps/install.sh
 
 # Adds a new user to the sudo group
-RUN useradd -ms /bin/bash phoomparin && \
-  usermod -a -G sudo phoomparin && \
+RUN useradd -ms /bin/bash poom && \
+  usermod -a -G sudo poom && \
   echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
 # Setup dotfiles directory
-USER phoomparin
+USER poom
 RUN mkdir -p $HOME/dotfiles
-WORKDIR /home/phoomparin/dotfiles
+WORKDIR /home/poom/dotfiles
 
 # Copy dotfiles config to ~/dotfiles
 COPY . .
-RUN sudo chown -R phoomparin .
+RUN sudo chown -R $USER .
 
 # Run dotbot installation script
 RUN ./install
 
 # Start fish shell
-WORKDIR /home/phoomparin
+WORKDIR /home/poom
 CMD fish

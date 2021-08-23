@@ -7,7 +7,7 @@ fi
 
 if [ ! -d "$HOME/.local/share/omf/" ]
 then
-	echo "🌟 Installing oh-my-fish..."
+  echo "🌟 Installing oh-my-fish..."
 
   mkdir -p "$HOME/.local/share"
 
@@ -18,7 +18,7 @@ then
   # Clean up oh-my-fish installation script
   rm -f omf.install.fish
 
-	echo "✅ oh-my-fish is installed!"
+  echo "✅ oh-my-fish is installed!"
 else
   echo "👍 oh-my-fish is already installed."
 fi

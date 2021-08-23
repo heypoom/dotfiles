@@ -7,9 +7,4 @@ cask "alfred"
 cask "keyboard-maestro"
 cask "karabiner-elements"
 cask "contexts"
-cask "hammerspoon"
-cask "phoenix"
-cask "ubersicht"
-
-cask "osxfuse"
 

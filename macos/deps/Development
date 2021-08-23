@@ -1,13 +1,9 @@
 cask "charles"
 cask "dash"
 cask "docker"
-cask "vimr"
 cask "wireshark"
 cask "jetbrains-toolbox"
 
 cask "visual-studio-code"
-cask "visual-studio-code-insiders"
-
-cask "postman"
 cask "insomnia"
 
