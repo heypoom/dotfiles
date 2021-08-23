@@ -102,7 +102,7 @@ set -g theme_powerline_fonts no
 set -g theme_nerd_fonts yes
 set -g theme_show_exit_status yes
 set -g theme_display_jobs_verbose yes
-set -g default_user poom
+set -g default_user $USER
 set -g theme_color_scheme terminal-dark
 set -g fish_prompt_pwd_dir_length 0
 set -g theme_project_dir_length 1
