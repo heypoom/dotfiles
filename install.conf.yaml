@@ -47,7 +47,7 @@
     - ~/Labs
     - ~/Projects
     - ~/Workspaces
-    - ~/Workspaces/BrikL
+    - ~/Workspaces/BRIKL
 
 - shell:
     - description: automatically setup the system environment.
