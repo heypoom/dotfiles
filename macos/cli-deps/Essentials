@@ -1,3 +1,6 @@
+# GitHub
+brew "gh"
+
 # CLI Dependencies
 brew "sqlite"
 brew "readline"
