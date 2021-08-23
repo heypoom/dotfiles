@@ -1,4 +1,4 @@
-nodejs 14.16.1
+nodejs lts
 ruby 3.0.0
 java openjdk-11.0.1
 python 3.8.2
