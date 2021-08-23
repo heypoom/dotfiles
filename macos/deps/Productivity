@@ -7,4 +7,5 @@ cask "alfred"
 cask "keyboard-maestro"
 cask "karabiner-elements"
 cask "contexts"
+cask "raycast"
 
