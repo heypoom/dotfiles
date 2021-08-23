@@ -13,6 +13,7 @@ cask "obsidian"
 cask "fantastical"
 cask "pdf-expert"
 cask "logitech-presentation"
+cask "little-snitch"
 cask "keybase"
 
 # Hide menu bar icons.

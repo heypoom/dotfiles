@@ -87,9 +87,20 @@ set -gx MANPAGER "nvim -c 'set ft=man' -"
 set -gx FZF_DEFAULT_COMMAND 'fd --type f --follow --hidden --exclude .git'
 set -gx FZF_CTRL_T_COMMAND $FZF_DEFAULT_COMMAND
 
+# Wasmer
+[ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"
+
+# SDK Home
+set -gx WASMTIME_HOME "$HOME/.wasmtime"
+set -gx VOLTA_HOME "$HOME/.volta"
+set -gx PNPM_HOME "$HOME/Library/pnpm"
+
 # Configure the environment variables.
 set -gx PATH \
   $WASMER_DIR/bin \
+  $PNPM_HOME \
+  $VOLTA_HOME/bin \
+  $WASMTIME_HOME/bin \
   $HOME/.config/yarn/global/node_modules/.bin \
   $HOME/.asdf/shims \
   $HOME/.asdf/bin \
