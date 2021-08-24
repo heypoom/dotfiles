@@ -1,5 +1,4 @@
 cask "charles"
-cask "dash"
 cask "docker"
 cask "wireshark"
 cask "jetbrains-toolbox"

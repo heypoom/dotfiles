@@ -190,7 +190,7 @@
   "crystal-ide.customCommand": "/usr/local/bin/scry",
   "git.autofetch": true,
   "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/bin/nvim",
-  "workbench.colorTheme": "Dracula",
+  "workbench.colorTheme": "Dracula Pro",
   "python.showStartPage": false,
   "kite.showWelcomeNotificationOnStartup": false,
   "git.enableSmartCommit": true,
@@ -284,6 +284,5 @@
     "plaintext": true,
     "markdown": true
 	},
-	"security.workspace.trust.untrustedFiles": "open",
-	"window.zoomLevel": 1
+	"security.workspace.trust.untrustedFiles": "open"
 }
