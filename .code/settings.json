@@ -65,7 +65,7 @@
   "debug.inlineValues": true,
   "debug.allowBreakpointsEverywhere": true,
   "debug.console.fontFamily": "JetBrains Mono",
-  "debug.console.fontSize": 24,
+  "debug.console.fontSize": 16,
   "debug.console.closeOnEnd": true,
   "debug.console.lineHeight": 36,
   "debug.console.wordWrap": true,
@@ -113,9 +113,9 @@
     ".sassrc": "jsonc"
   },
   "yaml.schemas": {
-		"https://raw.githubusercontent.com/kaitai-io/ksy_schema/master/ksy_schema.json": "*.ksy",
-		"file:///Users/phoomparin/.vscode/extensions/atlassian.atlascode-2.9.1/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
-	},
+    "https://raw.githubusercontent.com/kaitai-io/ksy_schema/master/ksy_schema.json": "*.ksy",
+    "file:///Users/phoomparin/.vscode/extensions/atlassian.atlascode-2.9.1/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+  },
   "explorer.confirmDragAndDrop": false,
   "javascript.updateImportsOnFileMove.enabled": "never",
   "vim.normalModeKeyBindings": [],
@@ -283,6 +283,6 @@
     "yaml": true,
     "plaintext": true,
     "markdown": true
-	},
-	"security.workspace.trust.untrustedFiles": "open"
+  },
+  "security.workspace.trust.untrustedFiles": "open"
 }
