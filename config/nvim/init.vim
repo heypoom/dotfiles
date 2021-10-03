@@ -39,7 +39,10 @@ source ~/.config/nvim/keymap/which-key.vim
 source ~/.config/nvim/theme/colors.vim
 
 " Load lua configurations
-luafile ~/.config/nvim/lua/plug-colorizer.lua
+" luafile ~/.config/nvim/lua/plug-colorizer.lua
+luafile ~/.config/nvim/lua/completion.lua
+luafile ~/.config/nvim/lua/typescript.lua
+luafile ~/.config/nvim/lua/treesitter.lua
 
 " Clear default background color
 highlight Normal guibg=none ctermbg=none

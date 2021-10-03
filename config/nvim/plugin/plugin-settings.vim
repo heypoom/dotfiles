@@ -10,8 +10,8 @@ let g:ranger_map_keys = 0
 
 " Prevent autopairs from registering control + h and control + r
 " TODO: Make this work!
-let g:AutoPairsMapCh = 0
-let g:AutoPairsMapCR = 0
+" let g:AutoPairsMapCh = 0
+" let g:AutoPairsMapCR = 0
 
 "" Better Whitespace
 
@@ -250,7 +250,7 @@ let g:vimwiki_list = [{'path': '~/Notes/Wiki/',
 let g:rainbow#max_level = 16
 let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
 
-autocmd FileType * RainbowParentheses
+" autocmd FileType * RainbowParentheses
 
 """ Signify
 

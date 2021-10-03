@@ -11,11 +11,19 @@ Plug 'itchyny/lightline.vim'
 " Move lines and selections.
 Plug 'matze/vim-move'
 
-" Conquer of Completion: Intellisense Engine
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Lua libraries for TypeScript configuration
+Plug 'nvim-lua/plenary.nvim'
+
+" LSP Configuration
+Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'jose-elias-alvarez/nvim-lsp-ts-utils'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/nvim-cmp'
 
 " Language Packs! (syntax highlighting, indentation, etc.)
-Plug 'sheerun/vim-polyglot'
+" Plug 'sheerun/vim-polyglot'
 
 " Fuzzy Finder
 " :Rg for ripgrep, :Ag for silver searcher
@@ -59,29 +67,29 @@ Plug 'preservim/nerdtree', {'on': 'NERDTreeToggle'}
 
 " Ranger Integration
 " Must install ranger-fm with pip3 instead of homebrew. Needs pynvim too.
-Plug 'kevinhwang91/rnvimr'
+" Plug 'kevinhwang91/rnvimr'
 
 " Tig Integration (:Tig)
 " Plug 'codeindulgence/vim-tig'
 
 " Distraction-free writing with :Goyo
-Plug 'junegunn/goyo.vim', {'for': ['markdown', 'text']}
+" Plug 'junegunn/goyo.vim', {'for': ['markdown', 'text']}
 
-" Easymotion: <leader><leader>s
+" Easymotion: <leader><leader>
 " Plug 'easymotion/vim-easymotion'
 
 " Sneak: s{char}{char}
 Plug 'justinmk/vim-sneak'
 
 " Quickscope: Highlight target character on f/F/t/T
-Plug 'unblevable/quick-scope'
+" Plug 'unblevable/quick-scope'
 
 " Vue
 " Plug 'posva/vim-vue', {'for': ['vue']}
 
 " Adds the ending pair for (parens), {braces} and 'quotes'
 " Features: https://github.com/jiangmiao/auto-pairs
-Plug 'jiangmiao/auto-pairs'
+" Plug 'jiangmiao/auto-pairs'
 
 " Highlight all trailing whitespaces. Prevent messy git diffs.
 Plug 'ntpeters/vim-better-whitespace'
@@ -103,9 +111,9 @@ Plug 'ntpeters/vim-better-whitespace'
 
 " Git integrations.
 " Reference: https://www.chrisatmachine.com/Neovim/12-git-integration
-Plug 'tpope/vim-fugitive'
-Plug 'mhinz/vim-signify'
-Plug 'junegunn/gv.vim'
+" Plug 'tpope/vim-fugitive'
+" Plug 'mhinz/vim-signify'
+" Plug 'junegunn/gv.vim'
 " Plug 'tpope/vim-rhubarb'
 
 " Syntax highlighting and more for nginx.conf files
@@ -147,30 +155,30 @@ Plug 'junegunn/gv.vim'
 
 " Go Language Support
 " Auto Gofmt, :GoDoc, :GoRun, :GoLint, :GoTest, :GoDebugStart
-Plug 'fatih/vim-go', {'for': 'go'}
+" Plug 'fatih/vim-go', {'for': 'go'}
 
 " Whichkey Bindings
-Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
+" Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 
 " Interactive Scratchpad! Like Quokka.js, but for every language.
-Plug 'metakirby5/codi.vim'
+" Plug 'metakirby5/codi.vim'
 
 " Colorize color codes.
 " Call :ColorizerAttachToBuffer for files without extensions.
-Plug 'norcalli/nvim-colorizer.lua'
+" Plug 'norcalli/nvim-colorizer.lua'
 
 " Rainbow Parenthesis!
-Plug 'junegunn/rainbow_parentheses.vim'
+" Plug 'junegunn/rainbow_parentheses.vim'
 
 " Start Screen
-Plug 'mhinz/vim-startify'
+" Plug 'mhinz/vim-startify'
 
 " Floaterm
-Plug 'voldikss/vim-floaterm'
+" Plug 'voldikss/vim-floaterm'
 
 " Add file icons to other plugins (e.g. NERDTree, Airline)
 " Always load this as the very last one!
-Plug 'ryanoasis/vim-devicons'
+" Plug 'ryanoasis/vim-devicons'
 
 endif
 

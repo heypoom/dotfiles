@@ -46,16 +46,16 @@ function! s:check_back_space() abort
 endfunction
 
 " Better tab auto-completion
-function OnTab()
-  try
-    return emmet#expandAbbrIntelligent("\<tab>")
-  catch
-    return pumvisible() ? "\<C-n>" : <SID>check_back_space() ? "\<TAB>" : coc#refresh()
-  endtry
-endfunction
+" function OnTab()
+"   try
+"     return emmet#expandAbbrIntelligent("\<tab>")
+"   catch
+"     return pumvisible() ? "\<C-n>" : <SID>check_back_space() ? "\<TAB>" : coc#refresh()
+"   endtry
+" endfunction
 
 " Tab to expand emmet and auto-complete.
-imap <expr><TAB> OnTab()
+" imap <expr><TAB> OnTab()
 
 " Better tab!
 vnoremap < <gv
