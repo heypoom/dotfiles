@@ -147,7 +147,7 @@ Plug 'junegunn/gv.vim'
 
 " Go Language Support
 " Auto Gofmt, :GoDoc, :GoRun, :GoLint, :GoTest, :GoDebugStart
-" Plug 'fatih/vim-go', {'for': 'go'}
+Plug 'fatih/vim-go', {'for': 'go'}
 
 " Whichkey Bindings
 Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
