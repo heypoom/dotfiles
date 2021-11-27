@@ -135,5 +135,15 @@
   {
     "key": "cmd+9",
     "command": "workbench.action.openEditorAtIndex9"
+  },
+  {
+    "key": "escape",
+    "command": "-quokka.clearValue",
+    "when": "editorTextFocus && quokka.isActiveEditorRunningQuokka && quokka.lineHasRemovableInlineValues && !findWidgetVisible && !inReferenceSearchEditor && !parameterHintsVisible && !quickFixWidgetVisible && !referenceSearchVisible && !renameInputVisible && !suggestWidgetVisible"
+  },
+  {
+    "key": "escape escape",
+    "command": "-quokka.clearFileValues",
+    "when": "editorTextFocus && quokka.fileHasRemovableInlineValues && quokka.isActiveEditorRunningQuokka && !editorHasSelection && !findWidgetVisible && !inReferenceSearchEditor && !parameterHintsVisible && !quickFixWidgetVisible && !quokka.lineHasRemovableInlineValues && !referenceSearchVisible && !renameInputVisible && !suggestWidgetVisible"
   }
 ]

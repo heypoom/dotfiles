@@ -222,7 +222,6 @@
     "siteId": "",
     "projectKey": ""
   },
-  "python.defaultInterpreterPath": "/Users/phoomparin/.asdf/shims/python",
   "elixirLS.enableTestLenses": true,
 
   "[elixir]": {
@@ -282,7 +281,9 @@
     "*": true,
     "yaml": true,
     "plaintext": true,
-    "markdown": true
+    "markdown": true,
+    "typescript": true
   },
-  "security.workspace.trust.untrustedFiles": "open"
+  "security.workspace.trust.untrustedFiles": "open",
+  "wallaby.node": "/Users/poom/.asdf/installs/nodejs/lts/bin/node"
 }
