@@ -244,6 +244,16 @@ lvim.plugins = {
       snap.register.command("live_grep", vimgrep {})
     end,
   },
+
+  -- Matchup (navigate to matching text, e.g. if-elseif-else-end)
+  {
+    "andymass/vim-matchup",
+    event = "CursorMoved",
+
+    config = function()
+      vim.g.matchup_matchparen_offscreen = { method = "popup" }
+    end,
+  },
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
