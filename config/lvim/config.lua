@@ -156,9 +156,10 @@ lvim.plugins = {
   {"metakirby5/codi.vim", cmd = "Codi"},
   {"tpope/vim-surround", keys = {"c", "d", "y"}},
   {"p00f/nvim-ts-rainbow"},
+  {"sindrets/diffview.nvim", event = "BufRead"},
 
   -- Alternative: Hop, Sneak, EasyMotion
-  {"ggandor/lightspeed.nvim", event = "BufRead"},
+  {"ggandor/lightspeed.nvim", event = "BufRead", keys = {"s"}},
 
   -- Minimap
   {
@@ -191,6 +192,7 @@ lvim.plugins = {
     "kevinhwang91/nvim-bqf",
     event = { "BufRead", "BufNew" },
     ft = "qf",
+
     config = function()
       require("bqf").setup({
         auto_enable = true,
@@ -219,6 +221,7 @@ lvim.plugins = {
   {
     "kevinhwang91/rnvimr",
     cmd = "RnvimrToggle",
+
     config = function()
       vim.g.rnvimr_draw_border = 1
       vim.g.rnvimr_pick_enable = 1
@@ -255,7 +258,17 @@ lvim.plugins = {
     end,
   },
 
-  {"sindrets/diffview.nvim", event = "BufRead"},
+  -- Git Blame
+  {
+    "f-person/git-blame.nvim",
+    event = "BufRead",
+    cmd = {"GitBlameEnable", "GitBlameToggle"},
+
+    config = function()
+      vim.cmd "highlight default link gitblame SpecialComment"
+      vim.g.gitblame_enabled = 0
+    end,
+  },
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
