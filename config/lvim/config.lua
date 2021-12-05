@@ -150,7 +150,8 @@ lvim.builtin.treesitter.highlight.enabled = true
 
 -- Additional Plugins
 lvim.plugins = {
-    {"dracula/vim"},
+  {"dracula/vim"},
+  {"pantharshit00/vim-prisma"}
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)

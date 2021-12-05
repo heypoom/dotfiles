@@ -79,10 +79,10 @@ SETUVAR _fish_abbr_tn:tmux\x20new
 SETUVAR _fish_abbr_tns:tmux\x20new\x20\x2ds
 SETUVAR _fish_abbr_tool_2D_versions:cat\x20/Users/poom/\x2etool\x2dversions
 SETUVAR _fish_abbr_tree:exa\x20\x2d\x2dtree
-SETUVAR _fish_abbr_v:nvim
+SETUVAR _fish_abbr_v:lvim
 SETUVAR _fish_abbr_vb:vimbat
-SETUVAR _fish_abbr_vi:nvim
-SETUVAR _fish_abbr_vim:nvim
+SETUVAR _fish_abbr_vi:lvim
+SETUVAR _fish_abbr_vim:lvim
 SETUVAR _fish_abbr_vimdiff:nvim\x20\x2dd
 SETUVAR _fish_abbr_where:which\x20\x2da
 SETUVAR _fish_abbr_wm:yabai\x20\x2dm
