@@ -153,9 +153,20 @@ lvim.builtin.treesitter.highlight.enabled = true
 lvim.plugins = {
   {"dracula/vim"},
   {"pantharshit00/vim-prisma", ft = {"prisma"}},
-  {"justinmk/vim-sneak"},
   {"metakirby5/codi.vim", cmd = "Codi"},
   {"tpope/vim-surround", keys = {"c", "d", "y"}},
+  {"p00f/nvim-ts-rainbow"},
+
+  {
+    "phaazon/hop.nvim",
+    event = "BufRead",
+    config = function()
+      require("hop").setup()
+
+      vim.api.nvim_set_keymap("n", "s", ":HopChar2<cr>", { silent = true })
+      vim.api.nvim_set_keymap("n", "S", ":HopWord<cr>", { silent = true })
+    end,
+  },
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
