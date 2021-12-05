@@ -155,6 +155,7 @@ lvim.plugins = {
   {"pantharshit00/vim-prisma"},
   {"justinmk/vim-sneak"},
   {"metakirby5/codi.vim", cmd = "Codi"},
+  {"tpope/vim-surround", keys = {"c", "d", "y"}},
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
