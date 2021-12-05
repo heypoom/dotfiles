@@ -160,6 +160,7 @@ lvim.plugins = {
   {"pantharshit00/vim-prisma", ft = {"prisma"}},
   {"metakirby5/codi.vim", cmd = "Codi"},
   {"tpope/vim-surround", keys = {"c", "d", "y"}},
+  {"tpope/vim-repeat", keys = {"."}},
   {"p00f/nvim-ts-rainbow"},
   {"sindrets/diffview.nvim", event = "BufRead"},
 
@@ -364,6 +365,15 @@ lvim.plugins = {
   {
     "folke/trouble.nvim",
     cmd = "TroubleToggle",
+  },
+
+  -- Autosave
+  {
+    "Pocco81/AutoSave.nvim",
+
+    config = function()
+      require("autosave").setup()
+    end,
   },
 }
 
