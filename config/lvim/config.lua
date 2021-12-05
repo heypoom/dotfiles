@@ -134,6 +134,7 @@ lvim.plugins = {
   {"tpope/vim-repeat", keys = {"."}},
   {"p00f/nvim-ts-rainbow"},
   {"sindrets/diffview.nvim", event = "BufRead"},
+  {"dstein64/vim-startuptime"},
 
   -- Alternative: Hop, Sneak, EasyMotion
   {"ggandor/lightspeed.nvim", event = "BufRead", keys = {"s"}},
