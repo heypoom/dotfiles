@@ -152,7 +152,7 @@ lvim.builtin.treesitter.highlight.enabled = true
 -- Additional Plugins
 lvim.plugins = {
   {"dracula/vim"},
-  {"pantharshit00/vim-prisma"},
+  {"pantharshit00/vim-prisma", ft = {"prisma"}},
   {"justinmk/vim-sneak"},
   {"metakirby5/codi.vim", cmd = "Codi"},
   {"tpope/vim-surround", keys = {"c", "d", "y"}},
