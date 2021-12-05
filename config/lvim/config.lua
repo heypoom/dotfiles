@@ -130,7 +130,7 @@ lvim.plugins = {
   {"metakirby5/codi.vim", cmd = "Codi"},
   {"tpope/vim-surround", keys = {"c", "d", "y"}},
   {"tpope/vim-repeat", keys = {"."}},
-  {"p00f/nvim-ts-rainbow"},
+  -- {"p00f/nvim-ts-rainbow"},
   {"sindrets/diffview.nvim", event = "BufRead"},
   {"dstein64/vim-startuptime"},
 
