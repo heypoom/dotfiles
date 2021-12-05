@@ -3,6 +3,9 @@ credentials
 config/ranger/__pycache__
 config/nvim/sessions
 
+# Should be fetched each time.
+common/install-lunarvim.sh
+
 # Created by https://www.gitignore.io/api/macos,node,intellij Edit at https://www.gitignore.io/?templates=macos,node,intellij
 
 .idea
