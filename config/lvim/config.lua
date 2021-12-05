@@ -254,6 +254,8 @@ lvim.plugins = {
       vim.g.matchup_matchparen_offscreen = { method = "popup" }
     end,
   },
+
+  {"sindrets/diffview.nvim", event = "BufRead"},
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
