@@ -289,5 +289,7 @@
 	"terminal.integrated.env.osx": {
 		"FIG_NEW_SESSION": "1"
 	},
-	"editor.accessibilitySupport": "off"
+	"editor.accessibilitySupport": "off",
+	"vscode-edge-devtools.mirrorEdits": true,
+	"window.zoomLevel": 1
 }
