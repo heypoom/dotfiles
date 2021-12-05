@@ -6,6 +6,7 @@ filled in as strings with either
 a global executable or a path to
 an executable
 ]]
+
 -- THESE ARE EXAMPLE CONFIGS FEEL FREE TO CHANGE TO WHATEVER YOU WANT
 
 -- general
@@ -43,16 +44,20 @@ lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 -- }
 
 -- Use which-key to add extra bindings with the leader-key prefix
--- lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
--- lvim.builtin.which_key.mappings["t"] = {
---   name = "+Trouble",
---   r = { "<cmd>Trouble lsp_references<cr>", "References" },
---   f = { "<cmd>Trouble lsp_definitions<cr>", "Definitions" },
---   d = { "<cmd>Trouble lsp_document_diagnostics<cr>", "Diagnostics" },
---   q = { "<cmd>Trouble quickfix<cr>", "QuickFix" },
---   l = { "<cmd>Trouble loclist<cr>", "LocationList" },
---   w = { "<cmd>Trouble lsp_workspace_diagnostics<cr>", "Diagnostics" },
--- }
+
+lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
+
+lvim.builtin.which_key.mappings["t"] = {
+  name = "Diagnostics",
+
+  t = { "<cmd>TroubleToggle<cr>", "Trouble" },
+  r = { "<cmd>TroubleToggle lsp_references<cr>", "References" },
+  f = { "<cmd>TroubleToggle lsp_definitions<cr>", "Definitions" },
+  d = { "<cmd>TroubleToggle lsp_document_diagnostics<cr>", "Document" },
+  q = { "<cmd>TroubleToggle quickfix<cr>", "Quick Fix" },
+  l = { "<cmd>TroubleToggle loclist<cr>", "Location List" },
+  w = { "<cmd>TroubleToggle lsp_workspace_diagnostics<cr>", "Workspace" },
+}
 
 -- TODO: User Config for predefined plugins
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
@@ -347,7 +352,19 @@ lvim.plugins = {
     config = function()
       require "lsp_signature".setup()
     end
-  }
+  },
+
+  -- Symbols Outline
+  {
+    "simrat39/symbols-outline.nvim",
+    cmd = "SymbolsOutline",
+  },
+
+  -- Trouble Diagnostics
+  {
+    "folke/trouble.nvim",
+    cmd = "TroubleToggle",
+  },
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
