@@ -157,16 +157,8 @@ lvim.plugins = {
   {"tpope/vim-surround", keys = {"c", "d", "y"}},
   {"p00f/nvim-ts-rainbow"},
 
-  {
-    "phaazon/hop.nvim",
-    event = "BufRead",
-    config = function()
-      require("hop").setup()
-
-      vim.api.nvim_set_keymap("n", "s", ":HopChar2<cr>", { silent = true })
-      vim.api.nvim_set_keymap("n", "S", ":HopWord<cr>", { silent = true })
-    end,
-  },
+  -- Alternative: Hop, Sneak, EasyMotion
+  {"ggandor/lightspeed.nvim", event = "BufRead"},
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
