@@ -261,13 +261,34 @@ lvim.plugins = {
   -- Git Blame
   {
     "f-person/git-blame.nvim",
-    event = "BufRead",
     cmd = {"GitBlameEnable", "GitBlameToggle"},
 
     config = function()
       vim.cmd "highlight default link gitblame SpecialComment"
       vim.g.gitblame_enabled = 0
     end,
+  },
+
+  -- Git Wrapper
+  {
+    "tpope/vim-fugitive",
+    ft = {"fugitive"},
+
+    cmd = {
+      "G",
+      "Git",
+      "Gdiffsplit",
+      "Gread",
+      "Gwrite",
+      "Ggrep",
+      "GMove",
+      "GDelete",
+      "GBrowse",
+      "GRemove",
+      "GRename",
+      "Glgrep",
+      "Gedit"
+    },
   },
 }
 
