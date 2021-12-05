@@ -13,3 +13,5 @@ chmod +x install-lunarvim.sh
 
 ./install-lunarvim.sh --no-install-dependencies
 
+rm install-lunarvim.sh
+
