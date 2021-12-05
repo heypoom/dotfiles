@@ -125,15 +125,7 @@ lvim.lsp.automatic_servers_installation = true
 
 -- Additional Plugins
 lvim.plugins = {
-  {
-    "Mofiqul/dracula.nvim",
-
-    config = function()
-      vim.g.dracula_transparent_bg = true
-      -- vim.g.dracula_lualine_bg_color = "#44475a"
-    end,
-  },
-
+  {"dracula/vim"},
   {"pantharshit00/vim-prisma", ft = {"prisma"}},
   {"metakirby5/codi.vim", cmd = "Codi"},
   {"tpope/vim-surround", keys = {"c", "d", "y"}},
