@@ -1,12 +1,32 @@
+local linters = require("lvim.lsp.null-ls.linters")
 local formatters = require("lvim.lsp.null-ls.formatters")
+
+linters.setup({
+	{
+		exe = "eslint_d",
+
+		filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "vue" },
+	},
+})
 
 formatters.setup({
 	{
-		exe = "prettier",
-		---@usage arguments to pass to the formatter
-		-- these cannot contain whitespaces, options such as `--line-width 80` become either `{'--line-width', '80'}` or `{'--line-width=80'}`
-		args = { "--print-with", "80" },
-		---@usage specify which filetypes to enable. By default a providers will attach to all the filetypes it supports.
-		filetypes = { "typescript", "typescriptreact" },
+		exe = "prettierd",
+
+		filetypes = {
+			"javascript",
+			"javascriptreact",
+			"typescript",
+			"typescriptreact",
+			"vue",
+			"css",
+			"scss",
+			"less",
+			"html",
+			"json",
+			"yaml",
+			"markdown",
+			"graphql",
+		},
 	},
 })
