@@ -9,6 +9,9 @@ lvim.transparent_window = true
 lvim.leader = "space"
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 
+-- Live Substituition
+vim.opt.inccommand = "nosplit"
+
 -- unmap a default keymapping
 -- lvim.keys.normal_mode["<C-Up>"] = ""
 
@@ -120,7 +123,10 @@ lvim.lsp.automatic_servers_installation = true
 -- Additional Plugins
 lvim.plugins = {
   -- Dracula color scheme.
-  {"dracula/vim"},
+  {"dracula/vim", as = "dracula"},
+
+  -- Move lines and selections.
+  {"matze/vim-move", event = "CursorMoved"},
 
   -- Fast navigation. Alternative to Hop, Sneak and EasyMotion.
   {"ggandor/lightspeed.nvim", event = "BufRead", keys = {"s"}},
@@ -135,17 +141,42 @@ lvim.plugins = {
   {"tpope/vim-repeat", keys = {"."}},
 
   -- Diff View.
-  {"sindrets/diffview.nvim", event = "BufRead"},
+  {"sindrets/diffview.nvim", cmd = {"DiffviewOpen"}},
 
   -- Measures the startup time.
   {"tweekmonster/startuptime.vim", disable = false},
   -- {"dstein64/vim-startuptime", disable = true},
+
+  -- Trouble Diagnostics
+  {"folke/trouble.nvim", cmd = "TroubleToggle"},
+
+  -- Zen mode for writing.
+  {
+    "folke/zen-mode.nvim",
+    cmd = {"ZenMode"},
+
+    config = function()
+      require("zen-mode").setup {
+        -- your configuration comes here
+      }
+    end
+  },
 
   -- Rainbow parentheses for tree-sitter.
   {"p00f/nvim-ts-rainbow", disable = true},
 
   -- Prisma syntax highlighting (not tree-sitter)
   {"pantharshit00/vim-prisma", ft = {"prisma"}},
+
+  -- Matchup (navigate to matching text, e.g. if-elseif-else-end)
+  {
+    "andymass/vim-matchup",
+    event = "CursorMoved",
+
+    config = function()
+      vim.g.matchup_matchparen_offscreen = { method = "popup" }
+    end,
+  },
 
   -- Minimap.
   {
@@ -176,7 +207,7 @@ lvim.plugins = {
   -- Improved quick-fix window.
   {
     "kevinhwang91/nvim-bqf",
-    event = { "BufRead", "BufNew" },
+    -- event = { "BufRead", "BufNew" },
     ft = {"qf"},
 
     config = function()
@@ -231,16 +262,6 @@ lvim.plugins = {
       snap.register.command("buffers", file { producer = "vim.buffer" })
       snap.register.command("oldfiles", file { producer = "vim.oldfile" })
       snap.register.command("live_grep", vimgrep {})
-    end,
-  },
-
-  -- Matchup (navigate to matching text, e.g. if-elseif-else-end)
-  {
-    "andymass/vim-matchup",
-    event = "CursorMoved",
-
-    config = function()
-      vim.g.matchup_matchparen_offscreen = { method = "popup" }
     end,
   },
 
@@ -338,20 +359,12 @@ lvim.plugins = {
   -- },
 
   -- Symbols Outline
-  {
-    "simrat39/symbols-outline.nvim",
-    cmd = "SymbolsOutline",
-  },
-
-  -- Trouble Diagnostics
-  {
-    "folke/trouble.nvim",
-    cmd = "TroubleToggle",
-  },
+  {"simrat39/symbols-outline.nvim", cmd = "SymbolsOutline"},
 
   -- Autosave
   {
     "Pocco81/AutoSave.nvim",
+    disable = true,
 
     config = function()
       require("autosave").setup()
