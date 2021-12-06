@@ -392,6 +392,43 @@ lvim.plugins = {
 	},
 }
 
+-- Formatters and Linters.
+-- File-specific configuration should be in ftplugin to speed up loading time.
+local linters = require("lvim.lsp.null-ls.linters")
+local formatters = require("lvim.lsp.null-ls.formatters")
+
+-- ESLint Daemon
+linters.setup({
+	{
+		exe = "eslint_d",
+
+		filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "vue" },
+	},
+})
+
+-- Prettier Daemon
+formatters.setup({
+	{
+		exe = "prettierd",
+
+		filetypes = {
+			"javascript",
+			"javascriptreact",
+			"typescript",
+			"typescriptreact",
+			"vue",
+			"css",
+			"scss",
+			"less",
+			"html",
+			"json",
+			"yaml",
+			"markdown",
+			"graphql",
+		},
+	},
+})
+
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
 -- lvim.autocommands.custom_groups = {
 --   { "BufWinEnter", "*.lua", "setlocal ts=8 sw=8" },
