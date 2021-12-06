@@ -39,7 +39,12 @@ lvim.builtin.telescope.defaults.mappings = {
 }
 
 -- Use which-key to add extra bindings with the leader-key prefix
-lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
+lvim.builtin.which_key.mappings["P"] = {
+	name = "Projects",
+
+	p = { "<cmd>Telescope project<CR>", "Project" },
+	r = { "<cmd>Telescope projects<CR>", "Recent" },
+}
 
 lvim.builtin.which_key.mappings["t"] = {
 	name = "Diagnostics",
@@ -322,10 +327,9 @@ lvim.plugins = {
 	{
 		"nvim-telescope/telescope-project.nvim",
 		event = "BufWinEnter",
-		disable = true,
 
-		setup = function()
-			vim.cmd([[packadd telescope.nvim]])
+		config = function()
+			require("telescope").load_extension("project")
 		end,
 	},
 
