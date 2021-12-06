@@ -157,9 +157,29 @@ lvim.plugins = {
 
     config = function()
       require("zen-mode").setup {
-        -- your configuration comes here
+        window = {
+          backdrop = 0.95,
+          width = .60,
+
+          options = {
+            signcolumn = "no", -- disable signcolumn
+            number = false, -- disable number column
+            relativenumber = false, -- disable relative numbers
+            cursorline = false, -- disable cursorline
+            cursorcolumn = false, -- disable cursor column
+            foldcolumn = "0", -- disable fold column
+            list = false, -- disable whitespace characters
+          }
+        },
+
+        plugins = {
+          kitty = { enabled = false },
+          gitsigns = { enabled = false },
+          tmux = { enabled = false },
+          twilight = { enabled = false },
+        }
       }
-    end
+    end,
   },
 
   -- Rainbow parentheses for tree-sitter.
