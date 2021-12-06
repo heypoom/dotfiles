@@ -22,6 +22,9 @@ vim.opt.inccommand = "nosplit"
 -- We use protected-mode (pcall) just in case the plugin wasn't loaded yet.
 local _, actions = pcall(require, "telescope.actions")
 
+-- Rainbow Parentheses
+lvim.builtin.treesitter.rainbow.enable = true
+
 lvim.builtin.telescope.defaults.mappings = {
 	-- Input Mode
 	i = {
@@ -186,9 +189,6 @@ lvim.plugins = {
 			})
 		end,
 	},
-
-	-- Rainbow parentheses for tree-sitter.
-	{ "p00f/nvim-ts-rainbow", disable = true },
 
 	-- Prisma syntax highlighting (not tree-sitter)
 	{ "pantharshit00/vim-prisma", ft = { "prisma" } },
