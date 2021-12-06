@@ -413,13 +413,19 @@ linters.setup({
 -- Prettier Daemon
 formatters.setup({
 	{
-		exe = "prettierd",
+		exe = "prettier_d_slim",
 
 		filetypes = {
 			"javascript",
 			"javascriptreact",
 			"typescript",
 			"typescriptreact",
+		},
+	},
+	{
+		exe = "prettierd",
+
+		filetypes = {
 			"vue",
 			"css",
 			"scss",
