@@ -1,50 +1,41 @@
---[[
-lvim is the global options object
-
-Linters should be
-filled in as strings with either
-a global executable or a path to
-an executable
-]]
-
--- THESE ARE EXAMPLE CONFIGS FEEL FREE TO CHANGE TO WHATEVER YOU WANT
-
--- general
+-- General Settings
 lvim.log.level = "warn"
 lvim.format_on_save = true
 lvim.colorscheme = "dracula"
 lvim.transparent_window = true
 
--- keymappings [view all the defaults by pressing <leader>Lk]
+-- Keymappings
+-- View LunarVim's default keymappings by pressing <leader>Lk
 lvim.leader = "space"
-
--- add your own keymapping
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
+
 -- unmap a default keymapping
 -- lvim.keys.normal_mode["<C-Up>"] = ""
+
 -- edit a default keymapping
 -- lvim.keys.normal_mode["<C-q>"] = ":q<cr>"
 
 -- Change Telescope navigation to use j and k for navigation and n and p for history in both input and normal mode.
--- we use protected-mode (pcall) just in case the plugin wasn't loaded yet.
--- local _, actions = pcall(require, "telescope.actions")
--- lvim.builtin.telescope.defaults.mappings = {
---   -- for input mode
---   i = {
---     ["<C-j>"] = actions.move_selection_next,
---     ["<C-k>"] = actions.move_selection_previous,
---     ["<C-n>"] = actions.cycle_history_next,
---     ["<C-p>"] = actions.cycle_history_prev,
---   },
---   -- for normal mode
---   n = {
---     ["<C-j>"] = actions.move_selection_next,
---     ["<C-k>"] = actions.move_selection_previous,
---   },
--- }
+-- We use protected-mode (pcall) just in case the plugin wasn't loaded yet.
+local _, actions = pcall(require, "telescope.actions")
+
+lvim.builtin.telescope.defaults.mappings = {
+  -- Input Mode
+  i = {
+    ["<C-j>"] = actions.move_selection_next,
+    ["<C-k>"] = actions.move_selection_previous,
+    ["<C-n>"] = actions.cycle_history_next,
+    ["<C-p>"] = actions.cycle_history_prev,
+  },
+
+  -- Normal Mode
+  n = {
+    ["<C-j>"] = actions.move_selection_next,
+    ["<C-k>"] = actions.move_selection_previous,
+  },
+}
 
 -- Use which-key to add extra bindings with the leader-key prefix
-
 lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
 
 lvim.builtin.which_key.mappings["t"] = {
@@ -59,10 +50,13 @@ lvim.builtin.which_key.mappings["t"] = {
   w = { "<cmd>TroubleToggle lsp_workspace_diagnostics<cr>", "Workspace" },
 }
 
--- TODO: User Config for predefined plugins
--- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
+-- User config for pre-defined plugins.
+-- After changing plugin config, exit and reopen LunarVim, then run :PackerInstall :PackerCompile.
+
+-- Debug Adapter Protocol.
+lvim.builtin.dap.active = false
+
 lvim.builtin.lualine.active = true
-lvim.builtin.dap.active = true
 lvim.builtin.dashboard.active = true
 lvim.builtin.terminal.active = true
 lvim.builtin.bufferline.active = true
@@ -125,19 +119,35 @@ lvim.lsp.automatic_servers_installation = true
 
 -- Additional Plugins
 lvim.plugins = {
+  -- Dracula color scheme.
   {"dracula/vim"},
-  {"pantharshit00/vim-prisma", ft = {"prisma"}},
-  {"metakirby5/codi.vim", cmd = "Codi"},
-  {"tpope/vim-surround", keys = {"c", "d", "y"}},
-  {"tpope/vim-repeat", keys = {"."}},
-  -- {"p00f/nvim-ts-rainbow"},
-  {"sindrets/diffview.nvim", event = "BufRead"},
-  {"dstein64/vim-startuptime"},
 
-  -- Alternative: Hop, Sneak, EasyMotion
+  -- Fast navigation. Alternative to Hop, Sneak and EasyMotion.
   {"ggandor/lightspeed.nvim", event = "BufRead", keys = {"s"}},
 
-  -- Minimap
+  -- Interactive live-evaluated scratchpad.
+  {"metakirby5/codi.vim", cmd = "Codi"},
+
+  -- Change surrounding pairs.
+  {"tpope/vim-surround", keys = {"c", "d", "y"}},
+
+  -- Repeat mapped commands.
+  {"tpope/vim-repeat", keys = {"."}},
+
+  -- Diff View.
+  {"sindrets/diffview.nvim", event = "BufRead"},
+
+  -- Measures the startup time.
+  {"tweekmonster/startuptime.vim", disable = false},
+  -- {"dstein64/vim-startuptime", disable = true},
+
+  -- Rainbow parentheses for tree-sitter.
+  {"p00f/nvim-ts-rainbow", disable = true},
+
+  -- Prisma syntax highlighting (not tree-sitter)
+  {"pantharshit00/vim-prisma", ft = {"prisma"}},
+
+  -- Minimap.
   {
     'wfxr/minimap.vim',
     run = "cargo install --locked code-minimap",
@@ -163,11 +173,11 @@ lvim.plugins = {
     end,
   },
 
-  -- Quickfix Window
+  -- Improved quick-fix window.
   {
     "kevinhwang91/nvim-bqf",
     event = { "BufRead", "BufNew" },
-    ft = "qf",
+    ft = {"qf"},
 
     config = function()
       require("bqf").setup({
@@ -271,6 +281,7 @@ lvim.plugins = {
   {
     "nvim-telescope/telescope-project.nvim",
     event = "BufWinEnter",
+    disable = true,
 
     setup = function()
       vim.cmd [[packadd telescope.nvim]]
@@ -280,6 +291,7 @@ lvim.plugins = {
   -- Colorizer
   {
     "norcalli/nvim-colorizer.lua",
+    event = "BufRead",
 
     config = function()
       require("colorizer").setup({ "*" }, {
