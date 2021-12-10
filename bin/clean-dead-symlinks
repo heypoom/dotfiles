@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+gfind . -xtype l -delete
+

@@ -1,0 +1,54 @@
+#!/usr/bin/env bash
+
+timeof() {
+	ts=$(date +%s%N)
+	$@
+	printf "$((($(date +%s%N) - $ts)/1000000)) ms"
+}
+
+timeof_noout() {
+	ts=$(date +%s%N)
+	$@ > /dev/null 2>&1
+	printf "$((($(date +%s%N) - $ts)/1000000)) ms"
+}
+
+printf "Fish shell startup time: "
+timeof fish -c exit
+echo
+
+printf "Zsh shell startup time: "
+timeof zsh -c exit
+echo
+
+printf "Bash shell startup time: "
+timeof bash -c exit
+echo
+
+printf "Tmux startup time: "
+timeof tmux new -s temp -d fish -c exit
+echo
+
+printf "Neovim startup time: "
+timeof nvim --headless +exit
+echo
+
+printf "Neovim (TypeScript) startup time: "
+timeof_noout nvim --headless +exit "_test.ts"
+echo
+
+printf "Neovim (Ruby) startup time: "
+timeof_noout nvim --headless +exit "_test.rb"
+echo
+
+printf "Neovim (Python) startup time: "
+timeof_noout nvim --headless +exit "_test.py"
+echo
+
+printf "Neovim (Config) startup time: "
+timeof_noout nvim --headless +exit ~/.config/nvim/plugins.vim
+echo
+
+printf "Vi startup time: "
+timeof vi +exit
+echo
+

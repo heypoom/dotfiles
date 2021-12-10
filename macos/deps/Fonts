@@ -1,6 +1,0 @@
-tap "homebrew/cask-fonts"
-
-# JetBrains Mono
-cask "font-jetbrains-mono"
-cask "font-jetbrains-mono-nerd-font"
-

@@ -1,0 +1,19 @@
+black: #21222d
+red: #FF424E
+green: #00FB69
+yellow: #EEF77B
+purple: #c591ff
+pink: #ff8be3
+cyan: #6aeafe
+grey: #f8f8f1
+
+green: #85F589
+
+black: #5e73a8
+red: #ff6268
+green: #00ff87
+yellow: #ffff98
+purple: #deaaff
+pink: #ff8be3
+cyan: #84ffff
+grey: #ffffff

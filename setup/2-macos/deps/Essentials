@@ -1,0 +1,22 @@
+cask "1password"
+cask "1password-cli"
+
+cask "dropbox"
+cask "discord"
+cask "daisydisk"
+cask "spotify"
+cask "slack"
+cask "sketch"
+cask "setapp"
+cask "handbrake"
+cask "obsidian"
+cask "fantastical"
+cask "cardhop"
+cask "pdf-expert"
+cask "logitech-presentation"
+cask "little-snitch"
+cask "keybase"
+
+# Hide menu bar icons.
+cask "vanilla"
+

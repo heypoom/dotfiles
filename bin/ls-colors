@@ -1,0 +1,10 @@
+#!/usr/bin/env fish
+
+for i in (seq 1 15)
+	printf (tput setaf $i)
+	for y in (seq 1 $COLUMNS)
+			printf "▇"
+	end
+	echo
+end
+

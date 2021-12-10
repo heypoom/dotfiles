@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+if ls /tmp/kitty* 1> /dev/null 2>&1
+then
+	echo Kitty is running.
+
+	dst=$(printf '%s%s' unix: /tmp/kitty*)
+	echo $dst
+
+	# Spawn a new Kitty window.
+	/Applications/kitty.app/Contents/MacOS/kitty @ --to $dst new-window --window-type os
+
+	exit 0
+fi
+
+echo Kitty is *NOT* running.
+
+cd $HOME
+
+# Start Kitty.
+# open "/Applications/kitty.app"
+/Applications/kitty.app/Contents/MacOS/kitty fish
+

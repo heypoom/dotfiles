@@ -1,3 +1,7 @@
+# Chezmoi should be pulled individually.
+bin/chezmoi
+setup/bin/chezmoi
+
 manual-install
 credentials
 config/ranger/__pycache__
@@ -186,6 +190,10 @@ config/thefuck/settings.pyc
 .code/globalStorage
 .code/workspaceStorage
 .code/sync
+
+config/.code/globalStorage
+config/.code/workspaceStorage
+config/.code/sync
 
 .idea/scratches
 .idea/light-edit

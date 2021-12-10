@@ -1,0 +1,11 @@
+tap "koekeishiya/formulae"
+
+brew "koekeishiya/formulae/skhd"
+brew "koekeishiya/formulae/yabai"
+
+cask "alfred"
+cask "keyboard-maestro"
+cask "karabiner-elements"
+cask "contexts"
+cask "raycast"
+

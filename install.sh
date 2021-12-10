@@ -1,7 +1,7 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
-# Codespaces mode runs the linux dependency setup script in userland.
-export CODESPACES_MODE=true
+echo "Installing Chezmoi"
+sh -c "$(curl -fsLS git.io/chezmoi)" -- init --apply heypoom
 
-./install && exit 0
+echo "Done!"
 

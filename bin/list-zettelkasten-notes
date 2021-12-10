@@ -1,0 +1,28 @@
+#!/usr/bin/env python3
+
+import os
+import re
+
+p = re.compile(r"^(\d{12})")
+
+name_to_path_map = {}
+
+for root, dirs, files in os.walk(".", topdown=False):
+   if '.git' in root: continue
+
+   for name in files:
+      if not name.endswith('.md'): continue
+      path = os.path.join(root, name)
+
+      m = p.match(name)
+      if not m: continue
+
+      name_to_path_map[m.group()] = path
+
+sorted_keys = sorted(name_to_path_map.keys())
+
+for key in sorted_keys:
+   path = name_to_path_map[key]
+
+   print("{} -> {}".format(key, path))
+
