@@ -2,7 +2,7 @@
 
 if [ -d "$HOME/.tmux/plugins/tpm" ]
 then
-  echo "👍 tmux plugin manager is already installed."
+  echo "🟡 tmux plugin manager is already installed."
   exit 0
 fi
 

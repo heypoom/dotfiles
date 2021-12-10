@@ -2,7 +2,7 @@
 
 if [ -f ~/.cache/bat/themes.bin ]
 then
-  echo "👍 bat theme is already cached."
+  echo "🟡 bat theme is cached."
   exit 0
 fi
 

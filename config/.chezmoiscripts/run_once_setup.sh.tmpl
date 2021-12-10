@@ -1,12 +1,30 @@
 #!/usr/bin/env bash
 
-echo "OS: {{.chezmoi.os}}"
+GRAY="\e[90m"
+YELLOW="\e[93m"
+PURPLE="\e[95m"
+RESET="\e[0m"
+
+export DEBIAN_FRONTEND="noninteractive"
+
+SETUP_PATH="$(chezmoi source-path)/../setup"
+cd $SETUP_PATH
+
+function run_setup_script {
+	for script in $(ls $1/*.sh)
+	do
+		echo -e "$2$script$RESET"
+
+		$script
+	done
+}
 
 {{ if eq .chezmoi.os "linux" -}}
-  echo "Linux detected."
+	run_setup_script "linux" "⚪ $GRAY"
 {{ else if eq .chezmoi.os "darwin" -}}
-  echo "macOS detected."
+	run_setup_script "macos" "🟣 $PURPLE"
 {{ else }}
-  echo "Unsupported OS."
+  echo "😢 Unsupported OS."
 {{ end -}}
 
+run_setup_script "common" "🟡 $YELLOW"

@@ -36,7 +36,7 @@ setup_asdf() {
 
 if command -v asdf &> /dev/null
 then
-  echo "👍 asdf is already installed."
+  echo "🟡 asdf is installed."
 else
   echo "🌟 Installing asdf package manager..."
   setup_asdf

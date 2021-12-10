@@ -20,16 +20,5 @@ then
   exit 0
 fi
 
-cd ..
-
-if sha1sum -c Brewfile.sha1
-then
-  echo "👍 Brewfile is already up to date."
-else
-  echo "📦 Installing from brewfile..."
-  # brew bundle --global
-
-  sha1sum Brewfile > Brewfile.sha1
-  echo "✅ Installed brewfile!"
-fi
+echo "🟣 skipped brewfile."
 

@@ -20,6 +20,6 @@ then
 
   echo "✅ oh-my-fish is installed!"
 else
-  echo "👍 oh-my-fish is already installed."
+  echo "🟡 oh-my-fish is installed."
 fi
 

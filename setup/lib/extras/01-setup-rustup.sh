@@ -2,7 +2,7 @@
 
 if command -v rustup &> /dev/null
 then
-  echo "👍 rustup is already installed."
+  echo "🟡 rustup is available."
   exit 0
 fi
 

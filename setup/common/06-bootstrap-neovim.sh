@@ -4,7 +4,7 @@ export PATH="$PATH:$HOME/.asdf/shims:$HOME/.asdf/bin"
 
 if [ -f "$HOME/.local/share/nvim/site/autoload/plug.vim" ]
 then
-  echo "👍 vim-plug is already installed."
+  echo "🟡 vim-plug is installed."
   exit 0
 else
   echo "🌟 installing vim-plug..."

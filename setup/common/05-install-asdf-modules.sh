@@ -11,7 +11,7 @@ fi
 
 if command -v node &> /dev/null
 then
-  echo "👍 node is already installed."
+  echo "🟡 node is installed."
   exit 0
 fi
 

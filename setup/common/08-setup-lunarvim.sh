@@ -2,7 +2,7 @@
 
 if [ -d "$HOME/.local/share/lunarvim" ]
 then
-  echo "LunarVim is already installed! Skipping."
+  echo "🟡 LunarVim is available."
   exit 0
 fi
 
@@ -14,4 +14,6 @@ chmod +x install-lunarvim.sh
 ./install-lunarvim.sh --install-dependencies
 
 rm install-lunarvim.sh
+
+echo "✅ installed LunarVim."
 

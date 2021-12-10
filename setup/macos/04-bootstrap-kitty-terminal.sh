@@ -2,7 +2,7 @@
 
 if [ -d ~/.terminfo/78 ]
 then
-  echo "👍 kitty terminfo is already configured."
+  echo "🟣 kitty terminfo is configured."
   exit 0
 fi
 
