@@ -251,8 +251,7 @@
   "vscode-neovim.neovimInitVimPaths.win32": "$HOME/.config/nvim/init.vim",
   "editor.linkedEditing": true,
   "workbench.editor.untitled.hint": "hidden",
-  "redhat.telemetry.enabled": false,
-  "editor.cursorStyle": "line",
+	"redhat.telemetry.enabled": false,
   "editor.insertSpaces": false,
   "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
   "editor.wordWrap": "off",
@@ -291,5 +290,7 @@
 	},
 	"editor.accessibilitySupport": "off",
 	"vscode-edge-devtools.mirrorEdits": true,
-	"window.zoomLevel": 1
+	"window.zoomLevel": 1,
+	"editor.cursorBlinking": "phase",
+	"editor.cursorSmoothCaretAnimation": true
 }
