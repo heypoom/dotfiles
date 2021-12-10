@@ -7,7 +7,7 @@ RESET="\e[0m"
 
 export DEBIAN_FRONTEND="noninteractive"
 
-SETUP_PATH="$(chezmoi source-path)/../setup"
+SETUP_PATH="{{.chezmoi.sourceDir}}/../setup"
 cd $SETUP_PATH
 
 function run_setup_script {
