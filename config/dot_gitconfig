@@ -29,23 +29,30 @@
 	diff = true
 
 [merge]
-	tool = vimdiff
+	tool = nvimdiff
 
 [mergetool]
   prompt = true
 	path = nvim
 
-[mergetool "vimdiff"]
+[mergetool "nvimdiff"]
   cmd = nvim -d $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
 
 [diff]
-	tool = vimdiff
+    tool = nvimdiff
+
+[difftool "nvimdiff"]
+    cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
 
 [difftool]
   prompt = false
+
 [pull]
 	rebase = false
+
 [gpg]
 	program = gpg
+
 [init]
 	defaultBranch = main
+
