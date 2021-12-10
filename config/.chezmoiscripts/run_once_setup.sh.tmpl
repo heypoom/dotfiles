@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+echo "OS: {{.chezmoi.os}}"
+
+{{ if eq .chezmoi.os "linux" -}}
+  echo "Linux detected."
+{{ else if eq .chezmoi.os "darwin" -}}
+  echo "macOS detected."
+{{ else }}
+  echo "Unsupported OS."
+{{ end -}}
+
