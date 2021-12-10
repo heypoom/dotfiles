@@ -14,7 +14,6 @@ function run_setup_script {
 	for script in $(ls $1/*.sh)
 	do
 		echo -e "$2$script$RESET"
-
 		$script
 	done
 }
