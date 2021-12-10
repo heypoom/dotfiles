@@ -290,7 +290,6 @@
 	},
 	"editor.accessibilitySupport": "off",
 	"vscode-edge-devtools.mirrorEdits": true,
-	"window.zoomLevel": 1,
 	"editor.cursorBlinking": "phase",
 	"editor.cursorSmoothCaretAnimation": true
 }
