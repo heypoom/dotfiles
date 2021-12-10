@@ -1,22 +1,14 @@
-# Poom's dotfiles configuration.
+# Poom's personal configuration.
 
-Hello! Here is my dotfiles, aka my personal configuration of tools I use daily.
+Hello! Here is my personal configuration of the tools I use daily.
 
-I hope you like it!
+## How to use this configuration on my machine?
 
-## How to use this dotfiles locally?
+Use [Chezmoi](https://www.chezmoi.io) to bootstrap this configuration on your machine: `sh -c "$(curl -fsLS git.io/chezmoi)" -- init --apply heypoom`
 
-I use [Chezmoi](https://www.chezmoi.io) to bootstrap this dotfiles on any machine.
-You can fork this repo, and replace `heypoom` with your GitHub username.
+## How to use this configuration inside Docker?
 
-`sh -c "$(curl -fsLS git.io/chezmoi)" -- init --apply heypoom`
-
-## How to use this dotfiles with Docker?
-
-Run `docker run -it phoomparin/dotfiles` on your machine.
-Alternatively, you can use the `FROM phoomparin/dotfiles` directive in your Dockerfile to customize it.
-
-This repo has a GitHub Actions that builds a brand new Docker image on every commit!
+Run `docker run -it phoomparin/dotfiles` to spawn a docker container using the `phoomparin/dotfiles` image.
 
 # My Tools
 
