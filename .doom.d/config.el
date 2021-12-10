@@ -56,43 +56,43 @@
 ;; they are implemented.
 
 ; Maximize window upon start
-(add-hook 'window-setup-hook #'toggle-frame-maximized)
+; (add-hook 'window-setup-hook #'toggle-frame-maximized)
 
-(custom-set-faces
-  '(mode-line ((t (:family "JetBrainsMono Nerd Font" :height 150))))
-  '(mode-line-inactive ((t (:family "JetBrainsMono Nerd Font" :height 150)))))
+; (custom-set-faces
+;   '(mode-line ((t (:family "JetBrainsMono Nerd Font" :height 150))))
+;   '(mode-line-inactive ((t (:family "JetBrainsMono Nerd Font" :height 150)))))
 
-(add-hook 'clojure-mode-hook #'paredit-mode)
+; (add-hook 'clojure-mode-hook #'paredit-mode)
 
-(add-hook 'clojure-mode-hook
-          (lambda () (local-set-key (kbd "M-RET") #'cider-eval-region)))
+; (add-hook 'clojure-mode-hook
+;           (lambda () (local-set-key (kbd "M-RET") #'cider-eval-region)))
 
 ; More generous line spacing
-(setq line-spacing 5)
+; (setq line-spacing 5)
 
 ; Use UTF-8 bullets (https://github.com/sabof/org-bullets) in org-mode
-(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+; (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 
 ; Remove company's completion delay
-(setq company-minimum-prefix-length 1
-      company-idle-delay 0.0)
+;(setq company-minimum-prefix-length 1
+;      company-idle-delay 0.0)
 
 ; Show project errors on modeline.
-(with-eval-after-load 'lsp-mode
-  ;; :project/:workspace/:file
-  (setq lsp-modeline-diagnostics-scope :project))
+;(with-eval-after-load 'lsp-mode
+;  ;; :project/:workspace/:file
+;  (setq lsp-modeline-diagnostics-scope :project))
 
 ; Add icons to company-mode autocompletion (https://github.com/sebastiencs/company-box)
-(add-hook 'company-mode-hook 'company-box-mode)
+; (add-hook 'company-mode-hook 'company-box-mode)
 
 ; Set max-width of company auto-completion tooltip to 50px
-(setq company-tooltip-maximum-width 50)
+; (setq company-tooltip-maximum-width 50)
 
 ; Use retina resolutions for LaTeX previews in org-mode
 ; (setq org-latex-create-formula-image-program 'dvisvgm)
-(setq org-preview-latex-default-process 'dvisvgm)
-(setq org-preview-latex-image-directory "./tex.preview/")
-(setq org-format-latex-options '(:scale 3.0 :foreground default :background default))
+; (setq org-preview-latex-default-process 'dvisvgm)
+; (setq org-preview-latex-image-directory "./tex.preview/")
+; (setq org-format-latex-options '(:scale 3.0 :foreground default :background default))
 
 ; Enable markdown extension for org-roam
 ; (use-package! md-roam
