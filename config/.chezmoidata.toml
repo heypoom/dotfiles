@@ -1,0 +1,3 @@
+# Use LunarVim as primary text editor in the terminal.
+editor = "lvim"
+
