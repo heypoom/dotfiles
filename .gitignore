@@ -187,6 +187,10 @@ config/thefuck/settings.pyc
 .code/workspaceStorage
 .code/sync
 
+config/.code/globalStorage
+config/.code/workspaceStorage
+config/.code/sync
+
 .idea/scratches
 .idea/light-edit
 .idea/javascript
