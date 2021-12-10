@@ -1,3 +1,7 @@
+# Chezmoi should be pulled individually.
+bin/chezmoi
+setup/bin/chezmoi
+
 manual-install
 credentials
 config/ranger/__pycache__
