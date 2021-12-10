@@ -3,6 +3,7 @@ lvim.log.level = "warn"
 lvim.format_on_save = true
 lvim.colorscheme = "dracula"
 lvim.transparent_window = true
+vim.opt.spell = false
 
 -- Keymappings
 -- View LunarVim's default keymappings by pressing <leader>Lk
