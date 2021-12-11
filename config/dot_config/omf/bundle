@@ -1,4 +1,5 @@
 package fzf
+package thefuck
 package wd
 package z
 theme bobthefish
