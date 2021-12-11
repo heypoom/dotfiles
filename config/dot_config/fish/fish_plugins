@@ -1,6 +1,5 @@
 jorgebucaran/fisher
 PatrickF1/fzf.fish
-oh-my-fish/theme-bobthefish
 jethrokuan/z
 jorgebucaran/nvm.fish
 franciscolourenco/done
@@ -11,3 +10,4 @@ jorgebucaran/autopair.fish
 acomagu/fish-async-prompt
 nickeb96/puffer-fish
 joehillen/to-fish
+IlanCosman/tide@v5

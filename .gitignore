@@ -5,6 +5,10 @@ setup/bin/chezmoi
 # Functions starting with underscore is presumably from fisher (package manager),
 # so we can ignore and do a fresh install instead.
 config/dot_config/fish/functions/_*
+config/dot_config/fish/conf.d/_*
+
+# Tide can be installed from fisher, so we can gitignore it.
+config/dot_config/fish/functions/tide
 
 manual-install
 credentials
