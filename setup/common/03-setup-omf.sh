@@ -16,6 +16,9 @@ then
   curl -sL https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install > /tmp/omf.install.fish
   fish /tmp/omf.install.fish --noninteractive --yes
 
+  # Install oh-my-fish plugins and themes.
+  omf install
+
   # Clean up oh-my-fish installation script
   rm -f /tmp/omf.install.fish
 
