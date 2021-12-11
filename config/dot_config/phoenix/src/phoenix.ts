@@ -9,7 +9,7 @@ Phoenix.set({
 Key.on('r', ['option', 'shift'], async () => {
   show('🏖')
 
-  await shell('~/Scripts/rebuild-phoenix-config')
+  await shell('~/bin/rebuild-phoenix-config')
   show('🌟')
 
   Phoenix.reload()

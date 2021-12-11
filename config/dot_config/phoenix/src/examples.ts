@@ -7,7 +7,7 @@ import {resizeTwoThird} from './resize/two-third'
 
 import {shell} from './utils/task'
 
-Key.on('t', ['alt'], () => shell('~/Scripts/kitty-spawn'))
+Key.on('t', ['alt'], () => shell('~/bin/kitty-spawn'))
 Key.on('f', ['alt'], resizeFull)
 
 const resizeLeft = () => resizeHalf('left')

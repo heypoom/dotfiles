@@ -1,3 +1,7 @@
 vscode
 config/vscode
 README.md
+
+fish/functions/_tide*
+fish/functions/tide*
+fish/conf.d/_tide*
