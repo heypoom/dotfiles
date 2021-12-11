@@ -6,7 +6,7 @@ then
 
   # Install fisher package manager.
 	# https://github.com/jorgebucaran/fisher
-	fish -c "curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher"
+  fish -c "curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher && fisher update"
 
   echo "✅ fisher is installed!"
 else
