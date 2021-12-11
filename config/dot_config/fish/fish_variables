@@ -12,6 +12,7 @@ SETUVAR _fish_abbr_gaa:git\x20add\x20\x2d\x2dall
 SETUVAR _fish_abbr_gc:git\x20commit
 SETUVAR _fish_abbr_gd:git\x20diff
 SETUVAR _fish_abbr_gp:git\x20push
+SETUVAR _fish_abbr_ta:tmux\x20attach
 SETUVAR _fish_abbr_tns:tmux\x20new\x20\x2ds
 SETUVAR _fish_abbr_tree:exa\x20\x2d\x2dtree
 SETUVAR _fish_abbr_v:lvim
