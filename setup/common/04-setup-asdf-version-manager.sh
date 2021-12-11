@@ -34,6 +34,7 @@ setup_asdf() {
     asdf plugin add $plugin
   done
 
+	echo -e "$YELLOW🟡 adding golang plugin$RESET"
   asdf plugin add golang https://github.com/kennyp/asdf-golang.git
 }
 
