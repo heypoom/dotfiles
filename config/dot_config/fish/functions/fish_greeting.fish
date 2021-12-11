@@ -1,3 +1,3 @@
-function fish_greeting -d "What's up, fish?"
-
+function fish_greeting --description What\'s\ up,\ fish\?
+  # no-op
 end
