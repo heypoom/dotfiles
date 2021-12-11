@@ -20,7 +20,7 @@ then
   export SDKROOT="$(xcrun --sdk macosx --show-sdk-path)"
 fi
 
-echo "🍰 installing asdf modules..."
+echo "🟡 installing asdf modules..."
 
 # asdf install
 

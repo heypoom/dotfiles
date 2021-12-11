@@ -4,38 +4,43 @@ FROM ubuntu:groovy
 # Set build environment variables.
 ENV DOCKERIZED true
 ENV USER poom
+ENV TIMEZONE "Asia/Bangkok"
 ARG DEBIAN_FRONTEND=noninteractive
 
-# Configure timezones & Install dependencies for dotbot
-RUN ln -snf /usr/share/zoneinfo/Asia/Bangkok /etc/localtime \
-  && echo "Asia/Bangkok" > /etc/timezone \
-  && apt-get update -yq \
-  && apt-get upgrade -yq \
-  && apt-get install sudo git python3 -yq
-
-# Install dependencies
-COPY ./linux/deps /tmp/deps
-
-# Install essential linux dependencies.
-RUN /tmp/deps/install.sh
+# Setup time zones and install linux dependencies needed for build.
+RUN ln -snf "/usr/share/zoneinfo/$TIMEZONE" /etc/localtime \
+	&& echo $TIMEZONE > /etc/timezones \
+	&& apt update && apt install -y sudo curl \
+	&& apt clean
 
 # Adds a new user to the sudo group
 RUN useradd -ms /bin/bash $USER && \
-  usermod -a -G sudo $USER && \
-  echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
+	usermod -a -G sudo $USER && \
+	echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
-# Setup dotfiles directory
+# Install essential linux dependencies.
+COPY ./setup/linux/deps /tmp/deps
+RUN /tmp/deps/install.sh
+
+# Assume the user.
 USER $USER
-RUN mkdir -p $HOME/dotfiles
-WORKDIR /home/$USER/dotfiles
+ENV USER_HOME /home/$USER
+WORKDIR $USER_HOME
 
-# Copy dotfiles config to ~/dotfiles
-COPY . .
-RUN sudo chown -R $USER .
+# Setup the chezmoi directory.
+ENV CHEZMOI_HOME $USER_HOME/.local/share/chezmoi
+
+# Install chezmoi binary.
+RUN mkdir -p $CHEZMOI_HOME \
+	&& mkdir -p $USER_HOME/bin \
+	&& sh -c "$(curl -fsLS git.io/chezmoi)"
+
+# Copy the dotfiles.
+COPY . $CHEZMOI_HOME
 
 # Run dotbot installation script
-RUN ./install
+RUN $USER_HOME/bin/chezmoi init --apply
 
-# Start fish shell
-WORKDIR /home/$USER
+# Start fish shell.
 CMD fish
+

@@ -7,9 +7,14 @@ then
 fi
 
 # Install Rustup
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs > /tmp/install-rustup.sh
+chmod +x /tmp/install-rustup.sh
+/tmp/install-rustup.sh -y
 
-# Install Rust Components (rls clippy rustfmt)
+# Configure the rustup command.
+source $HOME/.cargo/env
+
+# Install Rust components.
 for component in rls clippy rustfmt
 do
   rustup component add $component

@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+YELLOW="\e[93m"
+RESET="\e[0m"
+
 setup_asdf() {
   if ! test -e ~/.asdf
   then
@@ -20,14 +23,14 @@ setup_asdf() {
     return
   fi
 
-  echo "🌟 Updating asdf to latest stable version..."
+  echo "🟡 Updating asdf to latest stable version..."
 
   # Update asdf to the latest stable version.
   asdf update
 
   for plugin in java nodejs python ruby
   do
-    echo "ℹ️ Adding $plugin plugin..."
+    echo -e "$YELLOW🟡 adding $plugin plugin$RESET"
     asdf plugin add $plugin
   done
 
@@ -38,7 +41,7 @@ if command -v asdf &> /dev/null
 then
   echo "🟡 asdf is installed."
 else
-  echo "🌟 Installing asdf package manager..."
+  echo "🟡 Installing asdf package manager..."
   setup_asdf
   echo "✅ installed asdf!"
 fi
