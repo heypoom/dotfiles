@@ -1,5 +1,6 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
+SETUVAR TO_DIR:/Users/poom/\x2etofish
 SETUVAR ZO_CMD:zo
 SETUVAR Z_CMD:z
 SETUVAR Z_DATA:/Users/poom/\x2elocal/share/z/data
@@ -14,6 +15,7 @@ SETUVAR _fisher_PatrickF1_2F_fzf_2E_fish_files:/Users/poom/\x2econfig/fish/funct
 SETUVAR _fisher_acomagu_2F_fish_2D_async_2D_prompt_files:/Users/poom/\x2econfig/fish/conf\x2ed/__async_prompt\x2efish
 SETUVAR _fisher_franciscolourenco_2F_done_files:/Users/poom/\x2econfig/fish/conf\x2ed/done\x2efish
 SETUVAR _fisher_jethrokuan_2F_z_files:/Users/poom/\x2econfig/fish/functions/__z\x2efish\x1e/Users/poom/\x2econfig/fish/functions/__z_add\x2efish\x1e/Users/poom/\x2econfig/fish/functions/__z_clean\x2efish\x1e/Users/poom/\x2econfig/fish/functions/__z_complete\x2efish\x1e/Users/poom/\x2econfig/fish/conf\x2ed/z\x2efish
+SETUVAR _fisher_joehillen_2F_to_2D_fish_files:/Users/poom/\x2econfig/fish/functions/to\x2efish\x1e/Users/poom/\x2econfig/fish/conf\x2ed/to\x2efish\x1e/Users/poom/\x2econfig/fish/completions/to\x2efish
 SETUVAR _fisher_jorgebucaran_2F_autopair_2E_fish_files:/Users/poom/\x2econfig/fish/functions/_autopair_backspace\x2efish\x1e/Users/poom/\x2econfig/fish/functions/_autopair_insert_left\x2efish\x1e/Users/poom/\x2econfig/fish/functions/_autopair_insert_right\x2efish\x1e/Users/poom/\x2econfig/fish/functions/_autopair_insert_same\x2efish\x1e/Users/poom/\x2econfig/fish/functions/_autopair_tab\x2efish\x1e/Users/poom/\x2econfig/fish/conf\x2ed/autopair\x2efish
 SETUVAR _fisher_jorgebucaran_2F_fisher_files:/Users/poom/\x2econfig/fish/functions/fisher\x2efish\x1e/Users/poom/\x2econfig/fish/completions/fisher\x2efish
 SETUVAR _fisher_jorgebucaran_2F_gitio_2E_fish_files:/Users/poom/\x2econfig/fish/functions/gitio\x2efish\x1e/Users/poom/\x2econfig/fish/completions/gitio\x2efish
@@ -22,7 +24,7 @@ SETUVAR _fisher_jorgebucaran_2F_replay_2E_fish_files:/Users/poom/\x2econfig/fish
 SETUVAR _fisher_jorgebucaran_2F_spark_2E_fish_files:/Users/poom/\x2econfig/fish/functions/spark\x2efish\x1e/Users/poom/\x2econfig/fish/completions/spark\x2efish
 SETUVAR _fisher_nickeb96_2F_puffer_2D_fish_files:/Users/poom/\x2econfig/fish/functions/_puffer_fish_expand_bang\x2efish\x1e/Users/poom/\x2econfig/fish/functions/_puffer_fish_expand_dots\x2efish\x1e/Users/poom/\x2econfig/fish/functions/_puffer_fish_expand_lastarg\x2efish\x1e/Users/poom/\x2econfig/fish/conf\x2ed/puffer_fish_key_bindings\x2efish
 SETUVAR _fisher_oh_2D_my_2D_fish_2F_theme_2D_bobthefish_files:/Users/poom/\x2econfig/fish/functions/__bobthefish_colors\x2efish\x1e/Users/poom/\x2econfig/fish/functions/__bobthefish_display_colors\x2efish\x1e/Users/poom/\x2econfig/fish/functions/__bobthefish_glyphs\x2efish\x1e/Users/poom/\x2econfig/fish/functions/bobthefish_display_colors\x2efish\x1e/Users/poom/\x2econfig/fish/functions/fish_greeting\x2efish\x1e/Users/poom/\x2econfig/fish/functions/fish_mode_prompt\x2efish\x1e/Users/poom/\x2econfig/fish/functions/fish_prompt\x2efish\x1e/Users/poom/\x2econfig/fish/functions/fish_right_prompt\x2efish\x1e/Users/poom/\x2econfig/fish/functions/fish_title\x2efish
-SETUVAR _fisher_plugins:jorgebucaran/fisher\x1ePatrickF1/fzf\x2efish\x1eoh\x2dmy\x2dfish/theme\x2dbobthefish\x1ejethrokuan/z\x1ejorgebucaran/nvm\x2efish\x1efranciscolourenco/done\x1ejorgebucaran/spark\x2efish\x1ejorgebucaran/replay\x2efish\x1ejorgebucaran/gitio\x2efish\x1ejorgebucaran/autopair\x2efish\x1eacomagu/fish\x2dasync\x2dprompt\x1enickeb96/puffer\x2dfish
+SETUVAR _fisher_plugins:jorgebucaran/fisher\x1ePatrickF1/fzf\x2efish\x1eoh\x2dmy\x2dfish/theme\x2dbobthefish\x1ejethrokuan/z\x1ejorgebucaran/nvm\x2efish\x1efranciscolourenco/done\x1ejorgebucaran/spark\x2efish\x1ejorgebucaran/replay\x2efish\x1ejorgebucaran/gitio\x2efish\x1ejorgebucaran/autopair\x2efish\x1eacomagu/fish\x2dasync\x2dprompt\x1enickeb96/puffer\x2dfish\x1ejoehillen/to\x2dfish
 SETUVAR fish_color_autosuggestion:555\x1ebrblack
 SETUVAR fish_color_cancel:\x2dr
 SETUVAR fish_color_command:005fd7
