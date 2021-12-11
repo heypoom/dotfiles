@@ -13,8 +13,8 @@ then
   mkdir -p "$HOME/.local/share"
 
   # Install oh-my-fish
-  curl -s -L https://get.oh-my.fish > /tmp/omf.install.fish
-  fish /tmp/omf.install.fish --noninteractive --yes &> /dev/null
+  curl -sL https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install > /tmp/omf.install.fish
+  fish /tmp/omf.install.fish --noninteractive --yes
 
   # Clean up oh-my-fish installation script
   rm -f /tmp/omf.install.fish
