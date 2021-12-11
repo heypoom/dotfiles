@@ -5,7 +5,7 @@ install-brewfile() {
   then
     echo "🟣 $1 are installed."
   else
-    echo "📦 Installing $1..."
+    echo "🟣 Installing $1..."
     brew bundle --file "deps/$1"
     echo "✅ Installed $1!"
   fi
@@ -16,7 +16,7 @@ install-brewfile-cli() {
   then
     echo "🟣 CLI $1 are installed."
   else
-    echo "📦 Installing CLI $1..."
+    echo "🟣 Installing CLI $1..."
     brew bundle --file "cli-deps/$1"
     echo "✅ Installed CLI $1!"
   fi

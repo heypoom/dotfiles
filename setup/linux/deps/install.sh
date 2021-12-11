@@ -2,21 +2,21 @@
 
 export DEBIAN_FRONTEND=noninteractive
 
-echo "🌟 installing linux dependencies..."
+echo "⚪ installing linux dependencies..."
 
 function install-from-package-list() {
-  packages="$(awk '! /^ *(#|$)/' $1)" 
-  xargs -a <(echo $packages) -r -- echo "📦 installing packages:"
-  xargs -a <(echo $packages) -r -- sudo apt-get install -yq
+  packages="$(awk '! /^ *(#|$)/' "$1")" 
+  xargs -a <(echo "$packages") -r -- echo "⚪ installing packages:"
+  xargs -a <(echo "$packages") -r -- sudo apt-get install -yq
 }
 
-cd "$(dirname "$0")"
+cd "$(dirname "$0")" || exit
 
-echo "🐳 Adding GitHub CLI repository."
+echo "⚪ adding GitHub CLI repository."
 
 if [[ ! $DOCKERIZED ]]
 then
-  echo "📦 In non-dockerized mode, upgrading system packages!"
+  echo "⚪ in non-dockerized mode, upgrading system packages."
 
   # Update and Upgrade Packages
   sudo apt update -yq
