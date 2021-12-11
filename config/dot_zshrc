@@ -3,7 +3,7 @@
 [ -s ~/.fig/shell/pre.sh ] && source ~/.fig/shell/pre.sh
 #### END FIG ENV VARIABLES ####
 
-# Initialize starship prompt for fish shell.
+# Initialize starship prompt for the z shell.
 if command -v starship &> /dev/null
 then
   # Initialize starship prompt.
