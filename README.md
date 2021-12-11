@@ -26,7 +26,12 @@ Here's a non-exhaustive list of everything I used in my personal dotfiles.
 **Shell**
 
 - [Fish Shell](https://fishshell.com) as the primary shell.
+
+  - [Fisher](https://github.com/jorgebucaran/fisher) as the plugin manager.
+
 - [Tmux](https://github.com/tmux/tmux) as the terminal multiplexer.
+
+  - [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm) as the plugin manager.
 
 **Apps**
 
