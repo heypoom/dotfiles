@@ -1,43 +1,10 @@
+# Inserts a blank line between shell prompts
 add_newline = false
-scan_timeout = 10
-
-prompt_order = [
-	"character",
-	"directory",
-	"git_branch",
-	"git_status",
-	"character",
-]
-
-[line_break]
-disabled = true
 
 [character]
-symbol = ""
+success_symbol = "[➜](bold green)"
 
+# Disable the package module, hiding it from the prompt completely
 [package]
 disabled = true
 
-[nodejs]
-disabled = true
-
-[directory]
-truncation_length = 3
-truncate_to_repo = true
-prefix = ""
-suffix = " "
-style = "bold"
-
-[git_branch]
-symbol = " "
-# style = "bg:red fg:black"
-truncation_length = 10
-truncation_symbol = ""
-
-# 
-[git_status]
-modified = " "
-staged = "  "
-prefix = ""
-suffix = ""
-style = "fg:white"
