@@ -8,6 +8,7 @@ config/dot_config/fish/functions/_*
 config/dot_config/fish/conf.d/_*
 
 # Tide can be installed from fisher, so we can gitignore it.
+config/dot_config/fish/completions/tide.fish
 config/dot_config/fish/functions/tide
 config/dot_config/fish/functions/_tide*
 config/dot_config/fish/functions/tide*
