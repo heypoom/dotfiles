@@ -30,7 +30,6 @@ let g:startify_lists = [
 let g:startify_bookmarks = [
   \ '~/Projects',
   \ '~/Labs',
-  \ '~/Workspaces/BRIKL',
   \ '~/Workspaces',
   \ { 'i': '~/dotfiles/config/nvim/init.vim' },
   \ ]

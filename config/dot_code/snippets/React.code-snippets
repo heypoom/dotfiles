@@ -42,27 +42,5 @@
       "}",
       ""
     ]
-  },
-  "BRIKL - React Functional Component File": {
-    "scope": "javascriptreact,typescriptreact",
-    "prefix": "brfc",
-    "body": [
-      "import React from 'react'",
-      "import { Box } from '@brikl/design-core'",
-      "",
-      "interface IProps {}",
-      "",
-      "export const ${1:${TM_FILENAME/(\\w+)\\.tsx/$1/g}}: React.FC<IProps> = () => {",
-      "  return (",
-      "    ${2:<Box />}",
-      "  )",
-      "}",
-      ""
-    ]
-  },
-  "BRIKL - Import Design Core": {
-    "scope": "javascriptreact,typescriptreact",
-    "prefix": "bidc",
-    "body": ["import { Box } from '@brikl/design-core'"]
   }
 }
