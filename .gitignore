@@ -2,6 +2,10 @@
 bin/chezmoi
 setup/bin/chezmoi
 
+# Functions starting with underscore is presumably from fisher (package manager),
+# so we can ignore and do a fresh install instead.
+config/dot_config/fish/functions/_*
+
 manual-install
 credentials
 config/ranger/__pycache__
