@@ -38,7 +38,7 @@ RUN mkdir -p $CHEZMOI_HOME \
 # Copy the dotfiles.
 COPY . $CHEZMOI_HOME
 
-# Run dotbot installation script
+# Apply chezmoi source state and configuration.
 RUN $USER_HOME/bin/chezmoi init --apply
 
 # Start fish shell.
