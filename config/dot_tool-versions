@@ -1,3 +1,6 @@
 nodejs lts-gallium
-python system
+ruby 3.0.2
+java openjdk-11.0.1
+python 3.9.9
+yarn 1.22.4
 golang 1.17.1

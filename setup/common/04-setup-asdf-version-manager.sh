@@ -28,7 +28,7 @@ setup_asdf() {
   # Update asdf to the latest stable version.
   asdf update
 
-  for plugin in java nodejs python ruby
+  for plugin in java nodejs python ruby yarn
   do
     echo -e "$YELLOW🟡 adding $plugin plugin$RESET"
     asdf plugin add $plugin
