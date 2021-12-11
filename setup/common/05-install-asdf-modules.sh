@@ -3,7 +3,7 @@
 YELLOW="\e[93m"
 RESET="\e[0m"
 
-# HACK: add asdf to PATH!
+# HACK: add asdf to PATH.
 export PATH="$PATH:$HOME/.asdf/bin"
 
 if ! command -v asdf &> /dev/null
@@ -18,9 +18,10 @@ then
   exit 0
 fi
 
-if [ `uname` == Darwin ]
+if [ "$(uname)" == Darwin ]
 then
-  export SDKROOT="$(xcrun --sdk macosx --show-sdk-path)"
+	SDKROOT="$(xcrun --sdk macosx --show-sdk-path)"
+  export SDKROOT
 fi
 
 echo -e "$YELLOW🟡 installing asdf modules. this will take a while!$RESET"

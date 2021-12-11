@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-if [ `uname` != Darwin ]
+if [ "$(uname)" != Darwin ]
 then
   echo "🟡 setup fish variables for linux"
   # cp ~/.config/fish/fish_variables.linux ~/.config/fish/fish_variables

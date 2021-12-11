@@ -12,7 +12,7 @@ chmod +x /tmp/install-rustup.sh
 /tmp/install-rustup.sh -y
 
 # Configure the rustup command.
-source $HOME/.cargo/env
+source "$HOME/.cargo/env"
 
 # Install Rust components.
 for component in rls clippy rustfmt
