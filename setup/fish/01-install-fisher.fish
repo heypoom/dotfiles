@@ -6,10 +6,8 @@ else
   echo "🔵 installing fisher"
 
   # Install fisher package manager.
-	# https://github.com/jorgebucaran/fisher
-  curl -sL https://git.io/fisher | source
-	fisher update
+  # https://github.com/jorgebucaran/fisher
+  fish -c "curl -sL https://git.io/fisher | source && fisher update"
 
   echo "✅ fisher is installed!"
 end
-
