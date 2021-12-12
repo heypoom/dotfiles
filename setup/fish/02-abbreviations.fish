@@ -32,3 +32,8 @@ abbr -a vim lvim
 
 # chezmoi abbreviations.
 abbr -a ch chezmoi
+
+# jq abbreviations.
+abbr -a scripts 'jq .scripts package.json'
+abbr -a deps 'jq .dependencies package.json'
+abbr -a devdeps 'jq .devDependencies package.json'
