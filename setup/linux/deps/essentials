@@ -1,38 +1,22 @@
-# tokei
-# fpp
-# cheat
-
 # Bare Necessities
 git
-python3
-python3-pip
-ruby
-sudo
 locales
 
 # Dependencies
 rlwrap
 expect
 
-# Processor
-jq
-
 # Search
-grep
 ripgrep
 fd-find
-silversearcher-ag
 
 # Editor
 neovim
 
 # Terminal Multiplexer
 tmux
-screen
 
 # Shells
-zsh
-bash
 fish
 
 # Essential Utilities
@@ -40,12 +24,9 @@ bat
 exa
 fzf
 
-# Fish Shell Dependencies
-direnv
-
 # Log Navigator
-lnav
 less
+lnav
 
 # Download Manager
 aria2
@@ -57,8 +38,6 @@ colordiff
 
 # Git Tools
 tig
-hub
-gist
 
 # File Watcher
 entr
