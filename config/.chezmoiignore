@@ -6,31 +6,33 @@ README.md
 
 # Fish variables has machine-dependent values and prompt-specific state.
 # We should create an init script that sets the universal variables instead.
-dot_config/fish/fish_variables
+.config/fish/fish_variables
 
 # Ignore fish plugins from fisher.
-dot_config/fish/**/nvm.fish
-dot_config/fish/**/to.fish
-dot_config/fish/**/fzf*
-dot_config/fish/**/tide*
-dot_config/fish/**/_*
+.config/fish/**/nvm.fish
+.config/fish/**/to.fish
+.config/fish/**/fzf*
+.config/fish/**/tide*
+.config/fish/**/_*
 
 # Ignore fish functions from fisher.
-dot_config/fish/functions/fish*
-dot_config/fish/functions/bobthefish*
-dot_config/fish/functions/gitio.fish
-dot_config/fish/functions/spark.fish
-dot_config/fish/functions/replay.fish
+.config/fish/functions/fish*
+.config/fish/functions/tide
+.config/fish/functions/tide/**
+.config/fish/functions/bobthefish*
+.config/fish/functions/gitio.fish
+.config/fish/functions/spark.fish
+.config/fish/functions/replay.fish
 
 # Ignore fish completions from fisher.
-dot_config/fish/completions/*
+.config/fish/completions/*
 
 # Include fish_greeting.fish for customization.
-!dot_config/fish/functions/fish_greeting.fish
+!.config/fish/functions/fish_greeting.fish
 
 # Ignore fish configurations from fisher.
-dot_config/fish/conf.d/autopair.fish
-dot_config/fish/conf.d/done.fish
-dot_config/fish/conf.d/fzf.fish
-dot_config/fish/conf.d/z.fish
-dot_config/fish/conf.d/puffer*
+.config/fish/conf.d/autopair.fish
+.config/fish/conf.d/done.fish
+.config/fish/conf.d/fzf.fish
+.config/fish/conf.d/z.fish
+.config/fish/conf.d/puffer*

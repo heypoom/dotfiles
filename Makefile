@@ -10,3 +10,6 @@ run-image:
 push-image:
 	docker push phoomparin/dotfiles:latest
 
+clean:
+	git clean -Xf
+
