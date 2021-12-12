@@ -2,6 +2,9 @@
 
 echo "🟡 applying syntax highlighting."
 
+# Use vim keybindings.
+set -U fish_key_bindings fish_vi_key_bindings
+
 # Fish color settings.
 set -U fish_color_autosuggestion 44475A
 set -U fish_color_cancel -r
@@ -26,7 +29,6 @@ set -U fish_color_selection white --bold --background=brblack
 set -U fish_color_status red
 set -U fish_color_user brgreen
 set -U fish_color_valid_path --underline
-set -U fish_key_bindings fish_vi_key_bindings
 
 # Fish pager color settings.
 set -U fish_pager_color_completion normal
