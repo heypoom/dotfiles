@@ -6,7 +6,7 @@ then
 else
   echo "🟡 installing starship prompt."
 
-	sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- --force
+	sudo sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- --force
 
   echo "✅ starship prompt is installed."
 fi
