@@ -8,6 +8,9 @@ README.md
 # We should create an init script that sets the universal variables instead.
 .config/fish/fish_variables
 
+# Ignore the setup script. This is run by Chezmoi on install.
+.config/fish/setup
+
 # Ignore fish plugins from fisher.
 .config/fish/**/nvm.fish
 .config/fish/**/to.fish
