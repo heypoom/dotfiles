@@ -1,6 +1,7 @@
 # Bare Necessities
 git
 locales
+gnupg
 
 # Dependencies
 rlwrap
