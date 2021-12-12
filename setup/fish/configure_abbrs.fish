@@ -1,6 +1,6 @@
 #!/usr/bin/env fish
 
-echo "🟡 applying abbreviations."
+echo "🔵 applying abbreviations."
 
 # git abbreviations.
 abbr -a g git

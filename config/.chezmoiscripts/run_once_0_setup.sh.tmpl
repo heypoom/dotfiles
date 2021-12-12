@@ -2,6 +2,7 @@
 
 GRAY="\e[90m"
 YELLOW="\e[93m"
+BLUE="\e[94m"
 PURPLE="\e[95m"
 RESET="\e[0m"
 
@@ -10,13 +11,15 @@ export DEBIAN_FRONTEND="noninteractive"
 cd "{{ .chezmoi.sourceDir }}/../setup"
 
 function run_setup_script {
-	for script in $(ls $1/*.sh)
+	for script in $(ls $1/*.*sh)
 	do
 		echo -e "$2$script$RESET"
 		$script
 	done
 }
 
+# setup os-specific environments.
+# linux and macOS are supported.
 {{ if eq .chezmoi.os "linux" -}}
 	run_setup_script "linux" "⚪ $GRAY"
 {{ else if eq .chezmoi.os "darwin" -}}
@@ -25,4 +28,9 @@ function run_setup_script {
   echo "😢 Unsupported OS."
 {{ end -}}
 
+# setup common CLI environment and tools.
 run_setup_script "common" "🟡 $YELLOW"
+
+# configure the fish universal variables for
+# abbreviations, syntax highlighting and prompt styling.
+run_setup_script "fish" "🔵 $BLUE"

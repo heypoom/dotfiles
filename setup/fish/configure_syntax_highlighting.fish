@@ -1,6 +1,6 @@
 #!/usr/bin/env fish
 
-echo "🟡 applying syntax highlighting."
+echo "🔵 applying syntax highlighting."
 
 # Use vim keybindings.
 set -U fish_key_bindings fish_vi_key_bindings

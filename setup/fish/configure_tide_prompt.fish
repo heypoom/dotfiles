@@ -1,6 +1,6 @@
 #!/usr/bin/env fish
 
-echo "🟡 applying tide prompt settings!"
+echo "🔵 applying tide prompt settings."
 
 # Prompt Settings
 set -U tide_prompt_add_newline_before false
