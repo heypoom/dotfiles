@@ -17,6 +17,7 @@ dot_config/fish/**/_*
 
 # Ignore fish functions from fisher.
 dot_config/fish/functions/fish*
+dot_config/fish/functions/bobthefish*
 dot_config/fish/functions/gitio.fish
 dot_config/fish/functions/spark.fish
 dot_config/fish/functions/replay.fish
