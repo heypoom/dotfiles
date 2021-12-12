@@ -21,6 +21,7 @@ tmux
 fish
 
 # Essential Utilities
+jq
 bat
 exa
 fzf
