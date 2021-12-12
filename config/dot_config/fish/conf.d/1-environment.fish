@@ -143,4 +143,3 @@ set -gx PATH \
   $HOME/.dotnet/tools \
   /usr/local/MacGPG2/bin \
   /Applications/Wireshark.app/Contents/MacOS
-

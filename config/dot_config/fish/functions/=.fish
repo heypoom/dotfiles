@@ -1,3 +1,3 @@
 function =
-	realpath (which $argv)
+  realpath (which $argv)
 end
