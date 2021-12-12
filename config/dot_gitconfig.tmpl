@@ -1,0 +1,59 @@
+[user]
+  email = {{ .email | quote }}
+  name = {{ .full_name | quote }}
+  signingkey = {{ .git.signing_key | quote }}
+
+{{ if eq .chezmoi.os "darwin" -}}
+[credential]
+  helper = osxkeychain
+{{ end -}}
+
+[core]
+  editor = nvim
+  pager = diff-so-fancy | less --tabs=4 -RFX
+
+[filter "lfs"]
+  required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+
+[commit]
+  gpgsign = true
+
+[rerere]
+  enabled = true
+  autoupdate = true
+
+[color]
+  ui = true
+  diff = true
+
+[merge]
+  tool = nvimdiff
+
+[mergetool]
+  prompt = true
+  path = nvim
+
+[mergetool "nvimdiff"]
+  cmd = nvim -d $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+
+[diff]
+  tool = nvimdiff
+
+[difftool "nvimdiff"]
+  cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
+
+[difftool]
+  prompt = false
+
+[pull]
+  rebase = false
+
+[gpg]
+  program = gpg
+
+[init]
+  defaultBranch = main
+
