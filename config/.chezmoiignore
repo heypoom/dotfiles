@@ -4,6 +4,9 @@ vscode
 config/vscode
 README.md
 
+# Ignore packer compiled plugin.
+.config/lvim/plugin/packer_compiled.lua
+
 # Ignore the macOS Library directory on non-macOS environments.
 {{ if ne .chezmoi.os "darwin" }}
 Library

@@ -423,21 +423,6 @@ formatters.setup({
 			"typescriptreact",
 		},
 	},
-	{
-		exe = "prettierd",
-
-		filetypes = {
-			"vue",
-			"css",
-			"scss",
-			"less",
-			"html",
-			"json",
-			"yaml",
-			"markdown",
-			"graphql",
-		},
-	},
 })
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
