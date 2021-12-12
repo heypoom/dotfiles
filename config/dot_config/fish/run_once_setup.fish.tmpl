@@ -1,0 +1,11 @@
+#!/usr/bin/env fish
+
+# change to the script's parent directory.
+cd "{{ .chezmoi.sourceDir }}/dot_config/fish"
+
+# run the setup scripts.
+# this configures the universal variables for
+# abbreviations, syntax highlighting and prompt styling.
+for script in (ls setup/*.fish)
+	fish $script
+end
