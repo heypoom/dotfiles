@@ -4,6 +4,11 @@ vscode
 config/vscode
 README.md
 
+# Ignore the macOS Library directory on non-macOS environments.
+{{ if ne .chezmoi.os "darwin" }}
+Library
+{{ end }}
+
 # Fish variables has machine-dependent values and prompt-specific state.
 # We should create an init script that sets the universal variables instead.
 .config/fish/fish_variables
