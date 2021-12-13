@@ -11,6 +11,7 @@ abbr -a gd 'git diff'
 abbr -a gdh 'git diff HEAD'
 abbr -a gl 'git pull'
 abbr -a gp 'git push'
+abbr -a staging 'git fetch origin staging && git merge origin/staging'
 
 # gh abbreviations.
 abbr -a gpv 'gh pr view -w'
