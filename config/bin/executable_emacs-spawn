@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+/usr/local/Cellar/emacs-plus@27/27.2/bin/emacsclient -c -a 'emacs' &
+
