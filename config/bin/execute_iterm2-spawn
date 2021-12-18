@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+cd $HOME
+
+# Start Kitty.
+open -a iTerm
+

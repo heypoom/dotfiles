@@ -22,6 +22,9 @@ alt - t: $HOME/bin/kitty-spawn
 # Spawn a new Emacs instance.
 alt + shift - e: $HOME/bin/emacs-spawn
 
+# Spawn a new iTerm2 terminal.
+alt + shift - t: $HOME/bin/iterm2-spawn
+
 # Send window to other monitor: alt + shift + {display}
 alt + shift - 1: yabai -m window --display 1; yabai -m display --focus 1
 alt + shift - 2: yabai -m window --display 2; yabai -m display --focus 2
