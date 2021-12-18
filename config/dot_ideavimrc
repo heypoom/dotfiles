@@ -1,16 +1,41 @@
 let mapleader = ' '
 
-set surround
-set multiple-cursors
-set commentary
-set easymotion
+Plug 'easymotion/vim-easymotion'
+Plug 'preservim/nerdtree'
+Plug 'tpope/vim-surround'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'tpope/vim-commentary'
+Plug 'vim-scripts/argtextobj.vim'
+Plug 'kana/vim-textobj-entire'
+Plug 'vim-scripts/ReplaceWithRegister'
+Plug 'machakann/vim-highlightedyank'
+Plug 'michaeljsmith/vim-indent-object'
+Plug 'dbakker/vim-paragraph-motion'
+Plug 'tommcdo/vim-exchange'
+
+packadd matchit
+
+let g:highlightedyank_highlight_duration = "200"
+let g:highlightedyank_highlight_color = "rgba(160, 160, 160, 155)"
+
+let g:argtextobj_pairs = "[:],(:),<:>"
 
 set number
+set relativenumber
+set scrolloff=5
 set incsearch hlsearch
+set nu
 set ignorecase smartcase
 set clipboard=unnamed
-set scrolloff=5
 set showmode
+
 set ideajoin
+set ideastatusicon grey
+set idearefactormode=keep
+
+" Don't use Ex mode, use Q for formatting.
+map Q gq
 
 set clipboard+=ideaput
+
+" map <leader>d <Action>(Debug)
