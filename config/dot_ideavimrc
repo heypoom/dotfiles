@@ -37,4 +37,5 @@ map Q gq
 
 set clipboard+=ideaput
 
+map <leader>h :nohl<CR>
 " map <leader>d <Action>(Debug)
