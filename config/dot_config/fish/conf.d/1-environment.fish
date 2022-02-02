@@ -108,6 +108,7 @@ set -gx PATH \
   $HOME/.emacs.d/bin/ \
   /usr/libexec \
   $HOME/scripts \
+  /opt/homebrew/bin \
   /usr/local/opt/llvm/bin \
   /usr/local/opt/coreutils/libexec/gnubin \
   /usr/local/opt/binutils/bin \
