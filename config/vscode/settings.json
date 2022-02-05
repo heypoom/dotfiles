@@ -251,7 +251,7 @@
   "vscode-neovim.neovimInitVimPaths.win32": "$HOME/.config/nvim/init.vim",
   "editor.linkedEditing": true,
   "workbench.editor.untitled.hint": "hidden",
-	"redhat.telemetry.enabled": false,
+  "redhat.telemetry.enabled": false,
   "editor.insertSpaces": false,
   "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
   "editor.wordWrap": "off",
@@ -284,13 +284,12 @@
     "typescript": true
   },
   "security.workspace.trust.untrustedFiles": "open",
-	"wallaby.node": "/Users/poom/.asdf/installs/nodejs/lts/bin/node",
-	"terminal.integrated.env.osx": {
-		"FIG_NEW_SESSION": "1"
-	},
-	"editor.accessibilitySupport": "off",
-	"vscode-edge-devtools.mirrorEdits": true,
-	"editor.cursorBlinking": "phase",
-	"editor.cursorSmoothCaretAnimation": true,
-	"window.zoomLevel": -1
+  "wallaby.node": "/Users/poom/.asdf/installs/nodejs/lts/bin/node",
+  "terminal.integrated.env.osx": {
+    "FIG_NEW_SESSION": "1"
+  },
+  "editor.accessibilitySupport": "off",
+  "vscode-edge-devtools.mirrorEdits": true,
+  "editor.cursorBlinking": "phase",
+  "editor.cursorSmoothCaretAnimation": true
 }
