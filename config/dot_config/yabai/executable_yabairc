@@ -31,6 +31,9 @@ yabai -m rule --add title='Preferences$' manage=off
 # Float IntelliJ IDEA by default
 yabai -m rule --add app="IntelliJ IDEA" manage=off
 
+# Float Minecraft by default
+yabai -m rule --add app="java" manage=off
+
 # Tile only the main editor window (title = "Doom Emacs")
 # yabai -m rule --add app='Emacs' title='Doom' manage=on
 

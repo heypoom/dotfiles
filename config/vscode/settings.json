@@ -15,7 +15,9 @@
   "terminal.integrated.profiles.osx": {
     "fish": {
       "path": "/usr/local/bin/fish",
-      "args": ["-l"]
+      "args": [
+        "-l"
+      ]
     },
     "tmux": {
       "path": "tmux",
@@ -25,7 +27,9 @@
   "terminal.integrated.profiles.linux": {
     "fish": {
       "path": "/usr/bin/fish",
-      "args": ["-l"]
+      "args": [
+        "-l"
+      ]
     },
     "tmux": {
       "path": "tmux",
@@ -137,7 +141,10 @@
   },
   "workbench.startupEditor": "newUntitledFile",
   "C_Cpp.updateChannel": "Insiders",
-  "prettier.disableLanguages": ["Python", "python"],
+  "prettier.disableLanguages": [
+    "Python",
+    "python"
+  ],
   "[python]": {},
   "editor.suggestSelection": "first",
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
@@ -223,7 +230,6 @@
     "projectKey": ""
   },
   "elixirLS.enableTestLenses": true,
-
   "[elixir]": {
     "editor.insertSpaces": true,
     "editor.tabSize": 2,
@@ -284,12 +290,16 @@
     "typescript": true
   },
   "security.workspace.trust.untrustedFiles": "open",
-  "wallaby.node": "/Users/poom/.asdf/installs/nodejs/lts/bin/node",
+  "wallaby.node": "/Users/poom/.asdf/installs/nodejs/lts-gallium/bin/node",
   "terminal.integrated.env.osx": {
     "FIG_NEW_SESSION": "1"
   },
   "editor.accessibilitySupport": "off",
   "vscode-edge-devtools.mirrorEdits": true,
   "editor.cursorBlinking": "phase",
-  "editor.cursorSmoothCaretAnimation": true
+  "editor.cursorSmoothCaretAnimation": true,
+  "apklab.apkSignerPath": "/Users/poom/.apklab/uber-apk-signer-1.2.1.jar",
+  "apklab.apktoolPath": "/Users/poom/.apklab/apktool_2.6.0.jar",
+  "apklab.jadxDirPath": "/Users/poom/.apklab/jadx-1.3.2",
+  "svelte.enable-ts-plugin": true
 }
