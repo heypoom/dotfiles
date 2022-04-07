@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+if [ $# -lt 1 ]
+then
+  echo "missing note name"
+  exit 0
+fi
+
+note="$HOME/Notes/Work/Wiki/$1.md"
+touch "$note"
+lvim "$note"
+

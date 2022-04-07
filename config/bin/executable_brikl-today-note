@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+today=`date +%m-%d-%Y`
+journal="$HOME/Notes/Work/Journal/$today.md"
+touch $journal
+lvim $journal
+

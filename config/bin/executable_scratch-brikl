@@ -1,0 +1,20 @@
+#!/usr/bin/env python3
+
+import os
+import sys
+from datetime import datetime
+
+zid = datetime.now().strftime("%Y%m%d%H%M")
+note_name = "Untitled"
+
+if len(sys.argv) > 1:
+    note_name = sys.argv[1]
+
+home = os.path.expanduser('~')
+
+filename = "%s/Notes/Work/Scratchpad/%s %s.md" % (home, zid, note_name)
+
+with open(filename, "w") as file:
+    file.write("")
+    os.system('lvim "%s"' % filename)
+
