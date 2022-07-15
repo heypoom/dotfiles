@@ -94,6 +94,7 @@ set -gx FZF_CTRL_T_COMMAND $FZF_DEFAULT_COMMAND
 set -gx WASMTIME_HOME "$HOME/.wasmtime"
 set -gx VOLTA_HOME "$HOME/.volta"
 set -gx PNPM_HOME "$HOME/Library/pnpm"
+set -gx BUN_INSTALL "/Users/poom/.bun"
 
 # Configure the environment variables.
 set -gx PATH \
@@ -102,6 +103,7 @@ set -gx PATH \
   $VOLTA_HOME/bin \
   $WASMTIME_HOME/bin \
   $HOME/.config/yarn/global/node_modules/.bin \
+  $BUN_INSTALL/bin \
   $HOME/.asdf/shims \
   $HOME/.asdf/bin \
   $GEM_HOME/bin \
