@@ -130,6 +130,7 @@ set -gx PATH \
   $HOME/Library/Python/3.7/bin \
   $GOPATH/bin \
   $HOME/bin \
+  $HOME/.fig/bin \
   $HOME/.local/bin \
   $HOME/.platformio/penv/bin \
   $HOME/lib/emsdk/emscripten/1.37.34/bin \
