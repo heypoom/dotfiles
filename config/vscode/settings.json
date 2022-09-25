@@ -297,5 +297,10 @@
   "svelte.enable-ts-plugin": true,
   "powermode.enabled": true,
   "powermode.shake.enabled": false,
-  "debug.onTaskErrors": "abort"
+  "debug.onTaskErrors": "abort",
+  "cmake.configureOnOpen": true,
+  "svelte.plugin.svelte.note-new-transformation": false,
+  "[svelte]": {
+    "editor.defaultFormatter": "svelte.svelte-vscode"
+  }
 }
