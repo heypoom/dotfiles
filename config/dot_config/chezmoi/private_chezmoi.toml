@@ -1,0 +1,17 @@
+[data]
+# Default username.
+user = "poom"
+
+# Email (used for git)
+email = "poom@hey.com"
+
+# Full Name (used for git)
+full_name = "Phoomparin Mano"
+
+[data.git]
+# PGP signing key
+signing_key = "40A6176B3534A1E2487E0802AF477883B952295C"
+
+[merge]
+command = "nvim"
+args = ["-d", "{{ .Destination }}", "{{ .Source }}", "{{ .Target }}"]

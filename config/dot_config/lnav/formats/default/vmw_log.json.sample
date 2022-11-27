@@ -1,0 +1,141 @@
+{
+    "$schema": "https://lnav.org/schemas/format-v1.schema.json",
+    "vmw_log": {
+        "title": "VMware Logs",
+        "description": "One of the log formats used in VMware's ESXi and vCenter software.",
+        "url": "http://kb.vmware.com/kb/2004201",
+        "regex": {
+            "6.0+": {
+                "pattern": "^(?<timestamp>\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{3}(?:Z|[-+]\\d{2}:\\d{2})) (?<level>\\w+) (?<prc>[\\w\\-]+)\\[(?<tid>\\w+)\\] \\[(?<src>[^ \\]]+)\\s*(?: sub=(?<sub>.+?))?(?: opI(?:D|d)=(?<opid>[^\\]]+))?(?: user=(?<user>[^ \\]]+))?\\]\\s*(?<body>.*)(?:\\n.*)?$"
+            },
+            "6.0+-nosrc": {
+                "pattern": "^(?<timestamp>\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{3}(?:Z|[-+]\\d{2}:\\d{2})) (?<level>\\w+) (?<prc>[\\w\\-]+)\\[(?<tid>\\w+)\\] \\[(?:opI(?:D|d)=(?<opid>[^\\]]+))\\]\\s*(?<body>.*)(?:\\n.*)?$"
+            },
+            "section": {
+                "pattern": "^(?<timestamp>\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{3}(?:Z|[-+]\\d{2}:\\d{2})) (?:- last log rotation time, \\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{3}(?:Z|[-+]\\d{2}:\\d{2}))?\\s*(ESX KMX Agent started.|Section for VMware VirtualCenter,.*|- time the service was last started(?: \\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}.\\d{3}Z)?, Section for (?:[^,]+), pid=(?<tid>\\w+).*)"
+            },
+            "5.0+": {
+                "pattern": "^(?<timestamp>\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{3}(?:Z|[-+]\\d{2}:\\d{2})) \\[(?<tid>\\w+) (?<level>\\w+) '(?<comp>[^']+)'(?: opID=(?<opid>[^ \\]]+))?(?: user=(?<user>[^ \\]]+))?\\](?<body>.*)(?:\\n.*)?$"
+            },
+            "pre-5.0": {
+                "pattern": "^\\[(?<timestamp>\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}\\.\\d{3}) (?<tid>\\w+) (?<level>\\w+) '(?<comp>[^']+)'(?: opID=(?<opid>[^ \\]]+))?(?: user=(?<user>[^ \\]]+))?\\](?<body>.*)(?:\\n.*)?$"
+            },
+            "ls-log": {
+                "pattern": "^\\[(?<timestamp>\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2},\\d{3}) (?<tid>[\\w\\-]+)\\s+(?<level>\\w+)\\s+(?<comp>[^\\]]+)\\]\\s+(?<body>.*)"
+            },
+            "hdr-ftr": {
+                "pattern": "^(?<timestamp>\\d{4}-\\d{2}-\\d{2}(T| )\\d{2}:\\d{2}:\\d{2}(?:.|,)\\d{3}(?:Z|[-+]\\d{2}:\\d{2})) \\[(?<prc>[^\\[]+)\\[(?<tid>\\w+)\\]:\\s+(?<body>.*)\\]$"
+            },
+            "pylog": {
+                "pattern": "^(?<timestamp>\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{3})?(?:Z|[-+]\\d{2}:\\d{2})) (?<prc>[^:]+):\\s+(?<tid>\\w+):\\s+(?<comp>[^:]+):(?<line>\\d+)?\\s+(?<level>\\w+):?\\s+(?<body>.*)(?:\\n.*)?$"
+            },
+            "vum-log4cpp": {
+                "pattern": "^\\[(?<timestamp>\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}:\\d{3}) '(?<category>[^']*)' (?<tid>\\d+) (?<level>[a-zA-Z]+)\\]\\s+(?>\\[(?<file>\\S+), (?<line>\\d+)\\])? (?<body>.*$)"
+            },
+            "pylog2": {
+                "pattern": "^(?<prc>[^:]+):(?<timestamp>\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2},\\d{3})\\[(?<tid>\\w+)\\](?<file>[^:]+):(?<line>\\d+) \\[(?<level>[a-zA-Z]+)\\]\\s+(?<body>.*)$"
+            },
+            "pylog3": {
+                "pattern": "^(?<prc>[^:]+): (?<tid>\\d+): (?<timestamp>\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2},\\d{3}) (?<file>[^:]+):(?<line>\\d+) (?<level>[a-zA-Z]+)\\s+(?<body>.*)$"
+            }
+        },
+        "level-field": "level",
+        "level": {
+            "error": "(?i)(alert|crit|emerg|error|fatal|panic)",
+            "warning": "(?i)(warning|warn)",
+            "trace": "verbose"
+        },
+        "opid-field": "opid",
+        "value": {
+            "prc": {
+                "kind": "string",
+                "identifier": true
+            },
+            "tid": {
+                "kind": "string",
+                "identifier": true
+            },
+            "src": {
+                "kind": "string",
+                "identifier": true
+            },
+            "comp": {
+                "kind": "string",
+                "identifier": true
+            },
+            "line": {
+                "kind": "integer",
+                "identifier": true
+            },
+            "sub": {
+                "kind": "string",
+                "identifier": true
+            },
+            "opid": {
+                "kind": "string",
+                "identifier": true
+            },
+            "user": {
+                "kind": "string",
+                "identifier": true
+            },
+            "file": {
+                "kind": "string",
+                "identifier": true
+            }
+        },
+        "sample": [
+            {
+                "line": "2021-05-24T20:31:05.671Z - last log rotation time, 2021-05-24T09:30:02.683Z - time the service was last started, Section for VMware ESX, pid=1000080910, version=7.0.3, build=0, option=DEBUG"
+            },
+            {
+                "line": "[2011-04-01 15:14:34.203 F5A5AB90 info 'vm:/vmfs/volumes/4d6579ec-23f981cb-465c-00237da0cfee/Vmotion-test/Vmotion-test.vmx' opID=F6FC49D5-000007E6-d] VMotionPrepare: dstMgmtIp=10.21.49.138"
+            },
+            {
+                "line": "2014-11-04T15:53:31.075+05:30 verbose vpxd[05160] [Originator@6876 sub=PropertyProvider opID=ProcessAlarmFiring-427c3c55] RecordOp ASSIGN: declaredAlarmState[\"alarm-1.host-23\"], host-23. Applied change to temp map."
+            },
+            {
+                "line": "2020-05-11T22:32:22.932Z [/etc/init.d/vvold[1000211787]: WaitVvoldToComeUp /var/run/vmware/.vmware-vvol.started created]"
+            },
+            {
+                "line": "2020-05-11T22:32:22.736Z info -[1000212040] [Originator@6876 sub=Default] Successfully registered SIGHUP handler"
+            },
+            {
+                "line": "2014-01-17T04:55:50.347Z [7F03ECE76700 verbose 'Default' opID=2140bc71] [VpxVmomi] Invoke done: vmodl.query.PropertyCollector.waitForUpdatesEx session: c580b3ef-0011-88a5-b2af-7ca7e74114c8"
+            },
+            {
+                "line": "2014-11-04T12:46:42.990+05:30 Section for VMware VirtualCenter, pid=6432, version=6.0.0, build=2255588, option=BETA"
+            },
+            {
+                "line": "[2013-01-16 02:26:25,500 pool-3-thread-1  INFO  com.vmware.vim.license.service.impl.ServiceImpl] License Accounting Service initialized"
+            },
+            {
+                "line": "2020-05-11T22:32:38.751Z info vsansystem[1000212707] [Originator@6876 sub=Libs opId=vsan-d810] VsanConfigStore: Get object host from vsan"
+            },
+            {
+                "line": "2020-05-11T22:32:56Z lifecycle: 1000212917: lifecyclectl:58 ERROR Failed to delete pidfile(/var/vmware/lifecycle/lifecycle.apply.pid) at boot Traceback (most recent call last):   File \"/usr/lib/vmware/lifecycle/bin/lifecyclectl.py\", line 55, in main     os.remove(PID_APPLY_FILE) FileNotFoundError: [Errno 2] No such file or directory: '/var/vmware/lifecycle/lifecycle.apply.pid'"
+            },
+            {
+                "line": "2020-05-11T22:32:09Z esxupdate: 1000211352: root: INFO: Command = profile.setacceptance"
+            },
+            {
+                "line": "2020-05-11T22:36:11.202Z verbose hostd[1000212678] [Originator@6876 sub=Vimsvc.Ticket 52 66 af 87 76 b0 ab 21-dd 2b 28 27 3a 39 fd fd opID=ec9d7fe8] Ticket issued for root"
+            },
+            {
+                "line": "[2020-05-26 19:46:43:259 'ConfigurationMgr' 139700477753600 INFO]  [configurationMgr, 155] Configuration manager created...vcidbInit"
+            },
+            {
+                "line": "HsmService:2021-05-19 17:36:35,978[MainThread]hsmService:737 [INFO] HSM Service is initialized"
+            },
+            {
+                "line": "ImageService: 139853338433792: 2021-05-19 17:36:35,675 imageService:769 INFO Image service is initialized"
+            },
+            {
+                "line": "2021-06-03T16:50:32.890Z - time the service was last started 2021-06-03T16:50:32.884Z, Section for VMware Update Manager, pid=5916, version=7.0.3, build=0, option=DEBUG"
+            },
+            {
+                "line": "2021-06-16T14:59:52.362Z info vsand[1000083783] [opID=MainThread VsanMgmtSvcMain::_PatchPyVmomi] Python 3.8.8 (default, Jun  1 2021, 03:16:39)  [GCC 4.6.3] on VMkernel, optimize: 0, recursionLimit: 300"
+            }
+        ]
+    }
+}

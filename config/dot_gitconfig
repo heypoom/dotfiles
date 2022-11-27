@@ -1,12 +1,7 @@
 [user]
-  email = {{ .email | quote }}
-  name = {{ .full_name | quote }}
-  signingkey = {{ .git.signing_key | quote }}
-
-{{ if eq .chezmoi.os "darwin" -}}
-[credential]
-  helper = osxkeychain
-{{ end -}}
+  email = "poom@hey.com"
+  name = "Phoomparin Mano"
+  signingkey = "40A6176B3534A1E2487E0802AF477883B952295C"
 
 [core]
   editor = nvim
@@ -19,7 +14,7 @@
   process = git-lfs filter-process
 
 [commit]
-  gpgsign = true
+  gpgsign = false
 
 [rerere]
   enabled = true

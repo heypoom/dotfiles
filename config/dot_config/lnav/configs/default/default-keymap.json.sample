@@ -1,0 +1,163 @@
+{
+    "$schema": "https://lnav.org/schemas/config-v1.schema.json",
+    "global": {
+        "keymap_def_alt_warning": "Press ${ansi_bold}w${ansi_norm}/${ansi_bold}W${ansi_norm} to move forward/backward through ${ansi_yellow}warning${ansi_norm} messages",
+        "keymap_def_alt_hour_boundary": "Press ${ansi_bold}6${ansi_bold}/${ansi_bold}^${ansi_norm} to move to the next/previous hour boundary",
+        "keymap_def_scroll_horiz": "Press \\'${ansi_bold}>${ansi_norm}\\' or \\'${ansi_bold}<${ansi_norm}\\' to scroll horizontally to a search result",
+        "keymap_def_next_user_mark": "Press ${ansi_bold}u${ansi_norm}/${ansi_bold}U${ansi_norm} to move forward/backward through user bookmarks",
+        "keymap_def_db_view": "Press ${ansi_bold}v${ansi_norm}/${ansi_bold}V${ansi_norm} to switch to the SQL result view",
+        "keymap_def_hist_view": "Press ${ansi_bold}i${ansi_norm}/${ansi_bold}I${ansi_norm} to switch to the histogram view",
+        "keymap_def_text_view": "Press ${ansi_bold}t${ansi_norm} to switch to the text view",
+        "keymap_def_pop_view": "Press ${ansi_bold}q${ansi_norm} to return to the previous view",
+        "keymap_def_zoom": "Press ${ansi_bold}z${ansi_norm}/${ansi_bold}Z${ansi_norm} to zoom in/out",
+        "keymap_def_clear": "Press ${ansi_bold}C${ansi_norm} to clear marked messages",
+        "keymap_def_prev_location": "Press ${ansi_bold}{${ansi_norm} to move to the previous location in history",
+        "keymap_def_next_location": "Press ${ansi_bold}}${ansi_norm} to move to the next location in history",
+        "keymap_def_next_mark": "Press ${ansi_bold}c${ansi_norm} to copy marked lines to the clipboard; press ${ansi_bold}C${ansi_norm} to clear marked lines"
+    },
+    "ui": {
+        "keymap-defs": {
+            "default": {
+                "x31": {
+                    "command": ":goto next 10 minutes after the hour"
+                },
+                "x32": {
+                    "command": ":goto next 20 minutes after the hour"
+                },
+                "x33": {
+                    "command": ":goto next 30 minutes after the hour"
+                },
+                "x34": {
+                    "command": ":goto next 40 minutes after the hour"
+                },
+                "x35": {
+                    "command": ":goto next 50 minutes after the hour"
+                },
+                "x36": {
+                    "command": ":goto next hour"
+                },
+                "x37": {
+                    "command": ":goto previous minute"
+                },
+                "x38": {
+                    "command": ":goto next minute"
+                },
+                "x21": {
+                    "command": ":goto last 10 minutes after the hour"
+                },
+                "x40": {
+                    "command": ":goto last 20 minutes after the hour"
+                },
+                "x23": {
+                    "command": ":goto last 30 minutes after the hour"
+                },
+                "x24": {
+                    "command": ":goto last 40 minutes after the hour"
+                },
+                "x25": {
+                    "command": ":goto last 50 minutes after the hour"
+                },
+                "x5e": {
+                    "command": ":goto last hour"
+                },
+                "x06": {
+                    "command": ";UPDATE lnav_view_filters SET enabled = 1 - enabled WHERE view_name = (SELECT name FROM lnav_view_stack WHERE name in ('log', 'text') ORDER BY rowid DESC LIMIT 1)"
+                },
+                "x0c": {
+                    "command": ":write-screen-to -"
+                },
+                "x12": {
+                    "command": ":reset-session"
+                },
+                "x3d": {
+                    "command": ";UPDATE lnav_views SET paused = 1 - paused"
+                },
+                "x58": {
+                    "command": ":close"
+                },
+                "x3a": {
+                    "command": ":prompt command"
+                },
+                "x7c": {
+                    "command": ":prompt script"
+                },
+                "x2f": {
+                    "command": ":prompt search"
+                },
+                "x3b": {
+                    "command": ":prompt sql"
+                },
+                "x45": {
+                    "command": ":prev-mark error",
+                    "alt-msg": "${keymap_def_alt_warning}"
+                },
+                "x65": {
+                    "command": ":next-mark error",
+                    "alt-msg": "${keymap_def_alt_warning}"
+                },
+                "x57": {
+                    "command": ":prev-mark warning",
+                    "alt-msg": "${keymap_def_alt_hour_boundary}"
+                },
+                "x77": {
+                    "command": ":next-mark warning",
+                    "alt-msg": "${keymap_def_alt_hour_boundary}"
+                },
+                "x63": {
+                    "command": ":write-to /dev/clipboard",
+                    "alt-msg": "${keymap_def_clear}"
+                },
+                "x67": {
+                    "command": ":goto 0"
+                },
+                "x6d": {
+                    "command": ":mark",
+                    "alt-msg": "${keymap_def_next_user_mark}"
+                },
+                "x4e": {
+                    "command": ":prev-mark search",
+                    "alt-msg": "${keymap_def_scroll_horiz}"
+                },
+                "x6e": {
+                    "command": ":next-mark search",
+                    "alt-msg": "${keymap_def_scroll_horiz}"
+                },
+                "x75": {
+                    "command": ":next-mark",
+                    "alt-msg": "${keymap_def_next_mark}"
+                },
+                "x55": {
+                    "command": ":prev-mark"
+                },
+                "x7d": {
+                    "command": ":next-location",
+                    "alt-msg": "${keymap_def_prev_location}"
+                },
+                "x7b": {
+                    "command": ":prev-location",
+                    "alt-msg": "${keymap_def_next_location}"
+                },
+                "x3f": {
+                    "command": ":toggle-view help"
+                },
+                "x69": {
+                    "command": ":toggle-view histogram",
+                    "alt-msg": "${keymap_def_zoom}"
+                },
+                "x50": {
+                    "command": ":toggle-view pretty",
+                    "alt-msg": "${keymap_def_pop_view}"
+                },
+                "x76": {
+                    "command": ":toggle-view db"
+                },
+                "x71": {
+                    "command": "|lnav-pop-view ${keyseq}"
+                },
+                "x51": {
+                    "command": "|lnav-pop-view ${keyseq}"
+                }
+            }
+        }
+    }
+}
