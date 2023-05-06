@@ -94,7 +94,8 @@ set -gx FZF_CTRL_T_COMMAND $FZF_DEFAULT_COMMAND
 set -gx WASMTIME_HOME "$HOME/.wasmtime"
 set -gx VOLTA_HOME "$HOME/.volta"
 set -gx PNPM_HOME "$HOME/Library/pnpm"
-set -gx BUN_INSTALL "/Users/poom/.bun"
+set -gx BUN_INSTALL "$HOME/.bun"
+set -gx CONDA_HOME "/opt/homebrew/anaconda3"
 
 # Configure the environment variables.
 set -gx PATH \
@@ -107,6 +108,7 @@ set -gx PATH \
   $HOME/.asdf/shims \
   $HOME/.asdf/bin \
   $GEM_HOME/bin \
+  $CONDA_HOME/bin \
   $HOME/.emacs.d/bin/ \
   /usr/libexec \
   $HOME/scripts \

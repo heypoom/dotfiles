@@ -19,11 +19,11 @@ yabai -m config mouse_action2                resize
 
 # General space settings
 yabai -m config layout                       bsp
-yabai -m config top_padding                  17
-yabai -m config bottom_padding               17
-yabai -m config left_padding                 17
-yabai -m config right_padding                17
-yabai -m config window_gap                   17
+yabai -m config top_padding                  10
+yabai -m config bottom_padding               10
+yabai -m config left_padding                 8
+yabai -m config right_padding                8
+yabai -m config window_gap                   8
 
 # Rules to allow dialogs to float.
 yabai -m rule --add title='Preferences$' manage=off

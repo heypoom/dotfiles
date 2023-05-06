@@ -3,10 +3,8 @@
   name = {{ .full_name | quote }}
   signingkey = {{ .git.signing_key | quote }}
 
-{{ if eq .chezmoi.os "darwin" -}}
 [credential]
   helper = osxkeychain
-{{ end -}}
 
 [core]
   editor = nvim
