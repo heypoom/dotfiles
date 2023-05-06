@@ -238,8 +238,8 @@
   "security.workspace.trust.untrustedFiles": "open",
   "wallaby.node": "/Users/poom/.asdf/installs/nodejs/lts-gallium/bin/node",
   "terminal.integrated.env.osx": {
-    "FIG_NEW_SESSION": "1"
-  },
+		"FIG_NEW_SESSION": "1"
+	},
   "editor.accessibilitySupport": "off",
   "editor.cursorBlinking": "phase",
   "editor.cursorSmoothCaretAnimation": "on",
