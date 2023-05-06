@@ -150,4 +150,8 @@ set -gx PATH \
   /usr/local/MacGPG2/bin \
   /Applications/Wireshark.app/Contents/MacOS
 
-set -gx OPENAI_API_KEY (cat "$HOME/.openai.key" | tr '\n' ' ')
+set -gx OPENAI_KEY_FILE "$HOME/.openai.key"
+
+if test -e $OPENAI_KEY_FILE
+	set -gx OPENAI_API_KEY (cat $OPENAI_KEY_FILE | tr '\n' ' ')
+end
