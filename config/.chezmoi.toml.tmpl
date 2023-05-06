@@ -15,3 +15,6 @@ signing_key = "C69E727EDDDB211B7E30D78439C5516D7CFA6361"
 [merge]
 command = "nvim"
 args = ["-d", {{ `"{{ .Destination }}", "{{ .Source }}", "{{ .Target }}"` }}]
+
+[diff]
+pager = "diff-so-fancy"
