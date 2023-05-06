@@ -150,8 +150,12 @@ set -gx PATH \
   /usr/local/MacGPG2/bin \
   /Applications/Wireshark.app/Contents/MacOS
 
+# Populate the OpenAI API Key
 set -gx OPENAI_KEY_FILE "$HOME/.openai.key"
 
 if test -e $OPENAI_KEY_FILE
 	set -gx OPENAI_API_KEY (cat $OPENAI_KEY_FILE | tr '\n' ' ')
 end
+
+# Set the enhancd command to ecd (https://github.com/b4b4r07/enhancd)
+set -gx ENHANCD_COMMAND ecd
