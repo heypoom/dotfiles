@@ -7,7 +7,9 @@ abbr -a g git
 abbr -a scripts 'jq .scripts package.json'
 abbr -a staging 'git fetch origin staging && git merge origin/staging'
 abbr -a vi lvim
+abbr -a lv lvim
 abbr -a nv nvim
+abbr -a nvd 'nvim +Nvdash'
 abbr -a ls exa
 abbr -a gl 'git pull'
 abbr -a ch chezmoi
