@@ -1,0 +1,10 @@
+/**
+.search-view .search-widget .input-box, .search-view .search-widget .input-box .monaco-inputbox, .monaco-workbench .part.editor>.content>.one-editor-silo>.container>.title .tabs-container>.tab, .monaco-editor-background, .monaco-editor .margin, .monaco-workbench .part>.content, .monaco-workbench .editor>.content>.one-editor-silo.editor-one, .monaco-workbench .part.editor>.content>.one-editor-silo>.container>.title, .monaco-workbench .part>.title, .monaco-workbench, .monaco-workbench .part, body { 
+	background: #000 !important;
+}
+
+.monaco-workbench.fullscreen,
+.monaco-scrollable-element.mac {
+	background: #000 !important;
+}
+*/

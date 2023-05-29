@@ -265,13 +265,13 @@ lvim.plugins = {
 					width = 0.60,
 
 					options = {
-						signcolumn = "no",      -- disable signcolumn
-						number = false,         -- disable number column
+						signcolumn = "no", -- disable signcolumn
+						number = false,   -- disable number column
 						relativenumber = false, -- disable relative numbers
-						cursorline = false,     -- disable cursorline
-						cursorcolumn = false,   -- disable cursor column
-						foldcolumn = "0",       -- disable fold column
-						list = false,           -- disable whitespace characters
+						cursorline = false, -- disable cursorline
+						cursorcolumn = false, -- disable cursor column
+						foldcolumn = "0", -- disable fold column
+						list = false,     -- disable whitespace characters
 					},
 				},
 
@@ -318,7 +318,7 @@ lvim.plugins = {
 
 		config = function()
 			require("numb").setup({
-				show_numbers = true,    -- Enable 'number' for the window while peeking
+				show_numbers = true, -- Enable 'number' for the window while peeking
 				show_cursorline = true, -- Enable 'cursorline' for the window while peeking
 			})
 		end,
@@ -435,13 +435,13 @@ lvim.plugins = {
 
 		config = function()
 			require("colorizer").setup({ "*" }, {
-				RGB = true,      -- #RGB hex codes
-				RRGGBB = true,   -- #RRGGBB hex codes
+				RGB = true,  -- #RGB hex codes
+				RRGGBB = true, -- #RRGGBB hex codes
 				RRGGBBAA = true, -- #RRGGBBAA hex codes
-				rgb_fn = true,   -- CSS rgb() and rgba() functions
-				hsl_fn = true,   -- CSS hsl() and hsla() functions
-				css = true,      -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
-				css_fn = true,   -- Enable all CSS *functions*: rgb_fn, hsl_fn
+				rgb_fn = true, -- CSS rgb() and rgba() functions
+				hsl_fn = true, -- CSS hsl() and hsla() functions
+				css = true,  -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
+				css_fn = true, -- Enable all CSS *functions*: rgb_fn, hsl_fn
 			})
 		end,
 	},
@@ -452,12 +452,12 @@ lvim.plugins = {
 
 		config = function()
 			require("goto-preview").setup({
-				width = 70,               -- Width of the floating window
-				height = 10,              -- Height of the floating window
+				width = 70,           -- Width of the floating window
+				height = 10,          -- Height of the floating window
 				default_mappings = false, -- Bind default mappings
-				debug = false,            -- Print debug information
-				opacity = nil,            -- 0-100 opacity level of the floating window where 100 is fully transparent.
-				post_open_hook = nil,     -- A function taking two arguments, a buffer and a window to be ran as a hook.
+				debug = false,        -- Print debug information
+				opacity = nil,        -- 0-100 opacity level of the floating window where 100 is fully transparent.
+				post_open_hook = nil, -- A function taking two arguments, a buffer and a window to be ran as a hook.
 			})
 
 			vim.cmd("nnoremap gP <cmd>lua require('goto-preview').close_all_win()<CR>")
@@ -469,4 +469,7 @@ lvim.plugins = {
 
 	-- Symbols Outline
 	{ "simrat39/symbols-outline.nvim", cmd = "SymbolsOutline" },
+
+	-- I'm out of jobs now
+	{ "github/copilot" }
 }

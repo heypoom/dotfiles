@@ -56,7 +56,6 @@
   "vim.normalModeKeyBindingsNonRecursive": [],
   "terminal.external.osxExec": "Kitty.app",
   "terminal.external.linuxExec": "kitty",
-  "workbench.activityBar.visible": true,
   "debug.allowBreakpointsEverywhere": true,
   "debug.console.fontFamily": "JetBrains Mono",
   "debug.console.fontSize": 16,
@@ -154,14 +153,13 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "python.languageServer": "Pylance",
-  "workbench.statusBar.visible": true,
   "typescript.validate.enable": true,
   "javascript.validate.enable": true,
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "git.autofetch": true,
-  "workbench.colorTheme": "Dracula Soft",
+  "workbench.colorTheme": "Dracula",
   "git.enableSmartCommit": true,
   "git.confirmSync": false,
   "editor.formatOnSave": true,
@@ -238,8 +236,8 @@
   "security.workspace.trust.untrustedFiles": "open",
   "wallaby.node": "/Users/poom/.asdf/installs/nodejs/lts-gallium/bin/node",
   "terminal.integrated.env.osx": {
-		"FIG_NEW_SESSION": "1"
-	},
+    "FIG_NEW_SESSION": "1"
+  },
   "editor.accessibilitySupport": "off",
   "editor.cursorBlinking": "phase",
   "editor.cursorSmoothCaretAnimation": "on",
@@ -258,5 +256,20 @@
   "calva.paredit.defaultKeyMap": "strict",
   "notebook.lineNumbers": "on",
   "window.titleBarStyle": "custom",
-	"vscode_custom_css.imports": [""]
+  "vscode_custom_css.imports": [
+    "file:///Users/poom/.local/share/chezmoi/config/vscode/editor.css",
+    "file:///Users/poom/.local/share/chezmoi/config/vscode/editor.js"
+  ],
+  "git.openRepositoryInParentFolders": "never",
+  "workbench.editor.enablePreview": false,
+  "vim.smartRelativeLine": true,
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "**/*.olean": true
+  }
 }

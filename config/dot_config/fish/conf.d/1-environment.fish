@@ -148,7 +148,8 @@ set -gx PATH \
   /usr/local/share/dotnet \
   $HOME/.dotnet/tools \
   /usr/local/MacGPG2/bin \
-  /Applications/Wireshark.app/Contents/MacOS
+  /Applications/Wireshark.app/Contents/MacOS \
+  $HOME/.elan/bin
 
 # Populate the OpenAI API Key
 set -gx OPENAI_KEY_FILE "$HOME/.openai.key"
@@ -159,3 +160,4 @@ end
 
 # Set the enhancd command to ecd (https://github.com/b4b4r07/enhancd)
 set -gx ENHANCD_COMMAND ecd
+
