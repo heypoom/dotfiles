@@ -31,3 +31,15 @@ abbr -a o chatgpt
 abbr -a zj zellij
 abbr -a zjd 'zellij --layout default'
 
+# Neovim Codi abbreviations (live playground)
+abbr -a crb 'lvim "+Codi ruby"'
+abbr -a cjs 'lvim "+Codi javascript"'
+abbr -a cts 'lvim "+Codi typescript"'
+abbr -a cclj 'lvim "+Codi clojure"'
+abbr -a cpy 'lvim "+Codi python"'
+abbr -a clua 'lvim "+Codi lua"'
+abbr -a cex 'lvim "+Codi elixir"'
+abbr -a cjl 'lvim "+Codi julia"'
+abbr -a chs 'lvim "+Codi haskell"'
+abbr -a cmath 'lvim "+Codi mathjs"'
+
