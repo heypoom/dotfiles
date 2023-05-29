@@ -26,4 +26,5 @@ abbr -a tns 'tmux new -s'
 abbr -a devdeps 'jq .devDependencies package.json'
 abbr -a o chatgpt
 abbr -a zj zellij
+abbr -a zjd 'zellij --layout default'
 
