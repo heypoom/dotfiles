@@ -475,5 +475,5 @@ lvim.plugins = {
   { "simrat39/symbols-outline.nvim", cmd = "SymbolsOutline" },
 
   -- GitHub Copilot
-  { "github/copilot.vim",            name = "copilot",      lazy = true },
+  { "github/copilot.vim",            name = "copilot",      lazy = false },
 }
