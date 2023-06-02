@@ -18,8 +18,12 @@ function run_setup_script {
 	done
 }
 
+# initialize the workspace.
+run_setup_script "init" "🧡 $YELLOW"
+
 # setup os-specific environments.
 # linux and macOS are supported.
+# windows is not yet supported.
 {{ if eq .chezmoi.os "linux" -}}
 	run_setup_script "linux" "⚪ $GRAY"
 {{ else if eq .chezmoi.os "darwin" -}}
@@ -28,9 +32,8 @@ function run_setup_script {
   echo "😢 Unsupported OS."
 {{ end -}}
 
-# setup common CLI environment and tools.
-run_setup_script "common" "🟡 $YELLOW"
+# setup shared CLI environment and tools.
+run_setup_script "shared" "🟡 $YELLOW"
 
-# configure the fish universal variables for
-# abbreviations, syntax highlighting and prompt styling.
+# configure fish plugins and universal variables.
 run_setup_script "fish" "🔵 $BLUE"
