@@ -52,6 +52,11 @@ renamed = " "
 untracked = " "
 format = '([$all_status$ahead_behind]($style) )'
 style = "yellow"
+disabled = true
+
+[git_metrics]
+disabled = false
+only_nonzero_diffs = true
 
 [golang]
 symbol = " "
@@ -147,6 +152,7 @@ symbol = "🪺 "
 
 [python]
 symbol = " "
+format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
 
 [rlang]
 symbol = "ﳒ "
