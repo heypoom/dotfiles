@@ -25,6 +25,10 @@ read_only = " "
 symbol = " "
 disabled = true
 
+[cmd_duration]
+min_time = 10_000
+format = "[$duration]($style) "
+
 [elixir]
 symbol = " "
 
