@@ -2,7 +2,7 @@
 
 if [ -d "$HOME/.local/share/lunarvim" ]
 then
-  echo "🟡 LunarVim is available."
+  echo "🟡 LunarVim is installed."
   exit 0
 fi
 
