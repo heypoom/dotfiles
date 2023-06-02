@@ -164,3 +164,6 @@ set -gx ENHANCD_COMMAND ecd
 # Use sccache for Rust build caching.
 set -gx RUSTC_WRAPPER sccache
 
+# Disable homebrew env hints
+set -gx HOMEBREW_NO_ENV_HINTS true
+
