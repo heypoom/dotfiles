@@ -55,8 +55,8 @@ set -gx cabal_helper_libexecdir "$HOME/bin"
 set -gx PKG_CONFIG_PATH "/opt/homebrew/lib/pkgconfig:/usr/local/opt/openssl/lib/pkgconfig:/usr/local/opt/libffi/lib/pkgconfig:/usr/local/opt/libusb/lib/pkgconfig:/usr/local/opt/openssl@1.1/lib/pkgconfig"
 
 # Define Java's SDK Path
-set -gx JAVA_HOME "$HOME/.asdf/installs/java/openjdk-11.0.1"
-set -gx JAVA8_HOME "$HOME/.asdf/installs/java/oracle-8.141"
+# TODO: set -gx JAVA_HOME "$HOME/TODO/java/openjdk-11.0.1"
+# TODO: set -gx JAVA8_HOME "$HOME/TODO/java/oracle-8.141"
 
 # Set XCode build configuration (Rust, PyEnv and many build tools depend on this!)
 # set -gx SDKROOT "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk"
@@ -98,6 +98,7 @@ set -gx BUN_INSTALL "$HOME/.bun"
 set -gx CONDA_HOME "/opt/homebrew/anaconda3"
 
 # Configure the environment variables.
+# TODO: add RTX paths
 set -gx PATH \
   $WASMER_DIR/bin \
   $PNPM_HOME \
@@ -105,8 +106,6 @@ set -gx PATH \
   $WASMTIME_HOME/bin \
   $HOME/.config/yarn/global/node_modules/.bin \
   $BUN_INSTALL/bin \
-  $HOME/.asdf/shims \
-  $HOME/.asdf/bin \
   $GEM_HOME/bin \
   $CONDA_HOME/bin \
   $HOME/.emacs.d/bin/ \

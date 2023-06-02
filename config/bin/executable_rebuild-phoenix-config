@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-
-export PATH="$PATH:$HOME/.asdf/shims:$HOME/.asdf/bin"
-
-cd ~/.config/phoenix
-
-/usr/local/bin/npm run build
-

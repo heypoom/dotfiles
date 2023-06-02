@@ -6,8 +6,7 @@ then
   exit 0
 fi
 
-# Add asdf shims to path.
-export PATH="$PATH:$HOME/.asdf/shims:$HOME/.asdf/bin"
+# TODO: Add rtx shims to path.
 
 # Fetch the LunarVim script.
 curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh > /tmp/install-lunarvim.sh
