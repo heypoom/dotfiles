@@ -161,3 +161,6 @@ end
 # Set the enhancd command to ecd (https://github.com/b4b4r07/enhancd)
 set -gx ENHANCD_COMMAND ecd
 
+# Use sccache for Rust build caching.
+set -gx RUSTC_WRAPPER sccache
+
