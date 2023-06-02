@@ -1,5 +1,10 @@
-[aws]
-symbol = "  "
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = false
+
+[line_break]
+disabled = true
 
 [buf]
 symbol = " "
@@ -18,6 +23,7 @@ read_only = " "
 
 [docker_context]
 symbol = " "
+disabled = true
 
 [elixir]
 symbol = " "
@@ -29,6 +35,7 @@ symbol = " "
 symbol = " "
 
 [git_branch]
+format = "[$symbol$branch(:$remote_branch)]($style) "
 symbol = " "
 
 [golang]
@@ -72,6 +79,9 @@ symbol = " "
 
 [nodejs]
 symbol = " "
+
+[gcloud]
+disabled = true
 
 [os.symbols]
 Alpaquita = " "

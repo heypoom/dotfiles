@@ -2,7 +2,7 @@
   "explorer.confirmDelete": false,
   "files.autoSave": "afterDelay",
   "files.autoSaveDelay": 1000,
-  "editor.fontFamily": "'JetBrains Mono', 'FiraCode Nerd Font', 'Sukhumvit Set Text', monospace",
+  "editor.fontFamily": "'JetBrains Mono', 'JetBrainsMono Nerd Font', 'FiraCode Nerd Font', 'Sukhumvit Set Text', monospace",
   "editor.fontSize": 20,
   "editor.tabSize": 2,
   "editor.detectIndentation": false,
