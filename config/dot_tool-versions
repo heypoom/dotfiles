@@ -1,6 +1,6 @@
-nodejs lts-gallium
+nodejs lts-hydrogen
 ruby 3.0.2
-python 3.9.9
+python system
 yarn 1.22.4
-golang 1.17.1
-java openjdk-17.0.2
+golang 1.20.3
+java graalvm-22.3.0+java19
