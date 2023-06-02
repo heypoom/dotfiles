@@ -4,6 +4,8 @@ if type -q rtx
 end
 
 # Starship, the cross-shell prompt written in Rust
+# Using Tide for now, as Starship does not support asynchronous prompt.
+# This is needed for large git repos.
 if type -q starship
-	starship init fish | source
+  # starship init fish | source
 end
