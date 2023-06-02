@@ -1,52 +1,11 @@
-format = """
-$username\
-$hostname\
-$directory\
-$git_branch\
-$git_state\
-$git_status\
-$cmd_duration\
-$python\
-$character"""
-
-add_newline = false
-
-[character]
-success_symbol = "[❯](purple)"
-error_symbol = "[❯](red)"
-vicmd_symbol = "[❮](green)"
-
-[git_branch]
-symbol = " "
-format = "[$branch]($style)"
-style = "bright-black"
-
-[git_status]
-format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed)]($style)"
-style = "cyan"
-conflicted = "​"
-untracked = "​"
-modified = "​"
-staged = "​"
-renamed = "​"
-deleted = "​"
-stashed = "≡"
-
-[git_state]
-format = '\([$state( $progress_current/$progress_total)]($style)\) '
-style = "bright-black"
-
-[cmd_duration]
-format = "[$duration]($style) "
-style = "yellow"
-
-[python]
-symbol = " "
-format = "[$virtualenv]($style) "
-style = "bright-black"
-
 [aws]
 symbol = "  "
+
+[buf]
+symbol = " "
+
+[c]
+symbol = " "
 
 [conda]
 symbol = " "
@@ -55,7 +14,6 @@ symbol = " "
 symbol = " "
 
 [directory]
-style = "blue"
 read_only = " "
 
 [docker_context]
@@ -67,11 +25,29 @@ symbol = " "
 [elm]
 symbol = " "
 
+[fossil_branch]
+symbol = " "
+
+[git_branch]
+symbol = " "
+
 [golang]
 symbol = " "
 
+[guix_shell]
+symbol = " "
+
+[haskell]
+symbol = " "
+
+[haxe]
+symbol = "⌘ "
+
 [hg_branch]
 symbol = " "
+
+[hostname]
+ssh_symbol = " "
 
 [java]
 symbol = " "
@@ -79,27 +55,79 @@ symbol = " "
 [julia]
 symbol = " "
 
+[lua]
+symbol = " "
+
 [memory_usage]
 symbol = " "
+
+[meson]
+symbol = "喝 "
 
 [nim]
 symbol = " "
 
 [nix_shell]
-symbol = " "
+symbol = " "
+
+[nodejs]
+symbol = " "
+
+[os.symbols]
+Alpaquita = " "
+Alpine = " "
+Amazon = " "
+Android = " "
+Arch = " "
+Artix = " "
+CentOS = " "
+Debian = " "
+DragonFly = " "
+Emscripten = " "
+EndeavourOS = " "
+Fedora = " "
+FreeBSD = " "
+Garuda = "﯑ "
+Gentoo = " "
+HardenedBSD = "ﲊ "
+Illumos = " "
+Linux = " "
+Mabox = " "
+Macos = " "
+Manjaro = " "
+Mariner = " "
+MidnightBSD = " "
+Mint = " "
+NetBSD = " "
+NixOS = " "
+OpenBSD = " "
+openSUSE = " "
+OracleLinux = " "
+Pop = " "
+Raspbian = " "
+Redhat = " "
+RedHatEnterprise = " "
+Redox = " "
+Solus = "ﴱ "
+SUSE = " "
+Ubuntu = " "
+Unknown = " "
+Windows = " "
 
 [package]
 symbol = " "
-disabled = true
 
-[perl]
-symbol = " "
+[pijul_channel]
+symbol = "🪺 "
 
-[php]
-symbol = " "
+[python]
+symbol = " "
+
+[rlang]
+symbol = "ﳒ "
 
 [ruby]
-symbol = " "
+symbol = " "
 
 [rust]
 symbol = " "
@@ -107,9 +135,5 @@ symbol = " "
 [scala]
 symbol = " "
 
-[shlvl]
-symbol = " "
-
-[swift]
-symbol = "ﯣ "
- 
+[spack]
+symbol = "🅢 "
