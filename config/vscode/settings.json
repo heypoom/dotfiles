@@ -235,8 +235,8 @@
   },
   "security.workspace.trust.untrustedFiles": "open",
   "terminal.integrated.env.osx": {
-    "FIG_NEW_SESSION": "1"
-  },
+		"FIG_NEW_SESSION": "1"
+	},
   "editor.accessibilitySupport": "off",
   "editor.cursorBlinking": "phase",
   "editor.cursorSmoothCaretAnimation": "on",
@@ -270,5 +270,6 @@
     "**/.DS_Store": true,
     "**/Thumbs.db": true,
     "**/*.olean": true
-  }
+  },
+  "editor.unicodeHighlight.invisibleCharacters": false
 }
