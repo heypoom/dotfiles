@@ -144,7 +144,8 @@ set -gx PATH \
   $HOME/.dotnet/tools \
   /usr/local/MacGPG2/bin \
   /Applications/Wireshark.app/Contents/MacOS \
-  $HOME/.elan/bin
+  $HOME/.elan/bin \
+  $HOME/.kit/bin
 
 # Populate the OpenAI API Key
 set -gx OPENAI_KEY_FILE "$HOME/.openai.key"
