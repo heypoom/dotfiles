@@ -1,3 +1,6 @@
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+sudo yabai --load-sa
+
 # Global Settings
 yabai -m config mouse_follows_focus          on
 yabai -m config focus_follows_mouse          off

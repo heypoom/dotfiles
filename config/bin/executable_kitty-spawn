@@ -5,17 +5,17 @@ then
 	echo Kitty is running.
 
 	dst=$(printf '%s%s' unix: /tmp/kitty*)
-	echo $dst
+	echo "$dst"
 
 	# Spawn a new Kitty window.
-	/Applications/kitty.app/Contents/MacOS/kitty @ --to $dst new-window --window-type os
+	/Applications/kitty.app/Contents/MacOS/kitty @ --to "$dst" launch --type os-window
 
 	exit 0
 fi
 
 echo Kitty is *NOT* running.
 
-cd $HOME
+cd "$HOME" || return
 
 # Start Kitty.
 # open "/Applications/kitty.app"
