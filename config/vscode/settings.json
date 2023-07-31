@@ -271,5 +271,8 @@
     "**/Thumbs.db": true,
     "**/*.olean": true
   },
-  "editor.unicodeHighlight.invisibleCharacters": false
+  "editor.unicodeHighlight.invisibleCharacters": false,
+  "[sql]": {
+    "editor.defaultFormatter": "adpyke.vscode-sql-formatter"
+  }
 }
