@@ -43,3 +43,6 @@ abbr -a cjl 'lvim "+Codi julia"'
 abbr -a chs 'lvim "+Codi haskell"'
 abbr -a cmath 'lvim "+Codi mathjs"'
 
+# emacs new frame
+abbr -a emacsf "emacsclient --no-wait --create-frame"
+
