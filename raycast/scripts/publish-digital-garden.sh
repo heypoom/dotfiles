@@ -6,7 +6,7 @@
 # @raycast.mode compact
 
 # Optional parameters:
-# @raycast.icon 🤖
+# @raycast.icon 🔼
 # @raycast.packageName Poom
 
 # Documentation:
@@ -14,5 +14,4 @@
 # @raycast.author heypoom
 # @raycast.authorURL https://raycast.com/heypoom
 
-echo "Hello World!"
-
+$HOME/bin/sync-local-vault
