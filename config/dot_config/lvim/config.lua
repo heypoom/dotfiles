@@ -254,6 +254,13 @@ lvim.plugins = {
   { "tweekmonster/startuptime.vim", enabled = false },
   -- {"dstein64/vim-startuptime", disable = true},
 
+	{
+			"aserowy/tmux.nvim",
+			config = function()
+				return require("tmux").setup()
+			end
+	},
+
   -- Trouble Diagnostics
   { "folke/trouble.nvim",           cmd = "TroubleToggle" },
 
