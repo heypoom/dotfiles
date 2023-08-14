@@ -1,5 +1,5 @@
-yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 sudo yabai --load-sa
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 
 # Global Settings
 yabai -m config mouse_follows_focus          on
@@ -26,14 +26,35 @@ yabai -m config left_padding                 8
 yabai -m config right_padding                8
 yabai -m config window_gap                   8
 
-# Rules to allow dialogs to float.
+# Float applications
+yabai -m rule --add app="^1Password 7$" manage=off
+yabai -m rule --add app="^Audio Hijack$" manage=off
+yabai -m rule --add app="^Dash$" manage=off
+yabai -m rule --add app="^Docker Desktop$" manage=off
+yabai -m rule --add app="^Dropbox$" manage=off
+yabai -m rule --add app="^IntelliJ IDEA" manage=off
+yabai -m rule --add app="^Karabiner-Elements$" manage=off
+yabai -m rule --add app="^Karabiner-EventViewer$" manage=off
+yabai -m rule --add app="^Loopback$" manage=off
+yabai -m rule --add app="^Postman$" manage=off
+yabai -m rule --add app="^Logitech G HUB$" manage=off
+yabai -m rule --add app="^Finder$" manage=off
+yabai -m rule --add app="^Activity Monitor$" manage=off
+yabai -m rule --add app="^Discord$" manage=off
+yabai -m rule --add app="^Calendar$" manage=off
+yabai -m rule --add app="^Calculator$" manage=off
+yabai -m rule --add app="^Music$" manage=off
+yabai -m rule --add app="^Kit$" manage=off
+yabai -m rule --add app="^java" manage=off
+
+# float system preferences
+yabai -m rule --add app="^System Information$" manage=off
+yabai -m rule --add app="^System Preferences$" manage=off
 yabai -m rule --add title='Preferences$' manage=off
+yabai -m rule --add title='^Archive Utility$' manage=off
 
-# Float IntelliJ IDEA by default
-yabai -m rule --add app="IntelliJ IDEA" manage=off
-
-# Float Minecraft by default
-yabai -m rule --add app="java" manage=off
+# float settings windows
+yabai -m rule --add title='Settings$' manage=off
 
 # Tile only the main editor window (title = "Doom Emacs")
 # yabai -m rule --add app='Emacs' title='Doom' manage=on
