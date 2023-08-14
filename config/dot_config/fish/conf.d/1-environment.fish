@@ -163,3 +163,4 @@ set -gx RUSTC_WRAPPER sccache
 
 # Disable homebrew env hints
 set -gx HOMEBREW_NO_ENV_HINTS true
+

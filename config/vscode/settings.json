@@ -159,7 +159,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "git.autofetch": true,
-  "workbench.colorTheme": "OM Theme (Default Dracula Italic)",
+  "workbench.colorTheme": "Sweet Dracula",
   "git.enableSmartCommit": true,
   "git.confirmSync": false,
   "editor.formatOnSave": true,
@@ -228,15 +228,16 @@
   "tailwindCSS.colorDecorators": true,
   "github.copilot.enable": {
     "*": true,
-    "yaml": true,
     "plaintext": true,
     "markdown": true,
+    "scminput": false,
+    "yaml": true,
     "typescript": true
   },
   "security.workspace.trust.untrustedFiles": "open",
   "terminal.integrated.env.osx": {
-    "FIG_NEW_SESSION": "1"
-  },
+		"FIG_NEW_SESSION": "1"
+	},
   "editor.accessibilitySupport": "off",
   "editor.cursorBlinking": "phase",
   "editor.cursorSmoothCaretAnimation": "on",
@@ -275,5 +276,7 @@
   "[sql]": {
     "editor.defaultFormatter": "adpyke.vscode-sql-formatter"
   },
-  "auto-close-tag.activationOnLanguage": ["typescriptreact", "html"]
+  "auto-close-tag.activationOnLanguage": ["typescriptreact", "html"],
+  "figma.autocompleteBlocks": true,
+  "go.toolsManagement.autoUpdate": true
 }
