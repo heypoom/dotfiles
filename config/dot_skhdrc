@@ -93,11 +93,11 @@ cmd + ctrl - down: yabai -m window south --stack $(yabai -m query --windows --wi
 cmd + ctrl - up: yabai -m window north --stack $(yabai -m query --windows --window | jq -r '.id')
 cmd + ctrl - right: yabai -m window east --stack $(yabai -m query --windows --window | jq -r '.id')
 
-# Cycle focus the window
-alt - x: yabai -m window --focus next || yabai -m window --focus first
+# Cycle focus the window (conflict with emacs)
+# alt - x: yabai -m window --focus next || yabai -m window --focus first
 
-# Cycle swap the window
-alt - c: yabai -m window --swap next || yabai -m window --swap first
+# Cycle swap the window (conflict with emacs)
+# alt - c: yabai -m window --swap next || yabai -m window --swap first
 
 # ################################################################ #
 # THE FOLLOWING IS AN EXPLANATION OF THE GRAMMAR THAT SKHD PARSES. #
