@@ -45,6 +45,9 @@ yabai -m rule --add app="^Calendar$" manage=off
 yabai -m rule --add app="^Calculator$" manage=off
 yabai -m rule --add app="^Music$" manage=off
 yabai -m rule --add app="^Kit$" manage=off
+yabai -m rule --add app="^Messenger$" manage=off
+yabai -m rule --add app="^Alfred" manage=off
+yabai -m rule --add app="^Raycast" manage=off
 yabai -m rule --add app="^java" manage=off
 
 # float system preferences
@@ -55,6 +58,7 @@ yabai -m rule --add title='^Archive Utility$' manage=off
 
 # float settings windows
 yabai -m rule --add title='Settings$' manage=off
+yabai -m rule --add title='^General$' manage=off
 
 # Tile only the main editor window (title = "Doom Emacs")
 # yabai -m rule --add app='Emacs' title='Doom' manage=on
