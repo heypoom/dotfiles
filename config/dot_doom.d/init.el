@@ -14,6 +14,8 @@
 ;;      Alternatively, press 'gd' (or 'C-c c d') on a module to browse its
 ;;      directory (for easy access to its source code).
 
+(add-to-list 'default-frame-alist '(undecorated-round . t))
+
 (setq server-socket-dir "~/.emacs.d/server")
 (server-start)
 
