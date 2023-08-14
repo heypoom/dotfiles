@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-emacsclient --no-wait --create-frame
+emacsclient --no-wait --create-frame -s ~/.emacs.d/server/server
 

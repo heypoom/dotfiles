@@ -14,6 +14,9 @@
 ;;      Alternatively, press 'gd' (or 'C-c c d') on a module to browse its
 ;;      directory (for easy access to its source code).
 
+(setq server-socket-dir "~/.emacs.d/server")
+(server-start)
+
 (doom! :input
        ;;chinese
        ;;japanese
