@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-open -b com.microsoft.VSCode "$*"
+open -b com.microsoft.VSCode "$@"
 
