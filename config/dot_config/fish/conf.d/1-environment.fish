@@ -145,7 +145,7 @@ set -gx PATH \
   /usr/local/MacGPG2/bin \
   /Applications/Wireshark.app/Contents/MacOS \
   $HOME/.elan/bin \
-	$HOME/.config/emacs/bin \
+  $HOME/.config/emacs/bin \
   $HOME/.kit/bin \
   $HOME/.kenv/bin
 
