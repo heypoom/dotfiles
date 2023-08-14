@@ -48,6 +48,8 @@ yabai -m rule --add app="^Kit$" manage=off
 yabai -m rule --add app="^Messenger$" manage=off
 yabai -m rule --add app="^Alfred" manage=off
 yabai -m rule --add app="^Raycast" manage=off
+yabai -m rule --add app="^Hammerspoon" manage=off
+yabai -m rule --add app="^App Store" manage=off
 yabai -m rule --add app="^java" manage=off
 
 # float system preferences
