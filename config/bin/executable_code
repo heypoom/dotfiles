@@ -1,4 +1,10 @@
 #!/usr/bin/env bash
 
-open -b com.microsoft.VSCode "$@"
+if [ "$(uname)" == "Darwin" ] && [ "$#" -le 1 ]; then
+  # Use the `open` command to prevent multiple icons spawning in macOS Dock (see microsoft/vscode#60579)
+  open -b com.microsoft.VSCode "$1"
+else
+  # Fallback to using the real VSCode command line when arguments is provided, e.g. --goto
+  /usr/local/bin/code "$@"
+fi
 
