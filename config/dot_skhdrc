@@ -68,8 +68,6 @@ alt - l: yabai -m window --focus east
 alt + shift - f: yabai -m window --toggle float
 alt + shift - t: yabai -m window --toggle topmost
 
-# Open kitty terminal.
-
 # Resize window: alt + shift + [arrow]
 alt + shift - left: yabai -m window --resize right:-100:0 || yabai -m window --resize left:-100:0
 
@@ -84,6 +82,17 @@ ctrl + alt - left: yabai -m window --warp west
 ctrl + alt - right: yabai -m window --warp east
 ctrl + alt - up: yabai -m window --warp north
 ctrl + alt - down: yabai -m window --warp south
+
+# Focus window up/down in stack
+ctrl - n: yabai -m window --focus stack.next
+ctrl - p: yabai -m window --focus stack.prev
+
+# Add the active window to the window or stack to the {direction}
+# Note that this only works when the active window does *not* already belong to a stack
+cmd + ctrl - left: yabai -m window west --stack $(yabai -m query --windows --window | jq -r '.id')
+cmd + ctrl - down: yabai -m window south --stack $(yabai -m query --windows --window | jq -r '.id')
+cmd + ctrl - up: yabai -m window north --stack $(yabai -m query --windows --window | jq -r '.id')
+cmd + ctrl - right: yabai -m window east --stack $(yabai -m query --windows --window | jq -r '.id')
 
 # Cycle focus the window
 # alt - x: yabai -m window --focus next || yabai -m window --focus first
