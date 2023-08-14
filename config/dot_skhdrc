@@ -83,8 +83,8 @@ ctrl + alt - right: yabai -m window --warp east
 ctrl + alt - up: yabai -m window --warp north
 ctrl + alt - down: yabai -m window --warp south
 
-# Focus window up/down in stack
 ctrl - n: yabai -m window --focus stack.next
+# Focus window up/down in stack
 ctrl - p: yabai -m window --focus stack.prev
 
 # Add the active window to the window or stack to the {direction}
@@ -95,10 +95,10 @@ cmd + ctrl - up: yabai -m window north --stack $(yabai -m query --windows --wind
 cmd + ctrl - right: yabai -m window east --stack $(yabai -m query --windows --window | jq -r '.id')
 
 # Cycle focus the window
-# alt - x: yabai -m window --focus next || yabai -m window --focus first
+alt - x: yabai -m window --focus next || yabai -m window --focus first
 
 # Cycle swap the window
-# alt - c: yabai -m window --swap next || yabai -m window --swap first
+alt - c: yabai -m window --swap next || yabai -m window --swap first
 
 # ################################################################ #
 # THE FOLLOWING IS AN EXPLANATION OF THE GRAMMAR THAT SKHD PARSES. #
