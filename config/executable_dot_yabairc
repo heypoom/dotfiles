@@ -49,6 +49,7 @@ yabai -m rule --add app="^Messenger$" manage=off
 yabai -m rule --add app="^Alfred" manage=off
 yabai -m rule --add app="^Raycast" manage=off
 yabai -m rule --add app="^Hammerspoon" manage=off
+yabai -m rule --add app="^MenuBarCover" manage=off
 yabai -m rule --add app="^App Store" manage=off
 yabai -m rule --add app="^java" manage=off
 
