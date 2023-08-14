@@ -49,7 +49,6 @@ yabai -m rule --add app="^Messenger$" manage=off
 yabai -m rule --add app="^Alfred" manage=off
 yabai -m rule --add app="^Raycast" manage=off
 yabai -m rule --add app="^Hammerspoon" manage=off
-yabai -m rule --add app="^MenuBarCover" manage=off
 yabai -m rule --add app="^App Store" manage=off
 yabai -m rule --add app="^java" manage=off
 
@@ -58,6 +57,7 @@ yabai -m rule --add app="^System Information$" manage=off
 yabai -m rule --add app="^System Preferences$" manage=off
 yabai -m rule --add title='Preferences$' manage=off
 yabai -m rule --add title='^Archive Utility$' manage=off
+yabai -m rule --add title="MenuBarCover$" manage=off
 
 # float settings windows
 yabai -m rule --add title='Settings$' manage=off
