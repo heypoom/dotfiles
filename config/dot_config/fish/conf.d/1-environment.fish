@@ -104,7 +104,6 @@ set -gx PATH \
   $BUN_INSTALL/bin \
   $GEM_HOME/bin \
   $CONDA_HOME/bin \
-  $HOME/.emacs.d/bin/ \
   /usr/libexec \
   $HOME/scripts \
   /opt/homebrew/bin \
