@@ -5,13 +5,21 @@ FONT_FACE="JetBrainsMono Nerd Font"
 PLUGIN_DIR="$HOME/.config/sketchybar/plugins-laptop"
 PLUGIN_SHARED_DIR="$HOME/.config/sketchybar/plugins"
 
+GREEN=0xffa6da95
+DARK=0xfa232639
+BG=0xfa232639
+TRANSPARENT=0x00000000
+ALT_BG=0x9924273a
+TRANSLUCENT_BAR_BG=0x1ad9d9d9
+
 sketchybar --bar \
-    height=32 \
-    color=0x00000000 \
+    height=33 \
+    color=$TRANSPARENT \
     margin=0 \
-		y_offset=1 \
+		y_offset=2 \
     sticky=on \
-		position=bottom \
+		blur_radius=0 \
+		position=top \
     padding_left=23 \
     padding_right=23 \
     notch_width=188 \
@@ -21,42 +29,42 @@ sketchybar --bar \
 # label.color=0xffffffff
 # background.color=0x9924273a
 sketchybar --default \
-    background.color=0x66494d64 \
+    background.color=$BG \
     background.corner_radius=5 \
     background.padding_right=5 \
     background.height=26 \
-    icon.font="$FONT_FACE:Medium:15.0" \
+    icon.font="$FONT_FACE:Bold:15.0" \
     icon.padding_left=5 \
     icon.padding_right=5 \
-    label.font="$FONT_FACE:Medium:12.0" \
+    label.font="$FONT_FACE:Bold:12.0" \
     label.color=0xffcad3f5 \
     label.y_offset=0 \
-    label.padding_left=0 \
     label.padding_right=5
 
 sketchybar --add item current_space left \
     --set current_space \
-    background.color=0xfff5a97f \
-    icon.color=0xff24273a \
     label.drawing=off \
     script="$PLUGIN_SHARED_DIR/current_space.sh" \
+    icon.color=$DARK \
+    background.color=0xfff5a97f \
     --subscribe current_space space_change mouse.clicked
-
+    
 sketchybar --add item front_app left \
     --set front_app \
-    background.color=0xffa6da95 \
+    background.color=$GREEN \
     background.padding_left=0 \
     background.padding_right=0 \
+		icon.padding_left=7 \
     icon.y_offset=1 \
-    icon.color=0xff24273a \
+    icon.color=$DARK \
     label.drawing=no \
     script="$PLUGIN_SHARED_DIR/front_app.sh" \
     --add item front_app.separator left \
     --set front_app.separator \
-    background.color=0x00000000 \
+    background.color=$TRANSPARENT \
     background.padding_left=-3 \
     icon= \
-    icon.color=0xffa6da95 \
+    icon.color=$GREEN \
     icon.font="$FONT_FACE:Bold:20.0" \
     icon.padding_left=0 \
     icon.padding_right=0 \
@@ -64,8 +72,8 @@ sketchybar --add item front_app left \
     label.drawing=no \
     --add item front_app.name left \
     --set front_app.name \
-    background.color=0x00000000 \
-    background.padding_right=0 \
+    background.color=$TRANSPARENT \
+    background.padding_right=5 \
     icon.drawing=off \
     label.font="$FONT_FACE:Bold:12.0" \
     label.drawing=yes
@@ -114,9 +122,6 @@ sketchybar --add item volume right \
     label.drawing=true \
     script="$PLUGIN_SHARED_DIR/volume.sh" \
     --subscribe volume volume_change
-
-# osascript -e 'quit app "Rectangle"'
-# open -a Rectangle
 
 ##### Finalizing Setup #####
 sketchybar --update

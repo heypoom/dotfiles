@@ -23,7 +23,7 @@ case $INFO in
     ICON=
     ;;
 "Finder")
-    ICON=
+    ICON=
     ;;
 "Google Chrome")
     ICON_PADDING_RIGHT=7
