@@ -11,6 +11,18 @@ case $INFO in
     ICON_PADDING_RIGHT=4
     ICON=󰨞
     ;;
+"Emacs")
+    ICON_PADDING_RIGHT=4
+    ICON=
+    ;;
+"Things")
+    ICON_PADDING_RIGHT=4
+    ICON=
+    ;;
+"System Settings")
+    ICON_PADDING_RIGHT=4
+    ICON=
+    ;;
 "Calendar")
     ICON_PADDING_RIGHT=3
     ICON=

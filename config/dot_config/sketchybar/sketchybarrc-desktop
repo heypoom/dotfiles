@@ -1,8 +1,6 @@
 #!/usr/bin/env zsh
 
-FONT_FACE="JetBrainsMono Nerd Font"
-PLUGIN_DIR="$HOME/.config/sketchybar/plugins-desktop"
-PLUGIN_SHARED_DIR="$HOME/.config/sketchybar/plugins"
+source "$HOME/.config/sketchybar/config.sh"
 
 sketchybar --bar \
     height=32 \

@@ -1,17 +1,6 @@
 #!/usr/bin/env zsh
 
-FONT_FACE="JetBrainsMono Nerd Font"
-
-PLUGIN_DIR="$HOME/.config/sketchybar/plugins-laptop"
-PLUGIN_SHARED_DIR="$HOME/.config/sketchybar/plugins"
-
-GREEN=0xffa6da95
-DARK=0xfa232639
-BG=0xfa232639
-TRANSPARENT=0x00000000
-ALT_BG=0x9924273a
-TRANSLUCENT_BAR_BG=0x1ad9d9d9
-WHITE=0xffffffff
+source "$HOME/.config/sketchybar/config.sh"
 
 sketchybar --bar \
     height=33 \
@@ -42,14 +31,8 @@ sketchybar --default \
     label.y_offset=0 \
     label.padding_right=5
 
-sketchybar --add item current_space left \
-    --set current_space \
-    label.drawing=off \
-    script="$PLUGIN_SHARED_DIR/current_space.sh" \
-    icon.color=$DARK \
-    background.color=0xfff5a97f \
-    --subscribe current_space space_change mouse.clicked
-    
+source "$ITEMS_DIR/spaces.sh"
+
 sketchybar --add item front_app left \
     --set front_app \
     background.color=$GREEN \
@@ -123,13 +106,6 @@ sketchybar --add item volume right \
     label.drawing=true \
     script="$PLUGIN_SHARED_DIR/volume.sh" \
     --subscribe volume volume_change
-
-# sketchybar --add alias "Control Center,WiFi" right \
-#            --set       "Control Center,WiFi" alias.color=$BG \
-#                              background.color=$TRANSPARENT \
-#                              icon.padding_left=0 \
-#                              icon.padding_right=0 \
-#                              label.padding_right=0
 
 ##### Finalizing Setup #####
 sketchybar --update

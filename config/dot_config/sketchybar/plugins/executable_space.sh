@@ -1,14 +1,18 @@
 #!/bin/bash
 
+source "$HOME/.config/sketchybar/config.sh"
+
 update() {
-  source "$CONFIG_DIR/colors.sh"
-  COLOR=$BACKGROUND_2
-  if [ "$SELECTED" = "true" ]; then
-    COLOR=$GREY
+	bg_color=$BG
+
+  if [ "$SELECTED" = "true" ]
+	then
+    bg_color=$ACTIVE_BG
   fi
+
   sketchybar --set $NAME icon.highlight=$SELECTED \
                          label.highlight=$SELECTED \
-                         background.border_color=$COLOR
+  											 background.color=$bg_color
 }
 
 mouse_clicked() {
