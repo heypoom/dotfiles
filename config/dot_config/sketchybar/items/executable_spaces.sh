@@ -20,3 +20,12 @@ do
 							script="$PLUGIN_SHARED_DIR/space.sh" \
 	           --subscribe $space space_change mouse.clicked
 done
+
+sketchybar --add item add_space left \
+    --set add_space \
+    background.color=0xee232639 \
+    icon.padding_left=10 \
+    icon.padding_right=5 \
+		icon.font="$FONT_FACE:Bold:14.0" \
+    script="$PLUGIN_SHARED_DIR/add_space.sh" \
+    --subscribe add_space space_change mouse.clicked
