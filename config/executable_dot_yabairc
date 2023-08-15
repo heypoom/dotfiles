@@ -56,6 +56,8 @@ yabai -m rule --add app="^java" manage=off
 yabai -m rule --add app="^System Information$" manage=off
 yabai -m rule --add app="^System Preferences$" manage=off
 yabai -m rule --add title='Preferences$' manage=off
+yabai -m rule --add title='^ChatGPT' manage=off
+yabai -m rule --add title='^Displays' manage=off
 yabai -m rule --add title='^Archive Utility$' manage=off
 yabai -m rule --add title="MenuBarCover$" manage=off
 
