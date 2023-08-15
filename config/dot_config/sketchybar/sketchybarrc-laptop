@@ -11,6 +11,7 @@ BG=0xfa232639
 TRANSPARENT=0x00000000
 ALT_BG=0x9924273a
 TRANSLUCENT_BAR_BG=0x1ad9d9d9
+WHITE=0xffffffff
 
 sketchybar --bar \
     height=33 \
@@ -122,6 +123,13 @@ sketchybar --add item volume right \
     label.drawing=true \
     script="$PLUGIN_SHARED_DIR/volume.sh" \
     --subscribe volume volume_change
+
+# sketchybar --add alias "Control Center,WiFi" right \
+#            --set       "Control Center,WiFi" alias.color=$BG \
+#                              background.color=$TRANSPARENT \
+#                              icon.padding_left=0 \
+#                              icon.padding_right=0 \
+#                              label.padding_right=0
 
 ##### Finalizing Setup #####
 sketchybar --update
