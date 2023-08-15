@@ -27,8 +27,9 @@ yabai -m config right_padding                8
 yabai -m config window_gap                   8
 
 # Space for Sketchybar and Ubersicht widgets
-yabai -m config external_bar                 all:30:0
-# yabai -m config external_bar                 all:0:0
+yabai -m config external_bar                 all:0:0
+# yabai -m config external_bar                 all:28:0
+# yabai -m config external_bar                 all:32:0
 
 # Float applications
 yabai -m rule --add app="^1Password 7$" manage=off
@@ -43,6 +44,7 @@ yabai -m rule --add app="^Loopback$" manage=off
 yabai -m rule --add app="^Postman$" manage=off
 yabai -m rule --add app="^Logitech G HUB$" manage=off
 yabai -m rule --add app="^Finder$" manage=off
+yabai -m rule --add app="^Sip$" manage=off
 yabai -m rule --add app="^Activity Monitor$" manage=off
 yabai -m rule --add app="^Discord$" manage=off
 yabai -m rule --add app="^Calendar$" manage=off
@@ -61,6 +63,7 @@ yabai -m rule --add app="^java" manage=off
 yabai -m rule --add app="^System Information$" manage=off
 yabai -m rule --add app="^System Preferences$" manage=off
 yabai -m rule --add title='Preferences$' manage=off
+yabai -m rule --add title='Sip$' manage=off
 yabai -m rule --add title='^ChatGPT' manage=off
 yabai -m rule --add title='^Displays' manage=off
 yabai -m rule --add title='^Archive Utility$' manage=off
