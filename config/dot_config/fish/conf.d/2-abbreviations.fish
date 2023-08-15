@@ -13,6 +13,7 @@ abbr -a nvd 'nvim +Nvdash'
 abbr -a ls exa
 abbr -a gl 'git pull'
 abbr -a ch chezmoi
+abbr -a chez chezmoi
 abbr -a tree 'exa --tree'
 abbr -a grv 'gh repo view -w'
 abbr -a ta 'tmux attach'

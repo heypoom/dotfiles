@@ -26,6 +26,9 @@ yabai -m config left_padding                 8
 yabai -m config right_padding                8
 yabai -m config window_gap                   8
 
+# Space for Sketchybar and widgets
+yabai -m config external_bar                 main:24:0
+
 # Float applications
 yabai -m rule --add app="^1Password 7$" manage=off
 yabai -m rule --add app="^Audio Hijack$" manage=off
