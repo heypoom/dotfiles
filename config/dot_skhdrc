@@ -40,7 +40,7 @@ ctrl + cmd - 9: yabai -m space --focus 9
 ctrl + cmd - 0: yabai -m space --focus 10
 
 # Create new space.
-ctrl + cmd + shift - c: yabai -m space --create
+ctrl + cmd + shift - c: yabai -m space --create && sketchybar --trigger space_change
 
 # Send window to other space and focus: ctrl + shift + {space}
 ctrl + shift - 1: yabai -m window --space 1; yabai -m space --focus 1
