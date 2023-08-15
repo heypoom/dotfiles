@@ -5,7 +5,7 @@ ICON_PADDING_RIGHT=5
 case $INFO in
 "Arc")
     ICON_PADDING_RIGHT=5
-    ICON=󰞍
+    ICON=
     ;;
 "Code")
     ICON_PADDING_RIGHT=4
