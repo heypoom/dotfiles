@@ -92,16 +92,22 @@ sketchybar --add item clock right \
     --set clock \
     icon=󰃰 \
     icon.color=0xffed8796 \
+		icon.padding_left=10 \
+		label.padding_right=10 \
     update_freq=10 \
     script="$PLUGIN_SHARED_DIR/clock.sh"
 
 sketchybar --add item battery right \
     --set battery \
+		icon.padding_left=10 \
+		label.padding_right=10 \
     update_freq=20 \
     script="$PLUGIN_DIR/battery.sh"
 
 sketchybar --add item volume right \
     --set volume \
+		icon.padding_left=10 \
+		label.padding_right=10 \
     icon.color=0xff8aadf4 \
     label.drawing=true \
     script="$PLUGIN_SHARED_DIR/volume.sh" \
