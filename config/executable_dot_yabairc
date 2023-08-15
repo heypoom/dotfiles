@@ -49,6 +49,7 @@ yabai -m rule --add app="^Calculator$" manage=off
 yabai -m rule --add app="^Music$" manage=off
 yabai -m rule --add app="^Kit$" manage=off
 yabai -m rule --add app="^Messenger$" manage=off
+yabai -m rule --add app="^Drop$" manage=off
 yabai -m rule --add app="^Alfred" manage=off
 yabai -m rule --add app="^Raycast" manage=off
 yabai -m rule --add app="^Hammerspoon" manage=off

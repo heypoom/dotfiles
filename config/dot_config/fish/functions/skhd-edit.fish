@@ -1,3 +1,3 @@
 function skhd-edit
-  chezmoi edit --apply ~/.skhdrc && skhd --reload
+  chezmoi edit --apply $HOME/.skhdrc && skhd --reload
 end
