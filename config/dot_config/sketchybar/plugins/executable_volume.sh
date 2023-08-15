@@ -1,15 +1,15 @@
 #!/usr/bin/env zsh
 
-WIDTH=100
+source "$HOME/.config/sketchybar/config.sh"
 
 detail_on() {
-  sketchybar --animate tanh 30 --set volume_slider slider.width=$WIDTH
-  sketchybar --set $NAME label.padding_right=5
+  sketchybar --animate tanh 30 --set volume_slider slider.width=$SLIDER_WIDTH
+  sketchybar --animate tanh 30 --set $NAME label.padding_right=5
 }
 
 detail_off() {
   sketchybar --animate tanh 30 --set volume_slider slider.width=0
-  sketchybar --set $NAME label.padding_right=0
+  sketchybar --animate tanh 30 --set $NAME label.padding_right=0
 }
 
 mouse_clicked() {

@@ -1,8 +1,10 @@
-WIDTH=100
+source "$HOME/.config/sketchybar/config.sh"
 
 volume_change() {
+  sketchybar --animate tanh 30 --set volume label.padding_right=5
+
   sketchybar --set $NAME slider.percentage=$INFO \
-             --animate tanh 30 --set $NAME slider.width=$WIDTH 
+             --animate tanh 30 --set $NAME slider.width=$SLIDER_WIDTH 
 
   sleep 2
 
@@ -11,6 +13,7 @@ volume_change() {
 
   if [ "$FINAL_PERCENTAGE" -eq "$INFO" ]; then
     sketchybar --animate tanh 30 --set $NAME slider.width=0
+		sketchybar --animate tanh 30 --set volume label.padding_right=0
   fi
 }
 
