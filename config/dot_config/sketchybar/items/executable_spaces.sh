@@ -19,13 +19,13 @@ do
     padding_left=2
     padding_right=2
     label.padding_right=20
-    icon.highlight_color=$RED
+    icon.highlight_color=0xff43ffe7
     label.color=$GREY
     label.highlight_color=$WHITE
     label.font="sketchybar-app-font:Regular:16.0"
-    label.y_offset=-1
-    background.color=$BACKGROUND_1
-    background.border_color=$BACKGROUND_2
+    label.y_offset=0
+    # background.color=$BACKGROUND_1
+    # background.border_color=$BACKGROUND_2
     background.drawing=off
     label.drawing=off
     script="$PLUGIN_DIR/space.sh"
@@ -37,8 +37,8 @@ do
 done
 
 spaces_bracket=(
-  background.color=$BACKGROUND_1
-  background.border_color=$BACKGROUND_2
+  # background.color=$BACKGROUND_1
+  # background.border_color=$BACKGROUND_2
 )
 
 separator=(
@@ -52,8 +52,8 @@ separator=(
   icon.color=$WHITE
 )
 
-sketchybar --add bracket spaces_bracket '/space\..*/'  \
-           --set spaces_bracket "${spaces_bracket[@]}" \
-                                                       \
-           --add item separator left                   \
-           --set separator "${separator[@]}"
+# sketchybar --add bracket spaces_bracket '/space\..*/'  \
+#            --set spaces_bracket "${spaces_bracket[@]}" \
+#                                                        \
+#            --add item separator left                   \
+#            --set separator "${separator[@]}"
