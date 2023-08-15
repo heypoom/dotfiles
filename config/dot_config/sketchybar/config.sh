@@ -8,7 +8,6 @@ export PLUGIN_SHARED_DIR="$CONFIG_DIR/plugins"
 export ORANGE=0xfff5a97f
 export GREEN=0xffa6da95
 export WHITE=0xffffffff
-export DARK=0xfa232639
 export BG=0xfa232639
 export TRANSPARENT=0x00000000
 export ALT_BG=0x9924273a

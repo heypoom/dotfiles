@@ -40,7 +40,7 @@ sketchybar --add item front_app left \
     background.padding_right=0 \
 		icon.padding_left=7 \
     icon.y_offset=1 \
-    icon.color=$DARK \
+    icon.color=$BG \
     label.drawing=no \
     script="$PLUGIN_SHARED_DIR/front_app.sh" \
     --add item front_app.separator left \
