@@ -9,7 +9,7 @@ volume_slider=(
   slider.background.height=5
   slider.background.corner_radius=3
   slider.background.color=$BACKGROUND_2
-  slider.knob=􀀁
+  slider.knob=
   slider.knob.drawing=off
 )
 
