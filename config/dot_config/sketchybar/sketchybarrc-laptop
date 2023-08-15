@@ -120,6 +120,7 @@ sketchybar --add slider volume_slider right \
 
 sketchybar --add item volume right \
     --set volume icon.padding_left=10 \
+		background.color=$TRANSPARENT \
 		label.padding_right=0 \
     icon.color=0xff8aadf4 \
     label.drawing=true \
