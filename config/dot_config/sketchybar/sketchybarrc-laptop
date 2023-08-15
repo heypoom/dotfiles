@@ -25,7 +25,7 @@ sketchybar --default \
     background.height=26 \
     icon.font="$FONT_FACE:Bold:15.0" \
     icon.padding_left=5 \
-    icon.padding_right=5 \
+    icon.padding_right=6 \
     label.font="$FONT_FACE:Bold:12.0" \
     label.color=0xffcad3f5 \
     label.y_offset=0 \
@@ -101,17 +101,33 @@ sketchybar --add item battery right \
     --set battery \
 		icon.padding_left=10 \
 		label.padding_right=10 \
+		background.padding_left=5 \
     update_freq=20 \
     script="$PLUGIN_DIR/battery.sh"
 
+sketchybar --add slider volume_slider right \
+           --set volume_slider script="$PLUGIN_SHARED_DIR/volume_slider.sh" \
+						updates=on \
+						label.drawing=off \
+						icon.drawing=off \
+						background.color=$TRANSPARENT \
+						slider.highlight_color=0xff8aadf4 \
+						slider.background.height=5 \
+						slider.background.corner_radius=3 \
+						slider.background.color=$BG \
+						slider.knob= \
+           --subscribe volume_slider volume_change mouse.clicked mouse.entered mouse.exited
+
 sketchybar --add item volume right \
-    --set volume \
-		icon.padding_left=10 \
-		label.padding_right=10 \
+    --set volume icon.padding_left=10 \
+		label.padding_right=0 \
     icon.color=0xff8aadf4 \
     label.drawing=true \
     script="$PLUGIN_SHARED_DIR/volume.sh" \
-    --subscribe volume volume_change
+    --subscribe volume volume_change mouse.clicked
+
+sketchybar --add bracket volume_container volume volume_slider \
+					 --set         volume_container background.color=$BG
 
 ##### Finalizing Setup #####
 sketchybar --update
