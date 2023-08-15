@@ -2,7 +2,7 @@
   "explorer.confirmDelete": false,
   "files.autoSave": "afterDelay",
   "files.autoSaveDelay": 1000,
-  "editor.fontFamily": "'JetBrains Mono', 'JetBrainsMono Nerd Font', 'FiraCode Nerd Font', 'Sukhumvit Set Text', monospace",
+  "editor.fontFamily": "'JetBrainsMono Nerd Font', 'JetBrains Mono', 'FiraCode Nerd Font', 'Sukhumvit Set Text', monospace",
   "editor.fontSize": 20,
   "editor.tabSize": 2,
   "editor.detectIndentation": false,
@@ -236,8 +236,8 @@
   },
   "security.workspace.trust.untrustedFiles": "open",
   "terminal.integrated.env.osx": {
-		"FIG_NEW_SESSION": "1"
-	},
+    "FIG_NEW_SESSION": "1"
+  },
   "editor.accessibilitySupport": "off",
   "editor.cursorBlinking": "phase",
   "editor.cursorSmoothCaretAnimation": "on",

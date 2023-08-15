@@ -1,8 +1,27 @@
-#!/bin/sh
+#!/bin/bash
 
-# The wifi_change event supplies a $INFO variable in which the current SSID
-# is passed to the script.
+update() {
+  source "$CONFIG_DIR/icons.sh"
+  LABEL="$INFO ($(ipconfig getifaddr en0))"
+  ICON="$([ -n "$INFO" ] && echo "$WIFI_CONNECTED" || echo "$WIFI_DISCONNECTED")"
 
-WIFI=${INFO:-"Not Connected"}
+  sketchybar --set $NAME icon="$ICON" label="$LABEL"
+}
 
-sketchybar --set $NAME label="${WIFI}"
+click() {
+  CURRENT_WIDTH="$(sketchybar --query $NAME | jq -r .label.width)"
+
+  WIDTH=0
+  if [ "$CURRENT_WIDTH" -eq "0" ]; then
+    WIDTH=dynamic
+  fi
+
+  sketchybar --animate sin 20 --set $NAME label.width="$WIDTH"
+}
+
+case "$SENDER" in
+  "wifi_change") update
+  ;;
+  "mouse.clicked") click
+  ;;
+esac
