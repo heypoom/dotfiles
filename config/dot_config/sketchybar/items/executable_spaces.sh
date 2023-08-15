@@ -15,7 +15,6 @@ do
 							icon.padding_right=5 \
 							icon.color=$WHITE \
 							icon.highlight_color=$BG \
-							background.color=$BG \
 							icon.font="$FONT_FACE:Bold:14.0" \
 							script="$PLUGIN_SHARED_DIR/space.sh" \
 	           --subscribe $space space_change mouse.clicked
