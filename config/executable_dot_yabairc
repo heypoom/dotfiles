@@ -27,8 +27,8 @@ yabai -m config right_padding                8
 yabai -m config window_gap                   8
 
 # Space for Sketchybar and Ubersicht widgets
-yabai -m config external_bar                 all:0:0
-# yabai -m config external_bar                 all:28:0
+# yabai -m config external_bar                 all:0:0
+yabai -m config external_bar                   all:0:28
 # yabai -m config external_bar                 all:32:0
 
 # Float applications

@@ -1,86 +1,14 @@
-#!/bin/bash
+#!/usr/bin/env zsh
 
-source "$CONFIG_DIR/colors.sh" # Loads all defined colors
-source "$CONFIG_DIR/icons.sh" # Loads all defined icons
+SKETCHYBAR_CONFIG="$HOME/.config/sketchybar"
 
-ITEM_DIR="$CONFIG_DIR/items" # Directory where the items are configured
-PLUGIN_DIR="$CONFIG_DIR/plugins" # Directory where all the plugin scripts are stored
+# This is used to determine if a monitor is used
+# Since the notch is -only- on the laptop, if a monitor isn't used,
+# then that means the internal display is used ¯\_(ツ)_/¯
+MAIN_DISPLAY=$(system_profiler SPDisplaysDataType | grep -B 3 'Main Display:' | awk '/Display Type/ {print $3}')
 
-FONT="JetBrainsMono Nerd Font" # Needs to have Regular, Bold, Semibold, Heavy and Black variants
-PADDINGS=2 # All paddings use this value (icon, label, background)
-
-# Setting up and starting the helper process
-HELPER=git.felix.helper
-killall helper
-(cd $CONFIG_DIR/helper && make)
-$CONFIG_DIR/helper/helper $HELPER > /dev/null 2>&1 &
-
-# Setting up the general bar appearance of the bar
-bar=(
-  height=32
-  color=$BAR_COLOR
-  border_width=0
-  border_color=$BAR_BORDER_COLOR
-  shadow=on
-  # position=top
-  position=bottom
-  sticky=on
-	blur_radius=30
-  padding_right=10
-  padding_left=10
-  topmost=window
-  y_offset=2
-	corner_radius=6
-  margin=8
-)
-
-sketchybar --bar "${bar[@]}"
-
-# Setting up default values
-defaults=(
-  updates=when_shown
-  icon.font="$FONT:Bold:14.0"
-  icon.color=$ICON_COLOR
-  icon.padding_left=$PADDINGS
-  icon.padding_right=$PADDINGS
-  label.font="$FONT:Bold:13.0"
-  label.color=$LABEL_COLOR
-  label.padding_left=$PADDINGS
-  label.padding_right=$PADDINGS
-  padding_right=$PADDINGS
-  padding_left=$PADDINGS
-  background.height=26
-  background.corner_radius=9
-  background.border_width=2
-  popup.background.border_width=2
-  popup.background.corner_radius=9
-  popup.background.border_color=$POPUP_BORDER_COLOR
-  popup.background.color=$POPUP_BACKGROUND_COLOR
-  popup.blur_radius=20
-  popup.background.shadow.drawing=on
-)
-
-sketchybar --default "${defaults[@]}"
-
-# Left
-# source "$ITEM_DIR/apple.sh"
-source "$ITEM_DIR/spaces.sh"
-source "$ITEM_DIR/yabai.sh"
-source "$ITEM_DIR/front_app.sh"
-
-# Center
-# source "$ITEM_DIR/spotify.sh"
-
-# Right
-# source "$ITEM_DIR/calendar.sh"
-# source "$ITEM_DIR/brew.sh"
-# source "$ITEM_DIR/wifi.sh"
-# source "$ITEM_DIR/github.sh"
-# source "$ITEM_DIR/battery.sh"
-source "$ITEM_DIR/volume.sh"
-# source "$ITEM_DIR/cpu.sh"
-
-# Forcing all item scripts to run (never do this outside of sketchybarrc)
-sketchybar --update
-
-echo "sketchybar configuation loaded.."
+# if [[ $MAIN_DISPLAY = "Built-in" ]]; then
+    source "$SKETCHYBAR_CONFIG/sketchybarrc-laptop"
+# else
+#     source "$SKETCHYBAR_CONFIG/sketchybarrc-desktop"
+# fi
