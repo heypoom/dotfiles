@@ -1,0 +1,7 @@
+{
+  "Lua.workspace.library": [
+    "/Users/poom/.hammerspoon/Spoons/EmmyLua.spoon/annotations"
+  ],
+  "Lua.addonManager.enable": true,
+  "Lua.codeLens.enable": true
+}
