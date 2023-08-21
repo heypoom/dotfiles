@@ -4,7 +4,7 @@ if ls /tmp/kitty* 1> /dev/null 2>&1
 then
 	echo Kitty is running.
 
-	dst=$(printf '%s%s' unix: /tmp/kitty*)
+  dst=$(printf '%s%s' unix: "$(echo /tmp/kitty* | awk '{print $1}')")
 	echo "$dst"
 
 	# Spawn a new Kitty window.

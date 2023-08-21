@@ -5,7 +5,7 @@ yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 yabai -m config mouse_follows_focus          on
 yabai -m config focus_follows_mouse          off
 yabai -m config window_placement             second_child
-yabai -m config window_topmost               on
+yabai -m config window_topmost               off
 yabai -m config window_opacity               off
 yabai -m config window_opacity_duration      0.0
 yabai -m config window_shadow                on
@@ -13,7 +13,7 @@ yabai -m config insert_feedback_color        0xaad75f5f
 yabai -m config active_window_opacity        1.0
 yabai -m config normal_window_opacity        1.0
 yabai -m config split_ratio                  0.50
-yabai -m config auto_balance                 on
+yabai -m config auto_balance                 off
 yabai -m config mouse_modifier               fn
 yabai -m config mouse_action1                move
 yabai -m config mouse_action2                resize
@@ -43,7 +43,6 @@ yabai -m rule --add app="^Karabiner-EventViewer$" manage=off
 yabai -m rule --add app="^Loopback$" manage=off
 yabai -m rule --add app="^Postman$" manage=off
 yabai -m rule --add app="^Logitech G HUB$" manage=off
-yabai -m rule --add app="^Finder$" manage=off
 yabai -m rule --add app="^Sip$" manage=off
 yabai -m rule --add app="^Activity Monitor$" manage=off
 yabai -m rule --add app="^Discord$" manage=off
@@ -53,25 +52,26 @@ yabai -m rule --add app="^Music$" manage=off
 yabai -m rule --add app="^Kit$" manage=off
 yabai -m rule --add app="^Messenger$" manage=off
 yabai -m rule --add app="^Drop$" manage=off
-yabai -m rule --add app="^Alfred" manage=off
-yabai -m rule --add app="^Raycast" manage=off
-yabai -m rule --add app="^Hammerspoon" manage=off
-yabai -m rule --add app="^App Store" manage=off
-yabai -m rule --add app="^java" manage=off
+yabai -m rule --add app="^Alfred$" manage=off
+yabai -m rule --add app="^Raycast$" manage=off
+yabai -m rule --add app="^Hammerspoon$" manage=off
+yabai -m rule --add app="^App Store$" manage=off
+yabai -m rule --add app="^java$" manage=off
 
 # float system preferences
-yabai -m rule --add app="^System Information$" manage=off
-yabai -m rule --add app="^System Preferences$" manage=off
-yabai -m rule --add title='Preferences$' manage=off
-yabai -m rule --add title='Sip$' manage=off
-yabai -m rule --add title='^ChatGPT' manage=off
-yabai -m rule --add title='^Displays' manage=off
+# yabai -m rule --add app="^System Information$" manage=off
+# yabai -m rule --add app="^System Preferences$" manage=off
+# yabai -m rule --add title='Preferences$' manage=off
+yabai -m rule --add title='^Sip$' manage=off
+yabai -m rule --add title='^ChatGPT$' manage=off
+yabai -m rule --add title='^Displays$' manage=off
 yabai -m rule --add title='^Archive Utility$' manage=off
-yabai -m rule --add title="MenuBarCover$" manage=off
+yabai -m rule --add title="^MenuBarCover$" manage=off
+yabai -m rule --add app="^Arc$" subrole='AXSystemDialog' manage=off mouse_follows_focus=off
 
 # float settings windows
-yabai -m rule --add title='Settings$' manage=off
-yabai -m rule --add title='^General$' manage=off
+# yabai -m rule --add title='Settings$' manage=off
+# yabai -m rule --add title='^General$' manage=off
 
 # Tile only the main editor window (title = "Doom Emacs")
 # yabai -m rule --add app='Emacs' title='Doom' manage=on

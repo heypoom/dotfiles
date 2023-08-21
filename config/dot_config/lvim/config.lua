@@ -483,4 +483,6 @@ lvim.plugins = {
 
   -- GitHub Copilot
   { "github/copilot.vim",            name = "copilot",      lazy = false },
+
+  { "ThePrimeagen/vim-be-good",      cmd = "VimBeGood"},
 }

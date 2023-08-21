@@ -159,7 +159,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "git.autofetch": true,
-  "workbench.colorTheme": "Sweet Dracula",
+  "workbench.colorTheme": "Dracula Refined",
   "git.enableSmartCommit": true,
   "git.confirmSync": false,
   "editor.formatOnSave": true,
@@ -278,5 +278,6 @@
   },
   "auto-close-tag.activationOnLanguage": ["typescriptreact", "html"],
   "figma.autocompleteBlocks": true,
-  "go.toolsManagement.autoUpdate": true
+  "go.toolsManagement.autoUpdate": true,
+  "workbench.activityBar.visible": false
 }
