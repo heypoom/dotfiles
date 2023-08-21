@@ -77,7 +77,7 @@ set -gx MANPATH \
 	$MANPATH
 
 # Use Neovim as man's pager.
-set -gx MANPAGER "nvim -c 'set ft=man' -"
+set -gx MANPAGER "nvim +Man!"
 
 # Configure fzf to use fd as default command.
 set -gx FZF_DEFAULT_COMMAND 'fd --type f --follow --hidden --exclude .git'
