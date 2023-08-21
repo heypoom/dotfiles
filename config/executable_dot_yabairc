@@ -3,7 +3,7 @@ yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 
 # Global Settings
 yabai -m config mouse_follows_focus          on
-yabai -m config focus_follows_mouse          off
+yabai -m config focus_follows_mouse          autofocus
 yabai -m config window_placement             second_child
 yabai -m config window_topmost               off
 yabai -m config window_opacity               off
@@ -17,6 +17,7 @@ yabai -m config auto_balance                 off
 yabai -m config mouse_modifier               fn
 yabai -m config mouse_action1                move
 yabai -m config mouse_action2                resize
+yabai -m config mouse_drop_action            swap
 
 # General space settings
 yabai -m config layout                       bsp
