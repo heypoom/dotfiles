@@ -31,6 +31,10 @@ lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
 -- Keymappings <https://www.lunarvim.org/docs/configuration/keybindings>
 -- lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
 
+-- Move lines up and down!
+lvim.keys.visual_mode["J"] = ":m '>+1<CR>gv=gv"
+lvim.keys.visual_mode["K"] = ":m '<-2<CR>gv=gv"
+
 -- Use which-key to add extra bindings with the leader-key prefix
 -- lvim.builtin.which_key.mappings["W"] = { "<cmd>noautocmd w<cr>", "Save without formatting" }
 
@@ -169,9 +173,6 @@ lvim.plugins = {
       "Gedit",
     },
   },
-
-  -- Move lines and selections.
-  -- { "matze/vim-move",               event = "CursorMoved" },
 
   -- Clojure
   -- { "Olical/conjure",               ft = { "clojure", "julia", "lua", "rust", "python" } },
