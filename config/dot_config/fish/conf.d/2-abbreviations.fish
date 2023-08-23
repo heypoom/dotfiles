@@ -17,6 +17,7 @@ abbr -a scripts 'jq .scripts package.json'
 abbr -a staging 'git fetch origin staging && git merge origin/staging'
 abbr -a vi lvim
 abbr -a lv lvim
+abbr -a vich 'chezmoi edit --apply'
 abbr -a nv nvim
 abbr -a nvd 'nvim +Nvdash'
 abbr -a ls exa
