@@ -260,6 +260,7 @@
     "file:///Users/poom/.local/share/chezmoi/config/vscode/editor.css",
     "file:///Users/poom/.local/share/chezmoi/config/vscode/editor.js"
   ],
+  "vscode_custom_css.statusbar": false,
   "git.openRepositoryInParentFolders": "never",
   "workbench.editor.enablePreview": false,
   "vim.smartRelativeLine": true,
@@ -278,5 +279,9 @@
   },
   "auto-close-tag.activationOnLanguage": ["typescriptreact", "html"],
   "figma.autocompleteBlocks": true,
-  "go.toolsManagement.autoUpdate": true
+  "go.toolsManagement.autoUpdate": true,
+  "workbench.layoutControl.enabled": false,
+  "window.title": "${activeEditorShort}${separator}${rootName}${separator}${profileName}",
+  "breadcrumbs.enabled": false,
+  "cloudcode.autoDependencies": "off"
 }
