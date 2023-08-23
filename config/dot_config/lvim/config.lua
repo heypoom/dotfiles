@@ -168,6 +168,20 @@ lvim.plugins = {
     },
   },
 
+  -- Tmux integration
+  {
+    "aserowy/tmux.nvim"
+  },
+
+  -- Transparency
+  {
+    "xiyaowong/transparent.nvim",
+    cmd = { "TransparentEnable", "TransparentDisable", "TransparentToggle" },
+    init = function()
+      vim.cmd.TransparentEnable()
+    end,
+  },
+
   -- Clojure
   -- { "Olical/conjure",               ft = { "clojure", "julia", "lua", "rust", "python" } },
 
@@ -176,14 +190,7 @@ lvim.plugins = {
 
   -- Measures the startup time.
   -- { "tweekmonster/startuptime.vim", enabled = false },
-  -- {"dstein64/vim-startuptime", disable = true},
-
-  -- {
-  --   "aserowy/tmux.nvim",
-  --   config = function()
-  --     return require("tmux").setup()
-  --   end
-  -- },
+  -- { "dstein64/vim-startuptime", disable = true },
 
   -- Zen mode for writing.
   -- {
