@@ -19,9 +19,17 @@ case $INFO in
     ICON_PADDING_RIGHT=4
     ICON=
     ;;
+"Obsidian")
+    ICON_PADDING_RIGHT=4
+    ICON=󰍔
+    ;;
 "System Settings")
     ICON_PADDING_RIGHT=4
     ICON=
+    ;;
+"MongoDB Compass "*"."*"."*)
+    ICON_PADDING_RIGHT=4
+    ICON=
     ;;
 "Calendar")
     ICON_PADDING_RIGHT=3
@@ -36,6 +44,12 @@ case $INFO in
     ;;
 "Finder")
     ICON=
+    ;;
+"Music")
+    ICON=󰎄
+    ;;
+"Keynote")
+    ICON=󰐨
     ;;
 "Google Chrome")
     ICON_PADDING_RIGHT=7
@@ -72,7 +86,7 @@ case $INFO in
     ICON=󰶘
     ;;
 *)
-    ICON=﯂
+    ICON=󰘔
     ;;
 esac
 
