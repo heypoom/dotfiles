@@ -23,6 +23,8 @@ abbr -a nvd 'nvim +Nvdash'
 abbr -a ls exa
 abbr -a ch chezmoi
 abbr -a chez chezmoi
+abbr -a chcd 'chezmoi cd'
+abbr -a ched 'chezmoi edit --apply'
 abbr -a tree 'exa --tree'
 abbr -a grv 'gh repo view -w'
 abbr -a ta 'tmux attach'
