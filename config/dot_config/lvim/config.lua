@@ -81,7 +81,7 @@ lvim.plugins = {
   {
     "ggandor/lightspeed.nvim",
     event = "BufRead",
-    keys = { "s" }
+    keys = { "s", "S" }
   },
 
   -- Catppuccin color scheme.
