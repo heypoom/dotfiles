@@ -52,16 +52,7 @@ lvim.keys.normal_mode["N"] = "Nzzzv"
 lvim.builtin.which_key.mappings["wf"] = { vim.lsp.buf.format, "Format buffer" }
 
 -- LSP keymappings
-lvim.lsp.buffer_mappings.normal_mode['gd'] = {
-  vim.lsp.buf.definition,
-  "Show documentation"
-}
-
-lvim.lsp.buffer_mappings.normal_mode['K'] = {
-  vim.lsp.buf.hover,
-  "Show hover"
-}
-
+-- Default LSP keybindings: https://www.lunarvim.org/docs/beginners-guide/keybinds-overview#lsp
 lvim.lsp.buffer_mappings.normal_mode['<leader>vws'] = {
   vim.lsp.buf.workspace_symbol,
   "View workspace symbol"
@@ -87,19 +78,9 @@ lvim.lsp.buffer_mappings.normal_mode['<leader>vca'] = {
   "View code action"
 }
 
-lvim.lsp.buffer_mappings.normal_mode['<leader>vrr'] = {
-  vim.lsp.buf.references,
-  "View references"
-}
-
 lvim.lsp.buffer_mappings.normal_mode['<leader>vrn'] = {
   vim.lsp.buf.rename,
   "Rename symbol"
-}
-
-lvim.lsp.buffer_mappings.insert_mode['<C-h>'] = {
-  vim.lsp.buf.signature_help,
-  "Signature help"
 }
 
 -- Automatically install tresitter plugins and language servers.
