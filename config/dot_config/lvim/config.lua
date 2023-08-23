@@ -29,14 +29,27 @@ lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
 
 -- Keymappings <https://www.lunarvim.org/docs/configuration/keybindings>
--- lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
+
+-- Paste without losing the pasted content in the register.
+vim.keymap.set("x", "<leader>p", "\"_dP")
 
 -- Move lines up and down!
 lvim.keys.visual_mode["J"] = ":m '>+1<CR>gv=gv"
 lvim.keys.visual_mode["K"] = ":m '<-2<CR>gv=gv"
 
+-- Fix the cursor when using "J" to merge lines.
+lvim.keys.normal_mode["J"] = "mzJ`z"
+
+-- Half-page and full-page should pin the cursor at the center of the screen.
+lvim.keys.normal_mode["<C-d>"] = "<C-d>zz"
+lvim.keys.normal_mode["<C-u>"] = "<C-u>zz"
+
+-- Keep the search terms at the center of the screen.
+lvim.keys.normal_mode["n"] = "nzzzv"
+lvim.keys.normal_mode["N"] = "Nzzzv"
+
 -- Use which-key to add extra bindings with the leader-key prefix
--- lvim.builtin.which_key.mappings["W"] = { "<cmd>noautocmd w<cr>", "Save without formatting" }
+lvim.builtin.which_key.mappings["wf"] = { vim.lsp.buf.format, "Format buffer" }
 
 -- LSP keymappings
 lvim.lsp.buffer_mappings.normal_mode['gd'] = {
