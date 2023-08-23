@@ -8,13 +8,13 @@ set -gx LANG en_US.UTF-8
 set -gx LANGUAGE en_US.UTF-8
 
 # Prefer Neovim as the default editor.
-set -gx EDITOR nvim
-set -gx VISUAL nvim
+set -gx EDITOR lvim
+set -gx VISUAL lvim
 set -gx FILTER fzf
 
 # Also Use Neovim as the React editor
-set -gx REACT_EDITOR nvim
-set -gx REACT_EDITOR_CMD '/usr/local/bin/nvim'
+set -gx REACT_EDITOR lvim
+set -gx REACT_EDITOR_CMD '/usr/poom/.local/bin/lvim'
 
 # Define Android's SDK Path
 set -gx ANDROID_HOME "$HOME/Library/Android/sdk"
