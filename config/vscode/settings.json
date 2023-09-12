@@ -2,11 +2,12 @@
   "explorer.confirmDelete": false,
   "files.autoSave": "afterDelay",
   "files.autoSaveDelay": 1000,
-  "editor.fontFamily": "'JetBrainsMono Nerd Font', 'JetBrains Mono', 'FiraCode Nerd Font', 'Sukhumvit Set Text', monospace",
+  "editor.fontFamily": "'Zed Mono Extended', 'JetBrainsMono Nerd Font', 'JetBrains Mono', 'FiraCode Nerd Font', 'Sukhumvit Set Text', monospace",
   "editor.fontSize": 20,
   "editor.tabSize": 2,
-  "editor.detectIndentation": false,
+  "editor.detectIndentation": true,
   "editor.comments.insertSpace": true,
+  "editor.insertSpaces": true,
   "editor.useTabStops": true,
   "editor.fontLigatures": true,
   "editor.multiCursorModifier": "alt",
@@ -33,6 +34,10 @@
   },
   "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
   "terminal.integrated.fontSize": 15,
+  "terminal.integrated.allowChords": false,
+  "terminal.integrated.lineHeight": 1.3,
+  "terminal.integrated.scrollback": 1000,
+  "terminal.explorerKind": "integrated",
   "vim.enableNeovim": false,
   "vim.easymotion": true,
   "vim.sneak": true,
@@ -57,7 +62,7 @@
   "terminal.external.osxExec": "Kitty.app",
   "terminal.external.linuxExec": "kitty",
   "debug.allowBreakpointsEverywhere": true,
-  "debug.console.fontFamily": "JetBrains Mono",
+  "debug.console.fontFamily": "'Zed Mono Extended', 'JetBrainsMono Nerd Font'",
   "debug.console.fontSize": 16,
   "debug.console.closeOnEnd": true,
   "debug.console.lineHeight": 36,
@@ -127,13 +132,14 @@
     "editor.formatOnType": true
   },
   "editor.suggestSelection": "first",
-  "workbench.colorCustomizations": {},
+  "workbench.colorCustomizations": {
+    "terminal.background": "#00000000"
+  },
+  "workbench.commandPalette.experimental.suggestCommands": true,
   "python.poetryPath": "poetry",
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "terminal.integrated.allowChords": false,
-  "terminal.integrated.lineHeight": 1.3,
   "editor.lineHeight": 33,
   "wallaby.startAutomatically": false,
   "quokka.colorizeOutput": true,
@@ -159,7 +165,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "git.autofetch": true,
-  "workbench.colorTheme": "Dracula Refined",
+  "workbench.colorTheme": "Dracula",
   "git.enableSmartCommit": true,
   "git.confirmSync": false,
   "editor.formatOnSave": true,
@@ -202,7 +208,6 @@
   "wallaby.codeLensFeature.runTest": true,
   "editor.linkedEditing": true,
   "workbench.editor.untitled.hint": "hidden",
-  "editor.insertSpaces": false,
   "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
   "editor.wordWrap": "off",
   "editor.inlineSuggest.enabled": true,
@@ -236,8 +241,8 @@
   },
   "security.workspace.trust.untrustedFiles": "open",
   "terminal.integrated.env.osx": {
-		"FIG_NEW_SESSION": "1"
-	},
+    "FIG_NEW_SESSION": "1"
+  },
   "editor.accessibilitySupport": "off",
   "editor.cursorBlinking": "phase",
   "editor.cursorSmoothCaretAnimation": "on",
@@ -282,6 +287,17 @@
   "go.toolsManagement.autoUpdate": true,
   "workbench.layoutControl.enabled": false,
   "window.title": "${activeEditorShort}${separator}${rootName}${separator}${profileName}",
-  "breadcrumbs.enabled": false,
-  "cloudcode.autoDependencies": "off"
+  "cloudcode.autoDependencies": "off",
+  "[dart]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.rulers": [80],
+    "editor.selectionHighlight": false,
+    "editor.suggestSelection": "first",
+    "editor.tabCompletion": "onlySnippets",
+    "editor.wordBasedSuggestions": false
+  },
+  "java.jdt.ls.java.home": "/Users/poom/.local/share/rtx/installs/java/20.0.2",
+  "window.commandCenter": false,
+  "editor.bracketPairColorization.independentColorPoolPerBracketType": true
 }

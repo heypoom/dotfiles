@@ -3,7 +3,7 @@ yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 
 # Global Settings
 yabai -m config mouse_follows_focus          on
-yabai -m config focus_follows_mouse          autofocus
+yabai -m config focus_follows_mouse          off
 yabai -m config window_placement             second_child
 yabai -m config window_topmost               off
 yabai -m config window_opacity               off
@@ -28,8 +28,9 @@ yabai -m config right_padding                8
 yabai -m config window_gap                   8
 
 # Space for Sketchybar and Ubersicht widgets
-yabai -m config external_bar                 all:0:0
+# yabai -m config external_bar                 all:0:0
 # yabai -m config external_bar               all:0:28
+yabai -m config external_bar               all:28:0
 # yabai -m config external_bar               all:32:0
 
 # Float applications
@@ -38,6 +39,7 @@ yabai -m rule --add app="^Audio Hijack$" manage=off
 yabai -m rule --add app="^Dash$" manage=off
 yabai -m rule --add app="^Docker Desktop$" manage=off
 yabai -m rule --add app="^Dropbox$" manage=off
+yabai -m rule --add app="^JetBrains Toolbox$" manage=off
 yabai -m rule --add app="^IntelliJ IDEA" manage=off
 yabai -m rule --add app="^Karabiner-Elements$" manage=off
 yabai -m rule --add app="^Karabiner-EventViewer$" manage=off
@@ -52,6 +54,8 @@ yabai -m rule --add app="^Calculator$" manage=off
 yabai -m rule --add app="^Music$" manage=off
 yabai -m rule --add app="^Kit$" manage=off
 yabai -m rule --add app="^Messenger$" manage=off
+yabai -m rule --add app="^Cleanshot" manage=off
+yabai -m rule --add app="^Cleanshot X$" manage=off
 yabai -m rule --add app="^Drop$" manage=off
 yabai -m rule --add app="^Alfred$" manage=off
 yabai -m rule --add app="^Raycast$" manage=off
@@ -66,6 +70,7 @@ yabai -m rule --add app="^java$" manage=off
 yabai -m rule --add title='^Sip$' manage=off
 yabai -m rule --add title='^ChatGPT$' manage=off
 yabai -m rule --add title='^Displays$' manage=off
+yabai -m rule --add title='^Cleanshot' manage=off
 yabai -m rule --add title='^Archive Utility$' manage=off
 yabai -m rule --add title="^MenuBarCover$" manage=off
 yabai -m rule --add app="^Arc$" subrole='AXSystemDialog' manage=off mouse_follows_focus=off

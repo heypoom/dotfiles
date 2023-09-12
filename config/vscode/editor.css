@@ -1,3 +1,7 @@
+* {
+	font-family: 'Zed Mono Extended', 'JetBrains Mono', monospace;
+}
+
 /* .search-view .search-widget .input-box,
 .search-view .search-widget .input-box .monaco-inputbox,
 .monaco-workbench .part.editor>.content>.one-editor-silo>.container>.title .tabs-container>.tab,
