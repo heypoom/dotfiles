@@ -89,7 +89,6 @@
   "editor.minimap.enabled": false,
   "editor.minimap.renderCharacters": false,
   "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, UseTab: Never, IndentWidth: 2, TabWidth: 2, ColumnLimit: 0 }",
-  "python.formatting.provider": "black",
   "prettier.semi": false,
   "prettier.tabWidth": 2,
   "prettier.bracketSpacing": false,
