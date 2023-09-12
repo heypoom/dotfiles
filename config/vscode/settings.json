@@ -2,7 +2,9 @@
   "explorer.confirmDelete": false,
   "files.autoSave": "afterDelay",
   "files.autoSaveDelay": 1000,
-  "editor.fontFamily": "'Zed Mono Extended', 'JetBrainsMono Nerd Font', 'JetBrains Mono', 'FiraCode Nerd Font', 'Sukhumvit Set Text', monospace",
+  "editor.fontFamily": "'Zed Mono Extended', 'JetBrainsMono Nerd Font', 'Sukhumvit Set Text', monospace",
+  "terminal.integrated.fontFamily": "'Zed Mono Extended', 'JetBrainsMono Nerd Font', monospace",
+  "debug.console.fontFamily": "'Zed Mono Extended', 'JetBrainsMono Nerd Font', monospace",
   "editor.fontSize": 20,
   "editor.tabSize": 2,
   "editor.detectIndentation": true,
@@ -32,7 +34,7 @@
       "icon": "terminal-tmux"
     }
   },
-  "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
+
   "terminal.integrated.fontSize": 15,
   "terminal.integrated.allowChords": false,
   "terminal.integrated.lineHeight": 1.3,
@@ -62,7 +64,6 @@
   "terminal.external.osxExec": "Kitty.app",
   "terminal.external.linuxExec": "kitty",
   "debug.allowBreakpointsEverywhere": true,
-  "debug.console.fontFamily": "'Zed Mono Extended', 'JetBrainsMono Nerd Font'",
   "debug.console.fontSize": 16,
   "debug.console.closeOnEnd": true,
   "debug.console.lineHeight": 36,
