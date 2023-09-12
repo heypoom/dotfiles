@@ -182,6 +182,9 @@ lvim.plugins = {
     end,
   },
 
+  -- Prisma syntax highlighting (not tree-sitter)
+  { "pantharshit00/vim-prisma", ft = { "prisma" } },
+
   -- Clojure
   -- { "Olical/conjure",               ft = { "clojure", "julia", "lua", "rust", "python" } },
 
@@ -223,9 +226,6 @@ lvim.plugins = {
   --     })
   --   end,
   -- },
-
-  -- Prisma syntax highlighting (not tree-sitter)
-  -- { "pantharshit00/vim-prisma",      ft = { "prisma" } },
 
   -- Matchup (navigate to matching text, e.g. if-elseif-else-end)
   -- {

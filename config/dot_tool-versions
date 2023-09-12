@@ -1,7 +1,7 @@
-nodejs lts-hydrogen
-ruby   truffleruby+graalvm-22.3.1
-python system
-yarn   1.22.4
-golang 1.20.3
-java   graalvm-22.3.0+java19
-go     1.20.7
+nodejs  lts-hydrogen
+ruby    3.0.2
+python  system
+yarn    1.22.4
+go      1.20.7
+java    20.0.2
+flutter 3.13.2-stable
