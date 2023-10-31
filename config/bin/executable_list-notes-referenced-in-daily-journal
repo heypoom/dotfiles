@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+YEAR=2023
+MONTH=10
+
+if [ -n "$1" ]
+then
+  MONTH="$1"
+
+  if [ "$MONTH" -le 0 ] || [ "$MONTH" -ge 13 ]; then
+    echo "$MONTH is an invalid month!"
+    exit
+  fi
+
+  if [ "$MONTH" -le 9 ]; then
+    MONTH="0$MONTH"
+  fi
+fi
+
+echo "-- links referenced in my journal from $MONTH/$YEAR --"
+
+cat ~/notes/Journal/$YEAR-$MONTH-*.md | ggrep -ohP "\[\[(.*?)\]\]" | sed "s#^\[\[##g" | sed "s#\]\]\$##g" | sort -h | uniq
+

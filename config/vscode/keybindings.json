@@ -130,5 +130,9 @@
   {
     "key": "cmd+9",
     "command": "workbench.action.openEditorAtIndex9"
+  },
+  {
+    "key": "alt+cmd+h",
+    "command": "-rest-client.history"
   }
 ]
