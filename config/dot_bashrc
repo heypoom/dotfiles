@@ -6,3 +6,5 @@ then
 fi
 
 PATH=~/.console-ninja/.bin:$PATH
+
+. "$HOME/.cargo/env"

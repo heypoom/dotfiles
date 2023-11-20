@@ -146,7 +146,9 @@ set -gx PATH \
   $HOME/.elan/bin \
   $HOME/.emacs.d/bin \
   $HOME/.kit/bin \
-  $HOME/.kenv/bin
+  ~/Library/Android/sdk/build-tools/34.0.0 \
+  $HOME/.kenv/bin \
+  /opt/homebrew/opt/binutils/bin
 
 # Populate the OpenAI API Key
 set -gx OPENAI_KEY_FILE "$HOME/.openai.key"

@@ -3,7 +3,6 @@ e asm.pseudo = true
 e scr.color = 3
 e bin.demangle = true
 e asm.demangle = true
-e asm.relsub = true
 
 ec ai.exec rgb:ffb86c
 ec ai.seq rgb:bd93f9
