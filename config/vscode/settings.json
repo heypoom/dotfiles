@@ -128,7 +128,6 @@
   },
   "workbench.startupEditor": "newUntitledFile",
   "[python]": {
-    "editor.defaultFormatter": "ms-python.python",
     "editor.formatOnType": true
   },
   "editor.suggestSelection": "first",
@@ -141,7 +140,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "editor.lineHeight": 33,
-  "wallaby.startAutomatically": false,
+  "wallaby.startAutomatically": true,
   "quokka.colorizeOutput": true,
   "quokka.colors": {
     "covered": "#62b455",
@@ -207,7 +206,6 @@
   "elixirLS.signatureAfterComplete": true,
   "wallaby.codeLensFeature.runTest": true,
   "editor.linkedEditing": true,
-  "workbench.editor.untitled.hint": "hidden",
   "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
   "editor.wordWrap": "off",
   "editor.inlineSuggest.enabled": true,
@@ -255,7 +253,7 @@
   "[svelte]": {
     "editor.defaultFormatter": "svelte.svelte-vscode"
   },
-  "github.copilot.inlineSuggest.enable": true,
+  "github.copilot.editor.enableAutoCompletions": true,
   "github.copilot.advanced": {},
   "github.copilot-labs.advanced": {},
   "calva.paredit.defaultKeyMap": "strict",
@@ -304,5 +302,15 @@
   "[markdown]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "console-ninja.featureSet": "Community"
+  "console-ninja.featureSet": "Pro",
+  "workbench.editor.empty.hint": "hidden",
+  "rubyLsp.rubyVersionManager": "custom",
+  "sqltools.useNodeRuntime": true,
+  "dart.flutterSdkPath": "/Users/poom/.local/share/rtx/installs/flutter/3.13.2-stable",
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
+  "vscode-neovim.neovimExecutablePaths.darwin": "/opt/homebrew/bin/nvim",
+  "vscode-neovim.neovimClean": true,
+  "vscode-neovim.neovimInitVimPaths.darwin": "/Users/poom/.local/share/chezmoi/config/vscode/neovim/init.vim"
 }
