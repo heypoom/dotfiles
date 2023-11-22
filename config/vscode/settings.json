@@ -311,6 +311,5 @@
     "asvetliakov.vscode-neovim": 1
   },
   "vscode-neovim.neovimExecutablePaths.darwin": "/opt/homebrew/bin/nvim",
-  "vscode-neovim.neovimClean": true,
-  "vscode-neovim.neovimInitVimPaths.darwin": "/Users/poom/.local/share/chezmoi/config/vscode/neovim/init.vim"
+  "vscode-neovim.neovimInitVimPaths.darwin": "/Users/poom/.local/share/chezmoi/config/vscode/neovim/init.lua"
 }
