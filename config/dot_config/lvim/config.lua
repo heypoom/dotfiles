@@ -10,6 +10,7 @@ vim.opt.backup = false
 vim.opt.swapfile = false
 vim.opt.termguicolors = true
 vim.opt.updatetime = 50
+vim.opt.timeoutlen = 500
 
 vim.opt.incsearch = true
 vim.opt.hlsearch = true
@@ -129,9 +130,18 @@ lvim.plugins = {
 
   -- GitHub Copilot.
   {
-    "github/copilot.vim",
-    name = "copilot",
-    lazy = false
+    "zbirenbaum/copilot.lua",
+    lazy = false,
+    config = function()
+      require("copilot").setup({
+        suggestion = {
+          auto_trigger = true,
+          keymap = {
+            accept = "<Right>"
+          }
+        }
+      })
+    end
   },
 
   -- ThePrimeagen's Vim Be Good game.

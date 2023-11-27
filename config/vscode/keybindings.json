@@ -67,16 +67,6 @@
   },
   {
     "key": "cmd+k",
-    "command": "editor.action.showHover",
-    "when": "editorTextFocus && !terminalFocus"
-  },
-  {
-    "key": "cmd+k cmd+i",
-    "command": "-editor.action.showHover",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "cmd+k",
     "command": "editor.debug.action.showDebugHover",
     "when": "editorTextFocus && inDebugMode && !terminalFocus"
   },
@@ -134,5 +124,10 @@
   {
     "key": "alt+cmd+h",
     "command": "-rest-client.history"
+  },
+  {
+    "key": "cmd+k",
+    "command": "-workbench.action.terminal.clear",
+    "when": "terminalFocus && terminalHasBeenCreated && !accessibilityModeEnabled || terminalFocus && terminalProcessSupported && !accessibilityModeEnabled || accessibilityModeEnabled && accessibleViewIsShown && terminalHasBeenCreated && accessibleViewCurrentProviderId == 'terminal' || accessibilityModeEnabled && accessibleViewIsShown && terminalProcessSupported && accessibleViewCurrentProviderId == 'terminal'"
   }
 ]
