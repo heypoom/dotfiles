@@ -166,3 +166,6 @@ set -gx RUSTC_WRAPPER sccache
 # Disable homebrew env hints
 set -gx HOMEBREW_NO_ENV_HINTS true
 
+# Neovim default distribution (nvchad, lazyvim, kickstart, astronvim)
+set -gx NVIM_APPNAME nvchad
+
