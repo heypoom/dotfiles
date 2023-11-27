@@ -24,6 +24,7 @@ abbr -a nvim-chad 'env NVIM_APPNAME=nvchad nvim'
 abbr -a lazyvim 'env NVIM_APPNAME=lazyvim nvim'
 abbr -a nvim-lazy 'env NVIM_APPNAME=lazyvim nvim'
 abbr -a nvim-astro 'env NVIM_APPNAME=astro nvim'
+abbr -a nvim-kick 'env NVIM_APPNAME=kickstart nvim'
 abbr -a ls exa
 abbr -a ch chezmoi
 abbr -a chez chezmoi
