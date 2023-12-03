@@ -86,7 +86,6 @@ lvim.lsp.buffer_mappings.normal_mode['<leader>vrn'] = {
 
 -- Automatically install tresitter plugins and language servers.
 lvim.builtin.treesitter.auto_install = true
-lvim.lsp.installer.setup.automatic_installation = true
 
 -- Additional Plugins
 lvim.plugins = {
