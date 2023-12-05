@@ -133,6 +133,12 @@
   {
     "args": "<C-d>",
     "command": "vscode-neovim.send",
+    "key": "cmd+d",
+    "when": "editorFocus && neovim.init"
+  },
+  {
+    "args": "<C-d>",
+    "command": "vscode-neovim.send",
     "key": "ctrl+d",
     "when": "editorFocus && neovim.init"
   }

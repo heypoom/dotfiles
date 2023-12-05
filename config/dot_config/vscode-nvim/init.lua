@@ -47,11 +47,9 @@ require("lazy").setup({
         no_selection = false
       }
 
-      -- vim.keymap.set({ "n", "x", "i" }, "<C-d>", function()
-      --   C.addSelectionToNextFindMatch()
-      -- end)
-
-      vim.keymap.set('n', '<C-d>', 'mciw*<Cmd>nohl<CR>', { remap = true })
+      vim.keymap.set({ "n", "x", "i" }, "<C-d>", function()
+        C.addSelectionToNextFindMatch()
+      end)
     end
   }
 })
