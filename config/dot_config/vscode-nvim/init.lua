@@ -20,9 +20,40 @@ vim.g.mapleader = " "
 -- setup lazy
 require("lazy").setup({
   "folke/which-key.nvim",
-  { "folke/neoconf.nvim",                     cmd = "Neoconf" },
+  { "folke/neoconf.nvim", cmd = "Neoconf" },
   "folke/neodev.nvim",
-  { 'vscode-neovim/vscode-multi-cursor.nvim', event = 'VeryLazy', cond = not not vim.g.vscode }
+  {
+    "folke/flash.nvim",
+    event = "VeryLazy",
+    opts = {},
+    keys = {
+      { "s",     mode = { "n", "x", "o" }, function() require("flash").jump() end,              desc = "Flash" },
+      { "S",     mode = { "n", "x", "o" }, function() require("flash").treesitter() end,        desc = "Flash Treesitter" },
+      { "r",     mode = "o",               function() require("flash").remote() end,            desc = "Remote Flash" },
+      { "R",     mode = { "o", "x" },      function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
+      { "<c-s>", mode = { "c" },           function() require("flash").toggle() end,            desc = "Toggle Flash Search" },
+    }
+  },
+  {
+    'vscode-neovim/vscode-multi-cursor.nvim',
+    event = 'VeryLazy',
+    cond = not not vim.g.vscode,
+    config = function()
+      -- setup vscode multi cursor
+      local C = require('vscode-multi-cursor')
+
+      C.setup {
+        default_mappings = true,
+        no_selection = false
+      }
+
+      -- vim.keymap.set({ "n", "x", "i" }, "<C-d>", function()
+      --   C.addSelectionToNextFindMatch()
+      -- end)
+
+      vim.keymap.set('n', '<C-d>', 'mciw*<Cmd>nohl<CR>', { remap = true })
+    end
+  }
 })
 
 -- setup unnamed clipboard
