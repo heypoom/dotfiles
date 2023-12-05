@@ -164,7 +164,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "git.autofetch": true,
-  "workbench.colorTheme": "Dracula",
+  "workbench.colorTheme": "Catppuccin Mocha",
   "git.enableSmartCommit": true,
   "git.confirmSync": false,
   "editor.formatOnSave": true,
@@ -311,5 +311,5 @@
     "asvetliakov.vscode-neovim": 1
   },
   "vscode-neovim.neovimExecutablePaths.darwin": "/opt/homebrew/bin/nvim",
-  "vscode-neovim.neovimInitVimPaths.darwin": "/Users/poom/.local/share/chezmoi/config/vscode/neovim/init.lua"
+  "vscode-neovim.NVIM_APPNAME": "vscode-nvim"
 }
