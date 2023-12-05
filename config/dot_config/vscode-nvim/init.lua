@@ -20,8 +20,9 @@ vim.g.mapleader = " "
 -- setup lazy
 require("lazy").setup({
   "folke/which-key.nvim",
-  { "folke/neoconf.nvim", cmd = "Neoconf" },
+  { "folke/neoconf.nvim",                     cmd = "Neoconf" },
   "folke/neodev.nvim",
+  { 'vscode-neovim/vscode-multi-cursor.nvim', event = 'VeryLazy', cond = not not vim.g.vscode }
 })
 
 -- setup unnamed clipboard
