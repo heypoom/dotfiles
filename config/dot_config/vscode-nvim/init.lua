@@ -14,8 +14,15 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
--- setup lazyvim
-require("lazy").setup(plugins, opts)
+-- set leader key to <space>
+vim.g.mapleader = " "
+
+-- setup lazy
+require("lazy").setup({
+  "folke/which-key.nvim",
+  { "folke/neoconf.nvim", cmd = "Neoconf" },
+  "folke/neodev.nvim",
+})
 
 -- setup unnamed clipboard
 -- https://github.com/vscode-neovim/vscode-neovim/issues/298
