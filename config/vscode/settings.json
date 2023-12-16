@@ -34,33 +34,11 @@
       "icon": "terminal-tmux"
     }
   },
-
   "terminal.integrated.fontSize": 15,
   "terminal.integrated.allowChords": false,
   "terminal.integrated.lineHeight": 1.3,
   "terminal.integrated.scrollback": 1000,
   "terminal.explorerKind": "integrated",
-  "vim.enableNeovim": false,
-  "vim.easymotion": true,
-  "vim.sneak": true,
-  "vim.incsearch": true,
-  "vim.useSystemClipboard": true,
-  "vim.useCtrlKeys": true,
-  "vim.hlsearch": true,
-  "vim.leader": "<space>",
-  "vim.gdefault": true,
-  "vim.handleKeys": {
-    "<C-a>": false,
-    "<C-f>": false
-  },
-  "vim.autoindent": true,
-  "vim.foldfix": false,
-  "vim.easymotionMarkerBackgroundColor": "#ff00ff",
-  "vim.easymotionMarkerForegroundColorOneChar": "#fff",
-  "vim.easymotionMarkerFontWeight": "600",
-  "vim.statusBarColorControl": false,
-  "vim.insertModeKeyBindings": [],
-  "vim.normalModeKeyBindingsNonRecursive": [],
   "terminal.external.osxExec": "Kitty.app",
   "terminal.external.linuxExec": "kitty",
   "debug.allowBreakpointsEverywhere": true,
@@ -88,7 +66,6 @@
   "php.suggest.basic": false,
   "editor.minimap.enabled": false,
   "editor.minimap.renderCharacters": false,
-  "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, UseTab: Never, IndentWidth: 2, TabWidth: 2, ColumnLimit: 0 }",
   "prettier.semi": false,
   "prettier.tabWidth": 2,
   "prettier.bracketSpacing": false,
@@ -110,7 +87,6 @@
   },
   "explorer.confirmDragAndDrop": false,
   "javascript.updateImportsOnFileMove.enabled": "never",
-  "vim.normalModeKeyBindings": [],
   "git.ignoreMissingGitWarning": true,
   "git.path": "/usr/local/bin/git",
   "typescript.updateImportsOnFileMove.enabled": "always",
@@ -152,7 +128,6 @@
   "quokka.showOutputOnStart": true,
   "go.formatTool": "goimports",
   "go.useLanguageServer": true,
-  "liveServer.settings.donotShowInfoMsg": true,
   "diffEditor.ignoreTrimWhitespace": false,
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -182,13 +157,10 @@
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "calva.keybindingsEnabled": true,
   "workbench.editor.revealIfOpen": true,
-  "elixirLS.enableTestLenses": true,
   "[elixir]": {
     "editor.insertSpaces": true,
     "editor.tabSize": 2,
-    "editor.wordBasedSuggestions": false,
     "editor.formatOnType": true,
     "editor.trimAutoWhitespace": false,
     "files.trimTrailingWhitespace": true,
@@ -202,8 +174,6 @@
     "editor.codeLens": true,
     "editor.formatOnSave": false
   },
-  "elixirLS.dialyzerEnabled": true,
-  "elixirLS.signatureAfterComplete": true,
   "wallaby.codeLensFeature.runTest": true,
   "editor.linkedEditing": true,
   "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
@@ -244,29 +214,17 @@
   "editor.accessibilitySupport": "off",
   "editor.cursorBlinking": "phase",
   "editor.cursorSmoothCaretAnimation": "on",
-  "apklab.apkSignerPath": "/Users/poom/.apklab/uber-apk-signer-1.3.0.jar",
-  "apklab.apktoolPath": "/Users/poom/.apklab/apktool_2.8.1.jar",
-  "apklab.jadxDirPath": "/Users/poom/.apklab/jadx-1.4.7",
   "svelte.enable-ts-plugin": true,
   "debug.onTaskErrors": "abort",
-  "cmake.configureOnOpen": true,
   "[svelte]": {
     "editor.defaultFormatter": "svelte.svelte-vscode"
   },
   "github.copilot.editor.enableAutoCompletions": true,
   "github.copilot.advanced": {},
-  "github.copilot-labs.advanced": {},
-  "calva.paredit.defaultKeyMap": "strict",
   "notebook.lineNumbers": "on",
   "window.titleBarStyle": "custom",
-  "vscode_custom_css.imports": [
-    "file:///Users/poom/.local/share/chezmoi/config/vscode/editor.css",
-    "file:///Users/poom/.local/share/chezmoi/config/vscode/editor.js"
-  ],
-  "vscode_custom_css.statusbar": false,
   "git.openRepositoryInParentFolders": "never",
   "workbench.editor.enablePreview": false,
-  "vim.smartRelativeLine": true,
   "files.exclude": {
     "**/.git": true,
     "**/.svn": true,
@@ -277,14 +235,9 @@
     "**/*.olean": true
   },
   "editor.unicodeHighlight.invisibleCharacters": false,
-  "[sql]": {
-    "editor.defaultFormatter": "adpyke.vscode-sql-formatter"
-  },
-  "auto-close-tag.activationOnLanguage": ["typescriptreact", "html"],
   "go.toolsManagement.autoUpdate": true,
   "workbench.layoutControl.enabled": false,
   "window.title": "${activeEditorShort}${separator}${rootName}${separator}${profileName}",
-  "cloudcode.autoDependencies": "off",
   "[dart]": {
     "editor.formatOnSave": true,
     "editor.formatOnType": true,
@@ -292,9 +245,8 @@
     "editor.selectionHighlight": false,
     "editor.suggestSelection": "first",
     "editor.tabCompletion": "onlySnippets",
-    "editor.wordBasedSuggestions": false
+    "editor.wordBasedSuggestions": "off"
   },
-  "java.jdt.ls.java.home": "/Users/poom/.local/share/rtx/installs/java/oracle-19",
   "window.commandCenter": false,
   "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
   "editor.unicodeHighlight.ambiguousCharacters": false,
@@ -305,11 +257,18 @@
   "console-ninja.featureSet": "Pro",
   "workbench.editor.empty.hint": "hidden",
   "rubyLsp.rubyVersionManager": "custom",
-  "sqltools.useNodeRuntime": true,
   "dart.flutterSdkPath": "/Users/poom/.local/share/rtx/installs/flutter/3.13.2-stable",
   "extensions.experimental.affinity": {
     "asvetliakov.vscode-neovim": 1
   },
   "vscode-neovim.neovimExecutablePaths.darwin": "/opt/homebrew/bin/nvim",
-  "vscode-neovim.NVIM_APPNAME": "vscode-nvim"
+  "vscode-neovim.NVIM_APPNAME": "vscode-nvim",
+  "[dart][elixir]": {
+    "editor.wordBasedSuggestions": "off"
+  },
+  "window.zoomLevel": -1,
+  "settingsSync.ignoredExtensions": [],
+  "settingsSync.ignoredSettings": [],
+  "apc.font.family": "Zed Mono Extended",
+  "apc.monospace.font.family": "Zed Mono Extended"
 }
