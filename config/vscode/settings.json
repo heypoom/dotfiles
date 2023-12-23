@@ -46,7 +46,6 @@
   "debug.console.closeOnEnd": true,
   "debug.console.lineHeight": 36,
   "debug.console.wordWrap": true,
-  "workbench.sideBar.location": "left",
   "emmet.showExpandedAbbreviation": "always",
   "emmet.showSuggestionsAsSnippets": true,
   "emmet.syntaxProfiles": {
@@ -222,7 +221,6 @@
   "github.copilot.editor.enableAutoCompletions": true,
   "github.copilot.advanced": {},
   "notebook.lineNumbers": "on",
-  "window.titleBarStyle": "custom",
   "git.openRepositoryInParentFolders": "never",
   "workbench.editor.enablePreview": false,
   "files.exclude": {
@@ -270,5 +268,18 @@
   "settingsSync.ignoredExtensions": [],
   "settingsSync.ignoredSettings": [],
   "apc.font.family": "Zed Mono Extended",
-  "apc.monospace.font.family": "Zed Mono Extended"
+  "apc.monospace.font.family": "Zed Mono Extended",
+  "apc.activityBar": {
+    "size": 40
+  },
+  "window.titleBarStyle": "native",
+  "apc.electron": {
+    "frame": false,
+    "titleBarStyle": "hidden"
+  },
+  "workbench.productIconTheme": "icons-carbon",
+  "workbench.iconTheme": "material-icon-theme",
+  "apc.statusBar": {
+    "position": "bottom"
+  }
 }
