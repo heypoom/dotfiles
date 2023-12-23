@@ -62,6 +62,9 @@ local plugins = {
   -- GitHub Copilot.
   {
     "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    event = "InsertEnter",
+
     config = function()
       require("copilot").setup({
         suggestion = {
