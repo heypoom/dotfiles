@@ -161,16 +161,6 @@ local plugins = {
       tmux.setup()
     end
   },
-
-  -- Transparency
-  {
-    "xiyaowong/transparent.nvim",
-    cmd = { "TransparentEnable", "TransparentDisable", "TransparentToggle" },
-
-    init = function()
-      vim.cmd.TransparentEnable()
-    end,
-  },
 }
 
 return plugins
