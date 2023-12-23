@@ -1,0 +1,10 @@
+.git
+.git/*
+.git/**
+.github
+.github/*
+.github/**
+.gitignore
+.ignore
+.stylua.toml
+
