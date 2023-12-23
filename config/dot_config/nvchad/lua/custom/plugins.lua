@@ -47,11 +47,42 @@ local plugins = {
     },
   },
 
+  -- Change surrounding pairs.
+  {
+    "tpope/vim-surround",
+    keys = { "c", "d", "y" }
+  },
+
+  -- Repeat mapped commands.
   {
     "tpope/vim-repeat",
     keys = { "." },
   },
 
+  -- GitHub Copilot.
+  {
+    "zbirenbaum/copilot.lua",
+    config = function()
+      require("copilot").setup({
+        suggestion = {
+          auto_trigger = true,
+          keymap = {
+            accept = "<Right>"
+          }
+        }
+      })
+    end
+  },
+
+  -- Pretty diagnostics view.
+  {
+    "folke/trouble.nvim",
+    cmd = "TroubleToggle",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+  },
+
+  -- Fast navigation.
+  -- Alternative to Leap, Sneak and EasyMotion.
   {
     "folke/flash.nvim",
     event = "VeryLazy",
@@ -62,7 +93,7 @@ local plugins = {
         "s",
         mode = { "n", "x", "o" },
         function() require("flash").jump() end,
-        desc = "Flash" 
+        desc = "Flash"
       },
 
       {
@@ -93,7 +124,49 @@ local plugins = {
         desc = "Toggle Flash Search"
       },
     },
-  }
+  },
+
+  -- Git Integration
+  {
+    "tpope/vim-fugitive",
+    ft = { "fugitive" },
+
+    cmd = {
+      "G",
+      "Git",
+      "Gdiffsplit",
+      "Gread",
+      "Gwrite",
+      "Ggrep",
+      "GMove",
+      "GDelete",
+      "GBrowse",
+      "GRemove",
+      "GRename",
+      "Glgrep",
+      "Gedit",
+    },
+  },
+
+  -- Tmux integration
+  {
+    "aserowy/tmux.nvim",
+
+    config = function()
+      local tmux = require "tmux"
+      tmux.setup()
+    end
+  },
+
+  -- Transparency
+  {
+    "xiyaowong/transparent.nvim",
+    cmd = { "TransparentEnable", "TransparentDisable", "TransparentToggle" },
+
+    init = function()
+      vim.cmd.TransparentEnable()
+    end,
+  },
 }
 
 return plugins
