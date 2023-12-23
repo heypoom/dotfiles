@@ -157,10 +157,37 @@ local plugins = {
     "aserowy/tmux.nvim",
 
     config = function()
-      local tmux = require "tmux"
+      local tmux = require("tmux")
+
       tmux.setup()
     end
   },
+
+  -- Telescope Project integration
+  {
+    "nvim-telescope/telescope-project.nvim",
+
+    config = function()
+      local telescope = require("telescope")
+
+      telescope.load_extension("project")
+    end,
+  },
+
+  -- Vim Move
+  {
+    "matze/vim-move",
+  },
+
+  -- Multi Cursor
+  {
+    "mg979/vim-visual-multi",
+  },
+
+  -- Expand Region
+  {
+    "terryma/vim-expand-region",
+  }
 }
 
 return plugins
