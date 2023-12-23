@@ -35,9 +35,10 @@ local plugins = {
      end,
   },
 
+  -- Manage Language Servers
   {
-   "williamboman/mason.nvim",
-   opts = {
+    "williamboman/mason.nvim",
+    opts = {
       ensure_installed = {
         "lua-language-server",
         "html-lsp",
@@ -77,7 +78,7 @@ local plugins = {
     end
   },
 
-  -- Pretty diagnostics view.
+  -- Pretty LSP diagnostics view.
   {
     "folke/trouble.nvim",
     cmd = "TroubleToggle",
