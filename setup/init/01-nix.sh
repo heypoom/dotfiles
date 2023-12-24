@@ -7,4 +7,4 @@ then
 fi
 
 # Install Nix
-bash <(curl -L https://nixos.org/nix/install) --daemon
+curl -L https://nixos.org/nix/install | sh -s -- --daemon
