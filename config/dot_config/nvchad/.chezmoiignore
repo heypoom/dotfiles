@@ -7,4 +7,5 @@
 .gitignore
 .ignore
 .stylua.toml
-
+.DS_Store
+lua/.DS_Store
