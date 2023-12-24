@@ -106,6 +106,8 @@ set -gx PATH \
   $CONDA_HOME/bin \
   /usr/libexec \
   $HOME/scripts \
+  $HOME/.nix-profile/bin \
+  /nix/var/nix/profiles/default/bin \
   /opt/homebrew/bin \
   /usr/local/opt/llvm/bin \
   /usr/local/opt/coreutils/libexec/gnubin \
