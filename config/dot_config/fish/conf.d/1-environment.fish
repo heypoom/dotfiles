@@ -8,13 +8,13 @@ set -gx LANG en_US.UTF-8
 set -gx LANGUAGE en_US.UTF-8
 
 # Prefer Neovim as the default editor.
-set -gx EDITOR lvim
-set -gx VISUAL lvim
+set -gx EDITOR nvim
+set -gx VISUAL nvim
 set -gx FILTER fzf
 
 # Also Use Neovim as the React editor
-set -gx REACT_EDITOR lvim
-set -gx REACT_EDITOR_CMD '/usr/poom/.local/bin/lvim'
+set -gx REACT_EDITOR nvim
+set -gx REACT_EDITOR_CMD nvim
 
 # Define Android's SDK Path
 set -gx ANDROID_HOME "$HOME/Library/Android/sdk"
@@ -77,7 +77,7 @@ set -gx MANPATH \
 	$MANPATH
 
 # Use Neovim as man's pager.
-set -gx MANPAGER "lvim +Man!"
+set -gx MANPAGER "nvim +Man!"
 
 # Configure fzf to use fd as default command.
 set -gx FZF_DEFAULT_COMMAND 'fd --type f --follow --hidden --exclude .git'
