@@ -19,9 +19,6 @@ alt - t: $HOME/bin/kitty-spawn
 # Close the window
 alt + shift - x: yabai -m window --close
 
-# Spawn a new Emacs instance.
-alt + shift - e: $HOME/bin/emacs-spawn
-
 # Send window to other monitor: alt + shift + {display}
 alt + shift - 1: yabai -m window --display 1; yabai -m display --focus 1
 alt + shift - 2: yabai -m window --display 2; yabai -m display --focus 2
