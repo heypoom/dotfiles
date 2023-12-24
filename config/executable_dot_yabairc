@@ -4,11 +4,14 @@ yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 # Global Settings
 yabai -m config mouse_follows_focus          on
 yabai -m config focus_follows_mouse          off
+yabai -m config window_origin_display        default
 yabai -m config window_placement             second_child
-yabai -m config window_topmost               off
+yabai -m config window_zoom_persist          on
+yabai -m config window_shadow                on
+yabai -m config window_animation_duration    0.0
+yabai -m config window_animation_frame_rate  120
 yabai -m config window_opacity               off
 yabai -m config window_opacity_duration      0.0
-yabai -m config window_shadow                on
 yabai -m config insert_feedback_color        0xaad75f5f
 yabai -m config active_window_opacity        1.0
 yabai -m config normal_window_opacity        1.0
@@ -40,7 +43,6 @@ yabai -m rule --add app="^Dash$" manage=off
 yabai -m rule --add app="^Docker Desktop$" manage=off
 yabai -m rule --add app="^Dropbox$" manage=off
 yabai -m rule --add app="^JetBrains Toolbox$" manage=off
-yabai -m rule --add app="^IntelliJ IDEA" manage=off
 yabai -m rule --add app="^Karabiner-Elements$" manage=off
 yabai -m rule --add app="^Karabiner-EventViewer$" manage=off
 yabai -m rule --add app="^Loopback$" manage=off
@@ -61,14 +63,16 @@ yabai -m rule --add app="^Alfred$" manage=off
 yabai -m rule --add app="^Raycast$" manage=off
 yabai -m rule --add app="^Hammerspoon$" manage=off
 yabai -m rule --add app="^App Store$" manage=off
-yabai -m rule --add app="^java$" manage=off
+
+# yabai -m rule --add app="^java$" manage=off
+# yabai -m rule --add app="^IntelliJ IDEA" manage=off
 
 # float system preferences
 # yabai -m rule --add app="^System Information$" manage=off
 # yabai -m rule --add app="^System Preferences$" manage=off
 # yabai -m rule --add title='Preferences$' manage=off
 yabai -m rule --add title='^Sip$' manage=off
-yabai -m rule --add title='^ChatGPT$' manage=off
+# yabai -m rule --add title='^ChatGPT$' manage=off
 yabai -m rule --add title='^Displays$' manage=off
 yabai -m rule --add title='^CleanShot' manage=off
 yabai -m rule --add title='^Archive Utility$' manage=off
@@ -86,3 +90,5 @@ yabai -m rule --add app="^Arc$" subrole='AXSystemDialog' manage=off mouse_follow
 # yabai -m rule --add app='Emacs' title=' — ' manage=off 
 
 # yabai -m signal --add event=window_created app="Emacs" action='~/bin/yabai-float-children'
+
+echo "yabai config reloaded 🚀"
