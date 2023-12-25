@@ -93,6 +93,7 @@ local plugins = {
         "unocss-language-server",
         "vue-language-server",
         "yaml-language-server",
+        "htmx-lsp",
       },
     },
   },

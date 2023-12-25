@@ -30,6 +30,7 @@ local servers = {
   "lua_ls",
   "mdx_analyzer",
   "autotools_ls",
+  "htmx",
   -- "biome"
 }
 
