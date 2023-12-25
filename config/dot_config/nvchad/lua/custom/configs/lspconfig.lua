@@ -26,7 +26,6 @@ local servers = {
   "unocss",
   "svelte",
   "nil_ls",
-  "lua_ls",
   "mdx_analyzer",
   "autotools_ls",
   "htmx",
@@ -119,3 +118,14 @@ lspconfig.tailwindcss.setup {
     },
   },
 }
+
+lspconfig.lua_ls.setup {
+  plugins = {
+    plugins = {
+      lua_ls = {
+        enabled = true,
+      },
+    },
+  },
+}
+

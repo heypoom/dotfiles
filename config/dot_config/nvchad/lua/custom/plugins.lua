@@ -20,6 +20,19 @@ local plugins = {
     },
   },
 
+  -- Neovim Lua configuration
+  {
+    "folke/neodev.nvim",
+    opts = {},
+  },
+
+  -- NeoConf
+  {
+    "folke/neoconf.nvim",
+    opts = {},
+  },
+
+  -- LSP Config
   {
     "neovim/nvim-lspconfig",
 
