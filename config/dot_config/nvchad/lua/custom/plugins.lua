@@ -98,12 +98,6 @@ local plugins = {
     },
   },
 
-  -- Change surrounding pairs.
-  {
-    "tpope/vim-surround",
-    keys = { "c", "d", "y" }
-  },
-
   -- Repeat mapped commands.
   {
     "tpope/vim-repeat",
@@ -243,7 +237,36 @@ local plugins = {
   -- Expand Region
   {
     "terryma/vim-expand-region",
-  }
+  },
+
+  -- Oil
+  {
+    'stevearc/oil.nvim',
+    opts = {
+      default_file_explorer = false,
+      columns = { "icon" }
+    },
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+  },
+
+  -- Treesitter Autotag
+  {
+    'windwp/nvim-ts-autotag',
+    event = "InsertEnter",
+    opts = {
+      filetypes = { "html", "typescriptreact", "svelte", "vue" },
+    }
+  },
+
+  -- Vim Surround
+  {
+      "kylechui/nvim-surround",
+      version = "*", -- Use for stability; omit to use `main` branch for the latest features
+      event = "VeryLazy",
+      config = function()
+        require("nvim-surround").setup({})
+      end
+  },
 }
 
 return plugins
