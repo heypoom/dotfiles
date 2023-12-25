@@ -20,33 +20,39 @@ local plugins = {
     },
   },
 
-  -- Neovim Lua configuration
-  {
-    "folke/neodev.nvim",
-    opts = {},
-  },
-
-  -- NeoConf
-  {
-    "folke/neoconf.nvim",
-    opts = {},
-  },
-
   -- LSP Config
   {
     "neovim/nvim-lspconfig",
 
      dependencies = {
-       "jose-elias-alvarez/null-ls.nvim",
-       config = function()
-         require "custom.configs.null-ls"
-       end,
-     },
+      -- NeoDev
+      {
+        "folke/neodev.nvim",
+        config = function()
+          require("neodev").setup {}
+        end,
+      },
 
-     config = function()
-        require "plugins.configs.lspconfig"
-        require "custom.configs.lspconfig"
-     end,
+      -- NeoConf
+      {
+        "folke/neoconf.nvim",
+        opts = {},
+      },
+
+      -- Null Language Server
+      {
+        "jose-elias-alvarez/null-ls.nvim",
+        config = function()
+          require "custom.configs.null-ls"
+        end,
+      },
+    },
+
+    -- LSP Configurations
+    config = function()
+      require "plugins.configs.lspconfig"
+      require "custom.configs.lspconfig"
+    end,
   },
 
   -- Manage Language Servers
