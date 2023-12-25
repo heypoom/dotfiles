@@ -19,7 +19,7 @@ local servers = {
   "dockerls",
   "elixirls",
   "emmet_language_server",
-  "eslintd",
+  "eslint",
   "gopls",
   "jsonls",
   "kotlin_language_server",
