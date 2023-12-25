@@ -236,7 +236,20 @@ local plugins = {
     config = function()
       local tmux = require("tmux")
 
-      tmux.setup()
+      tmux.setup({})
+    end
+  },
+
+  -- Zellij Integration
+  {
+    "Lilja/zellij.nvim",
+
+    config = function()
+      local zellij = require("zellij")
+
+      zellij.setup({
+        vimTmuxNavigatorKeybinds = true,
+      })
     end
   },
 
@@ -379,6 +392,13 @@ local plugins = {
   {
     "simrat39/symbols-outline.nvim",
     cmd = "SymbolsOutline",
+  },
+
+  -- Harpoon
+  {
+    "ThePrimeagen/harpoon",
+    branch = "harpoon2",
+    requires = {"nvim-lua/plenary.nvim"},
   },
 }
 
