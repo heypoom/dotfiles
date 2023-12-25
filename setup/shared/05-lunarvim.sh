@@ -6,8 +6,6 @@ then
   exit 0
 fi
 
-# TODO: Add rtx shims to path.
-
 # Fetch the LunarVim script.
 curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh > /tmp/install-lunarvim.sh
 chmod +x /tmp/install-lunarvim.sh
@@ -30,4 +28,3 @@ fi
 rm /tmp/install-lunarvim.sh
 
 echo "✅ installed LunarVim."
-
