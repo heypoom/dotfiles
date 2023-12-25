@@ -1,50 +1,138 @@
 {
-  description = "Phoomparin Mano's Nix Configuration";
-
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    nix-darwin.url = "github:LnL7/nix-darwin";
+    # Principle inputs (updated by `nix run .#update`)
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+
+    nix-darwin.url = "github:lnl7/nix-darwin/master";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
+
+    home-manager.url = "github:nix-community/home-manager";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    flake-parts.url = "github:hercules-ci/flake-parts";
+    nixos-flake.url = "github:srid/nixos-flake";
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs }:
-  let
-    configuration = { pkgs, ... }: {
-      # List packages installed in system profile. To search by name, run:
-      # $ nix-env -qaP | grep wget
-      environment.systemPackages =
-        [ pkgs.vim
-        ];
+  outputs = inputs@{ self, ... }:
+    inputs.flake-parts.lib.mkFlake { inherit inputs; } {
+      systems = [ "x86_64-linux" "aarch64-darwin" "x86_64-darwin" ];
 
-      # Auto upgrade nix package and the daemon service.
-      services.nix-daemon.enable = true;
-      nix.package = pkgs.nix;
+      imports = [
+        inputs.nixos-flake.flakeModule
+      ];
 
-      nix.settings.experimental-features = "nix-command flakes";
+      flake =
+        let
+          username = "poom";
+        in
+        {
+          # Configurations for Linux (NixOS) machines
+          nixosConfigurations = {
+            poom-linux = self.nixos-flake.lib.mkLinuxSystem {
+              nixpkgs.hostPlatform = "x86_64-linux";
+              imports = [
+                self.nixosModules.common # See below for "nixosModules"!
+                self.nixosModules.linux
 
-      # Create /etc/zshrc that loads the nix-darwin environment.
-      programs.zsh.enable = true;
-      programs.fish.enable = true;
+                # Your machine's configuration.nix goes here
+                ({ pkgs, ... }: {
+                  # TODO: Put your /etc/nixos/hardware-configuration.nix here
+                  boot.loader.grub.device = "nodev";
+                  fileSystems."/" = {
+                    device = "/dev/disk/by-label/nixos";
+                    fsType = "btrfs";
+                  };
+                  system.stateVersion = "23.05";
+                })
 
-      # Set Git commit hash for darwin-version.
-      system.configurationRevision = self.rev or self.dirtyRev or null;
+                # Your home-manager configuration
+                self.nixosModules.home-manager
+                {
+                  home-manager.users.${username} = {
+                    imports = [
+                      self.homeModules.common # See below for "homeModules"!
+                      self.homeModules.linux
+                    ];
+                    home.stateVersion = "22.11";
+                  };
+                }
+              ];
+            };
+          };
 
-      # Used for backwards compatibility, please read the changelog before changing.
-      # $ darwin-rebuild changelog
-      system.stateVersion = 4;
+          # Configurations for macOS machines
+          darwinConfigurations = {
+            poom-mac = self.nixos-flake.lib.mkMacosSystem {
+              nixpkgs.hostPlatform = "aarch64-darwin";
 
-      # The platform the configuration will be used on.
-      nixpkgs.hostPlatform = "aarch64-darwin";
+              imports = [
+                self.nixosModules.common # See below for "nixosModules"!
+                self.nixosModules.darwin
+
+                # Your machine's configuration.nix goes here
+                ({ pkgs, ... }: {
+                  # Used for backwards compatibility, please read the changelog before changing.
+                  # $ darwin-rebuild changelog
+                  system.stateVersion = 4;
+                })
+
+                # Your home-manager configuration
+                self.darwinModules_.home-manager
+                {
+                  home-manager.users.${username} = {
+                    imports = [
+                      self.homeModules.common # See below for "homeModules"!
+                      self.homeModules.darwin
+                    ];
+                    home.stateVersion = "22.11";
+                  };
+                }
+              ];
+            };
+          };
+
+          # All nixos/nix-darwin configurations are kept here.
+          nixosModules = {
+            # Common nixos/nix-darwin configuration shared between Linux and macOS.
+            common = { pkgs, ... }: {
+              environment.systemPackages = with pkgs; [
+                hello
+              ];
+            };
+
+            # NixOS specific configuration
+            linux = { pkgs, ... }: {
+              users.users.${username}.isNormalUser = true;
+              services.netdata.enable = true;
+            };
+
+            # nix-darwin specific configuration
+            darwin = { pkgs, ... }: {
+              users.users.${username}.home = "/Users/${username}";
+              security.pam.enableSudoTouchIdAuth = true;
+              services.nix-daemon.enable = true;
+            };
+          };
+
+          # All home-manager configurations are kept here.
+          homeModules = {
+            # Common home-manager configuration shared between Linux and macOS.
+            common = { pkgs, ... }: {
+              programs.git.enable = true;
+              programs.starship.enable = true;
+              programs.bash.enable = true;
+            };
+
+            # home-manager config specific to NixOS
+            linux = {
+              xsession.enable = true;
+            };
+
+            # home-manager config specific to Darwin
+            darwin = {
+              targets.darwin.search = "Google";
+            };
+          };
+        };
     };
-  in
-  {
-    # Build darwin flake using:
-    # $ darwin-rebuild build --flake .#poom-mac
-    darwinConfigurations."poom-mac" = nix-darwin.lib.darwinSystem {
-      modules = [ configuration ];
-    };
-
-    # Expose the package set, including overlays, for convenience.
-    darwinPackages = self.darwinConfigurations."poom-mac".pkgs;
-  };
 }
