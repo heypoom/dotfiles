@@ -133,6 +133,12 @@ local plugins = {
     "folke/trouble.nvim",
     cmd = "TroubleToggle",
     dependencies = { "nvim-tree/nvim-web-devicons" },
+
+    opts = {
+      icons = true,
+      mode = "workspace_diagnostics",
+      cycle_results = true,
+    }
   },
 
   -- Fast navigation.
