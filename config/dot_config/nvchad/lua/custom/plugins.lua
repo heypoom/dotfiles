@@ -397,6 +397,7 @@ local plugins = {
   -- Harpoon
   {
     "ThePrimeagen/harpoon",
+    event = "VeryLazy",
     branch = "harpoon2",
     requires = {"nvim-lua/plenary.nvim"},
   },
