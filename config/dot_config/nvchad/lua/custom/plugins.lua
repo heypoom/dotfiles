@@ -67,7 +67,7 @@ local plugins = {
         "dockerfile-language-server",
         "editorconfig-checker",
         "elixir-ls",
-        "emmet-ls",
+        "emmet-language-server",
         "eslint_d",
         "prettierd",
         "flake8",
