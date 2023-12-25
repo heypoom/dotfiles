@@ -23,7 +23,7 @@ M.cmp = {
       end,
       "select next item",
     },
-  }
+  },
 }
 
 return M
