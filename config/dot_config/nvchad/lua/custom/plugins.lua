@@ -310,6 +310,30 @@ local plugins = {
       },
     },
   },
+
+  -- Interactive scratchpad
+  {
+    "metakirby5/codi.vim",
+    cmd = "Codi"
+  },
+
+  -- Diff View.
+  {
+    "sindrets/diffview.nvim",
+    cmd = { "DiffviewOpen" }
+  },
+
+  -- Matchup
+  {
+    "andymass/vim-matchup",
+    event = "CursorMoved",
+  },
+
+  -- Symbols Outline
+  {
+    "simrat39/symbols-outline.nvim",
+    cmd = "SymbolsOutline",
+  },
 }
 
 return plugins
