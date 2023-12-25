@@ -98,6 +98,14 @@ local plugins = {
     },
   },
 
+  -- Mason LSP Config
+  {
+    "williamboman/mason-lspconfig.nvim",
+    dependencies = {
+      "williamboman/mason.nvim",
+    },
+  },
+
   -- Repeat mapped commands.
   {
     "tpope/vim-repeat",
