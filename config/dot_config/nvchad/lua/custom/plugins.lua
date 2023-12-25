@@ -296,6 +296,20 @@ local plugins = {
     ft = {"go", 'gomod'},
     build = ':lua require("go.install").update_all_sync()' -- if you need to install/update all binaries
   },
+
+  -- True Zen
+  {
+    "Pocco81/true-zen.nvim",
+    event = {"VeryLazy"},
+    opts = {
+      integrations = {
+        tmux = true,
+        kitty = {
+          enabled = true,
+        },
+      },
+    },
+  },
 }
 
 return plugins
