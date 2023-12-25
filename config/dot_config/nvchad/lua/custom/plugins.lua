@@ -253,9 +253,15 @@ local plugins = {
   {
     'windwp/nvim-ts-autotag',
     event = "InsertEnter",
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+    },
     opts = {
       filetypes = { "html", "typescriptreact", "svelte", "vue" },
-    }
+    },
+    config = function()
+      require("nvim-ts-autotag").setup()
+    end,
   },
 
   -- Surround
