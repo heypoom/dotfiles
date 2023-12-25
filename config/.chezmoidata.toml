@@ -1,3 +1,4 @@
-# Use LunarVim as primary text editor in the terminal.
-editor = "lvim"
+# Use NeoVim as primary text editor in the terminal.
+editor = "nvim"
+
 
