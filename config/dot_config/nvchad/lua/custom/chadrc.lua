@@ -6,7 +6,7 @@ M.ui = {
   transparency = true,
 
   statusline = {
-    theme = 'default',
+    theme = 'vscode',
     separator_style = 'default',
     overriden_modules = nil
   },

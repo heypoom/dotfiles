@@ -12,9 +12,9 @@ if len(sys.argv) > 1:
 
 home = os.path.expanduser('~')
 
-filename = "%s/notes/Archives/Scratchpad/%s %s.md" % (home, zid, note_name)
+filename = "%s/Notes/Space/Scratchpad/%s %s.md" % (home, zid, note_name)
 
 with open(filename, "w") as file:
     file.write("")
-    os.system('nvim "%s"' % filename)
+    os.system('lvim "%s"' % filename)
 
