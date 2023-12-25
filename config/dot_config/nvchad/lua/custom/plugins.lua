@@ -232,6 +232,7 @@ local plugins = {
   -- Tmux integration
   {
     "aserowy/tmux.nvim",
+    event = "VeryLazy",
 
     config = function()
       local tmux = require("tmux")
@@ -243,6 +244,7 @@ local plugins = {
   -- Zellij Integration
   {
     "Lilja/zellij.nvim",
+    event = "VeryLazy",
 
     config = function()
       local zellij = require("zellij")
@@ -267,16 +269,19 @@ local plugins = {
   -- Vim Move
   {
     "matze/vim-move",
+    event = "VeryLazy"
   },
 
   -- Multi Cursor
   {
     "mg979/vim-visual-multi",
+    event = "VeryLazy"
   },
 
   -- Expand Region
   {
     "terryma/vim-expand-region",
+    event = "VeryLazy"
   },
 
   -- Oil
