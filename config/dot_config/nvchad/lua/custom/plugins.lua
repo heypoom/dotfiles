@@ -256,11 +256,21 @@ local plugins = {
     dependencies = {
       "nvim-treesitter/nvim-treesitter",
     },
-    opts = {
-      filetypes = { "html", "typescriptreact", "svelte", "vue" },
-    },
     config = function()
-      require("nvim-ts-autotag").setup()
+      require("nvim-ts-autotag").setup({
+        filetypes = {
+          "html",
+          "xml",
+          "typescriptreact",
+          "javascriptreact",
+          "svelte",
+          "vue",
+          "tsx",
+          "jsx",
+          "astro",
+          "markdown",
+        },
+      })
     end,
   },
 
@@ -327,12 +337,6 @@ local plugins = {
   {
     "sindrets/diffview.nvim",
     cmd = { "DiffviewOpen" }
-  },
-
-  -- Matchup
-  {
-    "andymass/vim-matchup",
-    event = "CursorMoved",
   },
 
   -- Symbols Outline
