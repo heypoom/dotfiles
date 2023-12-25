@@ -18,7 +18,6 @@ local servers = {
   "docker_compose_language_service",
   "dockerls",
   "elixirls",
-  "emmet_language_server",
   "eslint",
   "gopls",
   "jsonls",
@@ -70,3 +69,29 @@ lspconfig.yamlls.setup {
   }
 }
 
+lspconfig.emmet_language_server.setup {
+  filetypes = {
+    "css",
+    "eruby",
+    "html",
+    "javascriptreact",
+    "less",
+    "sass",
+    "scss",
+    "pug",
+    "typescriptreact",
+    "vue",
+    "svelte"
+  },
+
+  init_options = {
+    excludeLanguages = {},
+    extensionsPath = {},
+    preferences = {},
+    showAbbreviationSuggestions = true,
+    showExpandedAbbreviation = "always",
+    showSuggestionsAsSnippets = false,
+    syntaxProfiles = {},
+    variables = {},
+  },
+}
