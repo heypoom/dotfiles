@@ -19,4 +19,4 @@ vim.g.vscode_snippets_path = vim.fn.expand("$HOME/.local/share/chezmoi/config/vs
 vim.g.snipmate_snippets_path = vim.fn.stdpath "config" .. "/lua/custom/snippets"
 vim.g.lua_snippets_path = vim.fn.stdpath "config" .. "/lua/custom/lua-snippets"
 
-require "neovide"
+require "custom.neovide"

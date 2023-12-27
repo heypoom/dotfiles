@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 export FONT_FACE="JetBrainsMono Nerd Font"
 
 export CONFIG_DIR="$HOME/.config/sketchybar"
