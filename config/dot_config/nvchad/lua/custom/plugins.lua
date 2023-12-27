@@ -401,15 +401,45 @@ local plugins = {
     requires = {"nvim-lua/plenary.nvim"},
   },
 
-  -- Multi Cursors
+  -- Visual Multi Cursor
+  -- Use the CTRL+D shortcut to add cursors.
+  {
+    "mg979/vim-visual-multi",
+    event = "VeryLazy",
+    keys = {
+      "<C-d>",
+      "<M-C-Down>",
+      "<M-C-Up>",
+      "\\",
+    },
+    init = function()
+      vim.g.VM_Leader = "\\"
+      vim.g.VM_default_mappings = 0
+      vim.g.VM_mouse_mappings = 1
+      vim.g.VM_maps = {
+        ["Find Under"] = "<C-d>",
+        ["Find Subword Under"] = "<C-d>",
+        ["Add Cursor Down"] = "<M-C-Down>",
+        ["Add Cursor Up"] = "<M-C-Up>",
+      }
+    end
+  },
+
+  -- Alternative Multi Cursors
   {
     "smoka7/multicursors.nvim",
-    event = "VeryLazy",
     dependencies = {
       'smoka7/hydra.nvim',
     },
     opts = {},
-    cmd = { 'MCstart', 'MCvisual', 'MCclear', 'MCpattern', 'MCvisualPattern', 'MCunderCursor' },
+    cmd = {
+      'MCstart',
+      'MCvisual',
+      'MCclear',
+      'MCpattern',
+      'MCvisualPattern',
+      'MCunderCursor'
+    },
     keys = {
       {
         mode = { 'v', 'n' },
