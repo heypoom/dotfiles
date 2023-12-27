@@ -272,12 +272,6 @@ local plugins = {
     event = "VeryLazy"
   },
 
-  -- Multi Cursor
-  {
-    "mg979/vim-visual-multi",
-    event = "VeryLazy"
-  },
-
   -- Expand Region
   {
     "terryma/vim-expand-region",
