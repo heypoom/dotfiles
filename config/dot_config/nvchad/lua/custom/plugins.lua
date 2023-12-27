@@ -458,7 +458,12 @@ local plugins = {
         desc = 'Create a selection for selected text or word under the cursor',
       },
     },
-  }
+  },
+
+  {
+    "fladson/vim-kitty",
+    ft = "kitty",
+  },
 }
 
 return plugins
