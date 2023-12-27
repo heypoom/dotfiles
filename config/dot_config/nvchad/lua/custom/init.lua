@@ -15,5 +15,7 @@ vim.opt.incsearch = true
 vim.opt.hlsearch = true
 
 -- lua snippets
-vim.g.lua_snippets_path = vim.fn.stdpath "config" .. "/lua/custom/snippets/lua"
+vim.g.vscode_snippets_path = vim.fn.expand("$HOME/.local/share/chezmoi/config/vscode/snippets")
+vim.g.snipmate_snippets_path = vim.fn.stdpath "config" .. "/lua/custom/snippets"
+vim.g.lua_snippets_path = vim.fn.stdpath "config" .. "/lua/custom/lua-snippets"
 
