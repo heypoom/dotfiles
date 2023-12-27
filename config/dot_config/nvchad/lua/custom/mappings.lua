@@ -1,5 +1,18 @@
 local M = {}
 
+M.telescope = {
+  n = {
+    ["<leader>fp"] = {
+      function()
+        require'telescope'.extensions.project.project {
+          display_type = "full"
+        }
+      end,
+      "Find projects"
+    }
+  }
+}
+
 M.cmp = {
   i = {
     ["<Up>"] = {
@@ -10,7 +23,7 @@ M.cmp = {
           cmp.select_prev_item()
         end
       end,
-      "select previous item",
+      "Select previous item",
     },
 
     ["<Down>"] = {
@@ -21,7 +34,7 @@ M.cmp = {
           cmp.select_next_item()
         end
       end,
-      "select next item",
+      "Select next item",
     },
   },
 }

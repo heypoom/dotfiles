@@ -258,7 +258,7 @@ local plugins = {
   -- Telescope Project integration
   {
     "nvim-telescope/telescope-project.nvim",
-    cmd = "Telescope",
+    event = "VeryLazy",
 
     dependencies = {
       "nvim-telescope/telescope-file-browser.nvim",
