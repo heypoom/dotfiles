@@ -79,7 +79,8 @@ lspconfig.emmet_language_server.setup {
     "pug",
     "typescriptreact",
     "vue",
-    "svelte"
+    "svelte",
+    "astro",
   },
 
   init_options = {
