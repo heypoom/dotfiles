@@ -38,6 +38,7 @@
   "oil.nvim": { "branch": "master", "commit": "22ab2ce1d56832588a634e7737404d9344698bd3" },
   "otter.nvim": { "branch": "main", "commit": "e4cfb3444e65750023d9db1947d1d12463d06eb5" },
   "plenary.nvim": { "branch": "master", "commit": "55d9fe89e33efd26f532ef20223e5f9430c8b0c0" },
+  "prettier.nvim": { "branch": "main", "commit": "d98e732cb73690b07c00c839c924be1d1d9ac5c2" },
   "symbols-outline.nvim": { "branch": "master", "commit": "512791925d57a61c545bc303356e8a8f7869763c" },
   "telescope-file-browser.nvim": { "branch": "master", "commit": "4bd5657b14b58e069287f5ac591a647bb860b2ed" },
   "telescope-project.nvim": { "branch": "master", "commit": "1aaf16580a614601a7f7077d9639aeb457dc5559" },

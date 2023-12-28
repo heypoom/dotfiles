@@ -25,7 +25,7 @@ local plugins = {
   {
     "neovim/nvim-lspconfig",
 
-     dependencies = {
+    dependencies = {
       -- NeoDev
       {
         "folke/neodev.nvim",
@@ -139,15 +139,15 @@ local plugins = {
     event = "InsertEnter",
 
     config = function()
-      require("copilot").setup({
+      require("copilot").setup {
         suggestion = {
           auto_trigger = true,
           keymap = {
-            accept = "<Right>"
-          }
-        }
-      })
-    end
+            accept = "<Right>",
+          },
+        },
+      }
+    end,
   },
 
   -- Pretty LSP diagnostics view.
@@ -160,7 +160,7 @@ local plugins = {
       icons = true,
       mode = "workspace_diagnostics",
       cycle_results = true,
-    }
+    },
   },
 
   -- Fast navigation.
@@ -174,36 +174,46 @@ local plugins = {
       {
         "s",
         mode = { "n", "x", "o" },
-        function() require("flash").jump() end,
-        desc = "Flash"
+        function()
+          require("flash").jump()
+        end,
+        desc = "Flash",
       },
 
       {
         "S",
         mode = { "n", "x", "o" },
-        function() require("flash").treesitter() end,
-        desc = "Flash Treesitter"
+        function()
+          require("flash").treesitter()
+        end,
+        desc = "Flash Treesitter",
       },
 
       {
         "r",
         mode = "o",
-        function() require("flash").remote() end,
-        desc = "Remote Flash"
+        function()
+          require("flash").remote()
+        end,
+        desc = "Remote Flash",
       },
 
       {
         "R",
         mode = { "o", "x" },
-        function() require("flash").treesitter_search() end,
-        desc = "Treesitter Search"
+        function()
+          require("flash").treesitter_search()
+        end,
+        desc = "Treesitter Search",
       },
 
       {
         "<c-s>",
         mode = { "c" },
-        function() require("flash").toggle() end,
-        desc = "Toggle Flash Search"
+        function()
+          require("flash").toggle()
+        end,
+        desc = "Toggle Flash Search",
       },
     },
   },
@@ -236,10 +246,10 @@ local plugins = {
     event = "VeryLazy",
 
     config = function()
-      local tmux = require("tmux")
+      local tmux = require "tmux"
 
-      tmux.setup({})
-    end
+      tmux.setup {}
+    end,
   },
 
   -- Zellij Integration
@@ -248,12 +258,12 @@ local plugins = {
     event = "VeryLazy",
 
     config = function()
-      local zellij = require("zellij")
+      local zellij = require "zellij"
 
-      zellij.setup({
+      zellij.setup {
         vimTmuxNavigatorKeybinds = true,
-      })
-    end
+      }
+    end,
   },
 
   -- Telescope Project integration
@@ -265,58 +275,58 @@ local plugins = {
       "nvim-telescope/telescope-file-browser.nvim",
       dependencies = {
         "nvim-telescope/telescope.nvim",
-        "nvim-lua/plenary.nvim"
-      }
+        "nvim-lua/plenary.nvim",
+      },
     },
 
     config = function()
-      local telescope = require("telescope")
+      local telescope = require "telescope"
 
-      telescope.load_extension("project")
-      telescope.load_extension("file_browser")
+      telescope.load_extension "project"
+      telescope.load_extension "file_browser"
     end,
   },
 
   -- Vim Move
   {
     "matze/vim-move",
-    event = "VeryLazy"
+    event = "VeryLazy",
   },
 
   -- Expand Region
   {
     "terryma/vim-expand-region",
-    event = "VeryLazy"
+    event = "VeryLazy",
   },
 
   -- Oil
   {
-    'stevearc/oil.nvim',
+    "stevearc/oil.nvim",
     opts = {
       default_file_explorer = false,
-      columns = { "icon" }
+      columns = { "icon" },
     },
     dependencies = { "nvim-tree/nvim-web-devicons" },
   },
 
   -- Treesitter Autotag
   {
-    'windwp/nvim-ts-autotag',
+    "windwp/nvim-ts-autotag",
     event = "InsertEnter",
     dependencies = {
       "nvim-treesitter/nvim-treesitter",
     },
     config = function()
-      require("nvim-treesitter.configs").setup({
+      require("nvim-treesitter.configs").setup {
         autotag = {
           enable = true,
           enable_rename = true,
           enable_close = true,
           enable_close_on_slash = true,
         },
-      })
+      }
 
-      require("nvim-ts-autotag").setup({
+      require("nvim-ts-autotag").setup {
         filetypes = {
           "html",
           "xml",
@@ -329,30 +339,30 @@ local plugins = {
           "astro",
           "markdown",
         },
-      })
+      }
     end,
   },
 
   -- Surround
   {
-      "kylechui/nvim-surround",
-      version = "*", -- Use for stability; omit to use `main` branch for the latest features
-      event = "VeryLazy",
-      config = function()
-        require("nvim-surround").setup({})
-      end
+    "kylechui/nvim-surround",
+    version = "*", -- Use for stability; omit to use `main` branch for the latest features
+    event = "VeryLazy",
+    config = function()
+      require("nvim-surround").setup {}
+    end,
   },
 
   -- Autopairs
   {
-    'windwp/nvim-autopairs',
+    "windwp/nvim-autopairs",
     event = "InsertEnter",
-    opts = {}
+    opts = {},
   },
 
   -- Otter
   {
-    'jmbuhr/otter.nvim',
+    "jmbuhr/otter.nvim",
     event = "VeryLazy",
   },
 
@@ -367,15 +377,15 @@ local plugins = {
     config = function()
       require("go").setup()
     end,
-    event = {"CmdlineEnter"},
-    ft = {"go", 'gomod'},
-    build = ':lua require("go.install").update_all_sync()' -- if you need to install/update all binaries
+    event = { "CmdlineEnter" },
+    ft = { "go", "gomod" },
+    build = ':lua require("go.install").update_all_sync()', -- if you need to install/update all binaries
   },
 
   -- True Zen
   {
     "Pocco81/true-zen.nvim",
-    event = {"VeryLazy"},
+    event = { "VeryLazy" },
     opts = {
       integrations = {
         tmux = true,
@@ -389,13 +399,13 @@ local plugins = {
   -- Interactive scratchpad
   {
     "metakirby5/codi.vim",
-    cmd = "Codi"
+    cmd = "Codi",
   },
 
   -- Diff View.
   {
     "sindrets/diffview.nvim",
-    cmd = { "DiffviewOpen" }
+    cmd = { "DiffviewOpen" },
   },
 
   -- Symbols Outline
@@ -409,7 +419,7 @@ local plugins = {
     "ThePrimeagen/harpoon",
     event = "VeryLazy",
     branch = "harpoon2",
-    requires = {"nvim-lua/plenary.nvim"},
+    requires = { "nvim-lua/plenary.nvim" },
   },
 
   -- Visual Multi Cursor
@@ -433,37 +443,65 @@ local plugins = {
         ["Add Cursor Down"] = "<M-C-Down>",
         ["Add Cursor Up"] = "<M-C-Up>",
       }
-    end
+    end,
   },
 
   -- Alternative Multi Cursors
   {
     "smoka7/multicursors.nvim",
     dependencies = {
-      'smoka7/hydra.nvim',
+      "smoka7/hydra.nvim",
     },
     opts = {},
     cmd = {
-      'MCstart',
-      'MCvisual',
-      'MCclear',
-      'MCpattern',
-      'MCvisualPattern',
-      'MCunderCursor'
+      "MCstart",
+      "MCvisual",
+      "MCclear",
+      "MCpattern",
+      "MCvisualPattern",
+      "MCunderCursor",
     },
     keys = {
       {
-        mode = { 'v', 'n' },
-        '<Leader>m',
-        '<cmd>MCstart<cr>',
-        desc = 'Create a selection for selected text or word under the cursor',
+        mode = { "v", "n" },
+        "<Leader>m",
+        "<cmd>MCstart<cr>",
+        desc = "Create a selection for selected text or word under the cursor",
       },
     },
   },
 
+  -- Kitty Configuration File Type
   {
     "fladson/vim-kitty",
     ft = "kitty",
+  },
+
+  -- Prettier
+  {
+    "MunifTanjim/prettier.nvim",
+    opts = {
+      bin = "prettierd",
+      filetypes = {
+        "css",
+        "graphql",
+        "html",
+        "javascript",
+        "javascriptreact",
+        "json",
+        "less",
+        "markdown",
+        "scss",
+        "typescript",
+        "typescriptreact",
+        "yaml",
+        "astro",
+        "svelte",
+      },
+      cli_options = {
+        semi = false,
+      },
+    },
   },
 }
 
