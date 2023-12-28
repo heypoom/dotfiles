@@ -16,6 +16,7 @@ local plugins = {
         "c",
         "rust",
         "ruby",
+        "astro",
       },
     },
   },

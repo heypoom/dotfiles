@@ -13,7 +13,9 @@ M.ui = {
 
   tabufline = {
     lazyload = true,
-    overriden_modules = nil
+    overriden_modules = function(modules)
+     table.remove(modules, 4)
+    end,
   }
 }
 
