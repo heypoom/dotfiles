@@ -1,5 +1,17 @@
 local M = {}
 
+M.general = {
+  n = {
+    ["<Esc>"] = {
+      function()
+        vim.cmd.noh()
+        require("notify").dismiss {}
+      end,
+      "Clear Highlights",
+    },
+  },
+}
+
 M.trouble = {
   n = {
     ["<leader>tt"] = {
