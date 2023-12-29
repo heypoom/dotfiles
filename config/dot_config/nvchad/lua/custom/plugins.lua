@@ -574,6 +574,7 @@ local plugins = {
             ["cmp.entry.get_documentation"] = true,
           },
         },
+
         presets = {
           bottom_search = true, -- use a classic bottom cmdline for search
           command_palette = true, -- position the cmdline and popupmenu together
@@ -581,15 +582,34 @@ local plugins = {
           inc_rename = false, -- enables an input dialog for inc-rename.nvim
           lsp_doc_border = false, -- add a border to hover docs and signature help
         },
+
+        routes = {
+          {
+            filter = {
+              event = "msg_show",
+              kind = "",
+              find = "written",
+            },
+            opts = {
+              skip = true,
+            },
+          },
+        },
+
+        views = {},
       }
     end,
     dependencies = {
-      -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
       "MunifTanjim/nui.nvim",
-      -- OPTIONAL:
-      --   `nvim-notify` is only needed, if you want to use the notification view.
-      --   If not available, we use `mini` as the fallback
-      "rcarriga/nvim-notify",
+
+      {
+        "rcarriga/nvim-notify",
+        config = function()
+          require("notify").setup {
+            background_colour = "#131420",
+          }
+        end,
+      },
     },
   },
 }
