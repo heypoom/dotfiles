@@ -1,5 +1,14 @@
 local M = {}
 
+M.trouble = {
+  n = {
+    ["<leader>tt"] = {
+      ":TroubleToggle<CR>",
+      "Trouble",
+    },
+  },
+}
+
 M.code_actions = {
   n = {
     ["<leader>ca"] = {

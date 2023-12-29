@@ -162,7 +162,7 @@ local plugins = {
   -- Pretty LSP diagnostics view.
   {
     "folke/trouble.nvim",
-    cmd = "TroubleToggle",
+    cmd = { "Trouble", "TroubleToggle", "TroubleRefresh", "TroubleClose" },
     dependencies = { "nvim-tree/nvim-web-devicons" },
 
     config = function()
