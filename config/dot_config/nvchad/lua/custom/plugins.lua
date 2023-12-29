@@ -365,13 +365,6 @@ local plugins = {
     end,
   },
 
-  -- Autopairs
-  {
-    "windwp/nvim-autopairs",
-    event = "InsertEnter",
-    opts = {},
-  },
-
   -- Otter
   {
     "jmbuhr/otter.nvim",
