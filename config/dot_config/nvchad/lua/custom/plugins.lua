@@ -18,6 +18,10 @@ local plugins = {
         "ruby",
         "astro",
         "org",
+        "regex",
+        "bash",
+        "markdown",
+        "markdown_inline",
       },
       highlight = {
         enable = true,
@@ -172,7 +176,6 @@ local plugins = {
   -- Alternative to Leap, Sneak and EasyMotion.
   {
     "folke/flash.nvim",
-    event = "VeryLazy",
     opts = {},
 
     keys = {
@@ -382,7 +385,6 @@ local plugins = {
     config = function()
       require("go").setup()
     end,
-    event = { "CmdlineEnter" },
     ft = { "go", "gomod" },
     build = ':lua require("go.install").update_all_sync()', -- if you need to install/update all binaries
   },
@@ -431,7 +433,6 @@ local plugins = {
   -- Use the CTRL+D shortcut to add cursors.
   {
     "mg979/vim-visual-multi",
-    event = "VeryLazy",
     keys = {
       "<C-d>",
       "<M-C-Down>",
@@ -550,7 +551,6 @@ local plugins = {
   {
     "epwalsh/obsidian.nvim",
     version = "*",
-    lazy = true,
     -- Replace the above line with this if you only want to load obsidian.nvim for markdown files in your vault:
     event = {
       "BufReadPre " .. vim.fn.expand "~" .. "/Notes/**.md",
@@ -559,6 +559,38 @@ local plugins = {
     config = function()
       require "custom.configs.obsidian"
     end,
+  },
+
+  -- Replace UI for Messages, Command Line and Popup Menu
+  {
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    config = function()
+      require("noice").setup {
+        lsp = {
+          override = {
+            ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+            ["vim.lsp.util.stylize_markdown"] = true,
+            ["cmp.entry.get_documentation"] = true,
+          },
+        },
+        presets = {
+          bottom_search = true, -- use a classic bottom cmdline for search
+          command_palette = true, -- position the cmdline and popupmenu together
+          long_message_to_split = true, -- long messages will be sent to a split
+          inc_rename = false, -- enables an input dialog for inc-rename.nvim
+          lsp_doc_border = false, -- add a border to hover docs and signature help
+        },
+      }
+    end,
+    dependencies = {
+      -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+      "MunifTanjim/nui.nvim",
+      -- OPTIONAL:
+      --   `nvim-notify` is only needed, if you want to use the notification view.
+      --   If not available, we use `mini` as the fallback
+      "rcarriga/nvim-notify",
+    },
   },
 }
 
