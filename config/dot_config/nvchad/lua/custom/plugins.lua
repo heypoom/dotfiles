@@ -165,11 +165,15 @@ local plugins = {
     cmd = "TroubleToggle",
     dependencies = { "nvim-tree/nvim-web-devicons" },
 
-    opts = {
-      icons = true,
-      mode = "workspace_diagnostics",
-      cycle_results = true,
-    },
+    config = function()
+      dofile(vim.g.base46_cache .. "trouble")
+
+      require("trouble").setup {
+        icons = true,
+        mode = "workspace_diagnostics",
+        cycle_results = true,
+      }
+    end,
   },
 
   -- Fast navigation.
