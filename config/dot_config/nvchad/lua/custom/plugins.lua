@@ -17,6 +17,11 @@ local plugins = {
         "rust",
         "ruby",
         "astro",
+        "org",
+      },
+      highlight = {
+        enable = true,
+        additional_vim_regex_highlighting = { "org" },
       },
     },
   },
@@ -508,6 +513,37 @@ local plugins = {
   {
     "mbbill/undotree",
     cmd = { "UndotreeToggle" },
+  },
+
+  -- Org Mode (Emacs)
+  {
+    "nvim-orgmode/orgmode",
+    dependencies = {
+      { "nvim-treesitter/nvim-treesitter", lazy = true },
+    },
+    ft = { "org" },
+    config = function()
+      local org = require "orgmode"
+      org.setup_ts_grammar()
+
+      org.setup {
+        org_agenda_files = "~/Notes/Journal/**/*",
+      }
+    end,
+  },
+
+  -- ChatGPT
+  {
+    "jackMort/ChatGPT.nvim",
+    cmd = { "ChatGPT", "ChatGPTActAs", "ChatGPTCompleteCode", "ChatGPTEditWithInstructions", "ChatGPTRun" },
+    config = function()
+      require("chatgpt").setup {
+        api_key_cmd = 'op read "op://private/OpenAI Secret/credential" --no-newline',
+      }
+    end,
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+    },
   },
 }
 
