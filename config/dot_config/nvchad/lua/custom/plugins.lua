@@ -686,6 +686,20 @@ local plugins = {
     cmd = { "Flog", "Flogsplit", "Floggit" },
     dependencies = { "tpope/vim-fugitive" },
   },
+
+  -- Better Quickfix Window
+  {
+    "kevinhwang91/nvim-bqf",
+    ft = "qf",
+    config = function()
+      local bqf = require "bqf"
+
+      bqf.setup {
+        auto_enable = true,
+        auto_resize_height = true,
+      }
+    end,
+  },
 }
 
 return plugins
