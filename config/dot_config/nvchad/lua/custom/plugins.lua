@@ -652,6 +652,7 @@ local plugins = {
   -- Peek Line Number (e.g. :75)
   {
     "nacro90/numb.nvim",
+    event = "VeryLazy",
     config = function()
       require("numb").setup()
     end,
