@@ -545,6 +545,21 @@ local plugins = {
       "MunifTanjim/nui.nvim",
     },
   },
+
+  -- Obsidian Vault
+  {
+    "epwalsh/obsidian.nvim",
+    version = "*",
+    lazy = true,
+    -- Replace the above line with this if you only want to load obsidian.nvim for markdown files in your vault:
+    event = {
+      "BufReadPre " .. vim.fn.expand "~" .. "/Notes/**.md",
+      "BufNewFile " .. vim.fn.expand "~" .. "/Notes/**.md",
+    },
+    config = function()
+      require "custom.configs.obsidian"
+    end,
+  },
 }
 
 return plugins
