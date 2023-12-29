@@ -46,15 +46,15 @@ lspconfig.rust_analyzer.setup {
   capabilities = capabilities,
 }
 
-lspconfig.volar.setup{
+lspconfig.volar.setup {
   filetypes = {
-    'typescript',
-    'javascript',
-    'javascriptreact',
-    'typescriptreact',
-    'vue',
-    'json'
-  }
+    "typescript",
+    "javascript",
+    "javascriptreact",
+    "typescriptreact",
+    "vue",
+    "json",
+  },
 }
 
 lspconfig.yamlls.setup {
@@ -62,9 +62,9 @@ lspconfig.yamlls.setup {
     yaml = {
       schemas = {
         ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*",
-      }
-    }
-  }
+      },
+    },
+  },
 }
 
 lspconfig.emmet_language_server.setup {
@@ -123,52 +123,51 @@ lspconfig.lua_ls.setup {}
 
 lspconfig.jsonls.setup {
   settings = {
-    filetypes = {"json", "jsonc"},
+    filetypes = { "json", "jsonc" },
 
     json = {
       schemas = {
         {
-          fileMatch = {"package.json"},
-          url = "https://json.schemastore.org/package.json"
+          fileMatch = { "package.json" },
+          url = "https://json.schemastore.org/package.json",
         },
         {
-          fileMatch = {"tsconfig.json", "tsconfig*.json"},
-          url = "https://json.schemastore.org/tsconfig.json"
+          fileMatch = { "tsconfig.json", "tsconfig*.json" },
+          url = "https://json.schemastore.org/tsconfig.json",
         },
         {
           fileMatch = {
             ".prettierrc",
             ".prettierrc.json",
-            "prettier.config.json"
+            "prettier.config.json",
           },
-          url = "https://json.schemastore.org/prettierrc.json"
+          url = "https://json.schemastore.org/prettierrc.json",
         },
         {
-          fileMatch = {".eslintrc", ".eslintrc.json"},
-          url = "https://json.schemastore.org/eslintrc.json"
+          fileMatch = { ".eslintrc", ".eslintrc.json" },
+          url = "https://json.schemastore.org/eslintrc.json",
         },
         {
-          fileMatch = {".babelrc", ".babelrc.json", "babel.config.json"},
-          url = "https://json.schemastore.org/babelrc.json"
+          fileMatch = { ".babelrc", ".babelrc.json", "babel.config.json" },
+          url = "https://json.schemastore.org/babelrc.json",
         },
         {
-          fileMatch = {"lerna.json"},
-          url = "https://json.schemastore.org/lerna.json"
+          fileMatch = { "lerna.json" },
+          url = "https://json.schemastore.org/lerna.json",
         },
         {
-          fileMatch = {"now.json", "vercel.json"},
-          url = "https://json.schemastore.org/now.json"
+          fileMatch = { "now.json", "vercel.json" },
+          url = "https://json.schemastore.org/now.json",
         },
         {
           fileMatch = {
             ".stylelintrc",
             ".stylelintrc.json",
-            "stylelint.config.json"
+            "stylelint.config.json",
           },
-          url = "http://json.schemastore.org/stylelintrc.json"
-        }
-      }
-    }
-  }
+          url = "http://json.schemastore.org/stylelintrc.json",
+        },
+      },
+    },
+  },
 }
-
