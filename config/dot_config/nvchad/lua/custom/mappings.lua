@@ -21,7 +21,7 @@ M.trouble = {
   },
 }
 
-M.code_actions = {
+M.lspconfig = {
   n = {
     ["<leader>ca"] = {
       function()
