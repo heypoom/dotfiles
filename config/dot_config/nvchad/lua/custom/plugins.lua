@@ -503,6 +503,12 @@ local plugins = {
       },
     },
   },
+
+  -- Undo Tree
+  {
+    "mbbill/undotree",
+    cmd = { "UndotreeToggle" },
+  },
 }
 
 return plugins

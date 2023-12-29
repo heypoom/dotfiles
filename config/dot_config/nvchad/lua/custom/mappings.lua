@@ -1,23 +1,32 @@
 local M = {}
 
+M.undotree = {
+  n = {
+    ["<leader>u"] = {
+      ":UndotreeToggle<CR>",
+      "Show undo tree",
+    },
+  },
+}
+
 M.telescope = {
   n = {
     ["<leader>fp"] = {
       function()
-        require'telescope'.extensions.project.project {
-          display_type = "full"
+        require("telescope").extensions.project.project {
+          display_type = "full",
         }
       end,
-      "Find projects"
-    }
-  }
+      "Find projects",
+    },
+  },
 }
 
 M.cmp = {
   i = {
     ["<Up>"] = {
       function()
-        local cmp = require("cmp")
+        local cmp = require "cmp"
 
         if cmp.visible() then
           cmp.select_prev_item()
@@ -28,7 +37,7 @@ M.cmp = {
 
     ["<Down>"] = {
       function()
-        local cmp = require("cmp")
+        local cmp = require "cmp"
 
         if cmp.visible() then
           cmp.select_next_item()
