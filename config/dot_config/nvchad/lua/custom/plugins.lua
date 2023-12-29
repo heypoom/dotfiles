@@ -599,9 +599,13 @@ local plugins = {
         routes = {
           {
             filter = {
-              event = "msg_show",
-              kind = "",
-              find = "written",
+              any = {
+                event = "msg_show",
+                { find = "written" },
+                { find = "No information available" },
+                { find = "no manual entry for", error = true },
+                { find = "No identifier under cursor", error = true },
+              },
             },
             opts = {
               skip = true,
