@@ -8,11 +8,11 @@ local plugins = {
         "html",
         "css",
         "javascript",
+        "vue",
+        "json",
+        "svelte",
         "typescript",
         "tsx",
-        "json",
-        "vue",
-        "svelte",
         "c",
         "rust",
         "ruby",
@@ -300,10 +300,10 @@ local plugins = {
   },
 
   -- Vim Move
-  {
-    "matze/vim-move",
-    event = "VeryLazy",
-  },
+  -- {
+  --   "matze/vim-move",
+  --   event = "VeryLazy",
+  -- },
 
   -- Expand Region
   {
@@ -610,6 +610,7 @@ local plugins = {
                 { find = "No signature help available" },
                 { find = "no manual entry for", error = true },
                 { find = "No identifier under cursor", error = true },
+                { find = "Pattern not found", error = true },
               },
             },
             opts = {
