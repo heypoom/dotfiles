@@ -573,7 +573,7 @@ local plugins = {
           },
 
           hover = {
-            enabled = false,
+            enabled = true,
             silent = true,
           },
 
@@ -603,6 +603,7 @@ local plugins = {
                 event = "msg_show",
                 { find = "written" },
                 { find = "No information available" },
+                { find = "No signature help available" },
                 { find = "no manual entry for", error = true },
                 { find = "No identifier under cursor", error = true },
               },
@@ -645,6 +646,14 @@ local plugins = {
     ft = { "markdown" },
     build = function()
       vim.fn["mkdp#util#install"]()
+    end,
+  },
+
+  -- Peek Line Number (e.g. :75)
+  {
+    "nacro90/numb.nvim",
+    config = function()
+      require("numb").setup()
     end,
   },
 }
