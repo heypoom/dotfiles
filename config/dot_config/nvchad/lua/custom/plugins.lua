@@ -568,8 +568,13 @@ local plugins = {
     config = function()
       require("noice").setup {
         lsp = {
+          progress = {
+            enabled = false,
+          },
+
           hover = {
             enabled = false,
+            silent = true,
           },
 
           signature = {
@@ -605,6 +610,15 @@ local plugins = {
         },
 
         views = {},
+
+        messages = {
+          enabled = true,
+          view = "notify",
+          view_error = "notify",
+          view_warn = "notify",
+          view_history = "messages",
+          view_search = "virtualtext",
+        },
       }
     end,
     dependencies = {
