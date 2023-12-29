@@ -12,6 +12,38 @@ M.general = {
   },
 }
 
+M.spectre = {
+  n = {
+    ["<leader>st"] = {
+      function()
+        require("spectre").toggle()
+      end,
+      "Toggle Spectre",
+    },
+    ["<leader>sw"] = {
+      function()
+        require("spectre").open_visual { select_word = true }
+      end,
+      "Search Current Word",
+    },
+    ["<leader>sp"] = {
+      function()
+        require("spectre").open_file_search { select_word = true }
+      end,
+      "Search Current File",
+    },
+  },
+
+  v = {
+    ["<leader>sw"] = {
+      function()
+        require("spectre").open_visual()
+      end,
+      "Search Current Word",
+    },
+  },
+}
+
 M.trouble = {
   n = {
     ["<leader>tt"] = {

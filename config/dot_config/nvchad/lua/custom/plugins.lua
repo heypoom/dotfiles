@@ -692,12 +692,19 @@ local plugins = {
     "kevinhwang91/nvim-bqf",
     ft = "qf",
     config = function()
-      local bqf = require "bqf"
-
-      bqf.setup {
+      require("bqf").setup {
         auto_enable = true,
         auto_resize_height = true,
       }
+    end,
+  },
+
+  -- Find and Replace Across Files
+  {
+    "nvim-pack/nvim-spectre",
+    cmd = { "Spectre" },
+    config = function()
+      require("spectre").setup {}
     end,
   },
 }
