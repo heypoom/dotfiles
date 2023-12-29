@@ -1,5 +1,24 @@
 local M = {}
 
+M.code_actions = {
+  n = {
+    ["<leader>ca"] = {
+      function()
+        require("actions-preview").code_actions()
+      end,
+      "Code Actions",
+    },
+  },
+  v = {
+    ["<leader>ca"] = {
+      function()
+        require("actions-preview").code_actions()
+      end,
+      "Code Actions",
+    },
+  },
+}
+
 M.undotree = {
   n = {
     ["<leader>u"] = {

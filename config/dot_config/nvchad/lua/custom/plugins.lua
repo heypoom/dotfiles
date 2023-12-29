@@ -602,20 +602,24 @@ local plugins = {
 
         routes = {
           {
+            view = "cmdline_popup",
+            filter = {
+              any = { event = "msg_show", find = "Code actions" },
+            },
+          },
+          {
             filter = {
               any = {
-                event = "msg_show",
-                { find = "written" },
-                { find = "No information available" },
-                { find = "No signature help available" },
-                { find = "no manual entry for", error = true },
-                { find = "No identifier under cursor", error = true },
-                { find = "Pattern not found", error = true },
+                { event = "msg_show", find = "written" },
+                { event = "msg_show", find = "No information available" },
+                { event = "msg_show", find = "No signature help available" },
+                { event = "msg_show", find = "no manual entry for", error = true },
+                { event = "msg_show", find = "No code actions available" },
+                { event = "msg_show", find = "No identifier under cursor", error = true },
+                { event = "msg_show", find = "Pattern not found", error = true },
               },
             },
-            opts = {
-              skip = true,
-            },
+            opts = { skip = true },
           },
         },
 
@@ -630,6 +634,8 @@ local plugins = {
           view_search = "virtualtext",
         },
       }
+
+      require("telescope").load_extension "noice"
     end,
     dependencies = {
       "MunifTanjim/nui.nvim",
@@ -660,6 +666,29 @@ local plugins = {
     event = "VeryLazy",
     config = function()
       require("numb").setup()
+    end,
+  },
+
+  -- Code Actions Preview
+  {
+    "aznhe21/actions-preview.nvim",
+    keys = { "<leader>ca" },
+    config = function()
+      require("actions-preview").setup {
+        telescope = {
+          sorting_strategy = "ascending",
+          layout_strategy = "vertical",
+          layout_config = {
+            width = 0.8,
+            height = 0.9,
+            prompt_position = "top",
+            preview_cutoff = 20,
+            preview_height = function(_, _, max_lines)
+              return max_lines - 15
+            end,
+          },
+        },
+      }
     end,
   },
 }
