@@ -602,21 +602,15 @@ local plugins = {
 
         routes = {
           {
-            view = "cmdline_popup",
-            filter = {
-              any = { event = "msg_show", find = "Code actions" },
-            },
-          },
-          {
             filter = {
               any = {
                 { event = "msg_show", find = "written" },
-                { event = "msg_show", find = "No information available" },
-                { event = "msg_show", find = "No signature help available" },
-                { event = "msg_show", find = "no manual entry for", error = true },
-                { event = "msg_show", find = "No code actions available" },
-                { event = "msg_show", find = "No identifier under cursor", error = true },
-                { event = "msg_show", find = "Pattern not found", error = true },
+                { find = "No information available" },
+                { find = "No signature help available" },
+                { find = "no manual entry" },
+                { find = "No code actions available" },
+                { find = "No identifier under cursor", error = true },
+                { find = "Pattern not found", error = true },
               },
             },
             opts = { skip = true },
