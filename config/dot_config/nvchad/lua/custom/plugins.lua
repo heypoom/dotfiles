@@ -582,7 +582,7 @@ local plugins = {
           },
 
           signature = {
-            enabled = false,
+            enabled = true,
           },
 
           override = {
