@@ -586,24 +586,24 @@ local plugins = {
         },
 
         presets = {
-          bottom_search = true,         -- use a classic bottom cmdline for search
-          command_palette = true,       -- position the cmdline and popupmenu together
+          bottom_search = true, -- use a classic bottom cmdline for search
+          command_palette = true, -- position the cmdline and popupmenu together
           long_message_to_split = true, -- long messages will be sent to a split
-          inc_rename = false,           -- enables an input dialog for inc-rename.nvim
-          lsp_doc_border = false,       -- add a border to hover docs and signature help
+          inc_rename = false, -- enables an input dialog for inc-rename.nvim
+          lsp_doc_border = false, -- add a border to hover docs and signature help
         },
 
         routes = {
           {
             filter = {
               any = {
-                { event = "msg_show",                  find = "written" },
+                { event = "msg_show", find = "written" },
                 { find = "No information available" },
                 { find = "No signature help available" },
                 { find = "no manual entry" },
                 { find = "No code actions available" },
                 { find = "No identifier under cursor", error = true },
-                { find = "Pattern not found",          error = true },
+                { find = "Pattern not found", error = true },
               },
             },
             opts = { skip = true },
@@ -677,6 +677,14 @@ local plugins = {
         },
       }
     end,
+  },
+
+  -- Git Graph
+  {
+    "rbong/vim-flog",
+    lazy = true,
+    cmd = { "Flog", "Flogsplit", "Floggit" },
+    dependencies = { "tpope/vim-fugitive" },
   },
 }
 
