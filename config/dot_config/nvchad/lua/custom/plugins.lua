@@ -391,6 +391,51 @@ local plugins = {
     "Pocco81/true-zen.nvim",
     event = { "VeryLazy" },
     opts = {
+      modes = {
+        ataraxis = {
+          shade = "dark", -- if `dark` then dim the padding windows, otherwise if it's `light` it'll brighten said windows
+          backdrop = 0, -- percentage by which padding windows should be dimmed/brightened. Must be a number between 0 and 1. Set to 0 to keep the same background color
+          minimum_writing_area = { -- minimum size of main window
+            width = 70,
+            height = 44,
+          },
+          quit_untoggles = true, -- type :q or :qa to quit Ataraxis mode
+          padding = { -- padding windows
+            left = 52,
+            right = 52,
+            top = 0,
+            bottom = 0,
+          },
+          callbacks = { -- run functions when opening/closing Ataraxis mode
+            open_pre = function()
+              vim.o.laststatus = 0
+              vim.o.statusline = " "
+              vim.o.showtabline = 0
+              vim.cmd "hi StatusLine ctermbg=NONE guibg=NONE"
+              vim.cmd "hi StatusLineNC ctermbg=NONE guibg=NONE"
+              vim.cmd "hi VertSplit ctermbg=NONE guibg=NONE"
+              vim.cmd "hi TabLine ctermbg=NONE guibg=NONE"
+              vim.cmd "hi TabLineFill ctermbg=NONE guibg=NONE"
+              vim.cmd "hi TabLineSel ctermbg=NONE guibg=NONE"
+              vim.cmd "hi Title ctermbg=NONE guibg=NONE"
+            end,
+            open_pos = function()
+              vim.o.laststatus = 0
+              vim.o.statusline = " "
+              vim.o.showtabline = 0
+              vim.cmd "hi StatusLine ctermbg=NONE guibg=NONE"
+              vim.cmd "hi StatusLineNC ctermbg=NONE guibg=NONE"
+              vim.cmd "hi VertSplit ctermbg=NONE guibg=NONE"
+              vim.cmd "hi TabLine ctermbg=NONE guibg=NONE"
+              vim.cmd "hi TabLineFill ctermbg=NONE guibg=NONE"
+              vim.cmd "hi TabLineSel ctermbg=NONE guibg=NONE"
+              vim.cmd "hi Title ctermbg=NONE guibg=NONE"
+            end,
+            close_pre = nil,
+            close_pos = nil,
+          },
+        },
+      },
       integrations = {
         tmux = true,
         kitty = {

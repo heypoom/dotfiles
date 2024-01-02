@@ -8,7 +8,7 @@ then
 	echo "$dst"
 
 	# Spawn a new Kitty window.
-	/Applications/kitty.app/Contents/MacOS/kitty @ --to "$dst" launch --type os-window
+	/opt/homebrew/bin/kitty @ --to "$dst" launch --type os-window
 
 	exit 0
 fi
@@ -18,6 +18,5 @@ echo Kitty is *NOT* running.
 cd "$HOME" || return
 
 # Start Kitty.
-# open "/Applications/kitty.app"
-/Applications/kitty.app/Contents/MacOS/kitty fish
+/opt/homebrew/bin/kitty fish
 
