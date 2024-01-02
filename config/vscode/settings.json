@@ -63,7 +63,6 @@
     "**/admin/node_modules": true
   },
   "php.suggest.basic": false,
-  "editor.minimap.enabled": false,
   "editor.minimap.renderCharacters": false,
   "prettier.semi": false,
   "prettier.tabWidth": 2,
@@ -267,19 +266,35 @@
   "window.zoomLevel": -1,
   "settingsSync.ignoredExtensions": [],
   "settingsSync.ignoredSettings": [],
+  "workbench.productIconTheme": "icons-carbon",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.activityBar.location": "hidden",
+  "workbench.statusBar.visible": false,
+  "editor.hideCursorInOverviewRuler": true,
+  "editor.minimap.enabled": false,
+  "window.titleBarStyle": "native",
+  "apc.electron": {
+    "titleBarStyle": "hiddenInset",
+    "trafficLightPosition": {
+      "x": 11,
+      "y": 8
+    }
+  },
+  "apc.header": {
+    "height": 36
+  },
+  "apc.statusBar": {
+    "position": "bottom"
+  },
+  "apc.stylesheet": {
+    ".title-label > h2": "display: none",
+    ".title-actions": "display: none",
+    ".editor-actions": "display: none",
+    ".nosidebar .inline-tabs-placeholder": "width: 75px"
+  },
   "apc.font.family": "Zed Mono Extended",
   "apc.monospace.font.family": "Zed Mono Extended",
   "apc.activityBar": {
     "size": 40
-  },
-  "window.titleBarStyle": "native",
-  "apc.electron": {
-    "frame": false,
-    "titleBarStyle": "hidden"
-  },
-  "workbench.productIconTheme": "icons-carbon",
-  "workbench.iconTheme": "material-icon-theme",
-  "apc.statusBar": {
-    "position": "bottom"
   }
 }
