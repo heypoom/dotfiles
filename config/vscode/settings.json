@@ -268,7 +268,6 @@
   "settingsSync.ignoredSettings": [],
   "workbench.productIconTheme": "icons-carbon",
   "workbench.iconTheme": "material-icon-theme",
-  "workbench.activityBar.location": "hidden",
   "workbench.statusBar.visible": false,
   "editor.hideCursorInOverviewRuler": true,
   "editor.minimap.enabled": false,
@@ -289,12 +288,15 @@
   "apc.stylesheet": {
     ".title-label > h2": "display: none",
     ".title-actions": "display: none",
-    ".editor-actions": "display: none",
-    ".nosidebar .inline-tabs-placeholder": "width: 75px"
+    ".editor-actions": "display: none"
   },
   "apc.font.family": "Zed Mono Extended",
   "apc.monospace.font.family": "Zed Mono Extended",
   "apc.activityBar": {
-    "size": 40
+    "size": 30,
+    "itemSize": 28,
+    "itemMargin": 2,
+    "hideSettings": true,
+    "position": "bottom"
   }
 }
