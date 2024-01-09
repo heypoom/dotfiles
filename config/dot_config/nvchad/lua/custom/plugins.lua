@@ -16,7 +16,6 @@ local plugins = {
         "c",
         "rust",
         "ruby",
-        "astro",
         "org",
         "regex",
         "bash",
