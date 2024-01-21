@@ -1,3 +1,5 @@
+vim.g.loaded_matchit = 1
+
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
@@ -15,7 +17,7 @@ vim.opt.incsearch = true
 vim.opt.hlsearch = true
 
 -- Lua snippets
-vim.g.vscode_snippets_path = vim.fn.expand("$HOME/.local/share/chezmoi/config/vscode/snippets")
+vim.g.vscode_snippets_path = vim.fn.expand "$HOME/.local/share/chezmoi/config/vscode/snippets"
 vim.g.snipmate_snippets_path = vim.fn.stdpath "config" .. "/lua/custom/snippets"
 vim.g.lua_snippets_path = vim.fn.stdpath "config" .. "/lua/custom/lua-snippets"
 

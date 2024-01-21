@@ -106,6 +106,14 @@ require("lazy").setup({
 			require("nvim-surround").setup({})
 		end,
 	},
+
+	-- Matchup
+	{
+		"andymass/vim-matchup",
+		setup = function()
+			vim.g.matchup_matchparen_offscreen = { method = "popup" }
+		end,
+	},
 })
 
 -- setup unnamed clipboard

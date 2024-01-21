@@ -26,7 +26,20 @@ local plugins = {
         enable = true,
         additional_vim_regex_highlighting = { "org" },
       },
+      matchup = {
+        enable = true,
+        disable = {},
+      },
     },
+  },
+
+  -- Matchup
+  {
+    "andymass/vim-matchup",
+    lazy = false,
+    setup = function()
+      vim.g.matchup_matchparen_offscreen = { method = "popup" }
+    end,
   },
 
   -- LSP Config
