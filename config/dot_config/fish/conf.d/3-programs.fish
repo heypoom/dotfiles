@@ -1,6 +1,6 @@
-# RTX, the asdf-like package manager written in Rust
-# This is done manually as RTX_FISH_AUTO_ACTIVATE results in race conditions.
-if type -q rtx
+# MISE, the asdf-like package manager written in Rust
+# This is done manually as MISE_FISH_AUTO_ACTIVATE results in race conditions.
+if type -q mise
 	# rtx activate fish | source
 end
 

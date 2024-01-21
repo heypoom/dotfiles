@@ -13,8 +13,8 @@ set -gx VISUAL nvim
 set -gx FILTER fzf
 
 # Fish
-set -gx RTX_EXPERIMENTAL 1
-set -gx RTX_FISH_AUTO_ACTIVATE 0
+set -gx MISE_EXPERIMENTAL 1
+set -gx MISE_FISH_AUTO_ACTIVATE 0
 
 # Also Use Neovim as the React editor
 set -gx REACT_EDITOR nvim
