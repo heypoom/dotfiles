@@ -19,6 +19,15 @@ vim.g.mapleader = " "
 
 -- setup lazy
 require("lazy").setup({
+	-- Matchup
+	{
+		"andymass/vim-matchup",
+		lazy = false,
+		setup = function()
+			vim.g.matchup_matchparen_offscreen = { method = "popup" }
+		end,
+	},
+
 	-- WhichKey
 	"folke/which-key.nvim",
 
@@ -104,14 +113,6 @@ require("lazy").setup({
 		event = "VeryLazy",
 		config = function()
 			require("nvim-surround").setup({})
-		end,
-	},
-
-	-- Matchup
-	{
-		"andymass/vim-matchup",
-		setup = function()
-			vim.g.matchup_matchparen_offscreen = { method = "popup" }
 		end,
 	},
 })
