@@ -268,7 +268,6 @@
   "settingsSync.ignoredSettings": [],
   "workbench.productIconTheme": "icons-carbon",
   "workbench.iconTheme": "material-icon-theme",
-  "workbench.statusBar.visible": false,
   "editor.hideCursorInOverviewRuler": true,
   "editor.minimap.enabled": false,
   "window.titleBarStyle": "native",
@@ -298,5 +297,6 @@
     "itemMargin": 2,
     "hideSettings": true,
     "position": "bottom"
-  }
+  },
+  "workbench.statusBar.visible": false
 }
