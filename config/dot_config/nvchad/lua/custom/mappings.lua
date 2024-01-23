@@ -5,7 +5,6 @@ M.general = {
     ["<Esc>"] = {
       function()
         vim.cmd.noh()
-        require("notify").dismiss {}
       end,
       "Clear Highlights",
     },
