@@ -137,7 +137,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "git.autofetch": true,
-  "workbench.colorTheme": "Large Aperture",
+  "workbench.colorTheme": "Catppuccin Mocha",
   "git.enableSmartCommit": true,
   "git.confirmSync": false,
   "editor.formatOnSave": true,
@@ -263,7 +263,6 @@
   "[dart][elixir]": {
     "editor.wordBasedSuggestions": "off"
   },
-  "window.zoomLevel": -1,
   "settingsSync.ignoredExtensions": [],
   "settingsSync.ignoredSettings": [],
   "workbench.productIconTheme": "icons-carbon",
@@ -298,5 +297,6 @@
     "hideSettings": true,
     "position": "bottom"
   },
-  "workbench.statusBar.visible": false
+  "window.zoomLevel": -1,
+  "zig.initialSetupDone": true
 }

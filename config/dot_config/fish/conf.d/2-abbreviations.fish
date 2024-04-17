@@ -30,15 +30,15 @@ abbr -a nvim-lazy 'env NVIM_APPNAME=lazyvim nvim'
 abbr -a nvim-astro 'env NVIM_APPNAME=astro nvim'
 abbr -a nvim-kick 'env NVIM_APPNAME=kickstart nvim'
 abbr -a nvim-lunar 'lvim'
-abbr -a ls exa
+abbr -a ls eza
 abbr -a ch chezmoi
 abbr -a chez chezmoi
 abbr -a chcd 'chezmoi cd'
 abbr -a ched 'chezmoi edit --apply'
-abbr -a tree 'exa --tree'
+abbr -a tree 'eza --tree'
 abbr -a grv 'gh repo view -w'
 abbr -a ta 'tmux attach'
-abbr -a l exa
+abbr -a l eza
 abbr -a deps 'jq .dependencies package.json'
 abbr -a tns 'tmux new -s'
 abbr -a devdeps 'jq .devDependencies package.json'

@@ -5,3 +5,5 @@ then
   eval "$(starship init zsh)"
 fi
 
+
+PATH=~/.console-ninja/.bin:$PATH
