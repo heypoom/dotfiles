@@ -1,6 +1,3 @@
-sudo yabai --load-sa
-yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
-
 # Global Settings
 yabai -m config mouse_follows_focus          on
 yabai -m config focus_follows_mouse          off
@@ -90,5 +87,8 @@ yabai -m rule --add app="^Arc$" subrole='AXSystemDialog' manage=off mouse_follow
 # yabai -m rule --add app='Emacs' title=' — ' manage=off 
 
 # yabai -m signal --add event=window_created app="Emacs" action='~/bin/yabai-float-children'
+yabai -m rule --add app="WebStorm" manage=off
+yabai -m rule --add app="WebStorm" title="~/Workspaces/" manage=on
+yabai -m rule --add app="WebStorm" title="~/Projects/" manage=on
 
 echo "yabai config reloaded 🚀"
