@@ -33,7 +33,7 @@ set -gx GOPATH "$HOME/Go"
 set -gx PYENV_ROOT "$HOME/.pyenv"
 
 # Define Flutter's Root
-set -gx FLUTTER_ROOT "$HOME/lib/flutter"
+set -gx FLUTTER_ROOT "$HOME/flutter"
 
 # Defines Rust's Source Path for Racer Autocompletion
 # set -gx RUST_SRC_PATH "(rustc --print sysroot)/lib/rustlib/src/rust/src"
@@ -149,6 +149,7 @@ set -gx PATH \
   $HOME/.dotnet/tools \
   /usr/local/MacGPG2/bin \
   /Applications/Wireshark.app/Contents/MacOS \
+  $HOME/flutter/bin \
   $HOME/.elan/bin \
   $HOME/.emacs.d/bin \
   $HOME/.kit/bin \

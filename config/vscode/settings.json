@@ -2,9 +2,10 @@
   "explorer.confirmDelete": false,
   "files.autoSave": "afterDelay",
   "files.autoSaveDelay": 1000,
-  "editor.fontFamily": "'Zed Mono Extended', 'JetBrainsMono Nerd Font', 'Sukhumvit Set Text', monospace",
-  "terminal.integrated.fontFamily": "'Zed Mono Extended', 'JetBrainsMono Nerd Font', monospace",
-  "debug.console.fontFamily": "'Zed Mono Extended', 'JetBrainsMono Nerd Font', monospace",
+  "editor.fontFamily": "ZedMonoNF-Extended",
+  "editor.fontVariations": true,
+  "terminal.integrated.fontFamily": "ZedMonoNF-Extended",
+  "debug.console.fontFamily": "ZedMonoNF-Extended",
   "editor.fontSize": 20,
   "editor.tabSize": 2,
   "editor.detectIndentation": true,
@@ -253,13 +254,24 @@
   },
   "console-ninja.featureSet": "Pro",
   "workbench.editor.empty.hint": "hidden",
-  "rubyLsp.rubyVersionManager": "custom",
-  "dart.flutterSdkPath": "/Users/poom/.local/share/rtx/installs/flutter/3.13.2-stable",
+  "dart.flutterSdkPath": "/Users/poom/flutter",
   "extensions.experimental.affinity": {
     "asvetliakov.vscode-neovim": 1
   },
   "vscode-neovim.neovimExecutablePaths.darwin": "/opt/homebrew/bin/nvim",
   "vscode-neovim.NVIM_APPNAME": "vscode-nvim",
+  "vscode-neovim.ctrlKeysForInsertMode": [
+    "a",
+    "c",
+    "h",
+    "j",
+    "m",
+    "o",
+    "r",
+    "t",
+    "u",
+    "w"
+  ],
   "[dart][elixir]": {
     "editor.wordBasedSuggestions": "off"
   },
@@ -288,8 +300,8 @@
     ".title-actions": "display: none",
     ".editor-actions": "display: none"
   },
-  "apc.font.family": "Zed Mono Extended",
-  "apc.monospace.font.family": "Zed Mono Extended",
+  "apc.font.family": "ZedMonoNF-Extended",
+  "apc.monospace.font.family": "ZedMonoNF-Extended",
   "apc.activityBar": {
     "size": 30,
     "itemSize": 28,
