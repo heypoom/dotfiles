@@ -311,5 +311,6 @@
   },
   "window.zoomLevel": -2,
   "zig.path": "/Users/poom/Library/Application Support/Code/User/globalStorage/ziglang.vscode-zig/zig_install/zig",
-  "zig.initialSetupDone": true
+  "zig.initialSetupDone": true,
+  "prisma.showPrismaDataPlatformNotification": false
 }
