@@ -103,6 +103,8 @@
   },
   "workbench.startupEditor": "newUntitledFile",
   "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnSave": true,
     "editor.formatOnType": true
   },
   "editor.suggestSelection": "first",
@@ -312,5 +314,5 @@
   "window.zoomLevel": -2,
   "zig.path": "/Users/poom/Library/Application Support/Code/User/globalStorage/ziglang.vscode-zig/zig_install/zig",
   "zig.initialSetupDone": true,
-  "prisma.showPrismaDataPlatformNotification": false
+  "vscode-neovim.compositeKeys": {}
 }
