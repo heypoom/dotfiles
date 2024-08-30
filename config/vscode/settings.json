@@ -103,6 +103,8 @@
   },
   "workbench.startupEditor": "newUntitledFile",
   "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnSave": true,
     "editor.formatOnType": true
   },
   "editor.suggestSelection": "first",
@@ -314,5 +316,6 @@
   "zig.initialSetupDone": true,
   "github.copilot.editor.enableCodeActions": false,
   "github.copilot.renameSuggestions.triggerAutomatically": false,
-  "supermaven.otherWarning": false
+  "supermaven.otherWarning": false,
+  "vscode-neovim.compositeKeys": {}
 }

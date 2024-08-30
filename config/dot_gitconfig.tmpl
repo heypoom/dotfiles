@@ -3,6 +3,9 @@
   name = {{ .full_name | quote }}
   signingkey = {{ .git.signing_key | quote }}
 
+[alias]
+  undo = reset --soft HEAD^
+
 [credential]
   helper = osxkeychain
 
