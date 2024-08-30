@@ -317,5 +317,7 @@
   "github.copilot.editor.enableCodeActions": false,
   "github.copilot.renameSuggestions.triggerAutomatically": false,
   "supermaven.otherWarning": false,
-  "vscode-neovim.compositeKeys": {}
+  "vscode-neovim.compositeKeys": {},
+  "vite.autoStart": false,
+  "vite.open": false
 }
