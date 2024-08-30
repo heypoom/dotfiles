@@ -115,7 +115,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "editor.lineHeight": 33,
-  "wallaby.startAutomatically": true,
+  "wallaby.startAutomatically": false,
   "quokka.colorizeOutput": true,
   "quokka.colors": {
     "covered": "#62b455",
@@ -218,7 +218,7 @@
   "[svelte]": {
     "editor.defaultFormatter": "svelte.svelte-vscode"
   },
-  "github.copilot.editor.enableAutoCompletions": true,
+  "github.copilot.editor.enableAutoCompletions": false,
   "github.copilot.advanced": {},
   "notebook.lineNumbers": "on",
   "git.openRepositoryInParentFolders": "never",
@@ -311,5 +311,8 @@
   },
   "window.zoomLevel": -2,
   "zig.path": "/Users/poom/Library/Application Support/Code/User/globalStorage/ziglang.vscode-zig/zig_install/zig",
-  "zig.initialSetupDone": true
+  "zig.initialSetupDone": true,
+  "github.copilot.editor.enableCodeActions": false,
+  "github.copilot.renameSuggestions.triggerAutomatically": false,
+  "supermaven.otherWarning": false
 }
