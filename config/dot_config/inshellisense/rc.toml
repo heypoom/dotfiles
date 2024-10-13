@@ -1,0 +1,14 @@
+[bindings.acceptSuggestion]
+key = "tab"
+shift = true
+ctrl = false
+
+[bindings.nextSuggestion]
+key = "down"
+
+[bindings.previousSuggestion]
+key = "up"
+
+[bindings.dismissSuggestions]
+key = "escape"
+
