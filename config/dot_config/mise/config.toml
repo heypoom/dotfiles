@@ -1,2 +1,3 @@
 [tools]
 python = "system"
+node = "20"
