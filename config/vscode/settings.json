@@ -2,8 +2,8 @@
   "explorer.confirmDelete": false,
   "files.autoSave": "afterDelay",
   "files.autoSaveDelay": 1000,
-  "editor.fontFamily": "ZedMonoNF-Extended",
   "editor.fontVariations": true,
+  "editor.fontFamily": "ZedMonoNF-Extended",
   "terminal.integrated.fontFamily": "ZedMonoNF-Extended",
   "debug.console.fontFamily": "ZedMonoNF-Extended",
   "editor.fontSize": 20,
@@ -283,34 +283,7 @@
   "workbench.iconTheme": "material-icon-theme",
   "editor.hideCursorInOverviewRuler": true,
   "editor.minimap.enabled": false,
-  "window.titleBarStyle": "native",
-  "apc.electron": {
-    "titleBarStyle": "hiddenInset",
-    "trafficLightPosition": {
-      "x": 11,
-      "y": 8
-    }
-  },
-  "apc.header": {
-    "height": 36
-  },
-  "apc.statusBar": {
-    "position": "bottom"
-  },
-  "apc.stylesheet": {
-    ".title-label > h2": "display: none",
-    ".title-actions": "display: none",
-    ".editor-actions": "display: none"
-  },
-  "apc.font.family": "ZedMonoNF-Extended",
-  "apc.monospace.font.family": "ZedMonoNF-Extended",
-  "apc.activityBar": {
-    "size": 30,
-    "itemSize": 28,
-    "itemMargin": 2,
-    "hideSettings": true,
-    "position": "bottom"
-  },
+  "window.titleBarStyle": "custom",
   "window.zoomLevel": -2,
   "zig.path": "/Users/poom/Library/Application Support/Code/User/globalStorage/ziglang.vscode-zig/zig_install/zig",
   "zig.initialSetupDone": true,
@@ -319,5 +292,10 @@
   "github.copilot.renameSuggestions.triggerAutomatically": false,
   "supermaven.otherWarning": false,
   "vite.autoStart": false,
-  "vite.open": false
+  "vite.open": false,
+  "continue.enableTabAutocomplete": false,
+  "continue.pauseTabAutocompleteOnBattery": true,
+  "editor.experimentalInlineEdit.fontFamily": "ZedMonoNF-Extended",
+  "editor.inlayHints.fontFamily": "ZedMonoNF-Extended",
+  "apc.monospace.font.family": "ZedMonoNF-Extended"
 }
