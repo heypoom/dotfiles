@@ -1,7 +1,7 @@
 # Mise, the asdf-like package manager written in Rust
 # This is done manually as RTX_FISH_AUTO_ACTIVATE results in race conditions.
 if type -q mise
-	# mise activate fish --quiet | source
+	mise activate fish --quiet | source
 end
 
 # Starship, the cross-shell prompt written in Rust
