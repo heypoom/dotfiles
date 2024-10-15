@@ -12,7 +12,7 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 
 [mode.main.binding]
 # See: https://nikitabobko.github.io/AeroSpace/goodness#open-a-new-window-with-applescript
-alt-t = 'exec-and-forget $HOME/bin/kitty-spawn'
+alt-t = 'exec-and-forget ${HOME}/bin/kitty-spawn'
 
 alt-j = 'focus left'
 alt-k = 'focus down'
