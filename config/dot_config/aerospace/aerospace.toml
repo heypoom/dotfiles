@@ -12,19 +12,36 @@ enable-normalization-opposite-orientation-for-nested-containers = false
 # Mouse follows focus when focused monitor changes
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 
+# Gaps between windows (inner-*) and between monitor edges (outer-*).
+# Possible values:
+# - Constant:     gaps.outer.top = 8
+# - Per monitor:  gaps.outer.top = [{ monitor.main = 16 }, { monitor."some-pattern" = 32 }, 24]
+#                 In this example, 24 is a default value when there is no match.
+#                 Monitor pattern is the same as for 'workspace-to-monitor-force-assignment'.
+#                 See: https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
+[gaps]
+inner.vertical = 12
+inner.horizontal = 12
+outer.left = 12
+outer.bottom = 12
+outer.top = 12
+outer.right = 12
+
 [mode.main.binding]
+alt-shift-c = 'reload-config'
+
 # See: https://nikitabobko.github.io/AeroSpace/goodness#open-a-new-window-with-applescript
 alt-t = 'exec-and-forget ${HOME}/bin/kitty-spawn'
 
-alt-j = 'focus left'
-alt-k = 'focus down'
-alt-l = 'focus up'
-alt-semicolon = 'focus right'
+alt-left = 'focus left'
+alt-down = 'focus down'
+alt-up = 'focus up'
+alt-right = 'focus right'
 
-alt-shift-j = 'move left'
-alt-shift-k = 'move down'
-alt-shift-l = 'move up'
-alt-shift-semicolon = 'move right'
+alt-shift-left = 'move left'
+alt-shift-down = 'move down'
+alt-shift-up = 'move up'
+alt-shift-right = 'move right'
 
 # Consider using 'join-with' command as a 'split' replacement if you want to enable normalizations
 alt-h = 'split horizontal'
@@ -68,14 +85,12 @@ alt-shift-8 = 'move-node-to-workspace 8'
 alt-shift-9 = 'move-node-to-workspace 9'
 alt-shift-0 = 'move-node-to-workspace 10'
 
-alt-shift-c = 'reload-config'
-
 alt-r = 'mode resize'
 
 [mode.resize.binding]
-h = 'resize width -50'
-j = 'resize height +50'
-k = 'resize height -50'
-l = 'resize width +50'
+left = 'resize width -50'
+up = 'resize height +50'
+down = 'resize height -50'
+right = 'resize width +50'
 enter = 'mode main'
 esc = 'mode main'
