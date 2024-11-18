@@ -54,6 +54,10 @@ outer.bottom = 12
 outer.top = 12
 outer.right = 12
 
+[workspace-to-monitor-force-assignment]
+1 = 1
+2 = 2
+
 [mode.main.binding]
 # See: https://nikitabobko.github.io/AeroSpace/goodness#open-a-new-window-with-applescript
 alt-t = 'exec-and-forget ${HOME}/bin/kitty-spawn'
