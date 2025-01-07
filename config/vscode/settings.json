@@ -220,7 +220,6 @@
   "[svelte]": {
     "editor.defaultFormatter": "svelte.svelte-vscode"
   },
-  "github.copilot.editor.enableAutoCompletions": false,
   "github.copilot.advanced": {},
   "notebook.lineNumbers": "on",
   "git.openRepositoryInParentFolders": "never",
@@ -297,5 +296,9 @@
   "continue.pauseTabAutocompleteOnBattery": true,
   "editor.experimentalInlineEdit.fontFamily": "ZedMonoNF-Extended",
   "editor.inlayHints.fontFamily": "ZedMonoNF-Extended",
-  "apc.monospace.font.family": "ZedMonoNF-Extended"
+  "apc.monospace.font.family": "ZedMonoNF-Extended",
+  "vue.server.hybridMode": "typeScriptPluginOnly",
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
