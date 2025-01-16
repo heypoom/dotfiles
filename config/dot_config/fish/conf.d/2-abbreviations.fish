@@ -1,3 +1,7 @@
+abbr -a dev "yarn dev"
+abbr -a scr "scripts"
+abbr -a sb "yarn storybook"
+
 abbr -a brewi 'brew install'
 abbr -a gpv 'gh pr view -w'
 abbr -a vim lvim
