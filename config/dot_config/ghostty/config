@@ -20,7 +20,7 @@ shell-integration = detect
 shell-integration-features = true
 
 window-theme = dark
-macos-titlebar-style = tabs
+macos-titlebar-style = hidden
 window-colorspace = display-p3
 quit-after-last-window-closed = true
 macos-secure-input-indication = true
