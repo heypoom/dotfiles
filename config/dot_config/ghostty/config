@@ -1,0 +1,13 @@
+theme = catppuccin-mocha
+foreground = #f8f8f2
+background = #11111b
+
+macos-titlebar-style = tabs
+
+font-size = 15
+
+font-family = Zed Mono Extended
+font-family-bold = Zed Mono Semibold Extended
+font-family-italic = Zed Mono Extended Italic
+font-family-bold-italic = Zed Mono Medium Extended Italic
+
