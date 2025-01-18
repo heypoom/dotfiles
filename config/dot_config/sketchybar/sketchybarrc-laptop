@@ -31,6 +31,8 @@ sketchybar --default \
     label.y_offset=0 \
     label.padding_right=5
 
+source "$ITEMS_DIR/spaces.sh"
+
 sketchybar --add item front_app left \
     --set front_app \
     background.color=$GREEN \
@@ -82,6 +84,31 @@ sketchybar --add item battery right \
 		background.padding_left=5 \
     update_freq=20 \
     script="$PLUGIN_DIR/battery.sh"
+
+sketchybar --add slider volume_slider right \
+           --set volume_slider script="$PLUGIN_SHARED_DIR/volume_slider.sh" \
+						updates=on \
+						label.drawing=off \
+						icon.drawing=off \
+						background.color=$TRANSPARENT \
+						slider.highlight_color=0xff8aadf4 \
+						slider.background.height=5 \
+						slider.background.corner_radius=3 \
+						slider.background.color=$BG \
+						slider.knob= \
+           --subscribe volume_slider volume_change mouse.clicked mouse.entered mouse.exited
+
+sketchybar --add item volume right \
+    --set volume icon.padding_left=10 \
+		background.color=$TRANSPARENT \
+		label.padding_right=0 \
+    icon.color=0xff8aadf4 \
+    label.drawing=true \
+    script="$PLUGIN_SHARED_DIR/volume.sh" \
+    --subscribe volume volume_change mouse.clicked
+
+sketchybar --add bracket volume_container volume volume_slider \
+					 --set         volume_container background.color=$BG
 
 ##### Finalizing Setup #####
 sketchybar --update
