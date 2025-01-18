@@ -61,6 +61,7 @@ outer.right = 12
 [mode.main.binding]
 # See: https://nikitabobko.github.io/AeroSpace/goodness#open-a-new-window-with-applescript
 alt-t = 'exec-and-forget ${HOME}/bin/kitty-spawn'
+alt-g = 'exec-and-forget ${HOME}/bin/ghostty-spawn'
 alt-f = 'fullscreen'
 alt-r = 'mode resize'
 
