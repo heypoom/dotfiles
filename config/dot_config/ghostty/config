@@ -9,6 +9,9 @@ quit-after-last-window-closed = true
 macos-secure-input-indication = true
 macos-option-as-alt = true
 
+background-opacity = 0.88
+background-blur-radius = 20
+
 shell-integration = detect
 shell-integration-features = true
 
