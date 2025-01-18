@@ -2,12 +2,23 @@ theme = catppuccin-mocha
 foreground = #f8f8f2
 background = #11111b
 
+window-theme = dark
 macos-titlebar-style = tabs
+window-colorspace = display-p3
+quit-after-last-window-closed = true
+macos-secure-input-indication = true
+macos-option-as-alt = true
 
-font-size = 15
+shell-integration = detect
+shell-integration-features = true
+
+font-size = 16
+adjust-cell-height = 4
+font-thicken = false
 
 font-family = Zed Mono Extended
 font-family-bold = Zed Mono Semibold Extended
 font-family-italic = Zed Mono Extended Italic
 font-family-bold-italic = Zed Mono Medium Extended Italic
+font-synthetic-style = false
 

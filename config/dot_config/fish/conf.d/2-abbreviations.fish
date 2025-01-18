@@ -12,6 +12,7 @@ abbr -a edit-abbr "chezmoi edit --apply ~/.config/fish/conf.d/2-abbreviations.fi
 abbr -a edit-zj "chezmoi edit --apply ~/.config/zellij/config.kdl"
 abbr -a edit-ghostty "chezmoi edit --apply ~/.config/ghostty/config"
 abbr -a edit-kitty "chezmoi edit --apply ~/.config/kitty/kitty.conf"
+abbr -a edit-aero "chezmoi edit --apply ~/.config/aerospace/aerospace.toml"
 
 abbr -a v nvim
 abbr -a vi nvim
