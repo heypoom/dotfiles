@@ -7,7 +7,9 @@ abbr -a scr "scripts"
 abbr -a sb "yarn storybook"
 
 abbr -a raya "env TERM=xterm-256color ssh raya"
+
 abbr -a edit-abbr "chezmoi edit --apply ~/.config/fish/conf.d/2-abbreviations.fish"
+abbr -a edit-zj "chezmoi edit --apply ~/.config/zellij/config.kdl"
 
 abbr -a v nvim
 abbr -a vi nvim
