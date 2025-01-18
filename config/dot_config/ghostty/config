@@ -19,6 +19,9 @@ background-blur-radius = 20
 shell-integration = detect
 shell-integration-features = true
 
+window-padding-x = 12
+window-padding-y = 10
+
 window-theme = dark
 macos-titlebar-style = hidden
 window-colorspace = display-p3
