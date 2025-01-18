@@ -1,7 +1,7 @@
-theme = catppuccin-mocha
+theme = dracula
 
 foreground = #f8f8f2
-background = #11111b
+background = #181818
 
 font-size = 16
 adjust-cell-height = 4
