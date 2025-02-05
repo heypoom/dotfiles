@@ -1,0 +1,27 @@
+#!/usr/bin/env zx
+
+const version = process.argv[3];
+const edition = process.argv[4] === 'oss' ? 'oss' : 'ee';
+
+const [major, minor] = version.split('.');
+
+const jarName = `metabase-${edition}-${version}.jar`;
+
+const fileExists = fs.existsSync(jarName);
+
+if (!fileExists) {
+  console.log(chalk.blue(`Metabase ${edition} ${version} does not exist, downloading...`));
+  const downloadPath = edition === 'oss'
+   ? `http://downloads.metabase.com/v0.${version}/metabase.jar`
+   : `http://downloads.metabase.com/enterprise/v1.${version}/metabase.jar`;
+
+  await $`curl -L -o ${jarName} ${downloadPath}`;
+  console.log(`Downloaded Metabase ${version}`);
+}
+
+const port = `3${major}${minor || 0}`;
+
+console.log(chalk.blue(`Starting Metabase ${edition} ${version} on port ${port}`));
+
+await $`MB_JETTY_PORT=${port} MB_DB_TYPE=h2 MB_DB_FILE=metabase-${major}.db java -jar ${jarName}`;
+

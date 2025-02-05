@@ -94,7 +94,7 @@ options {
 themes {
     custom {
         fg "#f8f8f2"
-        bg 0
+        bg "#f8f8f2"
         black "#11111b"
         red "#ff9580"
         green "#8aff80"
