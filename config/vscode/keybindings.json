@@ -141,5 +141,13 @@
     "command": "vscode-neovim.send",
     "key": "ctrl+d",
     "when": "editorFocus && neovim.init"
-  }
+},
+{
+    "key": "shift+enter",
+    "command": "workbench.action.terminal.sendSequence",
+    "args": {
+        "text": "\\\r\n"
+    },
+    "when": "terminalFocus"
+}
 ]

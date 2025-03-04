@@ -100,6 +100,7 @@ set -gx CONDA_HOME "/opt/homebrew/anaconda3"
 # Configure the environment variables.
 # TODO: add RTX paths
 set -gx PATH \
+  $HOME/.npm-global/bin \
   $WASMER_DIR/bin \
   $PNPM_HOME \
   $VOLTA_HOME/bin \
