@@ -2,6 +2,8 @@ abbr -a zz "zellij"
 abbr -a zj zellij
 abbr -a zjd 'zellij --layout default'
 
+abbr -a claude "env SHELL=bash claude"
+
 abbr -a dev "yarn dev"
 abbr -a scr "scripts"
 abbr -a sb "yarn storybook"
