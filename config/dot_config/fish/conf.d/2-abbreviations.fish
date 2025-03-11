@@ -1,6 +1,7 @@
 abbr -a zz "zellij"
 abbr -a zj zellij
-abbr -a zjd 'zellij --layout default'
+abbr -a zjn "zellij -s"
+abbr -a zja "zellij attach"
 
 abbr -a claude "env SHELL=bash claude"
 
