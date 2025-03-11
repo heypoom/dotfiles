@@ -1,4 +1,6 @@
 abbr -a zz "zellij"
+abbr -a zzn "zellij -s"
+abbr -a zza "zellij attach"
 abbr -a zj zellij
 abbr -a zjn "zellij -s"
 abbr -a zja "zellij attach"
