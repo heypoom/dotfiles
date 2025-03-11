@@ -44,6 +44,8 @@ keybinds {
         bind "r" { Quit; SwitchToMode "Normal"; }
 
         bind "Esc" { SwitchToMode "Normal"; }
+
+        bind "d" { Detach; SwitchToMode "Normal"; }
     }
 
     // Add tab mode configuration for the window list
