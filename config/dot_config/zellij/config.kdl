@@ -1,9 +1,9 @@
-default_layout "compact"
+// https://github.com/zellij-org/zellij/blob/main/zellij-utils/assets/config/default.kdl
 
-keybinds {
-    normal clear-defaults=true {
-        bind "Ctrl b" { SwitchToMode "tmux"; }
+keybinds clear-defaults=true {
+    normal {
         bind "Ctrl a" { SwitchToMode "tmux"; }
+        bind "Ctrl b" { SwitchToMode "tmux"; }
 
         bind "Alt h" { MoveFocus "Left"; }
         bind "Alt j" { MoveFocus "Down"; }
@@ -11,7 +11,43 @@ keybinds {
         bind "Alt l" { MoveFocus "Right"; }
     }
 
-    tmux clear-defaults=true {
+    locked {
+        bind "Ctrl g" { SwitchToMode "Normal"; }
+    }
+
+    resize {
+        bind "Ctrl n" { SwitchToMode "Normal"; }
+        bind "h" "Left" { Resize "Increase Left"; }
+        bind "j" "Down" { Resize "Increase Down"; }
+        bind "k" "Up" { Resize "Increase Up"; }
+        bind "l" "Right" { Resize "Increase Right"; }
+        bind "H" { Resize "Decrease Left"; }
+        bind "J" { Resize "Decrease Down"; }
+        bind "K" { Resize "Decrease Up"; }
+        bind "L" { Resize "Decrease Right"; }
+        bind "=" "+" { Resize "Increase"; }
+        bind "-" { Resize "Decrease"; }
+    }
+
+    pane {
+        bind "Ctrl p" { SwitchToMode "Normal"; }
+        bind "h" "Left" { MoveFocus "Left"; }
+        bind "l" "Right" { MoveFocus "Right"; }
+        bind "j" "Down" { MoveFocus "Down"; }
+        bind "k" "Up" { MoveFocus "Up"; }
+        bind "p" { SwitchFocus; }
+        bind "n" { NewPane; SwitchToMode "Normal"; }
+        bind "d" { NewPane "Down"; SwitchToMode "Normal"; }
+        bind "r" { NewPane "Right"; SwitchToMode "Normal"; }
+        bind "x" { CloseFocus; SwitchToMode "Normal"; }
+        bind "f" { ToggleFocusFullscreen; SwitchToMode "Normal"; }
+        bind "z" { TogglePaneFrames; SwitchToMode "Normal"; }
+        bind "w" { ToggleFloatingPanes; SwitchToMode "Normal"; }
+        bind "e" { TogglePaneEmbedOrFloating; SwitchToMode "Normal"; }
+        bind "c" { SwitchToMode "RenamePane"; PaneNameInput 0;}
+    }
+
+    tmux {
         // Window list (like tmux's prefix + w)
         bind "w" { SwitchToMode "Tab"; }
 
@@ -20,6 +56,10 @@ keybinds {
         bind "j" { MoveFocus "Down"; SwitchToMode "Normal"; }
         bind "k" { MoveFocus "Up"; SwitchToMode "Normal"; }
         bind "l" { MoveFocus "Right"; SwitchToMode "Normal"; }
+        bind "Left" { MoveFocus "Left"; SwitchToMode "Normal"; }
+        bind "Right" { MoveFocus "Right"; SwitchToMode "Normal"; }
+        bind "Down" { MoveFocus "Down"; SwitchToMode "Normal"; }
+        bind "Up" { MoveFocus "Up"; SwitchToMode "Normal"; }
 
         bind "|" { NewPane "Right"; SwitchToMode "Normal"; }
         bind "-" { NewPane "Down"; SwitchToMode "Normal"; }
@@ -30,26 +70,20 @@ keybinds {
         bind "Ctrl n" { GoToNextTab; SwitchToMode "Normal"; }
         bind "(" { GoToPreviousTab; SwitchToMode "Normal"; }
         bind ")" { GoToNextTab; SwitchToMode "Normal"; }
-
         bind "=" { Clear; SwitchToMode "Normal"; }
-
         bind "z" { ToggleFocusFullscreen; SwitchToMode "Normal"; }
         bind "Space" { NextSwapLayout; SwitchToMode "Normal"; }
-
         bind "v" { SwitchToMode "EnterSearch"; }
         bind "[" { SwitchToMode "Scroll"; }
-
         bind "x" { CloseFocus; SwitchToMode "Normal"; }
-
         bind "r" { Quit; SwitchToMode "Normal"; }
-
         bind "Esc" { SwitchToMode "Normal"; }
-
         bind "d" { Detach; SwitchToMode "Normal"; }
+        bind "Space" { NextSwapLayout; }
     }
 
     // Add tab mode configuration for the window list
-    tab clear-defaults=true {
+    tab {
         // Navigation
         bind "h" "Left" "k" "Up" { GoToPreviousTab; }
         bind "l" "Right" "j" "Down" { GoToNextTab; }
@@ -81,18 +115,41 @@ keybinds {
         bind "n" { Search "Down"; }
         bind "N" { Search "Up"; }
     }
+
+    shared_except "normal" "locked" {
+        bind "Enter" "Esc" { SwitchToMode "Normal"; }
+    }
+
+    shared_except "pane" "locked" {
+        bind "Ctrl p" { SwitchToMode "Pane"; }
+    }
+
+    shared_except "resize" "locked" {
+        bind "Ctrl n" { SwitchToMode "Resize"; }
+    }
+
+    shared_except "scroll" "locked" {
+        bind "Ctrl s" { SwitchToMode "Scroll"; }
+    }
+
+    shared_except "session" "locked" {
+        bind "Ctrl o" { SwitchToMode "Session"; }
+    }
+
+    shared_except "tab" "locked" {
+        bind "Ctrl t" { SwitchToMode "Tab"; }
+    }
+    shared_except "move" "locked" {
+        bind "Ctrl h" { SwitchToMode "Move"; }
+    }
+    shared_except "tmux" "locked" {
+        bind "Ctrl b" { SwitchToMode "Tmux"; }
+    }
 }
 
-// General settings
-options {
-    default_shell "fish"
-    mouse_mode true
-    scroll_buffer_size 50000
-    copy_command "pbcopy"        // MacOS clipboard integration
-    copy_clipboard "system"      // Use system clipboard
-    mirror_session true          // Similar to tmux's activity monitor
-}
-
+// Define color themes for Zellij
+// For more examples, see: https://github.com/zellij-org/zellij/tree/main/example/themes
+// Once these themes are defined, one of them should to be selected in the "theme" section of this file
 themes {
     custom {
         fg "#f8f8f2"
@@ -121,12 +178,102 @@ themes {
     }
 }
 
-// Pane frames
-pane_frames false
+theme "custom"
 
-// Start indexing from 1 (like your tmux config)
-session_serialization false  // Required for custom index
-base_index 1
+
+// Plugin aliases - can be used to change the implementation of Zellij
+// changing these requires a restart to take effect
+plugins {
+    tab-bar location="zellij:tab-bar"
+    status-bar location="zellij:status-bar"
+    strider location="zellij:strider"
+    compact-bar location="zellij:compact-bar"
+    session-manager location="zellij:session-manager"
+    welcome-screen location="zellij:session-manager" {
+        welcome_screen true
+    }
+    filepicker location="zellij:strider" {
+        cwd "/"
+    }
+    configuration location="zellij:configuration"
+    plugin-manager location="zellij:plugin-manager"
+    about location="zellij:about"
+}
+
+// Plugins to load in the background when a new session starts
+load_plugins {
+  // "file:/path/to/my-plugin.wasm"
+  // "https://example.com/my-plugin.wasm"
+}
+
+// Choose what to do when zellij receives SIGTERM, SIGINT, SIGQUIT or SIGHUP
+// eg. when terminal window with an active zellij session is closed
+// (Requires restart)
+// Options:
+//   - detach (Default)
+//   - quit
+on_force_close "detach"
+
+//  Send a request for a simplified ui (without arrow fonts) to plugins
+//  Options:
+//    - true
+//    - false (Default)
+//
+// simplified_ui false
+
+// Choose the path to the default shell that zellij will use for opening new panes
+// Default: $SHELL
+default_shell "fish"
+
+// Choose the path to override cwd that zellij will use for opening new panes
+//
+// default_cwd ""
+
+// Toggle between having pane frames around the panes
+// Options:
+//   - true (default)
+//   - false
+//
+// pane_frames true
+
+// Toggle between having Zellij lay out panes according to a predefined set of layouts whenever possible
+// Options:
+//   - true (default)
+//   - false
+//
+// auto_layout true
+
+// Whether sessions should be serialized to the cache folder (including their tabs/panes, cwds and running commands) so that they can later be resurrected
+// (Requires restart)
+// Options:
+//   - true (default)
+//   - false
+//
+// session_serialization false
+
+// Whether pane viewports are serialized along with the session, default is false
+// (Requires restart)
+// Options:
+//   - true
+//   - false (default)
+//
+// serialize_pane_viewport true
+
+// Scrollback lines to serialize along with the pane viewport when serializing sessions, 0
+// defaults to the scrollback size. If this number is higher than the scrollback size, it will
+// also default to the scrollback size. This does nothing if `serialize_pane_viewport` is not true.
+// (Requires restart)
+//
+// scrollback_lines_to_serialize 10000
+
+// The name of the default layout to load on startup
+// Default: "default"
+// (Requires restart)
+default_layout "compact"
+
+// Choose the mode that zellij uses when starting up.
+// Default: normal
+default_mode "normal"
 
 // Toggle enabling the mouse mode.
 // On certain configurations, or terminals this could
@@ -135,8 +282,7 @@ base_index 1
 // Options:
 //   - true (default)
 //   - false
-//
-// mouse_mode false
+mouse_mode true
 
 // Configure the scroll back buffer size
 // This is the number of lines zellij stores for each pane in the scroll back
@@ -144,8 +290,7 @@ base_index 1
 // (Requires restart)
 // Valid values: positive integers
 // Default value: 10000
-//
-// scroll_buffer_size 10000
+scroll_buffer_size 10000
 
 // Provide a command to execute when copying text. The text will be piped to
 // the stdin of the program to perform the copy. This can be used with
@@ -163,8 +308,7 @@ base_index 1
 // Options:
 //   - system (default)
 //   - primary
-//
-// copy_clipboard "primary"
+copy_clipboard "system"
 
 // Enable or disable automatic copy (and clear) of selection when releasing mouse
 // Default: true
@@ -174,7 +318,7 @@ base_index 1
 // Path to the default editor to use to edit pane scrollbuffer
 // Default: $EDITOR or $VISUAL
 //
-// scrollback_editor "/usr/bin/vim"
+// scrollback_editor "/opt/homebrew/bin/nvim"
 
 // When attaching to an existing session with other users,
 // should the session be mirrored (true)
@@ -211,5 +355,19 @@ base_index 1
 // Enable or disable support for the enhanced Kitty Keyboard Protocol (the host terminal must also support it)
 // (Requires restart)
 // Default: true (if the host terminal supports it)
-
+//
 support_kitty_keyboard_protocol true
+
+// Whether to stack panes when resizing beyond a certain size
+// Default: true
+//
+// stacked_resize false
+
+// Whether to show release notes on first version run
+// Default: true
+//
+// show_release_notes false
+
+// Whether to show startup tips on session start
+// Default: true
+show_startup_tips false
