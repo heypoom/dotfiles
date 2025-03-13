@@ -173,18 +173,6 @@ themes {
         cyan "#80ffea"
         white "#f8f8f2"
         orange "#ffaa99"
-        
-        // Tab colors
-        tab_active { fg "#11111b"; bg "#999999"; }
-        tab_inactive { fg "#555555"; bg "#11111b"; }
-        
-        // Border colors (note: we're using 'none' as specified)
-        border_inactive "#44475a"
-        border_active "none"
-        
-        // Selection colors (using mark colors as reference)
-        selection_fg "#11111b"
-        selection_bg "#98d3cb"
     }
 }
 
@@ -211,13 +199,7 @@ plugins {
 }
 
 // Plugins to load in the background when a new session starts
-load_plugins {
-    "file:~/.config/zellij/plugins/zjstatus.wasm" {
-        hide_frame_for_single_pane       "true"
-        hide_frame_except_for_search     "true"
-        hide_frame_except_for_fullscreen "true"
-    }
-}
+load_plugins {}
 
 // Choose what to do when zellij receives SIGTERM, SIGINT, SIGQUIT or SIGHUP
 // eg. when terminal window with an active zellij session is closed
@@ -246,7 +228,7 @@ default_shell "fish"
 // Options:
 //   - true (default)
 //   - false
-pane_frames false
+ pane_frames false
 
 // Toggle between having Zellij lay out panes according to a predefined set of layouts whenever possible
 // Options:
