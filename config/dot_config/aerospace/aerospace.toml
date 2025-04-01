@@ -51,7 +51,7 @@ inner.vertical = 12
 inner.horizontal = 12
 outer.left = 12
 outer.bottom = 12
-outer.top = 12
+outer.top = [{ monitor.dell = 38 }, 12]
 outer.right = 12
 
 [workspace-to-monitor-force-assignment]
