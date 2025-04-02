@@ -8,3 +8,4 @@
 .ignore
 .DS_Store
 lua/.DS_Store
+.config/fish/private.fish
