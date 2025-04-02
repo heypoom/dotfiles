@@ -1,3 +1,4 @@
 [tools]
 python = "system"
 node = "22"
+"ubi:abhinav/git-spice" = { version = "latest", exe = "gs" }
