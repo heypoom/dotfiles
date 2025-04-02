@@ -1,8 +1,0 @@
-cask "charles"
-cask "docker"
-cask "wireshark"
-cask "jetbrains-toolbox"
-
-cask "visual-studio-code"
-cask "insomnia"
-
