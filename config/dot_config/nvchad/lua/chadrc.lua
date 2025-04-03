@@ -6,8 +6,11 @@
 local M = {}
 
 M.ui = {
-	theme = "catppuccin",
 	transparency = true,
+
+	nvdash = {
+		load_on_startup = true
+	},
 
 	statusline = {
 		theme = "vscode",
@@ -28,14 +31,14 @@ M.ui = {
 	extended_integrations = { "trouble", "alpha", "dap" },
 }
 
--- M.base46 = {
--- 	theme = "onedark",
+M.base46 = {
+	theme = "onedark",
 
--- 	-- hl_override = {
--- 	-- 	Comment = { italic = true },
--- 	-- 	["@comment"] = { italic = true },
--- 	-- },
--- }
+	hl_override = {
+		Comment = { italic = true },
+		["@comment"] = { italic = true },
+	},
+}
 
 -- M.nvdash = { load_on_startup = true }
 -- M.ui = {
