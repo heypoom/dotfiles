@@ -1,0 +1,3 @@
+set clipboard+=unnamedplus
+set paste
+set go+=a

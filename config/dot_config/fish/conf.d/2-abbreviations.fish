@@ -5,7 +5,7 @@ abbr -a zj zellij
 abbr -a zjn "zellij -s"
 abbr -a zja "zellij attach"
 
-abbr -a claude "env SHELL=bash claude"
+abbr -a claude "env SHELL=bash /Users/poom/.claude/local/claude"
 
 abbr -a dev "yarn dev"
 abbr -a scr "scripts"
