@@ -62,7 +62,7 @@
   {
     "key": "alt+m",
     "command": "workbench.action.terminal.sendSequence",
-    "args": {"text": "clear && ruby path_to_enlightenment.rb\n"},
+    "args": { "text": "clear && ruby path_to_enlightenment.rb\n" },
     "when": "editorLangId == 'ruby'"
   },
   {
@@ -141,6 +141,14 @@
     "command": "vscode-neovim.send",
     "key": "ctrl+d",
     "when": "editorFocus && neovim.init"
+  },
+  {
+    "key": "cmd+i",
+    "command": "composerMode.agent"
+  },
+  {
+    "key": "cmd+i",
+    "command": "composerMode.agent"
 },
 {
     "key": "shift+enter",
@@ -149,13 +157,5 @@
         "text": "\\\r\n"
     },
     "when": "terminalFocus"
-},
-{
-  "key": "cmd+i",
-  "command": "composerMode.agent"
-},
-{
-  "key": "cmd+i",
-  "command": "composerMode.agent"
 }
 ]

@@ -300,5 +300,13 @@
   "vue.server.hybridMode": "typeScriptPluginOnly",
   "[vue]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "mcp": {
+    "servers": {
+      "console-ninja": {
+        "command": "npx",
+        "args": ["-y", "-c", "node ~/.console-ninja/mcp/"]
+      }
+    }
   }
 }

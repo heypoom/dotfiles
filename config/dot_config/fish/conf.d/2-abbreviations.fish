@@ -5,7 +5,7 @@ abbr -a zj zellij
 abbr -a zjn "zellij -s"
 abbr -a zja "zellij attach"
 
-abbr -a claude "env SHELL=bash claude"
+abbr -a claude "env SHELL=bash /Users/poom/.claude/local/claude"
 
 abbr -a dev "yarn dev"
 abbr -a scr "scripts"
@@ -63,6 +63,7 @@ abbr -a gst 'git stash'
 abbr -a gstp 'git stash pop'
 abbr -a scripts 'jq .scripts package.json'
 abbr -a staging 'git fetch origin staging && git merge origin/staging'
+abbr -a restack 'gs branch restack --branch=(git symbolic-ref --short HEAD)'
 
 # Neovim Codi abbreviations (live playground)
 abbr -a crb 'lvim "+Codi ruby"'
