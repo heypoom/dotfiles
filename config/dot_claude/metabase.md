@@ -17,4 +17,6 @@
     Each plan breaks down requirements, architecture, tasks, and testing strategies.
   - `.claude-private/learnings/` contains learnings and reflections that Claude creates
     automatically after fixing issues and implementing tasks. This preserves knowledge
-    about patterns, challenges, solutions, and best practices for future sessions.
+    about patterns, challenges, solutions, and best practices for future sessions. Keep
+    the learnings short and concise so I can easily read and edit it.
+
