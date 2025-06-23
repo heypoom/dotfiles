@@ -13,3 +13,8 @@
     This contains the dimensions, actions and test cases for writing e2e and unit tests.
   - `.claude-private/tech-docs` contains full copy of technical documents.
     This contains the technical specification of a project.
+  - `.claude-private/plans/` contains implementation plans for Linear issues and features.
+    Each plan breaks down requirements, architecture, tasks, and testing strategies.
+  - `.claude-private/learnings/` contains learnings and reflections that Claude creates
+    automatically after fixing issues and implementing tasks. This preserves knowledge
+    about patterns, challenges, solutions, and best practices for future sessions.
