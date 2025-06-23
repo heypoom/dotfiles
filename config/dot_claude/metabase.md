@@ -9,4 +9,7 @@
   - `.claude-private/emb-*` (e.g. emb-451) contains my reference worktrees that
     are used for Claude to use as quick references (e.g. when splitting a huge
     proof-of-concept implementation branches into smaller stacked PRs)
-
+  - `.claude-private/testing-plans` contains full copy of testing plans.
+    This contains the dimensions, actions and test cases for writing e2e and unit tests.
+  - `.claude-private/tech-docs` contains full copy of technical documents.
+    This contains the technical specification of a project.
