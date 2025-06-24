@@ -55,6 +55,7 @@ abbr -a g git
 abbr -a gfo 'git fetch origin'
 abbr -a gl 'git pull'
 abbr -a gp 'git push'
+abbr -a gpf 'git push --force-with-lease'
 abbr -a gc 'git commit'
 abbr -a gco 'git checkout'
 abbr -a gd 'git diff'
