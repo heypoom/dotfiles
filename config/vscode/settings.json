@@ -300,5 +300,8 @@
   "editor.formatOnSave": true,
   "vim.vimrc.enable": true,
   "vim.vimrc.path": "$HOME/.vimrc.cursor",
-  "vim.useSystemClipboard": true
+  "vim.useSystemClipboard": true,
+  "[clojure]": {
+    "diffEditor.ignoreTrimWhitespace": true
+  }
 }
