@@ -13,6 +13,11 @@ README.md
 .claude/todos
 .claude/.DS_Store
 
+# Ignore gemini internals
+.gemini/oauth_creds.json
+.gemini/tmp
+.gemini/user_id
+
 # Ignore packer compiled plugin.
 .config/lvim/plugin/packer_compiled.lua
 
