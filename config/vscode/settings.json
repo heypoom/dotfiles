@@ -91,7 +91,6 @@
   "typescript.updateImportsOnFileMove.enabled": "always",
   "editor.tabCompletion": "on",
   "editor.suggest.localityBonus": true,
-  "python.diagnostics.sourceMapsEnabled": false,
   "[javascriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -103,7 +102,6 @@
   },
   "workbench.startupEditor": "newUntitledFile",
   "[python]": {
-    "editor.defaultFormatter": "ms-python.black-formatter",
     "editor.formatOnSave": true,
     "editor.formatOnType": true
   },
@@ -118,7 +116,6 @@
   },
   "editor.lineHeight": 33,
   "wallaby.startAutomatically": false,
-  "quokka.colorizeOutput": true,
   "quokka.colors": {
     "covered": "#62b455",
     "errorPath": "#ffa0a0",
@@ -140,10 +137,8 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "git.autofetch": true,
-  "workbench.colorTheme": "Catppuccin Mocha",
   "git.enableSmartCommit": true,
   "git.confirmSync": false,
-  "editor.formatOnSave": true,
   "emmet.triggerExpansionOnTab": true,
   "emmet.includeLanguages": {
     "javascript": "javascriptreact",
@@ -259,20 +254,6 @@
   "extensions.experimental.affinity": {
     "asvetliakov.vscode-neovim": 1
   },
-  "vscode-neovim.neovimExecutablePaths.darwin": "/opt/homebrew/bin/nvim",
-  "vscode-neovim.NVIM_APPNAME": "vscode-nvim",
-  "vscode-neovim.ctrlKeysForInsertMode": [
-    "a",
-    "c",
-    "h",
-    "j",
-    "m",
-    "o",
-    "r",
-    "t",
-    "u",
-    "w"
-  ],
   "[dart][elixir]": {
     "editor.wordBasedSuggestions": "off"
   },
@@ -285,19 +266,11 @@
   "window.titleBarStyle": "custom",
   "window.zoomLevel": -2,
   "zig.path": "/Users/poom/Library/Application Support/Code/User/globalStorage/ziglang.vscode-zig/zig_install/zig",
-  "zig.initialSetupDone": true,
-  "vscode-neovim.compositeKeys": {},
-  "github.copilot.editor.enableCodeActions": false,
   "github.copilot.renameSuggestions.triggerAutomatically": false,
-  "supermaven.otherWarning": false,
   "vite.autoStart": false,
   "vite.open": false,
-  "continue.enableTabAutocomplete": false,
-  "continue.pauseTabAutocompleteOnBattery": true,
-  "editor.experimentalInlineEdit.fontFamily": "ZedMonoNF-Extended",
   "editor.inlayHints.fontFamily": "ZedMonoNF-Extended",
   "apc.monospace.font.family": "ZedMonoNF-Extended",
-  "vue.server.hybridMode": "typeScriptPluginOnly",
   "[vue]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -306,7 +279,23 @@
       "console-ninja": {
         "command": "npx",
         "args": ["-y", "-c", "node ~/.console-ninja/mcp/"]
+      },
+      "wallaby": {
+        "command": "npx",
+        "args": ["-y", "-c", "node ~/.wallaby/mcp/"]
       }
     }
-  }
+  },
+  "workbench.colorTheme": "One Dark Pro",
+  "workbench.activityBar.location": "top",
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "github.copilot.chat.codesearch.enabled": true,
+  "github.copilot.chat.agent.thinkingTool": true,
+  "terminal.integrated.gpuAcceleration": "off",
+  "window.systemColorTheme": "dark",
+  "window.autoDetectColorScheme": false,
+  "editor.formatOnSave": true,
+  "vim.vimrc.enable": true,
+  "vim.vimrc.path": "$HOME/.vimrc.cursor",
+  "vim.useSystemClipboard": true
 }

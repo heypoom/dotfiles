@@ -62,7 +62,7 @@
   {
     "key": "alt+m",
     "command": "workbench.action.terminal.sendSequence",
-    "args": { "text": "clear && ruby path_to_enlightenment.rb\n" },
+    "args": {"text": "clear && ruby path_to_enlightenment.rb\n"},
     "when": "editorLangId == 'ruby'"
   },
   {
