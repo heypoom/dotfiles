@@ -5,9 +5,22 @@
 ---@type ChadrcConfig
 local M = {}
 
-M.ui = {
+M.base46 = {
+	theme = "onedark",
 	transparency = true,
 
+	hl_add = {},
+	hl_override = {
+		Comment = { italic = true },
+		["@comment"] = { italic = true },
+	},
+	integrations = {},
+	changed_themes = {},
+
+	theme_toggle = { "onedark", "one_light" },
+}
+
+M.ui = {
 	nvdash = {
 		load_on_startup = true
 	},
@@ -29,15 +42,6 @@ M.ui = {
 	hl_override = {},
 	changed_themes = {},
 	extended_integrations = { "trouble", "alpha", "dap" },
-}
-
-M.base46 = {
-	theme = "onedark",
-
-	hl_override = {
-		Comment = { italic = true },
-		["@comment"] = { italic = true },
-	},
 }
 
 -- M.nvdash = { load_on_startup = true }
