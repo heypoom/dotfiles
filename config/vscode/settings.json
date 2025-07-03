@@ -283,11 +283,14 @@
       "wallaby": {
         "command": "npx",
         "args": ["-y", "-c", "node ~/.wallaby/mcp/"]
+      },
+      "notion": {
+        "url": "https://mcp.notion.com/sse"
       }
     }
   },
   "workbench.colorTheme": "One Dark Pro",
-  "workbench.activityBar.location": "top",
+  "workbench.activityBar.location": "bottom",
   "github.copilot.nextEditSuggestions.enabled": true,
   "github.copilot.chat.codesearch.enabled": true,
   "github.copilot.chat.agent.thinkingTool": true,
