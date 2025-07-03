@@ -4,6 +4,13 @@ vscode
 config/vscode
 README.md
 
+# Ignore claude internals
+.claude/ide
+.claude/local
+.claude/projects
+.claude/statsig
+.claude/todos
+
 # Ignore packer compiled plugin.
 .config/lvim/plugin/packer_compiled.lua
 
