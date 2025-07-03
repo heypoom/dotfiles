@@ -6,8 +6,7 @@ BG=0x2d2d3055
 
 sketchybar --bar \
     height=33 \
-    color=$BG \
-    blur_radius=4 \
+    color=$TRANSPARENT \
     margin=0 \
 		y_offset=2 \
     sticky=on \
@@ -45,6 +44,7 @@ sketchybar --add item front_app left \
     icon.y_offset=1 \
     icon.color=$BG \
     label.drawing=no \
+    blur_radius=5 \
     script="$PLUGIN_SHARED_DIR/front_app.sh" \
     --add item front_app.separator left \
     --set front_app.separator \
@@ -77,6 +77,7 @@ sketchybar --add item clock right \
     icon.color=0xffed8796 \
 		icon.padding_left=10 \
 		label.padding_right=10 \
+    blur_radius=5 \
     update_freq=10 \
     script="$PLUGIN_SHARED_DIR/clock.sh"
 
@@ -85,6 +86,7 @@ sketchybar --add item battery right \
 		icon.padding_left=10 \
 		label.padding_right=10 \
 		background.padding_left=5 \
+    blur_radius=5 \
     update_freq=20 \
     script="$PLUGIN_DIR/battery.sh"
 
