@@ -41,6 +41,7 @@ abbr -a ch chezmoi
 abbr -a chez chezmoi
 abbr -a chcd 'chezmoi cd'
 abbr -a ched 'chezmoi edit --apply'
+abbr -a cha 'chezmoi add'
 abbr -a tree 'eza --tree'
 abbr -a grv 'gh repo view -w'
 abbr -a ta 'tmux attach'
