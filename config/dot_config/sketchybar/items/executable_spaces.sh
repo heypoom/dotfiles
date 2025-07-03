@@ -2,6 +2,6 @@
 
 source "$HOME/.config/sketchybar/config.sh"
 
-count=$(yabai -m query --spaces | jq length)
+count=1
 
 
