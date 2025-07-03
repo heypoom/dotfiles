@@ -9,6 +9,7 @@ abbr -a claude "env SHELL=bash /Users/poom/.claude/local/claude"
 
 # muscle memory
 abbr -a cursor "code"
+abbr -a mage "./bin/mage"
 
 abbr -a dev "yarn dev"
 abbr -a scr "scripts"
