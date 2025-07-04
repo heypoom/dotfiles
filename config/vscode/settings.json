@@ -283,9 +283,6 @@
       "wallaby": {
         "command": "npx",
         "args": ["-y", "-c", "node ~/.wallaby/mcp/"]
-      },
-      "notion": {
-        "url": "https://mcp.notion.com/sse"
       }
     }
   },
