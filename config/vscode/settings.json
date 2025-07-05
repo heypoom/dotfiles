@@ -300,5 +300,9 @@
   "vim.useSystemClipboard": true,
   "[clojure]": {
     "diffEditor.ignoreTrimWhitespace": true
-  }
+  },
+  "python.analysis.typeCheckingMode": "standard",
+  "vscode_custom_css.imports": [
+    "file:///Users/poom/.local/share/chezmoi/config/vscode/editor.css"
+  ]
 }
