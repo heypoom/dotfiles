@@ -286,7 +286,7 @@
       }
     }
   },
-  "workbench.colorTheme": "One Dark Pro",
+  "workbench.colorTheme": "Ayu Mirage",
   "workbench.activityBar.location": "bottom",
   "github.copilot.nextEditSuggestions.enabled": true,
   "github.copilot.chat.codesearch.enabled": true,
@@ -301,8 +301,9 @@
   "[clojure]": {
     "diffEditor.ignoreTrimWhitespace": true
   },
-  "python.analysis.typeCheckingMode": "standard",
+  "python.analysis.typeCheckingMode": "basic",
   "vscode_custom_css.imports": [
     "file:///Users/poom/.local/share/chezmoi/config/vscode/editor.css"
-  ]
+  ],
+  "vitest.nodeExecutable": "/opt/homebrew/Cellar/node/24.2.0/bin/node"
 }

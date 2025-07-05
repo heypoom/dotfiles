@@ -2,29 +2,15 @@
 	font-family: 'Zed Mono Extended', 'JetBrains Mono', monospace;
 }
 
-/* .search-view .search-widget .input-box,
-.search-view .search-widget .input-box .monaco-inputbox,
-.monaco-workbench .part.editor>.content>.one-editor-silo>.container>.title .tabs-container>.tab,
-.monaco-editor-background,
-.monaco-editor .margin,
-.monaco-workbench .part>.content,
-.monaco-workbench .editor>.content>.one-editor-silo.editor-one,
-.monaco-workbench .part.editor>.content>.one-editor-silo>.container>.title,
-.monaco-workbench .part>.title,
-.monaco-workbench,
-.monaco-workbench .part,
-body {
-	background: #fff !important;
+.monaco-workbench .part.sidebar.part.sidebar,
+.monaco-workbench .pane-header.pane-header,
+.monaco-workbench .suggest-input-container.suggest-input-container {
+  background-color: transparent !important;
 }
 
-.monaco-workbench.fullscreen,
-.monaco-scrollable-element.mac {
-	background: #000 !important;
+.monaco-workbench .sticky-widget.sticky-widget {
+  background-color: rgba(37, 37, 37, 0.5) !important;
+  box-shadow: none !important;
 }
 
-footer.part.statusbar {
-	position: fixed;
-	bottom: 22px;
-	right: 0;
-	background: transparent;
-} */
+
