@@ -20,6 +20,9 @@ set -gx MISE_FISH_AUTO_ACTIVATE 1
 set -gx REACT_EDITOR nvim
 set -gx REACT_EDITOR_CMD nvim
 
+# Define XDG config home
+set -gx XDG_CONFIG_HOME "$HOME/.config"
+
 # Define Android's SDK Path
 set -gx ANDROID_HOME "$HOME/Library/Android/sdk"
 
