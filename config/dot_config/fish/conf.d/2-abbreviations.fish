@@ -50,6 +50,7 @@ abbr -a tns 'tmux new -s'
 abbr -a devdeps 'jq .devDependencies package.json'
 abbr -a o chatgpt
 
+abbr -a lg 'lazygit'
 abbr -a brewi 'brew install'
 abbr -a gpv 'gh pr view -w'
 abbr -a vim lvim
