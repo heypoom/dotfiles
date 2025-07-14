@@ -11,6 +11,7 @@ README.md
 .claude/projects
 .claude/statsig
 .claude/todos
+.claude/shell-snapshots
 .claude/.DS_Store
 
 # Ignore gemini internals

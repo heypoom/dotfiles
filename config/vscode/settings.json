@@ -1,6 +1,5 @@
 {
   "explorer.confirmDelete": false,
-  "files.autoSave": "afterDelay",
   "files.autoSaveDelay": 1000,
   "editor.fontVariations": true,
   "editor.fontFamily": "ZedMonoNF-Extended",
@@ -173,7 +172,7 @@
   "wallaby.codeLensFeature.runTest": true,
   "editor.linkedEditing": true,
   "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
-  "editor.wordWrap": "off",
+  "editor.wordWrap": "on",
   "editor.inlineSuggest.enabled": true,
   "scss.validate": false,
   "editor.quickSuggestions": {
@@ -305,5 +304,6 @@
   "vscode_custom_css.imports": [
     "file:///Users/poom/.local/share/chezmoi/config/vscode/editor.css"
   ],
-  "vitest.nodeExecutable": "/opt/homebrew/Cellar/node/24.2.0/bin/node"
+  "vitest.nodeExecutable": "/opt/homebrew/Cellar/node/24.2.0/bin/node",
+  "eslint.codeActionsOnSave.mode": "problems"
 }

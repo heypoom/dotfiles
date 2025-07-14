@@ -1,3 +1,4 @@
 *.log
 .DS_Store
 config/dot_config/fish/private.fish
+
