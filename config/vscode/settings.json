@@ -273,18 +273,6 @@
   "[vue]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "mcp": {
-    "servers": {
-      "console-ninja": {
-        "command": "npx",
-        "args": ["-y", "-c", "node ~/.console-ninja/mcp/"]
-      },
-      "wallaby": {
-        "command": "npx",
-        "args": ["-y", "-c", "node ~/.wallaby/mcp/"]
-      }
-    }
-  },
   "workbench.colorTheme": "Ayu Mirage",
   "workbench.activityBar.location": "bottom",
   "github.copilot.nextEditSuggestions.enabled": true,
