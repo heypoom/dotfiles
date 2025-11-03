@@ -296,5 +296,10 @@
   "roo-cline.allowedCommands": ["git log", "git diff", "git show"],
   "roo-cline.deniedCommands": [],
   "kilo-code.allowedCommands": ["git log", "git diff", "git show"],
-  "kilo-code.deniedCommands": []
+  "kilo-code.deniedCommands": [],
+  "vitest.nodeExecutable": "/opt/homebrew/Cellar/node/24.2.0/bin/node",
+  "eslint.codeActionsOnSave.mode": "problems",
+  "terminal.integrated.gpuAcceleration": "off",
+  "window.systemColorTheme": "dark",
+  "window.autoDetectColorScheme": false
 }
