@@ -105,9 +105,7 @@
     "editor.formatOnType": true
   },
   "editor.suggestSelection": "first",
-  "workbench.colorCustomizations": {
-    "terminal.background": "#00000000"
-  },
+  "workbench.colorCustomizations": {},
   "workbench.commandPalette.experimental.suggestCommands": true,
   "python.poetryPath": "poetry",
   "[jsonc]": {
@@ -273,26 +271,11 @@
   "[vue]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "mcp": {
-    "servers": {
-      "console-ninja": {
-        "command": "npx",
-        "args": ["-y", "-c", "node ~/.console-ninja/mcp/"]
-      },
-      "wallaby": {
-        "command": "npx",
-        "args": ["-y", "-c", "node ~/.wallaby/mcp/"]
-      }
-    }
-  },
-  "workbench.colorTheme": "Ayu Mirage",
+  "workbench.colorTheme": "Catppuccin Latte",
   "workbench.activityBar.location": "bottom",
   "github.copilot.nextEditSuggestions.enabled": true,
   "github.copilot.chat.codesearch.enabled": true,
   "github.copilot.chat.agent.thinkingTool": true,
-  "terminal.integrated.gpuAcceleration": "off",
-  "window.systemColorTheme": "dark",
-  "window.autoDetectColorScheme": false,
   "editor.formatOnSave": true,
   "vim.vimrc.enable": true,
   "vim.vimrc.path": "$HOME/.vimrc.cursor",
@@ -304,6 +287,14 @@
   "vscode_custom_css.imports": [
     "file:///Users/poom/.local/share/chezmoi/config/vscode/editor.css"
   ],
-  "vitest.nodeExecutable": "/opt/homebrew/Cellar/node/24.2.0/bin/node",
-  "eslint.codeActionsOnSave.mode": "problems"
+  "workbench.secondarySideBar.defaultVisibility": "hidden",
+  "docker.extension.enableComposeLanguageServer": false,
+  "terminal.integrated.gpuAcceleration": "off",
+  "window.systemColorTheme": "dark",
+  "window.autoDetectColorScheme": false,
+  "mdb.mcp.server": "enabled",
+  "roo-cline.allowedCommands": ["git log", "git diff", "git show"],
+  "roo-cline.deniedCommands": [],
+  "kilo-code.allowedCommands": ["git log", "git diff", "git show"],
+  "kilo-code.deniedCommands": []
 }
