@@ -5,11 +5,6 @@ abbr -a zj zellij
 abbr -a zjn "zellij -s"
 abbr -a zja "zellij attach"
 
-abbr -a claude "env SHELL=bash /Users/poom/.claude/local/claude"
-
-# muscle memory
-abbr -a cursor "code"
-
 abbr -a dev "yarn dev"
 abbr -a scr "scripts"
 abbr -a sb "yarn storybook"
