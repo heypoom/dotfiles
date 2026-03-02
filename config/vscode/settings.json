@@ -280,7 +280,7 @@
   "python.analysis.typeCheckingMode": "basic",
   "workbench.secondarySideBar.defaultVisibility": "hidden",
   "docker.extension.enableComposeLanguageServer": false,
-  "terminal.integrated.gpuAcceleration": "off",
+  "terminal.integrated.gpuAcceleration": "on",
   "window.systemColorTheme": "dark",
   "window.autoDetectColorScheme": false,
   "mdb.mcp.server": "prompt",
