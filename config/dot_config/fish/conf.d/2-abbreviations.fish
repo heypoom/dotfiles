@@ -20,8 +20,11 @@ abbr -a edit-ghostty "chezmoi edit --apply ~/.config/ghostty/config"
 abbr -a edit-kitty "chezmoi edit --apply ~/.config/kitty/kitty.conf"
 abbr -a edit-aero "chezmoi edit --apply ~/.config/aerospace/aerospace.toml"
 
+# i like to clear term
+abbr -a c clear
+
 # vscode abbrs
-abbr -a c code
+abbr -a co code
 abbr -a cursor code
 
 abbr -a v nvim
