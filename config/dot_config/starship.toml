@@ -40,9 +40,12 @@ symbol = " "
 
 [git_branch]
 format = "[$symbol$branch(:$remote_branch)]($style) "
-symbol = " "
+symbol = ""
+style = 'green'
 
 [git_status]
+ignore_submodules = true
+untracked = ""
 disabled = true
 
 [git_metrics]
@@ -67,7 +70,7 @@ symbol = " "
 ssh_symbol = " "
 
 [java]
-symbol = " "
+disabled = true
 
 [julia]
 symbol = " "
@@ -89,6 +92,7 @@ symbol = " "
 
 [nodejs]
 symbol = " "
+disabled = true
 
 [gcloud]
 disabled = true
@@ -133,6 +137,9 @@ SUSE = " "
 Ubuntu = " "
 Unknown = " "
 Windows = " "
+
+[bun]
+disabled = true
 
 [package]
 symbol = " "
