@@ -17,22 +17,22 @@
   "terminal.integrated.profiles.osx": {
     "fish": {
       "path": "/usr/local/bin/fish",
-      "args": ["-l"],
+      "args": ["-l"]
     },
     "tmux": {
       "path": "tmux",
-      "icon": "terminal-tmux",
-    },
+      "icon": "terminal-tmux"
+    }
   },
   "terminal.integrated.profiles.linux": {
     "fish": {
       "path": "/usr/bin/fish",
-      "args": ["-l"],
+      "args": ["-l"]
     },
     "tmux": {
       "path": "tmux",
-      "icon": "terminal-tmux",
-    },
+      "icon": "terminal-tmux"
+    }
   },
   "terminal.integrated.fontSize": 15,
   "terminal.integrated.allowChords": false,
@@ -51,8 +51,8 @@
   "emmet.syntaxProfiles": {
     "javascript": "jsx",
     "xml": {
-      "attr-quotes": "single",
-    },
+      "attr-quotes": "single"
+    }
   },
   "files.watcherExclude": {
     "**/.git/objects/**": true,
@@ -60,7 +60,7 @@
     "**/node_modules/**": true,
     "**/web/node_modules": true,
     "**/web/build": true,
-    "**/admin/node_modules": true,
+    "**/admin/node_modules": true
   },
   "php.suggest.basic": false,
   "editor.minimap.renderCharacters": false,
@@ -81,7 +81,7 @@
     "**/vars/**/*.yml": "ansible",
     "**/inventory/*/*": "ansible",
     "*.ksy": "yaml",
-    ".sassrc": "jsonc",
+    ".sassrc": "jsonc"
   },
   "explorer.confirmDragAndDrop": false,
   "javascript.updateImportsOnFileMove.enabled": "never",
@@ -91,25 +91,25 @@
   "editor.tabCompletion": "on",
   "editor.suggest.localityBonus": true,
   "[javascriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "workbench.startupEditor": "newUntitledFile",
   "[python]": {
     "editor.formatOnSave": true,
-    "editor.formatOnType": true,
+    "editor.formatOnType": true
   },
   "editor.suggestSelection": "first",
   "workbench.colorCustomizations": {},
   "workbench.commandPalette.experimental.suggestCommands": true,
   "python.poetryPath": "poetry",
   "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "editor.lineHeight": 33,
   "wallaby.startAutomatically": false,
@@ -118,20 +118,20 @@
     "errorPath": "#ffa0a0",
     "errorSource": "#fe536a",
     "notCovered": "#cccccc",
-    "partiallyCovered": "#d2a032",
+    "partiallyCovered": "#d2a032"
   },
   "quokka.showOutputOnStart": true,
   "go.formatTool": "goimports",
   "go.useLanguageServer": true,
   "diffEditor.ignoreTrimWhitespace": false,
   "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "python.languageServer": "Pylance",
   "typescript.validate.enable": true,
   "javascript.validate.enable": true,
   "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "git.autofetch": true,
   "git.enableSmartCommit": true,
@@ -142,13 +142,13 @@
     "typescript": "javascriptreact",
     "typescriptreact": "html",
     "vue-html": "html",
-    "plaintext": "jade",
+    "plaintext": "jade"
   },
   "html.autoClosingTags": true,
   "typescript.autoClosingTags": true,
   "javascript.autoClosingTags": true,
   "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "workbench.editor.revealIfOpen": true,
   "[elixir]": {
@@ -162,10 +162,10 @@
     "editor.quickSuggestions": {
       "other": true,
       "comments": true,
-      "strings": true,
+      "strings": true
     },
     "editor.codeLens": true,
-    "editor.formatOnSave": false,
+    "editor.formatOnSave": false
   },
   "wallaby.codeLensFeature.runTest": true,
   "editor.linkedEditing": true,
@@ -174,7 +174,7 @@
   "editor.inlineSuggest.enabled": true,
   "scss.validate": false,
   "editor.quickSuggestions": {
-    "strings": true,
+    "strings": true
   },
   "editor.autoClosingQuotes": "always",
   "tailwindCSS.experimental.classRegex": [
@@ -182,12 +182,12 @@
     "tw=\"([^\"]*)", // <div tw="..." />
     "tw={\"([^\"}]*)", // <div tw={"..."} />
     "tw\\.\\w+`([^`]*)", // tw.xxx`...`
-    "tw\\(.*?\\)`([^`]*)", // tw(Component)`...`
+    "tw\\(.*?\\)`([^`]*)" // tw(Component)`...`
   ],
   "tailwindCSS.includeLanguages": {
     "scss": "css",
     "typescript": "javascript",
-    "typescriptreact": "javascript",
+    "typescriptreact": "javascript"
   },
   "tailwindCSS.emmetCompletions": false,
   "tailwindCSS.validate": true,
@@ -198,11 +198,11 @@
     "markdown": true,
     "scminput": false,
     "yaml": true,
-    "typescript": true,
+    "typescript": true
   },
   "security.workspace.trust.untrustedFiles": "open",
   "terminal.integrated.env.osx": {
-    "FIG_NEW_SESSION": "1",
+    "FIG_NEW_SESSION": "1"
   },
   "editor.accessibilitySupport": "off",
   "editor.cursorBlinking": "phase",
@@ -210,7 +210,7 @@
   "svelte.enable-ts-plugin": true,
   "debug.onTaskErrors": "abort",
   "[svelte]": {
-    "editor.defaultFormatter": "svelte.svelte-vscode",
+    "editor.defaultFormatter": "svelte.svelte-vscode"
   },
   "notebook.lineNumbers": "on",
   "git.openRepositoryInParentFolders": "never",
@@ -222,7 +222,7 @@
     "**/CVS": true,
     "**/.DS_Store": true,
     "**/Thumbs.db": true,
-    "**/*.olean": true,
+    "**/*.olean": true
   },
   "editor.unicodeHighlight.invisibleCharacters": false,
   "go.toolsManagement.autoUpdate": true,
@@ -235,23 +235,23 @@
     "editor.selectionHighlight": false,
     "editor.suggestSelection": "first",
     "editor.tabCompletion": "onlySnippets",
-    "editor.wordBasedSuggestions": "off",
+    "editor.wordBasedSuggestions": "off"
   },
   "window.commandCenter": false,
   "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
   "editor.unicodeHighlight.ambiguousCharacters": false,
   "figma.autocompleteBlocks": true,
   "[markdown]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "console-ninja.featureSet": "Pro",
   "workbench.editor.empty.hint": "hidden",
   "dart.flutterSdkPath": "/Users/poom/flutter",
   "extensions.experimental.affinity": {
-    "asvetliakov.vscode-neovim": 1,
+    "asvetliakov.vscode-neovim": 1
   },
   "[dart][elixir]": {
-    "editor.wordBasedSuggestions": "off",
+    "editor.wordBasedSuggestions": "off"
   },
   "settingsSync.ignoredExtensions": [],
   "settingsSync.ignoredSettings": [],
@@ -266,7 +266,7 @@
   "vite.open": false,
   "editor.inlayHints.fontFamily": "ZedMonoNF-Extended",
   "[vue]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "github.copilot.nextEditSuggestions.enabled": true,
   "github.copilot.chat.codesearch.enabled": true,
@@ -275,7 +275,7 @@
   "vim.vimrc.path": "$HOME/.vimrc.cursor",
   "vim.useSystemClipboard": true,
   "[clojure]": {
-    "diffEditor.ignoreTrimWhitespace": true,
+    "diffEditor.ignoreTrimWhitespace": true
   },
   "python.analysis.typeCheckingMode": "basic",
   "workbench.secondarySideBar.defaultVisibility": "hidden",
@@ -284,6 +284,9 @@
   "window.systemColorTheme": "dark",
   "window.autoDetectColorScheme": false,
   "mdb.mcp.server": "prompt",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
   "eslint.codeActionsOnSave.mode": "problems",
   "workbench.colorTheme": "cursor-dark",
   "window.customTitleBarVisibility": "auto",
@@ -291,13 +294,14 @@
   "custom-ui-style.font.sansSerif": "ZedMonoNF-Extended, 'Zed Mono Extended', 'JetBrains Mono', -apple-system",
   "custom-ui-style.electron": {
     "frame": false,
-    "titleBarStyle": "hiddenInset",
+    "titleBarStyle": "hiddenInset"
   },
   "custom-ui-style.stylesheet": {
     ".container > .title": {
-      "display": "none !important;",
-    },
+      "display": "none !important;"
+    }
   },
   "editor.aiStats.enabled": false,
   "workbench.activityBar.location": "top",
+  "claudeCode.preferredLocation": "panel"
 }
