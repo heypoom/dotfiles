@@ -77,8 +77,6 @@ brew "wget"
 brew "zsh"
 brew "cdr/coder/coder-cli"
 brew "cloudflare/cloudflare/cloudflared"
-brew "koekeishiya/formulae/skhd"
-brew "koekeishiya/formulae/yabai", args: ["HEAD"]
 brew "yqrashawn/goku/goku"
 cask "1password"
 cask "1password-cli"
