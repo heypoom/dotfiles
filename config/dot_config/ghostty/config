@@ -3,6 +3,24 @@ theme = dracula
 foreground = #f8f8f2
 background = #181818
 
+# Color palette (ported from Kitty)
+palette = 0=#11111b
+palette = 1=#ff9580
+palette = 2=#8aff80
+palette = 3=#ffff80
+palette = 4=#aa99ff
+palette = 5=#ff80bf
+palette = 6=#80ffea
+palette = 7=#f8f8f2
+palette = 8=#999999
+palette = 9=#ffaa99
+palette = 10=#a2ff99
+palette = 11=#ffff99
+palette = 12=#aa99ff
+palette = 13=#ff99cc
+palette = 14=#99ffee
+palette = 15=#ffffff
+
 font-size = 16
 adjust-cell-height = 4
 font-thicken = false
@@ -12,6 +30,9 @@ font-family-bold = Zed Mono Semibold Extended
 font-family-italic = Zed Mono Extended Italic
 font-family-bold-italic = Zed Mono Medium Extended Italic
 font-synthetic-style = false
+
+cursor-style = block
+cursor-style-blink = false
 
 background-opacity = 0.88
 background-blur-radius = 20
