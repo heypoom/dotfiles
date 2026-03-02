@@ -18,6 +18,10 @@ abbr -a edit-ghostty "chezmoi edit --apply ~/.config/ghostty/config"
 abbr -a edit-kitty "chezmoi edit --apply ~/.config/kitty/kitty.conf"
 abbr -a edit-aero "chezmoi edit --apply ~/.config/aerospace/aerospace.toml"
 
+# vscode abbrs
+abbr -a c code
+abbr -a cursor code
+
 abbr -a v nvim
 abbr -a vi nvim
 abbr -a lv nvim
