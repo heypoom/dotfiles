@@ -260,7 +260,6 @@
   "editor.hideCursorInOverviewRuler": true,
   "editor.minimap.enabled": false,
   "window.zoomLevel": -2,
-  "zig.path": "/Users/poom/Library/Application Support/Code/User/globalStorage/ziglang.vscode-zig/zig_install/zig",
   "github.copilot.renameSuggestions.triggerAutomatically": false,
   "vite.autoStart": false,
   "vite.open": false,
@@ -304,5 +303,6 @@
   "editor.aiStats.enabled": false,
   "workbench.activityBar.location": "bottom",
   "claudeCode.preferredLocation": "panel",
-  "claudeCode.selectedModel": "claude-sonnet-4-6"
+  "claudeCode.selectedModel": "claude-sonnet-4-6",
+  "zig.zls.enabled": "on"
 }
