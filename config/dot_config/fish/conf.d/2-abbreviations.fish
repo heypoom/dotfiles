@@ -5,11 +5,12 @@ abbr -a zj zellij
 abbr -a zjn "zellij -s"
 abbr -a zja "zellij attach"
 
-abbr -a dev "yarn dev"
+abbr -a dev "bun run dev"
 abbr -a scr "scripts"
-abbr -a sb "yarn storybook"
+abbr -a sb "bun run storybook"
 
 abbr -a raya "env TERM=xterm-256color ssh raya"
+abbr -a yatima "env TERM=xterm-256color ssh yatima"
 
 abbr -a edit-abbr "chezmoi edit --apply ~/.config/fish/conf.d/2-abbreviations.fish"
 abbr -a edit-zj "chezmoi edit --apply ~/.config/zellij/config.kdl"
@@ -20,6 +21,7 @@ abbr -a edit-aero "chezmoi edit --apply ~/.config/aerospace/aerospace.toml"
 abbr -a v nvim
 abbr -a vi nvim
 abbr -a lv nvim
+abbr -a vim nvim
 abbr -a vich 'chezmoi edit --apply'
 abbr -a nv 'env NVIM_APPNAME=nvchad nvim'
 abbr -a nvchad 'env NVIM_APPNAME=nvchad nvim'
@@ -48,7 +50,6 @@ abbr -a o chatgpt
 abbr -a lg 'lazygit'
 abbr -a brewi 'brew install'
 abbr -a gpv 'gh pr view -w'
-abbr -a vim lvim
 abbr -a gaa 'git add --all'
 abbr -a caski 'brew install --cask'
 abbr -a g git
