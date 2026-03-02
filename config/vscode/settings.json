@@ -304,5 +304,5 @@
   "editor.aiStats.enabled": false,
   "workbench.activityBar.location": "top",
   "claudeCode.preferredLocation": "panel",
-  "claudeCode.selectedModel": "claude-opus-4-6"
+  "claudeCode.selectedModel": "claude-sonnet-4-6"
 }
