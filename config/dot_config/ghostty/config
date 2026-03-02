@@ -23,7 +23,7 @@ window-padding-x = 12
 window-padding-y = 10
 
 window-theme = dark
-macos-titlebar-style = hidden
+macos-titlebar-style = tabs
 window-colorspace = display-p3
 quit-after-last-window-closed = true
 macos-secure-input-indication = true
