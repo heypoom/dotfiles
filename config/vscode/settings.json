@@ -302,7 +302,7 @@
     }
   },
   "editor.aiStats.enabled": false,
-  "workbench.activityBar.location": "top",
+  "workbench.activityBar.location": "bottom",
   "claudeCode.preferredLocation": "panel",
   "claudeCode.selectedModel": "claude-sonnet-4-6"
 }
