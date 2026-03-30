@@ -25,8 +25,6 @@ abbr -a c clear
 
 # vscode abbrs
 abbr -a co code
-abbr -a cursor code
-
 abbr -a v nvim
 abbr -a vi nvim
 abbr -a lv nvim
