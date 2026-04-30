@@ -1,8 +1,5 @@
 [tools]
 python = "3.12"
 node = "22"
-"github:abhinav/git-spice" = { version = "latest", exe = "gs" }
 java = "temurin-21"
-go = "latest"
-ruby = "3.0.2"
-yarn = "1.22.22"
+"github:abhinav/git-spice" = "latest"
