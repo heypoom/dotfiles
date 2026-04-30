@@ -1,18 +1,6 @@
-set -l mise_bin ""
+set -l mise_shims "$HOME/.local/share/mise/shims"
 
-if command -q mise
-  set mise_bin mise
-else if test -x "$HOME/.local/bin/mise"
-  set mise_bin "$HOME/.local/bin/mise"
-else if test -x "/opt/homebrew/bin/mise"
-  set mise_bin "/opt/homebrew/bin/mise"
-end
-
-if test -n "$mise_bin"
-  if status is-interactive
-    $mise_bin activate fish | source
-  else
-    $mise_bin activate fish --shims | source
-  end
+if test -d "$mise_shims"
+  fish_add_path --global --move --path "$mise_shims"
 end
 
