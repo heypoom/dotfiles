@@ -5,6 +5,7 @@ abbr -a zj zellij
 abbr -a zjn "zellij -s"
 abbr -a zja "zellij attach"
 
+abbr -a b "bun"
 abbr -a gs "git-spice"
 
 abbr -a dev "bun run dev"
