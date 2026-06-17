@@ -201,7 +201,7 @@
   },
   "security.workspace.trust.untrustedFiles": "open",
   "terminal.integrated.env.osx": {
-    "FIG_NEW_SESSION": "1"
+    "FIG_NEW_SESSION": "1",
   },
   "editor.accessibilitySupport": "off",
   "editor.cursorBlinking": "phase",
@@ -285,7 +285,7 @@
     "source.fixAll.eslint": "explicit",
   },
   "eslint.codeActionsOnSave.mode": "problems",
-  "workbench.colorTheme": "cursor-dark",
+  "workbench.colorTheme": "Dark Modern",
   "window.customTitleBarVisibility": "auto",
   "window.titleBarStyle": "custom",
   "custom-ui-style.font.sansSerif": "ZedMonoNF-Extended, 'Zed Mono Extended', 'JetBrains Mono', -apple-system",

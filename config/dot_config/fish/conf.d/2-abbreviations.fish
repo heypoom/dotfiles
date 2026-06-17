@@ -74,7 +74,7 @@ abbr -a gst 'git stash'
 abbr -a gstp 'git stash pop'
 abbr -a scripts 'jq .scripts package.json'
 abbr -a staging 'git fetch origin staging && git merge origin/staging'
-abbr -a restack 'gs branch restack --branch=(git symbolic-ref --short HEAD)'
+abbr -a restack 'git-spice branch restack --branch=(git symbolic-ref --short HEAD)'
 
 # Neovim Codi abbreviations (live playground)
 abbr -a crb 'lvim "+Codi ruby"'
