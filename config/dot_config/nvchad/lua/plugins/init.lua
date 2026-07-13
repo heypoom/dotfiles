@@ -17,20 +17,81 @@ return {
     opts = {
       checkbox = {
         unchecked = {
-            icon = '󰄱',
-            highlight = 'RenderMarkdownUnchecked',
+          icon = "󰄱",
+          highlight = "RenderMarkdownUnchecked",
         },
         checked = {
-            icon = '󰄵',
-            highlight = 'RenderMarkdownChecked',
+          icon = "󰄵",
+          highlight = "RenderMarkdownChecked",
         },
         custom = {
           in_progress = {
             raw = "[.]",
             rendered = "󰄗",
-            highlight = "RenderMarkdownWarn"
+            highlight = "RenderMarkdownWarn",
           },
         },
+      },
+    },
+  },
+
+  {
+    "stevearc/oil.nvim",
+    lazy = false,
+    keys = {
+      { "-", "<cmd>Oil<cr>", desc = "Open parent directory" },
+      { "<leader>o", "<cmd>Oil --float<cr>", desc = "Open Oil float" },
+    },
+    opts = {
+      default_file_explorer = true,
+      columns = {
+        "icon",
+      },
+      view_options = {
+        show_hidden = true,
+      },
+      keymaps = {
+        ["n"] = {
+          callback = function()
+            vim.cmd "normal! o"
+            vim.cmd "startinsert"
+          end,
+          desc = "Create new entry",
+          mode = "n",
+        },
+      },
+    },
+  },
+
+  {
+    "mikavilpas/yazi.nvim",
+    version = "*",
+    event = "VeryLazy",
+    dependencies = {
+      { "nvim-lua/plenary.nvim", lazy = true },
+    },
+    keys = {
+      {
+        "<leader>y",
+        mode = { "n", "v" },
+        "<cmd>Yazi<cr>",
+        desc = "Open yazi at current file",
+      },
+      {
+        "<leader>Y",
+        "<cmd>Yazi cwd<cr>",
+        desc = "Open yazi at cwd",
+      },
+      {
+        "<C-Up>",
+        "<cmd>Yazi toggle<cr>",
+        desc = "Resume yazi session",
+      },
+    },
+    opts = {
+      open_for_directories = false,
+      keymaps = {
+        show_help = "<f1>",
       },
     },
   },
