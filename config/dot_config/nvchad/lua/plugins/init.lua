@@ -74,9 +74,5 @@ return {
     opts = {
       states = { "[ ]", "[.]", "[x]" },
     },
-    keys = {
-      { "<CR>", "<cmd>CheckboxCycleNext<cr>", ft = "markdown", desc = "Cycle checkbox" },
-      { "<S-CR>", "<cmd>CheckboxCyclePrev<cr>", ft = "markdown", desc = "Cycle checkbox (reverse)" },
-    },
   },
 }
