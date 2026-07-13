@@ -1,4 +1,4 @@
 git:
-  paging:
-    colorArg: always
-    useConfig: true
+  pagers:
+    - colorArg: always
+      useConfig: true
