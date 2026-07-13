@@ -36,6 +36,7 @@ cursor-style-blink = false
 
 background-opacity = 0.88
 background-blur-radius = 20
+split-divider-color = #44475a
 
 shell-integration = detect
 shell-integration-features = true
