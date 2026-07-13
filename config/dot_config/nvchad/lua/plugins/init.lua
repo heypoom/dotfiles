@@ -13,10 +13,23 @@ return {
 
   {
     "MeanderingProgrammer/render-markdown.nvim",
+    lazy = false,
     opts = {
       checkbox = {
+        unchecked = {
+            icon = '󰄱',
+            highlight = 'RenderMarkdownUnchecked',
+        },
+        checked = {
+            icon = '󰄵',
+            highlight = 'RenderMarkdownChecked',
+        },
         custom = {
-          in_progress = { raw = "[.]", rendered = "⊡ ", highlight = "RenderMarkdownWarn" },
+          in_progress = {
+            raw = "[.]",
+            rendered = "󰄗",
+            highlight = "RenderMarkdownWarn"
+          },
         },
       },
     },
