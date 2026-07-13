@@ -12,7 +12,6 @@ This is a personal dotfiles repository managed by [Chezmoi](https://www.chezmoi.
 - `config/` - Main configuration directory containing dotfiles
   - `dot_config/` - XDG config directory (~/.config)
   - `dot_claude/` - Claude-specific configurations and commands
-  - `dot_hammerspoon/` - Hammerspoon window manager config
   - `vscode/` - VS Code settings and keybindings
 - `setup/` - Bootstrap and installation scripts
   - `macos/` - macOS-specific setup scripts
@@ -24,20 +23,14 @@ This is a personal dotfiles repository managed by [Chezmoi](https://www.chezmoi.
 ### Main Components
 
 **Editor Configurations:**
-- Multiple Neovim distributions: LunarVim, NVChad, LazyVim, AstroNvim, and Kickstart
+- Neovim configuration via nvchad
 - VS Code with custom settings and keybindings
 - Vim configurations for different contexts
 
 **Shell and Terminal:**
 - Fish shell as primary shell with custom functions and abbreviations
 - Tmux configuration with custom key bindings
-- Starship prompt configuration
-- Various terminal emulators: Alacritty, Kitty, Ghostty
-
-**Window Management:**
-- Hammerspoon for macOS window management
-- Phoenix WM configuration (TypeScript-based)
-- Aerospace for tiling window management
+- Various terminal emulators: Kitty and Ghostty
 
 **Development Tools:**
 - Git configuration with templates
@@ -87,4 +80,3 @@ When working with this repository:
 - The configuration supports both macOS and Linux environments
 - Multiple editor configurations are maintained simultaneously
 - Phoenix WM configuration is written in TypeScript and requires compilation
-
