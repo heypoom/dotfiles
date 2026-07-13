@@ -13,7 +13,6 @@ abbr -a scr "scripts"
 abbr -a sb "bun run storybook"
 
 abbr -a raya "env TERM=xterm-256color ssh raya"
-abbr -a yatima "env TERM=xterm-256color ssh yatima"
 
 abbr -a edit-abbr "chezmoi edit --apply ~/.config/fish/conf.d/2-abbreviations.fish"
 abbr -a edit-zj "chezmoi edit --apply ~/.config/zellij/config.kdl"
