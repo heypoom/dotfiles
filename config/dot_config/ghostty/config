@@ -40,6 +40,11 @@ background-blur-radius = 20
 shell-integration = detect
 shell-integration-features = true
 
+# Keymap: Kitty parity
+keybind = cmd+n=new_window
+keybind = cmd+t=new_tab
+keybind = cmd+shift+n=new_split
+
 window-padding-x = 12
 window-padding-y = 10
 

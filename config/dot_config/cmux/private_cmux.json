@@ -296,4 +296,12 @@
   //       "showNotifications" : "cmd+i"
   //     }
   //   },
+  "shortcuts": {
+    "bindings": {
+      "newWindow": "cmd+n",
+      "newSurface": "cmd+t",
+      "splitRight": "cmd+d",
+      "splitDown" : "cmd+shift+d"
+    }
+  }
 }
