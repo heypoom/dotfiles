@@ -3,7 +3,6 @@ tap "asmvik/formulae", "https://github.com/asmvik/homebrew-formulae.git", truste
 tap "bjarneo/cliamp", trusted: true
 tap "borkdude/brew", trusted: true
 tap "felixkratz/formulae", "https://github.com/FelixKratz/homebrew-formulae", trusted: true
-tap "gastownhall/beads", "https://github.com/gastownhall/homebrew-beads.git", trusted: true
 tap "homebrew/services"
 tap "localsend/localsend", trusted: true
 tap "nikitabobko/tap", trusted: true
@@ -130,16 +129,12 @@ brew "wget"
 brew "yazi"
 # Pluggable terminal workspace, with terminal multiplexer as the base feature
 brew "zellij"
-# A retro terminal music player inspired by Winamp 2.x
-brew "bjarneo/cliamp/cliamp"
 # Native, fast starting Clojure interpreter for scripting.
 brew "borkdude/brew/babashka"
 # A minimal and opinionated linter for Clojure code that sparks joy.
 brew "borkdude/brew/clj-kondo"
 # Custom macOS statusbar with shell plugin, interaction and graph support
 brew "felixkratz/formulae/sketchybar"
-# Migration shim for the beads Homebrew formula
-brew "gastownhall/beads/bd"
 # Password manager that keeps all passwords secure behind one password
 cask "1password"
 # Command-line interface for 1Password
