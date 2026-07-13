@@ -1,0 +1,80 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run the `open default settings` command
+// from the command palette or from `Zed` application menu.
+{
+  "proxy": "",
+  "edit_predictions": {
+    "allow_data_collection": "no",
+    "provider": "copilot"
+  },
+  "agent_servers": {
+    "claude-acp": {
+      "type": "registry"
+    },
+    "codex-acp": {
+      "type": "registry"
+    }
+  },
+  "cli_default_open_behavior": "existing_window",
+  "project_panel": {
+    "dock": "left",
+  },
+  "outline_panel": {
+    "dock": "left",
+  },
+  "collaboration_panel": {
+    "button": false,
+    "dock": "left",
+  },
+  "git_panel": {
+    "dock": "left",
+  },
+  "context_servers": {
+    
+  },
+  "icon_theme": {
+    "mode": "dark",
+    "light": "Catppuccin Mocha",
+    "dark": "Catppuccin Mocha"
+  },
+  "agent": {
+    "sidebar_side": "right",
+    "tool_permissions": {
+      "default": "allow",
+    },
+    "dock": "right",
+  },
+  "base_keymap": "VSCode",
+  "vim_mode": true,
+  "vim": {
+    "use_system_clipboard": "always",
+  },
+  "prettier": {
+    "allowed": true,
+  },
+  "relative_line_numbers": "enabled",
+  "ui_font_size": 12,
+  "buffer_font_size": 14,
+  "theme": {
+    "mode": "dark",
+    "light": "Tokyo Night Light",
+    "dark": "Carbonfox - blurred",
+  },
+  "languages": {
+    "JavaScript": {
+      "code_actions_on_format": {
+        "sources.fixAll.eslint": true,
+      },
+    },
+    "TypeScript": {
+      "code_actions_on_format": {
+        "sources.fixAll.eslint": true,
+      },
+    },
+  },
+}
