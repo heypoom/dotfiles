@@ -1,217 +1,252 @@
 tap "abhinav/tap"
+tap "asmvik/formulae", "https://github.com/asmvik/homebrew-formulae.git"
+tap "bjarneo/cliamp"
 tap "borkdude/brew"
-tap "felixkratz/formulae"
+tap "felixkratz/formulae", "https://github.com/FelixKratz/homebrew-formulae"
+tap "gastownhall/beads", "https://github.com/gastownhall/homebrew-beads.git"
 tap "homebrew/services"
-tap "koekeishiya/formulae"
 tap "localsend/localsend"
 tap "nikitabobko/tap"
 tap "oven-sh/bun"
-brew "act"
+# Code searching, linting, rewriting
+brew "ast-grep"
+# Resource monitor. C++ version and continuation of bashtop and bpytop
+brew "btop"
+# Powerful, enterprise-ready, open source web server with automatic HTTPS
 brew "caddy"
+# TIFF library and utilities
+brew "libtiff"
+# Dynamic, general-purpose programming language
 brew "clojure"
+# Cloudflare Tunnel client (formerly Argo Tunnel)
 brew "cloudflared"
+# Modern, maintained replacement for ls
 brew "eza"
+# Simple, fast and user-friendly alternative to find
+brew "fd"
+# Play, record, convert, and stream select audio and video codecs
 brew "ffmpeg"
+# User-friendly command-line shell for UNIX-like operating systems
 brew "fish"
+# Terminal JSON viewer
+brew "fx"
+# Command-line fuzzy finder written in Go
 brew "fzf"
+# Interact with Google Gemini AI models from the command-line
+brew "gemini-cli"
+# GitHub command-line tool
 brew "gh"
-brew "ghostscript"
+# Interpreter for PostScript and PDF
+brew "ghostscript", link: false
+# Distributed revision control system
 brew "git"
+# Git extension for versioning large files
+brew "git-lfs"
+# Manage stacked Git branches
+brew "git-spice"
+# GNU implementation of the famous stream editor
 brew "gnu-sed"
+# GNU Privacy Guard (OpenPGP)
 brew "gnupg"
+# Graph visualization software from AT&T and Bell Labs
 brew "graphviz"
+# Command-line benchmarking tool
+brew "hyperfine"
+# Tools and libraries to manipulate images in select formats
 brew "imagemagick"
+# Lightweight and flexible command-line JSON processor
 brew "jq"
-brew "mise"
+# Build tool for Clojure
+brew "leiningen"
+# YAML Parser
+brew "libyaml"
+# Curses-based tool for viewing and analyzing log files
+brew "lnav"
+# Web and API based SMTP testing tool
+brew "mailhog"
+# Node version management
 brew "n"
+# Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
+# Port scanning utility for large networks
 brew "nmap"
-brew "node@16"
+# Open-source, cross-platform JavaScript runtime environment
 brew "node@18"
+# Open-source, cross-platform JavaScript runtime environment
 brew "node@20"
+# Libraries for security-enabled client and server applications
 brew "nss"
+# Development kit for the Java programming language
 brew "openjdk@17"
+# Development kit for the Java programming language
 brew "openjdk@21", link: true
-brew "pdftk-java"
+# CLI for Postgres with auto-completion and syntax highlighting
 brew "pgcli"
+# Pinentry for GPG on Mac
 brew "pinentry-mac"
+# Execute binaries from Python packages in isolated environments
 brew "pipx"
+# Your Gateway to Embedded Software Development Excellence
+brew "platformio"
+# PNG image optimizing utility
 brew "pngquant"
+# Fast, disk space efficient package manager
 brew "pnpm", link: false
-brew "postgresql@14", restart_service: :changed
+# Object-relational database system
+brew "postgresql@14"
+# Object-relational database system
+brew "postgresql@16", restart_service: :changed
+# Tools for and transforming and inspecting PDF files
 brew "qpdf"
-brew "ranger"
+# Persistent key-value database, with built-in net interface
 brew "redis"
+# Search tool like grep and The Silver Searcher
 brew "ripgrep"
+# Used as a compiler wrapper and avoids compilation when possible
 brew "sccache"
+# Semantic version control CLI with entity-level diffs and blame
+brew "sem-cli"
+# Penetration testing for SQL injection and database servers
+brew "sqlmap"
+# User interface to the TELNET protocol
+brew "telnet"
+# Code-search similar to ack
 brew "the_silver_searcher"
+# Terminal multiplexer
 brew "tmux"
+# List detailed info about USB devices
+brew "usbutils"
+# Version manager with support for Java, Node.js, Flutter, .NET & more
+brew "vfox"
+# Internet file retriever
 brew "wget"
+# Blazing fast terminal file manager written in Rust, based on async I/O
 brew "yazi"
-brew "yt-dlp"
+# Pluggable terminal workspace, with terminal multiplexer as the base feature
 brew "zellij"
-brew "abhinav/tap/git-spice", link: false
-brew "borkdude/brew/babashka"
-brew "borkdude/brew/clj-kondo"
-brew "felixkratz/formulae/sketchybar"
-brew "oven-sh/bun/bun"
+# Password manager that keeps all passwords secure behind one password
 cask "1password"
+# Command-line interface for 1Password
 cask "1password-cli"
-cask "aerospace"
-cask "affinity-designer"
-cask "affinity-photo"
+# Application launcher and productivity software
 cask "alfred"
+# Android SDK component
 cask "android-platform-tools"
+# Tools for the Android SDK
 cask "android-sdk"
+# Chromium based browser
 cask "arc"
-cask "bambu-studio"
+# Multi-track audio editor and recorder
+cask "audacity"
+# Web browser focusing on privacy
 cask "brave-browser"
+# Open source IDE for exploring and testing APIs
 cask "bruno"
+# OpenAI's official ChatGPT desktop app
 cask "chatgpt"
-cask "cinebench"
+# Anthropic's official Claude AI desktop app
 cask "claude"
+# Free app that makes your Internet safer
 cask "cloudflare-warp"
-cask "contexts"
+# Ghostty-based terminal with vertical tabs and notifications for AI coding agents
+cask "cmux"
+# OpenAI's coding agent that runs in your terminal
+cask "codex"
+# Write, edit, and chat about your code with AI
 cask "cursor"
-cask "cyberduck"
-cask "cycling74-max"
+# Disk space visualiser
 cask "daisydisk"
+# Client for the Dropbox cloud storage service
 cask "dropbox"
-cask "fing"
-cask "firefox"
-cask "flutter"
 cask "font-zed-mono"
+# Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
+# Web browser
 cask "google-chrome"
-cask "google-cloud-sdk"
-cask "graalvm-jdk@21"
-cask "hammerspoon"
-cask "handbrake"
-cask "jetbrains-toolbox"
-cask "keyboard-maestro"
-cask "kit"
+# Open-source video transcoder
+cask "handbrake-app"
+# Open-source keystroke visualiser
+cask "keycastr"
+# GPU-based terminal emulator
 cask "kitty"
-cask "krisp"
-cask "linear-linear"
+# App to manage software development and track bugs
+cask "linear"
+# Host-based application firewall
 cask "little-snitch"
-cask "localsend"
+# Screen and video recording software
 cask "loom"
+# Cable-free audio router
 cask "loopback"
-cask "meshlab"
+# GitHub and Linear notifications on your desktop and menu bar
 cask "neat"
-cask "neovide"
+# Reverse proxy, secure introspectable tunnels to localhost
+cask "ngrok"
+# App to write, plan, collaborate, and get organised
 cask "notion"
+# Calendar for professionals and teams
 cask "notion-calendar"
+# Open-source software for live streaming and screen recording
 cask "obs"
+# Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
+# AI coding agent desktop client
+cask "opencode-desktop"
+# Replacement for Docker Desktop
 cask "orbstack"
-cask "orcaslicer"
-cask "osquery"
-cask "pd"
+# PDF reader, editor and annotator
 cask "pdf-expert"
-cask "prismlauncher"
+# Control your tools with a few keystrokes
 cask "raycast"
-cask "rewind"
+# Collection of apps available by subscription
 cask "setapp"
+# App that enables mouse-free UI interaction
 cask "shortcat"
+# Team communication and collaboration software
 cask "slack"
-cask "steam"
-cask "tailscale"
-cask "touchdesigner"
-cask "visual-studio-code"
-cask "warp"
+# Mesh VPN based on WireGuard
+cask "tailscale-app"
+# Multimedia player
+cask "vlc"
+# Native desktop client for WhatsApp
+cask "whatsapp"
+# Multiplayer code editor
 cask "zed"
-cask "zen-browser"
+# Gecko based web browser
+cask "zen"
+# Video communication and virtual meeting platform
 cask "zoom"
-vscode "aaron-bond.better-comments"
-vscode "andrewleedham.vscode-css-modules"
-vscode "antfu.browse-lite"
-vscode "antfu.iconify"
-vscode "antfu.icons-carbon"
-vscode "antfu.unocss"
-vscode "antfu.vite"
-vscode "ardenivanov.svelte-intellisense"
-vscode "astro-build.astro-vscode"
-vscode "asvetliakov.vscode-neovim"
-vscode "austenc.tailwind-docs"
-vscode "betterthantomorrow.calva"
-vscode "betterthantomorrow.calva-spritz"
-vscode "boyswan.glsl-literal"
-vscode "bradlc.vscode-tailwindcss"
-vscode "catppuccin.catppuccin-vsc"
-vscode "christian-kohler.npm-intellisense"
-vscode "continue.continue"
-vscode "dart-code.dart-code"
-vscode "dart-code.flutter"
-vscode "davidanson.vscode-markdownlint"
-vscode "dbaeumer.vscode-eslint"
-vscode "drcika.apc-extension"
-vscode "eamodio.gitlens"
-vscode "editorconfig.editorconfig"
-vscode "enkia.tokyo-night"
-vscode "esbenp.prettier-vscode"
-vscode "figma.figma-vscode-extension"
-vscode "firsttris.vscode-jest-runner"
-vscode "github.copilot"
-vscode "github.copilot-chat"
-vscode "github.remotehub"
-vscode "github.vscode-github-actions"
-vscode "github.vscode-pull-request-github"
-vscode "golang.go"
-vscode "graphql.vscode-graphql"
-vscode "graphql.vscode-graphql-syntax"
-vscode "hbenl.vscode-test-explorer"
-vscode "humao.rest-client"
-vscode "jakebecker.elixir-ls"
-vscode "johnlindquist.kit-extension"
-vscode "limejuly.vscode-yaml-block-highlight"
-vscode "mechatroner.rainbow-csv"
-vscode "mongodb.mongodb-vscode"
-vscode "ms-azuretools.vscode-docker"
-vscode "ms-python.debugpy"
-vscode "ms-python.isort"
-vscode "ms-python.python"
-vscode "ms-python.vscode-pylance"
-vscode "ms-toolsai.jupyter"
-vscode "ms-toolsai.jupyter-keymap"
-vscode "ms-toolsai.jupyter-renderers"
-vscode "ms-toolsai.vscode-jupyter-cell-tags"
-vscode "ms-toolsai.vscode-jupyter-slideshow"
-vscode "ms-vscode-remote.remote-containers"
-vscode "ms-vscode-remote.remote-ssh"
-vscode "ms-vscode-remote.remote-ssh-edit"
-vscode "ms-vscode-remote.vscode-remote-extensionpack"
-vscode "ms-vscode.remote-explorer"
-vscode "ms-vscode.remote-repositories"
-vscode "ms-vscode.remote-server"
-vscode "ms-vscode.test-adapter-converter"
-vscode "ms-vscode.vscode-speech"
-vscode "naumovs.color-highlight"
-vscode "pkief.material-icon-theme"
-vscode "prisma.prisma"
-vscode "pveyes.aperture"
-vscode "redhat.vscode-yaml"
-vscode "rust-lang.rust-analyzer"
-vscode "shopify.ruby-lsp"
-vscode "skyapps.fish-vscode"
-vscode "slevesque.shader"
-vscode "styled-components.vscode-styled-components"
-vscode "supermaven.supermaven"
-vscode "svelte.svelte-vscode"
-vscode "swellaby.rust-pack"
-vscode "swellaby.vscode-rust-test-adapter"
-vscode "tamasfe.even-better-toml"
-vscode "tamuratak.vscode-lezer"
-vscode "thebearingedge.vscode-sql-lit"
-vscode "unifiedjs.vscode-mdx"
-vscode "usernamehw.errorlens"
-vscode "vitest.explorer"
-vscode "vue.volar"
-vscode "vunguyentuan.vscode-css-variables"
-vscode "wakatime.vscode-wakatime"
-vscode "wallabyjs.console-ninja"
-vscode "wallabyjs.quokka-vscode"
-vscode "wallabyjs.wallaby-extension-pack"
-vscode "wallabyjs.wallaby-vscode"
-vscode "xadillax.viml"
-vscode "ziglang.vscode-zig"
+go "github.com/go-delve/delve/cmd/dlv"
+go "github.com/davidrjenni/reftools/cmd/fillswitch"
+go "cmd/go"
+go "github.com/abice/go-enum"
+go "cmd/gofmt"
+go "github.com/segmentio/golines"
+go "github.com/fatih/gomodifytags"
+go "github.com/abenz1267/gomvp"
+go "golang.org/x/tools/gopls"
+go "github.com/cweill/gotests/gotests"
+go "gotest.tools/gotestsum"
+go "github.com/josharian/impl"
+go "github.com/tmc/json-to-struct"
+go "github.com/kyoh86/richgo"
+go "honnef.co/go/tools/cmd/staticcheck"
+cargo "rsw"
+cargo "wasm-pack"
+npm "@ast-grep/cli"
+npm "@google/gemini-cli"
+npm "@mariozechner/pi-coding-agent"
+npm "@metabase/cli"
+npm "@ngrok/ngrok"
+npm "@playwright/cli"
+npm "@wallabyjs/cli"
+npm "cline"
+npm "corepack"
+npm "eslint"
+npm "local-ssl-proxy"
+npm "local-web-server"
+npm "madge"
+npm "rimraf"
+npm "serve"
+npm "tsx"
+npm "yarn"
+npm "zx"
