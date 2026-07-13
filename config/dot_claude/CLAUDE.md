@@ -4,7 +4,7 @@ This file contains Poom's preferences for using Claude Code.
 
 ## Project Preferences for Metabase
 
-- @~/Workspaces/metabase/metabase/.claude-private/CLAUDE.md
+- @~/Workspaces/metabase/metabase/.agent-private/CLAUDE.md
   - This stores the CLAUDE.md local memory for the `metabase` project repository.
   - This is for my work on Metabase. Read it first when working on Metabase.
   - Do not run `yarn lint-eslint` as it is not designed to be ran for individual files.
