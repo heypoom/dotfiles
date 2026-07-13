@@ -1,6 +1,6 @@
-# CLAUDE.md
+# AGENTS.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+This file provides guidance to agents when working with dotfiles in this repository.
 
 ## Overview
 
@@ -87,3 +87,4 @@ When working with this repository:
 - The configuration supports both macOS and Linux environments
 - Multiple editor configurations are maintained simultaneously
 - Phoenix WM configuration is written in TypeScript and requires compilation
+
