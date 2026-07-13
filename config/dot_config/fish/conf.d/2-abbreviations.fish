@@ -28,18 +28,7 @@ abbr -a c clear
 abbr -a co code
 abbr -a v nvim
 abbr -a vi nvim
-abbr -a lv nvim
 abbr -a vim nvim
-abbr -a vich 'chezmoi edit --apply'
-abbr -a nv 'env NVIM_APPNAME=nvchad nvim'
-abbr -a nvchad 'env NVIM_APPNAME=nvchad nvim'
-abbr -a nvim-base 'nvim'
-abbr -a nvim-chad 'env NVIM_APPNAME=nvchad nvim'
-abbr -a lazyvim 'env NVIM_APPNAME=lazyvim nvim'
-abbr -a nvim-lazy 'env NVIM_APPNAME=lazyvim nvim'
-abbr -a nvim-astro 'env NVIM_APPNAME=astro nvim'
-abbr -a nvim-kick 'env NVIM_APPNAME=kickstart nvim'
-abbr -a nvim-lunar 'lvim'
 abbr -a ls eza
 abbr -a ch chezmoi
 abbr -a chez chezmoi
@@ -75,18 +64,6 @@ abbr -a gstp 'git stash pop'
 abbr -a scripts 'jq .scripts package.json'
 abbr -a staging 'git fetch origin staging && git merge origin/staging'
 abbr -a restack 'git-spice branch restack --branch=(git symbolic-ref --short HEAD)'
-
-# Neovim Codi abbreviations (live playground)
-abbr -a crb 'lvim "+Codi ruby"'
-abbr -a cjs 'lvim "+Codi javascript"'
-abbr -a cts 'lvim "+Codi typescript"'
-abbr -a cclj 'lvim "+Codi clojure"'
-abbr -a cpy 'lvim "+Codi python"'
-abbr -a clua 'lvim "+Codi lua"'
-abbr -a cex 'lvim "+Codi elixir"'
-abbr -a cjl 'lvim "+Codi julia"'
-abbr -a chs 'lvim "+Codi haskell"'
-abbr -a cmath 'lvim "+Codi mathjs"'
 
 # emacs new frame
 abbr -a emacsf "emacsclient --no-wait --create-frame"
