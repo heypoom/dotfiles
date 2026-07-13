@@ -1,13 +1,13 @@
-tap "abhinav/tap"
-tap "asmvik/formulae", "https://github.com/asmvik/homebrew-formulae.git"
-tap "bjarneo/cliamp"
-tap "borkdude/brew"
-tap "felixkratz/formulae", "https://github.com/FelixKratz/homebrew-formulae"
-tap "gastownhall/beads", "https://github.com/gastownhall/homebrew-beads.git"
+tap "abhinav/tap", trusted: true
+tap "asmvik/formulae", "https://github.com/asmvik/homebrew-formulae.git", trusted: true
+tap "bjarneo/cliamp", trusted: true
+tap "borkdude/brew", trusted: true
+tap "felixkratz/formulae", "https://github.com/FelixKratz/homebrew-formulae", trusted: true
+tap "gastownhall/beads", "https://github.com/gastownhall/homebrew-beads.git", trusted: true
 tap "homebrew/services"
-tap "localsend/localsend"
-tap "nikitabobko/tap"
-tap "oven-sh/bun"
+tap "localsend/localsend", trusted: true
+tap "nikitabobko/tap", trusted: true
+tap "oven-sh/bun", trusted: true
 # Code searching, linting, rewriting
 brew "ast-grep"
 # Resource monitor. C++ version and continuation of bashtop and bpytop
@@ -50,12 +50,18 @@ brew "gnu-sed"
 brew "gnupg"
 # Graph visualization software from AT&T and Bell Labs
 brew "graphviz"
+# Agent multiplexer that lives in your terminal
+brew "herdr"
 # Command-line benchmarking tool
 brew "hyperfine"
 # Tools and libraries to manipulate images in select formats
 brew "imagemagick"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
+# Lazier way to manage everything docker
+brew "lazydocker"
+# Simple terminal UI for git commands
+brew "lazygit"
 # Build tool for Clojure
 brew "leiningen"
 # YAML Parser
@@ -124,6 +130,16 @@ brew "wget"
 brew "yazi"
 # Pluggable terminal workspace, with terminal multiplexer as the base feature
 brew "zellij"
+# A retro terminal music player inspired by Winamp 2.x
+brew "bjarneo/cliamp/cliamp"
+# Native, fast starting Clojure interpreter for scripting.
+brew "borkdude/brew/babashka"
+# A minimal and opinionated linter for Clojure code that sparks joy.
+brew "borkdude/brew/clj-kondo"
+# Custom macOS statusbar with shell plugin, interaction and graph support
+brew "felixkratz/formulae/sketchybar"
+# Migration shim for the beads Homebrew formula
+brew "gastownhall/beads/bd"
 # Password manager that keeps all passwords secure behind one password
 cask "1password"
 # Command-line interface for 1Password
@@ -136,8 +152,6 @@ cask "android-platform-tools"
 cask "android-sdk"
 # Chromium based browser
 cask "arc"
-# Multi-track audio editor and recorder
-cask "audacity"
 # Web browser focusing on privacy
 cask "brave-browser"
 # Open source IDE for exploring and testing APIs
