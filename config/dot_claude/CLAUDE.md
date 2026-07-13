@@ -25,7 +25,3 @@ This file contains Poom's preferences for using Claude Code.
 - Never run the Cypress tests for me.
   - I will run the tests myself as I already have the test runner open.
 - Never ever remove focused tests (e.g. it.only) from tests unless I tell you explicitly to do so.
-
-## Linting Preferences
-
-
