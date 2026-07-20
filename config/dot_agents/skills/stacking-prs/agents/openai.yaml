@@ -1,0 +1,4 @@
+interface:
+  display_name: "Stacking PRs"
+  short_description: "Keep each stacked PR reviewable"
+  default_prompt: "Use $stacking-prs to divide this change into a reviewable PR stack."
