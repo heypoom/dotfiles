@@ -6,7 +6,7 @@ abbr -a zjn "zellij -s"
 abbr -a zja "zellij attach"
 
 abbr -a b "bun"
-abbr -a gs "git-spice"
+abbr -a gs "gh stack"
 
 abbr -a dev "bun run dev"
 abbr -a scr "scripts"
@@ -66,4 +66,3 @@ abbr -a restack 'git-spice branch restack --branch=(git symbolic-ref --short HEA
 
 # emacs new frame
 abbr -a emacsf "emacsclient --no-wait --create-frame"
-
