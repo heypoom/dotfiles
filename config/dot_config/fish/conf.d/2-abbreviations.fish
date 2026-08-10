@@ -62,7 +62,7 @@ abbr -a gst 'git stash'
 abbr -a gstp 'git stash pop'
 abbr -a scripts 'jq .scripts package.json'
 abbr -a staging 'git fetch origin staging && git merge origin/staging'
-abbr -a restack 'git-spice branch restack --branch=(git symbolic-ref --short HEAD)'
+abbr -a restack 'gh stack rebase'
 
 # emacs new frame
 abbr -a emacsf "emacsclient --no-wait --create-frame"
