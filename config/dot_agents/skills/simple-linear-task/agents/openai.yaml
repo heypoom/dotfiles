@@ -1,7 +1,0 @@
-interface:
-  display_name: "Simple Linear Task"
-  short_description: "Ship small Linear tasks into PRs"
-  default_prompt: "Use $simple-linear-task to work on this Linear issue and prepare the GitHub PR."
-
-policy:
-  allow_implicit_invocation: true

@@ -1,6 +1,6 @@
 [tools]
 python = "3.12"
-node = "22"
+node = "22.23"
 java = "temurin-21"
 "github:abhinav/git-spice" = "latest"
 op = "latest"
