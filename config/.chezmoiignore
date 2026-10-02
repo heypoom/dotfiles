@@ -65,3 +65,16 @@ Library
 .config/fish/conf.d/fzf.fish
 .config/fish/conf.d/z.fish
 .config/fish/conf.d/puffer*
+
+# Zed internals
+.config/zed/conversations
+.config/zed/embeddings
+.config/zed/prompts
+
+# Herdr internals
+.config/herdr/session.json
+.config/herdr/release-notes.json
+.config/herdr/*.sock
+.config/herdr/*.log
+.config/herdr/*.lock
+
