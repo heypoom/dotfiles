@@ -1,4 +1,12 @@
+# homebrew fish completions
 if test -d /opt/homebrew/share/fish/vendor_completions.d
   contains -- /opt/homebrew/share/fish/vendor_completions.d $fish_complete_path
   or set -g fish_complete_path $fish_complete_path /opt/homebrew/share/fish/vendor_completions.d
 end
+
+# >>> railway initialize >>>
+if test -f "$HOME/.railway/env.fish"
+  source "$HOME/.railway/env.fish"
+end
+# <<< railway initialize <<<
+
