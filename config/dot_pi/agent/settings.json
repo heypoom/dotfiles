@@ -1,0 +1,10 @@
+{
+  "lastChangelogVersion": "1.0.0",
+  "packages": [],
+  "theme": "dark",
+  "quietStartup": true,
+  "warnings": {
+    "anthropicExtraUsage": false
+  },
+  "deviceId": "c573db8e-5fb6-4d5d-b038-ad9bbc26681f"
+}

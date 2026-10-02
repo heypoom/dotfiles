@@ -79,3 +79,11 @@ Library
 .config/herdr/*.log
 .config/herdr/*.lock
 
+# Pi internals
+.pi/agent/auth.json
+.pi/agent/models-store.json
+.pi/agent/trust.json
+.pi/agent/bin
+.pi/agent/install
+.pi/agent/sessions
+
