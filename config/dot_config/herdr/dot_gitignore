@@ -1,0 +1,4 @@
+session.json
+release-notes.json
+*.sock
+*.log
