@@ -8,3 +8,5 @@ fi
 
 PATH=~/.console-ninja/.bin:$PATH
 export PATH="/opt/homebrew/share/google-cloud-sdk/bin:$PATH"
+export JAVA_HOME="/opt/homebrew/opt/openjdk@25/libexec/openjdk.jdk/Contents/Home"
+export PATH="/opt/homebrew/opt/openjdk@25/bin:$PATH"
