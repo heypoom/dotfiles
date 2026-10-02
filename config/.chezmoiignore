@@ -83,6 +83,7 @@ Library
 .pi/agent/auth.json
 .pi/agent/models-store.json
 .pi/agent/trust.json
+.pi/agent/mcp-auth.json
 .pi/agent/bin
 .pi/agent/install
 .pi/agent/sessions
