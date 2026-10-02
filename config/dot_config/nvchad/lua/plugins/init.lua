@@ -171,4 +171,9 @@ return {
       states = { "[ ]", "[.]", "[x]" },
     },
   },
+
+  {
+    "ChmaraX/herdr-nvim",
+    opts = {}
+  }
 }
