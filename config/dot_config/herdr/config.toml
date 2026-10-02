@@ -10,6 +10,12 @@ enabled = true
 [ui.toast]
 delivery = "terminal"
 
+[keys]
+navigate_workspace_up = "k"
+navigate_workspace_down = "j"
+navigate_pane_up = "up"
+navigate_pane_down = "down"
+
 [[keys.command]]
 key = "prefix+e"
 type = "plugin_action"
