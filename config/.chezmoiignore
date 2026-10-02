@@ -73,9 +73,13 @@ Library
 .config/zed/.tmp*
 
 # Herdr internals
+.config/herdr/plugins.json
+.config/herdr/plugins
 .config/herdr/session.json
+.config/herdr/session-snapshots
 .config/herdr/release-notes.json
 .config/herdr/*.sock
+.config/herdr/*.sock.agent
 .config/herdr/*.log
 .config/herdr/*.lock
 
