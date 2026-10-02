@@ -13,31 +13,41 @@
       "settings": {
         "typescript": {
           "updateImportsOnFileMove": {
-            "enabled": "always"
-          }
+            "enabled": "always",
+          },
         },
         "javascript": {
           "updateImportsOnFileMove": {
-            "enabled": "always"
-          }
-        }
+            "enabled": "always",
+          },
+        },
       },
-      "enable_lsp_tasks": true
-    }
+      "enable_lsp_tasks": true,
+    },
   },
   "format_on_save": "on",
   "proxy": "",
   "edit_predictions": {
     "allow_data_collection": "no",
-    "provider": "copilot"
+    "provider": "copilot",
   },
   "agent_servers": {
     "claude-acp": {
-      "type": "registry"
+      "default_config_options": {
+        "mode": "auto",
+        "model": "opus"
+      },
+      "type": "registry",
     },
     "codex-acp": {
-      "type": "registry"
-    }
+      "favorite_config_option_values": {
+        "model": ["gpt-6-astra"],
+      },
+      "default_config_options": {
+        "model": "gpt-6-astra",
+      },
+      "type": "registry",
+    },
   },
   "cli_default_open_behavior": "existing_window",
   "project_panel": {
@@ -53,16 +63,27 @@
   "git_panel": {
     "dock": "left",
   },
-  "context_servers": {
-    
-  },
+  "context_servers": {},
   "icon_theme": {
     "mode": "dark",
     "light": "Catppuccin Mocha",
-    "dark": "Catppuccin Mocha"
+    "dark": "Catppuccin Mocha",
   },
   "agent": {
-    "sidebar_side": "right",
+    "expand_edit_card": false,
+    "expand_terminal_card": false,
+    "enable_feedback": false,
+    "threads_sidebar": {
+      "auto_open": false,
+      "position": "right",
+    },
+    "default_profile": "write",
+    "default_model": {
+      "provider": "openai-subscribed",
+      "model": "gpt-6.1-sol",
+      "enable_thinking": true,
+      "effort": "low",
+    },
     "tool_permissions": {
       "default": "allow",
     },
