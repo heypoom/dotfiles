@@ -73,20 +73,6 @@ function resolvePainter(ctx) {
   }
 }
 
-// Why: buildTitle runs inside the try because it is not safe either — getSessionName()
-// calls assertActive() and process.cwd() throws ENOENT once the worktree is deleted.
-// Most call sites are timer callbacks, where an escape is an uncaught exception and pi
-// exits(1) through its own uncaughtException handler.
-function paintTitle(ctx, buildTitle) {
-  if (!ctx) return false
-  try {
-    ctx.ui.setTitle(buildTitle())
-    return true
-  } catch {
-    return false
-  }
-}
-
 export default function (pi) {
   if (!process.env.ORCA_PANE_KEY) return
   // Why: child agents inherit the pane env, and the spinner is harmlessly
@@ -95,6 +81,32 @@ export default function (pi) {
   const markerOwnerPid = process.env.ORCA_PI_TITLE_MARKER_OWNED
   const ownsMarker = !markerOwnerPid || markerOwnerPid === String(process.pid)
   if (ownsMarker) process.env.ORCA_PI_TITLE_MARKER_OWNED = String(process.pid)
+  // Why: replacement factories share the process realm; retire the old owner before painting.
+  const ownersKey = Symbol.for('orca.pi.titlebar.owners')
+  const owners = globalThis[ownersKey] ??= new Map()
+  const paneKey = process.env.ORCA_PANE_KEY
+  owners.get(paneKey)?.()
+  let disposed = false
+  function clearOwnedTimers() {
+    clearPendingAgentEndCheck()
+    clearAnimation()
+    stopMarkerReassert()
+  }
+
+  function dispose() {
+    disposed = true
+    clearOwnedTimers()
+    resetPromptState()
+    if (owners.get(paneKey) === dispose) owners.delete(paneKey)
+  }
+  owners.set(paneKey, dispose)
+
+  function on(name, handler) {
+    pi.on(name, (event, ctx) => {
+      if (!disposed) return handler(event, ctx)
+    })
+  }
+
   let timer = null
   let frameIndex = 0
   // Why: only idle maintenance owns a spinner of its own. A threshold compaction runs
@@ -113,6 +125,21 @@ export default function (pi) {
   let pendingAgentEndCheck = null
   let pendingAgentEndContext = null
   let agentEndIdleRecheckMs = AGENT_END_IDLE_RECHECK_MS
+
+// Why: buildTitle runs inside the try because it is not safe either — getSessionName()
+// calls assertActive() and process.cwd() throws ENOENT once the worktree is deleted.
+// Most call sites are timer callbacks, where an escape is an uncaught exception and pi
+// exits(1) through its own uncaughtException handler.
+  function paintTitle(ctx, buildTitle) {
+    if (disposed || !ctx) return false
+    try {
+      ctx.ui.setTitle(buildTitle())
+      return true
+    } catch {
+      clearOwnedTimers()
+      return false
+    }
+  }
 
   function resetPromptState() {
     stopMarkerReassert()
@@ -169,23 +196,24 @@ export default function (pi) {
     // otherwise wipe the marker with nothing to restore it. The frame still counts,
     // so the cap above keeps accruing in wall-clock.
     if (markerPainted) {
-      paintTitle(ctx, () => getMarkedTitle(pi, '!'))
+      const painted = paintTitle(ctx, () => getMarkedTitle(pi, '!'))
       frameIndex++
-      return
+      return painted
     }
-      paintTitle(ctx, () => {
+      const painted = paintTitle(ctx, () => {
         const frame = BRAILLE_FRAMES[frameIndex % BRAILLE_FRAMES.length]
         const cwd = process.cwd().split(/[\\/]/).filter(Boolean).at(-1) || process.cwd()
         const session = pi.getSessionName()
         return session ? `${frame} \u03c0 - ${session} - ${cwd}` : `${frame} \u03c0 - ${cwd}`
       })
       frameIndex++
+      return painted
   }
 
   function startAnimation(ctx) {
     clearPendingAgentEndCheck()
     clearAnimation()
-    renderFrame(ctx)
+    if (!renderFrame(ctx)) return
     timer = setInterval(() => renderFrame(ctx), FRAME_INTERVAL_MS)
   }
 
@@ -200,7 +228,7 @@ export default function (pi) {
         return
       }
     } catch {
-      pendingAgentEndContext = null
+      clearOwnedTimers()
       return
     }
     pendingAgentEndCheck = setTimeout(checkPendingAgentEnd, agentEndIdleRecheckMs)
@@ -208,7 +236,7 @@ export default function (pi) {
     agentEndIdleRecheckMs = Math.min(agentEndIdleRecheckMs * 2, AGENT_END_IDLE_RECHECK_MAX_MS)
   }
 
-  pi.on('agent_start', async (_event, ctx) => {
+  on('agent_start', async (_event, ctx) => {
     resetPromptState()
     startAnimation(ctx)
   })
@@ -216,22 +244,23 @@ export default function (pi) {
   // Why: pi drops an open dialog through resetExtensionUI without resolving its promise,
   // so a replaced or reloaded session never sends the matching close. Both boundaries
   // prove no dialog from the old session is still on screen.
-  pi.on('session_start', async () => {
+  on('session_start', async () => {
+    clearOwnedTimers()
     resetPromptState()
   })
 
-  // Why: modern Pi/OMP emit agent_end mid-run and only settle later, so settlement is the
+  // Why: modern Pi emits agent_end mid-run and only settle later, so settlement is the
   // authoritative completion boundary. Legacy runtimes never emit it, so agent_end stays.
-  pi.on('agent_settled', async (_event, ctx) => {
+  on('agent_settled', async (_event, ctx) => {
     stopAnimation(ctx)
   })
 
-  pi.on('agent_end', async (event, ctx) => {
+  on('agent_end', async (event, ctx) => {
     if (event?.willContinue === true) {
       clearPendingAgentEndCheck()
       return
     }
-    if (!ctx || typeof ctx.isIdle !== 'function') {
+    if (isOmpRuntime() || !ctx || typeof ctx.isIdle !== 'function') {
       stopAnimation(ctx)
       return
     }
@@ -242,7 +271,7 @@ export default function (pi) {
     if (typeof pendingAgentEndCheck.unref === 'function') pendingAgentEndCheck.unref()
   })
 
-  pi.on('ui_prompt_start', async (_event, ctx) => {
+  on('ui_prompt_start', async (_event, ctx) => {
     if (isOmpRuntime() || !ownsMarker) return
     promptDepth++
     // Why: retry on every open rather than only the outermost, so an outer ctx
@@ -257,7 +286,7 @@ export default function (pi) {
     startMarkerReassert(painter)
   })
 
-  pi.on('ui_prompt_end', async (_event, ctx) => {
+  on('ui_prompt_end', async (_event, ctx) => {
     if (isOmpRuntime() || !ownsMarker || promptDepth === 0) return
     promptDepth--
     if (promptDepth > 0) return
@@ -276,7 +305,7 @@ export default function (pi) {
     paintTitle(painter, () => getBaseTitle(pi))
   })
 
-  pi.on('auto_compaction_start', async (event, ctx) => {
+  on('auto_compaction_start', async (event, ctx) => {
     if (event?.reason !== 'idle') return
     // Why: the idle worker can fire against a turn that just started, and reason alone does
     // not prove the pane is idle. Adopting a live agent spinner would let the matching
@@ -286,12 +315,12 @@ export default function (pi) {
     idleCompactionOwnsSpinner = true
   })
 
-  pi.on('auto_compaction_end', async (_event, ctx) => {
+  on('auto_compaction_end', async (_event, ctx) => {
     if (!idleCompactionOwnsSpinner) return
     stopAnimation(ctx)
   })
 
-  pi.on('session_shutdown', async (_event, ctx) => {
+  on('session_shutdown', async (_event, ctx) => {
     resetPromptState()
     stopAnimation(ctx)
   })

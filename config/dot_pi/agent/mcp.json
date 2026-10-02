@@ -1,0 +1,17 @@
+{
+  "mcpServers": {
+    "linear": {
+      "url": "https://mcp.linear.app/mcp",
+      "exposure": "deferred",
+      "description": "Search and manage Linear issues, projects, and teams"
+    },
+    "github": {
+      "url": "https://api.githubcopilot.com/mcp/",
+      "headers": {
+        "Authorization": "!printf \"Bearer %s\" \"$(gh auth token --hostname github.com)\""
+      },
+      "exposure": "deferred",
+      "description": "Search GitHub repositories and code; read and manage issues, pull requests, and reviews"
+    }
+  }
+}

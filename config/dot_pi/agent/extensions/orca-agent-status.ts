@@ -8,10 +8,83 @@ let warnedBadEndpoint = false
 // critical path, and the latest-only pending slot prevents a stalled
 // Orca receiver from building an unbounded queue of obsolete snapshots.
 const HOOK_POST_TIMEOUT_MS = 1000
+type HookPost = { hookEventName: string; extra: Record<string, unknown>; metadata: Record<string, unknown>; ompRuntime: boolean; revision: number; attempts: number; delivered: boolean }
 let activePost = false
+let pendingPost: HookPost | null = null
+let latestPost: HookPost | null = null
+// A newer snapshot or session boundary retires every older retry.
+let postRevision = 0
+let retryTimer: ReturnType<typeof setTimeout> | null = null
+
+function cancelPostRetry(): void {
+  if (retryTimer !== null) clearTimeout(retryTimer)
+  retryTimer = null
+}
+
+function resetPostQueue(): void {
+  cancelPostRetry()
+  postRevision++
+  pendingPost = null
+  latestPost = null
+}
+
+function drainPosts(): void {
+  if (activePost || !pendingPost) return
+  const next = pendingPost
+  pendingPost = null
+  activePost = true
+  void postOnce(next.hookEventName, next.extra, next.metadata, next.ompRuntime)
+    .then(() => { next.delivered = true })
+    .catch(() => {
+      if (!next.ompRuntime || next.revision !== postRevision) return
+      if (next.attempts >= 3) {
+        console.warn('[orca-pi-status] hook delivery failed after retries:', next.hookEventName)
+        return
+      }
+      const delay = 250 * 2 ** next.attempts++
+      retryTimer = setTimeout(() => {
+        retryTimer = null
+        if (next.revision !== postRevision) return
+        pendingPost = next
+        drainPosts()
+      }, delay)
+      if (typeof retryTimer.unref === 'function') retryTimer.unref()
+    })
+    .finally(() => {
+      activePost = false
+      drainPosts()
+    })
+}
+
 let piUiPromptDepth = 0
 let piTurnInFlight = false
-let pendingPost: { hookEventName: string; extra: Record<string, unknown>; metadata: Record<string, unknown>; ompRuntime: boolean } | null = null
+let modelMetadata: Record<string, unknown> = {}
+let ompModelSwitchSupported = false
+let modelSessionId: unknown = undefined
+
+// Why: OMP switches sessions in-process; a model belongs to the session that
+// reported it, so it must not leak onto the first posts of the next one.
+function trackModelSession(sessionId: unknown): void {
+  if (sessionId === modelSessionId) return
+  modelSessionId = sessionId
+  modelMetadata = {}
+}
+
+// Why: pi and OMP expose the active model as { provider, id } on both the event
+// context and model_select events; the joined selector is what --model accepts.
+function updateModelMetadata(source: unknown): void {
+  try {
+    if (!source || typeof source !== 'object' || !('model' in source)) return
+    const model = source.model
+    if (!model || typeof model !== 'object') return
+    const provider = 'provider' in model && typeof model.provider === 'string' ? model.provider : ''
+    const id = 'id' in model && typeof model.id === 'string' ? model.id : ''
+    if (provider && id) modelMetadata = { model: provider + '/' + id, ...(ompModelSwitchSupported ? { model_switch_command: 'orca-model' } : {}) }
+  } catch {
+    // Why: a throwing model getter must never break status delivery.
+  }
+}
+
 let sessionMetadata: Record<string, unknown> = {}
 let runtimeOmpSessionMetadata: Record<string, unknown> = {}
 
@@ -30,11 +103,13 @@ function updateRuntimeOmpSessionMetadata(ctx: unknown): void {
   const sessionManager = (ctx as { sessionManager?: { getSessionId?: () => unknown; getSessionFile?: () => unknown } } | null)?.sessionManager
   const sessionId = sessionManager?.getSessionId?.()
   const sessionFile = sessionManager?.getSessionFile?.()
-  runtimeOmpSessionMetadata = typeof sessionId === 'string' && sessionId && typeof sessionFile === 'string' && sessionFile ? { session_id: sessionId } : {}
+  runtimeOmpSessionMetadata = typeof sessionId === 'string' && sessionId && typeof sessionFile === 'string' && sessionFile ? { session_id: sessionId, session_file: sessionFile } : {}
+  trackModelSession(runtimeOmpSessionMetadata.session_id)
+  updateModelMetadata(ctx)
 }
 
 function getPostSessionMetadata(ompRuntime: boolean): Record<string, unknown> {
-  return ompRuntime ? runtimeOmpSessionMetadata : sessionMetadata
+  return ompRuntime ? { ...runtimeOmpSessionMetadata, ...modelMetadata } : sessionMetadata
 }
 
 function getPersistedSessionMetadata(): Record<string, unknown> {
@@ -138,26 +213,21 @@ function resolveHookPath(ompRuntime: boolean): string {
 
 function post(hookEventName: string, extra: Record<string, unknown> = {}): void {
   const ompRuntime = isOmpRuntime()
+  cancelPostRetry()
+  const metadata = getPostSessionMetadata(ompRuntime)
+// Model changes must not erase an unacknowledged completion in the latest-only slot.
+  const previousCompletion = latestPost?.hookEventName === 'agent_end' && !latestPost.delivered && latestPost.metadata.session_id === metadata.session_id
   pendingPost = {
-    hookEventName,
+    revision: ++postRevision,
+    attempts: 0,
+    delivered: false,
+    hookEventName: ompRuntime && hookEventName === 'model_select' && previousCompletion ? 'agent_end' : hookEventName,
     extra: { ...extra, ...(!ompRuntime && piUiPromptDepth > 0 ? { ui_prompt_active: true } : {}) },
-    metadata: getPostSessionMetadata(ompRuntime),
+    metadata,
     ompRuntime,
   }
+  latestPost = pendingPost
   drainPosts()
-}
-
-function drainPosts(): void {
-  if (activePost || !pendingPost) return
-  const next = pendingPost
-  pendingPost = null
-  activePost = true
-  void postOnce(next.hookEventName, next.extra, next.metadata, next.ompRuntime)
-    .catch(() => {})
-    .finally(() => {
-      activePost = false
-      drainPosts()
-    })
 }
 
 async function postOnce(
@@ -189,7 +259,7 @@ async function postOnce(
     if (typeof timeout.unref === 'function') timeout.unref()
   })
   try {
-    await Promise.race([
+    const response = await Promise.race([
       fetch(url, {
         method: 'POST',
         headers: {
@@ -201,11 +271,12 @@ async function postOnce(
       }),
       timeoutPromise,
     ])
-  } catch {
+    if (!response.ok) throw new Error('Orca hook HTTP ' + response.status)
+  } catch (error) {
     // Why: status reporting must never fail the pi run just because Orca
     // is unavailable or the loopback request failed (e.g. Orca restart).
-    if (!isWslRuntime()) return
-    postViaWindowsCurl(body, ompRuntime)
+    if (!isWslRuntime()) throw error
+    await postViaWindowsCurl(body, ompRuntime)
   } finally {
     if (timeout) clearTimeout(timeout)
   }
@@ -254,20 +325,20 @@ function resolveWindowsCurlPath(): string | null {
 }
 
 // Why: WSL loopback is not the Windows loopback, so use curl.exe on the host.
-function postViaWindowsCurl(body: string, ompRuntime: boolean): void {
+async function postViaWindowsCurl(body: string, ompRuntime: boolean): Promise<void> {
   const curlPath = resolveWindowsCurlPath()
   const windowsPort = process.env.ORCA_AGENT_HOOK_PORT
   const windowsToken = process.env.ORCA_AGENT_HOOK_TOKEN
-  if (!curlPath || !windowsPort || !windowsToken) return
+  if (!curlPath || !windowsPort || !windowsToken) throw new Error('Orca WSL hook bridge unavailable')
   // Why: a stale guest endpoint must fall back to current host coordinates.
   const windowsUrl = `http://127.0.0.1:${windowsPort}${resolveHookPath(ompRuntime)}`
-  try {
+  await new Promise<void>((resolve, reject) => {
     const { spawn } = require('child_process')
     const child = spawn(
       curlPath,
       [
-        '-sS',
-        // Why: detached delivery may take seconds under loaded WSL interop.
+        '-sS', '--fail',
+        // WSL interop needs a bounded, acknowledged delivery window.
         '--connect-timeout', '3',
         '--max-time', '10',
         '--noproxy', '127.0.0.1',
@@ -280,14 +351,76 @@ function postViaWindowsCurl(body: string, ompRuntime: boolean): void {
       ],
       { stdio: ['pipe', 'ignore', 'ignore'] }
     )
-    child.on('error', () => {})
-    child.stdin.on('error', () => {})
+    const timer = setTimeout(() => {
+      try { child.kill() } catch {}
+      reject(new Error('Orca WSL hook delivery timed out'))
+    }, 11000)
+    if (typeof timer.unref === 'function') timer.unref()
+    const fail = (error: Error): void => { clearTimeout(timer); reject(error) }
+    child.on('error', fail)
+    child.stdin.on('error', fail)
+    child.on('close', (code: number | null) => {
+      clearTimeout(timer)
+      if (code === 0) resolve(); else reject(new Error('Orca WSL hook exit ' + code))
+    })
     child.stdin.end(body)
-  } catch {
-    // Why: status delivery must not surface inside the agent TUI.
-  }
+  })
 }
 
+function statusInputReferencesCredentialPath(value: string): boolean {
+  const path = value.replace(/\\/g, '/')
+  return /(?:^|[^a-z0-9_.-]|\$(?:[a-z_][a-z0-9_]*|[0-9]))\.(?:ssh|ssh-mcp)(?=$|[^a-z0-9_.-])/i.test(path) ||
+    /\.mcp-secrets\.env(?=$|[^a-z0-9_.-])/i.test(path) ||
+    /(?:^|[^a-z0-9_.-]|\$(?:[a-z_][a-z0-9_]*|[0-9]))\.omp-backups-archive\/omp-bak-keyfile(?=$|[^a-z0-9_.-])/i.test(path)
+}
+
+function sanitizeStatusToolInput(input: unknown): unknown {
+  const ancestors = new WeakSet<object>()
+  let remainingNodes = 4096
+  let remainingChars = 262144
+  function checkText(text: string): void {
+    remainingChars -= text.length
+    if (remainingChars < 0 || statusInputReferencesCredentialPath(text)) throw new Error('redact')
+  }
+  function copy(value: unknown, depth: number): unknown {
+    if (--remainingNodes < 0 || depth > 64) throw new Error('redact')
+    if (typeof value === 'string') { checkText(value); return value }
+    if (value === null || value === undefined || typeof value === 'boolean') return value
+    if (typeof value === 'number' && Number.isFinite(value)) return value
+    if (typeof value !== 'object' || ancestors.has(value)) throw new Error('redact')
+    const array = Array.isArray(value)
+    if (array) {
+      const length = Object.getOwnPropertyDescriptor(value, 'length')?.value
+      if (!Number.isSafeInteger(length) || length < 0 || length > remainingNodes) throw new Error('redact')
+      remainingNodes -= length
+    }
+    const prototype = Object.getPrototypeOf(value)
+    if (!array && prototype !== null) {
+      const constructor = Object.getOwnPropertyDescriptor(prototype, 'constructor')
+      if (Object.getPrototypeOf(prototype) !== null || !constructor || !('value' in constructor) ||
+          typeof constructor.value !== 'function' ||
+          Object.getOwnPropertyDescriptor(constructor.value, 'name')?.value !== 'Object') {
+        throw new Error('redact')
+      }
+    }
+    ancestors.add(value)
+    // Copy data descriptors only; never return an object that can run toJSON later.
+    const result = array ? [] : Object.create(null)
+    if (array) Object.setPrototypeOf(result, null)
+    for (const key of Reflect.ownKeys(value)) {
+      if (typeof key !== 'string') throw new Error('redact')
+      checkText(key)
+      const descriptor = Object.getOwnPropertyDescriptor(value, key)
+      if (!descriptor || !('value' in descriptor)) throw new Error('redact')
+      const copied = copy(descriptor.value, depth + 1)
+      Object.defineProperty(result, key, { value: copied, enumerable: descriptor.enumerable,
+        writable: true, configurable: key !== 'length' || !array })
+    }
+    ancestors.delete(value)
+    return result
+  }
+  try { return copy(input, 0) } catch { return { redacted: true } }
+}
 // Why: pi assistant messages carry content as an array of parts
 // ({ type: 'text', text } / tool_use / tool_result / reasoning). We only
 // surface the concatenated text parts as the visible 'last assistant
@@ -308,21 +441,139 @@ function extractAssistantText(message: unknown): string {
   return out
 }
 
-// Why: pi's tool_call event input shape is tool-specific (event.input is
-// the raw args object). The agent-hooks server already runs
-// deriveToolInputPreview(toolName, input) to render a friendly preview
-// for known tool names ('bash' → command, 'read'/'write'/'edit' → path,
-// etc.), so we forward the raw object verbatim under the same field
-// names Claude uses (tool_name / tool_input) and let the server pick the
-// preview. Keeps tool-name knowledge centralized on the receiver side.
+// Preserve ordinary preview data; credential references never leave the agent host.
+// Why: a restarted agent inherits the previous owner PID through env, so a
+// dead owner must be claimable or the pane goes silent for good. Only ESRCH
+// proves the owner is gone -- every other probe result keeps suppression, so
+// a live foreign owner still cannot double-report. Mirrors the tri-state in
+// main/agent-hooks/managed-hook-owner-identity.ts, which this runtime cannot
+// import (the extension loads inside pi/omp with no Orca deps).
+function isStatusOwnerAlive(pid: string): boolean {
+  const parsed = Number(pid)
+  if (!Number.isSafeInteger(parsed) || parsed < 1 || parsed > 0x7fffffff) return false
+  if (typeof process.kill !== 'function') return true
+  try {
+    process.kill(parsed, 0)
+    return true
+  } catch (err: unknown) {
+    return (err as { code?: string } | null)?.code !== 'ESRCH'
+  }
+}
+
 // Why: child agents inherit the lead's pane env; only its process may
 // register status hooks. PID identity keeps in-process reloads reporting.
 export default function (pi): void {
   const ownerPid = process.env.ORCA_PI_STATUS_OWNED
   const selfPid = String(process.pid)
-  if (ownerPid && ownerPid !== selfPid) return
+  if (ownerPid && ownerPid !== selfPid && isStatusOwnerAlive(ownerPid)) return
   process.env.ORCA_PI_STATUS_OWNED = selfPid
-  pi.on('session_start', (event, ctx) => {
+  resetPostQueue()
+  const piEventBus = (pi as { events?: { on?: (name: string, handler: (event: unknown) => void) => void } }).events
+  const lifecycleState = (piEventBus as { __orcaPiSubagents?: { active: Set<string>; exited?: Set<string>; waiting: boolean; onEvent?: (event: unknown, forcedStatus?: string) => void; listener?: (event: unknown) => void; onRunnerExit?: (event: unknown) => void; runnerExitListener?: (event: unknown) => void } } | undefined)?.__orcaPiSubagents ?? { active: new Set<string>(), waiting: false }
+  if (piEventBus) (piEventBus as { __orcaPiSubagents?: unknown }).__orcaPiSubagents = lifecycleState
+  if (piEventBus?.on && !(lifecycleState as { listener?: unknown }).listener) {
+    const listener = (event: unknown) => lifecycleState.onEvent?.(event)
+    lifecycleState.listener = listener
+    piEventBus.on('task:subagent:lifecycle', listener)
+    piEventBus.on('subagent:async-started', (event: unknown) => lifecycleState.onEvent?.(event, 'started'))
+    piEventBus.on('subagent:async-complete', (event: unknown) => lifecycleState.onEvent?.(event, 'completed'))
+  }
+  if (piEventBus?.on && !lifecycleState.runnerExitListener) {
+    const runnerExitListener = (event: unknown) => lifecycleState.onRunnerExit?.(event)
+    lifecycleState.runnerExitListener = runnerExitListener
+    piEventBus.on('subagent:process-terminal', runnerExitListener)
+  }
+  pi.on('session_switch', (_event, ctx) => {
+    if (!isOmpRuntime()) return
+    lifecycleState.active.clear()
+    lifecycleState.exited?.clear()
+    lifecycleState.waiting = false
+    resetPostQueue()
+    clearPendingAgentEndCheck()
+    updateRuntimeOmpSessionMetadata(ctx)
+  })
+  // SessionManager survives reload/new/resume; task children own a different instance.
+  function sessionProvenance(ctx): { manager: unknown; id?: string; file?: string; parent?: string } | undefined {
+    const manager = ctx?.sessionManager
+    if (!manager || typeof manager !== 'object') return undefined
+    const id = typeof manager.getSessionId === "function" ? manager.getSessionId() : undefined
+    const file = typeof manager.getSessionFile === "function" ? manager.getSessionFile() : undefined
+    const header = typeof manager.getHeader === "function" ? manager.getHeader() : undefined
+    return { manager, id, file, parent: typeof header?.parentSession === "string" ? header.parentSession : undefined }
+  }
+
+  function normalizeSessionPath(file): string {
+    const normalized = file.replace(/\\/g, "/")
+    return /^[A-Za-z]:\//.test(normalized) ? normalized.toLowerCase() : normalized
+  }
+
+  function isNestedTaskTranscript(parentFile, candidateFile): boolean {
+    if (typeof parentFile !== "string" || typeof candidateFile !== "string") return false
+    const parent = normalizeSessionPath(parentFile)
+    const candidate = normalizeSessionPath(candidateFile)
+    const root = parent.endsWith(".jsonl") ? parent.slice(0, -6) : parent
+    return candidate.startsWith(`${root}/`) && candidate !== parent
+  }
+
+  function ownsSessionStatus(ctx): boolean {
+    if (!isOmpRuntime()) return true
+    // Newer OMP builds may expose this computed runtime provenance directly.
+    if (ctx?.agentKind === "sub") return false
+    const current = sessionProvenance(ctx)
+    if (!current) return true
+    // A task transcript is never the pane's resumable root, even when its
+    // callback arrives before the root session reports on the shared hook.
+    if (current.parent) return false
+    // Keep ownership through module reload and shutdown while child sessions drain.
+    const key = Symbol.for('orca.omp.status-session-owners')
+    let owners = Reflect.get(globalThis, key)
+    if (!(owners instanceof Map)) {
+      owners = new Map()
+      Reflect.set(globalThis, key, owners)
+    }
+    const pane = JSON.stringify([process.env.ORCA_PANE_KEY, process.env.ORCA_AGENT_LAUNCH_TOKEN])
+    const owner = owners.get(pane)
+    if (owner) {
+      if (owner.manager === current.manager) return true
+      if (current.parent === owner.file || current.parent === owner.id) return false
+      if (isNestedTaskTranscript(owner.file, current.file)) return false
+      return false
+    }
+    owners.set(pane, current)
+    return true
+  }
+
+  function onStatus(name, handler): void {
+    pi.on(name, (event, ctx) => {
+      if (!ownsSessionStatus(ctx)) return
+      return handler(event, ctx)
+    })
+  }
+
+  onStatus('session_start', () => {})
+
+  if (isOmpRuntime() && typeof pi.registerCommand === 'function' && typeof pi.setModel === 'function') {
+    pi.registerCommand('orca-model', {
+      description: 'Switch the model selected in Orca',
+      handler: async (selector, ctx) => {
+        const models = ctx.modelRegistry.getAvailable()
+        const model = models.find((candidate) => candidate.provider + '/' + candidate.id === selector.trim())
+        if (!model) {
+          ctx.ui.notify('Model is no longer available. Refresh the Orca model picker.', 'error')
+          return
+        }
+        if (!await pi.setModel(model)) {
+          ctx.ui.notify('Could not switch model: no API key is available.', 'error')
+          return
+        }
+        updateRuntimeOmpSessionMetadata(ctx)
+        updateModelMetadata({ model })
+        post('model_select')
+      }
+    })
+    ompModelSwitchSupported = true
+  }
+  onStatus('session_start', (event, ctx) => {
     updateSessionMetadata(ctx)
     piUiPromptDepth = 0
     // Why: /reload re-registers the active session, but it is not a
@@ -331,44 +582,45 @@ export default function (pi): void {
     post('session_start')
   })
 
-  pi.on('before_agent_start', (event, ctx) => {
+  onStatus('before_agent_start', (event, ctx) => {
     updateRuntimeOmpSessionMetadata(ctx)
     post('before_agent_start', { prompt: event.prompt ?? '' })
   })
 
-  pi.on('agent_start', (_event, ctx) => {
+  onStatus('agent_start', (_event, ctx) => {
     updateRuntimeOmpSessionMetadata(ctx)
     clearPendingAgentEndCheck()
-    agentEndReported = false
+    lifecycleState.waiting = false
+    runGeneration += 1
     piUiPromptDepth = 0
     piTurnInFlight = true
     post('agent_start')
   })
 
-  pi.on('tool_execution_start', (event, ctx) => {
+  onStatus('tool_execution_start', (event, ctx) => {
     updateRuntimeOmpSessionMetadata(ctx)
     post('tool_execution_start', {
       tool_name: event.toolName,
-      tool_input: event.args,
+      tool_input: sanitizeStatusToolInput(event.args),
     })
   })
 
-  pi.on('tool_call', (event, ctx) => {
+  onStatus('tool_call', (event, ctx) => {
     updateRuntimeOmpSessionMetadata(ctx)
     post('tool_call', {
       tool_name: event.toolName,
-      tool_input: event.input,
+      tool_input: sanitizeStatusToolInput(event.input),
     })
   })
 
-  pi.on('tool_execution_end', (event, ctx) => {
+  onStatus('tool_execution_end', (event, ctx) => {
     updateRuntimeOmpSessionMetadata(ctx)
     post('tool_execution_end', {
       tool_name: event.toolName,
     })
   })
 
-  pi.on('tool_approval_requested', (event, ctx) => {
+  onStatus('tool_approval_requested', (event, ctx) => {
     updateRuntimeOmpSessionMetadata(ctx)
     if (!isOmpRuntime()) return
     post('tool_approval_requested', {
@@ -378,7 +630,7 @@ export default function (pi): void {
     })
   })
 
-  pi.on('tool_approval_resolved', (event, ctx) => {
+  onStatus('tool_approval_resolved', (event, ctx) => {
     updateRuntimeOmpSessionMetadata(ctx)
     if (!isOmpRuntime()) return
     post('tool_approval_resolved', {
@@ -387,14 +639,15 @@ export default function (pi): void {
     })
   })
 
-  pi.on('ui_prompt_start', () => {
-    if (isOmpRuntime()) return
+  onStatus('ui_prompt_start', () => {
+    // Idle utility dialogs are not agent work; do not create a completion boundary for them.
+    if (isOmpRuntime() || !piTurnInFlight) return
     piUiPromptDepth++
     if (piUiPromptDepth > 1) return
     post('ui_prompt_start')
   })
 
-  pi.on('ui_prompt_end', (_event, ctx) => {
+  onStatus('ui_prompt_end', (_event, ctx) => {
     if (isOmpRuntime() || piUiPromptDepth === 0) return
     piUiPromptDepth--
     if (piUiPromptDepth > 0) return
@@ -411,7 +664,9 @@ export default function (pi): void {
     post('ui_prompt_end', { is_idle: isIdle })
   })
 
-  pi.on('session_shutdown', () => {
+  onStatus('session_shutdown', () => {
+    resetPostQueue()
+    clearPendingAgentEndCheck()
     if (isOmpRuntime()) return
     // Why: pi tears an open dialog down through resetExtensionUI without resolving its
     // promise, so a replaced session never emits the matching ui_prompt_end and the wait
@@ -420,11 +675,18 @@ export default function (pi): void {
     piUiPromptDepth = 0
   })
 
+  pi.on('model_select', (event, ctx) => {
+    updateRuntimeOmpSessionMetadata(ctx)
+    if (!isOmpRuntime()) return
+    updateModelMetadata(event)
+    post('model_select')
+  })
+
   // Why: capture the assistant's final text on each completed message
   // so the dashboard preview reflects the most recent reply even before
   // agent_end fires. message_end is the right hook because pi guarantees
   // it fires after the message is finalized (post-streaming).
-  pi.on('message_end', (event, ctx) => {
+  onStatus('message_end', (event, ctx) => {
     updateRuntimeOmpSessionMetadata(ctx)
     if (event.message?.role !== 'assistant') return
     const text = extractAssistantText(event.message)
@@ -439,7 +701,9 @@ export default function (pi): void {
   const AGENT_END_IDLE_RECHECK_MS = 25
   const AGENT_END_IDLE_RECHECK_MAX_MS = 250
   let agentSettledSupported = false
-  let agentEndReported = false
+  let runGeneration = 0
+  let endedRunGeneration = 0
+  let completionPostedGeneration = -1
   let agentEndIdleRecheckMs = AGENT_END_IDLE_RECHECK_MS
   let pendingAgentEndCheck: ReturnType<typeof setTimeout> | null = null
   let pendingAgentEndContext: { isIdle: () => boolean } | null = null
@@ -449,12 +713,43 @@ export default function (pi): void {
     pendingAgentEndCheck = null
     pendingAgentEndContext = null
   }
-
-  // Why: isIdle flips before agent_settled handlers run, so both paths
-  // share a per-run guard instead of racing duplicate completion posts.
+  const RUNNER_EXIT_GRACE_MS = 2000
+  let runnerExitCheck: ReturnType<typeof setTimeout> | null = null
+  lifecycleState.onEvent = (event: unknown, forcedStatus?: string): void => {
+    if (!event || typeof event !== 'object') return
+    const record = event as { id?: unknown; runId?: unknown }
+    const id = typeof record.id === 'string' && record.id ? record.id : typeof record.runId === 'string' ? record.runId : ''
+    const status = forcedStatus ?? (event as { status?: unknown }).status
+    if (!id) return
+    if (status === 'started') { lifecycleState.active.add(id); post('agent_start'); return }
+    if (status !== 'completed' && status !== 'failed' && status !== 'aborted') return
+    lifecycleState.active.delete(id)
+    lifecycleState.exited?.delete(id)
+    if (lifecycleState.waiting) postAgentEndOnce()
+  }
+  lifecycleState.onRunnerExit = (event: unknown): void => {
+    const runId = event && typeof event === 'object' ? (event as { runId?: unknown }).runId : undefined
+    if (typeof runId !== 'string' || !lifecycleState.active.has(runId)) return
+    if (!lifecycleState.exited) lifecycleState.exited = new Set<string>()
+    lifecycleState.exited.add(runId)
+    if (!lifecycleState.waiting) return
+    if (runnerExitCheck !== null) clearTimeout(runnerExitCheck)
+    runnerExitCheck = setTimeout(() => {
+      runnerExitCheck = null
+      if (lifecycleState.waiting) postAgentEndOnce()
+    }, RUNNER_EXIT_GRACE_MS)
+    if (typeof runnerExitCheck.unref === 'function') runnerExitCheck.unref()
+  }
   function postAgentEndOnce(): void {
-    if (agentEndReported) return
-    agentEndReported = true
+    for (const id of lifecycleState.exited ?? []) lifecycleState.active.delete(id)
+    lifecycleState.exited?.clear()
+    if (lifecycleState.active.size > 0) {
+      lifecycleState.waiting = true
+      return
+    }
+    lifecycleState.waiting = false
+    if (completionPostedGeneration === endedRunGeneration) return
+    completionPostedGeneration = endedRunGeneration
     piTurnInFlight = false
     post('agent_end')
   }
@@ -462,7 +757,7 @@ export default function (pi): void {
   function checkPendingAgentEnd(): void {
     pendingAgentEndCheck = null
     const ctx = pendingAgentEndContext
-    if (!ctx || agentSettledSupported || agentEndReported) {
+    if (!ctx || agentSettledSupported || completionPostedGeneration === endedRunGeneration) {
       pendingAgentEndContext = null
       return
     }
@@ -481,19 +776,20 @@ export default function (pi): void {
     agentEndIdleRecheckMs = Math.min(agentEndIdleRecheckMs * 2, AGENT_END_IDLE_RECHECK_MAX_MS)
   }
 
-  pi.on('agent_settled', (_event, ctx) => {
+  onStatus('agent_settled', (_event, ctx) => {
     updateRuntimeOmpSessionMetadata(ctx)
     agentSettledSupported = true
     clearPendingAgentEndCheck()
     postAgentEndOnce()
   })
 
-  pi.on('agent_end', (event, ctx) => {
+  onStatus('agent_end', (event, ctx) => {
     updateRuntimeOmpSessionMetadata(ctx)
     if (event?.willContinue === true) {
       clearPendingAgentEndCheck()
       return
     }
+    endedRunGeneration = runGeneration
     if (isOmpRuntime()) {
       postAgentEndOnce()
       return
