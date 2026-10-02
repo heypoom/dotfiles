@@ -2,6 +2,8 @@
   "lastChangelogVersion": "1.0.0",
   "packages": [],
   "theme": "dark",
+  "defaultProvider": "openai",
+  "defaultModel": "gpt-6.1-sol",
   "quietStartup": true,
   "warnings": {
     "anthropicExtraUsage": false
