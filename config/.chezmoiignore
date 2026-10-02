@@ -70,6 +70,7 @@ Library
 .config/zed/conversations
 .config/zed/embeddings
 .config/zed/prompts
+.config/zed/.tmp*
 
 # Herdr internals
 .config/herdr/session.json
