@@ -7,6 +7,7 @@ abbr -a zja "zellij attach"
 
 abbr -a b "bun"
 abbr -a gs "gh stack"
+abbr -a h "herdr"
 
 abbr -a dev "bun run dev"
 abbr -a scr "scripts"
