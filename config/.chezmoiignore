@@ -87,3 +87,20 @@ Library
 .pi/agent/install
 .pi/agent/sessions
 
+# oh-my-pi internals
+.omp/cache
+.omp/gpu_cache.json
+.omp/install-id
+.omp/logs
+.omp/natives
+.omp/run
+.omp/agent/cache
+.omp/agent/sessions
+.omp/agent/predict
+.omp/agent/last-changelog-version
+.omp/agent/*.lock
+.omp/agent/terminal-sessions
+.omp/agent/terminal-sessions
+.omp/agent/*.db
+.omp/agent/*.db-shm
+.omp/agent/*.db-wal

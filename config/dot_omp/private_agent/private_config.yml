@@ -1,0 +1,7 @@
+setupVersion: 2
+modelRoles:
+  default: openai-codex/gpt-6.1-sol:low
+composer:
+  shape: pi
+startup:
+  quiet: true
