@@ -70,6 +70,9 @@
     "dark": "Catppuccin Mocha",
   },
   "agent": {
+    "sandbox_permissions": {
+      "allow_unsandboxed": true
+    },
     "expand_edit_card": false,
     "expand_terminal_card": false,
     "enable_feedback": false,
