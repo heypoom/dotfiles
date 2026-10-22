@@ -6,9 +6,13 @@ abbr -a zjn "zellij -s"
 abbr -a zja "zellij attach"
 
 abbr -a b "bun"
-abbr -a gs "gh stack"
 abbr -a h "herdr"
 abbr -a pc "pi --continue"
+
+# github stacking commands
+abbr -a gs "gh stack"
+abbr -a gsp "gh stack push"
+abbr -a usr "gh stack rebase --upstack" # upstack rebase!
 
 abbr -a dev "bun run dev"
 abbr -a scr "scripts"
