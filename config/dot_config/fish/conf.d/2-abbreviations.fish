@@ -20,7 +20,9 @@ abbr -a sb "bun run storybook"
 
 abbr -a raya "env TERM=xterm-256color ssh raya"
 
+abbr -a abbr-edit "chezmoi edit --apply ~/.config/fish/conf.d/2-abbreviations.fish"
 abbr -a edit-abbr "chezmoi edit --apply ~/.config/fish/conf.d/2-abbreviations.fish"
+
 abbr -a edit-zj "chezmoi edit --apply ~/.config/zellij/config.kdl"
 abbr -a edit-ghostty "chezmoi edit --apply ~/.config/ghostty/config"
 abbr -a edit-kitty "chezmoi edit --apply ~/.config/kitty/kitty.conf"
@@ -66,6 +68,7 @@ abbr -a gd 'git diff'
 abbr -a gdh 'git diff HEAD'
 abbr -a gst 'git stash'
 abbr -a gstp 'git stash pop'
+abbr -a gstd 'git stash drop'
 abbr -a scripts 'jq .scripts package.json'
 abbr -a staging 'git fetch origin staging && git merge origin/staging'
 abbr -a restack 'gh stack rebase'
