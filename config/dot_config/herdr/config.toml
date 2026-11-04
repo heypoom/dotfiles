@@ -11,6 +11,7 @@ enabled = true
 delivery = "terminal"
 
 [keys]
+clear_pane = "prefix+="
 split_vertical = "prefix+|"
 navigate_workspace_up = "k"
 navigate_workspace_down = "j"
