@@ -1,7 +1,13 @@
 [user]
   email = {{ .email | quote }}
   name = {{ .full_name | quote }}
+{{- if eq .chezmoi.os "darwin" }}
   signingkey = {{ .git.signing_key | quote }}
+{{- else }}
+  # The GPG key stays on the Mac. Linux boxes sign with their own SSH key
+  # (devbox bootstrap creates it and adds it to GitHub as a signing key).
+  signingkey = {{ joinPath .chezmoi.homeDir ".ssh/signing_ed25519.pub" | quote }}
+{{- end }}
 
 [alias]
   undo = reset --soft HEAD^
@@ -63,7 +69,13 @@
   rebase = false
 
 [gpg]
+{{- if eq .chezmoi.os "darwin" }}
   program = gpg
+{{- else }}
+  format = ssh
+[gpg "ssh"]
+  allowedSignersFile = {{ joinPath .chezmoi.homeDir ".config/git/allowed_signers" | quote }}
+{{- end }}
 
 [init]
   defaultBranch = main

@@ -572,6 +572,39 @@ install_gh_extensions() {
   if ((did)); then changed; else ok; fi
 }
 
+configure_git_signing() {
+  step "git commit signing (SSH key)"
+  # The dotfiles' gitconfig signs every commit. The GPG key stays on the Mac, so
+  # on Linux git signs with this box's own SSH key (gpg.format = ssh). It has no
+  # passphrase so agents can commit unattended; revoke it on GitHub if the box is lost.
+  local key="$HOME/.ssh/signing_ed25519" did=0 email pub
+  if [[ ! -f "$key" ]]; then
+    mkdir -p "$HOME/.ssh"
+    chmod 700 "$HOME/.ssh"
+    ssh-keygen -q -t ed25519 -N "" -C "git signing ($(hostname))" -f "$key"
+    did=1
+  fi
+  pub="$(cut -d' ' -f1,2 "$key.pub")"
+  # Lets `git log --show-signature` verify this box's own commits.
+  email="$(git config --global user.email || true)"
+  if [[ -n "$email" ]] && write_user_file "$HOME/.config/git/allowed_signers" <<<"$email $pub"; then
+    did=1
+  fi
+  if ! gh auth status >/dev/null 2>&1; then
+    log "gh is not logged in; run \`gh auth login\` on the box, then make rebootstrap"
+  elif ! gh api user/ssh_signing_keys --jq '.[].key' 2>/dev/null | grep -qxF "$pub"; then
+    # Needs the admin:ssh_signing_key scope.
+    if gh ssh-key add "$key.pub" --type signing --title "$(hostname) git signing"; then
+      did=1
+    else
+      log "GitHub refused the key; run \`gh auth refresh -s admin:ssh_signing_key\` on the box, then make rebootstrap"
+      skipped
+      return
+    fi
+  fi
+  if ((did)); then changed; else ok; fi
+}
+
 # Clones a private GitHub repo given as an SSH URL. Uses SSH when a key works
 # (agent forwarding), otherwise HTTPS with gh's credentials once `gh auth login`
 # is done; that clone keeps an HTTPS origin, so pull and push need no SSH key.
@@ -707,6 +740,7 @@ main() {
   install_mcp_servers
   install_pi_packages
   install_gh_extensions
+  configure_git_signing
   clone_private_skills
   clone_agent_private
   clone_metabase

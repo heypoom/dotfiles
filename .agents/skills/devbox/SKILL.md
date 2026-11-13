@@ -52,6 +52,7 @@ Each step finishes on its stated condition.
   - Every file under `devbox/bootstrap/` ships to `/opt/devbox/bootstrap/`, through cloud-init (`fileset`) and `make rebootstrap` (tar over SSH). Keep the rendered user data under 64 KB; Linode measures it after base64, and it's about 41 KB today.
   - The tide prompt lives in fish universal variables, and chezmoi ignores `fish_variables`. So `config/.chezmoiscripts/run_onchange_after_1_tide-config.sh` sets the Mac's `tide_*` values and then runs `_tide_remove_unusable_items`. After `tide configure` on the Mac, regenerate it with the command in its header.
   - The gitconfig template uses `osxkeychain` on macOS and `gh auth git-credential` on Linux.
+  - **Commit signing differs by OS on purpose.** The Mac signs with Poom's GPG key, which never leaves the Mac. Linux uses SSH signing (`gpg.format = ssh`) with the box's own passphrase-free `~/.ssh/signing_ed25519`, so agents in detached tmux can commit. Bootstrap's `configure_git_signing` creates the key, writes `~/.config/git/allowed_signers` and adds it to GitHub as a signing key. GitHub shows both kinds as Verified. On the box, `%G?` shows `E` for GPG-signed commits from the Mac, because the box has no GPG public keys; that's expected. If the box is lost, delete the "devbox git signing" key at github.com/settings/keys.
   - Claude Code settings: only secret-free, portable keys go in `bootstrap/claude-settings.json`. The Mac's hooks (Orca, `osascript`, `send-hook-event`), `statusLine` and `keybindings.json` (an Orca binding) are Mac-only.
   - MCP servers that need keys (github, Context7's API key) aren't added yet. They'd come from `private.fish` env vars.
   - pi packages are listed in the dotfiles' `config/dot_pi/agent/settings.json`, and bootstrap's "pi packages" step installs any that are missing. After `pi install <url>` on the Mac, run `chezmoi add ~/.pi/agent/settings.json` so the box follows. pi-claude-code needs `claude` logged in on the box.
@@ -78,6 +79,5 @@ Each step finishes on its stated condition.
 
 Raise these with Poom before treating them as settled:
 
-- **Git on the box:** the dotfiles' gitconfig sets `gpgsign = true` and the `credential.helper = osxkeychain` helper (macOS only), so commits fail on Linux until a signing approach is chosen (SSH signing over agent forwarding is one option). A fix belongs in `config/dot_gitconfig.tmpl` behind `{{ if eq .chezmoi.os "darwin" }}`.
 - **`setup/shared/04-rustup.sh`** asks rustup for the removed `rls` component, which prints an error but doesn't stop anything.
 - **Next steps not in v1** are listed in the README: a persistent volume, 1Password secrets, more providers, a Packer image.
