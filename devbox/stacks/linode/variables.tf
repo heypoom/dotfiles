@@ -59,6 +59,12 @@ variable "skills_repo_url" {
   default     = ""
 }
 
+variable "agent_private_repo_url" {
+  description = "Private agent-memory repo SSH URL. Keep it in terraform.tfvars (gitignored)."
+  type        = string
+  default     = ""
+}
+
 variable "public_ssh" {
   description = "Open SSH (22/tcp) and mosh (60000-61000/udp) to the internet. Set false to reach the box only over Tailscale."
   type        = bool

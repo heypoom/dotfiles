@@ -73,6 +73,12 @@ variable "skills_repo_url" {
   default     = ""
 }
 
+variable "agent_private_repo_url" {
+  description = "Private agent-memory repo (SSH URL) for ~/Workspaces/metabase/agent-private. Cloned by `make rebootstrap` over ssh -A. Empty skips."
+  type        = string
+  default     = ""
+}
+
 variable "extra_env" {
   description = "Extra KEY = value pairs written to /opt/devbox/devbox.env (e.g. versions.env overrides)."
   type        = map(string)

@@ -9,3 +9,4 @@
 # shell                = "fish"
 # public_ssh           = false # SSH and mosh only over Tailscale
 # skills_repo_url      = "git@github.com:<you>/<private-skills>.git" # cloned by make rebootstrap
+# agent_private_repo_url = "git@github.com:<you>/<agent-memory>.git" # cloned by make rebootstrap

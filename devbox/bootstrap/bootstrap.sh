@@ -15,6 +15,8 @@
 #   SKILLS_REPO_URL       Private skills repo (SSH URL) cloned to ~/.agents/skills,
 #                         linked as ~/.claude/skills. Needs GitHub SSH access, so it is
 #                         skipped until bootstrap runs over `ssh -A` (make rebootstrap).
+#   AGENT_PRIVATE_REPO_URL  Private agent-memory repo (SSH URL) cloned to
+#                         ~/Workspaces/metabase/agent-private. Also needs `ssh -A`.
 #   GITHUB_TOKEN          Optional. Raises GitHub API rate limits for mise.
 # Tool versions live in versions.env next to this script.
 
@@ -50,6 +52,8 @@ source "$SCRIPT_DIR/versions.env"
 : "${TAILSCALE_AUTH_KEY:=}"
 : "${TAILSCALE_HOSTNAME:=$(hostname)}"
 : "${SKILLS_REPO_URL:=}"
+: "${AGENT_PRIVATE_REPO_URL:=}"
+: "${AGENT_PRIVATE_DIR:=$HOME/Workspaces/metabase/agent-private}"
 
 USER="${USER:-$(id -un)}"
 export USER
@@ -551,6 +555,28 @@ clone_private_skills() {
   if ((did)); then changed; else ok; fi
 }
 
+clone_agent_private() {
+  step "agent-private notes"
+  # Agent memory shared by every checkout, worktree and machine. Private, so
+  # like private skills it clones only once GitHub SSH works (make rebootstrap).
+  if [[ -z "$AGENT_PRIVATE_REPO_URL" ]]; then
+    skipped
+    return
+  fi
+  if [[ -d "$AGENT_PRIVATE_DIR/.git" ]]; then
+    ok
+    return
+  fi
+  if ! ssh -o BatchMode=yes -o StrictHostKeyChecking=accept-new -T git@github.com 2>&1 | grep -q 'successfully authenticated'; then
+    log "no GitHub SSH access; re-run over \`ssh -A\` (make rebootstrap) to clone"
+    skipped
+    return
+  fi
+  mkdir -p "$(dirname "$AGENT_PRIVATE_DIR")"
+  git clone "$AGENT_PRIVATE_REPO_URL" "$AGENT_PRIVATE_DIR"
+  changed
+}
+
 clone_metabase() {
   step "metabase repo"
   if [[ -z "$METABASE_REPO_URL" ]]; then
@@ -623,6 +649,7 @@ main() {
   install_pi_packages
   install_gh_extensions
   clone_private_skills
+  clone_agent_private
   clone_metabase
   install_metabase_toolchain
   print_summary

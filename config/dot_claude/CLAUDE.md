@@ -4,8 +4,8 @@ This file contains Poom's preferences for using Claude Code.
 
 ## Project Preferences for Metabase
 
-- @~/Workspaces/metabase/metabase/.agent-private/AGENTS.md
-  - This stores the AGENTS.md local memory for the `metabase` project repository.
+- @~/Workspaces/metabase/agent-private/AGENTS.md
+  - This stores my AGENTS.md memory for Metabase, in the private `agent-private` repo shared by every checkout, worktree and machine.
   - This is for my work on Metabase. Read it first when working on Metabase.
   - Do not run `yarn lint-eslint` as it is not designed to be ran for individual files.
 

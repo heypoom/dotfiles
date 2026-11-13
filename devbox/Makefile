@@ -90,5 +90,6 @@ push-secrets:
 rebootstrap:
 	@ip=$$($(TF) output -raw ip); user=$$(echo 'var.username' | $(TF) console | tr -d '"'); \
 	skills=$$(echo 'var.skills_repo_url' | $(TF) console | tr -d '"'); \
+	notes=$$(echo 'var.agent_private_repo_url' | $(TF) console | tr -d '"'); \
 	tar -C bootstrap -cf - . | ssh $$user@$$ip 'tar -C /opt/devbox/bootstrap -xf -' && \
-	ssh -A -t $$user@$$ip env SKILLS_REPO_URL="$$skills" bash -lc /opt/devbox/bootstrap/bootstrap.sh
+	ssh -A -t $$user@$$ip env SKILLS_REPO_URL="$$skills" AGENT_PRIVATE_REPO_URL="$$notes" bash -lc /opt/devbox/bootstrap/bootstrap.sh

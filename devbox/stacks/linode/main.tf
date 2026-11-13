@@ -1,14 +1,15 @@
 module "cloud_init" {
   source = "../../modules/cloud-init"
 
-  hostname             = var.hostname
-  username             = var.username
-  ssh_public_keys      = [file(pathexpand(var.ssh_public_key_path))]
-  dotfiles_github_user = var.dotfiles_github_user
-  shell                = var.shell
-  metabase_repo_url    = var.metabase_repo_url
-  tailscale_auth_key   = var.tailscale_auth_key
-  skills_repo_url      = var.skills_repo_url
+  hostname               = var.hostname
+  username               = var.username
+  ssh_public_keys        = [file(pathexpand(var.ssh_public_key_path))]
+  dotfiles_github_user   = var.dotfiles_github_user
+  shell                  = var.shell
+  metabase_repo_url      = var.metabase_repo_url
+  tailscale_auth_key     = var.tailscale_auth_key
+  skills_repo_url        = var.skills_repo_url
+  agent_private_repo_url = var.agent_private_repo_url
 }
 
 resource "linode_instance" "this" {
