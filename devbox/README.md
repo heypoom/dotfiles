@@ -67,7 +67,7 @@ Choices worth knowing:
 ## Claude Code on the box
 
 1. **Plugins** install during the first boot, because their marketplaces are public GitHub repos.
-2. **Private skills** need GitHub access, which the box doesn't have during cloud-init. So that step reports `skipped` on the first boot. Set `skills_repo_url` in `terraform.tfvars`, make sure `ssh-add -l` on your Mac lists your GitHub key (with 1Password's agent, the key has to be enabled for the SSH agent), then run `make rebootstrap`. It copies the local `bootstrap/` to the box and re-runs it over `ssh -A`. Afterwards, update the skills with `git -C ~/.agents/skills pull` on the box.
+2. **Private skills** need GitHub access, which the box doesn't have during cloud-init. So that step reports `skipped` on the first boot. Set `skills_repo_url` in `terraform.tfvars`, run `gh auth login` on the box, then run `make rebootstrap`. It copies the local `bootstrap/` to the box and re-runs it. The clone goes over HTTPS with `gh`'s credentials, so the box can pull and push without your SSH key. With a GitHub key forwarded over `ssh -A` (with 1Password's agent, the key has to be enabled for the SSH agent), it clones over SSH instead. Afterwards, update the skills with `git -C ~/.agents/skills pull` on the box.
 3. **Log in** by hand: `ssh` in, run `claude`, then `/login`, and open the URL it prints on your Mac.
 
 ## Secrets

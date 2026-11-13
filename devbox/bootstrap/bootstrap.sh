@@ -572,6 +572,25 @@ install_gh_extensions() {
   if ((did)); then changed; else ok; fi
 }
 
+# Clones a private GitHub repo given as an SSH URL. Uses SSH when a key works
+# (agent forwarding), otherwise HTTPS with gh's credentials once `gh auth login`
+# is done; that clone keeps an HTTPS origin, so pull and push need no SSH key.
+# Returns 1 when neither works.
+clone_private_repo() {
+  local url="$1" dest="$2"
+  mkdir -p "$(dirname "$dest")"
+  # Exit code 1 plus this message means the key works (GitHub offers no shell).
+  if ssh -o BatchMode=yes -o StrictHostKeyChecking=accept-new -T git@github.com 2>&1 | grep -q 'successfully authenticated'; then
+    git clone "$url" "$dest"
+  elif [[ "$url" == git@github.com:* ]] && gh auth status >/dev/null 2>&1; then
+    git -c credential.helper= -c credential.helper='!gh auth git-credential' \
+      clone "https://github.com/${url#git@github.com:}" "$dest"
+  else
+    log "no GitHub access: run \`gh auth login\` on the box, or re-run over \`ssh -A\` (make rebootstrap)"
+    return 1
+  fi
+}
+
 clone_private_skills() {
   step "private skills"
   if [[ -z "$SKILLS_REPO_URL" ]]; then
@@ -580,14 +599,10 @@ clone_private_skills() {
   fi
   local did=0 skills="$HOME/.agents/skills"
   if [[ ! -d "$skills/.git" ]]; then
-    # Exit code 1 plus this message means the key works (GitHub offers no shell).
-    if ! ssh -o BatchMode=yes -o StrictHostKeyChecking=accept-new -T git@github.com 2>&1 | grep -q 'successfully authenticated'; then
-      log "no GitHub SSH access; re-run over \`ssh -A\` (make rebootstrap) to clone"
+    if ! clone_private_repo "$SKILLS_REPO_URL" "$skills"; then
       skipped
       return
     fi
-    mkdir -p "$(dirname "$skills")"
-    git clone "$SKILLS_REPO_URL" "$skills"
     did=1
   fi
   if [[ "$(readlink "$HOME/.claude/skills" 2>/dev/null)" != "$skills" ]]; then
@@ -604,7 +619,7 @@ clone_private_skills() {
 clone_agent_private() {
   step "agent-private notes"
   # Agent memory shared by every checkout, worktree and machine. Private, so
-  # like private skills it clones only once GitHub SSH works (make rebootstrap).
+  # like private skills it needs GitHub access (gh auth login, or ssh -A).
   if [[ -z "$AGENT_PRIVATE_REPO_URL" ]]; then
     skipped
     return
@@ -613,13 +628,10 @@ clone_agent_private() {
     ok
     return
   fi
-  if ! ssh -o BatchMode=yes -o StrictHostKeyChecking=accept-new -T git@github.com 2>&1 | grep -q 'successfully authenticated'; then
-    log "no GitHub SSH access; re-run over \`ssh -A\` (make rebootstrap) to clone"
+  if ! clone_private_repo "$AGENT_PRIVATE_REPO_URL" "$AGENT_PRIVATE_DIR"; then
     skipped
     return
   fi
-  mkdir -p "$(dirname "$AGENT_PRIVATE_DIR")"
-  git clone "$AGENT_PRIVATE_REPO_URL" "$AGENT_PRIVATE_DIR"
   changed
 }
 
