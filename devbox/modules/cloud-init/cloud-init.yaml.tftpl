@@ -35,18 +35,12 @@ write_files:
       KbdInteractiveAuthentication no
       PubkeyAuthentication yes
       AllowUsers ${username}
-  - path: /opt/devbox/bootstrap/bootstrap.sh
-    permissions: "0755"
+%{ for f in bootstrap_files ~}
+  - path: /opt/devbox/bootstrap/${f.path}
+    permissions: "${f.mode}"
     encoding: b64
-    content: ${bootstrap_sh_b64}
-  - path: /opt/devbox/bootstrap/versions.env
-    permissions: "0644"
-    encoding: b64
-    content: ${versions_env_b64}
-  - path: /opt/devbox/bootstrap/devbox-mise.toml
-    permissions: "0644"
-    encoding: b64
-    content: ${devbox_mise_b64}
+    content: ${f.b64}
+%{ endfor ~}
   - path: /opt/devbox/devbox.env
     permissions: "0600"
     encoding: b64

@@ -185,6 +185,20 @@ install_docker() {
   if ((did)); then changed; else ok; fi
 }
 
+install_terminfo() {
+  step "terminfo (ghostty, kitty)"
+  # SSH from these terminals sends TERM=xterm-ghostty / xterm-kitty, which
+  # Ubuntu doesn't know. Compiled into ~/.terminfo, which ncurses searches.
+  local src name did=0
+  for src in "$SCRIPT_DIR"/terminfo/*.terminfo; do
+    name="$(basename "$src" .terminfo)"
+    infocmp "$name" >/dev/null 2>&1 && continue
+    tic -x -o "$HOME/.terminfo" "$src"
+    did=1
+  done
+  if ((did)); then changed; else ok; fi
+}
+
 link_fd() {
   step "fd symlink"
   # Ubuntu ships fd as `fdfind`. The dotfiles call `fd`.
@@ -367,6 +381,28 @@ install_mise_tools() {
   changed
 }
 
+install_nvim_plugins() {
+  step "neovim plugins (lazy-lock.json)"
+  # The dotfiles use NVIM_APPNAME=nvchad. Restoring the lockfile now means the
+  # first `nvim` opens ready, with the same plugin versions as macOS.
+  local lock="$HOME/.config/nvchad/lazy-lock.json" lazy="$HOME/.local/share/nvchad/lazy"
+  if [[ ! -f "$lock" ]]; then
+    skipped
+    return
+  fi
+  local want have=0
+  want="$(jq 'keys | length' "$lock")"
+  if [[ -d "$lazy" ]]; then
+    have="$(find "$lazy" -mindepth 1 -maxdepth 1 -type d | wc -l)"
+  fi
+  if ((have >= want)); then
+    ok
+    return
+  fi
+  NVIM_APPNAME=nvchad nvim --headless "+Lazy! restore" +qa
+  changed
+}
+
 install_claude_code() {
   step "claude code"
   if [[ -x "$HOME/.local/bin/claude" ]]; then
@@ -385,6 +421,43 @@ install_herdr_integration() {
   fi
   herdr integration install claude
   changed
+}
+
+configure_claude_settings() {
+  step "claude code settings"
+  # Merges the committed, secret-free fragment over whatever Claude, herdr
+  # and plugins already wrote, so those keys stay.
+  local settings="$HOME/.claude/settings.json" merged
+  mkdir -p "$HOME/.claude"
+  [[ -f "$settings" ]] || echo '{}' >"$settings"
+  merged="$(jq -s '.[0] * .[1]' "$settings" "$SCRIPT_DIR/claude-settings.json")"
+  if jq --sort-keys . "$settings" | cmp -s - <(jq --sort-keys . <<<"$merged"); then
+    ok
+    return
+  fi
+  printf '%s\n' "$merged" >"$settings"
+  changed
+}
+
+install_mcp_servers() {
+  step "claude code mcp servers"
+  # User-scope servers that need no secrets. Context7 works without its API key
+  # (rate limited); the github server needs a token and is left out.
+  local -A servers=(
+    [context7]="$(jq -nc '{type: "http", url: "https://mcp.context7.com/mcp"}')"
+    [sequential-thinking]="$(jq -nc '{command: "npx", args: ["-y", "@modelcontextprotocol/server-sequential-thinking"]}')"
+    [git]="$(jq -nc --arg repo "$METABASE_DIR" '{command: "uvx", args: ["mcp-server-git", "--repository", $repo]}')"
+    [sem]="$(jq -nc '{command: "sem", args: ["mcp"]}')"
+  )
+  local name did=0
+  for name in "${!servers[@]}"; do
+    if jq -e --arg n "$name" '.mcpServers[$n]' "$HOME/.claude.json" >/dev/null 2>&1; then
+      continue
+    fi
+    claude mcp add-json --scope user "$name" "${servers[$name]}" >/dev/null
+    did=1
+  done
+  if ((did)); then changed; else ok; fi
 }
 
 install_claude_plugins() {
@@ -407,6 +480,24 @@ install_claude_plugins() {
     claude plugin install --scope user "$plugin"
   done
   changed
+}
+
+install_pi_packages() {
+  step "pi packages"
+  # The dotfiles' ~/.pi/agent/settings.json lists packages (e.g. pi-claude-code);
+  # pi keeps git packages under ~/.pi/agent/git/<host>/<owner>/<repo>.
+  local settings="$HOME/.pi/agent/settings.json" url did=0
+  if [[ ! -f "$settings" ]] || ! command -v pi >/dev/null; then
+    skipped
+    return
+  fi
+  while IFS= read -r url; do
+    [[ "$url" == https://* ]] || continue
+    [[ -d "$HOME/.pi/agent/git/${url#https://}" ]] && continue
+    pi install "$url"
+    did=1
+  done < <(jq -r '.packages[]? | if type == "string" then . else .source end' "$settings")
+  if ((did)); then changed; else ok; fi
 }
 
 install_gh_extensions() {
@@ -522,9 +613,14 @@ main() {
   install_chezmoi
   configure_mise_tools
   install_mise_tools
+  install_terminfo
+  install_nvim_plugins
   install_claude_code
   install_herdr_integration
+  configure_claude_settings
   install_claude_plugins
+  install_mcp_servers
+  install_pi_packages
   install_gh_extensions
   clone_private_skills
   clone_metabase

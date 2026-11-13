@@ -1,0 +1,11 @@
+{
+  "editorMode": "vim",
+  "tui": "fullscreen",
+  "effortLevel": "low",
+  "modelSettings": {
+    "claude-sonnet-5": { "effortLevel": "high" },
+    "claude-opus-5": { "effortLevel": "high" },
+    "claude-opus-5-5": { "effortLevel": "medium" },
+    "claude-sonnet-5-5": { "effortLevel": "medium" }
+  }
+}
