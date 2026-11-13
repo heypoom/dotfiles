@@ -66,6 +66,13 @@ Library
 .config/fish/conf.d/z.fish
 .config/fish/conf.d/puffer*
 
+# Plugins fisher installs whole. Tracking any of their files makes fisher refuse to install them.
+.config/fish/conf.d/enhancd.fish
+.config/fish/functions/enhancd.fish
+.config/fish/functions/enhancd
+.config/fish/functions/enhancd/**
+.config/fish/conf.d/nix-env.fish
+
 # Zed internals
 .config/zed/conversations
 .config/zed/embeddings
