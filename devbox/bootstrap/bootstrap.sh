@@ -145,6 +145,23 @@ install_apt_packages() {
   changed
 }
 
+install_fish4() {
+  step "fish 4 (fish-shell PPA)"
+  # Ubuntu 24.04 ships fish 3.7; macOS has fish 4, and plugins assume it.
+  if command -v fish >/dev/null && [[ "$(fish --version)" == *"version 4."* ]]; then
+    ok
+    return
+  fi
+  if ! grep -rqs 'fish-shell/release-4' /etc/apt/sources.list.d/; then
+    sudo apt-get update -q
+    sudo apt-get install -yq --no-install-recommends software-properties-common
+    sudo add-apt-repository -y ppa:fish-shell/release-4
+  fi
+  sudo apt-get update -q
+  sudo apt-get install -yq fish
+  changed
+}
+
 install_docker() {
   step "docker engine"
   # Docker's own apt repo: current engine plus the compose and buildx plugins.
@@ -490,6 +507,7 @@ print_summary() {
 
 main() {
   log "devbox bootstrap for $USER on $(hostname) ($(date -Is))"
+  install_fish4
   install_apt_packages
   install_docker
   link_fd
