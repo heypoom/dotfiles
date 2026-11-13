@@ -1,0 +1,22 @@
+# Terraform state and plans hold secrets in plain text (rendered user_data,
+# Tailscale key). Never commit them.
+*.tfstate
+*.tfstate.*
+*.tfplan
+.terraform/
+crash.log
+crash.*.log
+
+# Local variable files hold secrets. Only the example is committed.
+*.tfvars
+*.tfvars.json
+!*.tfvars.example
+
+# Override files are machine-local by convention.
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Rendered cloud-init used by `make schema`.
+.rendered/

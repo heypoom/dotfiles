@@ -1,0 +1,10 @@
+# Copy to terraform.tfvars (gitignored) and edit. Every value has a default.
+# Pass secrets through the environment instead:
+#   export VULTR_API_KEY=...
+#   export TF_VAR_tailscale_auth_key=tskey-auth-...
+
+# plan                 = "vhp-8c-16gb-amd"
+# ssh_public_key_path  = "~/.ssh/id_ed25519.pub"
+# dotfiles_github_user = "heypoom"
+# shell                = "fish"
+# public_ssh           = false # SSH and mosh only over Tailscale

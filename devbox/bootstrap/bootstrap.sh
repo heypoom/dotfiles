@@ -1,0 +1,418 @@
+#!/usr/bin/env bash
+# Idempotent installer for a Metabase devbox on Ubuntu 24.04.
+#
+# Run it as the dev user (not root). That user needs passwordless sudo.
+# Every step checks before it changes anything, so re-running is safe and fast.
+#
+# Inputs (environment variables, or KEY=value lines in $DEVBOX_ENV_FILE):
+#   DOTFILES_GITHUB_USER  GitHub user for `chezmoi init`. Empty skips chezmoi.
+#   DEVBOX_SHELL          Login shell: fish (default), zsh or bash.
+#   METABASE_REPO_URL     Repo to clone. Empty skips the clone.
+#   METABASE_PUSH_URL     Push URL set on origin (default: SSH upstream).
+#   METABASE_DIR          Clone location (default ~/Workspaces/metabase/metabase).
+#   TAILSCALE_AUTH_KEY    If set, install Tailscale and run `tailscale up --ssh`.
+#   TAILSCALE_HOSTNAME    Tailnet hostname (default: the machine hostname).
+#   GITHUB_TOKEN          Optional. Raises GitHub API rate limits for mise.
+# Tool versions live in versions.env next to this script.
+
+# shellcheck source-path=SCRIPTDIR
+set -Eeuo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+DEVBOX_ENV_FILE="${DEVBOX_ENV_FILE:-/opt/devbox/devbox.env}"
+
+if [[ -r "$DEVBOX_ENV_FILE" ]]; then
+  set -a
+  # shellcheck source=/dev/null
+  source "$DEVBOX_ENV_FILE"
+  set +a
+fi
+
+if [[ ! -r "$SCRIPT_DIR/versions.env" ]]; then
+  echo "error: $SCRIPT_DIR/versions.env not found. Run bootstrap.sh from its folder in the repo." >&2
+  exit 1
+fi
+# shellcheck source=versions.env
+source "$SCRIPT_DIR/versions.env"
+
+: "${DOTFILES_GITHUB_USER:=}"
+: "${DEVBOX_SHELL:=fish}"
+: "${METABASE_REPO_URL=https://github.com/metabase/metabase.git}"
+: "${METABASE_PUSH_URL:=git@github.com:metabase/metabase.git}"
+: "${METABASE_DIR:=$HOME/Workspaces/metabase/metabase}"
+: "${TAILSCALE_AUTH_KEY:=}"
+: "${TAILSCALE_HOSTNAME:=$(hostname)}"
+
+USER="${USER:-$(id -un)}"
+export USER
+LOG_FILE="$HOME/.devbox-bootstrap.log"
+export DEBIAN_FRONTEND=noninteractive
+export MISE_YES=1
+export PATH="$HOME/.local/bin:$HOME/.local/share/mise/shims:$PATH"
+
+if [[ "$(id -u)" -eq 0 ]]; then
+  echo "error: run bootstrap.sh as the dev user, not root." >&2
+  exit 1
+fi
+
+exec > >(tee -a "$LOG_FILE") 2>&1
+
+SUMMARY=()
+CURRENT_STEP="start"
+START_TIME=$SECONDS
+
+log() { printf '\033[94m==>\033[0m %s\n' "$*"; }
+record() { SUMMARY+=("$(printf '%-10s %s' "$1" "$CURRENT_STEP")"); }
+changed() { record "changed"; }
+ok() { record "ok"; }
+skipped() { record "skipped"; }
+
+on_error() {
+  echo "error: step '$CURRENT_STEP' failed (line $1). See $LOG_FILE" >&2
+}
+trap 'on_error $LINENO' ERR
+
+step() {
+  CURRENT_STEP="$1"
+  log "$1"
+}
+
+in_container() {
+  [[ -f /.dockerenv ]] || grep -qa 'container=' /proc/1/environ 2>/dev/null
+}
+
+# Writes stdin to $1 with sudo, only when the content differs. Returns 0 if written.
+write_root_file() {
+  local target="$1" tmp
+  tmp="$(mktemp)"
+  cat >"$tmp"
+  if sudo cmp -s "$tmp" "$target" 2>/dev/null; then
+    rm -f "$tmp"
+    return 1
+  fi
+  sudo install -m 0644 "$tmp" "$target"
+  rm -f "$tmp"
+}
+
+# Same as write_root_file, for files the user owns.
+write_user_file() {
+  local target="$1" tmp
+  tmp="$(mktemp)"
+  cat >"$tmp"
+  if cmp -s "$tmp" "$target" 2>/dev/null; then
+    rm -f "$tmp"
+    return 1
+  fi
+  mkdir -p "$(dirname "$target")"
+  mv "$tmp" "$target"
+}
+
+APT_PACKAGES=(
+  # basics
+  git curl ca-certificates gnupg unzip zip xz-utils file less sudo locales tzdata
+  procps openssh-client
+  # dev tools
+  ripgrep fd-find fzf jq tmux mosh htop entr git-lfs rlwrap fish zsh
+  # libraries mise needs to build tools (python, ruby, node-gyp modules)
+  build-essential pkg-config autoconf libssl-dev zlib1g-dev libffi-dev
+  libreadline-dev libbz2-dev libsqlite3-dev liblzma-dev libyaml-dev libncurses-dev
+)
+
+install_apt_packages() {
+  step "apt packages"
+  local missing=() pkg
+  for pkg in "${APT_PACKAGES[@]}"; do
+    if ! dpkg-query -W -f='${Status}' "$pkg" 2>/dev/null | grep -q 'install ok installed'; then
+      missing+=("$pkg")
+    fi
+  done
+  if ((${#missing[@]} == 0)); then
+    ok
+    return
+  fi
+  log "installing: ${missing[*]}"
+  sudo apt-get update -q
+  sudo apt-get install -yq --no-install-recommends "${missing[@]}"
+  changed
+}
+
+link_fd() {
+  step "fd symlink"
+  # Ubuntu ships fd as `fdfind`. The dotfiles call `fd`.
+  if [[ -x "$HOME/.local/bin/fd" ]]; then
+    ok
+    return
+  fi
+  mkdir -p "$HOME/.local/bin"
+  ln -sf "$(command -v fdfind)" "$HOME/.local/bin/fd"
+  changed
+}
+
+configure_locale() {
+  step "locale en_US.UTF-8"
+  # The dotfiles' fish config sets LC_ALL=en_US.UTF-8.
+  if locale -a 2>/dev/null | grep -qi '^en_US\.utf-\?8$'; then
+    ok
+    return
+  fi
+  sudo locale-gen en_US.UTF-8
+  changed
+}
+
+configure_timezone() {
+  step "timezone $DEVBOX_TIMEZONE"
+  local zone="/usr/share/zoneinfo/$DEVBOX_TIMEZONE"
+  if [[ "$(readlink -f /etc/localtime)" == "$zone" ]]; then
+    ok
+    return
+  fi
+  sudo ln -sf "$zone" /etc/localtime
+  echo "$DEVBOX_TIMEZONE" | sudo tee /etc/timezone >/dev/null
+  changed
+}
+
+configure_sysctl() {
+  step "sysctl (inotify, swappiness)"
+  if write_root_file /etc/sysctl.d/60-devbox.conf <<EOF; then
+# Managed by devbox bootstrap.sh. rspack and file watchers need many watches.
+fs.inotify.max_user_watches = $DEVBOX_INOTIFY_WATCHES
+fs.inotify.max_user_instances = 1024
+vm.swappiness = 10
+EOF
+    if in_container; then
+      log "container: file written, not applied"
+    else
+      sudo sysctl --system >/dev/null
+    fi
+    changed
+  else
+    ok
+  fi
+}
+
+configure_swap() {
+  step "swapfile ${DEVBOX_SWAP_GB}G"
+  if in_container; then
+    skipped
+    return
+  fi
+  if swapon --show=NAME --noheadings | grep -qx /swapfile; then
+    ok
+    return
+  fi
+  if [[ ! -f /swapfile ]]; then
+    sudo fallocate -l "${DEVBOX_SWAP_GB}G" /swapfile
+    sudo chmod 600 /swapfile
+    sudo mkswap /swapfile >/dev/null
+  fi
+  sudo swapon /swapfile
+  grep -q '^/swapfile ' /etc/fstab || echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab >/dev/null
+  changed
+}
+
+configure_login_shell() {
+  step "login shell $DEVBOX_SHELL"
+  local want current
+  want="$(command -v "$DEVBOX_SHELL")"
+  current="$(getent passwd "$USER" | cut -d: -f7)"
+  if [[ "$current" == "$want" ]]; then
+    ok
+    return
+  fi
+  grep -qx "$want" /etc/shells || echo "$want" | sudo tee -a /etc/shells >/dev/null
+  sudo usermod -s "$want" "$USER"
+  changed
+}
+
+install_tailscale() {
+  step "tailscale"
+  if [[ -z "$TAILSCALE_AUTH_KEY" ]]; then
+    skipped
+    return
+  fi
+  if in_container; then
+    log "container: tailscaled needs systemd, skipping"
+    skipped
+    return
+  fi
+  local did=0
+  if ! command -v tailscale >/dev/null; then
+    curl -fsSL https://tailscale.com/install.sh | sh
+    did=1
+  fi
+  if [[ "$(sudo tailscale status --json 2>/dev/null | jq -r '.BackendState')" != "Running" ]]; then
+    sudo tailscale up --auth-key="$TAILSCALE_AUTH_KEY" --ssh --hostname="$TAILSCALE_HOSTNAME"
+    did=1
+  fi
+  if ((did)); then changed; else ok; fi
+}
+
+install_mise() {
+  step "mise"
+  if [[ -x "$HOME/.local/bin/mise" ]]; then
+    ok
+    return
+  fi
+  curl -fsSL https://mise.run | sh
+  changed
+}
+
+configure_bash_mise() {
+  step "mise activation in ~/.bashrc"
+  # fish gets mise shims from the dotfiles (conf.d/5-mise.fish).
+  # bash is still used for scripts and as a fallback shell.
+  # shellcheck disable=SC2016 # written literally into .bashrc
+  local line='eval "$("$HOME/.local/bin/mise" activate bash)"'
+  if grep -qF "$line" "$HOME/.bashrc" 2>/dev/null; then
+    ok
+    return
+  fi
+  printf '\n# devbox: mise\n%s\n' "$line" >>"$HOME/.bashrc"
+  changed
+}
+
+install_chezmoi() {
+  step "chezmoi"
+  if [[ -z "$DOTFILES_GITHUB_USER" ]]; then
+    skipped
+    return
+  fi
+  local did=0
+  if [[ ! -x "$HOME/.local/bin/chezmoi" ]]; then
+    sh -c "$(curl -fsLS get.chezmoi.io)" -- -b "$HOME/.local/bin"
+    did=1
+  fi
+  if [[ ! -f "$HOME/.config/chezmoi/chezmoi.toml" ]]; then
+    if [[ -d "$HOME/.local/share/chezmoi/.git" ]]; then
+      # The repo was cloned by hand (manual bootstrap); reuse it.
+      chezmoi init --apply
+    else
+      chezmoi init --apply "$DOTFILES_GITHUB_USER"
+    fi
+    did=1
+  fi
+  # Later runs leave dotfiles alone. Use `chezmoi update` to pull changes.
+  if ((did)); then changed; else ok; fi
+}
+
+configure_mise_tools() {
+  step "mise devbox tools config"
+  # A conf.d fragment keeps the dotfiles' config.toml untouched.
+  # config.toml still wins on any tool both files define.
+  if write_user_file "$HOME/.config/mise/conf.d/devbox.toml" <<EOF; then
+# Managed by devbox bootstrap.sh. Edit devbox/bootstrap/versions.env instead.
+[settings]
+idiomatic_version_file_enable_tools = ["node"]
+
+[tools]
+neovim = "$NEOVIM_VERSION"
+babashka = "$BABASHKA_VERSION"
+clojure = "$CLOJURE_VERSION"
+herdr = "$HERDR_VERSION"
+EOF
+    changed
+  else
+    ok
+  fi
+}
+
+install_mise_tools() {
+  step "mise install (global)"
+  local missing
+  missing="$(cd "$HOME" && mise ls --current --missing 2>/dev/null || true)"
+  if [[ -z "$missing" ]]; then
+    ok
+    return
+  fi
+  (cd "$HOME" && mise install)
+  changed
+}
+
+install_claude_code() {
+  step "claude code"
+  if [[ -x "$HOME/.local/bin/claude" ]]; then
+    ok
+    return
+  fi
+  curl -fsSL https://claude.ai/install.sh | bash -s "$CLAUDE_CODE_VERSION"
+  changed
+}
+
+install_herdr_integration() {
+  step "herdr claude integration"
+  if [[ -f "$HOME/.claude/hooks/herdr-agent-state.sh" ]]; then
+    ok
+    return
+  fi
+  herdr integration install claude
+  changed
+}
+
+clone_metabase() {
+  step "metabase repo"
+  if [[ -z "$METABASE_REPO_URL" ]]; then
+    skipped
+    return
+  fi
+  local did=0
+  if [[ ! -d "$METABASE_DIR/.git" ]]; then
+    mkdir -p "$(dirname "$METABASE_DIR")"
+    # Blobless clone: full history, file contents fetched on demand.
+    git clone --filter=blob:none "$METABASE_REPO_URL" "$METABASE_DIR"
+    did=1
+  fi
+  if [[ -n "$METABASE_PUSH_URL" && "$(git -C "$METABASE_DIR" remote get-url --push origin)" != "$METABASE_PUSH_URL" ]]; then
+    git -C "$METABASE_DIR" remote set-url --push origin "$METABASE_PUSH_URL"
+    did=1
+  fi
+  if ((did)); then changed; else ok; fi
+}
+
+install_metabase_toolchain() {
+  step "metabase toolchain (mise install in repo)"
+  if [[ -z "$METABASE_REPO_URL" ]]; then
+    skipped
+    return
+  fi
+  local did=0 missing
+  # Trusting an already-trusted file is a no-op.
+  mise trust --quiet "$METABASE_DIR/mise.toml"
+  missing="$(cd "$METABASE_DIR" && mise ls --current --missing 2>/dev/null || true)"
+  if [[ -n "$missing" ]]; then
+    (cd "$METABASE_DIR" && mise install)
+    did=1
+  fi
+  if ((did)); then changed; else ok; fi
+}
+
+print_summary() {
+  CURRENT_STEP="summary"
+  echo
+  log "devbox bootstrap finished in $((SECONDS - START_TIME))s"
+  printf '  %s\n' "${SUMMARY[@]}"
+  echo "  log: $LOG_FILE"
+}
+
+main() {
+  log "devbox bootstrap for $USER on $(hostname) ($(date -Is))"
+  install_apt_packages
+  link_fd
+  configure_locale
+  configure_timezone
+  configure_sysctl
+  configure_swap
+  configure_login_shell
+  install_tailscale
+  install_mise
+  configure_bash_mise
+  install_chezmoi
+  configure_mise_tools
+  install_mise_tools
+  install_claude_code
+  install_herdr_integration
+  clone_metabase
+  install_metabase_toolchain
+  print_summary
+}
+
+main "$@"

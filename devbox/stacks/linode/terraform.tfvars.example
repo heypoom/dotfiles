@@ -1,0 +1,10 @@
+# Copy to terraform.tfvars (gitignored) and edit. Every value has a default.
+# Pass secrets through the environment instead:
+#   export LINODE_TOKEN=...
+#   export TF_VAR_tailscale_auth_key=tskey-auth-...
+
+# type                 = "g6-standard-6"
+# ssh_public_key_path  = "~/.ssh/id_ed25519.pub"
+# dotfiles_github_user = "heypoom"
+# shell                = "fish"
+# public_ssh           = false # SSH and mosh only over Tailscale

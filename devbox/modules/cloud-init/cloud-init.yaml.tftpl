@@ -1,0 +1,60 @@
+#cloud-config
+# Rendered by modules/cloud-init. Creates the dev user, locks down sshd,
+# writes bootstrap.sh and runs it as the dev user.
+
+hostname: ${hostname}
+preserve_hostname: false
+
+disable_root: true
+ssh_pwauth: false
+
+users:
+  - name: ${username}
+    groups: [sudo]
+    shell: /bin/bash
+    sudo: "ALL=(ALL) NOPASSWD:ALL"
+    lock_passwd: true
+    ssh_authorized_keys:
+%{ for key in ssh_public_keys ~}
+      - ${jsonencode(key)}
+%{ endfor ~}
+
+package_update: true
+packages:
+  - curl
+  - git
+  - jq
+
+write_files:
+  - path: /etc/ssh/sshd_config.d/10-devbox.conf
+    permissions: "0644"
+    content: |
+      # sshd uses the first value it reads, and this file sorts before 50-cloud-init.conf.
+      PermitRootLogin no
+      PasswordAuthentication no
+      KbdInteractiveAuthentication no
+      PubkeyAuthentication yes
+      AllowUsers ${username}
+  - path: /opt/devbox/bootstrap/bootstrap.sh
+    permissions: "0755"
+    encoding: b64
+    content: ${bootstrap_sh_b64}
+  - path: /opt/devbox/bootstrap/versions.env
+    permissions: "0644"
+    encoding: b64
+    content: ${versions_env_b64}
+  - path: /opt/devbox/devbox.env
+    permissions: "0600"
+    encoding: b64
+    content: ${devbox_env_b64}
+
+runcmd:
+  - [systemctl, restart, ssh]
+  - [chown, -R, "${username}:${username}", /opt/devbox]
+  # Drop the single-use Tailscale key from disk whatever happens, then keep
+  # bootstrap's exit code so `cloud-init status` reports a failed bootstrap.
+  - |
+    rc=0
+    sudo -u ${username} -H -- bash -lc /opt/devbox/bootstrap/bootstrap.sh || rc=$?
+    sed -i '/^TAILSCALE_AUTH_KEY=/d' /opt/devbox/devbox.env
+    exit "$rc"
