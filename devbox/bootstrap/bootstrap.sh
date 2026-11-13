@@ -189,6 +189,52 @@ install_docker() {
   if ((did)); then changed; else ok; fi
 }
 
+configure_postgres() {
+  step "postgresql $DEVBOX_PG_VERSION ($DEVBOX_PG_DB)"
+  # Metabase's app DB. Agents must never fall back to H2 (see the metabase-devbox skill).
+  local did=0 pkg="postgresql-$DEVBOX_PG_VERSION"
+  local hba="/etc/postgresql/$DEVBOX_PG_VERSION/main/pg_hba.conf"
+  if ! dpkg-query -W -f='${Status}' "$pkg" 2>/dev/null | grep -q 'install ok installed'; then
+    sudo apt-get update -q
+    sudo apt-get install -yq --no-install-recommends "$pkg"
+    did=1
+  fi
+  # Loopback trusts every user, like Homebrew's default on macOS, so the JDBC URL
+  # needs no password. The server listens on localhost only.
+  if write_root_file "$hba" <<'EOF'; then
+# Managed by devbox bootstrap.sh. Single-user dev box: loopback needs no password.
+local   all           postgres                peer
+local   all           all                     peer
+host    all           all       127.0.0.1/32  trust
+host    all           all       ::1/128       trust
+local   replication   all                     peer
+host    replication   all       127.0.0.1/32  trust
+EOF
+    sudo chown postgres:postgres "$hba"
+    sudo chmod 640 "$hba"
+    did=1
+  fi
+  if ! pg_lsclusters -h | awk -v v="$DEVBOX_PG_VERSION" '$1==v && $2=="main" && $4=="online"' | grep -q .; then
+    sudo pg_ctlcluster "$DEVBOX_PG_VERSION" main start
+    did=1
+  elif ((did)); then
+    sudo pg_ctlcluster "$DEVBOX_PG_VERSION" main reload
+  fi
+  if ! in_container && ! systemctl is-enabled --quiet postgresql; then
+    sudo systemctl enable postgresql
+    did=1
+  fi
+  if [[ -z "$(sudo -u postgres psql -tAc "SELECT 1 FROM pg_roles WHERE rolname = '$USER'")" ]]; then
+    sudo -u postgres createuser --superuser "$USER"
+    did=1
+  fi
+  if [[ -z "$(psql -h localhost -d postgres -tAc "SELECT 1 FROM pg_database WHERE datname = '$DEVBOX_PG_DB'")" ]]; then
+    createdb -h localhost "$DEVBOX_PG_DB"
+    did=1
+  fi
+  if ((did)); then changed; else ok; fi
+}
+
 install_terminfo() {
   step "terminfo (ghostty, kitty)"
   # SSH from these terminals sends TERM=xterm-ghostty / xterm-kitty, which
@@ -627,6 +673,7 @@ main() {
   install_fish4
   install_apt_packages
   install_docker
+  configure_postgres
   link_fd
   configure_locale
   configure_timezone

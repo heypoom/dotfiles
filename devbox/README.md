@@ -54,6 +54,7 @@ Prices are from the provider APIs on 2026-11-13. Both providers bill hourly up t
 | Private skills | With `skills_repo_url` set, `make rebootstrap` clones that repo into `~/.agents/skills` and links `~/.claude/skills` to it. |
 | Agent memory | With `agent_private_repo_url` set, `make rebootstrap` clones that private repo into `~/Workspaces/metabase/agent-private`, the same path as on macOS. Your global `CLAUDE.md` imports its `AGENTS.md`. |
 | Metabase | A blobless clone of upstream into `~/Workspaces/metabase/metabase` (the same path as on macOS), with `mise install` run inside it. |
+| App DB | PostgreSQL 16 on localhost with a `metabase-dev` database. Loopback connections need no password (like Homebrew on macOS), so `MB_DB_CONNECTION_URI='jdbc:postgresql://localhost:5432/metabase-dev?user=poom'` works as is. The private `metabase-devbox` skill covers running Metabase on the box. |
 | Tailscale | `tailscale up --ssh` when a key is given. The key is deleted from disk after bootstrap. |
 
 Choices worth knowing:
