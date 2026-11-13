@@ -47,7 +47,8 @@ Prices are from the provider APIs on 2026-11-13. Both providers bill hourly up t
 | System | `fs.inotify.max_user_watches=1048576`, an 8 GB swapfile, `Asia/Bangkok` time, the `en_US.UTF-8` locale. |
 | Dotfiles | `chezmoi init --apply heypoom`, which also runs the repo's `run_once` setup scripts (tpm, fisher, rustup). |
 | Global mise tools | From the dotfiles' `config.toml`: Java Temurin 21, Node 22, Python, Bun, Rust and more. From `~/.config/mise/conf.d/devbox.toml`: neovim, babashka, Clojure CLI, herdr. |
-| Agents | Claude Code (native installer, not logged in) and the herdr Claude integration. |
+| Agents | Claude Code (native installer, not logged in), the herdr Claude integration, and the plugins in `CLAUDE_PLUGINS` (`versions.env`). |
+| Private skills | With `skills_repo_url` set, `make rebootstrap` clones that repo into `~/.agents/skills` and links `~/.claude/skills` to it. |
 | Metabase | A blobless clone of upstream into `~/Workspaces/metabase/metabase` (the same path as on macOS), with `mise install` run inside it. |
 | Tailscale | `tailscale up --ssh` when a key is given. The key is deleted from disk after bootstrap. |
 
@@ -56,7 +57,13 @@ Choices worth knowing:
 - **Clojure CLI comes from mise**, not the clojure.org script. Metabase's own `mise.toml` pins Clojure through mise, so the global and repo installs work the same way.
 - **The Java version depends on where you are.** The global default is Temurin 21. Inside the Metabase repo, its `mise.toml` pins Temurin 25, and `.nvmrc` sets Node. mise switches automatically, through the shims fish puts on `PATH`.
 - **Pushing to Metabase:** `origin` fetches over HTTPS and pushes over SSH. Connect with `ssh -A` so your local key signs the push, or run `gh auth login` on the box.
-- **Versions** live in `bootstrap/versions.env`. Change them there and re-run `bootstrap.sh`.
+- **Versions** live in `bootstrap/versions.env`. Change them there and run `make rebootstrap`.
+
+## Claude Code on the box
+
+1. **Plugins** install during the first boot, because their marketplaces are public GitHub repos.
+2. **Private skills** need GitHub access, which the box doesn't have during cloud-init. So that step reports `skipped` on the first boot. Set `skills_repo_url` in `terraform.tfvars`, make sure `ssh-add -l` on your Mac lists your GitHub key (with 1Password's agent, the key has to be enabled for the SSH agent), then run `make rebootstrap`. It copies the local `bootstrap/` to the box and re-runs it over `ssh -A`. Afterwards, update the skills with `git -C ~/.agents/skills pull` on the box.
+3. **Log in** by hand: `ssh` in, run `claude`, then `/login`, and open the URL it prints on your Mac.
 
 ## Secrets
 
@@ -65,7 +72,7 @@ Nothing secret goes in git. Two rules:
 - **API tokens** (`VULTR_API_KEY`, `LINODE_TOKEN`) are read only from the environment.
 - **`terraform.tfstate` holds the rendered user data in plain text**, including the Tailscale key. It stays local and gitignored. A one-off key is useless once the box has joined the tailnet.
 
-`private.fish` (EE tokens and the like) never goes through Terraform. `make push-secrets` copies it over scp with mode 600.
+`private.fish` (personal tokens and the like) never goes through Terraform. `make push-secrets` copies it over scp with mode 600.
 
 ## Run bootstrap by hand (no Terraform)
 
@@ -101,7 +108,14 @@ clojure -P -M:dev                   # backend deps resolve
 bun install                         # frontend deps
 ```
 
-Time from `apply` to a ready box: _to be measured on the first real deploy._
+Measured on 2026-11-13 (Vultr `vhp-4c-8gb-amd`, `sgp`):
+
+| Stage | Time |
+|---|---|
+| `apply` to instance created | 2 min 9 s |
+| `apply` to `cloud-init status: done` | 8 min 8 s |
+| `clojure -P -M:dev` (first run) | 61 s |
+| `bun install` (first run) | 33 s |
 
 ## State
 

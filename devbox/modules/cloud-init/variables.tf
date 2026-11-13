@@ -67,6 +67,12 @@ variable "tailscale_auth_key" {
   sensitive   = true
 }
 
+variable "skills_repo_url" {
+  description = "Private skills repo (SSH URL) for ~/.agents/skills. Cloned by `make rebootstrap` over ssh -A. Empty skips."
+  type        = string
+  default     = ""
+}
+
 variable "extra_env" {
   description = "Extra KEY = value pairs written to /opt/devbox/devbox.env (e.g. versions.env overrides)."
   type        = map(string)

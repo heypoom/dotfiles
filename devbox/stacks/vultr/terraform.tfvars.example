@@ -8,3 +8,4 @@
 # dotfiles_github_user = "heypoom"
 # shell                = "fish"
 # public_ssh           = false # SSH and mosh only over Tailscale
+# skills_repo_url      = "git@github.com:<you>/<private-skills>.git" # cloned by make rebootstrap

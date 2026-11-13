@@ -12,6 +12,9 @@
 #   METABASE_DIR          Clone location (default ~/Workspaces/metabase/metabase).
 #   TAILSCALE_AUTH_KEY    If set, install Tailscale and run `tailscale up --ssh`.
 #   TAILSCALE_HOSTNAME    Tailnet hostname (default: the machine hostname).
+#   SKILLS_REPO_URL       Private skills repo (SSH URL) cloned to ~/.agents/skills,
+#                         linked as ~/.claude/skills. Needs GitHub SSH access, so it is
+#                         skipped until bootstrap runs over `ssh -A` (make rebootstrap).
 #   GITHUB_TOKEN          Optional. Raises GitHub API rate limits for mise.
 # Tool versions live in versions.env next to this script.
 
@@ -22,10 +25,14 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 DEVBOX_ENV_FILE="${DEVBOX_ENV_FILE:-/opt/devbox/devbox.env}"
 
 if [[ -r "$DEVBOX_ENV_FILE" ]]; then
+  # Variables the caller exported win over the file (e.g. make rebootstrap).
+  caller_env="$(export -p)"
   set -a
   # shellcheck source=/dev/null
   source "$DEVBOX_ENV_FILE"
   set +a
+  eval "$caller_env"
+  unset caller_env
 fi
 
 if [[ ! -r "$SCRIPT_DIR/versions.env" ]]; then
@@ -42,6 +49,7 @@ source "$SCRIPT_DIR/versions.env"
 : "${METABASE_DIR:=$HOME/Workspaces/metabase/metabase}"
 : "${TAILSCALE_AUTH_KEY:=}"
 : "${TAILSCALE_HOSTNAME:=$(hostname)}"
+: "${SKILLS_REPO_URL:=}"
 
 USER="${USER:-$(id -un)}"
 export USER
@@ -348,6 +356,57 @@ install_herdr_integration() {
   changed
 }
 
+install_claude_plugins() {
+  step "claude code plugins"
+  local installed missing=() plugin repo
+  installed="$(claude plugin list 2>/dev/null || true)"
+  for plugin in $CLAUDE_PLUGINS; do
+    grep -qF "❯ $plugin" <<<"$installed" || missing+=("$plugin")
+  done
+  if ((${#missing[@]} == 0)); then
+    ok
+    return
+  fi
+  local marketplaces
+  marketplaces="$(claude plugin marketplace list 2>/dev/null || true)"
+  for repo in $CLAUDE_PLUGIN_MARKETPLACES; do
+    grep -qF "GitHub ($repo)" <<<"$marketplaces" || claude plugin marketplace add "$repo"
+  done
+  for plugin in "${missing[@]}"; do
+    claude plugin install --scope user "$plugin"
+  done
+  changed
+}
+
+clone_private_skills() {
+  step "private skills"
+  if [[ -z "$SKILLS_REPO_URL" ]]; then
+    skipped
+    return
+  fi
+  local did=0 skills="$HOME/.agents/skills"
+  if [[ ! -d "$skills/.git" ]]; then
+    # Exit code 1 plus this message means the key works (GitHub offers no shell).
+    if ! ssh -o BatchMode=yes -o StrictHostKeyChecking=accept-new -T git@github.com 2>&1 | grep -q 'successfully authenticated'; then
+      log "no GitHub SSH access; re-run over \`ssh -A\` (make rebootstrap) to clone"
+      skipped
+      return
+    fi
+    mkdir -p "$(dirname "$skills")"
+    git clone "$SKILLS_REPO_URL" "$skills"
+    did=1
+  fi
+  if [[ "$(readlink "$HOME/.claude/skills" 2>/dev/null)" != "$skills" ]]; then
+    if [[ -e "$HOME/.claude/skills" && ! -L "$HOME/.claude/skills" ]]; then
+      log "$HOME/.claude/skills exists and is not a link; leaving it"
+    else
+      ln -sfn "$skills" "$HOME/.claude/skills"
+      did=1
+    fi
+  fi
+  if ((did)); then changed; else ok; fi
+}
+
 clone_metabase() {
   step "metabase repo"
   if [[ -z "$METABASE_REPO_URL" ]]; then
@@ -410,6 +469,8 @@ main() {
   install_mise_tools
   install_claude_code
   install_herdr_integration
+  install_claude_plugins
+  clone_private_skills
   clone_metabase
   install_metabase_toolchain
   print_summary

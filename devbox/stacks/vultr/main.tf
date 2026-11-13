@@ -8,6 +8,7 @@ module "cloud_init" {
   shell                = var.shell
   metabase_repo_url    = var.metabase_repo_url
   tailscale_auth_key   = var.tailscale_auth_key
+  skills_repo_url      = var.skills_repo_url
 }
 
 resource "vultr_ssh_key" "this" {

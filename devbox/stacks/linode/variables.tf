@@ -53,6 +53,12 @@ variable "tailscale_auth_key" {
   sensitive   = true
 }
 
+variable "skills_repo_url" {
+  description = "Private skills repo SSH URL. Keep it in terraform.tfvars (gitignored)."
+  type        = string
+  default     = ""
+}
+
 variable "public_ssh" {
   description = "Open SSH (22/tcp) and mosh (60000-61000/udp) to the internet. Set false to reach the box only over Tailscale."
   type        = bool

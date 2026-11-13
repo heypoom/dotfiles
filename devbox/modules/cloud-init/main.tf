@@ -15,6 +15,7 @@ locals {
       METABASE_PUSH_URL    = var.metabase_push_url
       TAILSCALE_HOSTNAME   = var.hostname
       TAILSCALE_AUTH_KEY   = var.tailscale_auth_key
+      SKILLS_REPO_URL      = var.skills_repo_url
     },
     var.extra_env,
   )

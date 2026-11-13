@@ -6,7 +6,7 @@ TEST_IMAGE := devbox-bootstrap-test
 TEST_CONTAINER := devbox-bootstrap-test
 
 .PHONY: help fmt fmt-check validate lint schema check test-docker test-docker-clean \
-	init plan apply destroy output ssh wait push-secrets
+	init plan apply destroy output ssh wait push-secrets rebootstrap
 
 help:
 	@echo "make check                  fmt-check + validate + lint + schema"
@@ -14,6 +14,7 @@ help:
 	@echo "make plan|apply|destroy     STACK=$(STACK) (vultr or linode)"
 	@echo "make wait                   wait for cloud-init to finish on the box"
 	@echo "make push-secrets           copy ~/.config/fish/private.fish to the box"
+	@echo "make rebootstrap            copy bootstrap/ to the box, re-run it over ssh -A"
 
 fmt:
 	terraform fmt -recursive
@@ -82,3 +83,12 @@ push-secrets:
 	@ip=$$($(TF) output -raw ip); user=$$(echo 'var.username' | $(TF) console | tr -d '"'); \
 	scp ~/.config/fish/private.fish $$user@$$ip:.config/fish/private.fish && \
 	ssh $$user@$$ip chmod 600 .config/fish/private.fish && echo "==> copied private.fish to $$ip"
+
+# Copies the local bootstrap/ to the box and re-runs it with agent forwarding, so
+# steps that need GitHub SSH (private skills) can run. skills_repo_url comes from
+# terraform.tfvars and is passed as an env override.
+rebootstrap:
+	@ip=$$($(TF) output -raw ip); user=$$(echo 'var.username' | $(TF) console | tr -d '"'); \
+	skills=$$(echo 'var.skills_repo_url' | $(TF) console | tr -d '"'); \
+	scp -q bootstrap/bootstrap.sh bootstrap/versions.env $$user@$$ip:/opt/devbox/bootstrap/ && \
+	ssh -A -t $$user@$$ip env SKILLS_REPO_URL="$$skills" bash -lc /opt/devbox/bootstrap/bootstrap.sh
