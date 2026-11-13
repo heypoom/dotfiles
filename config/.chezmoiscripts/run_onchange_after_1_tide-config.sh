@@ -164,7 +164,9 @@ set -U tide_vi_mode_icon_replace R
 set -U tide_vi_mode_icon_visual V
 set -U tide_zig_bg_color normal
 set -U tide_zig_color yellow
-set -U tide_zig_icon
-# Recompute tide's derived item lists (_tide_left_items), as `tide configure` does.
-_tide_remove_unusable_items
+set -U tide_zig_icon 
 FISH
+
+# Recompute tide's derived item lists (_tide_left_items), as `tide configure` does.
+# A fresh fish process: the heredoc session above can't run tide's functions.
+fish -c _tide_remove_unusable_items
