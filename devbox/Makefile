@@ -90,5 +90,5 @@ push-secrets:
 rebootstrap:
 	@ip=$$($(TF) output -raw ip); user=$$(echo 'var.username' | $(TF) console | tr -d '"'); \
 	skills=$$(echo 'var.skills_repo_url' | $(TF) console | tr -d '"'); \
-	scp -q bootstrap/bootstrap.sh bootstrap/versions.env $$user@$$ip:/opt/devbox/bootstrap/ && \
+	scp -q bootstrap/bootstrap.sh bootstrap/versions.env bootstrap/devbox-mise.toml $$user@$$ip:/opt/devbox/bootstrap/ && \
 	ssh -A -t $$user@$$ip env SKILLS_REPO_URL="$$skills" bash -lc /opt/devbox/bootstrap/bootstrap.sh

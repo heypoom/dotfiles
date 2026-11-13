@@ -43,6 +43,10 @@ write_files:
     permissions: "0644"
     encoding: b64
     content: ${versions_env_b64}
+  - path: /opt/devbox/bootstrap/devbox-mise.toml
+    permissions: "0644"
+    encoding: b64
+    content: ${devbox_mise_b64}
   - path: /opt/devbox/devbox.env
     permissions: "0600"
     encoding: b64

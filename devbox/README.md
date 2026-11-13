@@ -46,7 +46,9 @@ Prices are from the provider APIs on 2026-11-13. Both providers bill hourly up t
 | Firewall | 22/tcp and 60000–61000/udp (mosh). 41641/udp is added when Tailscale is on. Set `public_ssh = false` to close 22 and mosh, leaving the box reachable over Tailscale only. |
 | System | `fs.inotify.max_user_watches=1048576`, an 8 GB swapfile, `Asia/Bangkok` time, the `en_US.UTF-8` locale. |
 | Dotfiles | `chezmoi init --apply heypoom`, which also runs the repo's `run_once` setup scripts (tpm, fisher, rustup). |
-| Global mise tools | From the dotfiles' `config.toml`: Java Temurin 21, Node 22, Python, Bun, Rust and more. From `~/.config/mise/conf.d/devbox.toml`: neovim, babashka, Clojure CLI, herdr. |
+| Global mise tools | From the dotfiles' `config.toml` (shared with macOS): Java Temurin 21, Node 22, Python, Bun, Rust, git-spice, op, bat and more. From [`bootstrap/devbox-mise.toml`](bootstrap/devbox-mise.toml), copied to `~/.config/mise/conf.d/devbox.toml`: neovim, herdr, zellij, yazi, babashka, Clojure CLI, clj-kondo, gh, lazygit, delta, diff-so-fancy, eza, fx, tldr, ast-grep, hyperfine, btop, just, pnpm, sccache, uv, lazydocker, pgcli, `mb` (`@metabase/cli`), codex. |
+| apt | Build libraries, plus fish, tmux, mosh, ripgrep, fd, fzf, jq, lnav, tig, ncdu, `psql`/`createdb` (`postgresql-client`), and Docker Engine with the compose and buildx plugins (from Docker's apt repo; `poom` is in the `docker` group). |
+| gh extensions | `GH_EXTENSIONS` (`gh stack`). Skipped until you run `gh auth login` on the box, then `make rebootstrap`. |
 | Agents | Claude Code (native installer, not logged in), the herdr Claude integration, and the plugins in `CLAUDE_PLUGINS` (`versions.env`). |
 | Private skills | With `skills_repo_url` set, `make rebootstrap` clones that repo into `~/.agents/skills` and links `~/.claude/skills` to it. |
 | Metabase | A blobless clone of upstream into `~/Workspaces/metabase/metabase` (the same path as on macOS), with `mise install` run inside it. |
@@ -57,7 +59,7 @@ Choices worth knowing:
 - **Clojure CLI comes from mise**, not the clojure.org script. Metabase's own `mise.toml` pins Clojure through mise, so the global and repo installs work the same way.
 - **The Java version depends on where you are.** The global default is Temurin 21. Inside the Metabase repo, its `mise.toml` pins Temurin 25, and `.nvmrc` sets Node. mise switches automatically, through the shims fish puts on `PATH`.
 - **Pushing to Metabase:** `origin` fetches over HTTPS and pushes over SSH. Connect with `ssh -A` so your local key signs the push, or run `gh auth login` on the box.
-- **Versions** live in `bootstrap/versions.env`. Change them there and run `make rebootstrap`.
+- **Versions:** global tool pins live in `bootstrap/devbox-mise.toml`; other settings live in `bootstrap/versions.env`. Change them there and run `make rebootstrap`. Leave tools that macOS gets from Homebrew out of the dotfiles' mise config.
 
 ## Claude Code on the box
 

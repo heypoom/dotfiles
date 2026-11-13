@@ -1,0 +1,49 @@
+# Devbox-only global mise tools. bootstrap.sh copies this file to
+# ~/.config/mise/conf.d/devbox.toml; edit it here, then `make rebootstrap`.
+#
+# The dotfiles' ~/.config/mise/config.toml (shared with macOS) still provides
+# Java 21, Node, Python, Bun, Rust, git-spice, op, bat and friends, and wins
+# on any tool both files define. macOS gets the tools below from Homebrew.
+
+[settings]
+idiomatic_version_file_enable_tools = ["node"]
+
+[tools]
+# Editors and terminal workspace
+neovim = "0.12.6"
+herdr = "0.9.5"
+zellij = "0.46.0"
+yazi = "26.9.1"
+
+# Clojure
+babashka = "1.13.229"
+clojure = "1.12.6.1673"
+clj-kondo = "2026.10.26"
+
+# Git and GitHub
+gh = "2.103.3"
+lazygit = "0.66.3"
+delta = "0.20.1"
+"npm:diff-so-fancy" = "1.4.14" # the dotfiles' git pager
+
+# Shell and file tools
+eza = "0.23.5"
+fx = "40.0.1"
+tealdeer = "1.9.1" # provides `tldr`
+ast-grep = "0.51.2"
+hyperfine = "2.0.0"
+btop = "1.4.8"
+
+# Build and package tools
+just = "1.59.0"
+pnpm = "12.18.0"
+sccache = "0.19.0" # the dotfiles set RUSTC_WRAPPER=sccache
+uv = "0.13.7"
+
+# Docker and databases
+lazydocker = "0.25.2"
+"pipx:pgcli" = "4.7.1"
+
+# Agents and CLIs
+"npm:@metabase/cli" = "0.5.16" # `mb`, used by the metabase-cli Claude plugin
+"npm:@openai/codex" = "0.167.2"

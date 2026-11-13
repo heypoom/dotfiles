@@ -121,6 +121,7 @@ APT_PACKAGES=(
   procps openssh-client
   # dev tools
   ripgrep fd-find fzf jq tmux mosh htop entr git-lfs rlwrap fish zsh
+  lnav tig ncdu dnsutils lsof pinentry-curses postgresql-client
   # libraries mise needs to build tools (python, ruby, node-gyp modules)
   build-essential pkg-config autoconf libssl-dev zlib1g-dev libffi-dev
   libreadline-dev libbz2-dev libsqlite3-dev liblzma-dev libyaml-dev libncurses-dev
@@ -142,6 +143,29 @@ install_apt_packages() {
   sudo apt-get update -q
   sudo apt-get install -yq --no-install-recommends "${missing[@]}"
   changed
+}
+
+install_docker() {
+  step "docker engine"
+  # Docker's own apt repo: current engine plus the compose and buildx plugins.
+  local did=0
+  if ! command -v docker >/dev/null; then
+    sudo install -m 0755 -d /etc/apt/keyrings
+    sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+    sudo chmod a+r /etc/apt/keyrings/docker.asc
+    # shellcheck source=/dev/null
+    echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu $(. /etc/os-release && echo "$VERSION_CODENAME") stable" |
+      sudo tee /etc/apt/sources.list.d/docker.list >/dev/null
+    sudo apt-get update -q
+    sudo apt-get install -yq docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+    did=1
+  fi
+  if ! id -nG "$USER" | grep -qw docker; then
+    # Takes effect on the next login.
+    sudo usermod -aG docker "$USER"
+    did=1
+  fi
+  if ((did)); then changed; else ok; fi
 }
 
 link_fd() {
@@ -307,17 +331,7 @@ configure_mise_tools() {
   step "mise devbox tools config"
   # A conf.d fragment keeps the dotfiles' config.toml untouched.
   # config.toml still wins on any tool both files define.
-  if write_user_file "$HOME/.config/mise/conf.d/devbox.toml" <<EOF; then
-# Managed by devbox bootstrap.sh. Edit devbox/bootstrap/versions.env instead.
-[settings]
-idiomatic_version_file_enable_tools = ["node"]
-
-[tools]
-neovim = "$NEOVIM_VERSION"
-babashka = "$BABASHKA_VERSION"
-clojure = "$CLOJURE_VERSION"
-herdr = "$HERDR_VERSION"
-EOF
+  if write_user_file "$HOME/.config/mise/conf.d/devbox.toml" <"$SCRIPT_DIR/devbox-mise.toml"; then
     changed
   else
     ok
@@ -376,6 +390,28 @@ install_claude_plugins() {
     claude plugin install --scope user "$plugin"
   done
   changed
+}
+
+install_gh_extensions() {
+  step "gh extensions"
+  if [[ -z "$GH_EXTENSIONS" ]]; then
+    skipped
+    return
+  fi
+  if ! gh auth status >/dev/null 2>&1; then
+    log "gh is not logged in; run \`gh auth login\` on the box, then make rebootstrap"
+    skipped
+    return
+  fi
+  local installed ext did=0
+  installed="$(gh extension list 2>/dev/null || true)"
+  for ext in $GH_EXTENSIONS; do
+    if ! grep -qF "$ext" <<<"$installed"; then
+      gh extension install "$ext"
+      did=1
+    fi
+  done
+  if ((did)); then changed; else ok; fi
 }
 
 clone_private_skills() {
@@ -455,6 +491,7 @@ print_summary() {
 main() {
   log "devbox bootstrap for $USER on $(hostname) ($(date -Is))"
   install_apt_packages
+  install_docker
   link_fd
   configure_locale
   configure_timezone
@@ -470,6 +507,7 @@ main() {
   install_claude_code
   install_herdr_integration
   install_claude_plugins
+  install_gh_extensions
   clone_private_skills
   clone_metabase
   install_metabase_toolchain
