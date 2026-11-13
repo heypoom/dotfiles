@@ -1,6 +1,8 @@
 {
-  "lastChangelogVersion": "1.0.3",
-  "packages": [],
+  "lastChangelogVersion": "1.5.1",
+  "packages": [
+    "https://github.com/earendil-works/pi-claude-code"
+  ],
   "theme": "dark",
   "defaultProvider": "openai",
   "defaultModel": "gpt-6.1-sol",

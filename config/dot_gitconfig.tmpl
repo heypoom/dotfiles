@@ -6,8 +6,18 @@
 [alias]
   undo = reset --soft HEAD^
 
+{{ if eq .chezmoi.os "darwin" -}}
 [credential]
   helper = osxkeychain
+{{- else -}}
+# No keychain on Linux: GitHub HTTPS auth comes from `gh auth login`.
+[credential "https://github.com"]
+  helper =
+  helper = !gh auth git-credential
+[credential "https://gist.github.com"]
+  helper =
+  helper = !gh auth git-credential
+{{- end }}
 
 [core]
   editor = nvim
