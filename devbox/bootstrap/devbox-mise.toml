@@ -47,3 +47,4 @@ lazydocker = "0.25.2"
 # Agents and CLIs
 "npm:@metabase/cli" = "0.5.16" # `mb`, used by the metabase-cli Claude plugin
 "npm:@openai/codex" = "0.167.2"
+"npm:@earendil-works/pi-coding-agent" = "1.5.2" # `pi`; pi.dev/install.sh installs the same package
